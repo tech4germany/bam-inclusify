@@ -2,6 +2,7 @@
 
 const ManifestPlugin = require("webpack-manifest-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require("path");
 
 const standaloneChunk = "standalone";
 const taskpaneChunk = "taskpane";
@@ -49,5 +50,11 @@ module.exports = {
       : isEnvDevelopment && "static/js/[name].[hash:8].js";
 
     return config;
+  },
+  paths: function (paths, env) {
+    paths.appIndexJs = path.resolve("./src/standalone/standalone.tsx");
+    // console.log(paths);
+    // process.exit(1);
+    return paths;
   },
 };

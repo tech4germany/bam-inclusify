@@ -1,13 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "../index.css";
-import App from "../App";
-
-console.warn("This is the TASKPANE entry point");
+import { TaskpaneApp } from "./TaskpaneApp";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <TaskpaneApp />
   </React.StrictMode>,
   document.getElementById("root")
 );

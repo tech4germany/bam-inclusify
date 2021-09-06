@@ -1,13 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "../index.css";
-import App from "../App";
-
-console.warn("This is the standalone entry point");
+import { StandaloneApp } from "./StandaloneApp";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <StandaloneApp />
   </React.StrictMode>,
   document.getElementById("root")
 );
