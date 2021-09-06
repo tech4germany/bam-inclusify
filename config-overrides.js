@@ -7,12 +7,15 @@ const path = require("path");
 const standaloneChunk = "standalone";
 const taskpaneChunk = "taskpane";
 
+// TODO: manifest.xml for production:
+// the manifest.xml needs to refer to the public/deployment URL -- the official Office Add-in
+// project template uses Webpack to rewrite the URLs in the manifest.xml here. We could do the
+// same or manually maintain different files
+
 module.exports = {
   webpack: function override(config, webpackEnv) {
     const isEnvDevelopment = webpackEnv === "development";
     const isEnvProduction = webpackEnv === "production";
-    // console.log("\n###########\nBEFORE\n");
-    // console.log(config);
 
     config.entry = {
       [standaloneChunk]: ["./src/standalone/standalone.tsx"],
@@ -53,8 +56,6 @@ module.exports = {
   },
   paths: function (paths, env) {
     paths.appIndexJs = path.resolve("./src/standalone/standalone.tsx");
-    // console.log(paths);
-    // process.exit(1);
     return paths;
   },
 };
