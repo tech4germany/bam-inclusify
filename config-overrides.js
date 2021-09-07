@@ -2,6 +2,7 @@
 
 const ManifestPlugin = require("webpack-manifest-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const path = require("path");
 
 const standaloneChunk = "standalone";
@@ -44,7 +45,26 @@ module.exports = {
       chunks: [taskpaneChunk],
       inject: true,
     });
-    config.plugins = [defaultHtmlPlugin, taskpaneHtmlPlugin, ...otherPlugins];
+
+    const buildType = isEnvDevelopment ? "dev" : "prod";
+    const copyManifestPlugin = new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: "manifest*.xml",
+          // to: "[name]." + buildType + ".[ext]",
+          to: "manifest.xml",
+          transform(content) {
+            if (isEnvDevelopment) {
+              return content;
+            } else {
+              // return content.toString().replace(new RegExp(urlDev, "g"), urlProd); // TODO
+            }
+          },
+        },
+      ],
+    });
+
+    config.plugins = [defaultHtmlPlugin, taskpaneHtmlPlugin, copyManifestPlugin, ...otherPlugins];
 
     // We have multiple entry points, so we can't use the default "bundle.js" common bundle name for dev-server.
     // instead, we need to provide a unique name for each chunk, e.g. using [name].
@@ -57,5 +77,32 @@ module.exports = {
   paths: function (paths, env) {
     paths.appIndexJs = path.resolve("./src/standalone/standalone.tsx");
     return paths;
+  },
+  // The function to use to create a webpack dev server configuration when running the development
+  // server with 'npm run start' or 'yarn start'.
+  // Example: set the dev server to use a specific certificate in https.
+  devServer: function (configFunction) {
+    // Return the replacement function for create-react-app to use to generate the Webpack
+    // Development Server config. "configFunction" is the function that would normally have
+    // been used to generate the Webpack Development server config - you can use it to create
+    // a starting configuration to then modify instead of having to create a config from scratch.
+    return function (proxy, allowedHost) {
+      // Create the default config by calling configFunction with the proxy/allowedHost parameters
+      const config = configFunction(proxy, allowedHost);
+
+      const fs = require("fs");
+      config.https = {
+        key: fs.readFileSync(process.env.DEVSERVER_HTTPS_KEY, "utf8"),
+        cert: fs.readFileSync(process.env.DEVSERVER_HTTPS_CERT, "utf8"),
+        ca: fs.readFileSync(process.env.DEVSERVER_HTTPS_CA, "utf8"),
+        passphrase: process.env.DEVSERVER_HTTPS_PASS,
+      };
+      config.headers = {
+        "Access-Control-Allow-Origin": "*",
+      };
+
+      // Return customised Webpack Development Server config.
+      return config;
+    };
   },
 };
