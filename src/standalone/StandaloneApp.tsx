@@ -45,7 +45,7 @@ function makeReplacementApplier([inputText, setInputText]: UseState<string>, tri
   return (ruleMatch: RuleMatch, index: number, allMatches: RuleMatch[], replacementText: string) => {
     const [preMatch, , postMatch] = splitTextMatch(inputText, ruleMatch.offset, ruleMatch.length);
     const newText = preMatch + replacementText + postMatch;
-    setInputText(() => newText);
+    setInputText(newText);
     triggerRecheck(newText);
   };
 }

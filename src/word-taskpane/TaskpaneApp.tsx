@@ -76,23 +76,36 @@ const debugClickHandler = async () => {
   // console.log(getOfficeHostInfo());
   // return;
   await Word.run(async (context) => {
+    // const paragraphs = context.document.body.paragraphs;
+
+    // const p1 = paragraphs.getFirst();
+    // const tr = p1.getTextRanges([" "]);
+    // tr.load("text");
+    // await context.sync();
+    // tr.items[1].insertText("Englische ", Word.InsertLocation.replace);
+    // await context.sync();
+
     const paragraphs = context.document.body.paragraphs;
     // paragraphs.load();
     // await context.sync();
 
     const p1 = paragraphs.getFirst();
-    const tr = p1.getTextRanges([" "]);
-    tr.load("text");
+    const range = context.document.body.getRange(Word.RangeLocation.content);
+    range.load();
     await context.sync();
-    // console.log(tr);
-    tr.items[1].insertText("Englische ", Word.InsertLocation.replace);
-    await context.sync();
-    // const range = context.document.body.getRange(Word.RangeLocation.content);
-    // range.load();
-    // await context.sync();
-    // // const oox = range.getOoxml();
+    const oox = range.getOoxml();
     // const oox = p1.getOoxml();
-    // await context.sync();
+    await context.sync();
     // console.log(oox.value);
+
+    const parser = new DOMParser();
+    const dom = parser.parseFromString(oox.value, "application/xml");
+    debugger;
+    console.log(dom);
+    ///package/part[2]/xmlData/document/body/p[1]/r[1]/t
+    // console.log(
+    //   dom.evaluate("/package/part[2]/xmlData/document/body/p[1]/r[1]/t", dom, null, XPathResult.FIRST_ORDERED_NODE_TYPE)
+    //     .singleNodeValue
+    // );
   });
 };
