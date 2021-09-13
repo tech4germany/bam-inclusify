@@ -4,11 +4,14 @@ import { initializeIcons } from "@fluentui/font-icons-mdl2";
 import { ThemeProvider } from "@fluentui/react";
 import "../index.css";
 import { TaskpaneApp } from "./TaskpaneApp";
+import { setOfficeHostInfo } from "../common/office-api-helpers";
 
 initializeIcons();
 
-/* Render application after Office initializes */
-Office.initialize = () => {
+/* Initialize office and start rendering application */
+Office.onReady().then((info) => {
+  setOfficeHostInfo(info);
+
   ReactDOM.render(
     <React.StrictMode>
       <ThemeProvider>
@@ -17,4 +20,4 @@ Office.initialize = () => {
     </React.StrictMode>,
     document.getElementById("root")
   );
-};
+});

@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import styled from "styled-components";
 import { RuleMatch } from "../language-tool-api/types";
 import { splitTextMatch } from "../splitTextMatch";
+import { isFunction } from "../type-helpers";
 
 type ApplyReplacementFunction = (
   ruleMatch: RuleMatch,
@@ -59,9 +60,7 @@ const LtMatch: FC<{
           {ltMatch.replacements.map((r, idx) => (
             <Replacement
               key={idx}
-              onClick={() => {
-                if (typeof applyReplacement === "function") applyReplacement(ltMatch, r.value || "");
-              }}
+              onClick={isFunction(applyReplacement) ? () => applyReplacement(ltMatch, r.value || "") : undefined}
             >
               {r.value}
             </Replacement>
@@ -79,16 +78,17 @@ const ReplacementListContainer = styled.div`
   margin-top: 0.2em;
 `;
 
-const Replacement: FC<{ onClick: React.MouseEventHandler<HTMLButtonElement> }> = ({ onClick, children }) => (
-  <ReplacementItem onClick={onClick}>{children}</ReplacementItem>
-);
+const Replacement: FC<{ onClick: React.MouseEventHandler<HTMLButtonElement> | undefined }> = ({
+  onClick,
+  children,
+}) => <ReplacementItem onClick={onClick}>{children}</ReplacementItem>;
 
 const ReplacementItem = styled.button`
   display: inline;
   border: 0.5px solid gray;
   background: lightgray;
   padding: 0.1em 0.2em;
-  cursor: pointer;
+  cursor: ${(props) => (isFunction(props.onClick) ? "pointer" : "initial")};
 `;
 
 const LtMatchContainer = styled.div`
