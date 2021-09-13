@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "diversity"
+version = "0.1.0"
+description = ""
+authors = ["David Pomerenke <david.pomerenke@uni-konstanz.de>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+matplotlib = "^3.4.3"
+ipykernel = "^6.4.1"
+notebook = "^6.4.3"
+pandas = "^1.3.2"
+openpyxl = "^3.0.8"
+requests = "^2.26.0"
+PyYAML = "^5.4.1"
+ipython-cache = "^0.2.6"
+mysql-connector-python = "^8.0.26"
+wayback = "^0.3.0"
+
+[tool.poetry.dev-dependencies]
+black = "^21.8b0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
