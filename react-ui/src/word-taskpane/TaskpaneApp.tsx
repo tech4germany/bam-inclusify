@@ -5,6 +5,7 @@ import { RuleMatch } from "../common/language-tool-api/types";
 import { ResultsArea } from "../common/results-display/ResultsArea";
 import { LanguageToolClient } from "../common/language-tool-api/LanguageToolClient";
 import { getOfficeHostInfo, isRunningInOutlook, isRunningInWord } from "../common/office-api-helpers";
+import { findTextNodesInXml } from "../common/language-tool-api/document-adapter";
 
 export const TaskpaneApp: FC = () => {
   const [ltMatches, setLtMatches] = useState<RuleMatch[]>([]);
@@ -45,27 +46,55 @@ const TaskpaneHeading = styled.h1`
 `;
 
 const clickHandler = async (setLtMatches: Dispatch<SetStateAction<RuleMatch[]>>) => {
-  let text: string = "";
+  // let text: string = "";
+  // if (isRunningInWord()) {
+  //   await Word.run(async (context) => {
+  //     const range = context.document.body.getRange(Word.RangeLocation.content);
+  //     range.load();
+  //     await context.sync();
+  //     text = range.text;
+  //   });
+  // } else if (isRunningInOutlook()) {
+  //   const mailboxItem = Office.context.mailbox.item;
+  //   if (!mailboxItem) {
+  //     throw new Error("No mailbox item selected?");
+  //   }
+  //   text = await new Promise((resolve, reject) => {
+  //     mailboxItem.body.getAsync(Office.CoercionType.Text, (result) => resolve(result.value));
+  //   });
+  // } else {
+  //   throw new Error("Unknown office host app");
+  // }
+  // const request = {
+  //   text,
+  //   language: "auto",
+  // };
+  let structuredText: string = "";
   if (isRunningInWord()) {
     await Word.run(async (context) => {
       const range = context.document.body.getRange(Word.RangeLocation.content);
-      range.load();
+      // range.load();
+      const ooxml = range.getOoxml();
       await context.sync();
-      text = range.text;
+      structuredText = ooxml.value;
     });
   } else if (isRunningInOutlook()) {
     const mailboxItem = Office.context.mailbox.item;
     if (!mailboxItem) {
       throw new Error("No mailbox item selected?");
     }
-    text = await new Promise((resolve, reject) => {
-      mailboxItem.body.getAsync(Office.CoercionType.Text, (result) => resolve(result.value));
+    structuredText = await new Promise((resolve, reject) => {
+      mailboxItem.body.getAsync(Office.CoercionType.Html, (result) => resolve(result.value));
     });
   } else {
     throw new Error("Unknown office host app");
   }
+
+  const docResult = findTextNodesInXml(structuredText);
+  const plaintext = docResult.startIndexMap.map((t) => t.textNode.textContent!).join("");
+
   const request = {
-    text,
+    text: plaintext,
     language: "auto",
   };
   const content = await new LanguageToolClient().check(request);
