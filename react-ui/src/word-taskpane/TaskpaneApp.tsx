@@ -5,38 +5,57 @@ import { RuleMatch } from "../common/language-tool-api/types";
 import { ResultsArea } from "../common/results-display/ResultsArea";
 import { LanguageToolClient } from "../common/language-tool-api/LanguageToolClient";
 import { getOfficeHostInfo, isRunningInOutlook, isRunningInWord } from "../common/office-api-helpers";
-import { findTextNodesInXml } from "../common/language-tool-api/document-adapter";
+import { findTextNodesInXml, StartIndexTuple } from "../common/language-tool-api/document-adapter";
+
+interface CheckResult {
+  ruleMatches: RuleMatch[];
+  doc: Document;
+  startIndexMap: ReadonlyArray<StartIndexTuple>;
+}
 
 export const TaskpaneApp: FC = () => {
-  const [ltMatches, setLtMatches] = useState<RuleMatch[]>([]);
+  // const [ltMatches, setLtMatches] = useState<RuleMatch[]>([]);
+  const [checkResult, setCheckResult] = useState<CheckResult>();
   const [isLoading, setLoading] = useState(false);
 
   return (
     <div>
       <TaskpaneHeading>OpenMinDEd</TaskpaneHeading>
-      <DefaultButton
-        className="ms-welcome__action"
-        iconProps={{ iconName: "ChevronRight" }}
-        onClick={async () => {
-          setLoading(true);
-          await clickHandler(setLtMatches);
-          setLoading(false);
-        }}
-      >
-        Prüfen
-      </DefaultButton>
-      <DefaultButton
-        className="ms-welcome__action"
-        onClick={async () => {
-          setLoading(true);
-          await debugClickHandler();
-          setLoading(false);
-        }}
-      >
-        Debug
-      </DefaultButton>
+      <div>
+        <DefaultButton
+          className="ms-welcome__action"
+          iconProps={{ iconName: "ChevronRight" }}
+          onClick={async () => {
+            setLoading(true);
+            await clickHandler(setCheckResult);
+            setLoading(false);
+          }}
+        >
+          Prüfen
+        </DefaultButton>
+        <DefaultButton
+          className="ms-welcome__action"
+          onClick={async () => {
+            setLoading(true);
+            await debugClickHandler();
+            setLoading(false);
+          }}
+        >
+          Debug
+        </DefaultButton>
+        {!!checkResult && (
+          <DefaultButton
+            className="ms-welcome__action"
+            onClick={async () => {
+              await reapplyClickHandler(checkResult);
+            }}
+          >
+            Reapply
+          </DefaultButton>
+        )}
+      </div>
 
-      {isLoading ? <div>Loading...</div> : <ResultsArea ruleMatches={ltMatches} />}
+      {isLoading ? <div>Loading...</div> : <ResultsArea ruleMatches={checkResult?.ruleMatches || []} />}
     </div>
   );
 };
@@ -45,7 +64,7 @@ const TaskpaneHeading = styled.h1`
   color: darkgreen;
 `;
 
-const clickHandler = async (setLtMatches: Dispatch<SetStateAction<RuleMatch[]>>) => {
+const clickHandler = async (setLtMatches: (newCheckResult: CheckResult) => void) => {
   // let text: string = "";
   // if (isRunningInWord()) {
   //   await Word.run(async (context) => {
@@ -72,9 +91,7 @@ const clickHandler = async (setLtMatches: Dispatch<SetStateAction<RuleMatch[]>>)
   let structuredText: string = "";
   if (isRunningInWord()) {
     await Word.run(async (context) => {
-      const range = context.document.body.getRange(Word.RangeLocation.content);
-      // range.load();
-      const ooxml = range.getOoxml();
+      const ooxml = context.document.body.getOoxml();
       await context.sync();
       structuredText = ooxml.value;
     });
@@ -90,15 +107,15 @@ const clickHandler = async (setLtMatches: Dispatch<SetStateAction<RuleMatch[]>>)
     throw new Error("Unknown office host app");
   }
 
-  const docResult = findTextNodesInXml(structuredText);
-  const plaintext = docResult.startIndexMap.map((t) => t.textNode.textContent!).join("");
+  const { doc, startIndexMap } = findTextNodesInXml(structuredText);
+  const plaintext = startIndexMap.map((t) => t.textNode.textContent!).join("");
 
   const request = {
     text: plaintext,
     language: "auto",
   };
   const content = await new LanguageToolClient().check(request);
-  setLtMatches(() => content.matches || []);
+  setLtMatches({ doc, startIndexMap, ruleMatches: content.matches || [] });
 };
 
 const debugClickHandler = async () => {
@@ -136,5 +153,14 @@ const debugClickHandler = async () => {
     //   dom.evaluate("/package/part[2]/xmlData/document/body/p[1]/r[1]/t", dom, null, XPathResult.FIRST_ORDERED_NODE_TYPE)
     //     .singleNodeValue
     // );
+  });
+};
+const reapplyClickHandler = async (checkResult: CheckResult) => {
+  await Word.run(async (context) => {
+    const newOoxml = new XMLSerializer().serializeToString(checkResult.doc);
+    const paragraphs = context.document.body.paragraphs;
+    paragraphs.load();
+    paragraphs.getFirst().insertOoxml(newOoxml, Word.InsertLocation.replace);
+    await context.sync();
   });
 };

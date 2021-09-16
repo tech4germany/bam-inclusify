@@ -1,6 +1,9 @@
-type StartIndexTuple = { startIndex: number; textNode: Text };
+export interface StartIndexTuple {
+  startIndex: number;
+  textNode: Text;
+}
 
-interface XmlDocumentResult {
+export interface XmlDocumentResult {
   readonly doc: Document;
   readonly startIndexMap: ReadonlyArray<StartIndexTuple>;
 }
