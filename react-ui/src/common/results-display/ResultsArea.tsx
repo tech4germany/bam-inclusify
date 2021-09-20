@@ -4,7 +4,7 @@ import { RuleMatch } from "../language-tool-api/types";
 import { splitTextMatch } from "../splitTextMatch";
 import { isFunction } from "../type-helpers";
 
-type ApplyReplacementFunction = (
+export type ApplyReplacementFunction = (
   ruleMatch: RuleMatch,
   index: number,
   allMatches: RuleMatch[],
