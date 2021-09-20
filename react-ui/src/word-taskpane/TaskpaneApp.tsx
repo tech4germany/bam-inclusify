@@ -2,10 +2,11 @@ import React, { Dispatch, FC, SetStateAction, useEffect, useState } from "react"
 import styled from "styled-components";
 import { DefaultButton } from "@fluentui/react";
 import { RuleMatch } from "../common/language-tool-api/types";
-import { ResultsArea } from "../common/results-display/ResultsArea";
+import { ApplyReplacementFunction, ResultsArea } from "../common/results-display/ResultsArea";
 import { LanguageToolClient } from "../common/language-tool-api/LanguageToolClient";
 import { getOfficeHostInfo, isRunningInOutlook, isRunningInWord } from "../common/office-api-helpers";
 import { findTextNodesInXml, StartIndexTuple } from "../common/language-tool-api/document-adapter";
+import { splitTextMatch } from "../common/splitTextMatch";
 
 interface CheckResult {
   ruleMatches: RuleMatch[];
@@ -14,8 +15,9 @@ interface CheckResult {
 }
 
 export const TaskpaneApp: FC = () => {
-  // const [ltMatches, setLtMatches] = useState<RuleMatch[]>([]);
-  const [checkResult, setCheckResult] = useState<CheckResult>();
+  const [ltMatches, setLtMatches] = useState<RuleMatch[]>([]);
+  // const [checkResult, setCheckResult] = useState<CheckResult>();
+  const [applier, setApplier] = useState<ApplyReplacementFunction>();
   const [isLoading, setLoading] = useState(false);
   const [ranges, setRanges] = useState<Word.Range[]>([]);
 
@@ -37,7 +39,7 @@ export const TaskpaneApp: FC = () => {
           iconProps={{ iconName: "ChevronRight" }}
           onClick={async () => {
             setLoading(true);
-            await clickHandler(setCheckResult);
+            await clickHandler(setLtMatches, setApplier);
             setLoading(false);
           }}
         >
@@ -45,6 +47,7 @@ export const TaskpaneApp: FC = () => {
         </DefaultButton>
         <DefaultButton
           className="ms-welcome__action"
+          iconProps={{ iconName: "ChevronRight" }}
           onClick={async () => {
             setLoading(true);
             await debugClickHandler(setRanges);
@@ -53,31 +56,9 @@ export const TaskpaneApp: FC = () => {
         >
           Debug
         </DefaultButton>
-        <DefaultButton
-          className="ms-welcome__action"
-          onClick={async () => {
-            await Word.run(async (context) => {
-              const r = ranges[0];
-              r.insertText("Replaced", Word.InsertLocation.replace);
-              await r.context.sync();
-            });
-          }}
-        >
-          Debug2
-        </DefaultButton>
-        {!!checkResult && (
-          <DefaultButton
-            className="ms-welcome__action"
-            onClick={async () => {
-              await reapplyClickHandler(checkResult);
-            }}
-          >
-            Reapply
-          </DefaultButton>
-        )}
       </div>
 
-      {isLoading ? <div>Loading...</div> : <ResultsArea ruleMatches={checkResult?.ruleMatches || []} />}
+      {isLoading ? <div>Loading...</div> : <ResultsArea ruleMatches={ltMatches || []} applyReplacement={applier} />}
     </div>
   );
 };
@@ -86,31 +67,11 @@ const TaskpaneHeading = styled.h1`
   color: darkgreen;
 `;
 
-const clickHandler = async (setLtMatches: (newCheckResult: CheckResult) => void) => {
-  // let text: string = "";
-  // if (isRunningInWord()) {
-  //   await Word.run(async (context) => {
-  //     const range = context.document.body.getRange(Word.RangeLocation.content);
-  //     range.load();
-  //     await context.sync();
-  //     text = range.text;
-  //   });
-  // } else if (isRunningInOutlook()) {
-  //   const mailboxItem = Office.context.mailbox.item;
-  //   if (!mailboxItem) {
-  //     throw new Error("No mailbox item selected?");
-  //   }
-  //   text = await new Promise((resolve, reject) => {
-  //     mailboxItem.body.getAsync(Office.CoercionType.Text, (result) => resolve(result.value));
-  //   });
-  // } else {
-  //   throw new Error("Unknown office host app");
-  // }
-  // const request = {
-  //   text,
-  //   language: "auto",
-  // };
-  if (!isRunningInWord()) throw new Error("Unknown office host app");
+const clickHandler = async (
+  setLtMatches: Dispatch<SetStateAction<RuleMatch[]>>,
+  setApplier: Dispatch<SetStateAction<ApplyReplacementFunction | undefined>>
+) => {
+  if (!isRunningInWord()) throw new Error("Only Word is supported for now");
 
   console.time("getTextRanges");
   const textRanges = await Word.run(async (context) => {
@@ -130,30 +91,47 @@ const clickHandler = async (setLtMatches: (newCheckResult: CheckResult) => void)
   const plaintext = textRanges.map((p) => p.items.map((r) => r.text).join("")).join("\n");
   console.log(`Have plaintext: `, plaintext);
   console.timeEnd("getTextRanges");
-  // const { doc, startIndexMap } = findTextNodesInXml(structuredText);
-  // const plaintext = startIndexMap.map((t) => t.textNode.textContent!).join("");
 
-  // const request = {
-  //   text: plaintext,
-  //   language: "auto",
-  // };
-  // const content = await new LanguageToolClient().check(request);
-  // setLtMatches({ doc, startIndexMap, ruleMatches: content.matches || [] });
+  console.time("ltCheck");
+  const request = {
+    text: plaintext,
+    language: "auto",
+  };
+  const content = await new LanguageToolClient().check(request);
+  setLtMatches(content.matches || []);
+  console.timeEnd("ltCheck");
+
+  const allRanges = textRanges.flatMap((p) => p.items);
+  let startIndex = 0;
+  // const startIndexTuples
+  let nextStartIndex = 0;
+  const startIndexMap: { startIndex: number; range: Word.Range }[] = [];
+  for (const range of allRanges) {
+    const startIndex = nextStartIndex;
+    startIndexMap.push({ startIndex, range });
+    nextStartIndex += range.text.length;
+  }
+  console.log(startIndexMap);
+
+  const newApplier: ApplyReplacementFunction = (ruleMatch, index, allMatches, replacementText) => {
+    // console.log(`Clicked fix, rule match ${index}, replacement ${replacementText}`);
+    const firstTupleIdx = startIndexMap.findIndex((i) => i.startIndex > ruleMatch.offset);
+    // console.log("startIndexTuple Idx:", firstTupleIdx - 1);
+    const { startIndex, range } = startIndexMap[firstTupleIdx - 1];
+    // console.log("startTuple:", { startIndex, range });
+    const offsetInRange = ruleMatch.offset - startIndex;
+    // console.log("offsetInRange", offsetInRange, "mlen", ruleMatch.length, "rlen", range.text.length);
+    const oldText = range.text;
+    const [preMatch, , postMatch] = splitTextMatch(oldText, offsetInRange, ruleMatch.length);
+    const newText = preMatch + replacementText + postMatch;
+    range.insertText(newText, Word.InsertLocation.replace);
+    range.context.sync().then(() => console.log("replaced"));
+  };
+  setApplier(() => newApplier);
 };
 
 const debugClickHandler = async (setParagraphs: (newParagraphs: Word.Range[]) => void) => {
-  // console.log(getOfficeHostInfo());
-  // return;
   await Word.run(async (context) => {
-    // const paragraphs = context.document.body.paragraphs;
-
-    // const p1 = paragraphs.getFirst();
-    // const tr = p1.getTextRanges([" "]);
-    // tr.load("text");
-    // await context.sync();
-    // tr.items[1].insertText("Englische ", Word.InsertLocation.replace);
-    // await context.sync();
-
     const ranges = context.document.body.getRange(Word.RangeLocation.whole).getTextRanges([" "], false).track();
     ranges.load();
     await context.sync();
@@ -161,33 +139,5 @@ const debugClickHandler = async (setParagraphs: (newParagraphs: Word.Range[]) =>
     const newRanges = ranges.items;
     setParagraphs(newRanges);
     console.log(newRanges);
-
-    // const p1 = paragraphs.getFirst();
-    // const range = context.document.body.getRange(Word.RangeLocation.content);
-    // range.load();
-    // await context.sync();
-    // const oox = range.getOoxml();
-    // // const oox = p1.getOoxml();
-    // await context.sync();
-    // console.log(oox.value);
-
-    // const parser = new DOMParser();
-    // const dom = parser.parseFromString(oox.value, "application/xml");
-    // debugger;
-    // console.log(dom);
-    ///package/part[2]/xmlData/document/body/p[1]/r[1]/t
-    // console.log(
-    //   dom.evaluate("/package/part[2]/xmlData/document/body/p[1]/r[1]/t", dom, null, XPathResult.FIRST_ORDERED_NODE_TYPE)
-    //     .singleNodeValue
-    // );
-  });
-};
-const reapplyClickHandler = async (checkResult: CheckResult) => {
-  await Word.run(async (context) => {
-    const newOoxml = new XMLSerializer().serializeToString(checkResult.doc);
-    const paragraphs = context.document.body.paragraphs;
-    paragraphs.load();
-    paragraphs.getFirst().insertOoxml(newOoxml, Word.InsertLocation.replace);
-    await context.sync();
   });
 };
