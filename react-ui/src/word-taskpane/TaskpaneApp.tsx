@@ -67,6 +67,9 @@ const TaskpaneHeading = styled.h1`
   color: darkgreen;
 `;
 
+type ParagraphWithRanges = { paragraph: Word.Paragraph; ranges: Word.Range[] };
+type StartIndexMapItem = { startIndex: number; paragraph: Word.Paragraph; range: Word.Range };
+
 const clickHandler = async (
   setLtMatches: Dispatch<SetStateAction<RuleMatch[]>>,
   setApplier: Dispatch<SetStateAction<ApplyReplacementFunction | undefined>>
@@ -74,21 +77,20 @@ const clickHandler = async (
   if (!isRunningInWord()) throw new Error("Only Word is supported for now");
 
   console.time("getTextRanges");
-  const textRanges = await Word.run(async (context) => {
+  const paragraphsWithRanges: ParagraphWithRanges[] = await Word.run(async (context) => {
     const paragraphs = context.document.body.paragraphs.track().load();
     await context.sync();
-    const ranges = paragraphs.items.map((p) =>
-      p.getRange(Word.RangeLocation.whole).getTextRanges([" "], false).track().load()
-    );
-    // ranges.load();
+    const ranges = paragraphs.items.map((paragraph) => ({
+      paragraph,
+      rangeCollection: paragraph.getRange(Word.RangeLocation.whole).getTextRanges([" "], false).track().load(),
+    }));
     await context.sync();
-    const textRangeCount = ranges.reduce((acc, curr) => acc + curr.items.length, 0);
-    console.log(`Got ${ranges.length} paragraphs with overall ${textRangeCount} text ranges`);
 
-    return ranges;
+    return ranges.map(({ paragraph, rangeCollection }) => ({ paragraph, ranges: rangeCollection.items }));
   });
 
-  const plaintext = textRanges.map((p) => p.items.map((r) => r.text).join("")).join("\n");
+  const { plaintext, startIndexMap } = extractPlaintextAndIndexMap(paragraphsWithRanges);
+
   console.log(`Have plaintext: `, plaintext);
   console.timeEnd("getTextRanges");
 
@@ -101,16 +103,6 @@ const clickHandler = async (
   setLtMatches(content.matches || []);
   console.timeEnd("ltCheck");
 
-  const allRanges = textRanges.flatMap((p) => p.items);
-  let startIndex = 0;
-  // const startIndexTuples
-  let nextStartIndex = 0;
-  const startIndexMap: { startIndex: number; range: Word.Range }[] = [];
-  for (const range of allRanges) {
-    const startIndex = nextStartIndex;
-    startIndexMap.push({ startIndex, range });
-    nextStartIndex += range.text.length;
-  }
   console.log(startIndexMap);
 
   const newApplier: ApplyReplacementFunction = (ruleMatch, index, allMatches, replacementText) => {
@@ -129,6 +121,29 @@ const clickHandler = async (
   };
   setApplier(() => newApplier);
 };
+
+function extractPlaintextAndIndexMap(paragraphsWithRanges: ParagraphWithRanges[]): {
+  plaintext: string;
+  startIndexMap: StartIndexMapItem[];
+} {
+  let nextStartIndex = 0;
+  let plaintext = "";
+  const startIndexMap: StartIndexMapItem[] = [];
+  const paragraphSeparator = "\n\n";
+  for (const { paragraph, ranges } of paragraphsWithRanges) {
+    for (const range of ranges) {
+      const startIndex = nextStartIndex;
+      startIndexMap.push({ startIndex, paragraph, range });
+      const rangeText = range.text;
+      plaintext += rangeText;
+      nextStartIndex += rangeText.length;
+    }
+    plaintext += paragraphSeparator;
+    nextStartIndex += paragraphSeparator.length;
+  }
+
+  return { plaintext, startIndexMap };
+}
 
 const debugClickHandler = async (setParagraphs: (newParagraphs: Word.Range[]) => void) => {
   await Word.run(async (context) => {
