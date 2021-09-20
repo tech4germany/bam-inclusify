@@ -68,7 +68,7 @@ const TaskpaneHeading = styled.h1`
 `;
 
 type ParagraphWithRanges = { paragraph: Word.Paragraph; ranges: Word.Range[] };
-type StartIndexMapItem = { startIndex: number; paragraph: Word.Paragraph; range: Word.Range };
+type StartOffsetMapItem = { startOffset: number; paragraph: Word.Paragraph; range: Word.Range };
 
 const clickHandler = async (
   setLtMatches: Dispatch<SetStateAction<RuleMatch[]>>,
@@ -89,7 +89,7 @@ const clickHandler = async (
     return ranges.map(({ paragraph, rangeCollection }) => ({ paragraph, ranges: rangeCollection.items }));
   });
 
-  const { plaintext, startIndexMap } = extractPlaintextAndIndexMap(paragraphsWithRanges);
+  const { plaintext, startOffsetMap } = extractPlaintextAndIndexMap(paragraphsWithRanges);
 
   console.log(`Have plaintext: `, plaintext);
   console.timeEnd("getTextRanges");
@@ -103,37 +103,66 @@ const clickHandler = async (
   setLtMatches(content.matches || []);
   console.timeEnd("ltCheck");
 
-  console.log(startIndexMap);
+  console.log(startOffsetMap);
 
   const newApplier: ApplyReplacementFunction = (ruleMatch, index, allMatches, replacementText) => {
-    // console.log(`Clicked fix, rule match ${index}, replacement ${replacementText}`);
-    const firstTupleIdx = startIndexMap.findIndex((i) => i.startIndex > ruleMatch.offset);
-    // console.log("startIndexTuple Idx:", firstTupleIdx - 1);
-    const { startIndex, range } = startIndexMap[firstTupleIdx - 1];
-    // console.log("startTuple:", { startIndex, range });
-    const offsetInRange = ruleMatch.offset - startIndex;
-    // console.log("offsetInRange", offsetInRange, "mlen", ruleMatch.length, "rlen", range.text.length);
-    const oldText = range.text;
-    const [preMatch, , postMatch] = splitTextMatch(oldText, offsetInRange, ruleMatch.length);
+    const startOffset = ruleMatch.offset;
+    const endOffset = ruleMatch.offset + ruleMatch.length;
+    const { index: startRangeIndex, item: startRangeItem } = findItemContainingOffset(startOffsetMap, startOffset);
+    const { index: endRangeIndex, item: endRangeItem } = findItemContainingOffset(startOffsetMap, endOffset);
+    const startOffsetInStartRange = startOffset - startRangeItem.startOffset;
+    const endOffsetInEndRange = endOffset - endRangeItem.startOffset;
+    const isMultiWordMatch = startRangeIndex !== endRangeIndex;
+    console.log(
+      `Replacement for RuleMatch(offset=${ruleMatch.offset}, length=${ruleMatch.length})\n` +
+        `  starts in OffsetMapEntry(index=${startRangeIndex}, startOffset=${startRangeItem.startOffset}, length=${startRangeItem.range.text.length}, text='${startRangeItem.range.text}') at localOffset=${startOffsetInStartRange}\n` +
+        `  & ends in OffsetMapEntry(index=${endRangeIndex}, startOffset=${endRangeItem.startOffset}, length=${endRangeItem.range.text.length}, text='${endRangeItem.range.text}') at localOffset=${endOffsetInEndRange}\n` +
+        `  (multi-word match=${isMultiWordMatch})`
+    );
+    console.log(
+      "affected range:",
+      startOffsetMap.slice(startRangeIndex, endRangeIndex + 1),
+      startOffsetMap.slice(startRangeIndex, endRangeIndex + 1).map((item) => item.range.text)
+    );
+    const affectedRangesPlaintext = startOffsetMap
+      .slice(startRangeIndex, endRangeIndex + 1)
+      .map((item) => item.range.text)
+      .join("");
+    console.log("affectedRangesPlaintext", affectedRangesPlaintext);
+    console.log("ranges to delete: ", startOffsetMap.slice(startRangeIndex + 1, endRangeIndex + 1));
+    startOffsetMap.slice(startRangeIndex + 1, endRangeIndex + 1).forEach((item) => item.range.delete());
+    const [preMatch, , postMatch] = splitTextMatch(affectedRangesPlaintext, startOffsetInStartRange, ruleMatch.length);
     const newText = preMatch + replacementText + postMatch;
-    range.insertText(newText, Word.InsertLocation.replace);
-    range.context.sync().then(() => console.log("replaced"));
+    console.log("newText", newText);
+    startRangeItem.range.insertText(newText, Word.InsertLocation.replace);
+    startRangeItem.range.context
+      .sync()
+      .then(() => console.log(`replaced ${isMultiWordMatch ? "multi-word" : "single-word"} match`));
   };
   setApplier(() => newApplier);
 };
 
+function findItemContainingOffset(
+  startIndexMap: StartOffsetMapItem[],
+  offset: number
+): { item: StartOffsetMapItem; index: number } {
+  const index = startIndexMap.findIndex((i) => i.startOffset > offset) - 1;
+  const item = startIndexMap[index];
+  return { item: item, index };
+}
+
 function extractPlaintextAndIndexMap(paragraphsWithRanges: ParagraphWithRanges[]): {
   plaintext: string;
-  startIndexMap: StartIndexMapItem[];
+  startOffsetMap: StartOffsetMapItem[];
 } {
   let nextStartIndex = 0;
   let plaintext = "";
-  const startIndexMap: StartIndexMapItem[] = [];
+  const startOffsetMap: StartOffsetMapItem[] = [];
   const paragraphSeparator = "\n\n";
   for (const { paragraph, ranges } of paragraphsWithRanges) {
     for (const range of ranges) {
       const startIndex = nextStartIndex;
-      startIndexMap.push({ startIndex, paragraph, range });
+      startOffsetMap.push({ startOffset: startIndex, paragraph, range });
       const rangeText = range.text;
       plaintext += rangeText;
       nextStartIndex += rangeText.length;
@@ -142,7 +171,7 @@ function extractPlaintextAndIndexMap(paragraphsWithRanges: ParagraphWithRanges[]
     nextStartIndex += paragraphSeparator.length;
   }
 
-  return { plaintext, startIndexMap };
+  return { plaintext, startOffsetMap };
 }
 
 const debugClickHandler = async (setParagraphs: (newParagraphs: Word.Range[]) => void) => {
