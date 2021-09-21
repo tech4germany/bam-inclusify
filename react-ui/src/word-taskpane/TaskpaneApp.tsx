@@ -1,34 +1,18 @@
-import React, { Dispatch, FC, SetStateAction, useEffect, useState } from "react";
+import React, { Dispatch, FC, SetStateAction, useState } from "react";
 import styled from "styled-components";
 import { DefaultButton } from "@fluentui/react";
 import { RuleMatch } from "../common/language-tool-api/types";
 import { ApplyReplacementFunction, ResultsArea } from "../common/results-display/ResultsArea";
 import { LanguageToolClient } from "../common/language-tool-api/LanguageToolClient";
-import { getOfficeHostInfo, isRunningInOutlook, isRunningInWord } from "../common/office-api-helpers";
-import { findTextNodesInXml, StartIndexTuple } from "../common/language-tool-api/document-adapter";
+import { isRunningInOutlook, isRunningInWord } from "../common/office-api-helpers";
+import { StartIndexTuple } from "../common/language-tool-api/document-adapter";
 import { splitTextMatch } from "../common/splitTextMatch";
-
-interface CheckResult {
-  ruleMatches: RuleMatch[];
-  doc: Document;
-  startIndexMap: ReadonlyArray<StartIndexTuple>;
-}
 
 export const TaskpaneApp: FC = () => {
   const [ltMatches, setLtMatches] = useState<RuleMatch[]>([]);
-  // const [checkResult, setCheckResult] = useState<CheckResult>();
   const [applier, setApplier] = useState<ApplyReplacementFunction>();
   const [isLoading, setLoading] = useState(false);
   const [ranges, setRanges] = useState<Word.Range[]>([]);
-
-  // useEffect(() => {
-  //   const doc = Office.context.document;
-  //   doc.addHandlerAsync(Office.EventType.DocumentSelectionChanged, () => {
-  //     doc.getSelectedDataAsync(Office.CoercionType.Text, (r) => {
-  //       console.log("Selection changed", r.value);
-  //     });
-  //   });
-  // });
 
   return (
     <div>
@@ -74,8 +58,18 @@ const clickHandler = async (
   setLtMatches: Dispatch<SetStateAction<RuleMatch[]>>,
   setApplier: Dispatch<SetStateAction<ApplyReplacementFunction | undefined>>
 ) => {
-  if (!isRunningInWord()) throw new Error("Only Word is supported for now");
+  if (isRunningInWord()) {
+    await wordClickHandler(setLtMatches, setApplier);
+  } else if (isRunningInOutlook()) {
+  } else {
+    throw new Error("Unsupported host app");
+  }
+};
 
+async function wordClickHandler(
+  setLtMatches: Dispatch<SetStateAction<RuleMatch[]>>,
+  setApplier: Dispatch<SetStateAction<ApplyReplacementFunction | undefined>>
+) {
   console.time("getTextRanges");
   const paragraphsWithRanges: ParagraphWithRanges[] = await Word.run(async (context) => {
     const paragraphs = context.document.body.paragraphs.track().load();
@@ -132,7 +126,7 @@ const clickHandler = async (
       .then(() => console.debug(`replaced ${isMultiWordMatch ? "multi-word" : "single-word"} match`));
   };
   setApplier(() => newApplier);
-};
+}
 
 function findItemContainingOffset(
   startIndexMap: StartOffsetMapItem[],
