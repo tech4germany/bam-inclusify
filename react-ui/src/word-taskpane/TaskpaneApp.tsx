@@ -113,31 +113,23 @@ const clickHandler = async (
     const startOffsetInStartRange = startOffset - startRangeItem.startOffset;
     const endOffsetInEndRange = endOffset - endRangeItem.startOffset;
     const isMultiWordMatch = startRangeIndex !== endRangeIndex;
-    console.log(
+    console.debug(
       `Replacement for RuleMatch(offset=${ruleMatch.offset}, length=${ruleMatch.length})\n` +
         `  starts in OffsetMapEntry(index=${startRangeIndex}, startOffset=${startRangeItem.startOffset}, length=${startRangeItem.range.text.length}, text='${startRangeItem.range.text}') at localOffset=${startOffsetInStartRange}\n` +
         `  & ends in OffsetMapEntry(index=${endRangeIndex}, startOffset=${endRangeItem.startOffset}, length=${endRangeItem.range.text.length}, text='${endRangeItem.range.text}') at localOffset=${endOffsetInEndRange}\n` +
         `  (multi-word match=${isMultiWordMatch})`
     );
-    console.log(
-      "affected range:",
-      startOffsetMap.slice(startRangeIndex, endRangeIndex + 1),
-      startOffsetMap.slice(startRangeIndex, endRangeIndex + 1).map((item) => item.range.text)
-    );
     const affectedRangesPlaintext = startOffsetMap
       .slice(startRangeIndex, endRangeIndex + 1)
       .map((item) => item.range.text)
       .join("");
-    console.log("affectedRangesPlaintext", affectedRangesPlaintext);
-    console.log("ranges to delete: ", startOffsetMap.slice(startRangeIndex + 1, endRangeIndex + 1));
     startOffsetMap.slice(startRangeIndex + 1, endRangeIndex + 1).forEach((item) => item.range.delete());
     const [preMatch, , postMatch] = splitTextMatch(affectedRangesPlaintext, startOffsetInStartRange, ruleMatch.length);
     const newText = preMatch + replacementText + postMatch;
-    console.log("newText", newText);
     startRangeItem.range.insertText(newText, Word.InsertLocation.replace);
     startRangeItem.range.context
       .sync()
-      .then(() => console.log(`replaced ${isMultiWordMatch ? "multi-word" : "single-word"} match`));
+      .then(() => console.debug(`replaced ${isMultiWordMatch ? "multi-word" : "single-word"} match`));
   };
   setApplier(() => newApplier);
 };
