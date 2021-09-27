@@ -8660,6 +8660,15 @@ office-addin-cli@^1.2.2:
     node-fetch "^2.6.1"
     read-package-json-fast "^2.0.2"
 
+office-addin-cli@^1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/office-addin-cli/-/office-addin-cli-1.2.3.tgz#6e8d3cdab90472b34911a94570bd1ae2c3f8bc9d"
+  integrity sha512-EqKpIJ7148Wgmv3ZEWWDW1maao9VbvyXfdIY80hU4CEM7E6myBJ2Di836YL79ZPawVmyR1RGaJ+luzl+5Lht8A==
+  dependencies:
+    commander "^6.2.1"
+    node-fetch "^2.6.1"
+    read-package-json-fast "^2.0.2"
+
 office-addin-debugging@^4.2.2:
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/office-addin-debugging/-/office-addin-debugging-4.2.2.tgz#f94a06281c862151db1cf2246bd3728532da50b4"
@@ -8686,6 +8695,18 @@ office-addin-dev-certs@^1.6.2:
     mkcert "^1.4.0"
     office-addin-cli "^1.2.2"
     office-addin-usage-data "^1.3.2"
+
+office-addin-dev-certs@^1.6.3:
+  version "1.6.3"
+  resolved "https://registry.yarnpkg.com/office-addin-dev-certs/-/office-addin-dev-certs-1.6.3.tgz#cc186eb2eccb3880f39ff9e24d74c0bb05a588f0"
+  integrity sha512-pRNSuRp2yBCIWUjrbyhZOGDHJKCpWK8NsVH72zNQeQzXW7q3c2uVwfv5lChBMKTyQuTcyJUlzdzMi/SA691mUA==
+  dependencies:
+    child_process "^1.0.2"
+    commander "^6.2.0"
+    fs-extra "^7.0.1"
+    mkcert "^1.4.0"
+    office-addin-cli "^1.2.3"
+    office-addin-usage-data "^1.3.3"
 
 office-addin-dev-settings@^1.9.2:
   version "1.9.2"
@@ -8760,6 +8781,16 @@ office-addin-usage-data@^1.3.2:
     applicationinsights "^1.7.3"
     commander "^6.2.0"
     office-addin-cli "^1.2.2"
+    readline-sync "^1.4.9"
+
+office-addin-usage-data@^1.3.3:
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/office-addin-usage-data/-/office-addin-usage-data-1.3.3.tgz#61dfe44f2a2cb44804bffae69c7ee99834aa4d8f"
+  integrity sha512-Iv6Q5AI3k4hnE8Rw32MqgV/SxNNgoJIgsHNMsif9X4LkXkakVn7JFYh2HM+fYCH+mpMRxdH2+7CLE9Gk0Q2IPw==
+  dependencies:
+    applicationinsights "^1.7.3"
+    commander "^6.2.0"
+    office-addin-cli "^1.2.3"
     readline-sync "^1.4.9"
 
 on-finished@~2.3.0:
