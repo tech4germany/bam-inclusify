@@ -549,9 +549,6 @@
 		<token inflected="yes">ältesten</token>
 		<token inflected="yes">Menschen</token>
 		</antipattern>
-		<antipattern>
-		<token inflected="yes">Senioritätsrat</token>
-		</antipattern>
         <pattern><token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes" >Ältestenrat</token></pattern>
         <message>
         Mit dem generischen Maskulinum werden nicht alle Geschlechter gleichermaßen assoziiert. Vielleicht passt einer der folgenden neutralen Begriffe besser: 
@@ -559,11 +556,10 @@
 		<suggestion>Rat weiser Menschen</suggestion>,
 		<suggestion>Rat der Erfahrenen</suggestion>,
 		<suggestion>Beratungsgruppe der ältesten Menschen</suggestion>,
-		<suggestion>Gremium der ältesten Menschen</suggestion>,
-		<suggestion>Senioritätsrat]</suggestion>
+		<suggestion>Gremium der ältesten Menschen</suggestion>
         </message>
         <short>Generisches Maskulinum</short>
-        <example correction="Wer sich unter dem Begriff dennoch eine Rat aus Männern, kann diese Alternativen verwenden: Senat|Rat weiser Menschen|Rat der Erfahrenen|Beratungsgruppe der ältesten Menschen|Gremium der ältesten Menschen|Senioritätsrat]"><marker>Ältestenrat</marker></example>
+        <example correction="Wer sich unter dem Begriff dennoch eine Rat aus Männern, kann diese Alternativen verwenden: Senat|Rat weiser Menschen|Rat der Erfahrenen|Beratungsgruppe der ältesten Menschen|Gremium der ältesten Menschen"><marker>Ältestenrat</marker></example>
     </rule>
     
     <rule id="Alumni_sg" name="Alumni">
@@ -3357,9 +3353,6 @@
 		<token inflected="yes">Institutsleitung</token>
 		</antipattern>
 		<antipattern>
-		<token inflected="yes">Museumsleitung</token>
-		</antipattern>
-		<antipattern>
 		<token inflected="yes">Direktorin</token>
 		<token inflected="yes">bzw</token>
 		<token inflected="yes">.</token>
@@ -3369,11 +3362,10 @@
         <message>
         Mit dem generischen Maskulinum werden nicht alle Geschlechter gleichermaßen assoziiert. Vielleicht passt einer der folgenden neutralen Begriffe besser: 
         <suggestion>Institutsleitung</suggestion>,
-		<suggestion>Museumsleitung]</suggestion>,
 		<suggestion>Direktorin bzw. Direktor</suggestion>
         </message>
         <short>Generisches Maskulinum</short>
-        <example correction="Institutsleitung|Museumsleitung]|Direktorin bzw. Direktor"><marker>Direktor</marker></example>
+        <example correction="Institutsleitung|Direktorin bzw. Direktor"><marker>Direktor</marker></example>
     </rule>
     
     <rule id="Dirigent_sg" name="Dirigent">
@@ -7706,21 +7698,6 @@
         <example correction="Turnier|Wettbewerb"><marker>Meisterschaft</marker></example>
     </rule>
     
-    <rule id="Mensch_sg" name="Mensch">
-        <antipattern>
-		<token inflected="yes">analog</token>
-		<token inflected="yes">zur</token>
-		<token inflected="yes">PERSON</token>
-		</antipattern>
-        <pattern><token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes" >Mensch</token></pattern>
-        <message>
-        Mit dem generischen Maskulinum werden nicht alle Geschlechter gleichermaßen assoziiert. Vielleicht passt einer der folgenden neutralen Begriffe besser: 
-        <suggestion>analog zur PERSON]</suggestion>
-        </message>
-        <short>Generisches Maskulinum</short>
-        <example correction="Analog zur PERSON]"><marker>Mensch</marker></example>
-    </rule>
-    
     <rule id="Mentee_sg" name="Mentee">
         <antipattern>
 		<token inflected="yes">begleitete</token>
@@ -8912,21 +8889,6 @@
         </message>
         <short>Generisches Maskulinum</short>
         <example correction="Person, die für Frieden einsteht|Friedensengagierte Person"><marker>Pazifist</marker></example>
-    </rule>
-    
-    <rule id="Person_sg" name="Person">
-        <antipattern>
-		<token inflected="yes">analog</token>
-		<token inflected="yes">zur</token>
-		<token inflected="yes">MENSCH</token>
-		</antipattern>
-        <pattern><token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes" >Person</token></pattern>
-        <message>
-        Mit dem generischen Maskulinum werden nicht alle Geschlechter gleichermaßen assoziiert. Vielleicht passt einer der folgenden neutralen Begriffe besser: 
-        <suggestion>analog zur MENSCH]</suggestion>
-        </message>
-        <short>Generisches Maskulinum</short>
-        <example correction="Analog zur MENSCH]"><marker>Person</marker></example>
     </rule>
     
     <rule id="Personalentwickler_sg" name="Personalentwickler">
@@ -28566,20 +28528,6 @@ Kontrollfunktionen|Supervisorin bzw. Supervisor"><marker>Supervisor</marker></ex
     
     <rule id="Hauptcharakter_pl" name="Hauptcharakter">
         <antipattern>
-		<token inflected="yes">wer</token>
-		<token inflected="yes">dennoch</token>
-		<token inflected="yes">eine</token>
-		<token inflected="yes">Alternative</token>
-		<token inflected="yes">bevorzugt</token>
-		<token inflected="yes">,</token>
-		<token inflected="yes">kann</token>
-		<token inflected="yes">diese</token>
-		<token inflected="yes">hier</token>
-		<token inflected="yes">nutzen</token>
-		<token inflected="yes">:</token>
-		<token inflected="yes">Hauptfigur</token>
-		</antipattern>
-		<antipattern>
 		<token inflected="yes">Hauptperson</token>
 		</antipattern>
 		<antipattern>
@@ -28598,15 +28546,14 @@ Kontrollfunktionen|Supervisorin bzw. Supervisor"><marker>Supervisor</marker></ex
         <pattern><token inflected="yes" postag=".*:PLU:.*" postag_regexp="yes" >Hauptcharakter</token></pattern>
         <message>
         Mit dem generischen Maskulinum werden nicht alle Geschlechter gleichermaßen assoziiert. Vielleicht passt einer der folgenden neutralen Begriffe besser: 
-        <suggestion>wer dennoch eine Alternative bevorzugt, kann diese hier nutzen:] Hauptfigur</suggestion>,
-		<suggestion>Hauptperson</suggestion>,
+        <suggestion>Hauptperson</suggestion>,
 		<suggestion>Hauptfigur</suggestion>,
 		<suggestion>zentrale Gestalt</suggestion>,
 		<suggestion>Schlüsselfigur</suggestion>,
 		<suggestion>Titelrolle</suggestion>
         </message>
         <short>Generisches Maskulinum</short>
-        <example correction="Wer dennoch eine Alternative bevorzugt, kann diese hier nutzen:] Hauptfigur|Hauptperson|Hauptfigur|Zentrale Gestalt|Schlüsselfigur|Titelrolle"><marker>Hauptcharakter</marker></example>
+        <example correction="Hauptperson|Hauptfigur|Zentrale Gestalt|Schlüsselfigur|Titelrolle"><marker>Hauptcharakter</marker></example>
     </rule>
     
     <rule id="Herrschaften_pl" name="Herrschaften">
@@ -29822,20 +29769,6 @@ Kontrollfunktionen|Supervisorin bzw. Supervisor"><marker>Supervisor</marker></ex
     
     <rule id="Mitglieder_pl" name="Mitglieder">
         <antipattern>
-		<token inflected="yes">wer</token>
-		<token inflected="yes">dennoch</token>
-		<token inflected="yes">eine</token>
-		<token inflected="yes">Alternative</token>
-		<token inflected="yes">bevorzugt</token>
-		<token inflected="yes">,</token>
-		<token inflected="yes">kann</token>
-		<token inflected="yes">diese</token>
-		<token inflected="yes">hier</token>
-		<token inflected="yes">nutzen</token>
-		<token inflected="yes">:</token>
-		<token inflected="yes">Zugehörige</token>
-		</antipattern>
-		<antipattern>
 		<token inflected="yes">Angehörige</token>
 		</antipattern>
 		<antipattern>
@@ -29853,13 +29786,12 @@ Kontrollfunktionen|Supervisorin bzw. Supervisor"><marker>Supervisor</marker></ex
         <pattern><token inflected="yes" postag=".*:PLU:.*" postag_regexp="yes" >Mitglieder</token></pattern>
         <message>
         Mit dem generischen Maskulinum werden nicht alle Geschlechter gleichermaßen assoziiert. Vielleicht passt einer der folgenden neutralen Begriffe besser: 
-        <suggestion>wer dennoch eine Alternative bevorzugt, kann diese hier nutzen:] Zugehörige</suggestion>,
-		<suggestion>Angehörige</suggestion>,
+        <suggestion>Angehörige</suggestion>,
 		<suggestion>Teil von ... </suggestion>,
 		<suggestion>Mitglieder*innen</suggestion>
         </message>
         <short>Generisches Maskulinum</short>
-        <example correction="Wer dennoch eine Alternative bevorzugt, kann diese hier nutzen:] Zugehörige|Angehörige|Teil von ... |Mitglieder*innen"><marker>Mitglieder</marker></example>
+        <example correction="Angehörige|Teil von ... |Mitglieder*innen"><marker>Mitglieder</marker></example>
     </rule>
     
     <rule id="Moderatoren_pl" name="Moderatoren">
