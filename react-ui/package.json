@@ -36,7 +36,8 @@
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "office": "office-addin-debugging start manifest.xml web --document 'https://onedrive.live.com/edit.aspx?cid=b0822c6c08a2e09b&page=view&resid=B0822C6C08A2E09B!9238&parId=B0822C6C08A2E09B!8816&app=Word'",
-    "stop-office": "office-addin-debugging stop manifest.xml"
+    "stop-office": "office-addin-debugging stop manifest.xml",
+    "open-web": "explorer \"https://onedrive.live.com/edit.aspx?resid=B0822C6C08A2E09B!9238&wdaddindevserverport=3000&wdaddinmanifestfile=manifest.xml&wdaddinmanifestguid=72ce8f80-0fca-4808-8397-f2972f7e214c\""
   },
   "eslintConfig": {
     "extends": [
