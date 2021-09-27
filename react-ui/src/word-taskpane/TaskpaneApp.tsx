@@ -61,6 +61,7 @@ const clickHandler = async (
   if (isRunningInWord()) {
     await wordClickHandler(setLtMatches, setApplier);
   } else if (isRunningInOutlook()) {
+    await outlookClickHandler(setLtMatches, setApplier);
   } else {
     throw new Error("Unsupported host app");
   }
@@ -126,6 +127,65 @@ async function wordClickHandler(
       .then(() => console.debug(`replaced ${isMultiWordMatch ? "multi-word" : "single-word"} match`));
   };
   setApplier(() => newApplier);
+}
+
+async function outlookClickHandler(
+  setLtMatches: Dispatch<SetStateAction<RuleMatch[]>>,
+  setApplier: Dispatch<SetStateAction<ApplyReplacementFunction | undefined>>
+) {
+  const currentItem = Office.context.mailbox.item;
+  if (!currentItem) throw new Error("No item selected");
+  const { value: messageCoercionType } = await invokeAsPromise0(currentItem.body.getTypeAsync);
+  if (messageCoercionType === Office.CoercionType.Html) {
+    const { value: currentHtml } = await invokeAsPromise1(currentItem.body.getAsync, Office.CoercionType.Html);
+    // console.log("currentHtml", currentHtml);
+    const doc = new DOMParser().parseFromString(currentHtml, "text/html");
+    console.log("doc", doc);
+    const newHtml = new XMLSerializer().serializeToString(doc);
+    await invokeAsPromise2<string, Office.AsyncContextOptions & Office.CoercionTypeOptions, void>(
+      currentItem.body.setAsync,
+      newHtml,
+      { coercionType: Office.CoercionType.Html }
+    );
+  } else {
+    throw new Error("Unhandled message coercion type " + messageCoercionType);
+  }
+}
+
+function invokeAsPromise0<R>(
+  cbBaseFunc: (callback?: (asyncResult: Office.AsyncResult<R>) => void) => void
+): Promise<Office.AsyncResult<R>> {
+  return new Promise((resolve, reject) => {
+    cbBaseFunc((asyncResult) => {
+      switch (asyncResult.status) {
+        case Office.AsyncResultStatus.Succeeded: {
+          resolve(asyncResult);
+          break;
+        }
+        case Office.AsyncResultStatus.Failed: {
+          reject(asyncResult);
+          break;
+        }
+        default:
+          reject(new Error("Unknown AsyncResultStatus value " + asyncResult.status));
+      }
+    });
+  });
+}
+
+function invokeAsPromise1<T1, R>(
+  cbBaseFunc: (arg1: T1, callback?: (asyncResult: Office.AsyncResult<R>) => void) => void,
+  arg1: T1
+): Promise<Office.AsyncResult<R>> {
+  return invokeAsPromise0((cb) => cbBaseFunc(arg1, cb));
+}
+
+function invokeAsPromise2<T1, T2, R>(
+  cbBaseFunc: (arg1: T1, arg2: T2, callback?: (asyncResult: Office.AsyncResult<R>) => void) => void,
+  arg1: T1,
+  arg2: T2
+): Promise<Office.AsyncResult<R>> {
+  return invokeAsPromise0((cb) => cbBaseFunc(arg1, arg2, cb));
 }
 
 function findItemContainingOffset(
