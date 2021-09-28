@@ -1,0 +1,697 @@
+- type: basic
+  note: Refer to the person, rather than the disability, first.
+  considerate: person with learning disabilities
+  inconsiderate: learning disabled
+- type: basic
+  note: Refer to the person, rather than the disability, first.
+  considerate:
+    - turned off
+    - has a disability
+    - person with a disability
+    - people with disabilities
+  inconsiderate:
+    - disabled
+    - invalid
+- type: basic
+  source: https://ncdj.org/style-guide/
+  note: Assumes/implies that a person with a disability is deficient or inferior to others. When possible, specify the functional ability or its restriction.
+  considerate:
+    - has a disability
+    - person with a disability
+    - people with disabilities
+  inconsiderate:
+    - birth defect
+- type: basic
+  source: https://ncdj.org/style-guide/
+  note: Assumes that a person with a disability has a reduced quality of life.
+  considerate:
+    - has a disability
+    - person with a disability
+    - people with disabilities
+  inconsiderate:
+    - suffers from disabilities
+    - suffering from disabilities
+    - suffering from a disability
+    - afflicted with disabilities
+    - afflicted with a disability
+- type: basic
+  source: https://ncdj.org/style-guide/
+  note: Refer to the person, rather than the disability, first.
+  considerate:
+    - people with intellectual disabilities
+  inconsiderate:
+    - intellectually disabled people
+- type: basic
+  source: https://ncdj.org/style-guide/
+  note: Assumes that a person with an intellectual disability has a reduced quality of life.
+  considerate:
+    - person with an intellectual disability
+  inconsiderate:
+    - intellectually disabled
+    - has intellectual issues
+    - suffers from intellectual disabilities
+    - suffering from intellectual disabilities
+    - suffering from an intellectual disability
+    - afflicted with intellectual disabilities
+    - afflicted with a intellectual disability
+- type: basic
+  source: https://ncdj.org/style-guide/
+  note: Describe the behavior or illness without derogatory words.
+  considerate:
+    - rude
+    - malicious
+    - mean
+    - disgusting
+    - incredible
+    - vile
+    - person with symptoms of mental illness
+    - person with mental illness
+    - person with symptoms of a mental disorder
+    - person with a mental disorder
+  inconsiderate:
+    - batshit
+    - psycho
+    - crazy
+    - delirious
+    - insane
+    - insanity
+    - loony
+    - lunacy
+    - lunatic
+    - mentally ill
+    - psychopathology
+    - mental defective
+    - moron
+    - moronic
+    - nuts
+    - mental case
+    - mental
+- type: basic
+  note: Describe the behavior or illness without derogatory words.
+  considerate:
+    - incredibly
+  inconsiderate:
+    - insanely
+- type: basic
+  note: When describing a mathematical or programmatic value, using the word “sane” needlessly invokes the topic of mental health.  Consider using a domain-specific or neutral term instead.
+  considerate:
+    - correct
+    - adequate
+    - sufficient
+    - consistent
+    - valid
+    - coherent
+    - sensible
+    - reasonable
+  inconsiderate: sane
+- type: basic
+  note: When describing a mathematical or programmatic value, using the phrase “sanity check” needlessly invokes the topic of mental health.  Consider using simply “check”, or a domain-specific or neutral term, instead.
+  considerate:
+    - check
+    - assertion
+    - validation
+    - smoke test
+  inconsiderate: sanity check
+- type: basic
+  source: https://ncdj.org/style-guide/
+  note: Only use terms describing mental illness when referring to a professionally diagnosed medical condition.
+  considerate:
+    - fluctuating
+    - person with bipolar disorder
+  inconsiderate:
+    - bipolar
+- type: basic
+  source: https://ncdj.org/style-guide/
+  note: Only use terms describing mental illness when referring to a professionally diagnosed medical condition.
+  considerate:
+    - person with schizophrenia
+  inconsiderate:
+    - schizophrenic
+    - schizo
+- type: basic
+  source: https://ncdj.org/style-guide/
+  note: Assumes a person with schizophrenia experiences a reduced quality of life.
+  considerate:
+    - person with schizophrenia
+  inconsiderate:
+    - suffers from schizophrenia
+    - suffering from schizophrenia
+    - afflicted with schizophrenia
+    - manic
+- type: basic
+  source: https://ncdj.org/style-guide/
+  considerate: accessible parking
+  inconsiderate: handicapped parking
+- type: basic
+  source: https://ncdj.org/style-guide/
+  note: Refer to the person, rather than the disability, first.
+  considerate:
+    - person with a handicap
+    - accessible
+  inconsiderate: handicapped
+- type: basic
+  source: https://ncdj.org/style-guide/
+  note: Refer to the person, rather than the condition, first.
+  considerate: person with an amputation
+  inconsiderate: amputee
+- type: basic
+  note: Refer to the specific disability.
+  considerate: person with a limp
+  inconsiderate:
+    - cripple
+    - crippled
+    - gimp
+- type: basic
+  considerate: person with Down Syndrome
+  inconsiderate: mongoloid
+- type: basic
+  note: Refer to the person, rather than the condition, first.
+  considerate: individual who has had a stroke
+  inconsiderate:
+    - stroke victim
+    - suffering from a stroke
+    - victim of a stroke
+- type: basic
+  considerate: person who has multiple sclerosis
+  inconsiderate:
+    - suffers from multiple sclerosis
+    - suffering from multiple sclerosis
+    - victim of multiple sclerosis
+    - multiple sclerosis victim
+    - afflicted with multiple sclerosis
+- type: basic
+  source: https://ncdj.org/style-guide
+  note: Refer to a person's condition as a state, not as an affliction.
+  considerate: person who has muscular dystrophy
+  inconsiderate:
+    - suffers from muscular dystrophy
+    - afflicted with muscular dystrophy
+    - suffers from MD
+    - afflicted with MD
+- type: basic
+  considerate: with family support needs
+  inconsiderate: family burden
+- type: basic
+  considerate:
+    - psychiatric hospital
+    - mental health hospital
+  inconsiderate:
+    - asylum
+- type: basic
+  considerate:
+    - chaos
+    - hectic
+    - pandemonium
+  inconsiderate:
+    - bedlam
+    - madhouse
+    - loony bin
+- type: basic
+  source: https://media.specialolympics.org/soi/files/press-kit/2014_FactSheet_Final.pdf
+  considerate:
+    - Down Syndrome
+  inconsiderate:
+    - downs syndrome
+- type: basic
+  considerate:
+    - silly
+    - dullard
+    - person with Down Syndrome
+    - person with developmental disabilities
+    - delay
+    - hold back
+  inconsiderate:
+    - retard
+    - retarded
+    - short bus
+- type: basic
+  considerate:
+    - sillies
+    - dullards
+    - people with developmental disabilities
+    - people with Down’s Syndrome
+    - delays
+    - holds back
+  inconsiderate: retards
+- type: basic
+  note: Only use terms describing mental illness when referring to a professionally diagnosed medical condition.
+  considerate:
+    - person with a psychotic condition
+    - person with psychosis
+  inconsiderate:
+    - psychotic
+    - suffers from psychosis
+    - suffering from psychosis
+    - afflicted with psychosis
+    - victim of psychosis
+- type: basic
+  source: https://ncdj.org/style-guide/
+  considerate:
+    - boring
+    - dull
+  inconsiderate: lame
+- type: basic
+  considerate:
+    - person with AIDS
+  inconsiderate:
+    - suffering from aids
+    - suffer from aids
+    - suffers from aids
+    - afflicted with aids
+    - victim of aids
+    - aids victim
+- type: basic
+  considerate:
+    - uses a wheelchair
+  inconsiderate:
+    - confined to a wheelchair
+    - bound to a wheelchair
+    - restricted to a wheelchair
+    - wheelchair bound
+- type: basic
+  source: https://media.specialolympics.org/soi/files/press-kit/2014_FactSheet_Final.pdf
+  note: When possible, use the exact discipline of sport.
+  considerate:
+    - athletes
+    - Special Olympics athletes
+  inconsiderate:
+    - special olympians
+    - special olympic athletes
+- type: basic
+  source: https://ncdj.org/style-guide/
+  note: Can imply that people with disabilities lack the ability to use their bodies well. Sometimes `typical` can be used.
+  considerate:
+    - non-disabled
+  inconsiderate:
+    - ablebodied
+- type: basic
+  source: https://ncdj.org/style-guide/
+  note: Addiction is a neurobiological disease.
+  considerate:
+    - person with a drug addiction
+    - person recovering from a drug addiction
+  inconsiderate:
+    - addict
+    - junkie
+- type: basic
+  source: https://ncdj.org/style-guide/
+  note: Addiction is a neurobiological disease.
+  considerate:
+    - people with a drug addiction
+    - people recovering from a drug addiction
+  inconsiderate:
+    - addicts
+    - junkies
+- type: basic
+  source: https://ncdj.org/style-guide/
+  note: Alcoholism is a neurobiological disease.
+  considerate:
+    - someone with an alcohol problem
+  inconsiderate:
+    - alcoholic
+    - alcohol abuser
+- type: basic
+  source: https://ncdj.org/style-guide/
+  considerate:
+    - deaf
+  inconsiderate:
+    - deaf and dumb
+    - deafmute
+- type: basic
+  source: https://ncdj.org/style-guide/
+  considerate:
+    - person with dementia
+  inconsiderate:
+    - demented
+    - senile
+- type: basic
+  source: https://ncdj.org/style-guide/
+  considerate:
+    - sad
+    - blue
+    - bummed out
+    - person with seasonal affective disorder
+    - person with psychotic depression
+    - person with postpartum depression
+  inconsiderate:
+    - depressed
+- type: basic
+  source:
+    - https://ncdj.org/style-guide/
+    - https://www.lpaonline.org/faq-#Midget
+  considerate:
+    - person with dwarfism
+    - little person
+    - little people
+    - LP
+    - person of short stature
+  inconsiderate:
+    - vertically challenged
+    - midget
+    - small person
+    - dwarf
+- type: basic
+  source: https://ncdj.org/style-guide/
+  considerate:
+    - person with dyslexia
+  inconsiderate:
+    - dyslexic
+- type: basic
+  source: https://ncdj.org/style-guide/
+  considerate:
+    - person with epilepsy
+  inconsiderate:
+    - epileptic
+- type: basic
+  source: https://ncdj.org/style-guide/
+  note: When possible, ask the person what they prefer.
+  considerate:
+    - hard of hearing
+    - partially deaf
+    - partial hearing loss
+    - deaf
+  inconsiderate:
+    - hearing impaired
+    - hearing impairment
+- type: basic
+  source: https://ncdj.org/style-guide/
+  considerate:
+    - polio
+    - person who had polio
+  inconsiderate:
+    - infantile paralysis
+    - suffers from polio
+    - suffering from polio
+    - suffering from a polio
+    - afflicted with polio
+    - afflicted with a polio
+    - victim of polio
+- type: basic
+  source: https://ncdj.org/style-guide/
+  considerate:
+    - sustain an injury
+    - receive an injury
+  inconsiderate:
+    - suffer from an injury
+    - suffers from an injury
+    - suffering from an injury
+    - afflicted with an injury
+    - victim of an injury
+- type: basic
+  source: https://ncdj.org/style-guide/
+  considerate:
+    - sustain injuries
+    - receive injuries
+  inconsiderate:
+    - suffer from injuries
+    - suffers from injuries
+    - suffering from injuries
+    - afflicted with injuries
+    - victim of injuries
+- type: basic
+  source: https://ncdj.org/style-guide/
+  considerate:
+    - person with paraplegia
+  inconsiderate:
+    - paraplegic
+- type: basic
+  source: https://ncdj.org/style-guide/
+  considerate:
+    - person with quadriplegia
+  inconsiderate:
+    - quadriplegic
+- type: basic
+  source: https://ncdj.org/style-guide/
+  considerate:
+    - person with cerebral palsy
+    - twitch
+    - flinch
+    - hectic
+  inconsiderate:
+    - spaz
+- type: basic
+  source: https://ncdj.org/style-guide/
+  considerate:
+    - person with cerebral palsy
+    - twitch
+    - flinch
+  inconsiderate:
+    - spastic
+- type: basic
+  source: https://ncdj.org/style-guide/
+  considerate:
+    - stuttering
+    - disfluency of speech
+  inconsiderate:
+    - stammering
+- type: basic
+  source: https://ncdj.org/style-guide/
+  considerate:
+    - person who stutters
+  inconsiderate:
+    - stutterer
+- type: basic
+  source: https://ncdj.org/style-guide/
+  considerate:
+    - Tourette syndrome
+  inconsiderate:
+    - tourettes syndrome
+    - tourettes disorder
+- type: basic
+  source: https://ncdj.org/style-guide/
+  considerate:
+    - treatment center
+  inconsiderate:
+    - rehab center
+    - detox center
+- type: basic
+  source: https://ncdj.org/style-guide/
+  considerate:
+    - treatment
+  inconsiderate:
+    - rehab
+    - detox
+- type: basic
+  source: https://ncdj.org/style-guide/
+  note: Only use terms describing mental illness when referring to a professionally diagnosed medical condition.
+  considerate:
+    - person with a personality disorder
+    - person with psychopathic personality
+  inconsiderate:
+    - sociopath
+- type: basic
+  source: https://ncdj.org/style-guide/
+  note: Only use terms describing mental illness when referring to a professionally diagnosed medical condition.
+  considerate:
+    - people with psychopathic personalities
+    - people with a personality disorder
+  inconsiderate:
+    - sociopaths
+- type: basic
+  source: https://www.autistichoya.com/p/ableist-words-and-terms-to-avoid.html
+  note: Dumb here is used in 2 different contexts , the inability to talk or as a curse word.
+  considerate:
+    - foolish
+    - ludicrous
+    - speechless
+    - silent
+  inconsiderate:
+    - dumb
+- type: basic
+  source: http://www.mmonjejr.com/2014/02/deconstructing-stupid.html
+  considerate:
+    - foolish
+    - ludicrous
+    - unintelligent
+  inconsiderate:
+    - simpleton
+    - stupid
+    - wacko
+    - whacko
+    - low iq
+- type: basic
+  considerate:
+    - fit of terror
+    - scare
+  inconsiderate:
+    - panic attack
+- type: basic
+  considerate:
+    - thin
+    - slim
+  inconsiderate:
+    - anorexic
+    - bony
+- type: basic
+  source: https://english.stackexchange.com/questions/247550/
+  note: Only use terms describing mental illness when referring to a professionally diagnosed medical condition.
+  considerate:
+    - has an anxiety disorder
+    - obsessive
+    - pedantic
+    - niggly
+    - picky
+  inconsiderate:
+    - neurotic
+    - ocd
+    - o.c.d
+    - o.c.d.
+- type: basic
+  considerate:
+    - restlessness
+    - sleeplessness
+  inconsiderate:
+    - insomnia
+- type: basic
+  considerate:
+    - person who has insomnia
+  inconsiderate:
+    - insomniac
+- type: basic
+  considerate:
+    - people who have insomnia
+  inconsiderate:
+    - insomniacs
+- type: basic
+  source: https://www.autistichoya.com/p/ableist-words-and-terms-to-avoid.html
+  considerate:
+    - empty
+    - sterile
+    - infertile
+  inconsiderate:
+    - barren
+- type: basic
+  source: https://www.autistichoya.com/p/ableist-words-and-terms-to-avoid.html
+  considerate:
+    - careless
+    - heartless
+    - indifferent
+    - insensitive
+  inconsiderate:
+    - blind to
+    - blind eye to
+    - blinded by
+    - deaf to
+    - deaf ear to
+    - deafened by
+- type: basic
+  source: https://www.autistichoya.com/p/ableist-words-and-terms-to-avoid.html
+  considerate:
+    - creep
+    - fool
+  inconsiderate:
+    - cretin
+- type: basic
+  source: https://www.autistichoya.com/p/ableist-words-and-terms-to-avoid.html
+  considerate:
+    - absurd
+    - foolish
+  inconsiderate:
+    - daft
+- type: basic
+  source: https://www.autistichoya.com/p/ableist-words-and-terms-to-avoid.html
+  considerate:
+    - foolish
+    - ludicrous
+    - silly
+  inconsiderate:
+    - feebleminded
+    - feeble minded
+    - idiot
+    - imbecile
+- type: basic
+  source: https://www.autistichoya.com/p/ableist-words-and-terms-to-avoid.html
+  note: Sometimes it's cleft lip or palate, not both. Specify when possible.
+  considerate:
+    - person with a cleft-lip and palate
+  inconsiderate:
+    - harelipped
+    - cleftlipped
+- type: basic
+  source: https://www.autistichoya.com/p/ableist-words-and-terms-to-avoid.html
+  considerate:
+    - cleft-lip and palate
+  inconsiderate:
+    - harelip
+    - hare lip
+- type: basic
+  source: https://www.autistichoya.com/p/ableist-words-and-terms-to-avoid.html
+  considerate:
+    - fanatic
+    - zealot
+    - enthusiast
+  inconsiderate:
+    - maniac
+- type: basic
+  considerate:
+    - person with prominent teeth
+    - prominent teeth
+  inconsiderate:
+    - bucktoothed
+    - buckteeth
+- type: basic
+  source:
+    - http://cdrnys.org/blog/disability-dialogue/the-disability-dialogue-4-disability-euphemisms-that-need-to-bite-the-dust/
+    - https://www.autistichoya.com/p/ableist-words-and-terms-to-avoid.html
+  note: Euphemisms for disabilities can be infantilizing.
+  considerate:
+    - has a disability
+    - person with a disability
+    - people with disabilities
+  inconsiderate:
+    - challenged
+    - diffability
+    - differently abled
+    - handicapable
+    - special
+    - special needs
+    - specially abled
+- type: basic
+  source: https://www.autistichoya.com/p/ableist-words-and-terms-to-avoid.html
+  considerate:
+    - disagreeable
+    - uneducated
+    - ignorant
+    - naive
+    - inconsiderate
+  inconsiderate:
+    - fucktard
+    - libtard
+    - contard
+- type: basic
+  considerate:
+    - disorganized
+    - distracted
+    - energetic
+    - hyperactive
+    - impetuous
+    - impulsive
+    - inattentive
+    - restless
+    - unfocused
+  inconsiderate:
+    # Upper case to only match `ADD`, not `add`.
+    - ADD
+    - adhd
+    - a.d.d.
+    - a.d.h.d.
+- type: basic
+  note: Dummy can refer to the inability to talk or be used as a derogatory word meaning stupid. In computer programming it is used where a value or behavior is unimportant. There are better alternatives for other use cases also.
+  considerate:
+    - test double
+    - placeholder
+    - fake
+    - stub
+  inconsiderate:
+    - dummyvariable
+    - dummyvalue
+    - dummyobject
+    - dummy
+- type: basic
+  note: Binge might be insensitive towards folks with eating or drinking disorders
+  source: https://github.com/retextjs/retext-equality/issues/110
+  considerate:
+    - enthusiastic
+    - spree
+  inconsiderate:
+    - binge

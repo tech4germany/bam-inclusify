@@ -1,0 +1,356 @@
+- type: basic
+  note: Avoid using the term `master`; these suggestions are for the computer term, but there are better alternatives for other cases too
+  considerate:
+    - primary
+    - hub
+    - reference
+  inconsiderate:
+    - master
+- type: basic
+  note: Avoid using the term `master`; these suggestions are for the computer term, but there are better alternatives for other cases too
+  considerate:
+    - primaries
+    - hubs
+    - references
+  inconsiderate:
+    - masters
+- type: basic
+  considerate:
+    - Inuit
+  inconsiderate:
+    - eskimo
+- type: basic
+  considerate:
+    - Inuits
+  inconsiderate:
+    - eskimos
+- type: basic
+  considerate:
+    - Asian person
+  inconsiderate:
+    - oriental
+- type: basic
+  considerate:
+    - Asian people
+  inconsiderate:
+    - orientals
+- type: basic
+  considerate:
+    - person of color
+    - people of color
+  inconsiderate:
+    - nonwhite
+    - non white
+- type: basic
+  considerate:
+    - projects
+    - urban
+  inconsiderate:
+    - ghetto
+- type: basic
+  considerate:
+    - Native American
+  inconsiderate:
+    - red indian
+    - pocahontas
+    - redskin
+- type: basic
+  considerate:
+    - Native American People
+  inconsiderate:
+    - red indians
+    - redskins
+- type: basic
+  inconsiderate:
+    - animal spirit
+    - dream catcher
+    - spirit animal
+    - totem
+  note: Avoid using terms that oversimplify the complex and varied beliefs of indigenous religions.
+  source:
+    - https://www.worldreligionnews.com/opinion/spirit-animal-not-joke-oppression
+    - https://www.spiralnature.com/spirituality/spirit-animal-cultural-appropriation
+  considerate:
+    - favorite
+    - inspiration
+    - personal interest
+    - personality type
+- type: basic
+  inconsiderate:
+    - long time no hear
+    - long time no see
+  note: Avoid using phrases that implicitly mock people with limited knowledge of the English language.
+  source: https://www.npr.org/sections/codeswitch/2014/03/09/288300303/who-first-said-long-time-no-see-and-in-which-language
+  considerate:
+    - I haven’t seen you in a long time
+    - it’s been a long time
+- type: basic
+  inconsiderate:
+    - Indian country
+  note: Avoid using phrases referring to the genocidal United States “Indian Removal” laws.
+  source:
+    - https://newsmaven.io/indiancountrytoday/archive/off-the-reservation-a-teachable-moment-nW1d7U0JRkOszhtg8N1V1A/
+  considerate:
+    - enemy territory
+- type: basic
+  inconsiderate:
+    - jump the reservation
+    - off reserve
+    - off the reservation
+  note: Avoid using phrases referring to the genocidal United States “Indian Removal” laws.
+  source:
+    - http://blog.nativepartnership.org/off-the-reservation/
+    - https://www.wsj.com/articles/off-the-reservation-is-a-phrase-with-a-dark-past-1462552837
+    - https://www.npr.org/sections/codeswitch/2014/06/29/326690947/should-saying-someone-is-off-the-reservation-be-off-limits
+    - https://nowtoronto.com/news/native-references-and-terms-that-are-offensive-to-indigenous-people/
+  considerate:
+    - disobey
+    - endure
+    - object to
+    - oppose
+    - resist
+- type: basic
+  inconsiderate:
+    - circle the wagons
+    - on the warpath
+  note: Avoid using phrases referring to colonial stereotypes regarding Native Americans.
+  source:
+    - https://idioms.thefreedictionary.com/circle+the+wagons
+    - https://idioms.thefreedictionary.com/go+on+the+warpath
+  considerate:
+    - defend
+- type: basic
+  inconsiderate:
+    - too many chiefs
+  note: Avoid using phrases referring to colonial stereotypes regarding Native Americans.
+  source:
+    - https://idioms.thefreedictionary.com/too+many+chiefs+and+not+enough+Indians
+  considerate:
+    - too many chefs in the kitchen
+    - too many cooks spoil the broth
+- type: basic
+  inconsiderate:
+    - natives are restless
+    - natives are becoming restless
+    - natives are getting restless
+    - natives are growing restless
+  note: Avoid using phrases referring to colonial stereotypes regarding indigenous peoples.
+  source:
+    - https://tvtropes.org/pmwiki/pmwiki.php/Main/TheNativesAreRestless
+  considerate:
+    - dissatisfied
+    - frustrated
+- type: basic
+  inconsiderate:
+    - pow wow
+    - powwow
+  note: Avoid casually using this term, which refers to traditional indigenous celebration ceremonies that were banned by genocidal laws in the United States and Canada — Native people died fighting for this right.
+  source:
+    - https://twitter.com/chadloder/status/1203507070772793345
+    - http://nativeappropriations.com/2012/09/paul-frank-offends-every-native-person-on-the-planet-with-fashion-night-out-dream-catchin-pow-wow.html
+    - https://www.britannica.com/topic/powwow
+    - https://nowtoronto.com/news/native-references-and-terms-that-are-offensive-to-indigenous-people/
+  considerate:
+    - conference
+    - gathering
+    - meeting
+- type: basic
+  note: Avoid using phrases referring to colonial stereotypes regarding Native Americans.
+  considerate:
+    - go back on one’s offer
+  inconsiderate:
+    - indian give
+    - indian giver
+- type: basic
+  considerate:
+    - Filipinos
+    - Filipino people
+  inconsiderate:
+    - pinoys
+    - pinays
+- type: basic
+  considerate:
+    - Arabs
+    - Middle Eastern People
+  inconsiderate:
+    - sand niggers
+    - towel heads
+- type: basic
+  note: Whenever possible, try to be gender inclusive.
+  considerate:
+    - Latinx
+  inconsiderate:
+    - latino
+    - latina
+    - mexican
+- type: basic
+  considerate:
+    - Japanese person
+    - Japanese people
+  inconsiderate:
+    - japs
+- type: basic
+  considerate:
+    - Jewish person
+  inconsiderate:
+    - shlomo
+    - shyster
+    - hymie
+- type: basic
+  considerate:
+    - a person who is not Jewish
+    - not Jewish
+  inconsiderate:
+    - goyim
+    - goyum
+    - goy
+- type: basic
+  considerate:
+    - a Black person
+  inconsiderate:
+    - spade
+- type: basic
+  source: en.wikipedia.org/wiki/Romani_people#cite_ref-80
+  note: Gypsy is insensitive, use Roma or Romani. They’re not Egyptian as the name suggests.
+  considerate:
+    - Nomad
+    - Traveler
+    - Roma
+    - Romani
+  inconsiderate:
+    - gyppo
+    - gypsy
+    - Gipsy
+    - gyp
+- type: basic
+  note: Replace racially-charged language with more accurate and inclusive words
+  considerate:
+    - blocklist
+    - wronglist
+    - banlist
+    - deny list
+  inconsiderate:
+    - blacklist
+    - black list
+- type: basic
+  note: Replace racially-charged language with more accurate and inclusive words
+  considerate:
+    - blocklisted
+    - wronglisted
+    - banlisted
+    - deny-listed
+  inconsiderate:
+    - blacklisted
+- type: basic
+  note: Replace racially-charged language with more accurate and inclusive words
+  considerate:
+    - blocklisting
+    - wronglisting
+    - banlisting
+    - deny-listing
+  inconsiderate:
+    - blacklisting
+- type: basic
+  note: Replace racially-charged language with more accurate and inclusive words
+  considerate:
+    - passlist
+    - alrightlist
+    - safelist
+    - allow list
+  inconsiderate:
+    - whitelist
+    - white list
+- type: basic
+  note: Replace racially-charged language with more accurate and inclusive words
+  considerate:
+    - passlisted
+    - alrightlisted
+    - safelisted
+    - allow-listed
+  inconsiderate:
+    - whitelisted
+- type: basic
+  note: Replace racially-charged language with more accurate and inclusive words
+  considerate:
+    - passlisting
+    - alrightlisting
+    - safelisting
+    - allow-listing
+  inconsiderate:
+    - whitelisting
+- type: basic
+  note: Replace racially-charged language with more accurate and inclusive words
+  considerate:
+    - space
+    - blank
+  inconsiderate:
+    - whitespace
+    - white space
+- type: basic
+  note: Replace racially-charged language with more accurate and inclusive words
+  considerate:
+    - space
+    - blank
+  inconsiderate:
+    - whitespaces
+    - white spaces
+- type: basic
+  note: Avoid using terms that imply a group has not changed over time and that they are inferior
+  considerate:
+    - simple
+    - indigenous
+    - hunter-gatherer
+  inconsiderate:
+    - primitive
+    - savage
+    - stone age
+- type: basic
+  note: Avoid using terms that make some groups sound inferior
+  considerate:
+    - society
+    - community
+  inconsiderate:
+    - tribe
+- type: basic
+  note: Avoid using terms that make some groups sound inferior. Replace “sophisticated” with a neutral term such as “complex”
+  considerate:
+    - complex culture
+  inconsiderate:
+    - sophisticated culture
+- type: basic
+  note: Avoid using terms that make some groups sound inferior. Replace “sophisticated” with a neutral term such as “complex”
+  considerate:
+    - complex technology
+  inconsiderate:
+    - sophisticated technology
+- type: basic
+  note: Avoid using `bugreport`, as the word `bugre` is a slur in Brazilian Portuguese
+  considerate:
+    - bug report
+    - snapshot
+  inconsiderate:
+    - bugreport
+- type: basic
+  source: https://en.wikipedia.org/wiki/Grandfather_clause#Origin
+  note: Avoid using phrases referring to racist United States “Jim Crow” laws.
+  considerate:
+    - legacy policy
+    - legacy clause
+    - deprecation policy
+  inconsiderate:
+    - grandfather clause
+    - grandfather policy
+- type: basic
+  source: https://en.wikipedia.org/wiki/Grandfather_clause#Origin
+  note: Avoid using phrases referring to racist United States “Jim Crow” laws.
+  considerate:
+    - deprecate
+  inconsiderate:
+    - grandfathering
+- type: basic
+  source: https://en.wikipedia.org/wiki/Grandfather_clause#Origin
+  note: Avoid using phrases referring to racist United States “Jim Crow” laws.
+  considerate:
+    - deprecated
+  inconsiderate:
+    - grandfathered

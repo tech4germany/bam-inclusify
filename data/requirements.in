@@ -8,6 +8,7 @@ notebook
 nbqa
 openpyxl
 pandas
+pyyaml
 requests
 types-requests
 spacy
