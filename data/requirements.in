@@ -3,10 +3,13 @@ ipykernel
 ipython-cache
 jupyter
 matplotlib
+mypy
 notebook
+nbqa
 openpyxl
 pandas
 requests
+types-requests
 spacy
 wayback
 https://github.com/explosion/spacy-models/releases/download/de_core_news_sm-3.1.0/de_core_news_sm-3.1.0.tar.gz

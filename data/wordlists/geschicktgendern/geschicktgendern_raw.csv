@@ -1,4 +1,5 @@
 ungendered,gendered
+"<div id=""A""><b>A</b><div>",
 Abbrecherquote,Abbruchquote
 Abenteurer (sg.),Waghals; abenteuerliebende Person; abenteuerlustige Person; abenteuermutige Person; Abenteuermensch
 Abgänger,absolvierende Person; Abschluss innehabende Person
@@ -186,6 +187,7 @@ Autohersteller (pl.),Automobilkonzerne; Autoherstellende; Autobauende
 Autor,bücherschreibende Person
 Autoren ,"Autorenschaft; Urheberrechtsinhabende; Verfassende; Schreibende; Literaturschaffende; wissenschaftlich Publizierende; <div class=""tooltip"">Auktorierende [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]<span class=""tooltiptext"">Erläuterung eines Users: 'Autor' kommt von lat. 'Auktor' und meinte  historisch v.a. den sozialen Akt des Verbürgens gegenüber Individuen oder einem Kollektiv. Spricht man von 'Schreibenden', fehlt der Aspekt des Sprechakts des Schreibens bzw. Veröffentlichens.</span> </div>"
 Azubi,Nachwuchskraft; Person in Ausbildung; auszubildende Person; lernende Person
+"<div id=""B""><b>B</b><div>",
 Babysitter (sg.),Aufsichtsperson; babysittende Person; Kinderbetreuung
 Babysitter (pl.),Babysittende
 Bachelor of ... ,B.A. / B. Sc. / ... 
@@ -338,6 +340,7 @@ Bürgerzentrum,Kulturzentrum; Stadtteilzentrum; selbstverwaltetes Zentrum
 Bürokrat,bürokratische Person; bürokratisch veranlagte Person
 Busfahrer (sg.),Busführung; busführende Person; Busfahrpersonal; Buspersonal
 ... Die Reise wird von den Busfahrern Frau Schulz und Herr Meier begleitet.,... Während der Reise haben Frau Schulz und Herr Meier die Busführung. / ... Während der Reise fahren Frau Schulz und Herr Meier den Bus.
+"<div id=""C""><b>C</b><div>",
 Callcenter Agent,telefonische Beratung der Kundschaft
 Callcenteroperator,Callcenteroperierende Person
 Callcenteroperatoren (pl.),Callcenteroperierende
@@ -360,6 +363,7 @@ Chorleiter (pl.),Chorleitende; Chorleitungen
 Coach,Begleitung; Beratung; coachende Person
 Coder,codende Person
 Cousins,Geschwister 2. Grades
+"<div id=""D""><b>D</b><div>",
 Damenfahrrad,Trapezrahmenfahrrad; Fahrrad mit tiefem Einstieg
 damenhaft,fein
 Damenprogramm,Begleitprogramm
@@ -410,6 +414,7 @@ Drachenlord,herrschende Drachenperson
 Dritter,dritte Person
 "... Gibt es einen Konflikt zwischen zwei WG-Bewohnern, kann die Unterstützung durch einen Dritten hilfreich sein.","... Gibt es einen Konflikt zwischen zwein in der WG, kann die Unterstützung einer dritten Person hilfreich sein."
 ... jeder Dritte,... ein Drittel
+"<div id=""E""><b>E</b><div>",
 Editor,herausgebende Person
 Ehegatte,die Ehe teilende Person; Ehemensch; Eheherzperson; Herzmensch; 
 Ehegatten,Eheleute
@@ -499,6 +504,7 @@ Expertentum,Expertise
 Expertenvortrag,Fachvortrag
 Expertenwissen,Fachwissen; Expertise
 Extremist,radikalisierte Person
+"<div id=""F""><b>F</b><div>",
 Facharbeiter (pl.),Facharbeitende
 Facharzt,(fach-)ärztliche Fachkraft; Fachpraxis
 Facharztrichtung,medizinische Fachrichtung
@@ -599,6 +605,7 @@ Fußgängerstreifen,Zebrastreifen; Straßenpassierstreifen
 Fußgängerüberweg,Überquerung
 Fußgängerweg,Gehweg
 Fußgängerzone,"Flanierzone; Einkaufsstraße; Einkaufszone; verkehrsfreie Zone; <div class=""tooltip"">verkehrsberuhigter Bereich [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]<span class=""tooltiptext"">verkehrsrechtlich nicht identisch mit ""Fußgängerzone""; werden mit unterschiedlichen Verkehrsschildern ausgewiesen</span> </div>"
+"<div id=""G""><b>G</b><div>",
 Gaffer (pl.),Schaulustige
 Gamer (pl.),Gaming People
 Gärtner,Gartenarbeitskraft
@@ -672,6 +679,7 @@ Gutachter (sg.),begutachtet von ...
 Gutachter (pl.),Sachverständige; Begutachtende
 Gymnasiast,Person auf einem Gymnasium; ein Gymnasium besuchende Person; gymnasial lernende Person
 Gynäkologe,medizinisches/ärztliches Fachpersonal für Gynäkologie
+"<div id=""H""><b>H</b><div>",
 Hacker (pl.),"Personen, die fremde Digitaldaten nutzen; Hackende; umfunktionierende Personen; Cyber-Kriminelle <a href=""https://geschicktgendern.de/kontakt""> weitere Alternativen gesucht: senden Sie Ihren Vorschlag über das Kontaktformular (klick) </a>"
 Hackerangriff,Hackingangriff; Hackangriff
 Hamburger (pl.),die Hamburger Bevölkerung
@@ -733,6 +741,7 @@ Hospizler,"<a href=""https://geschicktgendern.de/kontakt""> noch kein passender 
 Hostessen; Hosts,"<div class=""tooltip"">Gästebetreuende [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]<span class=""tooltiptext"">siehe Anmerkung unter 'Gäste'</span> </div>"
 Humanist,humanistische Person
 Hundehalter (sg.),"Person, die einen Hund hält"
+"<div id=""I""><b>I</b><div>",
 Ich-Erzähler,Ich-Form; Ich-Figur; erzählendes Ich
 Illustrator,illustrierende Person
 Illustratoren,Illustrierende
@@ -776,6 +785,7 @@ Interviewpartner (pl.),Interviewte; Befragte
 Investor,"geldgebende Person; Person, die Geld investiert hat; investierende Person"
 Investoren,Investierende
 Italiener,aus Italien stammende Person; Person aus Italien
+"<div id=""J""><b>J</b><div>",
 Jäger (sg.),jagende Person; Person auf der Jagd
 Jäger (pl.),Jägerschaft; jagende Personen; Personen auf der Jagd
 Jäger- und Sammler-Gesellschaft,"nomadisierende Gesellschaft, die sich von der Jagd und dem Sammeln von Pflanzen ernährt"
@@ -800,6 +810,7 @@ jungfräulich,unangetastet; makellos; unberührt; unverändert; ursprünglich; r
 Jurist,Person mit juristischer Ausbildung; Person mit juristischem Sachverstand
 Juror,Jurymitglied
 Justiziar,"<a href=""https://geschicktgendern.de/kontakt""> noch kein passender Begriff gefunden; senden Sie Ihren Vorschlag über das Kontaktformular (klick) </a>"
+"<div id=""K""><b>K</b><div>",
 Kamerad [militärisch],Wegbegleitung; solidarisch wegbegleitende Person; Teammitglied
 Kameramann,Kameraperson; Kamera
 Kameramänner,Kamerateam; Kameraleute; Kamera; Kamerapersonen
@@ -938,6 +949,7 @@ Kursleiter (sg.),Kursleitung; kursleitende Person
 Kursteilnehmer (sg.),am Kurs teilnehmende Person
 Kursteilnehmer (pl.),Kursteilnehmende; am Kurs Teilnehmende
 Kurzarbeitergeld,Kurzarbeitsgeld
+"<div id=""L""><b>L</b><div>",
 Laborant,Laborfachkraft
 Laborarbeiter (sg.),Laborfachkraft
 Lagerist,Lagerfachkraft; im Lager arbeitende Person
@@ -996,6 +1008,7 @@ Literaturkritiker (pl.),Literaturkritisierende
 Lizenznehmer (pl.),Lizenznehmende
 Lobbyist,Interessen vertretende Person
 Logopäde,(medizinische) Fachkraft für Logopädie
+"<div id=""M""><b>M</b><div>",
 Macher (pl.),Aktive
 Mädchen für alles,Mensch für alles
 Mädchenname,Geburtsname
@@ -1138,6 +1151,7 @@ Mutterschutz,"<div class=""tooltip"">Elternschutz [themify_icon icon=""fas fa-in
 Muttersprache,"Erstsprache; erste Sprache; Hauptsprache; Elternsprache; <div class=""tooltip"">Familiensprache; Heimatsprache[themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]<span class=""tooltiptext"">Feedback eines Users: Aus der zuerst erlernten Sprache kann man nicht folgern, welches Land eine Person als Heimat empfindet (Kind wächst in Deutschland auf, lernt zu Hause aber erst polnisch, dann deutsch). 'Heimatsprache' kann daher irreführend sein. In internationalen Familie können viele Sprachen gesprochen werden. 'Familiensprache' suggeriert, dass in Familien immer nur eine Sprache gesprochen wird.</span> </div>"
 Muttersprachler,"Person mit der Erstsprache XYZ; Person, die XYZ als Erstsprache spricht; xyz-erstsprachliche Person (z.B. polnisch-erstsprachliche Person)"
 ... Für diese Stelle suchen wir einen englischen Muttersprachler. ,"... Für diese Stelle suchen wir eine Englisch-erstsprechende Person. / Für diese Stelle suchen wir eine Person, deren erste Sprache Englisch ist."
+"<div id=""N""><b>N</b><div>",
 Nachahmer (pl.),Menschen; andere; Menschen gleicher Gesinnung
 "... Er tat es, um Nachahmer zu ähnlichen Taten anzustiften.","... Er tat es, um andere zu ähnlichen Taten anzustiften."
 Nachbarn,nebenan Wohnende
@@ -1181,6 +1195,7 @@ Nutzerhandbuch,Handbuch; Nutzungshandbuch
 Nutzerkonto,Account; Konto; Zugang
 nutzerorientiert,menschzentriert; nutzungsfreundlich; nutzungsorientiert
 Nutzerzufriedenheit,Zufriedenheit mit der Nutzung; Bedienzufriedenheit
+"<div id=""O""><b>O</b><div>",
 Oberarzt,ärztliche Führungskraft; fachärztliche Leitung
 Oberbürgermeister,Stadtoberhaupt
 Obmann,Obmensch; schiedsrichtende Person
@@ -1193,6 +1208,7 @@ Organisatoren,Organisation; Organisationsteam/-komitee; organisiert von ...; Org
 Organspender (pl.),Organ Spendende; Organ spendende Personen
 Orthopädietechniker,"<a href=""https://geschicktgendern.de/kontakt""> noch kein passender Begriff gefunden; senden Sie Ihren Vorschlag über das Kontaktformular (klick) </a>"
 Otto Normalverbraucher,Durchschnittsmensch
+"<div id=""P""><b>P</b><div>",
 Pächter (sg.),pachtende Person
 Pädagoge,pädagogische Fachkraft
 Paketbote,Paketzustellung
@@ -1319,7 +1335,10 @@ Prüfstatiker (sg.),Statik prüfende Person
 Psychologe,psychologische Fachkräfte
 Psychotherapeut,psychotherapeutisches Fachpersonal; psychotherapeutische Fachkraft
 Putzfrau,Reinigungspersonal; Reinigungskraft; Raumpflege
+"<div id=""Q""><b>Q</b><div>",
+[Wörter mit Q-],
 Querdenker (sg.),Querkopf; kreativer Kopf
+"<div id=""R""><b>R</b><div>",
 Rabbiner (sg.),Mitglied des Rabbinats
 Rabbiner (pl.),Rabbinat
 Radfahrer (pl.),Rad Fahrende; wer mit dem Rad unterwegs ist ... 
@@ -1383,6 +1402,7 @@ Ritterstand,"<a href=""https://geschicktgendern.de/kontakt""> noch kein passende
 Rivale,Konkurrenz; Gegenpart
 Rollstuhlfahrer (sg.),Person im Rollstuhl
 Ruderer (sg.),rudernde Person
+"<div id=""S""><b>S</b><div>",
 Sachbearbeiter (sg.),Verwaltungskraft
 Sachbearbeiter (pl.),Verwaltungskräfte; Sachbearbeitende; Sachverständige
 Sachbearbeiternummer,Kennnummer; Verwaltungsnummer; Nummer der zuständigen Verwaltungskraft
@@ -1527,6 +1547,7 @@ Staatsmänner,Volksbeauftragte; Menschen in der Politik; Mitglieder des Bundesta
 Stadtführer,"Stadtführung; Reiseleitung; [ist das Buch / der Prospekt gemeint, muss nicht gegendert werden]"
 Stakeholder,Anspruchsgruppe; Interessenvertretung
 Star,berühmte Persönlichkeit; Berühmtheit
+Steinbildhauer,
 Steinewerfer (pl.),Steinewerfende; Steine werfende Personen
 Steinmetz,Stein bearbeitende Person
 Stelleninhaber (sg.),Stelle ausführende Person; Funktion begleitende Person
@@ -1569,6 +1590,7 @@ Supporter (pl.),Mitwirkende; Befürwortende
 Sympathisant,"<a href=""https://geschicktgendern.de/kontakt""> noch kein passender Begriff gefunden; senden Sie Ihren Vorschlag über das Kontaktformular (klick) </a>"
 Systemadministrator,Systemadmin; Systemadministration
 Systembetreuer,Systembetreuung
+"<div id=""T""><b>T</b><div>",
 Tagesmutter,"Tagespflege(person); Tagesbetreuung; Kinderbetreuung; <div class=""tooltip"">Tageselter [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]<span class=""tooltiptext"">laut Duden: der oder das Elter (Singular von Eltern)</span> </div>"
 Tagesmütter,Tageseltern
 Talkmaster (sg.),Moderation; moderierende Person
@@ -1629,6 +1651,7 @@ Tutor,studentische Hilfskraft; Übungsgruppenleitung; Tutoriumsleitung
 Tutoren,Übungs(an)leitende; Tutoriumsbegleitende; Ratgebende; Begleitung; studentische Hilfskräfte
 "... Andreas und Elsa sind Tutoren für die Übungen zur Vorlesung ""Mathematik für Biologen"".","... Andreas und Elsa leiten die Übungen zur Vorlesung ""Mathematik für das Biologiestudium"". / Andreas und Elsa betreuen die Übungen zur Vorlesung ""Mathematische Grundlagen
 (Biologie)""."
+"<div id=""U""><b>U</b><div>",
 Überbringer,überbringende Person
 übermannen,überkommen; überwältigen
 Übersetzer (pl.),Übersetzende; Literatur Übersetzende
@@ -1649,6 +1672,7 @@ Urlauber (sg.),reisende Person; urlaubende Person
 Urlauber (pl.),Reisende
 User (pl.),"Nutzende; Personen, die Apps/Software nutzen; Mitglieder"
 ... Wie viele User hat diese Website? / Wie oft wird diese Website genutzt?,... Wie viele Mitglieder hat diese Website?
+"<div id=""V""><b>V</b><div>",
 V-Mann,V-Person
 V-Männer,V-Leute
 Vater,Elternteil
@@ -1730,6 +1754,7 @@ Vorreiterrolle,Führungsrolle
 Vorsitzender (sg.),den 1. Vorsitz hat ... 
 Vorstand (sg.),Vorstandsmitglied; im Vorstand
 ... Wer sind die anderen Vorstände?,... Wer sind die anderen Vorstandsmitglieder? / Wer ist noch im Vorstand?
+"<div id=""W""><b>W</b><div>",
 Wachmann,Wachpersonal
 Wächter (sg./pl.),Wache
 Wähler (pl.),"Wahlberechtigte; alle, die zur Wahl gegangen sind; Stimmberechtigte; Wahlvolk"
@@ -1770,8 +1795,10 @@ wissenschaftliche Mitarbeiter,wissenschaftliche Mitarbeitende
 Wissensträger,Wissenstragende Person; des Wissens mächtige Person
 Witwer (pl.),Verwitwete
 Workshopleiter (sg./pl.),Workshopleitung
+"<div id=""XY""><b>XY</b><div>",
 Xylophonspieler (pl.),Xylophon Spielende
 YouTuber,"auf Youtube arbeitende/performende Person; Person auf Youtube; einen Youtube-Kanal betreibende Person; <a href=""https://geschicktgendern.de/kontakt""> weitere Alternativen gesucht; senden Sie Ihren Vorschlag über das Kontaktformular (klick) </a>"
+"<div id=""Z""><b>Z</b><div>",
 Zahlungsempfänger,Zahlung empfangende Person
 Zahnarzt,zahnärztliches Fachpersonal; Fachkraft der Zahnmedizin; zahnmedizinisches Fachpersonal
 Zahnarztpraxis,Praxis für Zahnerhaltung; zahnmedizinische Praxis; Praxis für Zahnmedizin
