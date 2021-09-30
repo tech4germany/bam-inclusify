@@ -16,7 +16,7 @@ export const TaskpaneApp: FC = () => {
 
   return (
     <div>
-      <TaskpaneHeading>OpenMinDEd</TaskpaneHeading>
+      <TaskpaneHeading>Inclusify</TaskpaneHeading>
       <div>
         <DefaultButton
           className="ms-welcome__action"

@@ -34,7 +34,7 @@ export const StandaloneApp: FC = () => {
       </MainAreaContainer>
 
       <MainContainer>
-        <StandaloneHeading>OpenMinDEd</StandaloneHeading>
+        <StandaloneHeading>Inclusify</StandaloneHeading>
         <div>
           <h3>Text eingeben:</h3>
           <InputArea onChange={(e) => setInputText(e.target.value)} value={inputText} />
