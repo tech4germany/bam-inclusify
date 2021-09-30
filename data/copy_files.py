@@ -24,7 +24,7 @@ def init_languages(languages: List[Tuple[str, str]]) -> None:
     for language in languages:
         copy_folder(language)
     register(languages)
-    # build_with_docker()
+    build_with_docker()
 
 
 def clone_repo() -> None:
@@ -62,63 +62,94 @@ def copy_folder(language: Tuple[str, str]) -> None:
         )
 
         #
-        pom = open_(path.join(languages_folder, "pom.xml")).read()
-        pom = re.sub(
-            r"<artifactId>language-de-DE-x-simple-language</artifactId>",
-            "<artifactId>{}</artifactId>".format(code),
-            pom,
-        )
-        pom = re.sub(
-            r"<name>Simple German module for LanguageTool</name>",
-            "<name>{} module for LanguageTool</name>".format(name),
-            pom,
-        )
-        open_(path.join(languages_folder, "pom.xml"), "w").write(pom)
+        def update_pom(pom):
+            pom = re.sub(
+                r"<artifactId>language-de-DE-x-simple-language</artifactId>",
+                "<artifactId>language-{}</artifactId>".format(code),
+                pom,
+            )
+            pom = re.sub(
+                r"<name>Simple German module for LanguageTool</name>",
+                "<name>{} module for LanguageTool</name>".format(name),
+                pom,
+            )
+            return pom
 
-        #
+        update_with_backup(update_pom, path.join(languages_folder, "pom.xml"))
+
+        def update_properties(properties):
+            return properties + "{} = {}\n".format(code, name)
+
+        update_with_backup(
+            update_properties,
+            path.join(
+                languagetool_path,
+                "languagetool-core",
+                "src",
+                "main",
+                "resources",
+                "org",
+                "languagetool",
+                "MessagesBundle.properties",
+            ),
+        )
+
+        def update_project_file(file):
+            return re.sub(
+                "<name>language-de-DE-x-simple-language</name>",
+                "<name>language-{}</name>".format(code),
+                file,
+            )
+
+        update_with_backup(update_project_file, path.join(languages_folder, ".project"))
+
         java_folder = path.join(
             languages_folder, "src", "main", "java", "org", "languagetool", "language"
         )
-        new_file = path.join(java_folder, "{}.java".format(name_))
+        new_java_file = path.join(java_folder, "{}.java".format(name_))
         os.rename(
             path.join(java_folder, "SimpleGerman.java"),
-            new_file,
+            new_java_file,
         )
-        java_file = open_(new_file).read()
-        java_file = re.sub("SimpleGerman", "GenderedGerman", java_file)
-        open_(new_file, "w").write(java_file)
 
-        #
-        properties_file = path.join(
-            languages_folder,
-            "src",
-            "main",
-            "resources",
-            "META-INF",
-            "org",
-            "languagetool",
-            "language-module.properties",
+        def replace_language_name(file):
+            return re.sub("SimpleGerman", name_, file)
+
+        update_with_backup(replace_language_name, new_java_file)
+
+        update_with_backup(
+            replace_language_name,
+            path.join(
+                languages_folder,
+                "src",
+                "main",
+                "resources",
+                "META-INF",
+                "org",
+                "languagetool",
+                "language-module.properties",
+            ),
         )
-        properties = open_(properties_file).read()
-        properties = re.sub("SimpleGerman", name_, properties)
-        open_(properties_file, "w").write(properties)
 
-        #
-        code = language[0]
-        name = language[1]
-        file = path.join(
+        test_folder = path.join(
             languagetool_path,
-            "languagetool-core",
+            "languagetool-language-modules",
+            code,
             "src",
-            "main",
-            "resources",
+            "test",
+            "java",
             "org",
             "languagetool",
-            "MessagesBundle.properties",
         )
-        properties = open_(file).read()
-        properties = properties + "{} = {}\n".format(code, name)
-        open_(file, "w").write(properties)
+
+        # update_with_backup(
+        #     replace_language_name,
+        #     path.join(
+        #         test_folder,
+        #     ),
+        # )
+
+        shutil.rmtree(test_folder)
 
 
 def register(languages: List[Tuple[str, str]]) -> None:
@@ -135,12 +166,11 @@ def register(languages: List[Tuple[str, str]]) -> None:
             )
             for code, name in languages
         ]
-        pom = re.sub(
+        return re.sub(
             "</dependencies>",
             "{}\n\t</dependencies>".format("".join(new_dependencies)),
             pom,
         )
-        return pom
 
     update_with_backup(
         update_language_pom,
@@ -204,6 +234,5 @@ def update_with_backup(fun, file_path) -> None:
 
 
 if __name__ == "__main__":
-    # init_languages([("dg1", "GenderGerman"), ("dg2", "GenderGermanium")])
-    build_with_docker()()
+    init_languages([("dg1", "GenderGerman"), ("dg2", "GenderGermanium")])
     # copy_files()
