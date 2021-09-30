@@ -1,16 +1,12 @@
 import { execPiped, runAsyncMain } from "devcmd";
+import path from "path";
+import { dataDir, languageToolDir } from "./utils/paths";
 
 async function main() {
   await execPiped({
-    command: "unzip",
-    args: ["LanguageTool-5.4.zip"],
-    options: { cwd: "../languagetool" },
-  });
-
-  await execPiped({
     command: "python3",
     args: ["copy_files.py"],
-    options: { cwd: "../data" },
+    options: { cwd: dataDir },
   });
 
   await execPiped({
@@ -21,7 +17,7 @@ async function main() {
       ...["--port", "8081"],
       ...["--allow-origin", "*"],
     ],
-    options: { cwd: "../languagetool/LanguageTool-5.4" },
+    options: { cwd: path.join(languageToolDir, "LanguageTool-5.4") },
   });
 }
 

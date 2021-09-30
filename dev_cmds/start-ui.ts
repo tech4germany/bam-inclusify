@@ -1,10 +1,12 @@
 import { execPiped, runAsyncMain } from "devcmd";
+import { YARN_COMMAND } from "./utils/commands";
+import { reactUiDir } from "./utils/paths";
 
 async function main() {
   await execPiped({
-    command: "yarn",
+    command: YARN_COMMAND,
     args: ["start"],
-    options: { cwd: "../react-ui" },
+    options: { cwd: reactUiDir },
   });
 }
 
