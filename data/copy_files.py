@@ -10,11 +10,11 @@ import shutil
 import subprocess
 
 # adjust this to the folder of the LanguageTool release
-languagetool_path = path.join("..", "languagetool", "languagetool")
+languagetool_path = path.join("..", "languagetool", "LanguageTool-5.4")
 # path of the German grammar files within the LanguageTool release
 grammar_path = path.join(languagetool_path, "org", "languagetool", "rules", "de")
 # file name of the additional grammar rules
-rulefile = "grammar_open_minded.xml"
+rulefile = "grammar_openminded.xml"
 compiled_path = path.join(
     languagetool_path,
     "languagetool-standalone",
@@ -223,7 +223,7 @@ def build_with_docker() -> None:
     )
 
 
-def copy_grammars(grammar_path) -> None:
+def copy_files(grammar_path = grammar_path) -> None:
     xml = open_(rulefile).read()
     open_(path.join(grammar_path, rulefile), "w").write(xml)
 
@@ -259,4 +259,6 @@ def update(fun, file_path) -> None:
 
 
 if __name__ == "__main__":
-    init_languages([("dg1", "Gender German 1"), ("dg2", "Gender German 2")])
+    # init_languages([("dg1", "Gender German 1"), ("dg2", "Gender German 2")])
+    copy_files(grammar_path)
+
