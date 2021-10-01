@@ -20,28 +20,37 @@ export const StandaloneApp: FC = () => {
 
   return (
     <>
-      <TopBar />
-      <SummaryBar />
+      {/* <TopBar /> */}
 
-      <MainAreaContainer>
-        <MainTextAreaContainer>
-          <MainTextArea spellCheck={false} autoFocus onChange={(e) => setInputText(e.target.value)} value={inputText} />
-          <ButtonBar>
-            <ButtonBarSpacer />
-            <Button onClick={() => checkText(inputText)}>Prüfen</Button>
-          </ButtonBar>
-        </MainTextAreaContainer>
-        <ResultsAreaContainer>
-          {isLoading ? (
-            <div>Loading...</div>
-          ) : (
-            <OldResultsArea
-              ruleMatches={ltMatches}
-              applyReplacement={makeReplacementApplier([inputText, setInputText], checkText)}
+      <CenteredContainer>
+        <SummaryBar />
+        <MainAreaContainer>
+          <MainTextAreaContainer>
+            <MainTextArea
+              spellCheck={false}
+              autoFocus
+              onChange={(e) => setInputText(e.target.value)}
+              value={inputText}
             />
-          )}
-        </ResultsAreaContainer>
-      </MainAreaContainer>
+            <ButtonBar>
+              <ButtonBarSpacer />
+              <GradientButton leftColor="#0189BB" rightColor="#00AFF0" onClick={() => checkText(inputText)}>
+                Prüfen
+              </GradientButton>
+            </ButtonBar>
+          </MainTextAreaContainer>
+          <ResultsAreaContainer>
+            {isLoading ? (
+              <div>Loading...</div>
+            ) : (
+              <OldResultsArea
+                ruleMatches={ltMatches}
+                applyReplacement={makeReplacementApplier([inputText, setInputText], checkText)}
+              />
+            )}
+          </ResultsAreaContainer>
+        </MainAreaContainer>
+      </CenteredContainer>
     </>
   );
 };
@@ -53,16 +62,38 @@ const TopBarContainer = styled.div`
   border-bottom: 1px solid green;
 `;
 
-const SummaryBar = () => <SummaryBarContainer>Summary Bar</SummaryBarContainer>;
+const SummaryBar = () => (
+  <SummaryBarContainer>
+    <ButtonBarSpacer />
+    <GradientButton leftColor="#E69B00" rightColor="#CD7D00">
+      Grammatik
+    </GradientButton>
+    <GradientButton leftColor="#B40F1F" rightColor="#8C1318">
+      Rechtschreibung
+    </GradientButton>
+    <GradientButton leftColor="#8F4DBF" rightColor="#6C3A90">
+      Diversitätslücken
+    </GradientButton>
+    <GradientButton leftColor="#0189BB" rightColor="#00AFF0">
+      ES
+    </GradientButton>
+  </SummaryBarContainer>
+);
 
 const SummaryBarContainer = styled.div`
-  border-bottom: 1px solid blue;
+  margin: 24px 0;
+  display: flex;
+  gap: 10px;
+`;
+
+const CenteredContainer = styled.div`
+  max-width: 1024px;
+  margin: 0 auto;
 `;
 
 const MainAreaContainer = styled.div`
   display: flex;
-  max-width: 1024px;
-  margin: 1em auto;
+  margin-bottom: 2rem;
 `;
 
 const MainTextAreaContainer = styled.div`
@@ -116,6 +147,16 @@ const ButtonBarSpacer = styled.div`
   flex-grow: 1;
 `;
 
-const Button = styled.button`
-  font-size: 150%;
+interface GradientButtonProps {
+  leftColor: string;
+  rightColor: string;
+}
+const GradientButton = styled.button<GradientButtonProps>`
+  font-size: 14px;
+  background: linear-gradient(68deg, ${(props) => props.leftColor} 0%, ${(props) => props.rightColor} 100%);
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  color: white;
+  box-shadow: 0px 3px 6px #00000029;
 `;
