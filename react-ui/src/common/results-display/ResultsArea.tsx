@@ -40,59 +40,89 @@ const LtMatch: FC<{
   ltMatch: RuleMatch;
   applyReplacement?: (ruleMatch: RuleMatch, replacementText: string) => void;
 }> = ({ ltMatch, applyReplacement }) => {
-  const [preMatch, matchText, postMatch] = splitTextMatch(
-    ltMatch.context.text,
-    ltMatch.context.offset,
-    ltMatch.context.length
-  );
+  const [, matchText] = splitTextMatch(ltMatch.context.text, ltMatch.context.offset, ltMatch.context.length);
+  const category = mapRuleCategory(ltMatch.rule?.category.id);
   return (
     <MatchContainer>
-      <MatchTopBar categoryName={ltMatch.rule?.category.name || ""} />
+      <MatchTopBar category={category} categoryName={ltMatch.rule?.category?.name || ""} />
       <MatchContentContainer>
         <MatchContextContainer>
           <MatchMatchText>{matchText}</MatchMatchText>
-          {" -> "}
-          <span>{ltMatch.replacements.length > 0 && ltMatch.replacements[0].value}</span>
+          <ReplacementArrow />
+          <ReplacementListContainer>
+            {ltMatch.replacements.map((r, idx) => (
+              <div>
+                <Replacement
+                  key={idx}
+                  onClick={isFunction(applyReplacement) ? () => applyReplacement(ltMatch, r.value || "") : undefined}
+                >
+                  {r.value}
+                </Replacement>
+              </div>
+            ))}
+          </ReplacementListContainer>
+          {/* <span>{ltMatch.replacements.length > 0 && ltMatch.replacements[0].value}</span> */}
         </MatchContextContainer>
         <MatchRuleExplanation>{ltMatch.message}</MatchRuleExplanation>
         <MatchActionsBar>mehr anzeigen</MatchActionsBar>
-        <div style={{ display: "none" }}>
-          Mögliche Alternativen:{" "}
-          <ReplacementListContainer>
-            {ltMatch.replacements.map((r, idx) => (
-              <Replacement
-                key={idx}
-                onClick={isFunction(applyReplacement) ? () => applyReplacement(ltMatch, r.value || "") : undefined}
-              >
-                {r.value}
-              </Replacement>
-            ))}
-          </ReplacementListContainer>
-        </div>
       </MatchContentContainer>
     </MatchContainer>
   );
 };
 
 interface EntryTopBarProps {
+  category: RuleMatchCategory;
   categoryName: string;
 }
-const MatchTopBar: FC<EntryTopBarProps> = ({ categoryName }) => (
+const MatchTopBar: FC<EntryTopBarProps> = ({ category, categoryName }) => (
   <MatchTopBarContainer>
-    <MatchColorDot />
+    <MatchColorDot category={category} />
     <MatchCategoryContainer>{categoryName}</MatchCategoryContainer>
   </MatchTopBarContainer>
 );
 
 const MatchTopBarContainer = styled.div`
   font-size: 0.7rem;
+  font-weight: 100;
   display: flex;
   gap: 1rem;
   align-items: center;
 `;
 
-const MatchColorDot = styled.div`
-  background: #8f4dbf;
+type RuleMatchCategory = "spelling" | "grammar" | "diversity" | "unknown";
+function mapRuleCategory(categoryId: string | undefined): RuleMatchCategory {
+  switch (categoryId) {
+    case "DIVERSITY_SENSITIVE_LANGUAGE":
+      return "diversity";
+    case "TYPOS":
+      return "spelling";
+    case "REDUNDANCY":
+    case "GRAMMAR":
+    case "PUNCTUATION":
+      return "grammar";
+    default:
+      return "unknown";
+  }
+}
+
+function matchCategoryColor(category: RuleMatchCategory): string {
+  switch (category) {
+    case "spelling":
+      return "#C7112D";
+    case "grammar":
+      return "#0189BB";
+    case "diversity":
+      return "#8f4dbf";
+    default:
+      return "gray";
+  }
+}
+
+interface MatchColorDotProps {
+  category: RuleMatchCategory;
+}
+const MatchColorDot = styled.div<MatchColorDotProps>`
+  background: ${(props) => matchCategoryColor(props.category)};
   border-radius: 50%;
   height: 0.625rem;
   width: 0.625rem;
@@ -106,11 +136,16 @@ const MatchContentContainer = styled.div`
   margin: 0 10px;
 `;
 
+const ReplacementArrow = () => <ReplacementArrowContainer>{"->"}</ReplacementArrowContainer>;
+
+const ReplacementArrowContainer = styled.span`
+  white-space: nowrap;
+`;
+
 const ReplacementListContainer = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.2em;
-  margin-top: 0.2em;
+  flex-direction: column;
+  gap: 3px;
 `;
 
 const Replacement: FC<{ onClick: React.MouseEventHandler<HTMLButtonElement> | undefined }> = ({
@@ -119,10 +154,12 @@ const Replacement: FC<{ onClick: React.MouseEventHandler<HTMLButtonElement> | un
 }) => <ReplacementItem onClick={onClick}>{children}</ReplacementItem>;
 
 const ReplacementItem = styled.button`
-  display: inline;
-  border: 0.5px solid gray;
-  background: lightgray;
-  padding: 0.1em 0.2em;
+  border: none;
+  border-radius: 4px;
+  background: #5a8d31;
+  padding: 3px 7px;
+  color: white;
+  font-weight: 300;
   cursor: ${(props) => (isFunction(props.onClick) ? "pointer" : "initial")};
 `;
 
@@ -132,11 +169,13 @@ const MatchContainer = styled.div`
   box-shadow: 0px 6px 12px #00000029;
   margin-bottom: 0.8125rem;
   padding: 20px 10px;
-  max-width: 20rem;
 `;
 
 const MatchContextContainer = styled.div`
   margin: 14px 0;
+  display: flex;
+  gap: 0.5ch;
+  font-size: 15px;
 `;
 
 const MatchMatchText = styled.span`
@@ -146,6 +185,7 @@ const MatchMatchText = styled.span`
 const MatchRuleExplanation = styled.div`
   margin: 14px 0;
   font-size: 0.7rem;
+  font-weight: 100;
 `;
 
 const MatchActionsBar = styled.div`

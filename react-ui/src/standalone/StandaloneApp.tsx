@@ -25,40 +25,23 @@ export const StandaloneApp: FC = () => {
 
       <MainAreaContainer>
         <MainTextAreaContainer>
-          <MainTextArea spellCheck={false} autoFocus />
+          <MainTextArea spellCheck={false} autoFocus onChange={(e) => setInputText(e.target.value)} value={inputText} />
           <ButtonBar>
             <ButtonBarSpacer />
-            <Button disabled>Kopieren</Button>
-            <Button disabled>Prüfen</Button>
+            <Button onClick={() => checkText(inputText)}>Prüfen</Button>
           </ButtonBar>
         </MainTextAreaContainer>
         <ResultsAreaContainer>
-          <OldResultsArea
-            ruleMatches={ltMatches}
-            applyReplacement={makeReplacementApplier([inputText, setInputText], checkText)}
-          />
+          {isLoading ? (
+            <div>Loading...</div>
+          ) : (
+            <OldResultsArea
+              ruleMatches={ltMatches}
+              applyReplacement={makeReplacementApplier([inputText, setInputText], checkText)}
+            />
+          )}
         </ResultsAreaContainer>
       </MainAreaContainer>
-
-      <MainContainer>
-        <StandaloneHeading>Inclusify</StandaloneHeading>
-        <div>
-          <h3>Text eingeben:</h3>
-          <InputArea onChange={(e) => setInputText(e.target.value)} value={inputText} />
-        </div>
-        <ButtonBar>
-          <Button onClick={() => checkText(inputText)}>Prüfen</Button>
-        </ButtonBar>
-
-        {isLoading ? (
-          <div>Loading...</div>
-        ) : (
-          <OldResultsArea
-            ruleMatches={ltMatches}
-            applyReplacement={makeReplacementApplier([inputText, setInputText], checkText)}
-          />
-        )}
-      </MainContainer>
     </>
   );
 };
@@ -78,7 +61,7 @@ const SummaryBarContainer = styled.div`
 
 const MainAreaContainer = styled.div`
   display: flex;
-  max-width: 800px;
+  max-width: 1024px;
   margin: 1em auto;
 `;
 
@@ -89,65 +72,22 @@ const MainTextAreaContainer = styled.div`
 
 const MainTextArea = styled.textarea`
   padding: 2.5rem 2rem;
-  /* font-family: sans-serif; */
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 25px;
   width: 100%;
   box-sizing: border-box;
   border-radius: 0;
   border: none;
   resize: vertical;
   box-shadow: 0px 9px 18px #00000029;
-  height: 20em;
+  height: 30em;
   margin-bottom: 1em;
 `;
 
-const ResultsAreaContainer = styled.div``;
-
-interface ResultListEntryProps extends EntryTopBarProps {
-  matchText: string;
-}
-const ResultListEntry: FC<ResultListEntryProps> = ({ categoryName, matchText }) => (
-  <ResultListEntryContainer>
-    <EntryTopBar categoryName={categoryName} />
-  </ResultListEntryContainer>
-);
-
-const ResultListEntryContainer = styled.div`
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0px 6px 12px #00000029;
-  margin-bottom: 0.8125rem;
-  padding: 20px 10px;
+const ResultsAreaContainer = styled.div`
+  width: 20rem;
 `;
-
-interface EntryTopBarProps {
-  categoryName: string;
-}
-const EntryTopBar: FC<EntryTopBarProps> = ({ categoryName }) => (
-  <EntryTopBarContainer>
-    <EntryColorDot />
-    <EntryCategoryContainer>{categoryName}</EntryCategoryContainer>
-  </EntryTopBarContainer>
-);
-
-const EntryTopBarContainer = styled.div`
-  font-size: 0.7rem;
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-`;
-
-const EntryColorDot = styled.div`
-  background: #8f4dbf;
-  border-radius: 50%;
-  height: 0.625rem;
-  width: 0.625rem;
-`;
-
-const EntryCategoryContainer = styled.div`
-  color: gray;
-`;
-
-const EntryShortMatchContainer = styled.div``;
 
 function makeReplacementApplier([inputText, setInputText]: UseState<string>, triggerRecheck: (text: string) => void) {
   return (ruleMatch: RuleMatch, index: number, allMatches: RuleMatch[], replacementText: string) => {
@@ -166,20 +106,6 @@ const checkTextWithApi = async (inputText: string, setLtMatches: Dispatch<SetSta
   const content = await new LanguageToolClient().check(request);
   setLtMatches(() => content.matches || []);
 };
-
-const StandaloneHeading = styled.h1`
-  color: darkblue;
-`;
-
-const MainContainer = styled.div`
-  max-width: 800px;
-  margin: 4em auto;
-`;
-
-const InputArea = styled.textarea`
-  width: 100%;
-  height: 10em;
-`;
 
 const ButtonBar = styled.div`
   display: flex;
