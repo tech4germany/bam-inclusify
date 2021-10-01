@@ -9,7 +9,7 @@
         <relativePath>../../pom.xml</relativePath>
     </parent>
     
-    <artifactId>language-de-languagecode</artifactId>
+    <artifactId>language-de-DE-x-language-code</artifactId>
     <url>https://www.languagetool.org</url>
     <name>Language Name module for LanguageTool</name>
     <description></description>

@@ -15,6 +15,18 @@ languagetool_path = path.join("..", "languagetool", "languagetool")
 grammar_path = path.join(languagetool_path, "org", "languagetool", "rules", "de")
 # file name of the additional grammar rules
 rulefile = "grammar_open_minded.xml"
+compiled_path = path.join(
+    languagetool_path,
+    "languagetool-standalone",
+    "target",
+    "LanguageTool-5.5-SNAPSHOT",
+    "LanguageTool-5.5-SNAPSHOT",
+    "org",
+    "languagetool",
+    "rules",
+)
+
+prefix = "de-DE-x-"
 
 open_ = functools.partial(open, encoding="utf-8")
 
@@ -24,7 +36,9 @@ def init_languages(languages: List[Tuple[str, str]]) -> None:
     for language in languages:
         copy_folder(language)
     register(languages)
-    build_with_docker()
+    # build_with_docker()
+    # for language in languages:
+    #     copy_grammars(path.join(compiled_path, prefix + language[0]))
 
 
 def clone_repo() -> None:
@@ -47,78 +61,36 @@ def copy_folder(language: Tuple[str, str]) -> None:
     name = language[1]
     name_ = re.sub(r"\W", "", name)
     languages_folder = path.join(
-        languagetool_path, "languagetool-language-modules", code
+        languagetool_path, "languagetool-language-modules", prefix + code
     )
     if path.exists(languages_folder):
-        print("Language folder for {} already exists.".format(code))
+        print("Language folder for {} already exists.".format(prefix + code))
     else:
+
+        def replace_placeholders(file):
+            file = re.sub("Language Name", name, file)
+            file = re.sub("LanguageName", name_, file)
+            file = re.sub("language-code", code, file)
+            return file
+
         shutil.copytree(
-            path.join(
-                languagetool_path,
-                "languagetool-language-modules",
-                "de-DE-x-simple-language",
-            ),
+            path.join("language-template", "language-code"),
             languages_folder,
         )
 
-        #
-        def update_pom(pom):
-            pom = re.sub(
-                r"<artifactId>language-de-DE-x-simple-language</artifactId>",
-                "<artifactId>language-{}</artifactId>".format(code),
-                pom,
-            )
-            pom = re.sub(
-                r"<name>Simple German module for LanguageTool</name>",
-                "<name>{} module for LanguageTool</name>".format(name),
-                pom,
-            )
-            return pom
-
-        update_with_backup(update_pom, path.join(languages_folder, "pom.xml"))
-
-        def update_properties(properties):
-            return properties + "{} = {}\n".format(code, name)
-
-        update_with_backup(
-            update_properties,
+        for file in [
+            path.join(languages_folder, "pom.xml"),
+            path.join(languages_folder, ".project"),
             path.join(
-                languagetool_path,
-                "languagetool-core",
+                languages_folder,
                 "src",
                 "main",
-                "resources",
+                "java",
                 "org",
                 "languagetool",
-                "MessagesBundle.properties",
+                "language",
+                "LanguageName.java",
             ),
-        )
-
-        def update_project_file(file):
-            return re.sub(
-                "<name>language-de-DE-x-simple-language</name>",
-                "<name>language-{}</name>".format(code),
-                file,
-            )
-
-        update_with_backup(update_project_file, path.join(languages_folder, ".project"))
-
-        java_folder = path.join(
-            languages_folder, "src", "main", "java", "org", "languagetool", "language"
-        )
-        new_java_file = path.join(java_folder, "{}.java".format(name_))
-        os.rename(
-            path.join(java_folder, "SimpleGerman.java"),
-            new_java_file,
-        )
-
-        def replace_language_name(file):
-            return re.sub("SimpleGerman", name_, file)
-
-        update_with_backup(replace_language_name, new_java_file)
-
-        update_with_backup(
-            replace_language_name,
             path.join(
                 languages_folder,
                 "src",
@@ -129,27 +101,53 @@ def copy_folder(language: Tuple[str, str]) -> None:
                 "languagetool",
                 "language-module.properties",
             ),
+        ]:
+            update(replace_placeholders, file)
+
+        os.rename(
+            path.join(
+                languages_folder,
+                "src",
+                "main",
+                "java",
+                "org",
+                "languagetool",
+                "language",
+                "LanguageName.java",
+            ),
+            path.join(
+                languages_folder,
+                "src",
+                "main",
+                "java",
+                "org",
+                "languagetool",
+                "language",
+                name_ + ".java",
+            ),
         )
-
-        test_folder = path.join(
-            languagetool_path,
-            "languagetool-language-modules",
-            code,
-            "src",
-            "test",
-            "java",
-            "org",
-            "languagetool",
+        shutil.move(
+            path.join(
+                languages_folder,
+                "src",
+                "main",
+                "resources",
+                "org",
+                "languagetool",
+                "rules",
+                "de-DE-x-language-code",
+            ),
+            path.join(
+                languages_folder,
+                "src",
+                "main",
+                "resources",
+                "org",
+                "languagetool",
+                "rules",
+                prefix + code,
+            ),
         )
-
-        # update_with_backup(
-        #     replace_language_name,
-        #     path.join(
-        #         test_folder,
-        #     ),
-        # )
-
-        shutil.rmtree(test_folder)
 
 
 def register(languages: List[Tuple[str, str]]) -> None:
@@ -162,7 +160,7 @@ def register(languages: List[Tuple[str, str]]) -> None:
             <artifactId>language-{}</artifactId>
             <version>${{languagetool.version}}</version>
         </dependency>""".format(
-                code
+                prefix + code
             )
             for code, name in languages
         ]
@@ -180,7 +178,9 @@ def register(languages: List[Tuple[str, str]]) -> None:
     #
     def update_general_pom(pom):
         new_modules = [
-            "  <module>languagetool-language-modules/{}</module>\n  ".format(code)
+            "  <module>languagetool-language-modules/{}</module>\n  ".format(
+                prefix + code
+            )
             for code, name in languages
         ]
         return re.sub(
@@ -190,6 +190,25 @@ def register(languages: List[Tuple[str, str]]) -> None:
         )
 
     update_with_backup(update_general_pom, path.join(languagetool_path, "pom.xml"))
+
+    def add_names(file):
+        return file + "\n".join(
+            ["{} = {}".format(prefix + code, name) for code, name in languages]
+        )
+
+    update_with_backup(
+        add_names,
+        path.join(
+            languagetool_path,
+            "languagetool-core",
+            "src",
+            "main",
+            "resources",
+            "org",
+            "languagetool",
+            "MessagesBundle.properties",
+        ),
+    )
 
 
 def build_with_docker() -> None:
@@ -204,7 +223,7 @@ def build_with_docker() -> None:
     )
 
 
-def copy_files() -> None:
+def copy_grammars(grammar_path) -> None:
     xml = open_(rulefile).read()
     open_(path.join(grammar_path, rulefile), "w").write(xml)
 
@@ -233,6 +252,11 @@ def update_with_backup(fun, file_path) -> None:
     open_(file_path, "w").write(new_file)
 
 
+def update(fun, file_path) -> None:
+    file = open_(file_path).read()
+    new_file = fun(file)
+    open_(file_path, "w").write(new_file)
+
+
 if __name__ == "__main__":
-    init_languages([("dg1", "GenderGerman"), ("dg2", "GenderGermanium")])
-    # copy_files()
+    init_languages([("dg1", "Gender German 1"), ("dg2", "Gender German 2")])
