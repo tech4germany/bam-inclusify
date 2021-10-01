@@ -16,7 +16,6 @@ export const ResultsArea: FC<{ ruleMatches: RuleMatch[]; applyReplacement?: Appl
   applyReplacement,
 }) => (
   <div>
-    <h3>Ergebnisse:</h3>
     <LtMatchesList ltMatches={ruleMatches} applyReplacement={applyReplacement} />
   </div>
 );
@@ -26,7 +25,7 @@ const LtMatchesList: FC<{ ltMatches: RuleMatch[]; applyReplacement?: ApplyReplac
   applyReplacement,
 }) => (
   <div>
-    <div>{ltMatches.length} Vorschläge</div>
+    {/* <div>{ltMatches.length} Vorschläge</div> */}
     {ltMatches.map((ltMatch, idx) => (
       <LtMatch
         key={idx}
@@ -47,29 +46,65 @@ const LtMatch: FC<{
     ltMatch.context.length
   );
   return (
-    <LtMatchContainer>
-      <MatchContext>
-        <MatchContextText>{preMatch}</MatchContextText>
-        <MatchMatchText>{matchText}</MatchMatchText>
-        <MatchContextText>{postMatch}</MatchContextText>
-      </MatchContext>
-      <RuleMessage>{ltMatch.message}</RuleMessage>
-      <div>
-        Mögliche Alternativen:{" "}
-        <ReplacementListContainer>
-          {ltMatch.replacements.map((r, idx) => (
-            <Replacement
-              key={idx}
-              onClick={isFunction(applyReplacement) ? () => applyReplacement(ltMatch, r.value || "") : undefined}
-            >
-              {r.value}
-            </Replacement>
-          ))}
-        </ReplacementListContainer>
-      </div>
-    </LtMatchContainer>
+    <MatchContainer>
+      <MatchTopBar categoryName={ltMatch.rule?.category.name || ""} />
+      <MatchContentContainer>
+        <MatchContextContainer>
+          <MatchMatchText>{matchText}</MatchMatchText>
+          {" -> "}
+          <span>{ltMatch.replacements.length > 0 && ltMatch.replacements[0].value}</span>
+        </MatchContextContainer>
+        <MatchRuleExplanation>{ltMatch.message}</MatchRuleExplanation>
+        <MatchActionsBar>mehr anzeigen</MatchActionsBar>
+        <div style={{ display: "none" }}>
+          Mögliche Alternativen:{" "}
+          <ReplacementListContainer>
+            {ltMatch.replacements.map((r, idx) => (
+              <Replacement
+                key={idx}
+                onClick={isFunction(applyReplacement) ? () => applyReplacement(ltMatch, r.value || "") : undefined}
+              >
+                {r.value}
+              </Replacement>
+            ))}
+          </ReplacementListContainer>
+        </div>
+      </MatchContentContainer>
+    </MatchContainer>
   );
 };
+
+interface EntryTopBarProps {
+  categoryName: string;
+}
+const MatchTopBar: FC<EntryTopBarProps> = ({ categoryName }) => (
+  <MatchTopBarContainer>
+    <MatchColorDot />
+    <MatchCategoryContainer>{categoryName}</MatchCategoryContainer>
+  </MatchTopBarContainer>
+);
+
+const MatchTopBarContainer = styled.div`
+  font-size: 0.7rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+`;
+
+const MatchColorDot = styled.div`
+  background: #8f4dbf;
+  border-radius: 50%;
+  height: 0.625rem;
+  width: 0.625rem;
+`;
+
+const MatchCategoryContainer = styled.div`
+  color: gray;
+`;
+
+const MatchContentContainer = styled.div`
+  margin: 0 10px;
+`;
 
 const ReplacementListContainer = styled.div`
   display: flex;
@@ -91,24 +126,28 @@ const ReplacementItem = styled.button`
   cursor: ${(props) => (isFunction(props.onClick) ? "pointer" : "initial")};
 `;
 
-const LtMatchContainer = styled.div`
-  margin: 0.5em 1em;
-  border: 1px solid darkblue;
-  border-radius: 2px;
-  padding: 0.5em 1em;
+const MatchContainer = styled.div`
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 6px 12px #00000029;
+  margin-bottom: 0.8125rem;
+  padding: 20px 10px;
+  max-width: 20rem;
 `;
 
-const MatchContext = styled.div`
-  margin: 0 0 0.3em;
+const MatchContextContainer = styled.div`
+  margin: 14px 0;
 `;
 
-const MatchContextText = styled.span`
-  font-weight: bold;
-`;
-const MatchMatchText = styled(MatchContextText)`
-  color: darkred;
+const MatchMatchText = styled.span`
+  text-decoration: line-through;
 `;
 
-const RuleMessage = styled.div`
-  margin: 0.3em 0;
+const MatchRuleExplanation = styled.div`
+  margin: 14px 0;
+  font-size: 0.7rem;
+`;
+
+const MatchActionsBar = styled.div`
+  font-size: 0.5625rem;
 `;

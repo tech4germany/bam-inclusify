@@ -2,7 +2,7 @@ import React, { Dispatch, FC, SetStateAction, useState } from "react";
 import styled from "styled-components";
 import { LanguageToolClient } from "../common/language-tool-api/LanguageToolClient";
 import { RuleMatch } from "../common/language-tool-api/types";
-import { ResultsArea } from "../common/results-display/ResultsArea";
+import { ResultsArea as OldResultsArea } from "../common/results-display/ResultsArea";
 import { splitTextMatch } from "../common/splitTextMatch";
 
 type UseState<S> = [S, Dispatch<SetStateAction<S>>];
@@ -25,12 +25,19 @@ export const StandaloneApp: FC = () => {
 
       <MainAreaContainer>
         <MainTextAreaContainer>
-          <MainTextArea spellCheck={false} />
+          <MainTextArea spellCheck={false} autoFocus />
+          <ButtonBar>
+            <ButtonBarSpacer />
+            <Button disabled>Kopieren</Button>
+            <Button disabled>Prüfen</Button>
+          </ButtonBar>
         </MainTextAreaContainer>
-        <ResultAreaContainer>
-          <ResultListEntry>Entry 1</ResultListEntry>
-          <ResultListEntry>Entry 2</ResultListEntry>
-        </ResultAreaContainer>
+        <ResultsAreaContainer>
+          <OldResultsArea
+            ruleMatches={ltMatches}
+            applyReplacement={makeReplacementApplier([inputText, setInputText], checkText)}
+          />
+        </ResultsAreaContainer>
       </MainAreaContainer>
 
       <MainContainer>
@@ -46,7 +53,7 @@ export const StandaloneApp: FC = () => {
         {isLoading ? (
           <div>Loading...</div>
         ) : (
-          <ResultsArea
+          <OldResultsArea
             ruleMatches={ltMatches}
             applyReplacement={makeReplacementApplier([inputText, setInputText], checkText)}
           />
@@ -81,26 +88,66 @@ const MainTextAreaContainer = styled.div`
 `;
 
 const MainTextArea = styled.textarea`
-  padding: 1em;
-  font-family: sans-serif;
+  padding: 2.5rem 2rem;
+  /* font-family: sans-serif; */
   width: 100%;
   box-sizing: border-box;
   border-radius: 0;
   border: none;
   resize: vertical;
-  box-shadow: 3px 3px 15px 2px rgba(179, 179, 179, 1);
+  box-shadow: 0px 9px 18px #00000029;
   height: 20em;
+  margin-bottom: 1em;
 `;
 
-const ResultAreaContainer = styled.div``;
+const ResultsAreaContainer = styled.div``;
 
-const ResultListEntry = styled.div`
+interface ResultListEntryProps extends EntryTopBarProps {
+  matchText: string;
+}
+const ResultListEntry: FC<ResultListEntryProps> = ({ categoryName, matchText }) => (
+  <ResultListEntryContainer>
+    <EntryTopBar categoryName={categoryName} />
+  </ResultListEntryContainer>
+);
+
+const ResultListEntryContainer = styled.div`
   background: white;
-  border-radius: 5px;
-  padding: 0.5em;
-  box-shadow: 3px 3px 15px 2px rgba(179, 179, 179, 1);
-  margin-bottom: 0.8em;
+  border-radius: 10px;
+  box-shadow: 0px 6px 12px #00000029;
+  margin-bottom: 0.8125rem;
+  padding: 20px 10px;
 `;
+
+interface EntryTopBarProps {
+  categoryName: string;
+}
+const EntryTopBar: FC<EntryTopBarProps> = ({ categoryName }) => (
+  <EntryTopBarContainer>
+    <EntryColorDot />
+    <EntryCategoryContainer>{categoryName}</EntryCategoryContainer>
+  </EntryTopBarContainer>
+);
+
+const EntryTopBarContainer = styled.div`
+  font-size: 0.7rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+`;
+
+const EntryColorDot = styled.div`
+  background: #8f4dbf;
+  border-radius: 50%;
+  height: 0.625rem;
+  width: 0.625rem;
+`;
+
+const EntryCategoryContainer = styled.div`
+  color: gray;
+`;
+
+const EntryShortMatchContainer = styled.div``;
 
 function makeReplacementApplier([inputText, setInputText]: UseState<string>, triggerRecheck: (text: string) => void) {
   return (ruleMatch: RuleMatch, index: number, allMatches: RuleMatch[], replacementText: string) => {
@@ -127,7 +174,6 @@ const StandaloneHeading = styled.h1`
 const MainContainer = styled.div`
   max-width: 800px;
   margin: 4em auto;
-  font-family: sans-serif;
 `;
 
 const InputArea = styled.textarea`
@@ -137,9 +183,13 @@ const InputArea = styled.textarea`
 
 const ButtonBar = styled.div`
   display: flex;
+  gap: 1em;
+`;
+
+const ButtonBarSpacer = styled.div`
+  flex-grow: 1;
 `;
 
 const Button = styled.button`
   font-size: 150%;
-  margin-left: auto;
 `;
