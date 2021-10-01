@@ -57,6 +57,7 @@ module.exports = {
             if (isEnvDevelopment) {
               return content;
             } else {
+              return content; //TODO
               // return content.toString().replace(new RegExp(urlDev, "g"), urlProd); // TODO
             }
           },

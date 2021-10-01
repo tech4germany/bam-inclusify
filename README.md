@@ -10,7 +10,7 @@ What is where:
 
 ## Setting up certificates for development
 
-* Go to `react-ui/node_modules/office-addin-dev-certs/cli.js` and change the end of lines format to `LF` to avoid a bug.
+* (On macOS & Linux:) Go to `react-ui/node_modules/office-addin-dev-certs/cli.js` and change the end of lines format to `LF` to avoid a bug.
 * Use `yarn office-addin-dev-certs install` to obtain certificates.
 * Create a file `react-ui/.env.local` with contents:
 

@@ -1,4 +1,4 @@
-package de.openminded;
+package de.inclusify;
 
 import org.languagetool.server.HTTPServer;
 import org.languagetool.server.HTTPServerConfig;
@@ -6,7 +6,6 @@ import org.languagetool.server.HTTPServerConfig;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
-import javax.servlet.http.HttpServlet;
 
 @WebListener
 public class MainServlet implements ServletContextListener {

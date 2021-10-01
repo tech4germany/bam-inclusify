@@ -16,7 +16,7 @@ export const TaskpaneApp: FC = () => {
 
   return (
     <div>
-      <TaskpaneHeading>OpenMinDEd</TaskpaneHeading>
+      <TaskpaneHeading>Inclusify</TaskpaneHeading>
       <div>
         <DefaultButton
           className="ms-welcome__action"
@@ -92,7 +92,7 @@ async function wordClickHandler(
   console.time("ltCheck");
   const request = {
     text: plaintext,
-    language: "auto",
+    language: "de-DE",
   };
   const content = await new LanguageToolClient().check(request);
   setLtMatches(content.matches || []);

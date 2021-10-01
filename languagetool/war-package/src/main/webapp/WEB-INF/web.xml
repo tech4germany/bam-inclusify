@@ -3,5 +3,5 @@
   "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>OpenMinDEd WAR-Wrapper for LanguageTool Server</display-name>
+  <display-name>Inclusify WAR-Wrapper for LanguageTool Server</display-name>
 </web-app>
