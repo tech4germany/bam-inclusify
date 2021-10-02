@@ -1,9 +1,11 @@
 import React, { Dispatch, FC, SetStateAction, useState } from "react";
 import styled from "styled-components";
+import { BaseButton } from "../common/buttons/Buttons";
 import { LanguageToolClient } from "../common/language-tool-api/LanguageToolClient";
 import { RuleMatch } from "../common/language-tool-api/types";
-import { ResultsArea as OldResultsArea } from "../common/results-display/ResultsArea";
+import { ResultsArea } from "../common/results-display/ResultsArea";
 import { splitTextMatch } from "../common/splitTextMatch";
+import { SummaryBar } from "../common/summary-bar/SummaryBar";
 
 type UseState<S> = [S, Dispatch<SetStateAction<S>>];
 
@@ -23,7 +25,7 @@ export const StandaloneApp: FC = () => {
       {/* <TopBar /> */}
 
       <CenteredContainer>
-        <SummaryBar />
+        <SummaryBar diversityErrorCount={0} grammarErrorCount={0} spellingErrorCount={0} />
         <MainAreaContainer>
           <MainTextAreaContainer>
             <MainTextArea
@@ -34,16 +36,14 @@ export const StandaloneApp: FC = () => {
             />
             <ButtonBar>
               <ButtonBarSpacer />
-              <GradientButton leftColor="#0189BB" rightColor="#00AFF0" onClick={() => checkText(inputText)}>
-                Prüfen
-              </GradientButton>
+              <CheckTextButton onClick={() => checkText(inputText)} />
             </ButtonBar>
           </MainTextAreaContainer>
           <ResultsAreaContainer>
             {isLoading ? (
               <div>Loading...</div>
             ) : (
-              <OldResultsArea
+              <ResultsArea
                 ruleMatches={ltMatches}
                 applyReplacement={makeReplacementApplier([inputText, setInputText], checkText)}
               />
@@ -60,30 +60,6 @@ const TopBar = () => <TopBarContainer>Top Bar</TopBarContainer>;
 const TopBarContainer = styled.div`
   background: white;
   border-bottom: 1px solid green;
-`;
-
-const SummaryBar = () => (
-  <SummaryBarContainer>
-    <ButtonBarSpacer />
-    <GradientButton leftColor="#E69B00" rightColor="#CD7D00">
-      Grammatik
-    </GradientButton>
-    <GradientButton leftColor="#B40F1F" rightColor="#8C1318">
-      Rechtschreibung
-    </GradientButton>
-    <GradientButton leftColor="#8F4DBF" rightColor="#6C3A90">
-      Diversitätslücken
-    </GradientButton>
-    <GradientButton leftColor="#0189BB" rightColor="#00AFF0">
-      ES
-    </GradientButton>
-  </SummaryBarContainer>
-);
-
-const SummaryBarContainer = styled.div`
-  margin: 24px 0;
-  display: flex;
-  gap: 10px;
 `;
 
 const CenteredContainer = styled.div`
@@ -147,16 +123,17 @@ const ButtonBarSpacer = styled.div`
   flex-grow: 1;
 `;
 
-interface GradientButtonProps {
-  leftColor: string;
-  rightColor: string;
-}
-const GradientButton = styled.button<GradientButtonProps>`
-  font-size: 14px;
-  background: linear-gradient(68deg, ${(props) => props.leftColor} 0%, ${(props) => props.rightColor} 100%);
-  border: none;
-  border-radius: 8px;
-  padding: 8px 16px;
-  color: white;
-  box-shadow: 0px 3px 6px #00000029;
+const darkCyan = "#00556E";
+const mediumCyan = "#0189BB";
+const brightCyan = "#00AFF0";
+
+const CheckTextButtonContainer = styled(BaseButton)`
+  background: transparent linear-gradient(68deg, ${brightCyan} 0%, ${mediumCyan} 100%) 0% 0% no-repeat padding-box;
+  &:hover {
+    background: ${darkCyan};
+  }
 `;
+
+const CheckTextButton: FC<{ onClick: React.MouseEventHandler<HTMLButtonElement> | undefined }> = ({ onClick }) => (
+  <CheckTextButtonContainer onClick={onClick}>Prüfen</CheckTextButtonContainer>
+);
