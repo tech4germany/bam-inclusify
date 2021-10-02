@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { BaseButton } from "../common/buttons/Buttons";
 import { LanguageToolClient } from "../common/language-tool-api/LanguageToolClient";
 import { RuleMatch } from "../common/language-tool-api/types";
+import { NavigationBar } from "../common/nav-bar/NavigationBar";
 import { ResultsArea } from "../common/results-display/ResultsArea";
 import { splitTextMatch } from "../common/splitTextMatch";
 import { SummaryBar } from "../common/summary-bar/SummaryBar";
@@ -22,7 +23,7 @@ export const StandaloneApp: FC = () => {
 
   return (
     <>
-      {/* <TopBar /> */}
+      <NavigationBar />
 
       <CenteredContainer>
         <SummaryBar diversityErrorCount={0} grammarErrorCount={0} spellingErrorCount={0} />
@@ -54,13 +55,6 @@ export const StandaloneApp: FC = () => {
     </>
   );
 };
-
-const TopBar = () => <TopBarContainer>Top Bar</TopBarContainer>;
-
-const TopBarContainer = styled.div`
-  background: white;
-  border-bottom: 1px solid green;
-`;
 
 const CenteredContainer = styled.div`
   max-width: 1024px;
