@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 import { RuleMatch } from "../language-tool-api/types";
+import { mapRuleCategory, RuleMatchCategory } from "../rule-categories";
 import { splitTextMatch } from "../splitTextMatch";
 import { isFunction } from "../type-helpers";
 
@@ -41,7 +42,7 @@ const LtMatch: FC<{
   applyReplacement?: (ruleMatch: RuleMatch, replacementText: string) => void;
 }> = ({ ltMatch, applyReplacement }) => {
   const [, matchText] = splitTextMatch(ltMatch.context.text, ltMatch.context.offset, ltMatch.context.length);
-  const category = mapRuleCategory(ltMatch.rule?.category.id);
+  const category = mapRuleCategory(ltMatch);
   return (
     <MatchContainer>
       <MatchTopBar category={category} categoryName={ltMatch.rule?.category?.name || ""} />
@@ -88,22 +89,6 @@ const MatchTopBarContainer = styled.div`
   gap: 1rem;
   align-items: center;
 `;
-
-type RuleMatchCategory = "spelling" | "grammar" | "diversity" | "unknown";
-function mapRuleCategory(categoryId: string | undefined): RuleMatchCategory {
-  switch (categoryId) {
-    case "DIVERSITY_SENSITIVE_LANGUAGE":
-      return "diversity";
-    case "TYPOS":
-      return "spelling";
-    case "REDUNDANCY":
-    case "GRAMMAR":
-    case "PUNCTUATION":
-      return "grammar";
-    default:
-      return "unknown";
-  }
-}
 
 function matchCategoryColor(category: RuleMatchCategory): string {
   switch (category) {

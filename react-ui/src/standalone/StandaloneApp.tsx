@@ -5,6 +5,7 @@ import { LanguageToolClient } from "../common/language-tool-api/LanguageToolClie
 import { RuleMatch } from "../common/language-tool-api/types";
 import { NavigationBar } from "../common/nav-bar/NavigationBar";
 import { ResultsArea } from "../common/results-display/ResultsArea";
+import { mapRuleCategory } from "../common/rule-categories";
 import { splitTextMatch } from "../common/splitTextMatch";
 import { SummaryBar } from "../common/summary-bar/SummaryBar";
 
@@ -21,12 +22,14 @@ export const StandaloneApp: FC = () => {
     setLoading(false);
   };
 
+  const errorCounts = computeErrorCounts(ltMatches);
+
   return (
     <>
       <NavigationBar />
 
       <CenteredContainer>
-        <SummaryBar diversityErrorCount={0} grammarErrorCount={0} spellingErrorCount={0} />
+        <SummaryBar {...errorCounts} />
         <MainAreaContainer>
           <MainTextAreaContainer>
             <MainTextArea
@@ -131,3 +134,14 @@ const CheckTextButtonContainer = styled(BaseButton)`
 const CheckTextButton: FC<{ onClick: React.MouseEventHandler<HTMLButtonElement> | undefined }> = ({ onClick }) => (
   <CheckTextButtonContainer onClick={onClick}>Prüfen</CheckTextButtonContainer>
 );
+
+function computeErrorCounts(ltMatches: RuleMatch[]): {
+  diversityErrorCount: number;
+  grammarErrorCount: number;
+  spellingErrorCount: number;
+} {
+  const diversityErrorCount = ltMatches.filter((m) => mapRuleCategory(m) === "diversity").length;
+  const grammarErrorCount = ltMatches.filter((m) => mapRuleCategory(m) === "grammar").length;
+  const spellingErrorCount = ltMatches.filter((m) => mapRuleCategory(m) === "spelling").length;
+  return { diversityErrorCount, grammarErrorCount, spellingErrorCount };
+}
