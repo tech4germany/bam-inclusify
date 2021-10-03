@@ -31,7 +31,7 @@ const NavBarSpacer = styled.div`
   flex-grow: 1;
 `;
 
-const navBarHeight = "85px;";
+const navBarHeight = "85px";
 const NavBarAppIconContainer = styled.div`
   font-size: 30px;
   font-weight: bold;
@@ -43,4 +43,5 @@ const NavBarLinkItem = styled.a`
   height: ${navBarHeight};
   line-height: ${navBarHeight};
   padding: 0 30px;
+  color: gray;
 `;
