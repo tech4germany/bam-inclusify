@@ -10,7 +10,6 @@ interface SummaryBarProps {
 
 export const SummaryBar: FC<SummaryBarProps> = ({ diversityErrorCount, grammarErrorCount, spellingErrorCount }) => (
   <SummaryBarContainer>
-    <SummaryBarSpacer />
     <GrammarSummary grammarErrorCount={grammarErrorCount} />
     <SpellingSummary spellingErrorCount={spellingErrorCount} />
     <DiversityErrorSummary diversityErrorCount={diversityErrorCount} />
@@ -23,9 +22,8 @@ const SummaryBarContainer = styled.div`
   display: flex;
   gap: 10px;
   user-select: none;
-`;
-const SummaryBarSpacer = styled.div`
-  flex-grow: 1;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 `;
 
 const SummaryCountCircle = styled.div`

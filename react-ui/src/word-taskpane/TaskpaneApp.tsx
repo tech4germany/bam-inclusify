@@ -6,6 +6,7 @@ import { LanguageToolClient } from "../common/language-tool-api/LanguageToolClie
 import { isRunningInOutlook, isRunningInWord } from "../common/office-api-helpers";
 import { splitTextMatch } from "../common/splitTextMatch";
 import { CheckTextButton } from "../common/buttons/Buttons";
+import { SummaryBar } from "../common/summary-bar/SummaryBar";
 
 export const TaskpaneApp: FC = () => {
   const [ltMatches, setLtMatches] = useState<RuleMatch[]>([]);
@@ -23,6 +24,7 @@ export const TaskpaneApp: FC = () => {
           }}
         />
       </div>
+      <SummaryBar diversityErrorCount={0} grammarErrorCount={0} spellingErrorCount={0} />
 
       {isLoading ? (
         <div>Loading...</div>
