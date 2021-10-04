@@ -1,12 +1,12 @@
 import React, { Dispatch, FC, SetStateAction, useState } from "react";
 import styled from "styled-components";
-import { DefaultButton } from "@fluentui/react";
 import { RuleMatch } from "../common/language-tool-api/types";
 import { ApplyReplacementFunction, ResultsArea } from "../common/results-display/ResultsArea";
 import { LanguageToolClient } from "../common/language-tool-api/LanguageToolClient";
 import { isRunningInOutlook, isRunningInWord } from "../common/office-api-helpers";
-import { StartIndexTuple } from "../common/language-tool-api/document-adapter";
 import { splitTextMatch } from "../common/splitTextMatch";
+
+const DefaultButton = styled.button``;
 
 export const TaskpaneApp: FC = () => {
   const [ltMatches, setLtMatches] = useState<RuleMatch[]>([]);
@@ -16,11 +16,8 @@ export const TaskpaneApp: FC = () => {
 
   return (
     <div>
-      <TaskpaneHeading>Inclusify</TaskpaneHeading>
       <div>
         <DefaultButton
-          className="ms-welcome__action"
-          iconProps={{ iconName: "ChevronRight" }}
           onClick={async () => {
             setLoading(true);
             await clickHandler(setLtMatches, setApplier);
@@ -30,8 +27,6 @@ export const TaskpaneApp: FC = () => {
           Prüfen
         </DefaultButton>
         <DefaultButton
-          className="ms-welcome__action"
-          iconProps={{ iconName: "ChevronRight" }}
           onClick={async () => {
             setLoading(true);
             await debugClickHandler(setRanges);
@@ -42,13 +37,19 @@ export const TaskpaneApp: FC = () => {
         </DefaultButton>
       </div>
 
-      {isLoading ? <div>Loading...</div> : <ResultsArea ruleMatches={ltMatches || []} applyReplacement={applier} />}
+      {isLoading ? (
+        <div>Loading...</div>
+      ) : (
+        <AddinResultsAreaContainer>
+          <ResultsArea ruleMatches={ltMatches || []} applyReplacement={applier} />
+        </AddinResultsAreaContainer>
+      )}
     </div>
   );
 };
 
-const TaskpaneHeading = styled.h1`
-  color: darkgreen;
+const AddinResultsAreaContainer = styled.div`
+  margin: 1rem;
 `;
 
 type ParagraphWithRanges = { paragraph: Word.Paragraph; ranges: Word.Range[] };

@@ -1,12 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { initializeIcons } from "@fluentui/font-icons-mdl2";
-import { ThemeProvider } from "@fluentui/react";
-import "../index.css";
+import { GlobalStyle } from "../common/global-styles";
 import { TaskpaneApp } from "./TaskpaneApp";
 import { setOfficeHostInfo } from "../common/office-api-helpers";
-
-initializeIcons();
 
 /* Initialize office and start rendering application */
 Office.onReady().then((info) => {
@@ -14,9 +10,8 @@ Office.onReady().then((info) => {
 
   ReactDOM.render(
     <React.StrictMode>
-      <ThemeProvider>
-        <TaskpaneApp />
-      </ThemeProvider>
+      <GlobalStyle />
+      <TaskpaneApp />
     </React.StrictMode>,
     document.getElementById("root")
   );

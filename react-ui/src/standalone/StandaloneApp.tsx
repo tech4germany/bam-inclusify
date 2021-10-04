@@ -1,9 +1,13 @@
 import React, { Dispatch, FC, SetStateAction, useState } from "react";
 import styled from "styled-components";
+import { BaseButton } from "../common/buttons/Buttons";
 import { LanguageToolClient } from "../common/language-tool-api/LanguageToolClient";
 import { RuleMatch } from "../common/language-tool-api/types";
+import { NavigationBar } from "../common/nav-bar/NavigationBar";
 import { ResultsArea } from "../common/results-display/ResultsArea";
+import { mapRuleCategory } from "../common/rule-categories";
 import { splitTextMatch } from "../common/splitTextMatch";
+import { SummaryBar } from "../common/summary-bar/SummaryBar";
 
 type UseState<S> = [S, Dispatch<SetStateAction<S>>];
 
@@ -18,61 +22,51 @@ export const StandaloneApp: FC = () => {
     setLoading(false);
   };
 
+  const errorCounts = computeErrorCounts(ltMatches);
+
   return (
     <>
-      <TopBar />
-      <SummaryBar />
+      <NavigationBar />
 
-      <MainAreaContainer>
-        <MainTextAreaContainer>
-          <MainTextArea spellCheck={false} />
-        </MainTextAreaContainer>
-        <ResultAreaContainer>
-          <ResultListEntry>Entry 1</ResultListEntry>
-          <ResultListEntry>Entry 2</ResultListEntry>
-        </ResultAreaContainer>
-      </MainAreaContainer>
-
-      <MainContainer>
-        <StandaloneHeading>Inclusify</StandaloneHeading>
-        <div>
-          <h3>Text eingeben:</h3>
-          <InputArea onChange={(e) => setInputText(e.target.value)} value={inputText} />
-        </div>
-        <ButtonBar>
-          <Button onClick={() => checkText(inputText)}>Prüfen</Button>
-        </ButtonBar>
-
-        {isLoading ? (
-          <div>Loading...</div>
-        ) : (
-          <ResultsArea
-            ruleMatches={ltMatches}
-            applyReplacement={makeReplacementApplier([inputText, setInputText], checkText)}
-          />
-        )}
-      </MainContainer>
+      <CenteredContainer>
+        <SummaryBar {...errorCounts} />
+        <MainAreaContainer>
+          <MainTextAreaContainer>
+            <MainTextArea
+              spellCheck={false}
+              autoFocus
+              onChange={(e) => setInputText(e.target.value)}
+              value={inputText}
+            />
+            <ButtonBar>
+              <ButtonBarSpacer />
+              <CheckTextButton onClick={() => checkText(inputText)} />
+            </ButtonBar>
+          </MainTextAreaContainer>
+          <ResultsAreaContainer>
+            {isLoading ? (
+              <div>Loading...</div>
+            ) : (
+              <ResultsArea
+                ruleMatches={ltMatches}
+                applyReplacement={makeReplacementApplier([inputText, setInputText], checkText)}
+              />
+            )}
+          </ResultsAreaContainer>
+        </MainAreaContainer>
+      </CenteredContainer>
     </>
   );
 };
 
-const TopBar = () => <TopBarContainer>Top Bar</TopBarContainer>;
-
-const TopBarContainer = styled.div`
-  background: white;
-  border-bottom: 1px solid green;
-`;
-
-const SummaryBar = () => <SummaryBarContainer>Summary Bar</SummaryBarContainer>;
-
-const SummaryBarContainer = styled.div`
-  border-bottom: 1px solid blue;
+const CenteredContainer = styled.div`
+  max-width: 1024px;
+  margin: 0 auto;
 `;
 
 const MainAreaContainer = styled.div`
   display: flex;
-  max-width: 800px;
-  margin: 1em auto;
+  margin-bottom: 2rem;
 `;
 
 const MainTextAreaContainer = styled.div`
@@ -81,25 +75,22 @@ const MainTextAreaContainer = styled.div`
 `;
 
 const MainTextArea = styled.textarea`
-  padding: 1em;
-  font-family: sans-serif;
+  padding: 2.5rem 2rem;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 25px;
   width: 100%;
   box-sizing: border-box;
   border-radius: 0;
   border: none;
   resize: vertical;
-  box-shadow: 3px 3px 15px 2px rgba(179, 179, 179, 1);
-  height: 20em;
+  box-shadow: 0px 9px 18px #00000029;
+  height: 30em;
+  margin-bottom: 1em;
 `;
 
-const ResultAreaContainer = styled.div``;
-
-const ResultListEntry = styled.div`
-  background: white;
-  border-radius: 5px;
-  padding: 0.5em;
-  box-shadow: 3px 3px 15px 2px rgba(179, 179, 179, 1);
-  margin-bottom: 0.8em;
+const ResultsAreaContainer = styled.div`
+  width: 20rem;
 `;
 
 function makeReplacementApplier([inputText, setInputText]: UseState<string>, triggerRecheck: (text: string) => void) {
@@ -120,26 +111,37 @@ const checkTextWithApi = async (inputText: string, setLtMatches: Dispatch<SetSta
   setLtMatches(() => content.matches || []);
 };
 
-const StandaloneHeading = styled.h1`
-  color: darkblue;
-`;
-
-const MainContainer = styled.div`
-  max-width: 800px;
-  margin: 4em auto;
-  font-family: sans-serif;
-`;
-
-const InputArea = styled.textarea`
-  width: 100%;
-  height: 10em;
-`;
-
 const ButtonBar = styled.div`
   display: flex;
+  gap: 1em;
 `;
 
-const Button = styled.button`
-  font-size: 150%;
-  margin-left: auto;
+const ButtonBarSpacer = styled.div`
+  flex-grow: 1;
 `;
+
+const darkCyan = "#00556E";
+const mediumCyan = "#0189BB";
+const brightCyan = "#00AFF0";
+
+const CheckTextButtonContainer = styled(BaseButton)`
+  background: transparent linear-gradient(68deg, ${brightCyan} 0%, ${mediumCyan} 100%) 0% 0% no-repeat padding-box;
+  &:hover {
+    background: ${darkCyan};
+  }
+`;
+
+const CheckTextButton: FC<{ onClick: React.MouseEventHandler<HTMLButtonElement> | undefined }> = ({ onClick }) => (
+  <CheckTextButtonContainer onClick={onClick}>Prüfen</CheckTextButtonContainer>
+);
+
+function computeErrorCounts(ltMatches: RuleMatch[]): {
+  diversityErrorCount: number;
+  grammarErrorCount: number;
+  spellingErrorCount: number;
+} {
+  const diversityErrorCount = ltMatches.filter((m) => mapRuleCategory(m) === "diversity").length;
+  const grammarErrorCount = ltMatches.filter((m) => mapRuleCategory(m) === "grammar").length;
+  const spellingErrorCount = ltMatches.filter((m) => mapRuleCategory(m) === "spelling").length;
+  return { diversityErrorCount, grammarErrorCount, spellingErrorCount };
+}

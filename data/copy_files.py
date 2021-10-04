@@ -48,7 +48,7 @@ def clone_repo() -> None:
             [
                 "git",
                 "clone",
-                "git@github.com:languagetool-org/languagetool.git",
+                "https://github.com/languagetool-org/languagetool.git",
                 "--depth",
                 "1",
             ],
