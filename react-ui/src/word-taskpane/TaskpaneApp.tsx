@@ -193,7 +193,7 @@ function findItemContainingOffset(
   startIndexMap: StartOffsetMapItem[],
   offset: number
 ): { item: StartOffsetMapItem; index: number } {
-  const index = startIndexMap.findIndex((i) => i.startOffset > offset) - 1;
+  const index = startIndexMap.findIndex((i) => i.startOffset <= offset && i.startOffset + i.range.text.length > offset);
   const item = startIndexMap[index];
   return { item: item, index };
 }
