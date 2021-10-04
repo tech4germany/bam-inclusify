@@ -1,6 +1,6 @@
 import React, { Dispatch, FC, SetStateAction, useState } from "react";
 import styled from "styled-components";
-import { BaseButton, CheckTextButton } from "../common/buttons/Buttons";
+import { CheckTextButton } from "../common/buttons/Buttons";
 import { LanguageToolClient } from "../common/language-tool-api/LanguageToolClient";
 import { RuleMatch } from "../common/language-tool-api/types";
 import { NavigationBar } from "../common/nav-bar/NavigationBar";
