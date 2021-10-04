@@ -221,9 +221,10 @@ def build_with_docker() -> None:
         ),
         cwd=languagetool_path,
     )
+    # docker run -it --rm --name my-maven-project -v (pwd):/usr/src/mymaven -v $HOME/.m2:/root/.m2 -w /usr/src/mymaven maven:3.8-openjdk-8 ./build.sh languagetool-standalone package -DskipTests
 
 
-def copy_files(grammar_path = grammar_path) -> None:
+def copy_files(grammar_path=grammar_path) -> None:
     xml = open_(rulefile).read()
     open_(path.join(grammar_path, rulefile), "w").write(xml)
 
@@ -235,7 +236,7 @@ def copy_files(grammar_path = grammar_path) -> None:
             ),
         ).replace(
             "</rules>",
-            '<category id="DIVERSITY_SENSITIVE_LANGUAGE" name="Erweiterung für diversitätssensible Sprache">\n&UserRules;\n</category>\n</rules>',
+            '<category id="GENERISCHES MASKULINUM" name="Generisches Maskulinum">\n&UserRules;\n</category>\n</rules>',
         )
         return new_xml
 
@@ -261,4 +262,3 @@ def update(fun, file_path) -> None:
 if __name__ == "__main__":
     # init_languages([("dg1", "Gender German 1"), ("dg2", "Gender German 2")])
     copy_files(grammar_path)
-
