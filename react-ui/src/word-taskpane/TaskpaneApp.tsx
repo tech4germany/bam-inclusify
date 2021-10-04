@@ -5,36 +5,23 @@ import { ApplyReplacementFunction, ResultsArea } from "../common/results-display
 import { LanguageToolClient } from "../common/language-tool-api/LanguageToolClient";
 import { isRunningInOutlook, isRunningInWord } from "../common/office-api-helpers";
 import { splitTextMatch } from "../common/splitTextMatch";
-
-const DefaultButton = styled.button``;
+import { CheckTextButton } from "../common/buttons/Buttons";
 
 export const TaskpaneApp: FC = () => {
   const [ltMatches, setLtMatches] = useState<RuleMatch[]>([]);
   const [applier, setApplier] = useState<ApplyReplacementFunction>();
   const [isLoading, setLoading] = useState(false);
-  const [ranges, setRanges] = useState<Word.Range[]>([]);
 
   return (
     <div>
       <div>
-        <DefaultButton
+        <CheckTextButton
           onClick={async () => {
             setLoading(true);
             await clickHandler(setLtMatches, setApplier);
             setLoading(false);
           }}
-        >
-          Prüfen
-        </DefaultButton>
-        <DefaultButton
-          onClick={async () => {
-            setLoading(true);
-            await debugClickHandler(setRanges);
-            setLoading(false);
-          }}
-        >
-          Debug
-        </DefaultButton>
+        />
       </div>
 
       {isLoading ? (
@@ -220,15 +207,3 @@ function extractPlaintextAndIndexMap(paragraphsWithRanges: ParagraphWithRanges[]
 
   return { plaintext, startOffsetMap };
 }
-
-const debugClickHandler = async (setParagraphs: (newParagraphs: Word.Range[]) => void) => {
-  await Word.run(async (context) => {
-    const ranges = context.document.body.getRange(Word.RangeLocation.whole).getTextRanges([" "], false).track();
-    ranges.load();
-    await context.sync();
-
-    const newRanges = ranges.items;
-    setParagraphs(newRanges);
-    console.log(newRanges);
-  });
-};

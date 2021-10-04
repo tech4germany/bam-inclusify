@@ -1,6 +1,6 @@
 import React, { Dispatch, FC, SetStateAction, useState } from "react";
 import styled from "styled-components";
-import { BaseButton } from "../common/buttons/Buttons";
+import { BaseButton, CheckTextButton } from "../common/buttons/Buttons";
 import { LanguageToolClient } from "../common/language-tool-api/LanguageToolClient";
 import { RuleMatch } from "../common/language-tool-api/types";
 import { NavigationBar } from "../common/nav-bar/NavigationBar";
@@ -119,21 +119,6 @@ const ButtonBar = styled.div`
 const ButtonBarSpacer = styled.div`
   flex-grow: 1;
 `;
-
-const darkCyan = "#00556E";
-const mediumCyan = "#0189BB";
-const brightCyan = "#00AFF0";
-
-const CheckTextButtonContainer = styled(BaseButton)`
-  background: transparent linear-gradient(68deg, ${brightCyan} 0%, ${mediumCyan} 100%) 0% 0% no-repeat padding-box;
-  &:hover {
-    background: ${darkCyan};
-  }
-`;
-
-const CheckTextButton: FC<{ onClick: React.MouseEventHandler<HTMLButtonElement> | undefined }> = ({ onClick }) => (
-  <CheckTextButtonContainer onClick={onClick}>Prüfen</CheckTextButtonContainer>
-);
 
 function computeErrorCounts(ltMatches: RuleMatch[]): {
   diversityErrorCount: number;
