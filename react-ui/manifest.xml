@@ -4,7 +4,7 @@
   <Version>1.0.0.0</Version>
   <ProviderName>Tech4Germany 2021</ProviderName>
   <DefaultLocale>de-DE</DefaultLocale>
-  <DisplayName DefaultValue="OpenMinDEd"/>
+  <DisplayName DefaultValue="Inclusify"/>
   <Description DefaultValue="Diversitätssensible Sprache leicht gemacht."/>
   <IconUrl DefaultValue="https://localhost:3000/assets/icon-32.png"/>
   <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/icon-64.png"/>
@@ -64,11 +64,11 @@
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
       </bt:Urls>
       <bt:ShortStrings>
-        <bt:String id="CommandsGroup.Label" DefaultValue="OpenMinDEd"/>
-        <bt:String id="TaskpaneButton.Label" DefaultValue="OpenMinDEd öffnen"/>
+        <bt:String id="CommandsGroup.Label" DefaultValue="Inclusify"/>
+        <bt:String id="TaskpaneButton.Label" DefaultValue="Inclusify öffnen"/>
       </bt:ShortStrings>
       <bt:LongStrings>
-        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Klicken Sie hier, um das OpenMinDEd Add-In anzuzeigen"/>
+        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Klicken Sie hier, um das Inclusify Add-In anzuzeigen"/>
       </bt:LongStrings>
     </Resources>
   </VersionOverrides>
