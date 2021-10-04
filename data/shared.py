@@ -1,3 +1,4 @@
+from copy import copy
 from typing import *
 import pandas as pd
 
@@ -12,6 +13,8 @@ def log(a: str, x: A) -> A:
 
 
 def add_to_dict(key: A, vals: List[B], dic: Dict[A, List[B]]) -> Dict[A, List[B]]:
+    key = copy(key)
+    vals = copy(vals)
     if key in dic.keys():
         for val in vals:
             if not val in dic[key]:
@@ -21,7 +24,7 @@ def add_to_dict(key: A, vals: List[B], dic: Dict[A, List[B]]) -> Dict[A, List[B]
 
 
 def dict_to_csvs(dic: Dict[str, Dict[str, List[str]]], name: str) -> None:
-    for n in ["sg", "pl"]:
+    for n in ["any", "sg", "pl"]:
         df = pd.DataFrame.from_dict(dic[n], orient="index")
         df.to_csv("{}_{}.csv".format(name, n), header=False)
 
