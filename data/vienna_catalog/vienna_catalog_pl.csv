@@ -1,449 +1,1004 @@
-Administrationsbereich Benutzer,Administrationsbereich Benutzer*innen
-Gesundheits- und Krankenpfleger,Gesundheits- und Krankenpfleger*innen
-Geschäftsgruppenkoordinatoren,Geschäftsgruppenkoordinator*innen
-wissenschaftliche Mitarbeiter,wissenschaftliche Mitarbeiter*innen
-Zwischenablage des Benutzers,Zwischenablage der Benutzer*innen
-Adresse des Antragsstellers,Adresse der Antragsteller*innen
-Ziviltechnikerangelegenheit,Angelegenheit für Ziviltechniker*innen
-Biomedizinische Analytiker,Biomedizinische Analytiker*innen
-Brandschutzansprechpartner,Brandschutzansprechpartner*innen
-Dezentrale Administratoren,Dezentrale Administrator*innen
-Diplomierte Sozialarbeiter,Diplomierte Sozialarbeiter*innen
-Karthographischer Zeichner,Karthographische Zeichner*innen
-Geschäftsabteilungsleiter,Geschäftsabteilungsleiter*innen
-Kinder- und Jugendanwälte,Kinder- und Jugendanwält*innen
-Ereignis an den Benutzer,Ereignis an Benutzer*innen
-Pädagogische Mitarbeiter,Pädagogische Mitarbeiter*innen
-Bautechnischer Zeichner,Bautechnische Zeichner*innen
-Benutzerstellvertretung,Benutzer*innenstellvertretung
-Betriebsoberinspektoren,Betriebsoberinspektor*innen
-Universitätsassistenten,Universitätsassistent*innen
-Amtsführender Stadtrat,Amtsführende Stadträt*innen
-Außendienstmitarbeiter,Außendienstmitarbeiter*innen
-Veranstaltungsreferent,Veranstaltungsreferent*innen
-abstrakter Teilnehmer,abstrakte Teilnehmer*innen
-Benutzereinstellungen,Benutzer*inneneinstellungen
-Benutzerinformationen,Benutzer*inneninformationen
-Benutzerkalenderliste,Benutzer*innenkalenderliste
-Betriebsorganisatoren,Betriebsorganisator*innen
-Obduktionsassistenten,Obduktionsassistent*innen
-Operationsassistenten,Operationsassistent*innen
-Patientenorientierung,Patient*innenorientierung
-Radiologietechnologen,Radiologietechnolog*innen
-Rechnungsamtsdirektor,Rechnungsamtsdirektor*innen
-Systemadministratoren,Systemadministrator*innen
-Ziviltechnikerprüfung,Prüfung der Ziviltechniker*innen
-Alternativmedizinern,Alternativmediziner*innen
-Ausbildungstechniker,Ausbildungstechniker*innen
-Bezirkskoordinatoren,Bezirkskoordinator*innen
-Fremdenführerprüfung,Prüfung von Fremdenführer*innen
-Alternativmediziner,Alternativmediziner*innen
-Anbieterverzeichnis,Anbieter*innenverzeichnis
-Ausbildungsjuristen,Ausbildungsjurist*innen
-Ausbildungsreferent,Ausbildungsreferent*innen
-Behindertenbetreuer,Behindertenbetreuer*innen
-Benutzerstatistiken,Benutzer*innenstatistiken
-Betriebsassistenten,Betriebsassistent*innen
-Betriebsinspektoren,Betriebsinspektor*innen
-Betriebskontrollore,Betriebskontrollor*innen
-Budgetkoordinatoren,Budgetkoordinator*innen
-Dienststellenleiter,Dienststellenleiter*innen
-EDV-Ansprechpartner,EDV-Ansprechpartner*innen
-Entwicklungspartner,Entwicklungspartner*innen
-EU-Förderreferenten,EU-Förderreferent*innen
-Familientherapeuten,Familientherapeut*innen
-Gartenbezirksleiter,Gartenbezirksleiter*innen
-Hausprofessionisten,Hausprofessionist*innen
-Kraftfahrzeuglenker,Kraftfahrzeuglenker*innen
-Pädagogische Leiter,Pädagogische Leiter*innen
-Versicherungsmakler,Versicherungsmakler*innen
-anwenderfreundlich,praxisnah
-Bereichsdirektoren,Bereichsdirektor*innen
-Familienreferenten,Familienreferent*innen
-Kindergärtnerinnen,Kindergartenpädagog*innen
-Maschinenschlosser,Maschinenschlosser*innen
-Mittelschullehrern,Mittelschullehrer*innen
-Niederösterreicher,Niederösterreicher*innen
-Personalentwickler,Personalentwickler*innen
-Personalreferenten,Personalreferent*innen
-Schlittschuhläufer,Schlittschuhläufer*innen
-Stadtbaudirektoren,Stadtbaudirektor*innen
-Apothekenlaborant,Apothekenlaborant*innen
-Beschwerdemanager,Beschwerdemanager*innen
-Besucherparkplatz,Parkplatz für Besucher*innen
-Bezirksamtsleiter,Bezirksamtsleiter*innen
-Gartenwerkmeister,Gartenwerkmeister*innen
-Generaldirektoren,Generaldirektor*innen
-Hauskoordinatoren,Hauskoordinator*innen
-Konsumentenschutz,Konsument*innenschutz
-Luftbildauswerter,Auswerter*innen von Luftbildern
-Mittelschullehrer,Mittelschullehrer*innen
-Personalvertreter,Personalvertreter*innen
-Physiotherapeuten,Physiotherapeut*innen
-Prosekturgehilfen,Prosekturgehilf*innen
-Wirtschaftshelfer,Wirtschaftshelfer*innen
-Abteilungshelfer,Abteilungshelfer*innen
-Abteilungsleiter,Abteilungsleiter*innen
-Arbeitsmediziner,Arbeitsmediziner*innen
-Beratertätigkeit,Berater*innentätigkeit
-Bezirksvorsteher,Bezirksvorsteher*innen
-Brandschutzwarte,Brandschutzwart*innen
-Budgetreferenten,Budgetreferent*innen
-Diplomingenieure,Diplomingenieur*innen
-Finanzreferenten,Finanzreferent*innen
-Generalsekretäre,Generalsekretär*innen
-Genossenschafter,Genossenschafter*innen
-Geschäftsinhaber,Geschäftsinhaber*innen
-Hauptschullehrer,Hauptschullehrer*innen
-Immobilienmakler,Immobilienmakler*innen
-kundenfreundlich,kund*innenfreundlich
-Lateinamerikaner,Lateinamerikaner*innen
-Oberösterreicher,Oberösterreicher*innen
-Qualitätsmanager,Qualitätsmanager*innen
-Sozialdemokraten,Sozialdemokrat*innen
-Stützpunktleiter,Stützpunktleiter*innen
-Systemanalytiker,Systemanalytiker*innen
-Volksschullehrer,Volksschullehrer*innen
-Adressatenliste,Adressat*innenliste
-Alleinverdiener,Alleinverdiener*innen
-Ansprechpartner,Ansprechpartner*innen
-Bauinspizienten,Bauinspizient*innen
-Branddirektoren,Branddirektor*innen
-Ergotherapeuten,Ergotherapeut*innen
-Expertengremium,Expert*innengremium
-Fachassistenten,Fachassistent*innen
-Fachwerkmeister,Fachwerkmeister*innen
-Gebietsreferent,Gebietsreferent*innen
-Geschäftsführer,Geschäftsführer*innen
-Geschäftsleiter,Geschäftsleiter*innen
-Hausinspektoren,Hausinspektor*innen
-Klassensprecher,Klassensprecher*innen
-Patientenanwalt,Patient*innenanwaltschaft
-Rauchfangkehrer,Rauchfangkehrer*innen
-Rechtsfürsorger,Rechtsfürsorger*innen
-Sozialpädagogen,Sozialpädagog*innen
-Teamassistenten,Teamassistent*innen
-Teamwerkmeister,Teamwerkmeister*innen
-Vergabereferent,Vergabereferent*innen
-Wissenschaftler,Wissenschaftler*innen
-Zentraleuropäer,Zentraleuropäer*innen
-Altersforscher,Altersforscher*innen
-Antragssteller,Antragssteller*innen
-Arbeiternehmer,Arbeitnehmer*innen
-Autoelektriker,Autoelektriker*innen
-Automechaniker,Automechaniker*innen
-Benutzerprofil,Benutzer*innenprofil
-Bereichsleiter,Bereichsleiter*innen
-Betriebsprüfer,Betriebsprüfer*innen
-Fachreferenten,Fachreferent*innen
-Garagenmeister,Garagenmeister*innen
-Gesellschafter,Gesellschafter*innen
-Gewerkschafter,Gewerkschafter*innen
-IKT-Referenten,IKT-Referent*innen
-Inventarführer,Inventarführer*innen
-Krankenpfleger,Krankenpfleger*innen
-Masseverwalter,Masseverwalter*innen
-Mediensprecher,Mediensprecher*innen
-Metallarbeiter,Metallarbeiter*innen
-Mitteleuropäer,Mitteleuropäer*innen
-Motorradfahrer,Motorradfahrer*innen
-Nordamerikaner,Nordamerikaner*innen
-Parlamentarier,Parlamentarier*innen
-Programmleiter,Programmleiter*innen
-Referatsleiter,Referatsleiter*innen
-Sachbearbeiter,Sachbearbeiter*innen
-Schriftsteller,Schriftsteller*innen
-Sektionsleiter,Sektionsleiter*innen
-Sozialarbeiter,Sozialarbeiter*innen
-Stationsführer,Stationsführer*innen
-Stationsleiter,Stationsleiter*innen
-Systembediener,Systembediener*innen
-Verkehrssünder,Verkehrssünder*innen
-Werkzeugmacher,Werkzeugmacher*innen
-Wissenschafter,Wissenschafter*innen
-Wohnungsmakler,Wohnungsmakler*innen
-Zahnarzthelfer,Zahnarzthelfer*innen
-Ziviltechniker,Ziviltechniker*innen
-Abfallmanager,Abfallmanager*innen
-Antragsteller,Antragsteller*innen
-Auftragnehmer,Auftragnehmer*innen
-Betriebsärzte,Betriebsärzt*innen
-Bibliothekare,Bibliothekar*innen
-Bürgermeister,Bürgermeister*innen
-Dienstleister,Dienstleister*innen
-Filmvorführer,Filmvorführer*innen
-Fremdenführer,Fremdenführer*innen
-Gruppenleiter,Gruppenleiter*innen
-Journalleiter,Journalleiter*innen
-Kanalarbeiter,Kanalarbeiter*innen
-Koordinatoren,Koordinator*innen
-Laborgehilfen,Laborgehilf*innen
-Mechatroniker,Mechatroniker*innen
-Notarzthelfer,Notarzthelfer*innen
-Programmierer,Programmierer*innen
-Restauratoren,Restaurator*innen
-Schauspielern,Schauspieler*innen
-Schriftführer,Schriftführer*innen
-Schulsprecher,Schulsprecher*innen
-Südamerikaner,Südamerikaner*innen
-Verlagsführer,Verlagsführer*innen
-Altenpfleger,Altenpfleger*innen
-Amtsgehilfen,Amtsgehilf*innen
-Arbeitnehmer,Arbeitnehmer*innen
-Auftraggeber,Auftraggeber*innen
-Beschäftigte,Mitarbeiter*innen
-Börsenmakler,Börsenmakler*innen
-Burgenländer,Burgenländer*innen
-Dienstnehmer,Dienstnehmer*innen
-Eisenstädter,Eisenstädter*innen
-Expertenjury,Expert*innenjury
-Facharbeiter,Facharbeiter*innen
-Fleischhauer,Fleischhauer*innen
-Fliesenleger,Fliesenleger*innen
-Fördernehmer,Fördernehmer*innen
-Gymnasiasten,Schüler*innen
-Hausarbeiter,Hausarbeiter*innen
-Heilmasseure,Heilmasseur*innen
-Informatiker,Informatiker*innen
-Journalisten,Journalist*innen
-Kartographen,Kartograph*innen
-Klagenfurter,Klagenfurter*innen
-Ladeninhaber,Ladeninhaber*innen
-Liquidatoren,Liquidator*innen
-Marktmeister,Marktmeister*innen
-Maschinisten,Maschinist*innen
-Mathematiker,Mathematiker*innen
-Nordeuropäer,Nordeuropäer*innen
-Orthoptisten,Orthoptist*innen
-Österreicher,Österreicher*innen
-Partieführer,Partieführer*innen
-Schauspieler,Schauspieler*innen
-Staatsbürger,Staatsbürger*innen
-Steuerzahler,Steuerzahler*innen
-Supervisoren,Supervisor*innen
-Vorarlberger,Vorarlberger*innen
-Westeuropäer,Westeuropäer*innen
-Wettbewerber,Wettbewerber*innen
-Zugbegleiter,Zugbegleiter*innen
-Absolventen,Absolvent*innen
-Arbeitgeber,Arbeitgeber*innen
-Assistenten,Assistent*innen
-Bademeister,Bademeister*innen
-Bauarbeiter,Bauarbeiter*innen
-Dezernenten,Dezernent*innen
-Dienstgeber,Dienstgeber*innen
-Dolmetscher,Dolmetscher*innen
-Evaluatoren,Evaluator*innen
-Genforscher,Genforscher*innen
-Hausmeister,Hausmeister*innen
-Infomanager,Infomanager*innen
-Innsbrucker,Innsbrucker*innen
-Inspektoren,Inspektor*innen
-Kartografen,Kartograf*innen
-Konsumenten,Konsument*innen
-Kraftfahrer,Kraftfahrer*innen
-Lieferanten,Lieferant*innen
-Magazineure,Magazineur*innen
-Mitarbeiter,Mitarbeiter*innen
-Mitbewohner,Mitbewohner*innen
-Osteuropäer,Osteuropäer*innen
-Schuhmacher,Schuhmacher*innen
-Stakeholder,Stakeholder*innen
-Südeuropäer,Südeuropäer*innen
-Tierpfleger,Tierpfleger*innen
-Unternehmer,Unternehmer*innen
-Verbraucher,Verbraucher*innen
-Vorarbeiter,Vorarbeiter*innen
-Werkmeister,Werkmeister*innen
-Abonnenten,Abonnent*innen
-AHS-Lehrer,AHS-Lehrer*innen
-Amerikaner,Amerikaner*innen
-Amtsleiter,Amtsleiter*innen
-Analytiker,Analytiker*innen
-Arzthelfer,Arzthelfer*innen
-Asylwerber,Asylwerber*innen
-Aussteller,Aussteller*innen
-Autofahrer,Autofahrer*innen
-Bearbeiter,Bearbeiter*innen
-Bierbrauer,Bierbrauer*innen
-Buchbinder,Buchbinder*innen
-Buchhalter,Buchhalter*innen
-Büroleiter,Büroleiter*innen
-Chauffeure,Lenker*innen
-Controller,Controller*innen
-Dachdecker,Dachdecker*innen
-Diätologen,Diätolog*innen
-Direktoren,Direktor*innen
-Dirigenten,Dirigent*innen
-Einbringer,Einbringer*innen
-Einrichter,Einrichter*innen
-Elektriker,Elektriker*innen
-Entwickler,Entwickler*innen
-Ersthelfer,Ersthelfer*innen
-Freigänger,Freigänger*innen
-Glasbläser,Glasbläser*innen
-Haushälter,Haushälter*innen
-Hilfsköche,Hilfsköch*innen
-Horthelfer,Horthelfer*innen
-HTL-Lehrer,HTL-Lehrer*innen
-Korbmacher,Korbmacher*innen
-Logistiker,Logistiker*innen
-Maturanten,Maturant*innen
-Mechaniker,Mechaniker*innen
-Ofensetzer,Ofensetzer*innen
-Osttiroler,Osttiroler*innen
-Polizisten,Polizist*innen
-Referenten,Referent*innen
-Sachwalter,Sachwalter*innen
-Salzburger,Salzburger*innen
-Südtiroler,Südtiroler*innen
-Taxifahrer,Taxifahrer*innen
-Teamleiter,Teamleiter*innen
-Teilnehmer,Teilnehmer*innen
-Telefonist,Telefonist*innen
-Übersetzer,Übersetzer*innen
-Vermittler,Vermittler*innen
-Apotheker,Apotheker*innen
-Bauwerber,Bauwerber*innen
-Begleiter,Begleiter*innen
-Beifahrer,Beifahrer*innen
-Beisitzer,Besitzer*innen
-Bildhauer,Bildhauer*innen
-Bregenzer,Bregenzer*innen
-Dentisten,Dentisten*innen
-Drechsler,Drechsler*innen
-Einwohner,Einwohner*innen
-Eisläufer,Eisläufer*innen
-Empfänger,Empfänger*innen
-Fleischer,Fleischer*innen
-Intendant,Intendant*innen
-Kassierer,Kassierer*innen
-Kürschner,Kürschner*innen
-Logopäden,Logopäd*innen
-Lokführer,Lokführer*innen
-Mandatare,Mandatar*innen
-Mediziner,Mediziner*innen
-Mitbürger,Mitbürger*innen
-Passanten,Passant*innen
-Physikern,Physiker*innen
-Politiker,Politiker*innen
-Radfahrer,Radfahrer*innen
-Revisoren,Revisor*innen
-Sanitäter,Sanitäter*innen
-Satiriker,Satiriker*innen
-Schaffner,Schaffner*innen
-Schlosser,Schlosser*innen
-Schneider,Schneider*innen
-Schreiber,Schreiber*innen
-Schustern,Schuster*innen
-Spenglern,Spengler*innen
-Sponsoren,Sponsor*innen
-Sportlern,Sportler*innen
-Sprechern,Sprecher*innen
-Stadträte,Stadträt*innen
-Studenten,Student*innen
-Teilhaber,Teilhaber*innen
-Uhrmacher,Uhrmacher*innen
-Verfasser,Verfasser*innen
-Verkäufer,Verkäufer*innen
-Vertreter,Vertreter*innen
-Verwalter,Verwalter*innen
-Zuschauer,Zuschauer*innen
-Anhänger,Anhänger*innen
-Anrainer,Anrainer*innen
-Anwärter,Anwärter*innen
-Anwender,Anwender*innen
-Anwerber,Anwerber*innen
-Arbeiter,Arbeiter*innen
-Aufseher,Aufseher*innen
-Benutzer,Benutzer*innen
-Besucher,Besucher*innen
-Betreuer,Betreuer*innen
-Bewerber,Bewerber*innen
-Bewohner,Bewohner*innen
-Chemiker,Chemiker*innen
-Doktoren,Doktor*innen
-Erzieher,Erzieher*innen
-Europäer,Europäer*innen
-Forscher,Forscher*innen
-Gewinner,Gewinner*innen
-Grafiker,Grafiker*innen
-Kärntner,Kärntner*innen
-Künstler,Künstler*innen
-Minister,Minister*innen
-Monteure,Monteur*innen
-Physiker,Physiker*innen
-Portiere,Portier*innen
-Rektoren,Rektor*innen
-Schuster,Schuster*innen
-Spengler,Spengler*innen
-Sportler,Sportler*innen
-Sprecher,Sprecher*innen
-Springer,Springer*innen
-Statiker,Statiker*innen
-Tirolern,Tiroler*innen
-Tischler,Tischler*innen
-Anleger,Anleger*innen
-Anrufer,Anrufer*innen
-Fischer,Fischer*innen
-Förster,Förster*innen
-Gärtner,Gärtner*innen
-Gründer,Gründer*innen
-Inhaber,Inhaber*innen
-Kellner,Kellner*innen
-Manager,Manager*innen
-Musiker,Musiker*innen
-Pfleger,Pfleger*innen
-Raucher,Raucher*innen
-Richter,Richter*innen
-Sattler,Sattler*innen
-Schüler,Schüler*innen
-Siedler,Siedler*innen
-Speaker,Speaker*innen
-Spieler,Spieler*innen
-Steirer,Steirer*innen
-Tiroler,Tiroler*innen
-Trainer,Trainer*innen
-Trinker,Trinker*innen
-Züchter,Züchter*innen
-Zuhörer,Zuhörer*innen
-Bäcker,Bäcker*innen
-Beamte,Beamt*innen
-Brauer,Brauer*innen
-Bürger,Bürger*innen
-Dreher,Dreher*innen
-Fahrer,Fahrer*innen
-Fiaker,Fiaker*innen
-Führer,Führer*innen
-Gerber,Gerber*innen
-Gießer,Gießer*innen
-Glaser,Glaser*innen
-Grazer,Grazer*innen
-Heizer,Heizer*innen
-Lehrer,Lehrer*innen
-Leiter,Leiter*innen
-Lenker,Lenker*innen
-Linzer,Linzer*innen
-Makler,Makler*innen
-Maurer,Maurer*innen
-Mieter,Mieter*innen
-Nähern,Näher*innen
-Planer,Planer*innen
-Prüfer,Prüfer*innen
-Redner,Redner*innen
-Reiter,Reiter*innen
-Segler,Segler*innen
-Senner,Senner*innen
-Tester,Tester*innen
-Töpfer,Töpfer*innen
-Wähler,Wähler*innen
-Wiener,Wiener*innen
-Winzer,Winzer*innen
-Ärzte,Ärzt*innen
-Hörer,Hörer*innen
-Maler,Maler*innen
-Näher,Näher*innen
-Seher,Seher*innen
-Täter,Täter*innen
-Weber,Weber*innen
-User,User*innen
+Verantwortlicher für Informationssicherheit (CISO),CISO,,,,,
+Diplomierte Gesundheits- und Krankenschwester,Diplomiertes Krankenpflegepersonal,,,,,
+Fragen Sie Ihren Arzt oder Apotheker.,Holen Sie sich ärztlichen oder pharmazeutischen Rat.,,,,,
+Administrationsbereich Benutzer,Administrationsbereich Benutzer*innen,Administrationsbereich Benutzerinnen und Benutzer,,,,
+Gesundheits- und Krankenpfleger,Gesundheits- und Krankenpfleger*innen,,,,,
+verantwortlicher CMS-Redakteur,verantwortliche CMS-Redaktion,,,,,
+Angebot für private Bauherren,Angebot für privat Bauende,,,,,
+Geschäftsgruppenkoordinatoren,Geschäftsgruppenkoordinator*innen,,,,,
+wissenschaftliche Mitarbeiter,wissenschaftliche Mitarbeiter*innen,,,,,
+Zwischenablage des Benutzers,Zwischenablage der Benutzer*innen,Zwischenablage der Benutzerinnen und Zwischenablage der Benutzer,,,,
+Adresse des Antragsstellers,Adresse,Adresse der Antragsteller*innen,,,,
+Alleinverdienerabsetzbetrag,Absetzbetrag für AlleinverdienderInnen,,,,,
+Ziviltechnikerangelegenheit,Angelegenheit für Ziviltechniker*innen,,,,,
+Biomedizinische Analytiker,Biomedizinische Analytiker*innen,,,,,
+Brandschutzansprechpartner,Brandschutzansprechpartner*innen,,,,,
+Dezentrale Administratoren,Dezentrale Administrator*innen,,,,,
+Dienststellenadministrator,Dienststellenadministration,,,,,
+Diplomierte Sozialarbeiter,Diplomierte Sozialarbeiter*innen,,,,,
+Karthographischer Zeichner,Karthographische Zeichner*innen,,,,,
+Unterstützung des Kollegen,kollegiale Unterstützung,,,,,
+etwas an den Mann bringen,etwas unter die Leute bringen,etwas verkaufen,,,,
+Geschäftsabteilungsleiter,Geschäftsabteilungsleiter*innen,,,,,
+Kinder- und Jugendanwälte,Kinder- und Jugendanwält*innen,Kinder- und Jugendanwaltschaft,,,,
+Angehörige des Instituts,das Institut,,,,,
+Ereignis an den Benutzer,Ereignis an Benutzer*innen,Ereignis an Benutzerinnen und Benutzer,,,,
+Nachwuchswissenschaftler,wissenschaftlicher Nachwuchs,,,,,
+Organisatorischer Leiter,Organisatorische Leitung,,,,,
+Pädagogische Mitarbeiter,Pädagogische Mitarbeiter*innen,,,,,
+Außendienstmitarbeitern,Außendienstmitarbeiterinnen und Außendienstmitarbeitern,,,,,
+Bautechnischer Zeichner,Bautechnische Zeichner*innen,,,,,
+Benutzerstellvertretung,Benutzer*innenstellvertretung,Benutzerinnenstellvertretung und Benutzerstellvertretung,,,,
+Betriebsoberinspektoren,Betriebsoberinspektor*innen,,,,,
+Gefahrengutbeauftragter,Gefahrengutbeauftragte bzw.- beauftragter,,,,,
+Jungbürgerveranstaltung,Veranstaltung für Jungbürgerinnen und Jungbürger,,,,,
+Maschinenbauingenieuren,Maschinenbauingenieurinnen und Maschinenbauingenieuren,,,,,
+Mitarbeiter in Teilzeit,Teilzeitkraft,,,,,
+Name des Antragstellers,Ihr Name,,,,,
+Uhrmacherlehrwerkstätte,Lehrwerkstätte für Uhrmacherinnen und Uhrmacher,,,,,
+Universitätsassistenten,UniversitätsassistentInnen,Universitätsassistent*innen,,,,
+administrativer Leiter,administrative Leitung,,,,,
+Amtsführender Stadtrat,Amtsführende Stadträt*innen,amtsführende StadträtInnen,,,,
+Ärzteausbildungsstelle,Ausbildungsstelle für Ärztinnen und Ärzte,,,,,
+Außendienstmitarbeiter,Außendienstmitarbeiter*innen,Außendienstmitarbeiterinnen und Außendienstmitarbeiter,,,,
+fachmännische Auskunft,fachkundige Auskunft,,,,,
+Maschinenbauingenieure,Maschinenbauingenieurinnen und Maschinenbauingenieure,,,,,
+Sprachwissenschaftlern,Sprachwissenschaftlerinnen und Sprachwissenschaftlern,,,,,
+Veranstaltungsreferent,Veranstaltungsreferent*innen,,,,,
+zuständiger Bearbeiter,zuständige Person,zuständig,,,,
+abstrakter Teilnehmer,abstrakte Teilnehmer*innen,abstrakte Teilnehmerinnen und abstrakte Teilnehmer,,,,
+Agrarwissenschaftlern,Agrarwissenschaftlerinnen und Agrarwissenschaftlern,,,,,
+Benutzereinstellungen,Benutzer*inneneinstellungen,Benutzerinneneinstellungen und Benutzereinstellungen,,,,
+Benutzerinformationen,Benutzer*inneninformationen,Benutzerinneninformationen und Benutzerinformationen,,,,
+Benutzerkalenderliste,Benutzer*innenkalenderliste,Benutzerinnenkalenderliste und Benutzerkalenderliste,,,,
+Betriebsorganisatoren,Betriebsorganisator*innen,,,,,
+Bundespräsidentenwahl,Bundespräsidentschaftswahl,,,,,
+den Krankenschwestern,den Krankenschwestern und Krankenpflegern,Pflegepersonal,,,,
+Desinfektionsgehilfen,Desinfektionsgehilfinnen und -gehilfen,,,,,
+Elektroinstallateuren,Elektroinstallateurinnen und Elektroninstallateuren,,,,,
+Kaufmännischer Leiter,Betriebswirtschafliche Leitung,,,,,
+Kindersingschulleiter,Kindersingschulleitung,,,,,
+Klinische Psychologen,Klinische Psychologinnen und Psychologen,,,,,
+Obduktionsassistenten,Obduktionsassistent*innen,,,,,
+Operationsassistenten,Operationsassistent*innen,,,,,
+Patientenorientierung,Patient*innenorientierung,,,,,
+Radiologietechnologen,Radiologietechnolog*innen,,,,,
+Rechnungsamtsdirektor,Rechnungsamtsdirektor*innen,,,,,
+Sprachwissenschaftler,Sprachwissenschaftlerinnen und Sprachwissenschaftler,,,,,
+Systemadministratoren,Systemadministrator*innen,,,,,
+Technischer Assistent,Technische Assistenz,,,,,
+Ziviltechnikerprüfung,Prüfung der Ziviltechniker*innen,,,,,
+Agrarwissenschaftler,Agrarwissenschaftlerinnen und Agrarwissenschaftler,,,,,
+Alternativmedizinern,Alternativmediziner*innen,Alternativmedizinerinnen und Alternativmedizinern,,,,
+Ausbildungstechniker,Ausbildungstechniker*innen,,,,,
+Bezirkskoordinatoren,Bezirkskoordinator*innen,Bezirkskoordinatorinnen und -koordinatoren,,,,
+Elektroinstallateure,Elektroinstallateurinnen und Elektroninstallateure,,,,,
+Fachabteilungsleiter,Fachabteilungsleitung,,,,,
+Fremdenführerprüfung,Prüfung von Fremdenführer*innen,,,,,
+Gartenbezirksleitern,Gartenbezirksleiterinnen und Gartenbezirksleitern,,,,,
+Herstellerspezifisch,herstellungsspezifisch,,,,,
+Pädagogischer Leiter,Pädagogische Leitung,,,,,
+Versicherungsmaklern,Versicherungsmaklerinnen und Versicherungsmaklern,,,,,
+Alternativmediziner,Alternativmediziner*innen,Alternativmedizinerinnen und Alternativmediziner,,,,
+Anbieterverzeichnis,Anbieter*innenverzeichnis,Anbieterinnenverzeichnis und Anbieterverzeichnis,,,,
+Ausbildungsjuristen,Ausbildungsjurist*innen,,,,,
+Ausbildungsreferent,Ausbildungsreferent*innen,,,,,
+Behindertenbetreuer,Behindertenbetreuer*innen,,,,,
+Benutzerstatistiken,Benutzer*innenstatistiken,Benutzerinnenstatistiken und Benutzerstatistiken,,,,
+Betriebsassistenten,Betriebsassistent*innen,,,,,
+Betriebsinspektoren,Betriebsinspektor*innen,,,,,
+Betriebskontrollore,Betriebskontrollor*innen,,,,,
+Budgetkoordinatoren,Budgetkoordinator*innen,Budgetkoordinatorinnen und -koordinatoren,,,,
+der ein oder andere,die eine oder der andere,,,,,
+Dienststellenleiter,Dienststellenleiter*innen,Dienststellenleitung,,,,
+EDV-Ansprechpartner,EDV-Ansprechpartner*innen,,,,,
+Elektrokarrenführer,Elektrokarrenführerinnen und -führer,,,,,
+Entwicklungspartner,Entwicklungspartner*innen,,,,,
+EU-Förderreferenten,EU-Förderreferent*innen,,,,,
+Fachwissenschaftler,Fachforschende,,,,,
+Familientherapeuten,Familientherapeut*innen,,,,,
+Gartenbezirksleiter,Gartenbezirksleiter*innen,Gartenbezirksleiterinnen und Gartenbezirksleiter,,,,
+Hausprofessionisten,Hausprofessionist*innen,,,,,
+Konsumentenberatung,Beratung von Konsumentinnen und Konsumenten,,,,,
+Kraftfahrzeuglenker,Kraftfahrzeuglenker*innen,,,,,
+Maschinenschlossern,Maschinenschlosserinnen und Maschinenschlossern,,,,,
+Nachbareinwendungen,Einwendungen von Nachbarinnen und Nachbarn,,,,,
+Niederösterreichern,Niederösterreicherinnen und Niederösterreichern,,,,,
+Pädagogische Leiter,Pädagogische Leiter*innen,,,,,
+Patientenversorgung,ärztliche Versorgung,,,,,
+Schlittschuhläufern,Schlittschuhläuferinnen und Schlittschuhläufern,,,,,
+Versicherungsmakler,Versicherungsmakler*innen,Versicherungsmaklerinnen und Versicherungsmakler,,,,
+Zahlungspflichtiger,Zahlungspflichtige,,,,,
+aktueller Benutzer,aktuell,,,,,
+alle Mann an Bord!,alle an Bord!,,,,,
+Anwaltsassistenten,Anwaltsassistentinnen und Anwaltsassistenten,,,,,
+anwenderfreundlich,anwendungsfreundlich,einfach anzuwenden,praxisnah,,,
+benutzerfreundlich,bedienungsfreundlich,leicht zu bedienen,,,,
+Bereichsdirektoren,Bereichsdirektor*innen,,,,,
+Elektroingenieuren,Elektroingenieurinnen und Elektroingenieure,,,,,
+Fachbereichsleiter,Fachbereichsleiterinnen und Fachbereichsleiter,,,,,
+Familienreferenten,Familienreferent*innen,,,,,
+Ferialpraktikanten,Ferialpraktikantinnen und Ferialpraktikanten,,,,,
+Fußgängerdurchgang,Durchgang,,,,,
+Hilfe eines Arztes,ärztliche Hilfe,,,,,
+Jugendombudsmänner,Jugendombudsleute,,,,,
+Kindergärtnerinnen,Kindergartenpädagog*innen,,,,,
+Maschinenschlosser,Maschinenschlosser*innen,Maschinenschlosserinnen und Maschinenschlosser,,,,
+Mittelschullehrern,Mittelschullehrer*innen,Mittelschullehrerinnen und Mittelschullehrern,,,,
+Mutter-Kind-Gruppe,Eltern-Kind-Gruppe,,,,,
+Niederösterreicher,Niederösterreicher*innen,Niederösterreicherinnen und Niederösterreicher,,,,
+Personalentwickler,Personalentwickler*innen,Personalentwicklung,,,,
+Personalreferenten,Personalreferent*innen,,,,,
+Praktikantenstelle,Praktikumsstelle,,,,,
+Schlittschuhläufer,Schlittschuhläufer*innen,Schlittschuhläuferinnen und Schlittschuhläufer,,,,
+Staatsbürgerschaft,Staatsangehörigkeit,Nationalität,,,,
+Stadtbaudirektoren,Stadtbaudirektor*innen,,,,,
+Steuerhinterzieher,Steuerhinterziehende,,,,,
+Verursacherprinzip,Verursachungsprinzip,,,,,
+Abteilungshelfern,Abteilungshelferinnen und Abteilungshelfern,,,,,
+Abteilungsleitern,Abteilungsleiterinnen und Abteilungsleitern,,,,,
+Apothekenlaborant,Apothekenlaborant*innen,,,,,
+Beschwerdemanager,Beschwerdemanager*innen,,,,,
+Besucherparkplatz,Besuchsparkplatz,Parkplatz für Besucher*innen,,,,
+Betriebsvorstände,Betriebsvorständinnen und -vorstände,,,,,
+Bezirksamtsleiter,Bezirksamtsleiter*innen,,,,,
+Bezirkswahlleiter,Bezirkswahlleitung,,,,,
+Bürgerversammlung,Versammlung von Bürgerinnen und Bürgern,,,,,
+Elektroingenieure,Elektroningenieurinnen und Elektroingenieure,,,,,
+Fachbereitsleiter,Fachbereichsleitung,,,,,
+Fußgängerübergang,Zebrastreifen,,,,,
+Gartenwerkmeister,Gartenwerkmeister*innen,,,,,
+Generaldirektoren,Generaldirektor*innen,,,,,
+Genossenschaftern,Genossenschafterinnen und Genossenschaftern,,,,,
+Geschäftsinhabern,Geschäftsinhaberinnen und Geschäftsinhabern,,,,,
+Hauskoordinatoren,Hauskoordinator*innen,,,,,
+Immobilienmaklern,Immobilienmaklerinnen und Immobilienmaklern,,,,,
+Konsumentenschutz,Konsument*innenschutz,,,,,
+Krankenschwestern,Krankenpflegepersonal,Krankenschwestern und Krankenpfleger,Krankenschwestern und Krankenpflegern,,,
+Landeshauptmänner,Landeshauptleute,,,,,
+Lateinamerikanern,Lateinamerikanerinnen und Lateinamerikanern,,,,,
+Luftbildauswerter,Auswerter*innen von Luftbildern,,,,,
+Mädchenmannschaft,Mädchenteam,,,,,
+Maschinenarbeiter,Maschinenarbeiterinnen und Maschinenarbeiter,,,,,
+Mittelschullehrer,Mittelschullehrer*innen,Mittelschullehrerinnen und Mittelschullehrer,,,,
+Oberösterreichern,Oberösterreicherinnen und Oberösterreichern,,,,,
+Olympiamannschaft,Olympiateam,,,,,
+Personalvertreter,Personalvertreter*innen,Personalvertretung,,,,
+Physiotherapeuten,Physiotherapeutinnen und Physiotherapeuten,Physiotherapeut*innen,,,,
+Prosekturgehilfen,Prosekturgehilf*innen,,,,,
+Psychotherapeuten,Psychotherapeutinnen und Psychotherapeuten,,,,,
+Systemanalytikern,Systemanalytikerinnen und Systemanalytikern,,,,,
+Versichertenkarte,Gesundheitskarte,Versicherungskarte,,,,
+Volksschullehrern,Volksschullehrerinnen und Volksschullehrern,,,,,
+Wählerverzeichnis,Wahlverzeichnis,,,,,
+Wirtschaftshelfer,Wirtschaftshelfer*innen,Wirtschaftshelferinnen und Wirtschaftshelfer,,,,
+Abteilungshelfer,Abteilungshelfer*innen,Abteilungshelferinnen und Abteilungshelfer,,,,
+Abteilungsleiter,Abteilungsleitung,Abteilungsleiter*innen,Abteilungsleiterinnen und Abteilungsleiter,,,
+Anwenderprogramm,Anwendungsprogramm,,,,,
+Arbeiterfamilien,Familien von Arbeiterinnen und Arbeitern,,,,,
+Arbeitsmediziner,Arbeitsmediziner*innen,,,,,
+Benutzerhandbuch,Bedienungsanleitung,Benutzungshandbuch,Manual,,,
+Beratertätigkeit,Berater*innentätigkeit,Beratung,,,,
+Besucherrückgang,Publikumsrückgang,Rückgang der Besuche,sinkende Nachfrage,,,
+Bezirksvorsteher,Bezirksvorsteher*innen,Bezirksvorsteherinnen und Bezirksvorsteher,,,,
+Brandschutzwarte,Brandschutzwart*innen,,,,,
+Budgetreferenten,Budgetreferent*innen,Budgetrefertinnen und -referenten,,,,
+Diplomingenieure,Diplomingenieur*innen,,,,,
+Ein-Mann-Betrieb,Ein-Personen-Betrieb,,,,,
+Elektromonteuren,Elektromonteurinnen und Elektromonteure,,,,,
+Finanzreferenten,Finanzreferent*innen,,,,,
+Frauenmannschaft,Frauenteam,,,,,
+Generalsekretäre,Generalsekretär*innen,Generalsekretärinnen und Generalsekretäre,,,,
+Genossenschafter,Genossenschafter*innen,Genossenschafterinnen und Genossenschafter,,,,
+Geschäftsführern,Geschäftsführerinnen und Geschäftsführern,,,,,
+Geschäftsinhaber,Geschäftsinhaber*innen,Geschäftsinhaberinnen und Geschäftsinhaber,,,,
+Geschäftsleitern,Geschäftsleiterinnen und Geschäftsleitern,,,,,
+Gesprächspartner,Gesprächsbeteiligte; Gegenüber,,,,,
+Hauptschullehrer,Hauptschullehrer*innen,Hauptschullehrerinnen und Hauptschullehrer,Lehrkörper,,,
+Immobilienmakler,Immobilienmakler*innen,Immobilienmaklerinnen und Immobilienmakler,,,,
+Jugendombudsmann,Jugendombudsstelle,,,,,
+kundenfreundlich,kund*innenfreundlich,zuvorkommend,,,,
+Lateinamerikaner,Lateinamerikaner*innen,Lateinamerikanerinnen und Lateinamerikaner,,,,
+Lokomotivführern,Lokomotivführerinnen und Lokomotivführern,,,,,
+Musikschulleiter,Musikschulleitung,,,,,
+Oberösterreicher,Oberösterreicher*innen,Oberösterreicherinnen und Oberösterreicher,,,,
+Qualitätsmanager,Qualitätsmanager*innen,,,,,
+Rauchfangkehrern,Rauchfangkehrerinnen und Rauchfangkehrern,,,,,
+Schirmherrschaft,Support; gefördert von; unterstützt von,,,,,
+Sozialdemokraten,Sozialdemokrat*innen,Sozialdemokratinnen und Sozialdemokraten,,,,
+Stützpunktleiter,Stützpunktleiter*innen,,,,,
+Systemanalytiker,Systemanalytiker*innen,Systemanalytikerinnen und Systemanalytiker,,,,
+Teilnehmergebühr,Teilnahmegebühr,,,,,
+Volksschullehrer,Volksschullehrer*innen,Volksschullehrerinnen und Volksschullehrer,Volksschul-Lehrkörper,,,
+Wissenschaftlern,Wissenschaftlerinnen und Wissenschaftlern,,,,,
+Zentraleuropäern,Zentraleuropäerinnen und Zentraleuropäern,,,,,
+Administratoren,Administratorinnen und Administratoren,,,,,
+Adressatenliste,Adressat*innenliste,Adressatinnenliste und Adressatenliste,,,,
+Alleinverdiener,Alleinverdiener*innen,Alleinverdienerinnen und Alleinverdiener,,,,
+Altersforschern,Altersforscherinnen und Altersforschern,,,,,
+Ansprechpartner,Ansprechpartner*innen,Ansprechperson; Kontakt,,,,
+Anstaltsgehilfe,Anstaltsgehilfinnen und Anstaltsgehilfen,,,,,
+Antragsstellern,Antragsstellerinnen und Antragsstellern,,,,,
+anwenderbezogen,anwendungsbezogen,praxisbezogen,,,,
+Arbeitskollegen,Arbeitskolleginnen und Arbeitskollegen,,,,,
+Ärztekommission,ärztliche Kommission,,,,,
+Autoelektrikern,Autoelektrikerinnen und Autoelektrikern,,,,,
+Automechanikern,Automechanikerinnen und Automechanikern,,,,,
+Bankkaufmännern,Bankkauffrauen und Bankkaufmännern,,,,,
+Bauinspizienten,Bauinspizient*innen,,,,,
+Benutzerordnung,Benutzungsordnung,,,,,
+Besitzerwechsel,Besitzwechsel,,,,,
+Betriebsprüfern,Betriebsprüferinnen und Betriebsprüfern,,,,,
+Blockelektriker,Blockelektrikerinnen und Blockelektriker,,,,,
+Branddirektoren,Branddirektor*innen,Branddirektorinnen und Branddirektoren,,,,
+Damenmannschaft,Damenteam,,,,,
+Dezernatsleiter,Dezernatsleiterinnen und -leiter,Dezernatsleitung,,,,
+Elektromonteure,Elektromonteurinnen und Elektromonteure,,,,,
+Ergotherapeuten,Ergotherapeut*innen,,,,,
+Expertengremium,Expert*innengremium,Gremium von Expertinnen und Experten,,,,
+Fachassistenten,Fachassistent*innen,Fachassistenz,,,,
+Fachwerkmeister,Fachwerkmeister*innen,,,,,
+Feuerwehrmänner,Feuerwehrleute,,,,,
+Gebietsreferent,Gebietsreferent*innen,,,,,
+Geschäftsführer,Geschäftsführende,Geschäftsführer*innen,Geschäftsführerinnen und Geschäftsführer,Geschäftsführung,,
+Geschäftsleiter,Geschäftsleiter*innen,Geschäftsleiterinnen und Geschäftsleiter,,,,
+Gesellschaftern,Gesellschafterinnen und Gesellschaftern,,,,,
+Gewerkschaftern,Gewerkschafterinnen und Gewerkschaftern,,,,,
+Hausinspektoren,Hausinspektor*innen,,,,,
+Heimhelferinnen,Heimhelferinnen und Heimhelfer,,,,,
+Ingenieurarbeit,Planungs- und Konstruktionsarbeit,,,,,
+Klassensprecher,Klassensprecher*innen,Klassensprecherinnen und Klassensprecher,,,,
+Krankenpflegern,Krankenpflegerinnen und Krankenpflegern,,,,,
+Lebensgefährten,Lebensgefährtinnen und Lebensgefährten,,,,,
+Lehrerkonferenz,Konferenz der Lehrkräfte,,,,,
+leserfreundlich,lesefreundlich,,,,,
+Metallarbeitern,Metallarbeiterinnen und Metallarbeitern,,,,,
+Mitteleuropäern,Mitteleuropäerinnen und Mitteleuropäern,,,,,
+Motorradfahrern,Motorradfahrerinnen und Motorradfahrern,,,,,
+Nordamerikanern,Nordamerikanerinnen und Nordamerikanern,,,,,
+Parlamentariern,Parlamentarierinnen und Parlamentariern,,,,,
+Patientenanwalt,Patient*innenanwaltschaft,,,,,
+Patientenzimmer,Wartezimmer,,,,,
+Protokollführer,Protokollführende,,,,,
+Rauchfangkehrer,Rauchfangkehrer*innen,Rauchfangkehrerinnen und Rauchfangkehrer,,,,
+Rechtsfürsorger,Rechtsfürsorger*innen,,,,,
+Sachbearbeitern,Sachbearbeiterinnen und Sachbearbeitern,,,,,
+Schriftstellern,Schriftstellerinnen und Schriftstellern,,,,,
+Sektionsleitern,Sektionsleiterinnen und Sektionsleitern,,,,,
+Sozialarbeitern,Sozialarbeiterinnen und Sozialarbeitern,,,,,
+Sozialpädagogen,Sozialpädagog*innen,Sozialpädagoginnen und Sozialpädagogen,,,,
+Stationsrevisor,Stationsrevisorinnen und Stationsrevisoren,,,,,
+Teamassistenten,Teamassistent*innen,,,,,
+Teamwerkmeister,Teamwerkmeister*innen,,,,,
+Unteroffizieren,Unteroffizierinnen und Unteroffizieren,,,,,
+Vereinsobmänner,Vereinsobleute,,,,,
+Vergabereferent,Vergabereferent*innen,,,,,
+Vertragspartner,Vertragspartei,,,,,
+Weltmarktführer,Weltmarktführende,,,,,
+Werkzeugmachern,Werkzeugmacherinnen und Werkzeugmachern,,,,,
+Wissenschaftler,Wissenschaftler*innen,Wissenschaftlerinnen und Wissenschaftler,,,,
+Wohnungsmaklern,Wohnungsmaklerinnen und Wohnungsmaklern,,,,,
+Zahnarzthelfern,Zahnarzthelferinnen und Zahnarzthelfern,,,,,
+Zentraleuropäer,Zentraleuropäer*innen,Zentraleuropäerinnen und Zentraleuropäer,,,,
+Abfallmanagern,Abfallmanagerinnen und Abfallmanagern,,,,,
+Altersforscher,Altersforscher*innen,Altersforscherinnen und Altersforscher,,,,
+Anlagebesitzer,Anlagebesitzende,,,,,
+Antragssteller,Antragssteller*innen,Antragsstellerinnen und Antragssteller,,,,
+Anwaltshonorar,Honorar von Anwältinnen und Anwälten,,,,,
+Arbeiternehmer,Arbeitnehmer*innen,Belegschaft,Beschäftigte,,,
+Archivgehilfen,Archivgehilfinnen und -gehilfen,,,,,
+Ausländerfrage,Migrationsthematik,,,,,
+Autoelektriker,Autoelektriker*innen,Autoelektrikerinnen und Autoelektriker,,,,
+Automechaniker,Automechaniker*innen,Automechanikerinnen und Automechaniker,,,,
+Bankkaufmänner,Bankkauffrauen und Bankkaufmänner,,,,,
+Bauingenieuren,Bauingenieurinnen und Bauingenieuren,,,,,
+Benutzerprofil,Benutzer*innenprofil,Benutzerinnenprofil und Benutzerprofil,,,,
+Bereichsleiter,Bereichsleiter*innen,Bereichsleitung,,,,
+Besuchergruppe,Besuchsgruppe,,,,,
+Betriebsleiter,Betriebsleitung,,,,,
+Betriebsprüfer,Betriebsprüfer*innen,Betriebsprüferinnen und Betriebsprüfer,,,,
+Bewerberzahlen,Bewerbungszahlen,,,,,
+Bibliothekaren,Bibliothekarinnen und Bibliothekaren,,,,,
+Brüderlichkeit,Solidarität,,,,,
+Bürgermeistern,Bürgermeisterinnen und Bürgermeistern,,,,,
+Bürokaufmänner,Bürokaufleute,,,,,
+die Mannschaft,das Team,die Gruppe,,,,
+Einsteigerkurs,Einstiegskurs,Grundkurs,Basiskurs,,,
+Expertentagung,Fachtagung,,,,,
+Expertenwissen,Fachwissen,Fachwissen; Expertise,,,,
+Fachreferenten,Fachreferent*innen,,,,,
+Fußballspieler,Fußballspielende,,,,,
+Garagenmeister,Garagenmeister*innen,,,,,
+Geschäftsfüher,Geschäftsführung; Geschäftsleitung,,,,,
+Gesellschafter,Gesellschafter*innen,Gesellschafterinnen und Gesellschafter,Betriebsgesellschaft,,,
+Gewerkschafter,Gewerkschafter*innen,Gewerkschafterinnen und Gewerkschafter,,,,
+IKT-Referenten,IKT-Referent*innen,,,,,
+Installateuren,Installateurinnen und Installateure,,,,,
+Inventarführer,Inventarführende,Inventarführer*innen,,,,
+Krankenpfleger,Krankenpfleger*innen,Krankenpflegerinnen und Krankenpfleger,Pflegepersonal,,,
+Masseverwalter,Masseverwalter*innen,Masseverwalterinnen und Masseverwalter,,,,
+Mechatronikern,Mechatronikerinnen und Mechatronikern,,,,,
+Mediensprecher,Mediensprecher*innen,,,,,
+Metallarbeiter,Metallarbeiter*innen,Metallarbeiterinnen und Metallarbeiter,,,,
+Mitteleuropäer,Mitteleuropäer*innen,Mitteleuropäerinnen und Mitteleuropäer,,,,
+Motorradfahrer,Motorradfahrer*innen,Motorradfahrerinnen und Motorradfahrer,,,,
+Nordamerikaner,Nordamerikaner*innen,Nordamerikanerinnen und Nordamerikaner,,,,
+Notarzthelfern,Notarzthelferinnen und Notarzthelfern,,,,,
+Parlamentarier,Parlamentarier*innen,Parlamentarierinnen und Parlamentarier,,,,
+Programmierern,Programmiererinnen und Programmierern,,,,,
+Programmleiter,Programmleiter*innen,Programmleitung,,,,
+Raucherbereich,Bereich für Rauchende,,,,,
+Rechtsanwälten,Rechtsanwältinnen und Rechtsanwälten,,,,,
+Referatsleiter,Referatsleiter*innen,Referatsleitung,,,,
+Repräsentanten,Repräsentantinnen und Repräsentanten,,,,,
+Sachbearbeiter,Sachbearbeiter*innen,Sachbearbeiterinnen und Sachbearbeiter,,,,
+Schriftsteller,Schriftsteller*innen,Schriftstellerinnen und Schriftsteller,,,,
+Schulsprechern,Schulsprecherinnen und Schulsprechern,,,,,
+Sektionsleiter,Sektionsleiter*innen,Sektionsleitung,Sektionsleiterinnen und Sektionsleiter,,,
+Sozialarbeiter,Sozialarbeiter*innen,Sozialarbeiterinnen und Sozialarbeiter,,,,
+Stationsführer,Stationsführerinnen und Stationsführer,Stationsführer*innen,,,,
+Stationsleiter,Stationsleiter*innen,Stationsleiterinnen und Stationsleiter,,,,
+Stellvertreter,Stellvertretung,Vertretung,vertreten durch,vertreten von,,
+Südamerikanern,Südamerikanerinnen und Südamerikanern,,,,,
+Systembediener,Systembediener*innen,,,,,
+Teilnehmerzahl,Teilnahmezahl; Gruppengröße; Anmeldezahl,,,,,
+Unteroffiziere,Unteroffizierinnen und Unteroffiziere,,,,,
+Verkehrssünder,Verkehrssünderinnen und Verkehrssünder,Verkehrssünder*innen,,,,
+Werkzeugmacher,Werkzeugmacher*innen,Werkzeugmacherinnen und Werkzeugmacher,,,,
+Wissenschafter,Wissenschafterinnen und Wissensschafter,Wissenschafter*innen,,,,
+Wohnungsmakler,Wohnungsmakler*innen,Wohnungsmaklerinnen und Wohnungsmakler,,,,
+Workshopleiter,Workshopleitung,,,,,
+Zahnarzthelfer,Zahnarzthelfer*innen,Zahnarzthelferinnen und Zahnarzthelfer,,,,
+Ziviltechniker,Ziviltechniker*innen,,,,,
+Abfallmanager,Abfallmanager*innen,,,,,
+Altenpflegern,Altenpflegerinnen und Altenpflegern,Pflegepersonal,,,,
+Anthropologen,Anthropologinnen und Anthropologen,,,,,
+Antragsteller,Antrag gestellt von,ich beantrage,Antragsteller*innen,,,
+Anwaltskosten,Kosten für die Rechtsvertretung,,,,,
+Arztgeheimnis,Berufsgeheimnis,Schweigepflicht des Arztes,,,,
+Auftragnehmer,Auftragnehmerinnen und Auftragnehmer,Auftragnehmer*innen,,,,
+Bauingenieure,Bauingenieurinnen und Bauingenieure,,,,,
+Beifahrersitz,Beifahrsitz,,,,,
+Beschuldigter,beschuldigte Person,,,,,
+Betriebsärzte,Betriebsärzt*innen,Betriebsärztinnen und Betriebsärzte,,,,
+Bibliothekare,Bibliothekar*innen,Bibliothekarinnen und Bibliothekare,,,,
+Börsenmaklern,Börsenmaklerinnen und Börsenmaklern,,,,,
+Burgenländern,Burgenländerinnen und Burgenländern,,,,,
+Bürgermeister,Bürgermeister*innen,Bürgermeisterinnen und Bürgermeister,,,,
+Demonstranten,Demonstrierende,,,,,
+die Ermittler,Ermittlungsteam,,,,,
+Dienstleister,Dienstleisterinnen und Dienstleister,Dienstleister*innen,,,,
+Eisenstädtern,Eisenstädterinnen und Eisenstädtern,,,,,
+Fachassistent,Fachassistenz,,,,,
+Filmvorführer,Filmvorführer*innen,,,,,
+Fleischhauern,Fleischhauerinnen und Fleischhauern,,,,,
+Fliesenlegern,Fliesenlegerinnen und Fliesenlegern,,,,,
+Fremdenführer,Fremdenführer*innen,,,,,
+Fußgängerzone,autofreie Zone,verkehrsarme Zone,verkehrsfreie Zone,,,
+Gruppenleiter,Gruppenleiter*innen,Gruppenleitung,,,,
+Informatikern,Informatikerinnen und Informatikern,,,,,
+Installateure,Installateurinnen und Installateure,,,,,
+Interessenten,Interessierte,,,,,
+Journalleiter,Journalleiter*innen,,,,,
+Kabarettisten,Kabarettistinnen und Kaberettisten,,,,,
+Kanalarbeiter,Kanalarbeiter*innen,,,,,
+Kindergärtner,Kindergartenpädagoginnen und Kindergartenpädagogen,,,,,
+Klagenfurtern,Klagenfurterinnen und Klagenfurtern,,,,,
+Koordinatoren,Koordinator*innen,,,,,
+kundenbezogen,bezogen auf die Kundschaft,,,,,
+Kundenwerbung,Akquisition,,,,,
+Laborgehilfen,Laborgehilf*innen,,,,,
+Ladeninhabern,Ladeninhaberinnen und Ladeninhabern,,,,,
+Mathematikern,Mathematikerinnen und Mathematikern,,,,,
+Mechatroniker,Mechatroniker*innen,Mechatronikerinnen und Mechatroniker,,,,
+Muttersprache,Erstsprache,,,,,
+Nordeuropäern,Nordeuropäerinnen und Nordeuropäern,,,,,
+Notarzthelfer,Notarzthelfer*innen,Notarzthelferinnen und Notarzthelfer,,,,
+Organisatorin,Organisierende,,,,,
+Österreichern,Österreicherinnen und Österreichern,,,,,
+Programmierer,Programmierer*innen,Programmiererinnen und Programmierer,,,,
+Projektleiter,Leitung,Projektleitung,,,,
+Raumpflegerin,Reinigungskraft,,,,,
+Rechtsanwälte,Rechtsanwältinnen und Rechtsanwälte,,,,,
+Restauratoren,Restaurator*innen,Restauratorinnen und Restauratoren,,,,
+Schauspielern,Schauspieler*innen,Schauspielerinnen und Schauspielern,,,,
+Schriftführer,Schriftführer*innen,,,,,
+Schulsprecher,Schulsprecher*innen,Schulsprecherinnen und Schulsprecher,,,,
+Seminarleiter,Seminarleitung,,,,,
+Sponsorgelder,Sponsoringgelder,,,,,
+Staatsbürgern,Staatsbürgerinnen und Staatsbürgern,,,,,
+Südamerikaner,Südamerikaner*innen,Südamerikanerinnen und Südamerikaner,,,,
+Teamassistent,Teamassistenz,,,,,
+Verlagsführer,Verlagsführer*innen,,,,,
+Vorarlbergern,Vorarlbergerinnen und Vorarlbergern,,,,,
+Westeuropäern,Westeuropäerinnen und Westeuropäern,,,,,
+Wettbewerbern,Wettbewerberinnen und Wettbewerbern,,,,,
+Zugbegleitern,Zugbegleiterinnen und Zugbegleitern,,,,,
+Altenpfleger,Altenpfleger*innen,Altenpflegerinnen und Altenpfleger,Pflegepersonal,,,
+Amtsgehilfen,Amtsgehilf*innen,Amtsgehilfinnen und Amtsgehilfen,,,,
+Anfängerkurs,Einstiegskurs,Grundkurs,,,,
+Angestellter,Belegschaft,Personal,,,,
+Arbeitnehmer,Arbeitnehmer*innen,,,,,
+Archivleiter,Archivleitung,,,,,
+Aristokraten,Aristokratinnen und Aristokraten,,,,,
+Auftraggeber,Auftraggeberinnen und Auftraggeber,Auftraggeber*innen,,,,
+Bademeistern,Bademeisterinnen und Bademeistern,,,,,
+Bauarbeitern,Bauarbeiterinnen und Bauarbeitern,,,,,
+Beschäftigte,Angestellten,Belegschaft,Mitarbeiter*innen,Personal,,
+Betriebsräte,Betriebsrätinnen und Betriebsräte,,,,,
+Börsenmakler,Börsenmakler*innen,Börsenmaklerinnen und Börsenmakler,,,,
+Burgenländer,Burgenländer*innen,Burgenländerinnen und Burgenländer,,,,
+Bürgerdienst,Service für Bürgerinnen und Bürger,,,,,
+Dienstnehmer,Dienstnehmerinnen und Dienstnehmer,Dienstnehmer*innen,,,,
+Eisenstädter,Eisenstädter*innen,Eisenstädterinnen und Eisenstädter,,,,
+Ersatzmänner,Ersatzmitglieder,,,,,
+Expertenjury,Expert*innenjury,,,,,
+Facharbeiter,Facharbeiter*innen,,,,,
+Fachgehilfen,Fachgehilfinnen und Fachgehilfen,,,,,
+fachmännisch,fachkundig,,,,,
+Fleischhauer,Fleischhauer*innen,Fleischhauerinnen und Fleischhauer,,,,
+Fliesenleger,Fliesenleger*innen,Fliesenlegerinnen und Fliesenleger,,,,
+Fördernehmer,Fördernehmer*innen,Fördernehmerinnen und Fördernehmer,,,,
+Forscherteam,Forschungsteam,,,,,
+Friseurinnen,Friseurinnen und Friseure,,,,,
+Funktionären,Funktionärinnen und Funktionären,,,,,
+Genforschern,Genforscherinnen und Genforschern,,,,,
+Gymnasiasten,Gymnasiastinnen und Gymnasiasten,Schüler*innen,,,,
+Hausarbeiter,Hausarbeiter*innen,,,,,
+Hausmeistern,Hausmeisterinnen und Hausmeistern,,,,,
+Heilmasseure,Heilmasseur*innen,,,,,
+Informatiker,Informatiker*innen,Informatikerinnen und Informatiker,,,,
+Jobsuchender,auf Jobsuche,,,,,
+Journalisten,Journalist*innen,Journalistinnen und Journalisten,,,,
+Kameramänner,Kamerateam,,,,,
+Kartographen,Kartograph*innen,,,,,
+Klagenfurter,Klagenfurter*innen,Klagenfurterinnen und Klagenfurter,,,,
+Kraftfahrern,Kraftfahrerinnen und Kraftfahrern,,,,,
+Kundendienst,Auskunftsstelle,Serviceabteilung,,,,
+Kundenmagnet,Anziehungspunkt,,,,,
+Ladeninhaber,Ladeninhaber*innen,Ladeninhaberinnen und Ladeninhaber,,,,
+Lehrerstelle,Stelle der Lehrerinnen und Lehrer,,,,,
+Liquidatoren,Liquidator*innen,Liquidatorinnen und Liquidatoren,,,,
+Mannschaften,Gruppen,Teams,,,,
+Marktmeister,Marktmeister*innen,,,,,
+Maschinisten,Maschinistinnen und Maschinisten,Maschinist*innen,,,,
+Mathematiker,Mathematiker*innen,Mathematikerinnen und Mathematiker,,,,
+Mitarbeitern,Mitarbeiterinnen und Mitarbeitern,,,,,
+Mitbewohnern,Mitbewohnerinnen und Mitbewohnern,,,,,
+Namensvetter,Gleichnamige,,,,,
+Nordeuropäer,Nordeuropäer*innen,Nordeuropäerinnen und Nordeuropäer,,,,
+Notarhonorar,Honorar von Notarinnen und Notaren,,,,,
+Ombudsmänner,Ombudsleute,,,,,
+Orthoptisten,Orthoptist*innen,,,,,
+Österreicher,Österreicher*innen,Österreicherinnen und Österreicher,,,,
+Osteuropäern,Osteuropäerinnen und Osteuropäern,,,,,
+Partieführer,Partieführer*innen,,,,,
+Pharmazeuten,Pharmazeutinnen und Pharmazeuten,,,,,
+Praktikanten,Praktikantinnen und Praktikanten,,,,,
+Raucherpause,Zigarettenpause,,,,,
+Schauspieler,Schauspieler*innen,Schauspielerinnen und Schauspieler,,,,
+Schirmherren,Schirmfrauen und Schirmherren,,,,,
+Schuhmachern,Schuhmacherinnen und Schuhmachern,,,,,
+Spezialisten,Spezialistinnen und Spezialisten,,,,,
+Staatsbürger,Staatsbürger*innen,Staatsbürgerinnen und Staatsbürger,,,,
+Steuerzahler,Steuerzahlerinnen und Steuerzahler,Steuerzahler*innen,Steuerzahlende,,,
+Südeuropäern,Südeuropäerinnen und Südeuropäern,,,,,
+Supervisoren,Supervisor*innen,,,,,
+Tierpflegern,Tierpflegerinnen und Tierpflegern,,,,,
+Unternehmern,Unternehmerinnen und Unternehmern,,,,,
+Urheberrecht,Copyright,,,,,
+Veranstalter,veranstaltet durch; veranstaltet von,,,,,
+Vorarlberger,Vorarlberger*innen,Vorarlbergerinnen und Vorarlberger,,,,
+Vorgesetzter,Führungskraft,Vorgesetzte und Vorgesetzer,,,,
+Vorsitzender,unter dem Vorsitz von,Vorsitzführung,,,,
+Westeuropäer,Westeuropäer*innen,Westeuropäerinnen und Westeuropäer,,,,
+Wettbewerber,Wettbewerber*innen,Wettbewerberinnen und Wettbewerber,,,,
+Zimmermänner,Zimmerleute,,,,,
+Zugbegleiter,Zugbegleiter*innen,Zugbegleiterinnen und Zugbegleiter,,,,
+Absolventen,Absolvent*innen,Absolventinnen und Absolventen,,,,
+AHS-Lehrern,AHS-Lehrerinnen und AHS-Lehrern,,,,,
+Alkoholiker,Suchtkranke,,,,,
+Amerikanern,Amerikanerinnen und Amerikanern,,,,,
+Amtsleitern,Amtsleiterinnen und Amtsleitern,,,,,
+Analytikern,Analytikerinnen und Analytikern,,,,,
+Angehörigen,Familienmitgliedern,Verwandten,,,,
+Angehöriger,Familienmitglied,,,,,
+Angeklagter,angeklagte Person,,,,,
+Arbeitgeber,Arbeitgeber*innen,Organisation der Arbeitsgebenden,Arbeitgebende; Betriebe; Unternehmen,,,
+Architekten,Architektinnen und Architekten,,,,,
+Arzthelfern,Arzthelferinnen und Arzthelfern,,,,,
+Arztzeugnis,ärztliches Zeugnis,Krankheitsbescheinigung,Unfallbestätigung,,,
+Assistenten,Assistent*innen,Assistentinnen und Assistenten,,,,
+Asylwerbern,Asylwerberinnen und Asylwerbern,,,,,
+Augenzeugen,Augenzeuginnen und Augenzeugen,,,,,
+Ausstellern,Ausstellerinnen und Ausstellern,,,,,
+Autofahrern,Autofahrerinnen und Autofahrern,,,,,
+Bademeister,Bademeister*innen,Bademeisterinnen und Bademeister,,,,
+Bauarbeiter,Bauarbeiter*innen,Bauarbeiterinnen und Bauarbeiter,,,,
+Besitzender,im Besitz von,,,,,
+Bezirksräte,Bezirksrätinnen und Bezirksräte,,,,,
+Bierbrauern,Bierbrauerinnen und Bierbrauern,,,,,
+Buchhaltern,Buchhalterinnen und Buchhaltern,,,,,
+Controllern,Controllerinnen und Controllern,,,,,
+Dachdeckern,Dachdeckerinnen und Dachdeckern,,,,,
+Delegierten,Delegiertinnen und Delegierte,,,,,
+Dezernenten,Dezernent*innen,,,,,
+Dienstgeber,Dienstgeberinnen und Dienstgeber,Dienstgeber*innen,,,,
+Dolmetscher,Dolmetscher*innen,,,,,
+Einrichtern,Einrichterinnen und Einrichtern,,,,,
+Elektrikern,Elektrikerinnen und Elektrikern,,,,,
+Evaluatoren,Evaluator*innen,Evaluierungsteam,,,,
+Freigängern,Freigängerinnen und Freigängern,,,,,
+Funktionäre,Funktionärinnen und Funktionäre,,,,,
+Garderobier,Gaderobiere und Garderobier,,,,,
+Genforscher,Genforscher*innen,Genforscherinnen und Genforscher,,,,
+Gesetzgeber,gesetzgebende Instanz,Legislative,Gesetzgebende,,,
+Glasbläsern,Glasbläserinnen und Glasbläsern,,,,,
+Hausmeister,Hausmeister*innen,Hausmeisterinnen und Hausmeister,,,,
+Herausgeber,herausgegeben von,,,,,
+HTL-Lehrern,HTL-Lehrerinnen und HTL-Lehrern,,,,,
+Infomanager,Infomanager*innen,,,,,
+Ingenieuren,Ingenieurinnen und Ingenieure,,,,,
+Innsbrucker,Innsbrucker*innen,Innsbruckerinnen und Innsbrucker,,,,
+Inspektoren,Inspektor*innen,,,,,
+Interviewer,Interviewende,,,,,
+Kartografen,Kartograf*innen,,,,,
+Kommissaren,Kommissarinnen und Kommissaren,,,,,
+Komponisten,Komponistinnen und Komponisten,,,,,
+Konsumenten,Konsument*innen,Konsumentinnen und Konsumenten,Kundschaft,,,
+Kosmetikern,Kosmetikerinnen und Kosmetikern,,,,,
+Kraftfahrer,Kraftfahrer*innen,Kraftfahrerinnen und Kraftfahrer,,,,
+Kubobmänner,Klubobleute,,,,,
+Lagerleiter,Lagerleitung,,,,,
+Lieferanten,Lieferant*innen,Lieferfirma,,,,
+Logistikern,Logistikerinnen und Logistikern,,,,,
+Mädchenname,Geburtsname,,,,,
+Magazineure,Magazineur*innen,,,,,
+Mechanikern,Mechanikerinnen und Mechanikern,,,,,
+Mitarbeiter,Angestellten,Belegschaft,Personal,Mitarbeiter*innen,Mitarbeiterinnen und Mitarbeiter,Team
+Mitbewohner,Mitbewohner*innen,Mitbewohnerinnen und Mitbewohner,,,,
+Moderatoren,Moderatorinnen und Moderatoren,,,,,
+Motorführer,Motorführerinnen und Motorführer,,,,,
+Not am Mann,Notsituation,,,,,
+Ofensetzern,Ofensetzerinnen und Ofensetzern,,,,,
+Organisator,Organisationskomitee,Organisierende,organisiert von,,,
+Osteuropäer,Osteuropäer*innen,Osteuropäerinnen und Osteuropäer,,,,
+Osttirolern,Osttirolerinnen und Osttirolern,,,,,
+Preisträger,Geehrte,,,,,
+Professoren,Professorinnen und Professoren,,,,,
+Psychologen,Psychologinnen und Psychologen,,,,,
+Redakteuren,Redakteurinnen und Redakteuren,,,,,
+Salzburgern,Salzburgerinnen und Salzburgern,,,,,
+Schuhmacher,Schuhmacher*innen,Schuhmacherinnen und Schuhmacher,,,,
+Stakeholder,Stakeholder*innen,Interessensgruppe,Stakeholderinnen und Stakeholder,,,
+Steinmetzen,Steinmetzinnen und Steinmetzen,,,,,
+Südeuropäer,Südeuropäer*innen,Südeuropäerinnen und Südeuropäer,,,,
+Südtirolern,Südtirolerinnen und Südtirolern,,,,,
+Taxifahrern,Taxifahrerinnen und Taxifahrern,,,,,
+Technologen,Technologinnen und Technologen,,,,,
+Therapeuten,Therapeutinnen und Therapeuten,,,,,
+Tierpfleger,Tierpfleger*innen,Tierpflegerinnen und Tierpfleger,,,,
+Unternehmer,Unternehmer*innen,Unternehmerinnen und Unternehmer,Selbstständige; Wirtschaftstreibende; Geschäftsleute,,,
+Verbraucher,Verbraucher*innen,,,,,
+Verteidiger,Rechtsvertretung,Verteidigung,Verteidigung; Rechtsvertretung,,,
+Vorarbeiter,Vorarbeiter*innen,Vorarbeiterinnen und Vorarbeiter,,,,
+Werkmeister,Werkmeister*innen,,,,,
+Zivilkläger,Zivilpartei,,,,,
+Abonnenten,Abonnent*innen,Abonnentinnen und Abonnenten,,,,
+AHS-Lehrer,AHS-Lehrer*innen,AHS-Lehrerinnen und AHS-Lehrer,,,,
+Amerikaner,Amerikaner*innen,Amerikanerinnen und Amerikaner,,,,
+Amtsleiter,Amtsleiter*innen,Amtsleiterinnen und Amtsleiter,,,,
+Analytiker,Analytiker*innen,Analytikerinnen und Analytiker,,,,
+Apothekern,Apothekerinnen und Apothekern,,,,,
+Archivaren,Archivarinnen und Archivaren,,,,,
+Arzthelfer,Arzthelfer*innen,Arzthelferinnen und Arzthelfer,,,,
+Arztkosten,(ärztliche) Behandlungskosten,,,,,
+Astrologen,Astrologinnen und Astrologen,,,,,
+Astronomen,Astronominnen und Astronomen,,,,,
+Asylwerber,Asylwerber*innen,Asylwerberinnen und Asylwerber,Asylsuchende,Personen im Asylverfahren,,
+Aussteller,Aussteller*innen,Ausstellerinnen und Aussteller,,,,
+Autofahrer,Autofahrer*innen,Autofahrerinnen und Autofahrer,,,,
+Bauwerbern,Bauwerberinnen und Bauwerbern,,,,,
+Bearbeiter,Bearbeiter*innen,Bearbeiterinnen und Bearbeiter,bearbeitet von,,,
+Begleitern,Begleiterinnen und Begleitern,,,,,
+Beifahrern,Beifahrerinnen und Beifahrern,,,,,
+Beteiligte,beteiligte Institutionen,Partei,Vertragspartei,,,
+Betrachter,Betrachtende,,,,,
+Bierbrauer,Bierbrauer*innen,Bierbrauerinnen und Bierbrauer,,,,
+Bildhauern,Bildhauerinnen und Bildhauern,,,,,
+Bregenzern,Bregenzerinnen und Bregenzern,,,,,
+Buchbinder,Buchbinder*innen,Buchbinderinnen und -binder,,,,
+Buchhalter,Buchhalter*innen,Buchhalterinnen und Buchhalter,,,,
+Büroleiter,Büroleiter*innen,Büroleiterinnen und -leiter,,,,
+Chauffeure,Lenker*innen,,,,,
+Controller,Controller*innen,Controllerinnen und Controller,,,,
+Dachdecker,Dachdecker*innen,Dachdeckerinnen und Dachdecker,,,,
+Diätologen,Diätolog*innen,,,,,
+Direktoren,Direktor*innen,,,,,
+Dirigenten,Dirigent*innen,Dirigentinnen und Dirigenten,,,,
+Drechslern,Drechslerinnen und Drechslern,,,,,
+Eigentümer,(im) Eigentum von,,,,,
+Einbringer,Einbringer*innen,Einbringerinnen und Einbringer,,,,
+Einrichter,Einrichter*innen,Einrichterinnen und Einrichter,,,,
+Einwohnern,Einwohnerinnen und Einwohnern,,,,,
+Eisläufern,Eisläuferinnen und Eisläufern,,,,,
+Elektriker,Elektriker*innen,Elektrikerinnen und Elektriker,,,,
+Entwickler,Entwicklerinnen und Entwickler,Entwickler*innen,,,,
+Ersatzmann,Ersatzperson,,,,,
+Ersthelfer,Ersthelfer*innen,,,,,
+Fachmänner,Fachleute,,,,,
+Fleischern,Fleischerinnen und Fleischern,,,,,
+Fluglotsen,Fluglotsinnen und Fluglotsen,,,,,
+Freigänger,Freigänger*innen,Freigängerinnen und Freigänger,,,,
+Glasbläser,Glasbläser*innen,Glasbläserinnen und Glasbläser,,,,
+Hausfrauen,Hausfrauen und Hausmänner,,,,,
+Haushälter,Haushälter*innen,,,,,
+Hersteller,Herstellende,,,,,
+Hilfsköche,Hilfsköch*innen,,,,,
+Horthelfer,Horthelfer*innen,,,,,
+HTL-Lehrer,HTL-Lehrer*innen,HTL-Lehrerinnen und HTL-Lehrer,,,,
+Ingenieure,Ingenieurinnen und Ingenieure,,,,,
+Inhabender,im Besitz von,,,,,
+Kassierern,Kassiererinnen und Kassierern,,,,,
+Katholiken,Katholikinnen und Katholiken,,,,,
+Kaufmänner,Kaufleute,Kauffrauen und Kaufmänner,,,,
+Kommissare,Kommissarinnen und Kommissare,,,,,
+Korbmacher,Korbmacher*innen,Korbmacherinnen und Korbmacher,,,,
+Kosmetiker,Kosmetikerinnen und Kosmetiker,,,,,
+Kürschnern,Kürschnerinnen und Kürschnern,,,,,
+Laboranten,Laborantinnen und Laboranten,,,,,
+Lehrerteam,Team der Unterrichtenden,,,,,
+Logistiker,Logistiker*innen,Logistikerinnen und Logistiker,,,,
+Lokführern,Lokführerinnen und Lokführern,,,,,
+Mannmonate,Personenmonate,,,,,
+Mannschaft,Belegschaft,Besatzung,Gruppe,Team,Kollektiv,
+Mannstunde,Arbeitsstunde,Personenstunde,,,,
+Maturanten,Maturant*innen,Maturantinnen und Maturanten,,,,
+Mechaniker,Mechaniker*innen,Mechanikerinnen und Mechaniker,,,,
+Medizinern,Medizinerinnen und Medizinern,,,,,
+Mitbürgern,Mitbürgerinnen und Mitbürgern,,,,,
+Ofensetzer,Ofensetzer*innen,Ofensetzerinnen und Ofensetzer,,,,
+Organisten,Organistinnen und Organisten,,,,,
+Orthopäden,Orthopädinnen und Orthopäden,,,,,
+Osttiroler,Osttiroler*innen,Osttirolerinnen und Osttiroler,,,,
+Politikern,Politikerinnen und Politikern,,,,,
+Polizisten,Polizistinnen und Polizisten,Polizist*innen,,,,
+Radfahrern,Radfahrerinnen und Radfahrern,,,,,
+Redakteure,RedakteurInnen,Redakteurinnen und Redakteure,,,,
+Referenten,Referent*innen,Referentinnen und Referenten,,,,
+Sachwalter,Sachwalter*innen,,,,,
+Salzburger,Salzburger*innen,Salzburgerinnen und Salzburger,,,,
+Sanitätern,Sanitäterinnen und Sanitätern,,,,,
+Satirikern,Satirikerinnen und Satirikern,,,,,
+Schaffnern,Schaffnerinnen und Schaffnern,,,,,
+Schirmherr,gefördert von; unterstützt von,,,,,
+Schlossern,Schlosserinnen und Schlossern,,,,,
+Schneidern,Schneiderinnen und Schneidern,,,,,
+Schreibern,Schreiberinnen und Schreibern,,,,,
+Sekretären,Sekretärinnen und Sekretären,,,,,
+Soziologen,Soziologinnen und Soziologen,,,,,
+Staatsmann,Staatsoberhaupt,,,,,
+Stadträten,Stadträtinnen und Stadträten,,,,,
+Steinmetze,Steinmetzinnen und Steinmetze,,,,,
+Südtiroler,Südtiroler*innen,Südtirolerinnen und Südtiroler,,,,
+Taxifahrer,Taxifahrer*innen,Taxifahrerinnen und Taxifahrer,,,,
+Teamleiter,Teamleiter*innen,Teamleitung,,,,
+Teilnehmer,Teilnehmer*innen,Teilnehmerinnen und Teilnehmer,Teilnehmende,Anwesende,Anmeldungen,
+Telefonist,Telefonistinnen und Telefonisten,Telefonist*innen,,,,
+Tierärzten,Tierärztinnen und Tierärzten,,,,,
+übermannen,überkommen; überwältigen,,,,,
+Übersetzer,Übersetzer*innen,,,,,
+Uhrmachern,Uhrmacherinnen und Uhrmachern,,,,,
+Verkäufern,Angestellten,Verkäuferinnen und Verkäufern,,,,
+Vermittler,Mittelsleute,Mittelsperson,Vermittler*innen,,,
+Vertretern,Vertreterinnen und Vertretern,,,,,
+Verwaltern,Verwalterinnen und Verwaltern,,,,,
+Verwandter,Familienmitglied,,,,,
+Zuschauern,Zuschauerinnen und Zuschauern,,,,,
+Abnehmern,Abnehmerinnen und Abnehmern,,,,,
+Amtsärzte,Amtsärztinnen und Amtsärzte,,,,,
+Anhängern,Anhängerinnen und Anhängern,,,,,
+Anwärtern,Anwärterinnen und Anwärtern,,,,,
+Anwendern,Anwenderinnen und Anwendern,,,,,
+Anwerbern,Anwerberinnen und Anwerbern,,,,,
+Apotheker,Apotheker*innen,Apothekerinnen und Apotheker,,,,
+Arbeitern,Arbeiterinnen und Arbeitern,,,,,
+Archivare,Archivarinnen und Archivare,,,,,
+Arztbrief,Entlassungsbrief; (ärztlicher) Befundbericht,,,,,
+Assistent,Assistenz,,,,,
+Ausländer,Ausländerinnen und Ausländer,,,,,
+Bauwerber,Bauwerber*innen,Bauwerberinnen und Bauwerber,,,,
+Begleiter,Begleiter*innen,Begleiterinnen und Begleiter,,,,
+Beifahrer,Beifahrer*innen,Beifahrerinnen und Beifahrer,,,,
+Beisitzer,Beisitzerinnen und Beisitzer,Besitzer*innen,Beisitzende,,,
+Benutzern,Benutzerinnen und Benutzern,,,,,
+Besuchern,Besucherinnen und Besuchern,,,,,
+Betreuern,Betreuerinnen und Betreuern,,,,,
+Bewerbern,Bewerberinnen und Bewerbern,,,,,
+Bewohnern,Bewohnerinnen und Bewohnern,,,,,
+Bildhauer,Bildhauer*innen,Bildhauerinnen und Bildhauer,,,,
+Bregenzer,Bregenzer*innen,Bregenzerinnen und Bregenzer,,,,
+Chefsache,Sache mit oberster Priorität,,,,,
+Chemikern,Chemikerinnen und Chemikern,,,,,
+Chirurgen,Chirurginnen und Chirurgen,,,,,
+Dentisten,Dentisten*innen,Dentistinnen und Dentisten,,,,
+Drechsler,Drechsler*innen,Drechslerinnen und Drechsler,,,,
+Ehegatten,Eheleute,Ehepaar,,,,
+Einwohner,Einwohner*innen,Einwohnerinnen und Einwohner,Population,Wohnbevölkerung,,
+Eisläufer,Eisläufer*innen,Eisläuferinnen und Eisläufer,,,,
+Empfänger,bestimmt für,Empfänger*innen,empfangen von,,,
+Erziehern,Erzieherinnen und Erziehern,,,,,
+Europäern,Europäerinnen und Europäern,,,,,
+Fleischer,Fleischer*innen,Fleischerinnen und Fleischer,,,,
+Forschern,Forscherinnen und Forschern,,,,,
+Fußgänger,zu Fuß Gehende,,,,,
+Gasthörer,Studierende im Gaststudium,,,,,
+Geldgeber,Geldgebende,,,,,
+Gewinnern,Gewinnerinnen und Gewinnern,,,,,
+Gutachter,Sachverständige,,,,,
+herrenlos,verlassen; nicht zuordnen; unbeaufsichtigt,,,,,
+Herrscher,Staatsoberhaupt,,,,,
+Intendant,Intendant*innen,Intendanz,,,,
+jedermann,alle,,,,,
+Kärntnern,Kärntnerinnen und Kärntnern,,,,,
+Kassierer,Kassierer*innen,Kassiererinnen und Kassierer,,,,
+Künstlern,Künstlerinnen und Künstlern,,,,,
+Kürschner,Kürschner*innen,Kürschnerinnen und Kürschner,,,,
+Logopäden,Logopädinnen und Logopäden,Logopäd*innen,,,,
+Lokführer,Lokführer*innen,Lokführerinnen und Lokführer,,,,
+Mandatare,Mandatar*innen,,,,,
+Mannjahre,Personenjahre,,,,,
+Masseuren,Masseurinnen und Masseuren,,,,,
+Mediziner,Mediziner*innen,Medizinerinnen und Mediziner,,,,
+Ministern,Ministerinnen und Ministern,,,,,
+Mitbürger,Mitbürger*innen,Mitbürgerinnen und Mitbürger,,,,
+Moderator,Moderation,,,,,
+Monteuren,Monteurinnen und Monteuren,,,,,
+Oberärzte,Oberärztinnen und -ärzte,,,,,
+Pädagogen,Pädagoginnen und Pädagogen,,,,,
+Passanten,Passantinnen und Passanten,Passant*innen,,,,
+Patienten,Patientinnen und Patienten,,,,,
+Physikern,Physiker*innen,Physikerinnen und Physikern,,,,
+Politiker,Politiker*innen,Politikerinnen und Politiker,,,,
+Radfahrer,Radfahrer*innen,Radfahrerinnen und Radfahrer,,,,
+Revisoren,Revisor*innen,,,,,
+Sanitäter,Sanitäter*innen,Sanitäterinnen und Sanitäter,,,,
+Satiriker,Satiriker*innen,Satirikerinnen und Satiriker,,,,
+Schaffner,Schaffner*innen,Schaffnerinnen und Schaffner,,,,
+Schlosser,Schlosser*innen,Schlosserinnen und Schlosser,,,,
+Schneider,Schneider*innen,Schneiderinnen und Schneider,,,,
+Schreiber,Schreiber*innen,Schreiberinnen und Schreiber,,,,
+Schustern,Schuster*innen,Schusterinnen und Schustern,,,,
+Seefahrer,Seeleute,,,,,
+Sekretäre,Sekretärinnen und Sekretäre,,,,,
+Spenglern,Spengler*innen,Spenglerinnen und Spenglern,,,,
+Sponsoren,Sponsor*innen,Sponsoring,,,,
+Sportlern,Sportler*innen,Sportlerinnen und Sportlern,,,,
+Sprechern,Sprecher*innen,Sprecherinnen und Sprechern,,,,
+Stadträte,Stadträt*innen,Stadträtinnen und Stadträte,,,,
+Statikern,Statikerinnen und Statikern,,,,,
+Studenten,Student*innen,Studentinnen und Studenten,Studierende,,,
+Teilhaber,Teilhaber*innen,Vertragspartei,,,,
+Tierärzte,Tierärztinnen und Tierärzte,,,,,
+Tischlern,Tischlerinnen und Tischlern,,,,,
+Uhrmacher,Uhrmacher*innen,Uhrmacherinnen und Uhrmacher,,,,
+unbemannt,maschinengesteuert; ferngesteuert,,,,,
+Vaterland,Heimatland; Geburtsland,,,,,
+Verfasser,Verfasser*innen,verfasst von,,,,
+Verkäufer,Verkäufer*innen,Verkäuferinnen und Verkäufer,Verkaufspersonal,,,
+Verteiler,Verteilschlüssel,,,,,
+Vertreter,vertreten durch,Vertreter*innen,Vertreterinnen und Vertreter,Vertretung,,
+Verwalter,Verwalter*innen,Verwalterinnen und Verwalter,,,,
+Zuschauer,Zuschauer*innen,Zuschauerinnen und Zuschauer,Publikum,,,
+Abnehmer,Abnehmerinnen und Abnehmer,,,,,
+Absender,gesendet von,,,,,
+Adressat,beauftragte Firma,,,,,
+Anbieter,Anbietende,,,,,
+Anhänger,Anhänger*innen,Anhängerinnen und Anhänger,,,,
+Anlegern,Anlegerinnen und Anlegern,,,,,
+Anrainer,Anrainer*innen,Anrainerinnen und Anrainer,,,,
+Anwälten,Anwältinnen und Anwälten,,,,,
+Anwärter,Anwärter*innen,Anwärterinnen und Anwärter,,,,
+Anwender,Anwender*innen,Anwenderinnen und Anwender,,,,
+Anwerber,Anwerber*innen,Anwerberinnen und Anwerber,,,,
+Anwohner,Anwohnende,Nachbarschaft,,,,
+Arbeiter,Arbeiter*innen,Arbeiterinnen und Arbeiter,,,,
+Athleten,Athletinnen und Athleten,,,,,
+Aufseher,Aufseher*innen,,,,,
+Benutzer,Benutzer*innen,Benutzerinnen und Benutzer,,,,
+Besitzer,im Besitz von,,,,,
+Besucher,Besucher*innen,Besucherinnen und Besucher,,,,
+Betreuer,Betreuer*innen,Betreuerinnen und Betreuer,Betreuungsperson,,,
+Bewerber,Bewerber*innen,Bewerberinnen und Bewerber,,,,
+Bewohner,Bewohner*innen,Bewohnerinnen und Bewohner,,,,
+Biologen,Biologinnen und Biologen,,,,,
+Chemiker,Chemiker*innen,Chemikerinnen und Chemiker,,,,
+Doktoren,Doktor*innen,,,,,
+Dozenten,Dozentinnen und Dozenten,,,,,
+Erzieher,Erzieher*innen,Erzieherinnen und Erzieher,,,,
+Europäer,Europäer*innen,Europäerinnen und Europäer,,,,
+Fachmann,Fachkraft,Fachleute,,,,
+Fischern,Fischerinnen und Fischern,,,,,
+Forscher,Forscher*innen,Forscherinnen und Forscher,,,,
+Förstern,Försterinnen und Förstern,,,,,
+Friseure,Friseurinnen und Friseure,,,,,
+Frisören,Frisörinnen und Frisören,,,,,
+Gärtnern,Gärtnerinnen und Gärtnern,,,,,
+Genossen,Genossinnen und Genossen,,,,,
+Gewinner,Gewinner*innen,Gewinnerinnen und Gewinner,,,,
+Grafiker,Grafiker*innen,,,,,
+Hebammen,Hebammen,,,,,
+Juristen,Juristinnen und Juristen,,,,,
+Kärntner,Kärntner*innen,Kärntnerinnen und Kärntner,,,,
+Kollegen,Kolleginnen und Kollegen,,,,,
+Konditor,Konditorinnen und Konditor,,,,,
+Kritiker,kritische Stimmen,,,,,
+Künstler,Künstler*innen,Künstlerinnen und Künstler,,,,
+Laborant,Laborfachkraft,,,,,
+Lektoren,Lektorinnen und Lektoren,,,,,
+Managern,Managerinnen und Managern,,,,,
+Mannjahr,Personenjahr,,,,,
+Manntage,Personentage,,,,,
+Masseure,Masseurinnen und Masseure,,,,,
+Minister,Minister*innen,Ministerinnen und Minister,,,,
+Monteure,Monteur*innen,Monteurinnen und Monteure,,,,
+Musikern,Musikerinnen und Musikern,,,,,
+Nachbarn,Nachbarinnen und Nachbarn,,,,,
+Physiker,Physiker*innen,Physikerinnen und Physiker,,,,
+Portiere,Portier*innen,,,,,
+Putzfrau,Reinigungspersonal,,,,,
+Rauchern,Raucherinnen und Rauchern,,,,,
+Referent,bearbeitet von,,,,,
+Rektoren,Rektor*innen,,,,,
+Richtern,Richterinnen und Richtern,,,,,
+Sattlern,Sattlerinnen und Sattlern,,,,,
+Schülern,Schülerinnen und Schülern,,,,,
+Schuster,Schuster*innen,Schusterinnen und Schuster,,,,
+Siedlern,Siedlerinnen und Siedlern,,,,,
+Soldaten,Soldatinnen und Soldaten,,,,,
+Spengler,Spengler*innen,Spenglerinnen und Spengler,,,,
+Spielern,Spielerinnen und Spielern,,,,,
+Sportler,Sportler*innen,,,,,
+Sprecher,Sprecher*innen,Sprecherinnen und Sprecher,,,,
+Springer,Springer*innen,,,,,
+Statiker,Statiker*innen,Statikerinnen und Statiker,,,,
+Steirern,Steirerinnen und Steirern,,,,,
+Tirolern,Tiroler*innen,Tirolerinnen und Tirolern,,,,
+Tischler,Tischler*innen,Tischlerinnen und Tischler,,,,
+Urologen,Urologinnen und Urologen,,,,,
+Vormunde,Vormundinnen und Vormunde,,,,,
+Züchtern,Züchterinnen und Züchtern,,,,,
+Zuhörern,Zuhörerinnen und Zuhörern,,,,,
+Agenten,Agentinnen und Agenten,,,,,
+Akteure,Akteurinnen und Akteure,,,,,
+Anleger,Anleger*innen,Anlegerinnen und Anleger,,,,
+Anrufer,angerufen hat,Anruf von,Anrufer*innen,Anruferinnen und Anrufer,,
+Anwälte,Anwältinnen und Anwälte,,,,,
+Asiaten,Asiatinnen und Asiaten,,,,,
+Autoren,Autorinnen und Autoren,,,,,
+Bäckern,Bäckerinnen und Bäckern,,,,,
+Beamten,Beamtinnen und Beamten,,,,,
+bemannt,besetzt mit,,,,,
+Berater,Beratung,es berät Sie,Sie werden beraten von,,,
+Brauern,Brauerinnen und Brauern,,,,,
+Bürgern,Bürgerinnen und Bürgern,,,,,
+Drehern,Dreherinnen und Drehern,,,,,
+Experte,Fachleute,,,,,
+Fahrern,Fahrerinnen und Fahrern,,,,,
+Fiakern,Fiakerinnen und Fiakern,,,,,
+Fischer,Fischer*innen,Fischerinnen und Fischer,,,,
+Förster,Förster*innen,Försterinnen und Förster,,,,
+Frisöre,Frisörinnen und Frisöre,,,,,
+Führern,Führerinnen und Führern,,,,,
+Gärtner,Gärtner*innen,Gärtnerinnen und Gärtner,,,,
+Gerbern,Gerberinnen und Gerbern,,,,,
+Gießern,Gießerinnen und Gießern,,,,,
+Glasern,Glaserinnen und Glasern,,,,,
+Grazern,Grazerinnen und Grazern,,,,,
+Gründer,Gründer*innen,Gründerinnen und Gründer,,,,
+Hebamme,Hebamme,,,,,
+Inhaber,Inhaber*innen,,,,,
+Kellner,Kellner*innen,Kellnerinnen und Kellner,,,,
+Lehrern,Lehrerinnen und Lehrern,,,,,
+Leitern,Leiterinnen und Leitern,,,,,
+Lenkern,Lenkerinnen und Lenkern,,,,,
+Linzern,Linzerinnen und Linzern,,,,,
+Manager,Führungskraft,Führungskräfte,Manager*innen,Managerinnen und Manager,,
+Maurern,Maurerinnen und Maurern,,,,,
+Meister,Fachleute,Genie,Kapazität,,,
+Mietern,Mieterinnen und Mietern,,,,,
+Migrant,Person mit Mitgrationshintergrund,,,,,
+Musiker,Musiker*innen,Musikerinnen und Musiker,,,,
+Nachbar,Nachbarschaft,,,,,
+Notaren,Notarinnen und Notaren,,,,,
+Partner,beteiligte Institutionen,Partei,Vertragspartei,,,
+Pfleger,Pflegerinnen und Pfleger,Pfleger*innen,,,,
+Piloten,Pilotinnen und Piloten,,,,,
+Prüfern,Prüferinnen und Prüfern,,,,,
+Raucher,Raucher*innen,Raucherinnen und Raucher,,,,
+Rednern,Rednerinnen und Rednern,,,,,
+Reitern,Reiterinnen und Reitern,,,,,
+Richter,Richter*innen,Richterinnen und Richter,,,,
+Sattler,Sattler*innen,Sattlerinnen und Sattler,,,,
+Schüler,Schüler*innen,Schülerinnen und Schüler,,,,
+Seglern,Seglerinnen und Seglern,,,,,
+Sennern,Sennerinnen und Sennern,,,,,
+Siedler,Siedler*innen,Siedlerinnen und Siedler,,,,
+Speaker,Speaker*innen,,,,,
+Spieler,Spieler*innen,Spielerinnen und Spieler,,,,
+Steirer,Steirer*innen,Steirerinnen und Steirer,,,,
+Testern,Testerinnen und Testern,,,,,
+Tiroler,Tiroler*innen,Tirolerinnen und Tiroler,,,,
+Töpfern,Töpferinnen und Töpfern,,,,,
+Trainer,Trainerinnen und Trainer,Trainer*innen,,,,
+Trinker,Trinker*innen,Trinkerinnen und Trinker,,,,
+Vormund,Vormundschaft,,,,,
+Wächter,Wache,,,,,
+Wählern,Wählerinnen und Wählern,,,,,
+Wienern,Wienerinnen und Wienern,,,,,
+Winzern,Winzerinnen und Winzern,,,,,
+Züchter,Züchter*innen,Züchterinnen und Züchter,,,,
+Zuhörer,Auditorium,Publikum,Zuhörende,Zuhörer*innen,Zuhörerinnen und Zuhörer,
+Anwalt,Rechtsvertretung,,,,,
+Ärzten,Ärzteschaft,Ärztinnen und Ärzten,,,,
+Bäcker,Bäcker*innen,Bäckerinnen und Bäcker,,,,
+Bauern,Bäuerinnen und Bauern,,,,,
+Beamte,Beamt*innen,Beamtinnen und Beamten,,,,
+Brauer,Brauer*innen,Brauerinnen und Brauer,,,,
+Bürger,Bürger*innen,Bürgerinnen und Bürger,Bevölkerung,,,
+Dekane,Dekanate,Dekaninnen und Dekane,,,,
+Dreher,Dreher*innen,Dreherinnen und Dreher,,,,
+Fahrer,Fahrer*innen,Fahrerinnen und Fahrer,,,,
+Fiaker,Fiaker*innen,Fiakerinnen und Fiaker,,,,
+Führer,Führer*innen,Führerinnen und Führer,,,,
+Gerber,Gerber*innen,Gerberinnen und Gerber,,,,
+Gießer,Gießer*innen,Gießerinnen und Gießer,,,,
+Glaser,Glaser*innen,Glaserinnen und Glaser,,,,
+Grazer,Grazer*innen,Grazerinnen und Grazer,,,,
+Heizer,Heizer*innen,Heizerinnen und Heizer,,,,
+Hörern,Hörerinnen und Hörern,,,,,
+Köchen,Köchinnen und Köchen,,,,,
+Kunden,Kundinnen und Kunden,,,,,
+Lehrer,Lehrer*innen,Lehrerinnen und Lehrer,,,,
+Leiter,Leiter*innen,Leiterinnen und Leiter,Leitung,,,
+Lenker,Lenker*innen,Lenkerinnen und Lenker,,,,
+Linzer,Linzer*innen,Linzerinnen und Linzer,,,,
+Lotsen,Lotsinnen und Lotsen,,,,,
+Makler,Makler*innen,Maklerinnen und Makler,,,,
+Malern,Malerinnen und Malern,,,,,
+Maurer,Maurer*innen,Maurerinnen und Maurer,,,,
+Mieter,Mieter*innen,Mieterinnen und Mieter,,,,
+Nähern,Näher*innen,Näherinnen und Nähern,,,,
+Notare,Notarinnen und Notare,,,,,
+Planer,Planerinnen und Planer,Planer*innen,,,,
+Prüfer,Prüfer*innen,Prüferinnen und Prüfer,,,,
+Redner,Redner*innen,Rednerinnen und Redner,,,,
+Reiter,Reiter*innen,Reiterinnen und Reiter,,,,
+Rektor,Rektorat,,,,,
+Segler,Segler*innen,Seglerinnen und Segler,,,,
+Sehern,Seherinnen und Sehern,,,,,
+Sender,gesendet von,,,,,
+Senner,Senner*innen,Sennerinnen und Senner,,,,
+Tätern,Täterinnen und Tätern,,,,,
+Tester,Tester*innen,Testerinnen und Tester,,,,
+Töpfer,Töpfer*innen,Töpferinnen und Töpfer,,,,
+Wähler,Wahlberechtigte,Wähler*innen,Wählerinnen und Wähler,,,
+Webern,Weberinnen und Webern,,,,,
+Wiener,Wiener*innen,Wienerinnen und Wiener,,,,
+Winzer,Winzer*innen,Winzerinnen und Winzer,,,,
+Zeugen,Zeuginnen und Zeugen,,,,,
+Ärzte,Ärzteschaft,Ärzt*innen,Ärztinnen und Ärzte,,,
+Gäste,Gästinnen und Gäste,,,,,
+Hörer,Hörer*innen,Hörerinnen und Hörer,,,,
+jeder,alle,,,,,
+Köche,Köchinnen und Köche,,,,,
+Kunde,Kundschaft,,,,,
+Maler,Maler*innen,Malerinnen und Maler,,,,
+Näher,Näher*innen,Näherinnen und Näher,,,,
+Seher,Seher*innen,Seherinnen und Seher,,,,
+Täter,Täter*innen,,,,,
+Weber,Weber*innen,Weberinnen und Weber,,,,
+Erbe,Erbberechtigte,,,,,
+Gast,Eingeladene,,,,,
+Star,Berühmtheit,,,,,
+User,User*innen,,,,,
