@@ -1,13 +1,10 @@
 import { execPiped, runAsyncMain } from "devcmd";
 import path from "path";
-import { dataDir, languageToolDir } from "./utils/paths";
+import { DEVCMD_COMMAND } from "./utils/commands";
+import { languageToolDir } from "./utils/paths";
 
 async function main() {
-  await execPiped({
-    command: "python3",
-    args: ["copy_files.py"],
-    options: { cwd: dataDir },
-  });
+  await execPiped({ command: DEVCMD_COMMAND, args: ["prepare-languagetool"] });
 
   await execPiped({
     command: "java",

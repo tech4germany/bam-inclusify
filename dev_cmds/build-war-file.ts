@@ -2,15 +2,11 @@ import { execPiped, runAsyncMain } from "devcmd";
 import fs from "fs-extra";
 import { cyan, red } from "kleur";
 import path from "path";
-import { YARN_COMMAND } from "./utils/commands";
-import { languageToolDir, reactUiDir, repoRoot } from "./utils/paths";
+import { DEVCMD_COMMAND } from "./utils/commands";
+import { languageToolDir, reactUiDir } from "./utils/paths";
 
 async function main() {
-  await execPiped({
-    command: YARN_COMMAND,
-    args: ["build"],
-    options: { cwd: reactUiDir },
-  });
+  await execPiped({ command: DEVCMD_COMMAND, args: ["build-react-app"] });
 
   const warPackageProjectDir = path.join(languageToolDir, "war-package");
   const warPackageReactAppDir = path.join(warPackageProjectDir, "src/main/react-app");
