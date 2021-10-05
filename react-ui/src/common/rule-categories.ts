@@ -9,6 +9,7 @@ export function mapRuleCategory(ruleMatch: RuleMatch): RuleMatchCategory {
 function mapRuleCategoryId(categoryId: string | undefined): RuleMatchCategory {
   switch (categoryId) {
     case "GENERISCHES_MASKULINUM":
+    case "BEHINDERUNG":
       return "diversity";
     case "TYPOS":
       return "spelling";

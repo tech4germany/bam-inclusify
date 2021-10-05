@@ -237,7 +237,7 @@ def copy_files(grammar_path=grammar_path) -> None:
             ),
         ).replace(
             "</rules>",
-            '<category id="GENERISCHES_MASKULINUM" name="Generisches Maskulinum">\n&UserRules;\n</category>\n</rules>',
+            "\n&UserRules;\n</rules>",
         )
         return new_xml
 

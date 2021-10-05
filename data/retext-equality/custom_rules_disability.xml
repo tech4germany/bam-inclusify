@@ -1,108 +1,110 @@
-<rulegroup id="BEHINDERUNG_HABEN" name="behindert sein / Behinderungen haben">
-    <rule>
+<category id="BEHINDERUNG" name="Behinderung">
+    <rulegroup id="BEHINDERUNG_HABEN" name="behindert sein / Behinderungen haben">
+        <rule>
+            <pattern>
+                <token inflected="yes">sein</token>
+                <token>behindert</token>
+            </pattern>
+            <message>Durch Verwendung von "eine Behinderung haben" wird die Behinderung mehr als eine unter vielen Eigenschaften der Person beschrieben, statt als Wesenseigenschaft. Durch Verwendung von "behindert werden" wird betont, dass die Behinderung nicht von der Person mit der Behinderung ausgeht, sondern oft von der Gesellschaft ausgeht.
+            </message>
+            <suggestion><match no="1" postag=".*" postag_regexp="yes">haben</match> eine Behinderung</suggestion>
+            <suggestion><match no="1" postag=".*" postag_regexp="yes">haben</match> Behinderungen</suggestion>
+            <suggestion><match no="1" postag=".*" postag_regexp="yes">werden</match> behindert</suggestion>
+            <example correction="hat eine Behinderung|hat Behinderungen|wird behindert">Die Richterin <marker>ist behindert</marker>.
+            </example>
+            <example correction="haben eine Behinderung|haben Behinderungen|werden behindert">Rollstuhlfahrerinnen <marker>sind behindert</marker>.
+            </example>
+        </rule>
+        <rule>
+            <pattern>
+                <token>behindert</token>
+                <token inflected="yes">sein</token>
+            </pattern>
+            <message>Durch Verwendung von "eine Behinderung haben" wird die Behinderung mehr als eine unter vielen Eigenschaften der Person beschrieben, statt als Wesenseigenschaft. Durch Verwendung von "behindert werden" wird betont, dass die Behinderung nicht von der Person mit der Behinderung ausgeht, sondern oft von der Gesellschaft ausgeht.
+            </message>
+            <suggestion>eine Behinderung <match no="1" postag=".*" postag_regexp="yes">haben</match></suggestion>
+            <suggestion>Behinderungen <match no="1" postag=".*" postag_regexp="yes">haben</match></suggestion>
+            <suggestion>behindert <match no="2" postag=".*" postag_regexp="yes">werden</match></suggestion>
+            <example correction="eine Behinderung hatte|Behinderungen hatte|behindert wurde">Die Tennisspielerin, die <marker>behindert war</marker>.
+            </example>
+            <example correction="eine Behinderung hatte|Behinderungen hatte|behindert wurde">Weil die Managerin <marker>behindert war</marker>, konnte sie nicht teilnehmen.
+            </example>
+        </rule>
+        <rule>
+            <pattern>
+                <token inflected="yes">sein</token>
+                <token regexp="yes">([a-zäöüß]+)behindert</token>
+            </pattern>
+            <message>Durch Verwendung von "eine Behinderung haben" wird die Behinderung mehr als eine unter vielen Eigenschaften der Person beschrieben, statt als Wesenseigenschaft.
+            </message>
+            <suggestion><match no="1" postag=".*" postag_regexp="yes">haben</match> eine <match no="2" regexp_match="([a-zäöüß]+)behindert" regexp_replace="$1" case_conversion="startupper" />behinderung</suggestion>
+            <suggestion><match no="1" postag=".*" postag_regexp="yes">haben</match> <match no="2" regexp_match="([a-zäöüß]+)behindert" regexp_replace="$1" case_conversion="startupper" />behinderungen</suggestion>
+            <example correction="haben eine Lernbehinderung|haben Lernbehinderungen">Die Studierenden <marker>sind lernbehindert</marker>.
+            </example>
+        </rule>
+        <rule>
+            <pattern>
+                <token regexp="yes">([a-zäöüß]+)behindert</token>
+                <token inflected="yes">sein</token>
+            </pattern>
+            <message>Durch Verwendung von "eine Behinderung haben" wird die Behinderung mehr als eine unter vielen Eigenschaften der Person beschrieben, statt als Wesenseigenschaft.
+            </message>
+            <suggestion>eine <match no="1" regexp_match="([a-zäöüß]+)behindert" regexp_replace="$1" case_conversion="startupper" />behinderung <match no="2" postag=".*" postag_regexp="yes">haben</match></suggestion>
+            <example correction="eine Schwerbehinderung hat">Wer <marker>schwerbehindert ist</marker>, beantragt bitte den Passierschein 12a.
+            </example>
+        </rule>
+    </rulegroup>
+    <rulegroup id="MENSCH_MIT_BEHINDERUNG" name="Behinderter / Person mit Behinderung">
+        <rule>
+            <pattern>
+                <token inflected="yes" regexp="yes">Behinderte|Behinderter</token>
+            </pattern>
+            <message>Worte wie "Behinderte" definieren die Identität der Person über die Behinderung. Durch Beschreibung als "Person mit einer Behinderung" gerät die Person als ganze in den Vordergrund, und die Behinderung wird nur als eine ihrer vielen Eigenschaften dargestellt.</message>
+            <suggestion><match no="1" postag="SUB:(\w\w\w):(\w\w\w):.*" postag_replace="SUB:$1:$2:FEM" postag_regexp="yes">Person</match> mit einer Behinderung</suggestion>
+            <suggestion><match no="1" postag="SUB:(\w\w\w):(\w\w\w):.*" postag_replace="SUB:$1:$2:FEM" postag_regexp="yes">Person</match> mit Behinderungen</suggestion>
+            <suggestion><match no="1" postag="SUB:(\w\w\w):(\w\w\w):.*" postag_replace="SUB:$1:$2:MAS" postag_regexp="yes">Mensch</match> mit einer Behinderung</suggestion>
+            <suggestion><match no="1" postag="SUB:(\w\w\w):(\w\w\w):.*" postag_replace="SUB:$1:$2:MAS" postag_regexp="yes">Mensch</match> mit Behinderungen</suggestion>
+            <suggestion><match no="1" postag="SUB:(\w\w\w):(\w\w\w):.*" postag_replace="SUB:$1:$2:FEM" postag_regexp="yes">Profifußballerin</match> mit einer Behinderung</suggestion>
+            <example correction="Menschen mit Behinderung|Menschen mit Behinderungen|Personen mit einer Behinderung|Personen mit Behinderungen|Profifußballerinnen mit einer Behinderung"><marker>Behinderte</marker> werden durch die Behindertenvertretung vertreten.</example>
+        </rule>
+        <rule>
+            <pattern>
+                <token regexp="yes">(.*b|B)ehinderten-?(.+)</token>
+            </pattern>
+            <message>Worte wie "Behinderte" definieren die Identität der Person über die Behinderung. Durch Beschreibung als "Person mit einer Behinderung" gerät die Person als ganze in den Vordergrund, und die Behinderung wird nur als eine ihrer vielen Eigenschaften dargestellt.</message>
+            <suggestion><match no="1" regexp_match="(.*b|B)ehinderten-?(.+)" regexp_replace="$2" case_conversion="startupper" /> für Menschen mit <match no="1" regexp_match="(.*b|B)ehinderten-?(.+)" regexp_replace="$1" case_conversion="startupper" />ehinderungen</suggestion>
+            <example correction="Vertretung für Menschen mit Schwerbehinderungen">Menschen mit Behinderung werden durch die <marker>Schwerbehindertenvertretung</marker> vertreten.</example>
+        </rule>
+    </rulegroup>
+    <rulegroup id="LEIDEN_HABEN" name="leiden an / haben">  
+        <rule>
+            <pattern>
+                <token inflected="yes">leiden</token>
+                <token regexp="yes">an|unter</token>
+            </pattern>
+            <message>TODO</message>
+            <suggestion><match no="1" postag="VER.*" postag_replace="$0" postag_regexp="yes">haben</match></suggestion>
+            <example correction="hat">Sie <marker>leidet an</marker> Parkinson.</example>    
+        </rule>
+        <rule>
+            <pattern>
+                <token regexp="yes">an|am|unter</token>
+                <token></token>
+                <token inflected="yes">leiden</token>
+            </pattern>
+            <message>TODO</message>
+            <suggestion><match no="2" /> <match no="3" postag=".*" postag_replace="$0" postag_regexp="yes">haben</match></suggestion>
+            <example correction="Down Syndrom habende">Die <marker>unter dem Down Syndrom leidende</marker> Person.</example>
+            <!-- postag="(.*):(NOM|GEN|DAT|AKK):(.*)" postag_replace="$1:AKK:$2" postag_regexp="yes"  -->
+        </rule>
+    </rulegroup>
+    <!-- <rule id="TROTZ_BEHINDERUNG" name="nicht: trotz Behinderung">
         <pattern>
-            <token inflected="yes">sein</token>
-            <token>behindert</token>
-        </pattern>
-        <message>Durch Verwendung von "eine Behinderung haben" wird die Behinderung mehr als eine unter vielen Eigenschaften der Person beschrieben, statt als Wesenseigenschaft. Durch Verwendung von "behindert werden" wird betont, dass die Behinderung nicht von der Person mit der Behinderung ausgeht, sondern oft von der Gesellschaft ausgeht.
-        </message>
-        <suggestion><match no="1" postag=".*" postag_regexp="yes">haben</match> eine Behinderung</suggestion>
-        <suggestion><match no="1" postag=".*" postag_regexp="yes">haben</match> Behinderungen</suggestion>
-        <suggestion><match no="1" postag=".*" postag_regexp="yes">werden</match> behindert</suggestion>
-        <example correction="hat eine Behinderung|hat Behinderungen|wird behindert">Die Richterin <marker>ist behindert</marker>.
-        </example>
-        <example correction="haben eine Behinderung|haben Behinderungen|werden behindert">Rollstuhlfahrerinnen <marker>sind behindert</marker>.
-        </example>
-    </rule>
-    <rule>
-        <pattern>
-            <token>behindert</token>
-            <token inflected="yes">sein</token>
-        </pattern>
-        <message>Durch Verwendung von "eine Behinderung haben" wird die Behinderung mehr als eine unter vielen Eigenschaften der Person beschrieben, statt als Wesenseigenschaft. Durch Verwendung von "behindert werden" wird betont, dass die Behinderung nicht von der Person mit der Behinderung ausgeht, sondern oft von der Gesellschaft ausgeht.
-        </message>
-        <suggestion>eine Behinderung <match no="1" postag=".*" postag_regexp="yes">haben</match></suggestion>
-        <suggestion>Behinderungen <match no="1" postag=".*" postag_regexp="yes">haben</match></suggestion>
-        <suggestion>behindert <match no="2" postag=".*" postag_regexp="yes">werden</match></suggestion>
-        <example correction="eine Behinderung hatte|Behinderungen hatte|behindert wurde">Die Tennisspielerin, die <marker>behindert war</marker>.
-        </example>
-        <example correction="eine Behinderung hatte|Behinderungen hatte|behindert wurde">Weil die Managerin <marker>behindert war</marker>, konnte sie nicht teilnehmen.
-        </example>
-    </rule>
-    <rule>
-        <pattern>
-            <token inflected="yes">sein</token>
-            <token regexp="yes">([a-zäöüß]+)behindert</token>
-        </pattern>
-        <message>Durch Verwendung von "eine Behinderung haben" wird die Behinderung mehr als eine unter vielen Eigenschaften der Person beschrieben, statt als Wesenseigenschaft.
-        </message>
-        <suggestion><match no="1" postag=".*" postag_regexp="yes">haben</match> eine <match no="2" regexp_match="([a-zäöüß]+)behindert" regexp_replace="$1" case_conversion="startupper" />behinderung</suggestion>
-        <suggestion><match no="1" postag=".*" postag_regexp="yes">haben</match> <match no="2" regexp_match="([a-zäöüß]+)behindert" regexp_replace="$1" case_conversion="startupper" />behinderungen</suggestion>
-        <example correction="haben eine Lernbehinderung|haben Lernbehinderungen">Die Studierenden <marker>sind lernbehindert</marker>.
-        </example>
-    </rule>
-    <rule>
-        <pattern>
-            <token regexp="yes">([a-zäöüß]+)behindert</token>
-            <token inflected="yes">sein</token>
-        </pattern>
-        <message>Durch Verwendung von "eine Behinderung haben" wird die Behinderung mehr als eine unter vielen Eigenschaften der Person beschrieben, statt als Wesenseigenschaft.
-        </message>
-        <suggestion>eine <match no="1" regexp_match="([a-zäöüß]+)behindert" regexp_replace="$1" case_conversion="startupper" />behinderung <match no="2" postag=".*" postag_regexp="yes">haben</match></suggestion>
-        <example correction="eine Schwerbehinderung hat">Wer <marker>schwerbehindert ist</marker>, beantragt bitte den Passierschein 12a.
-        </example>
-    </rule>
-</rulegroup>
-<rulegroup id="MENSCH_MIT_BEHINDERUNG" name="Behinderter / Person mit Behinderung">
-    <rule>
-        <pattern>
-            <token inflected="yes" regexp="yes">Behinderte|Behinderter</token>
-        </pattern>
-        <message>Worte wie "Behinderte" definieren die Identität der Person über die Behinderung. Durch Beschreibung als "Person mit einer Behinderung" gerät die Person als ganze in den Vordergrund, und die Behinderung wird nur als eine ihrer vielen Eigenschaften dargestellt.</message>
-        <suggestion><match no="1" postag="SUB:(\w\w\w):(\w\w\w):.*" postag_replace="SUB:$1:$2:FEM" postag_regexp="yes">Person</match> mit einer Behinderung</suggestion>
-        <suggestion><match no="1" postag="SUB:(\w\w\w):(\w\w\w):.*" postag_replace="SUB:$1:$2:FEM" postag_regexp="yes">Person</match> mit Behinderungen</suggestion>
-        <suggestion><match no="1" postag="SUB:(\w\w\w):(\w\w\w):.*" postag_replace="SUB:$1:$2:MAS" postag_regexp="yes">Mensch</match> mit einer Behinderung</suggestion>
-        <suggestion><match no="1" postag="SUB:(\w\w\w):(\w\w\w):.*" postag_replace="SUB:$1:$2:MAS" postag_regexp="yes">Mensch</match> mit Behinderungen</suggestion>
-        <suggestion><match no="1" postag="SUB:(\w\w\w):(\w\w\w):.*" postag_replace="SUB:$1:$2:FEM" postag_regexp="yes">Profifußballerin</match> mit einer Behinderung</suggestion>
-        <example correction="Menschen mit Behinderung|Menschen mit Behinderungen|Personen mit einer Behinderung|Personen mit Behinderungen|Profifußballerinnen mit einer Behinderung"><marker>Behinderte</marker> werden durch die Behindertenvertretung vertreten.</example>
-    </rule>
-    <rule>
-        <pattern>
-            <token regexp="yes">(.*b|B)ehinderten-?(.+)</token>
-        </pattern>
-        <message>Worte wie "Behinderte" definieren die Identität der Person über die Behinderung. Durch Beschreibung als "Person mit einer Behinderung" gerät die Person als ganze in den Vordergrund, und die Behinderung wird nur als eine ihrer vielen Eigenschaften dargestellt.</message>
-        <suggestion><match no="1" regexp_match="(.*b|B)ehinderten-?(.+)" regexp_replace="$2" case_conversion="startupper" /> für Menschen mit <match no="1" regexp_match="(.*b|B)ehinderten-?(.+)" regexp_replace="$1" case_conversion="startupper" />ehinderungen</suggestion>
-        <example correction="Vertretung für Menschen mit Schwerbehinderungen">Menschen mit Behinderung werden durch die <marker>Schwerbehindertenvertretung</marker> vertreten.</example>
-    </rule>
-</rulegroup>
-<rulegroup id="LEIDEN_HABEN" name="leiden an / haben">  
-    <rule>
-        <pattern>
-            <token inflected="yes">leiden</token>
-            <token regexp="yes">an|unter</token>
+            <token>trotz</token>
+            <token regexp="yes" min="0">seiner|ihrer|der</token>
+            <token regexp="yes">(\w+b|B)ehinderung</token>
         </pattern>
         <message>TODO</message>
-        <suggestion><match no="1" postag="VER.*" postag_replace="$0" postag_regexp="yes">haben</match></suggestion>
-        <example correction="hat">Sie <marker>leidet an</marker> Parkinson.</example>    
-    </rule>
-    <rule>
-        <pattern>
-            <token regexp="yes">an|am|unter</token>
-            <token></token>
-            <token inflected="yes">leiden</token>
-        </pattern>
-        <message>TODO</message>
-        <suggestion><match no="2" /> <match no="3" postag=".*" postag_replace="$0" postag_regexp="yes">haben</match></suggestion>
-        <example correction="Down Syndrom habende">Die <marker>unter dem Down Syndrom leidende</marker> Person.</example>
-        <!-- postag="(.*):(NOM|GEN|DAT|AKK):(.*)" postag_replace="$1:AKK:$2" postag_regexp="yes"  -->
-    </rule>
-</rulegroup>
-<!-- <rule id="TROTZ_BEHINDERUNG" name="nicht: trotz Behinderung">
-    <pattern>
-        <token>trotz</token>
-        <token regexp="yes" min="0">seiner|ihrer|der</token>
-        <token regexp="yes">(\w+b|B)ehinderung</token>
-    </pattern>
-    <message>TODO</message>
-</rule> -->
-<!-- leidensgerecht -->
+    </rule> -->
+    <!-- leidensgerecht -->
+</category>
