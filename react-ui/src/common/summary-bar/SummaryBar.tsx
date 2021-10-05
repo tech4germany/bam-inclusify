@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 import { BaseButton } from "../buttons/Buttons";
+import { Colors } from "../Colors";
 
 interface SummaryBarProps {
   diversityErrorCount: number;
@@ -54,16 +55,13 @@ const BaseSummaryContainer = styled.div`
   padding: 3px 12px 3px 7px;
 `;
 
-const darkCyan = "#00556E";
-const mediumCyan = "#0189BB";
-const brightCyan = "#00AFF0";
-
 const GrammarSummaryContainer = styled(BaseSummaryContainer)`
-  background: transparent linear-gradient(68deg, ${brightCyan} 0%, ${mediumCyan} 100%) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(68deg, ${Colors.brightCyan} 0%, ${Colors.mediumCyan} 100%) 0% 0% no-repeat
+    padding-box;
 `;
 
 const GrammarSummaryCountCircle = styled(SummaryCountCircle)`
-  color: ${mediumCyan};
+  color: ${Colors.mediumCyan};
 `;
 
 const GrammarSummary: FC<{ grammarErrorCount: number }> = ({ grammarErrorCount: grammarMatchCount }) => (
@@ -73,16 +71,13 @@ const GrammarSummary: FC<{ grammarErrorCount: number }> = ({ grammarErrorCount: 
   </GrammarSummaryContainer>
 );
 
-const darkRed = "#8C1318";
-const mediumRed = "#B40F1F";
-const brightRed = "#D2001F";
-
 const SpellingSummaryContainer = styled(BaseSummaryContainer)`
-  background: transparent linear-gradient(68deg, ${mediumRed} 0%, ${darkRed} 100%) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(68deg, ${Colors.mediumRed} 0%, ${Colors.darkRed} 100%) 0% 0% no-repeat
+    padding-box;
 `;
 
 const SpellingSummaryCountCircle = styled(SummaryCountCircle)`
-  color: ${mediumRed};
+  color: ${Colors.mediumRed};
 `;
 
 const SpellingSummary: FC<{ spellingErrorCount: number }> = ({ spellingErrorCount: spellingMatchCount }) => (
@@ -92,16 +87,13 @@ const SpellingSummary: FC<{ spellingErrorCount: number }> = ({ spellingErrorCoun
   </SpellingSummaryContainer>
 );
 
-const darkPurple = "#6C3A90";
-const mediumPurple = "#8F4DBF";
-const brightPurple = "#AB5DE3";
-
 const DiversityErrorSummaryContainer = styled(BaseSummaryContainer)`
-  background: transparent linear-gradient(68deg, ${mediumPurple} 0%, ${darkPurple} 100%) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(68deg, ${Colors.mediumPurple} 0%, ${Colors.darkPurple} 100%) 0% 0% no-repeat
+    padding-box;
 `;
 
 const DiversityErrorSummaryCountCircle = styled(SummaryCountCircle)`
-  color: ${mediumPurple};
+  color: ${Colors.mediumPurple};
 `;
 
 const DiversityErrorSummary: FC<{ diversityErrorCount: number }> = ({ diversityErrorCount }) => (
@@ -111,13 +103,11 @@ const DiversityErrorSummary: FC<{ diversityErrorCount: number }> = ({ diversityE
   </DiversityErrorSummaryContainer>
 );
 
-const darkYellow = "#CD7D00";
-const mediumYellow = "#E69B00";
-
 const UserSettingsButtonContainer = styled(BaseButton)`
-  background: transparent linear-gradient(68deg, ${mediumYellow} 0%, ${darkYellow} 100%) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(68deg, ${Colors.mediumYellow} 0%, ${Colors.darkYellow} 100%) 0% 0% no-repeat
+    padding-box;
   &:hover {
-    background: ${mediumYellow};
+    background: ${Colors.mediumYellow};
   }
 `;
 
