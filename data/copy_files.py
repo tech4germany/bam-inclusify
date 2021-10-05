@@ -12,7 +12,8 @@ import subprocess
 # adjust this to the folder of the LanguageTool release
 languagetool_path = path.join("..", "languagetool", "LanguageTool-5.4")
 # path of the German grammar files within the LanguageTool release
-grammar_path = path.join(languagetool_path, "org", "languagetool", "rules", "de")
+grammar_path_internal = path.join("org", "languagetool", "rules", "de")
+grammar_path = path.join(languagetool_path, grammar_path_internal)
 # file name of the additional grammar rules
 rulefile = "grammar_openminded.xml"
 compiled_path = path.join(
@@ -231,12 +232,12 @@ def copy_files(grammar_path=grammar_path) -> None:
     def update_rulefile(old_xml):
         new_xml = old_xml.replace(
             "<!DOCTYPE rules [",
-            '<!DOCTYPE rules [ \n\t<!ENTITY UserRules SYSTEM "file:///{}">'.format(
-                path.abspath(path.join(grammar_path, rulefile))
+            '<!DOCTYPE rules [ \n\t<!ENTITY UserRules SYSTEM "file:{}">'.format(
+                path.join(".", grammar_path_internal, rulefile)
             ),
         ).replace(
             "</rules>",
-            '<category id="GENERISCHES MASKULINUM" name="Generisches Maskulinum">\n&UserRules;\n</category>\n</rules>',
+            '<category id="GENERISCHES_MASKULINUM" name="Generisches Maskulinum">\n&UserRules;\n</category>\n</rules>',
         )
         return new_xml
 
