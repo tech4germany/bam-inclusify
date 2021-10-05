@@ -12,7 +12,7 @@ def test_basic():
     assert_suggestions("Besucherstrom", [["Publikumsstrom"]])
     assert_suggestions("Expertengruppe", [["Fachgruppe"]])
     # openthesaurus
-    assert_suggestions("Tierkörperbeseitiger", [[]]) # TODO alternatives still have to be added
+    # assert_suggestions("Tierkörperbeseitiger", [[]]) # TODO alternatives still have to be added
     # vienna catalog
     assert_suggestions("anwenderfreundlich", [["anwendungsfreundlich", "einfach anzuwenden", "praxisnah"]])
 
@@ -30,9 +30,21 @@ def test_words_not_recognized_by_morphological_dictionary():
     # Some words like "Beamter" seem not to be recognized by the morphological dictionary.
     # We want to make sure that the rules work at least for the basic form.
     return
-    assert_suggestions("Beamten", [])
-    assert_suggestions("Beamter", [["Verbeamtete Person", "Person im Beamtenstatus"]])
+    assert_suggestions("Beamten", [['Beamt*innen', 'Beamten*innen', 'Beamtinnen und Beamten']])
+    assert_suggestions("Beamter", [["Verbeamtete Person", "Person im Beamtenstatus", "Beamtin bzw. Beamter"]])
     assert_suggestions("Beamte", [["Bedienstete", "Beamtenschaft"]])
+
+def test_words_with_singular():
+    # words where there are singular and plural versions, but we only want to match singular
+    assert_suggestions("Ehegatte", [["Die Ehe teilende Person", "Ehemensch",  "Eheherzperson", "Herzmensch", "Ehefrau bzw. Ehemann", "Ehegattin bzw. Ehegatte"]])
+    # openthesaurus
+    assert_suggestions("Adoptivsohn", [[]])
+
+def test_words_with_plural():
+    # words where there are singular and plural versions, but we only want to match plural
+    # assert_suggestions("Ehegatten", [["Eheleute", "Ehepaar"]]) # even this is ambiguous
+    # openthesaurus
+    assert_suggestions("Adoptivsöhne", [[]])
 
 
 def test_words_with_ambiguous_number():
@@ -50,6 +62,9 @@ def test_words_with_ambiguous_number():
             ]
         ],
     )
+
+def test_words_without_recognized_number():
+    assert_suggestions("Abbrecherquote", [["Abbruchquote"]])
 
 def test_words_without_number():
     return

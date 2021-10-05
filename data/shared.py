@@ -24,7 +24,7 @@ def add_to_dict(key: A, vals: List[B], dic: Dict[A, List[B]]) -> Dict[A, List[B]
 
 
 def dict_to_csvs(dic: Dict[str, Dict[str, List[str]]], name: str) -> None:
-    for n in ["any", "sg", "pl"]:
+    for n in ["sg", "pl"]:
         df = pd.DataFrame.from_dict(dic[n], orient="index")
         df.to_csv("{}_{}.csv".format(name, n), header=False)
 
