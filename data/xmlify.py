@@ -65,8 +65,13 @@ xml_template = """
 </rule>
 """
 
+def identity(a):
+    return a
 
-def rule_to_xml(pattern: str, number: str, suggestions_: List[str]) -> str:
+def rule_to_xml(pattern: str, number: str, suggestions_: List[str], style=identity) -> str:
+    suggestions_ = style(suggestions_)
+    if len(suggestions_) == 0:
+        return ""
     s = xml_template.format(
         id=id(pattern, number),
         pattern=pattern,
@@ -105,4 +110,3 @@ def strip_spaces(a):
     a = re.sub("^ | $|[.,:;!?]", "", a)
     return a
 
-# print(rule("Angreifer", "any", ["Angreifer*innen", "Angreifende"]))

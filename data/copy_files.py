@@ -1,5 +1,3 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
 from os import path
 from pathlib import Path
 from typing import *
@@ -8,6 +6,11 @@ import os
 import re
 import shutil
 import subprocess
+import sys
+
+sys.path.insert(0, "../..")
+from shared import add_to_dict, csvs_to_dict, dict_to_csvs, log
+from xmlify import *
 
 # adjust this to the folder of the LanguageTool release
 languagetool_path = path.join("..", "languagetool", "LanguageTool-5.4")
@@ -30,6 +33,60 @@ compiled_path = path.join(
 prefix = "de-DE-x-"
 
 open_ = functools.partial(open, encoding="utf-8")
+
+
+def unified_dic() -> Dict[str, Dict[str, List[str]]]:
+    unified_dic: Dict[str, Dict[str, List[str]]] = {"sg": {}, "pl": {}, "combined": {}}
+
+    files = {
+        "dereko/dereko_unified": ["sg", "pl"],
+        "geschicktgendern/geschicktgendern": ["sg", "pl"],
+        "openthesaurus/openthesaurus_persons_male": ["sg", "pl"],
+        "vienna_catalog/vienna_catalog": ["sg", "pl"],
+    }
+    dic = {}
+
+    for file, numbers in files.items():
+        dic[file] = csvs_to_dict(file, numbers=numbers)
+        for n in numbers:
+            print(file, n, len(dic[file][n]))
+            for key, vals in dic[file][n].items():
+                add_to_dict(key, vals, unified_dic[n])
+                add_to_dict(key, vals, unified_dic["combined"])
+
+    return unified_dic
+
+
+def make_xml() -> None:
+    custom_xml = open(path.join("retext-equality", "custom_rules_disability.xml")).read()
+    unified_dic_ = unified_dic()
+    for code, _, genderfun in gender_languages:
+        xml = custom_xml
+        xml += '<category id="GENERISCHES_MASKULINUM" name="Generisches Maskulinum">'
+        for key, val in unified_dic_["combined"].items():
+            for number in ["sg", "pl"]:
+                if key in unified_dic_[number].keys():
+                    xml += rule_to_xml(
+                        key, number, unified_dic_[number][key], genderfun
+                    )
+            for number in ["both", "unknown"]:
+                xml += rule_to_xml(key, number, val, genderfun)
+        xml += "</category>"
+        open("grammar_{}.xml".format(code), "w").write(xml)
+
+
+def check_xml() -> None:
+    result = subprocess.run(
+        ["./testrules.sh", "de"], cwd=languagetool_path, capture_output=True
+    )
+    stdout = result.stdout.decode("UTF-8")
+    stderr = result.stderr.decode("UTF-8")
+    open("rule_validation_stdout.log", "w").write(stdout)
+    open("rule_validation_stderr.log", "w").write(stderr)
+
+
+def start_languagetool():
+    subprocess.run(["java", "-jar", path.join(languagetool_path, "languagetool.jar")])
 
 
 def init_languages(languages: List[Tuple[str, str]]) -> None:
@@ -260,6 +317,67 @@ def update(fun, file_path) -> None:
     open_(file_path, "w").write(new_file)
 
 
+def neutral(suggestions_):
+    return [s for s in suggestions_ if re.findall(r"und|bzw|\*", s) == []]
+
+
+def double_notation(suggestions_):
+    return [s for s in suggestions_ if re.findall(r"\*", s) == []]
+
+
+def internal_i(suggestions_):
+    return [
+        re.sub(r"\*in", "In", s)
+        for s in suggestions_
+        if re.findall(r"und|bzw", s) == []
+    ]
+
+
+def gender_with_symbol(symbol):
+    def f(suggestions_):
+        return [
+            re.sub(r"\*", symbol, s)
+            for s in suggestions_
+            if re.findall(r"und|bzw", s) == []
+        ]
+
+    return f
+
+
+star = gender_with_symbol("*")
+colon = gender_with_symbol(":")
+underscore = gender_with_symbol(":")
+slash = gender_with_symbol("/")
+interpunct = gender_with_symbol("·")
+
+gender_languages = [
+    ("diversity", "German diversity-sensitive", neutral),
+    (
+        "diversity-double",
+        "German diversity-sensitive with gender double notation",
+        double_notation,
+    ),
+    (
+        "diversity-internal-i",
+        "German diversity-sensitive with internal I notation",
+        internal_i,
+    ),
+    ("diversity-star", "German diversity-sensitive with star notation", star),
+    ("diversity-colon", "German diversity-sensitive with colon notation", colon),
+    (
+        "diversity-underscore",
+        "German diversity-sensitive with underscore notation",
+        underscore,
+    ),
+    ("diversity-slash", "German diversity-sensitive with slash notation", slash),
+    (
+        "diversity-interpunct",
+        "German diversity-sensitive with interpunct notation",
+        interpunct,
+    ),
+]
+
 if __name__ == "__main__":
-    # init_languages([("dg1", "Gender German 1"), ("dg2", "Gender German 2")])
+    # init_languages(gender_languages)
+    make_xml()
     copy_files(grammar_path)
