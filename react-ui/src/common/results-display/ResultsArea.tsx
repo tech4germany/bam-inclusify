@@ -26,7 +26,6 @@ const LtMatchesList: FC<{ ltMatches: RuleMatch[]; applyReplacement?: ApplyReplac
   applyReplacement,
 }) => (
   <div>
-    {/* <div>{ltMatches.length} Vorschläge</div> */}
     {ltMatches.map((ltMatch, idx) => (
       <LtMatch
         key={idx}
@@ -44,12 +43,11 @@ const LtMatch: FC<{
   const [, matchText] = splitTextMatch(ltMatch.context.text, ltMatch.context.offset, ltMatch.context.length);
   const category = mapRuleCategory(ltMatch);
   return (
-    <MatchContainer>
-      <MatchTopBar category={category} categoryName={ltMatch.rule?.category?.name || ""} />
+    <MatchContainer category={category}>
+      <MatchTopBar categoryName={ltMatch.rule?.category?.name || ""} />
       <MatchContentContainer>
         <MatchContextContainer>
           <MatchMatchText>{matchText}</MatchMatchText>
-          <ReplacementArrow />
           <ReplacementListContainer>
             {ltMatch.replacements.map((r, idx) => (
               <div>
@@ -62,7 +60,6 @@ const LtMatch: FC<{
               </div>
             ))}
           </ReplacementListContainer>
-          {/* <span>{ltMatch.replacements.length > 0 && ltMatch.replacements[0].value}</span> */}
         </MatchContextContainer>
         <MatchRuleExplanation>{ltMatch.message}</MatchRuleExplanation>
         <MatchActionsBar>mehr anzeigen</MatchActionsBar>
@@ -72,12 +69,10 @@ const LtMatch: FC<{
 };
 
 interface EntryTopBarProps {
-  category: RuleMatchCategory;
   categoryName: string;
 }
-const MatchTopBar: FC<EntryTopBarProps> = ({ category, categoryName }) => (
+const MatchTopBar: FC<EntryTopBarProps> = ({ categoryName }) => (
   <MatchTopBarContainer>
-    <MatchColorDot category={category} />
     <MatchCategoryContainer>{categoryName}</MatchCategoryContainer>
   </MatchTopBarContainer>
 );
@@ -103,28 +98,12 @@ function matchCategoryColor(category: RuleMatchCategory): string {
   }
 }
 
-interface MatchColorDotProps {
-  category: RuleMatchCategory;
-}
-const MatchColorDot = styled.div<MatchColorDotProps>`
-  background: ${(props) => matchCategoryColor(props.category)};
-  border-radius: 50%;
-  height: 0.625rem;
-  width: 0.625rem;
-`;
-
 const MatchCategoryContainer = styled.div`
   color: gray;
 `;
 
 const MatchContentContainer = styled.div`
-  margin: 0 10px;
-`;
-
-const ReplacementArrow = () => <ReplacementArrowContainer>{"->"}</ReplacementArrowContainer>;
-
-const ReplacementArrowContainer = styled.span`
-  white-space: nowrap;
+  margin: 0;
 `;
 
 const ReplacementListContainer = styled.div`
@@ -148,18 +127,22 @@ const ReplacementItem = styled.button`
   cursor: ${(props) => (isFunction(props.onClick) ? "pointer" : "initial")};
 `;
 
-const MatchContainer = styled.div`
+interface MatchContainerProps {
+  category: RuleMatchCategory;
+}
+const MatchContainer = styled.div<MatchContainerProps>`
   background: white;
   border-radius: 10px;
   box-shadow: 0px 6px 12px #00000029;
   margin-bottom: 0.8125rem;
-  padding: 20px 10px;
+  padding: 20px 13px;
+  border-left: 16px solid ${(props) => matchCategoryColor(props.category)};
 `;
 
 const MatchContextContainer = styled.div`
   margin: 14px 0;
   display: flex;
-  gap: 0.5ch;
+  gap: 15px;
   font-size: 15px;
 `;
 

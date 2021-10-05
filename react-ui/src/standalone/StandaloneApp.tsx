@@ -72,6 +72,8 @@ const MainAreaContainer = styled.div`
 const MainTextAreaContainer = styled.div`
   flex-grow: 1;
   margin-right: 1.5em;
+  display: flex;
+  flex-direction: column;
 `;
 
 const MainTextArea = styled.textarea`
@@ -86,7 +88,6 @@ const MainTextArea = styled.textarea`
   resize: vertical;
   box-shadow: 0px 9px 18px #00000029;
   height: 30em;
-  margin-bottom: 1em;
 `;
 
 const ResultsAreaContainer = styled.div`
@@ -114,6 +115,7 @@ const checkTextWithApi = async (inputText: string, setLtMatches: Dispatch<SetSta
 const ButtonBar = styled.div`
   display: flex;
   gap: 1em;
+  justify-content: flex-end;
 `;
 
 const ButtonBarSpacer = styled.div`
