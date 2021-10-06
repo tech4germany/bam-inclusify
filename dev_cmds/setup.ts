@@ -1,7 +1,7 @@
 import { execPiped, runAsyncMain } from "devcmd";
 import fs from "fs-extra";
 import path from "path";
-import { YARN_COMMAND } from "./utils/commands";
+import { DEVCMD_COMMAND, YARN_COMMAND } from "./utils/commands";
 import { dataDir, languageToolDir, reactUiDir, repoRoot } from "./utils/paths";
 
 async function main() {
@@ -19,11 +19,7 @@ async function main() {
     options: { cwd: languageToolDir },
   });
 
-  await execPiped({
-    command: "python3",
-    args: ["copy_files.py"],
-    options: { cwd: dataDir },
-  });
+  await execPiped({ command: DEVCMD_COMMAND, args: ["prepare-languagetool"] });
 }
 
 runAsyncMain(main);
