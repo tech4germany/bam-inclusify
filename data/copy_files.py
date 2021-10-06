@@ -9,7 +9,6 @@ import subprocess
 import sys
 
 sys.path.insert(0, "../..")
-from shared import add_to_dict, csvs_to_dict, dict_to_csvs, log
 from xmlify import *
 
 # adjust this to the folder of the LanguageTool release
@@ -379,5 +378,5 @@ gender_languages = [
 
 if __name__ == "__main__":
     # init_languages(gender_languages)
-    make_xml()
+    # make_xml()
     copy_files(grammar_path)
