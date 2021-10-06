@@ -99,10 +99,11 @@ def test_words_without_number():
     assert_suggestions("Not am Mann", "Notsituation")
 
 
-def assert_suggestions(input, expected):
+def assert_suggestions(input, expected, language_code="de-DE-x-diversity-star"):
     print("Please ensure that the LanguageTool server is running.")
     matches = requests.post(
-        url="http://localhost:8081/v2/check", data={"language": "de-De", "text": input}
+        url="http://localhost:8081/v2/check",
+        data={"language": language_code, "text": input},
     ).json()["matches"]
     suggestions = [[rep["value"] for rep in match["replacements"]] for match in matches]
     assert suggestions == expected

@@ -34,9 +34,14 @@ def copy_folder(language: Tuple[str, str]) -> None:
         languagetool_path, "languagetool-language-modules", prefix + code
     )
     if path.exists(languages_folder):
-        print("Language folder for {} already exists. Not creating Java files.".format(prefix + code))
+        print(
+            "Language folder for {} already exists. Not creating Java files.".format(
+                prefix + code
+            )
+        )
     else:
         print("Creating Java files for {}.".format(prefix + code))
+
         def replace_placeholders(file):
             file = re.sub("Language Name", name, file)
             file = re.sub("LanguageName", name_, file)

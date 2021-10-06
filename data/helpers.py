@@ -24,9 +24,6 @@ def add_to_dict(key: A, vals: List[B], dic: Dict[A, List[B]]) -> Dict[A, List[B]
         dic[key] = vals
 
 
-
-
-
 def update_with_backup(fun, file_path) -> None:
     if path.isfile(file_path + ".old"):
         file = open_(file_path + ".old").read()

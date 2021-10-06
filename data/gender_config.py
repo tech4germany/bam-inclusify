@@ -2,19 +2,29 @@ import re
 from typing import *
 
 
+def double_notation_match(s: str) -> bool:
+    return re.findall(r" und | bzw\.? ", s) != []
+
+
+def gender_symbol_match(s: str) -> bool:
+    return re.findall(r"\*", s) != []
+
+
 def gender_with_neutral_words_only(suggestions_: List[str]) -> List[str]:
-    return [s for s in suggestions_ if re.findall(r"und|bzw|\*", s) == []]
+    return [
+        s
+        for s in suggestions_
+        if not double_notation_match(s) and not gender_symbol_match(s)
+    ]
 
 
 def gender_with_double_notation(suggestions_: List[str]) -> List[str]:
-    return [s for s in suggestions_ if re.findall(r"\*", s) == []]
+    return [s for s in suggestions_ if not gender_symbol_match(s)]
 
 
 def gender_with_internal_i(suggestions_: List[str]) -> List[str]:
     return [
-        re.sub(r"\*in", "In", s)
-        for s in suggestions_
-        if re.findall(r"und|bzw", s) == []
+        re.sub(r"\*in", "In", s) for s in suggestions_ if not double_notation_match(s)
     ]
 
 
@@ -23,7 +33,7 @@ def gender_with_symbol(symbol: str) -> Callable[[List[str]], str]:
         return [
             re.sub(r"\*", symbol, s)
             for s in suggestions_
-            if re.findall(r"und|bzw", s) == []
+            if not double_notation_match(s)
         ]
 
     return f

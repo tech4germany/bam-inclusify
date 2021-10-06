@@ -14,6 +14,10 @@ xml_template = """
 """
 
 
+def identity(a):
+    return a
+
+
 def rule_to_xml(
     pattern: str, number: str, suggestions_: List[str], style=identity
 ) -> str:
@@ -84,10 +88,6 @@ def antipattern(suggestion):
 def antipatterns(suggestions_):
     # words like "Mitarbeiter*innen" have to be split into separate tokens
     return "\n\t\t".join([antipattern(s) for s in suggestions_])
-
-
-def identity(a):
-    return a
 
 
 def postag_attributes_exception(number):

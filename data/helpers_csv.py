@@ -1,4 +1,7 @@
+from helpers import add_to_dict
+from typing import *
 import pandas as pd
+
 
 def dict_to_csvs(dic: Dict[str, Dict[str, List[str]]], name: str) -> None:
     for n in ["sg", "pl"]:
