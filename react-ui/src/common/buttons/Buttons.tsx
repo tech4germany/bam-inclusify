@@ -11,14 +11,24 @@ export const BaseButton = styled.button`
   box-shadow: 0px 3px 6px #00000029;
 `;
 
-const CheckTextButtonContainer = styled(BaseButton)`
-  background: transparent linear-gradient(68deg, ${Colors.brightCyan} 0%, ${Colors.mediumCyan} 100%) 0% 0% no-repeat
+const CheckTextButtonContainer = styled.button`
+  font-size: 20px;
+  border: none;
+  border-radius: 0px 0px 8px 8px;
+  padding: 8px 16px;
+  color: white;
+  z-index: 1000;
+  cursor: pointer;
+  background: transparent linear-gradient(68deg, ${Colors.mediumGreen} 0%, ${Colors.brightGreen} 100%) 0% 0% no-repeat
     padding-box;
   &:hover {
-    background: ${Colors.darkCyan};
+    background: ${Colors.brightGreen};
+  }
+  &:active {
+    background: ${Colors.darkGreen};
   }
 `;
 
 export const CheckTextButton: FC<{ onClick: React.MouseEventHandler<HTMLButtonElement> | undefined }> = ({
   onClick,
-}) => <CheckTextButtonContainer onClick={onClick}>Prüfen</CheckTextButtonContainer>;
+}) => <CheckTextButtonContainer onClick={onClick}>Überprüfen</CheckTextButtonContainer>;

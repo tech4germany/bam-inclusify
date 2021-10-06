@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components";
+import { Colors } from "../Colors";
 import { RuleMatch } from "../language-tool-api/types";
 import { mapRuleCategory, RuleMatchCategory } from "../rule-categories";
 import { splitTextMatch } from "../splitTextMatch";
@@ -120,7 +121,7 @@ const Replacement: FC<{ onClick: React.MouseEventHandler<HTMLButtonElement> | un
 const ReplacementItem = styled.button`
   border: none;
   border-radius: 4px;
-  background: #5a8d31;
+  background: ${Colors.mediumGreen};
   padding: 3px 7px;
   color: white;
   font-weight: 300;
