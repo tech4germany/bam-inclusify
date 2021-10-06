@@ -20,7 +20,7 @@ module.exports = {
 
     config.entry = {
       [standaloneChunk]: ["./src/standalone/standalone.tsx"],
-      [taskpaneChunk]: ["./src/word-taskpane/taskpane.tsx"],
+      [taskpaneChunk]: ["./src/office-taskpane/taskpane.tsx"],
     };
 
     const manifestPluginInstances = config.plugins.filter((p) => p instanceof ManifestPlugin);
