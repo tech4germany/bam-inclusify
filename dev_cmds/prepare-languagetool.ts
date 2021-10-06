@@ -4,7 +4,7 @@ import { dataDir } from "./utils/paths";
 async function main() {
   await execPiped({
     command: "python3",
-    args: ["copy_files.py"],
+    args: ["prepare_languagetool.py"],
     options: { cwd: dataDir },
   });
 }
