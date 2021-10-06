@@ -1,4 +1,3 @@
-from copy_files import copy_files, languagetool_path
 from os import path
 from typing import *
 import subprocess
@@ -14,11 +13,17 @@ def test_basic():
     # openthesaurus
     # assert_suggestions("Tierkörperbeseitiger", [[]]) # TODO alternatives still have to be added
     # vienna catalog
-    assert_suggestions("anwenderfreundlich", [["anwendungsfreundlich", "einfach anzuwenden", "praxisnah"]])
+    assert_suggestions(
+        "anwenderfreundlich",
+        [["anwendungsfreundlich", "einfach anzuwenden", "praxisnah"]],
+    )
+
 
 def test_mixed():
     # dereko + geschicktgendern + vienna catalog
-    assert_suggestions("Regisseur", [["Regisseur*in", "Regie", "Regisseurin bzw. Regisseur"]])
+    assert_suggestions(
+        "Regisseur", [["Regisseur*in", "Regie", "Regisseurin bzw. Regisseur"]]
+    )
     # dereko + geschicktgendern
     assert_suggestions("Doktoranden", [["Doktorand*innen", "Promovierende"]])
 
@@ -26,19 +31,39 @@ def test_mixed():
 def test_basic_with_flexion():
     pass
 
+
 def test_words_not_recognized_by_morphological_dictionary():
     # Some words like "Beamter" seem not to be recognized by the morphological dictionary.
     # We want to make sure that the rules work at least for the basic form.
     return
-    assert_suggestions("Beamten", [['Beamt*innen', 'Beamten*innen', 'Beamtinnen und Beamten']])
-    assert_suggestions("Beamter", [["Verbeamtete Person", "Person im Beamtenstatus", "Beamtin bzw. Beamter"]])
+    assert_suggestions(
+        "Beamten", [["Beamt*innen", "Beamten*innen", "Beamtinnen und Beamten"]]
+    )
+    assert_suggestions(
+        "Beamter",
+        [["Verbeamtete Person", "Person im Beamtenstatus", "Beamtin bzw. Beamter"]],
+    )
     assert_suggestions("Beamte", [["Bedienstete", "Beamtenschaft"]])
+
 
 def test_words_with_singular():
     # words where there are singular and plural versions, but we only want to match singular
-    assert_suggestions("Ehegatte", [["Die Ehe teilende Person", "Ehemensch",  "Eheherzperson", "Herzmensch", "Ehefrau bzw. Ehemann", "Ehegattin bzw. Ehegatte"]])
+    assert_suggestions(
+        "Ehegatte",
+        [
+            [
+                "Die Ehe teilende Person",
+                "Ehemensch",
+                "Eheherzperson",
+                "Herzmensch",
+                "Ehefrau bzw. Ehemann",
+                "Ehegattin bzw. Ehegatte",
+            ]
+        ],
+    )
     # openthesaurus
     assert_suggestions("Adoptivsohn", [[]])
+
 
 def test_words_with_plural():
     # words where there are singular and plural versions, but we only want to match plural
@@ -63,13 +88,16 @@ def test_words_with_ambiguous_number():
         ],
     )
 
+
 def test_words_without_recognized_number():
     assert_suggestions("Abbrecherquote", [["Abbruchquote"]])
+
 
 def test_words_without_number():
     return
     # some words contained do not have a number
     assert_suggestions("Not am Mann", "Notsituation")
+
 
 def assert_suggestions(input, expected):
     print("Please ensure that the LanguageTool server is running.")
