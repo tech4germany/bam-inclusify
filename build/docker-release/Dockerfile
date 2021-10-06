@@ -23,4 +23,4 @@ RUN adduser -u ${INCLUSIFY_USER_UID} -h ${INCLUSIFY_API_DIR} -s /sbin/nologin ${
 EXPOSE $INCLUSIFY_API_PORT
 EXPOSE 80
 
-CMD supervisord -n
+CMD supervisord -n -c /etc/supervisor/supervisord.conf
