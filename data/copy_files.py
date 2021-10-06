@@ -11,22 +11,19 @@ import sys
 sys.path.insert(0, "../..")
 from xmlify import *
 
-# adjust this to the folder of the LanguageTool release
-languagetool_path = path.join("..", "languagetool", "LanguageTool-5.4")
 # path of the German grammar files within the LanguageTool release
-grammar_path_internal = path.join("org", "languagetool", "rules", "de")
-grammar_path = path.join(languagetool_path, grammar_path_internal)
-# file name of the additional grammar rules
-rulefile = "grammar_openminded.xml"
-compiled_path = path.join(
+grammar_path = path.join("org", "languagetool", "rules", "de")
+
+languagetool_path = path.join("..", "languagetool", "languagetool")
+
+languagetool_version = "5.6-SNAPSHOT"
+
+languagetool_build_path = path.join(
     languagetool_path,
     "languagetool-standalone",
     "target",
-    "LanguageTool-5.5-SNAPSHOT",
-    "LanguageTool-5.5-SNAPSHOT",
-    "org",
-    "languagetool",
-    "rules",
+    "LanguageTool-" + languagetool_version,
+    "LanguageTool-" + languagetool_version,
 )
 
 prefix = "de-DE-x-"
@@ -57,7 +54,9 @@ def unified_dic() -> Dict[str, Dict[str, List[str]]]:
 
 
 def make_xml() -> None:
-    custom_xml = open(path.join("retext-equality", "custom_rules_disability.xml")).read()
+    custom_xml = open(
+        path.join("retext-equality", "custom_rules_disability.xml")
+    ).read()
     unified_dic_ = unified_dic()
     for code, _, genderfun in gender_languages:
         xml = custom_xml
@@ -85,7 +84,10 @@ def check_xml() -> None:
 
 
 def start_languagetool():
-    subprocess.run(["java", "-jar", path.join(languagetool_path, "languagetool.jar")])
+    subprocess.run(
+        ["java", "-jar", "languagetool.jar"],
+        cwd=languagetool_build_path,
+    )
 
 
 def init_languages(languages: List[Tuple[str, str]]) -> None:
@@ -93,9 +95,7 @@ def init_languages(languages: List[Tuple[str, str]]) -> None:
     for language in languages:
         copy_folder(language)
     register(languages)
-    # build_with_docker()
-    # for language in languages:
-    #     copy_grammars(path.join(compiled_path, prefix + language[0]))
+    build_with_docker()
 
 
 def clone_repo() -> None:
@@ -128,6 +128,7 @@ def copy_folder(language: Tuple[str, str]) -> None:
             file = re.sub("Language Name", name, file)
             file = re.sub("LanguageName", name_, file)
             file = re.sub("language-code", code, file)
+            file = re.sub("languagetool-version", languagetool_version, file)
             return file
 
         shutil.copytree(
@@ -219,7 +220,7 @@ def register(languages: List[Tuple[str, str]]) -> None:
         </dependency>""".format(
                 prefix + code
             )
-            for code, name in languages
+            for code, name, _ in languages
         ]
         return re.sub(
             "</dependencies>",
@@ -238,7 +239,7 @@ def register(languages: List[Tuple[str, str]]) -> None:
             "  <module>languagetool-language-modules/{}</module>\n  ".format(
                 prefix + code
             )
-            for code, name in languages
+            for code, name, _ in languages
         ]
         return re.sub(
             "</modules>",
@@ -250,7 +251,7 @@ def register(languages: List[Tuple[str, str]]) -> None:
 
     def add_names(file):
         return file + "\n".join(
-            ["{} = {}".format(prefix + code, name) for code, name in languages]
+            ["{} = {}".format(prefix + code, name) for code, name, _ in languages]
         )
 
     update_with_backup(
@@ -281,23 +282,31 @@ def build_with_docker() -> None:
     # docker run -it --rm --name my-maven-project -v (pwd):/usr/src/mymaven -v $HOME/.m2:/root/.m2 -w /usr/src/mymaven maven:3.8-openjdk-8 ./build.sh languagetool-standalone package -DskipTests
 
 
-def copy_files(grammar_path=grammar_path) -> None:
-    xml = open_(rulefile).read()
-    open_(path.join(grammar_path, rulefile), "w").write(xml)
-
-    def update_rulefile(old_xml):
-        new_xml = old_xml.replace(
-            "<!DOCTYPE rules [",
-            '<!DOCTYPE rules [ \n\t<!ENTITY UserRules SYSTEM "file:{}">'.format(
-                path.join(".", grammar_path_internal, rulefile)
-            ),
-        ).replace(
-            "</rules>",
-            "\n&UserRules;\n</rules>",
+def copy_files_multiple_languages() -> None:
+    for code, _, _ in gender_languages:
+        grammar_path = path.join("org", "languagetool", "rules", prefix + code)
+        rulefile = "grammar_{}.xml".format(code)
+        xml = open_(rulefile).read()
+        open_(path.join(languagetool_build_path, grammar_path, rulefile), "w").write(
+            xml
         )
-        return new_xml
 
-    update_with_backup(update_rulefile, path.join(grammar_path, "grammar.xml"))
+        def update_rulefile(old_xml):
+            new_xml = old_xml.replace(
+                "<!DOCTYPE rules [",
+                '<!DOCTYPE rules [ \n\t<!ENTITY UserRules SYSTEM "file:{}">'.format(
+                    path.join(".", grammar_path, rulefile)
+                ),
+            ).replace(
+                "</rules>",
+                "\n&UserRules;\n</rules>",
+            )
+            return new_xml
+
+        update_with_backup(
+            update_rulefile,
+            path.join(languagetool_build_path, grammar_path, "grammar.xml"),
+        )
 
 
 def update_with_backup(fun, file_path) -> None:
@@ -376,7 +385,11 @@ gender_languages = [
     ),
 ]
 
+
 if __name__ == "__main__":
     # init_languages(gender_languages)
     # make_xml()
-    copy_files(grammar_path)
+    # copy_files(grammar_path)
+    # copy_files_multiple_languages()
+    start_languagetool()
+    pass
