@@ -2,7 +2,7 @@ import { execPiped, runAsyncMain } from "devcmd";
 import fs from "fs-extra";
 import path from "path";
 import { YARN_COMMAND } from "./utils/commands";
-import { languageToolDir, reactUiDir, repoRoot } from "./utils/paths";
+import { dataDir, languageToolDir, reactUiDir, repoRoot } from "./utils/paths";
 
 async function main() {
   await execPiped({
@@ -17,6 +17,12 @@ async function main() {
     command: "unzip",
     args: ["LanguageTool-5.4.zip"],
     options: { cwd: languageToolDir },
+  });
+
+  await execPiped({
+    command: "python3",
+    args: ["copy_files.py"],
+    options: { cwd: dataDir },
   });
 }
 
