@@ -106,7 +106,7 @@ function makeReplacementApplier([inputText, setInputText]: UseState<string>, tri
 const checkTextWithApi = async (inputText: string, setLtMatches: Dispatch<SetStateAction<RuleMatch[]>>) => {
   const request = {
     text: inputText,
-    language: "de-DE",
+    language: "de-DE-x-diversity-star",
   };
   const content = await new LanguageToolClient().check(request);
   setLtMatches(() => content.matches || []);

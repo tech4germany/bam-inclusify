@@ -82,7 +82,7 @@ async function wordClickHandler(
   console.time("ltCheck");
   const request = {
     text: plaintext,
-    language: "de-DE",
+    language: "de-DE-x-diversity-star",
   };
   const content = await new LanguageToolClient().check(request);
   setLtMatches(content.matches || []);
