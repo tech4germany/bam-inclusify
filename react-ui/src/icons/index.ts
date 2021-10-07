@@ -6,7 +6,9 @@ import { FC } from "react";
 // contents to react-svg-loader, by prepending the "-!".
 // Found in https://github.com/jhamlet/svg-react-loader/issues/84#issuecomment-444219995
 import CheckIconSvg from "-!react-svg-loader!./check.svg";
+import CopyIconSvg from "-!react-svg-loader!./copy.svg";
 import GearIconSvg from "-!react-svg-loader!./gear.svg";
 
 export const CheckIcon: FC<React.SVGProps<SVGSVGElement>> = CheckIconSvg as any;
+export const CopyIcon: FC<React.SVGProps<SVGSVGElement>> = CopyIconSvg as any;
 export const GearIcon: FC<React.SVGProps<SVGSVGElement>> = GearIconSvg as any;

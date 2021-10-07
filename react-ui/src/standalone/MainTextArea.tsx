@@ -1,5 +1,6 @@
 import { ChangeEventHandler, FC } from "react";
 import styled from "styled-components";
+import { CopyIcon } from "../icons";
 
 export interface MainTextAreaProps {
   onChange: ChangeEventHandler<HTMLTextAreaElement>;
@@ -13,7 +14,9 @@ export const MainTextArea: FC<MainTextAreaProps> = ({ onChange, value }) => (
         {value.length} / {inputLengthLimit}
       </InputLength>
       <BottomBarSpacer />
-      <CopyTextButton title="Text kopieren">Copy</CopyTextButton>
+      <CopyTextButton title="Text kopieren">
+        <CopyTextButtonIcon />
+      </CopyTextButton>
     </BottomBarContainer>
   </MainTextAreaContainer>
 );
@@ -41,7 +44,6 @@ const TextArea = styled.textarea`
 
 const BottomBarContainer = styled.div`
   background: #fffcfc;
-  padding: 12px;
   display: flex;
   align-items: center;
 `;
@@ -49,10 +51,19 @@ const BottomBarContainer = styled.div`
 const InputLength = styled.div`
   font-size: 12px;
   user-select: none;
+  margin-left: 12px;
 `;
 
 const BottomBarSpacer = styled.div`
   flex-grow: 1;
 `;
 
-const CopyTextButton = styled.button``;
+const CopyTextButton = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+`;
+
+const CopyTextButtonIcon = styled(CopyIcon)`
+  margin: 12px;
+`;
