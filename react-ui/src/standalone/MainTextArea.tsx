@@ -6,13 +6,28 @@ export interface MainTextAreaProps {
   value: string;
 }
 export const MainTextArea: FC<MainTextAreaProps> = ({ onChange, value }) => (
-  <div>
-    <MainTextAreaTA spellCheck={false} autoFocus onChange={onChange} value={value} />
-  </div>
+  <MainTextAreaContainer>
+    <TextArea spellCheck={false} autoFocus onChange={onChange} value={value} />
+    <BottomBarContainer>
+      <InputLength>
+        {value.length} / {inputLengthLimit}
+      </InputLength>
+      <BottomBarSpacer />
+      <CopyTextButton title="Text kopieren">Copy</CopyTextButton>
+    </BottomBarContainer>
+  </MainTextAreaContainer>
 );
 
-const MainTextAreaTA = styled.textarea`
-  padding: 2.5rem 2rem;
+const inputLengthLimit = 10000;
+
+const MainTextAreaContainer = styled.div`
+  box-shadow: 0px 9px 18px #00000029;
+  display: flex;
+  flex-direction: column;
+`;
+
+const TextArea = styled.textarea`
+  padding: 40px 32px 24px;
   font-size: 15px;
   font-weight: 300;
   line-height: 25px;
@@ -21,6 +36,23 @@ const MainTextAreaTA = styled.textarea`
   border-radius: 0;
   border: none;
   resize: none;
-  box-shadow: 0px 9px 18px #00000029;
   height: 30em;
 `;
+
+const BottomBarContainer = styled.div`
+  background: #fffcfc;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+`;
+
+const InputLength = styled.div`
+  font-size: 12px;
+  user-select: none;
+`;
+
+const BottomBarSpacer = styled.div`
+  flex-grow: 1;
+`;
+
+const CopyTextButton = styled.button``;
