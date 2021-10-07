@@ -3,15 +3,6 @@ import styled from "styled-components";
 import { CheckIcon } from "../../icons";
 import { Colors } from "../Colors";
 
-export const BaseButton = styled.button`
-  font-size: 14px;
-  border: none;
-  border-radius: 8px;
-  padding: 8px 16px;
-  color: white;
-  box-shadow: 0px 3px 6px #00000029;
-`;
-
 const CheckTextButtonContainer = styled.button<{ topCornersFlush?: boolean }>`
   background: transparent linear-gradient(68deg, ${Colors.mediumGreen} 0%, ${Colors.brightGreen} 100%) 0% 0% no-repeat
     padding-box;

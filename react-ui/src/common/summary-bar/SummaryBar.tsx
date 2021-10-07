@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { BaseButton } from "../buttons/Buttons";
+import { GearIcon } from "../../icons";
 import { Colors } from "../Colors";
 
 interface SummaryBarProps {
@@ -103,12 +103,38 @@ const DiversityErrorSummary: FC<{ diversityErrorCount: number }> = ({ diversityE
   </DiversityErrorSummaryContainer>
 );
 
-const UserSettingsButtonContainer = styled(BaseButton)`
+const UserSettingsButtonContainer = styled.button`
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  color: white;
   background: transparent linear-gradient(68deg, ${Colors.mediumYellow} 0%, ${Colors.darkYellow} 100%) 0% 0% no-repeat
     padding-box;
+  padding: 4px 8px;
+
   &:hover {
-    background: ${Colors.mediumYellow};
+    background: ${Colors.brightYellow};
+  }
+  &:active {
+    background: ${Colors.darkYellow};
   }
 `;
 
-const UserSettingsButton = () => <UserSettingsButtonContainer>ES</UserSettingsButtonContainer>;
+const UserSettingsIconContainer = styled.div`
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const UserSettingsButton = () => (
+  <UserSettingsButtonContainer>
+    <UserSettingsIconContainer>
+      <GearIcon />
+    </UserSettingsIconContainer>
+  </UserSettingsButtonContainer>
+);
