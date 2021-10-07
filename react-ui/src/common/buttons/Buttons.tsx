@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components";
+import { CheckIcon } from "../../icons";
 import { Colors } from "../Colors";
 
 export const BaseButton = styled.button`
@@ -31,4 +32,9 @@ const CheckTextButtonContainer = styled.button`
 
 export const CheckTextButton: FC<{ onClick: React.MouseEventHandler<HTMLButtonElement> | undefined }> = ({
   onClick,
-}) => <CheckTextButtonContainer onClick={onClick}>Überprüfen</CheckTextButtonContainer>;
+}) => (
+  <CheckTextButtonContainer onClick={onClick}>
+    <CheckIcon />
+    Überprüfen
+  </CheckTextButtonContainer>
+);
