@@ -41,7 +41,7 @@ export const StandaloneApp: FC = () => {
             />
             <ButtonBar>
               <ButtonBarSpacer />
-              <CheckTextButton onClick={() => checkText(inputText)} />
+              <CheckTextButton topCornersFlush onClick={() => checkText(inputText)} />
             </ButtonBar>
           </MainTextAreaContainer>
           <ResultsAreaContainer>
