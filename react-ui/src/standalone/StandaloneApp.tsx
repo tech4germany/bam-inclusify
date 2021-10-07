@@ -1,6 +1,7 @@
 import React, { Dispatch, FC, SetStateAction, useState } from "react";
 import styled from "styled-components";
 import { CheckTextButton } from "../common/buttons/Buttons";
+import { FontFamilies } from "../common/Fonts";
 import { LanguageToolClient } from "../common/language-tool-api/LanguageToolClient";
 import { RuleMatch } from "../common/language-tool-api/types";
 import { NavigationBar } from "../common/nav-bar/NavigationBar";
@@ -13,7 +14,7 @@ type UseState<S> = [S, Dispatch<SetStateAction<S>>];
 
 export const StandaloneApp: FC = () => {
   const [inputText, setInputText] = useState("");
-  const [ltMatches, setLtMatches] = useState<RuleMatch[]>([]);
+  const [ltMatches, setLtMatches] = useState<RuleMatch[] | null>(null);
   const [isLoading, setLoading] = useState(false);
 
   const checkText = async (text: string) => {
@@ -22,7 +23,7 @@ export const StandaloneApp: FC = () => {
     setLoading(false);
   };
 
-  const errorCounts = computeErrorCounts(ltMatches);
+  const errorCounts = computeErrorCounts(ltMatches || []);
 
   return (
     <>
@@ -45,7 +46,9 @@ export const StandaloneApp: FC = () => {
           </MainTextAreaContainer>
           <ResultsAreaContainer>
             {isLoading ? (
-              <div>Loading...</div>
+              <div>Text wird überprüft...</div>
+            ) : ltMatches === null ? (
+              <WelcomeMessage />
             ) : (
               <ResultsArea
                 ruleMatches={ltMatches}
@@ -85,7 +88,7 @@ const MainTextArea = styled.textarea`
   box-sizing: border-box;
   border-radius: 0;
   border: none;
-  resize: vertical;
+  resize: none;
   box-shadow: 0px 9px 18px #00000029;
   height: 30em;
 `;
@@ -103,7 +106,7 @@ function makeReplacementApplier([inputText, setInputText]: UseState<string>, tri
   };
 }
 
-const checkTextWithApi = async (inputText: string, setLtMatches: Dispatch<SetStateAction<RuleMatch[]>>) => {
+const checkTextWithApi = async (inputText: string, setLtMatches: Dispatch<SetStateAction<RuleMatch[] | null>>) => {
   const request = {
     text: inputText,
     language: "de-DE-x-diversity-star",
@@ -132,3 +135,31 @@ function computeErrorCounts(ltMatches: RuleMatch[]): {
   const spellingErrorCount = ltMatches.filter((m) => mapRuleCategory(m) === "spelling").length;
   return { diversityErrorCount, grammarErrorCount, spellingErrorCount };
 }
+
+const WelcomeMessageContainer = styled.div`
+  font-family: ${FontFamilies.bam};
+  font-size: 20px;
+  font-style: italic;
+`;
+
+const WelcomeMessageIntro = styled.p`
+  font-weight: 400;
+  margin: 0;
+`;
+const WelcomeMessageBody = styled.p`
+  margin: 1em 0 0;
+  font-weight: 300;
+`;
+
+const WelcomeMessage = () => (
+  <WelcomeMessageContainer>
+    <WelcomeMessageIntro>
+      Herzlich Willkommen bei INCLUSIFY, deiner Assistentin für diversitätsensible Sprache bei der BAM.
+    </WelcomeMessageIntro>
+    <WelcomeMessageBody>
+      Prüfe deine Text auf Diversitätslücken. INCLUSIFY ist aktuell basierend auf den Präferenzen des BAM Leitfadens für
+      geschlechtersensible Sprache eingestellt. Wenn du eine anderes Gendersymbol oder ähnliches bevorzugst, kannst du
+      das in den Einstellungen anpassen.
+    </WelcomeMessageBody>
+  </WelcomeMessageContainer>
+);
