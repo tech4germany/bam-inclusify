@@ -9,6 +9,7 @@ import { ResultsArea } from "../common/results-display/ResultsArea";
 import { mapRuleCategory } from "../common/rule-categories";
 import { splitTextMatch } from "../common/splitTextMatch";
 import { SummaryBar } from "../common/summary-bar/SummaryBar";
+import { MainTextArea } from "./MainTextArea";
 
 type UseState<S> = [S, Dispatch<SetStateAction<S>>];
 
@@ -32,18 +33,13 @@ export const StandaloneApp: FC = () => {
       <CenteredContainer>
         <SummaryBar {...errorCounts} />
         <MainAreaContainer>
-          <MainTextAreaContainer>
-            <MainTextArea
-              spellCheck={false}
-              autoFocus
-              onChange={(e) => setInputText(e.target.value)}
-              value={inputText}
-            />
+          <InputAreaContainer>
+            <MainTextArea onChange={(e) => setInputText(e.target.value)} value={inputText} />
             <ButtonBar>
               <ButtonBarSpacer />
               <CheckTextButton topCornersFlush onClick={() => checkText(inputText)} />
             </ButtonBar>
-          </MainTextAreaContainer>
+          </InputAreaContainer>
           <ResultsAreaContainer>
             {isLoading ? (
               <div>Text wird überprüft...</div>
@@ -72,25 +68,11 @@ const MainAreaContainer = styled.div`
   margin-bottom: 2rem;
 `;
 
-const MainTextAreaContainer = styled.div`
+const InputAreaContainer = styled.div`
   flex-grow: 1;
   margin-right: 1.5em;
   display: flex;
   flex-direction: column;
-`;
-
-const MainTextArea = styled.textarea`
-  padding: 2.5rem 2rem;
-  font-size: 15px;
-  font-weight: 300;
-  line-height: 25px;
-  width: 100%;
-  box-sizing: border-box;
-  border-radius: 0;
-  border: none;
-  resize: none;
-  box-shadow: 0px 9px 18px #00000029;
-  height: 30em;
 `;
 
 const ResultsAreaContainer = styled.div`
