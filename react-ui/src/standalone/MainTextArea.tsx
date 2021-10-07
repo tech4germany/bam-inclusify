@@ -11,7 +11,7 @@ export const MainTextArea: FC<MainTextAreaProps> = ({ onChange, value }) => (
     <TextArea spellCheck={false} autoFocus onChange={onChange} value={value} />
     <BottomBarContainer>
       <InputLength>
-        {value.length} / {inputLengthLimit}
+        {value.length.toLocaleString()} / {inputLengthLimit.toLocaleString()}
       </InputLength>
       <BottomBarSpacer />
       <CopyTextButton title="Text kopieren" onClick={() => navigator.clipboard.writeText(value)}>
