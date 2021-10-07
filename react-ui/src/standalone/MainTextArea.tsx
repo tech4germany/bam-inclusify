@@ -14,7 +14,7 @@ export const MainTextArea: FC<MainTextAreaProps> = ({ onChange, value }) => (
         {value.length} / {inputLengthLimit}
       </InputLength>
       <BottomBarSpacer />
-      <CopyTextButton title="Text kopieren">
+      <CopyTextButton title="Text kopieren" onClick={() => navigator.clipboard.writeText(value)}>
         <CopyTextButtonIcon />
       </CopyTextButton>
     </BottomBarContainer>
