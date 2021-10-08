@@ -82,7 +82,7 @@
                 <token inflected="yes">leiden</token>
                 <token regexp="yes">an|unter</token>
             </pattern>
-            <message>TODO</message>
+            <message>Das Wort "leiden" suggeriert, dass die Person aufgrund von <match no="2" /> eine verringerte Lebensqualität hat. Ist das der Fall?</message>
             <suggestion><match no="1" postag="VER.*" postag_replace="$0" postag_regexp="yes">haben</match></suggestion>
             <example correction="hat">Sie <marker>leidet an</marker> Parkinson.</example>    
         </rule>
@@ -92,19 +92,146 @@
                 <token></token>
                 <token inflected="yes">leiden</token>
             </pattern>
-            <message>TODO</message>
+            <message>Das Wort "leiden" suggeriert, dass die Person aufgrund von <match no="2" /> eine verringerte Lebensqualität hat. Ist das der Fall?</message>
             <suggestion><match no="2" /> <match no="3" postag=".*" postag_replace="$0" postag_regexp="yes">haben</match></suggestion>
             <example correction="Down Syndrom habende">Die <marker>unter dem Down Syndrom leidende</marker> Person.</example>
-            <!-- postag="(.*):(NOM|GEN|DAT|AKK):(.*)" postag_replace="$1:AKK:$2" postag_regexp="yes"  -->
+        </rule>
+        <rule>
+            <pattern>
+                <token regexp="yes">leidensgerecht(e(m|n|r|s)?)?</token>
+            </pattern>
+            <message>Das Wort "leidensgerecht" suggeriert, dass die Person eine verringerte Lebensqualität hat. Ist das der Fall?</message>
+            <suggestion>den gesundheitlichen Anforderungen angepasst</suggestion>
+            <example correction="den gesundheitlichen Anforderungen angepassten">Wir stellen Ihnen gerne einen <marker>leidensgerechten</marker> Arbeitsplatz zur Verfügung.</example>
         </rule>
     </rulegroup>
-    <!-- <rule id="TROTZ_BEHINDERUNG" name="nicht: trotz Behinderung">
+    <rule id="TROTZ_BEHINDERUNG" name="nicht: trotz Behinderung">
         <pattern>
             <token>trotz</token>
             <token regexp="yes" min="0">seiner|ihrer|der</token>
             <token regexp="yes">(\w+b|B)ehinderung</token>
         </pattern>
+        <message>Mit der Formulierung "<match no="1" /><match no="2" /><match no="3" />" wird unterstellt, dass Menschen mit der Behinderung normalerweise nicht zu der Leistung in der Lage sind. Überprüfen Sie, ob das Ihre Absicht ist. Darüber hinaus wird die Wendung als Klischee wahrgenommen, das übermäßig oft im Zusammenhang mit Menschen mit Behinderungen angebracht wird.</message>
+    </rule>
+    <rulegroup id="HANDICAP" name="nicht: Handicap"> 
+        <!-- TODO perhaps make general euphemism category: mit besonderen Bedürfnissen -->
+        <rule>
+            <pattern>
+                <token regexp="yes">Handicaps?</token>
+            </pattern>
+            <suggestion>Behinderung</suggestion>
+            <suggestion>Einschränkung</suggestion>
+            <message>TODO</message>
+        </rule>
+        <rule>
+            <pattern>
+                <token regexp="yes">(ge)?handicapp(ed|t)(e(m|n|r|s)?)?</token>
+            </pattern>
+            <suggestion>mit einer Behinderung</suggestion>
+            <suggestion>mit einer Einschränkung</suggestion>
+            <suggestion>mit Behinderungen</suggestion>
+            <suggestion>mit Einschränkungen</suggestion>
+            <message>TODO</message>
+        </rule>
+    </rulegroup>
+    <rule id="BEHINDERTENPARKEN" name="nicht: Behindertenparken">
+        <pattern>
+            <token inflected="yes" regexp="yes">Behindertenparken|Behindertenparkplatz</token>
+        </pattern>
+        <suggestion>gut zugänglicher Parkplatz</suggestion>
         <message>TODO</message>
+    </rule>
+    <rule id="LAST" name="nicht: Last etc">
+        <pattern>
+            <token regexp="yes">Last|Belastung|Bürde</token>
+            <token>für</token>
+            <token regexp="yes">die|meine|(d|D)eine|ihre|seine|unsere|eure</token>
+            <token>Familie</token>
+        </pattern>
+        <suggestion>auf die Unterstützung der Familie angewiesen</suggestion>
+        <message>TODO</message>
+    </rule>
+    <rule id="GEFESSELT" name="nicht: an den Rollstuhl gefesselt">
+        <pattern>
+            <token>an</token>
+            <token>den</token>
+            <token>Rollstuhl</token>
+            <token regexp="yes">(g|G)efesselt(e?(m|n|r|s)?)?|gebunden(e?(m|n|r|s)?)?</token>
+        </pattern>
+        <suggestion>einen Rollstuhl benutzend</suggestion>
+    </rule>
+    <rulegroup id="JUNKIE" name="nicht: Junkie etc">
+        <rule>
+            <pattern>
+                <token inflected="yes" regexp="yes">Junkie|([A-ZÄÖÜ][a-zäöüß]+-)?Abhängiger|Drogenabhängiger|[A-ZÄÖÜ][a-zäöüß]+abhängiger</token>
+            </pattern>
+            <suggestion>Person mit einer (Drogen/...)Sucht</suggestion>
+            <suggestion>Person, die sich gerade von einer (Drogen/...)Sucht erholt</suggestion>
+            <message>TODO</message>
+        </rule>
+        <rule>
+            <pattern>
+                <token inflected="yes" regexp="yes">([a-zäöüß]+-)?abhängig|süchtig</token>
+            </pattern>
+            <suggestion>mit einer (Drogen/...)Sucht</suggestion>
+            <suggestion>sich gerade von einer (Drogen/...)Sucht erholend</suggestion>
+            <message>TODO</message>
+        </rule>
+    </rulegroup>
+    <rule id="ROLLSTUHLGERECHT" name="rollstuhlgerecht">
+        <pattern>
+            <token inflected="yes" regexp="yes">behindertengerecht|behindertenfreundlich</token>
+        </pattern>
+        <message>Sind mit "<match no="1" />" konkret bauliche Anpassungen gemeint, die die Benutzung eines Rollstuhls ermöglichen? Dann ist <suggestion>rollstuhlgerecht</suggestion> oder <suggestion>barrierefrei</suggestion> möglicherweise präziser. Schließlich gibt es viele Behinderungen, für die bauliche Anpassungen gar keine Relevanz haben.</message>
+    </rule>
+    <rule id="GEHÖRLOS" name="gehörlos">
+        <pattern>
+            <token inflected="yes">taub</token>
+        </pattern>
+        <suggestion>gehörlos</suggestion>
+        <message>TODO</message>
+    </rule>
+    <rule id="TAUBSTUMM" name="nicht: taubstumm">
+        <pattern>
+            <token inflected="yes">taubstumm</token>
+        </pattern>
+        <suggestion>gehörlos</suggestion>
+        <message>TODO</message>
+    </rule>
+    <rule id="KLEINWÜCHSIG" name="kleinwüchsig">
+        <pattern>
+            <token inflected="yes" regexp="yes">Liliputaner|Zwerg</token>
+        </pattern>
+        <suggestion>kleinwüchsige Person</suggestion>
+        <suggestion>kleinwüchsige Menschen</suggestion>
+        <message>TODO</message>
+    </rule>
+    <rule id="SEHBEEINTRÄCHTIGT" name="sehbeeinträchtigt">
+        <pattern>
+            <token inflected="yes" regexp="yes">blind|sehbehindert</token>
+        </pattern>
+        <suggestion>hat eine Sehbeeinträchtigung</suggestion>
+        <message>TODO</message>
+    </rule>
+    <rule id="SEHBEEINTRÄCHTIGT" name="sehbeeinträchtigt">
+        <pattern>
+            <token inflected="yes">Sehbehinderung</token>
+        </pattern>
+        <suggestion>Sehbeeinträchtigung</suggestion>
+        <message>TODO</message>
+    </rule>
+    <rule id="SCHICKSAL" name="nicht: Schicksal">
+        <pattern>
+            <token inflected="yes">Schicksal</token>
+        </pattern>
+        <suggestion>Lebensgeschichte</suggestion>
+        <suggestion>Biografie</suggestion>
+        <message>TODO</message>
+    </rule>
+    <!-- <rule id="NORMAL" name="nicht: normal">
+        <pattern>
+            <token inflected="yes">normal</token>
+        </pattern>
+        <message>Auf welchen Gegensatz zielt die "normal" hier ab, und ist es gewünscht, den Gegensatz als nicht normal zu charakterisieren? Wenn "normal" bspw. als Gegensatz zu "mit Behinderung" verwendet werden soll, ist es besser, einfach "ohne Behinderung" zu schreiben.</message>
     </rule> -->
-    <!-- leidensgerecht -->
 </category>
