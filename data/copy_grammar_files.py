@@ -31,6 +31,16 @@ def copy_grammar_files() -> None:
             path.join(languagetool_build_path, grammar_path, "grammar.xml"),
         )
 
+def copy_pos_tags():
+    print("Copying file with additional POS tags ...")
+    added_tags = open_(path.join("retext-equality", "added.txt")).read()
+    def update_pos_file(old):
+        return old + added_tags
+
+    update_with_backup(update_pos_file, path.join(languagetool_build_path, "org", "languagetool", "resource", "de", "added.txt"))
+
+
 
 if __name__ == "__main__":
     copy_grammar_files()
+    copy_pos_tags()

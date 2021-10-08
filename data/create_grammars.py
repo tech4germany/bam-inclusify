@@ -1,6 +1,6 @@
 from create_xml import rule_to_xml
 from gender_config import gender_languages
-from helpers import add_to_dict
+from helpers import add_to_dict, open_
 from helpers_csv import csvs_to_dict, dict_to_csvs
 from os import path
 from paths import *
@@ -30,9 +30,12 @@ def unified_dic() -> Dict[str, Dict[str, List[str]]]:
 
 
 def create_grammars() -> None:
-    custom_xml = open(
-        path.join("retext-equality", "custom_rules_disability.xml")
-    ).read()
+    custom_xml = ""
+    for custom_file in [
+        path.join("retext-equality", "custom_rules_disability.xml"),
+        path.join("retext-equality", "illness_rules.xml"),
+    ]:
+        custom_xml += open_(custom_file).read()
     unified_dic_ = unified_dic()
     for code, _, genderfun in gender_languages:
         xml = custom_xml

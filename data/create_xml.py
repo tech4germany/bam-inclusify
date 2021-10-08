@@ -7,19 +7,28 @@ xml_template = """
     {antipatterns}
     <pattern>{replaced_tokens}</pattern>
     {suggestions}
-    <message>Der Stern wird in den letzten Jahren zunehmend verwendet. Besonders häufig findet man das Sternchen im Kontexten, in denen aufgrund aktuelle Transgender- und Intersexualitätsdebatten nicht von lediglich zwei Geschlechtern ausgegangen wird, Geschlecht also nicht mehr als ein binäre System verstanden wird. Mit dem Sternchen soll bewusst irritiert und die Möglichkeit weitere Kategorien angedeutet werden.</message>
-    <short>Die Bezeichnung "{pattern}" spricht nur männliche Leser an. Versuche alle Menschen anzusprechen.</short>
+    <message>{message}</message>
+    <short>{short_message}</short>
     <example correction="{corrections}"><marker>{pattern}</marker></example>
 </rule>
 """
 
+gender_message = "Der Stern wird in den letzten Jahren zunehmend verwendet. Besonders häufig findet man das Sternchen im Kontexten, in denen aufgrund aktuelle Transgender- und Intersexualitätsdebatten nicht von lediglich zwei Geschlechtern ausgegangen wird, Geschlecht also nicht mehr als ein binäre System verstanden wird. Mit dem Sternchen soll bewusst irritiert und die Möglichkeit weitere Kategorien angedeutet werden."
+
+def short_gender_message(pattern):
+    return 'Die Bezeichnung "{}" spricht nur männliche Leser an. Versuche alle Menschen anzusprechen.'.format(pattern)
 
 def identity(a):
     return a
 
 
 def rule_to_xml(
-    pattern: str, number: str, suggestions_: List[str], style=identity
+    pattern: str,
+    number: str,
+    suggestions_: List[str],
+    style: Callable[[List[str]], List[str]] = identity,
+    message: str = gender_message,
+    short_message: Callable[[str], str] = short_gender_message
 ) -> str:
     suggestions_ = style(suggestions_)
     if len(suggestions_) == 0:
@@ -32,6 +41,8 @@ def rule_to_xml(
         number=number,
         suggestions=suggestions(suggestions_),
         corrections="|".join([startupper(s) for s in suggestions_]),
+        message=message,
+        short_message=short_message(pattern)
     )
     # parsed = xml.dom.minidom.parseString(s)
     # return parsed.toprettyxml()
@@ -72,6 +83,8 @@ def tokens(number, pattern):
             return double_token(t)
         elif number == "unknown":
             return token("", postag_attributes_exception("unknown") + t)
+        elif number == "any":
+            return token("", t)
         else:
             return token(postags(number), postag_attributes_exception(number) + t)
 

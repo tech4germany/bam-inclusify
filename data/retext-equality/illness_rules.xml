@@ -1,0 +1,731 @@
+
+<rule id="Schizophrener_sg" name="Schizophrener">
+    <antipattern><token>Person</token><token>mit</token><token>Schizophrenie</token></antipattern>
+    <pattern><token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes"><exception postag=".*:PLU:.*" postag_regexp="yes" />Schizophrener</token></pattern>
+    <suggestion>Person mit Schizophrenie</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Schizophrenie"><marker>Schizophrener</marker></example>
+</rule>
+
+
+<rule id="Schizophrener_sg" name="Schizophrener">
+    <antipattern><token>Person</token><token>mit</token><token>Schizophrenie</token></antipattern>
+    <pattern><token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes"><exception postag=".*:PLU:.*" postag_regexp="yes" />Schizophrener</token></pattern>
+    <suggestion>Person mit Schizophrenie</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Schizophrenie"><marker>Schizophrener</marker></example>
+</rule>
+
+
+<rule id="Schizophrener_both" name="Schizophrener">
+    <antipattern><token>Person</token><token>mit</token><token>Schizophrenie</token></antipattern>
+		<antipattern><token>Menschen</token><token>mit</token><token>Schizophrenie</token></antipattern>
+    <pattern><and>
+	<token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes">Schizophrener</token>
+	<token inflected="yes" postag=".*:PLU:.*" postag_regexp="yes">Schizophrener</token>
+</and></pattern>
+    <suggestion>Person mit Schizophrenie</suggestion>, <suggestion>Menschen mit Schizophrenie</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Schizophrenie|Menschen mit Schizophrenie"><marker>Schizophrener</marker></example>
+</rule>
+
+
+<rule id="Schizophrener_both" name="Schizophrener">
+    <antipattern><token>Person</token><token>mit</token><token>Schizophrenie</token></antipattern>
+		<antipattern><token>Menschen</token><token>mit</token><token>Schizophrenie</token></antipattern>
+    <pattern><and>
+	<token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes">Schizophrener</token>
+	<token inflected="yes" postag=".*:PLU:.*" postag_regexp="yes">Schizophrener</token>
+</and></pattern>
+    <suggestion>Person mit Schizophrenie</suggestion>, <suggestion>Menschen mit Schizophrenie</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Schizophrenie|Menschen mit Schizophrenie"><marker>Schizophrener</marker></example>
+</rule>
+
+
+<rule id="Schizophreniker_sg" name="Schizophreniker">
+    <antipattern><token>Person</token><token>mit</token><token>Schizophrenie</token></antipattern>
+    <pattern><token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes"><exception postag=".*:PLU:.*" postag_regexp="yes" />Schizophreniker</token></pattern>
+    <suggestion>Person mit Schizophrenie</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Schizophrenie"><marker>Schizophreniker</marker></example>
+</rule>
+
+
+<rule id="Schizophreniker_sg" name="Schizophreniker">
+    <antipattern><token>Person</token><token>mit</token><token>Schizophrenie</token></antipattern>
+    <pattern><token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes"><exception postag=".*:PLU:.*" postag_regexp="yes" />Schizophreniker</token></pattern>
+    <suggestion>Person mit Schizophrenie</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Schizophrenie"><marker>Schizophreniker</marker></example>
+</rule>
+
+
+<rule id="Schizophreniker_both" name="Schizophreniker">
+    <antipattern><token>Person</token><token>mit</token><token>Schizophrenie</token></antipattern>
+		<antipattern><token>Menschen</token><token>mit</token><token>Schizophrenie</token></antipattern>
+    <pattern><and>
+	<token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes">Schizophreniker</token>
+	<token inflected="yes" postag=".*:PLU:.*" postag_regexp="yes">Schizophreniker</token>
+</and></pattern>
+    <suggestion>Person mit Schizophrenie</suggestion>, <suggestion>Menschen mit Schizophrenie</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Schizophrenie|Menschen mit Schizophrenie"><marker>Schizophreniker</marker></example>
+</rule>
+
+
+<rule id="Schizophreniker_both" name="Schizophreniker">
+    <antipattern><token>Person</token><token>mit</token><token>Schizophrenie</token></antipattern>
+		<antipattern><token>Menschen</token><token>mit</token><token>Schizophrenie</token></antipattern>
+    <pattern><and>
+	<token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes">Schizophreniker</token>
+	<token inflected="yes" postag=".*:PLU:.*" postag_regexp="yes">Schizophreniker</token>
+</and></pattern>
+    <suggestion>Person mit Schizophrenie</suggestion>, <suggestion>Menschen mit Schizophrenie</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Schizophrenie|Menschen mit Schizophrenie"><marker>Schizophreniker</marker></example>
+</rule>
+
+
+<rule id="Mongoloide_sg" name="Mongoloide">
+    <antipattern><token>Person</token><token>mit</token><token>Trisomie</token><token>21</token></antipattern>
+    <pattern><token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes"><exception postag=".*:PLU:.*" postag_regexp="yes" />Mongoloide</token></pattern>
+    <suggestion>Person mit Trisomie 21</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Trisomie 21"><marker>Mongoloide</marker></example>
+</rule>
+
+
+<rule id="Mongoloide_sg" name="Mongoloide">
+    <antipattern><token>Person</token><token>mit</token><token>Trisomie</token><token>21</token></antipattern>
+    <pattern><token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes"><exception postag=".*:PLU:.*" postag_regexp="yes" />Mongoloide</token></pattern>
+    <suggestion>Person mit Trisomie 21</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Trisomie 21"><marker>Mongoloide</marker></example>
+</rule>
+
+
+<rule id="Mongoloide_both" name="Mongoloide">
+    <antipattern><token>Person</token><token>mit</token><token>Trisomie</token><token>21</token></antipattern>
+		<antipattern><token>Menschen</token><token>mit</token><token>Trisomie</token><token>21</token></antipattern>
+    <pattern><and>
+	<token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes">Mongoloide</token>
+	<token inflected="yes" postag=".*:PLU:.*" postag_regexp="yes">Mongoloide</token>
+</and></pattern>
+    <suggestion>Person mit Trisomie 21</suggestion>, <suggestion>Menschen mit Trisomie 21</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Trisomie 21|Menschen mit Trisomie 21"><marker>Mongoloide</marker></example>
+</rule>
+
+
+<rule id="Mongoloide_both" name="Mongoloide">
+    <antipattern><token>Person</token><token>mit</token><token>Trisomie</token><token>21</token></antipattern>
+		<antipattern><token>Menschen</token><token>mit</token><token>Trisomie</token><token>21</token></antipattern>
+    <pattern><and>
+	<token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes">Mongoloide</token>
+	<token inflected="yes" postag=".*:PLU:.*" postag_regexp="yes">Mongoloide</token>
+</and></pattern>
+    <suggestion>Person mit Trisomie 21</suggestion>, <suggestion>Menschen mit Trisomie 21</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Trisomie 21|Menschen mit Trisomie 21"><marker>Mongoloide</marker></example>
+</rule>
+
+
+<rule id="Mongo_sg" name="Mongo">
+    <antipattern><token>Person</token><token>mit</token><token>Trisomie</token><token>21</token></antipattern>
+    <pattern><token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes"><exception postag=".*:PLU:.*" postag_regexp="yes" />Mongo</token></pattern>
+    <suggestion>Person mit Trisomie 21</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Trisomie 21"><marker>Mongo</marker></example>
+</rule>
+
+
+<rule id="Mongo_sg" name="Mongo">
+    <antipattern><token>Person</token><token>mit</token><token>Trisomie</token><token>21</token></antipattern>
+    <pattern><token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes"><exception postag=".*:PLU:.*" postag_regexp="yes" />Mongo</token></pattern>
+    <suggestion>Person mit Trisomie 21</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Trisomie 21"><marker>Mongo</marker></example>
+</rule>
+
+
+<rule id="Mongo_both" name="Mongo">
+    <antipattern><token>Person</token><token>mit</token><token>Trisomie</token><token>21</token></antipattern>
+		<antipattern><token>Menschen</token><token>mit</token><token>Trisomie</token><token>21</token></antipattern>
+    <pattern><and>
+	<token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes">Mongo</token>
+	<token inflected="yes" postag=".*:PLU:.*" postag_regexp="yes">Mongo</token>
+</and></pattern>
+    <suggestion>Person mit Trisomie 21</suggestion>, <suggestion>Menschen mit Trisomie 21</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Trisomie 21|Menschen mit Trisomie 21"><marker>Mongo</marker></example>
+</rule>
+
+
+<rule id="Mongo_both" name="Mongo">
+    <antipattern><token>Person</token><token>mit</token><token>Trisomie</token><token>21</token></antipattern>
+		<antipattern><token>Menschen</token><token>mit</token><token>Trisomie</token><token>21</token></antipattern>
+    <pattern><and>
+	<token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes">Mongo</token>
+	<token inflected="yes" postag=".*:PLU:.*" postag_regexp="yes">Mongo</token>
+</and></pattern>
+    <suggestion>Person mit Trisomie 21</suggestion>, <suggestion>Menschen mit Trisomie 21</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Trisomie 21|Menschen mit Trisomie 21"><marker>Mongo</marker></example>
+</rule>
+
+
+<rule id="Psychotiker_sg" name="Psychotiker">
+    <antipattern><token>Person</token><token>mit</token><token>Psychose</token></antipattern>
+    <pattern><token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes"><exception postag=".*:PLU:.*" postag_regexp="yes" />Psychotiker</token></pattern>
+    <suggestion>Person mit Psychose</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Psychose"><marker>Psychotiker</marker></example>
+</rule>
+
+
+<rule id="Psychotiker_sg" name="Psychotiker">
+    <antipattern><token>Person</token><token>mit</token><token>Psychose</token></antipattern>
+    <pattern><token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes"><exception postag=".*:PLU:.*" postag_regexp="yes" />Psychotiker</token></pattern>
+    <suggestion>Person mit Psychose</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Psychose"><marker>Psychotiker</marker></example>
+</rule>
+
+
+<rule id="Psychotiker_both" name="Psychotiker">
+    <antipattern><token>Person</token><token>mit</token><token>Psychose</token></antipattern>
+		<antipattern><token>Menschen</token><token>mit</token><token>Psychose</token></antipattern>
+    <pattern><and>
+	<token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes">Psychotiker</token>
+	<token inflected="yes" postag=".*:PLU:.*" postag_regexp="yes">Psychotiker</token>
+</and></pattern>
+    <suggestion>Person mit Psychose</suggestion>, <suggestion>Menschen mit Psychose</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Psychose|Menschen mit Psychose"><marker>Psychotiker</marker></example>
+</rule>
+
+
+<rule id="Psychotiker_both" name="Psychotiker">
+    <antipattern><token>Person</token><token>mit</token><token>Psychose</token></antipattern>
+		<antipattern><token>Menschen</token><token>mit</token><token>Psychose</token></antipattern>
+    <pattern><and>
+	<token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes">Psychotiker</token>
+	<token inflected="yes" postag=".*:PLU:.*" postag_regexp="yes">Psychotiker</token>
+</and></pattern>
+    <suggestion>Person mit Psychose</suggestion>, <suggestion>Menschen mit Psychose</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Psychose|Menschen mit Psychose"><marker>Psychotiker</marker></example>
+</rule>
+
+
+<rule id="Alkoholiker_sg" name="Alkoholiker">
+    <antipattern><token>Person</token><token>mit</token><token>Alkoholproblem</token></antipattern>
+    <pattern><token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes"><exception postag=".*:PLU:.*" postag_regexp="yes" />Alkoholiker</token></pattern>
+    <suggestion>Person mit Alkoholproblem</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Alkoholproblem"><marker>Alkoholiker</marker></example>
+</rule>
+
+
+<rule id="Alkoholiker_sg" name="Alkoholiker">
+    <antipattern><token>Person</token><token>mit</token><token>Alkoholproblem</token></antipattern>
+    <pattern><token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes"><exception postag=".*:PLU:.*" postag_regexp="yes" />Alkoholiker</token></pattern>
+    <suggestion>Person mit Alkoholproblem</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Alkoholproblem"><marker>Alkoholiker</marker></example>
+</rule>
+
+
+<rule id="Alkoholiker_both" name="Alkoholiker">
+    <antipattern><token>Person</token><token>mit</token><token>Alkoholproblem</token></antipattern>
+		<antipattern><token>Menschen</token><token>mit</token><token>Alkoholproblem</token></antipattern>
+    <pattern><and>
+	<token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes">Alkoholiker</token>
+	<token inflected="yes" postag=".*:PLU:.*" postag_regexp="yes">Alkoholiker</token>
+</and></pattern>
+    <suggestion>Person mit Alkoholproblem</suggestion>, <suggestion>Menschen mit Alkoholproblem</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Alkoholproblem|Menschen mit Alkoholproblem"><marker>Alkoholiker</marker></example>
+</rule>
+
+
+<rule id="Alkoholiker_both" name="Alkoholiker">
+    <antipattern><token>Person</token><token>mit</token><token>Alkoholproblem</token></antipattern>
+		<antipattern><token>Menschen</token><token>mit</token><token>Alkoholproblem</token></antipattern>
+    <pattern><and>
+	<token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes">Alkoholiker</token>
+	<token inflected="yes" postag=".*:PLU:.*" postag_regexp="yes">Alkoholiker</token>
+</and></pattern>
+    <suggestion>Person mit Alkoholproblem</suggestion>, <suggestion>Menschen mit Alkoholproblem</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Alkoholproblem|Menschen mit Alkoholproblem"><marker>Alkoholiker</marker></example>
+</rule>
+
+
+<rule id="Dyslexiker_sg" name="Dyslexiker">
+    <antipattern><token>Person</token><token>mit</token><token>Dyslexie</token></antipattern>
+    <pattern><token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes"><exception postag=".*:PLU:.*" postag_regexp="yes" />Dyslexiker</token></pattern>
+    <suggestion>Person mit Dyslexie</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Dyslexie"><marker>Dyslexiker</marker></example>
+</rule>
+
+
+<rule id="Dyslexiker_sg" name="Dyslexiker">
+    <antipattern><token>Person</token><token>mit</token><token>Dyslexie</token></antipattern>
+    <pattern><token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes"><exception postag=".*:PLU:.*" postag_regexp="yes" />Dyslexiker</token></pattern>
+    <suggestion>Person mit Dyslexie</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Dyslexie"><marker>Dyslexiker</marker></example>
+</rule>
+
+
+<rule id="Dyslexiker_both" name="Dyslexiker">
+    <antipattern><token>Person</token><token>mit</token><token>Dyslexie</token></antipattern>
+		<antipattern><token>Menschen</token><token>mit</token><token>Dyslexie</token></antipattern>
+    <pattern><and>
+	<token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes">Dyslexiker</token>
+	<token inflected="yes" postag=".*:PLU:.*" postag_regexp="yes">Dyslexiker</token>
+</and></pattern>
+    <suggestion>Person mit Dyslexie</suggestion>, <suggestion>Menschen mit Dyslexie</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Dyslexie|Menschen mit Dyslexie"><marker>Dyslexiker</marker></example>
+</rule>
+
+
+<rule id="Dyslexiker_both" name="Dyslexiker">
+    <antipattern><token>Person</token><token>mit</token><token>Dyslexie</token></antipattern>
+		<antipattern><token>Menschen</token><token>mit</token><token>Dyslexie</token></antipattern>
+    <pattern><and>
+	<token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes">Dyslexiker</token>
+	<token inflected="yes" postag=".*:PLU:.*" postag_regexp="yes">Dyslexiker</token>
+</and></pattern>
+    <suggestion>Person mit Dyslexie</suggestion>, <suggestion>Menschen mit Dyslexie</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Dyslexie|Menschen mit Dyslexie"><marker>Dyslexiker</marker></example>
+</rule>
+
+
+<rule id="Epileptiker_sg" name="Epileptiker">
+    <antipattern><token>Person</token><token>mit</token><token>Epilepsie</token></antipattern>
+    <pattern><token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes"><exception postag=".*:PLU:.*" postag_regexp="yes" />Epileptiker</token></pattern>
+    <suggestion>Person mit Epilepsie</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Epilepsie"><marker>Epileptiker</marker></example>
+</rule>
+
+
+<rule id="Epileptiker_sg" name="Epileptiker">
+    <antipattern><token>Person</token><token>mit</token><token>Epilepsie</token></antipattern>
+    <pattern><token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes"><exception postag=".*:PLU:.*" postag_regexp="yes" />Epileptiker</token></pattern>
+    <suggestion>Person mit Epilepsie</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Epilepsie"><marker>Epileptiker</marker></example>
+</rule>
+
+
+<rule id="Epileptiker_both" name="Epileptiker">
+    <antipattern><token>Person</token><token>mit</token><token>Epilepsie</token></antipattern>
+		<antipattern><token>Menschen</token><token>mit</token><token>Epilepsie</token></antipattern>
+    <pattern><and>
+	<token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes">Epileptiker</token>
+	<token inflected="yes" postag=".*:PLU:.*" postag_regexp="yes">Epileptiker</token>
+</and></pattern>
+    <suggestion>Person mit Epilepsie</suggestion>, <suggestion>Menschen mit Epilepsie</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Epilepsie|Menschen mit Epilepsie"><marker>Epileptiker</marker></example>
+</rule>
+
+
+<rule id="Epileptiker_both" name="Epileptiker">
+    <antipattern><token>Person</token><token>mit</token><token>Epilepsie</token></antipattern>
+		<antipattern><token>Menschen</token><token>mit</token><token>Epilepsie</token></antipattern>
+    <pattern><and>
+	<token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes">Epileptiker</token>
+	<token inflected="yes" postag=".*:PLU:.*" postag_regexp="yes">Epileptiker</token>
+</and></pattern>
+    <suggestion>Person mit Epilepsie</suggestion>, <suggestion>Menschen mit Epilepsie</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Epilepsie|Menschen mit Epilepsie"><marker>Epileptiker</marker></example>
+</rule>
+
+
+<rule id="Paraplegiker_sg" name="Paraplegiker">
+    <antipattern><token>Person</token><token>mit</token><token>Paraplegie</token></antipattern>
+    <pattern><token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes"><exception postag=".*:PLU:.*" postag_regexp="yes" />Paraplegiker</token></pattern>
+    <suggestion>Person mit Paraplegie</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Paraplegie"><marker>Paraplegiker</marker></example>
+</rule>
+
+
+<rule id="Paraplegiker_sg" name="Paraplegiker">
+    <antipattern><token>Person</token><token>mit</token><token>Paraplegie</token></antipattern>
+    <pattern><token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes"><exception postag=".*:PLU:.*" postag_regexp="yes" />Paraplegiker</token></pattern>
+    <suggestion>Person mit Paraplegie</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Paraplegie"><marker>Paraplegiker</marker></example>
+</rule>
+
+
+<rule id="Paraplegiker_both" name="Paraplegiker">
+    <antipattern><token>Person</token><token>mit</token><token>Paraplegie</token></antipattern>
+		<antipattern><token>Menschen</token><token>mit</token><token>Paraplegie</token></antipattern>
+    <pattern><and>
+	<token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes">Paraplegiker</token>
+	<token inflected="yes" postag=".*:PLU:.*" postag_regexp="yes">Paraplegiker</token>
+</and></pattern>
+    <suggestion>Person mit Paraplegie</suggestion>, <suggestion>Menschen mit Paraplegie</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Paraplegie|Menschen mit Paraplegie"><marker>Paraplegiker</marker></example>
+</rule>
+
+
+<rule id="Paraplegiker_both" name="Paraplegiker">
+    <antipattern><token>Person</token><token>mit</token><token>Paraplegie</token></antipattern>
+		<antipattern><token>Menschen</token><token>mit</token><token>Paraplegie</token></antipattern>
+    <pattern><and>
+	<token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes">Paraplegiker</token>
+	<token inflected="yes" postag=".*:PLU:.*" postag_regexp="yes">Paraplegiker</token>
+</and></pattern>
+    <suggestion>Person mit Paraplegie</suggestion>, <suggestion>Menschen mit Paraplegie</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Paraplegie|Menschen mit Paraplegie"><marker>Paraplegiker</marker></example>
+</rule>
+
+
+<rule id="Quadriplegiker_sg" name="Quadriplegiker">
+    <antipattern><token>Person</token><token>mit</token><token>Quadriplegie</token></antipattern>
+    <pattern><token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes"><exception postag=".*:PLU:.*" postag_regexp="yes" />Quadriplegiker</token></pattern>
+    <suggestion>Person mit Quadriplegie</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Quadriplegie"><marker>Quadriplegiker</marker></example>
+</rule>
+
+
+<rule id="Quadriplegiker_sg" name="Quadriplegiker">
+    <antipattern><token>Person</token><token>mit</token><token>Quadriplegie</token></antipattern>
+    <pattern><token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes"><exception postag=".*:PLU:.*" postag_regexp="yes" />Quadriplegiker</token></pattern>
+    <suggestion>Person mit Quadriplegie</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Quadriplegie"><marker>Quadriplegiker</marker></example>
+</rule>
+
+
+<rule id="Quadriplegiker_both" name="Quadriplegiker">
+    <antipattern><token>Person</token><token>mit</token><token>Quadriplegie</token></antipattern>
+		<antipattern><token>Menschen</token><token>mit</token><token>Quadriplegie</token></antipattern>
+    <pattern><and>
+	<token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes">Quadriplegiker</token>
+	<token inflected="yes" postag=".*:PLU:.*" postag_regexp="yes">Quadriplegiker</token>
+</and></pattern>
+    <suggestion>Person mit Quadriplegie</suggestion>, <suggestion>Menschen mit Quadriplegie</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Quadriplegie|Menschen mit Quadriplegie"><marker>Quadriplegiker</marker></example>
+</rule>
+
+
+<rule id="Quadriplegiker_both" name="Quadriplegiker">
+    <antipattern><token>Person</token><token>mit</token><token>Quadriplegie</token></antipattern>
+		<antipattern><token>Menschen</token><token>mit</token><token>Quadriplegie</token></antipattern>
+    <pattern><and>
+	<token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes">Quadriplegiker</token>
+	<token inflected="yes" postag=".*:PLU:.*" postag_regexp="yes">Quadriplegiker</token>
+</and></pattern>
+    <suggestion>Person mit Quadriplegie</suggestion>, <suggestion>Menschen mit Quadriplegie</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Quadriplegie|Menschen mit Quadriplegie"><marker>Quadriplegiker</marker></example>
+</rule>
+
+
+<rule id="Spastiker_sg" name="Spastiker">
+    <antipattern><token>Person</token><token>mit</token><token>zerebrale</token><token>Lähmung</token></antipattern>
+		<antipattern><token>Person</token><token>mit</token><token>Zerebralparese</token></antipattern>
+    <pattern><token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes"><exception postag=".*:PLU:.*" postag_regexp="yes" />Spastiker</token></pattern>
+    <suggestion>Person mit zerebrale Lähmung</suggestion>, <suggestion>Person mit Zerebralparese</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit zerebrale Lähmung|Person mit Zerebralparese"><marker>Spastiker</marker></example>
+</rule>
+
+
+<rule id="Spastiker_sg" name="Spastiker">
+    <antipattern><token>Person</token><token>mit</token><token>zerebrale</token><token>Lähmung</token></antipattern>
+		<antipattern><token>Person</token><token>mit</token><token>Zerebralparese</token></antipattern>
+    <pattern><token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes"><exception postag=".*:PLU:.*" postag_regexp="yes" />Spastiker</token></pattern>
+    <suggestion>Person mit zerebrale Lähmung</suggestion>, <suggestion>Person mit Zerebralparese</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit zerebrale Lähmung|Person mit Zerebralparese"><marker>Spastiker</marker></example>
+</rule>
+
+
+<rule id="Spastiker_both" name="Spastiker">
+    <antipattern><token>Person</token><token>mit</token><token>zerebrale</token><token>Lähmung</token></antipattern>
+		<antipattern><token>Menschen</token><token>mit</token><token>zerebrale</token><token>Lähmung</token></antipattern>
+		<antipattern><token>Person</token><token>mit</token><token>Zerebralparese</token></antipattern>
+		<antipattern><token>Menschen</token><token>mit</token><token>Zerebralparese</token></antipattern>
+    <pattern><and>
+	<token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes">Spastiker</token>
+	<token inflected="yes" postag=".*:PLU:.*" postag_regexp="yes">Spastiker</token>
+</and></pattern>
+    <suggestion>Person mit zerebrale Lähmung</suggestion>, <suggestion>Menschen mit zerebrale Lähmung</suggestion>, <suggestion>Person mit Zerebralparese</suggestion>, <suggestion>Menschen mit Zerebralparese</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit zerebrale Lähmung|Menschen mit zerebrale Lähmung|Person mit Zerebralparese|Menschen mit Zerebralparese"><marker>Spastiker</marker></example>
+</rule>
+
+
+<rule id="Spastiker_both" name="Spastiker">
+    <antipattern><token>Person</token><token>mit</token><token>zerebrale</token><token>Lähmung</token></antipattern>
+		<antipattern><token>Menschen</token><token>mit</token><token>zerebrale</token><token>Lähmung</token></antipattern>
+		<antipattern><token>Person</token><token>mit</token><token>Zerebralparese</token></antipattern>
+		<antipattern><token>Menschen</token><token>mit</token><token>Zerebralparese</token></antipattern>
+    <pattern><and>
+	<token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes">Spastiker</token>
+	<token inflected="yes" postag=".*:PLU:.*" postag_regexp="yes">Spastiker</token>
+</and></pattern>
+    <suggestion>Person mit zerebrale Lähmung</suggestion>, <suggestion>Menschen mit zerebrale Lähmung</suggestion>, <suggestion>Person mit Zerebralparese</suggestion>, <suggestion>Menschen mit Zerebralparese</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit zerebrale Lähmung|Menschen mit zerebrale Lähmung|Person mit Zerebralparese|Menschen mit Zerebralparese"><marker>Spastiker</marker></example>
+</rule>
+
+
+<rule id="Spast_sg" name="Spast">
+    <antipattern><token>Person</token><token>mit</token><token>zerebrale</token><token>Lähmung</token></antipattern>
+		<antipattern><token>Person</token><token>mit</token><token>Zerebralparese</token></antipattern>
+    <pattern><token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes"><exception postag=".*:PLU:.*" postag_regexp="yes" />Spast</token></pattern>
+    <suggestion>Person mit zerebrale Lähmung</suggestion>, <suggestion>Person mit Zerebralparese</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit zerebrale Lähmung|Person mit Zerebralparese"><marker>Spast</marker></example>
+</rule>
+
+
+<rule id="Spast_sg" name="Spast">
+    <antipattern><token>Person</token><token>mit</token><token>zerebrale</token><token>Lähmung</token></antipattern>
+		<antipattern><token>Person</token><token>mit</token><token>Zerebralparese</token></antipattern>
+    <pattern><token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes"><exception postag=".*:PLU:.*" postag_regexp="yes" />Spast</token></pattern>
+    <suggestion>Person mit zerebrale Lähmung</suggestion>, <suggestion>Person mit Zerebralparese</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit zerebrale Lähmung|Person mit Zerebralparese"><marker>Spast</marker></example>
+</rule>
+
+
+<rule id="Spast_both" name="Spast">
+    <antipattern><token>Person</token><token>mit</token><token>zerebrale</token><token>Lähmung</token></antipattern>
+		<antipattern><token>Menschen</token><token>mit</token><token>zerebrale</token><token>Lähmung</token></antipattern>
+		<antipattern><token>Person</token><token>mit</token><token>Zerebralparese</token></antipattern>
+		<antipattern><token>Menschen</token><token>mit</token><token>Zerebralparese</token></antipattern>
+    <pattern><and>
+	<token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes">Spast</token>
+	<token inflected="yes" postag=".*:PLU:.*" postag_regexp="yes">Spast</token>
+</and></pattern>
+    <suggestion>Person mit zerebrale Lähmung</suggestion>, <suggestion>Menschen mit zerebrale Lähmung</suggestion>, <suggestion>Person mit Zerebralparese</suggestion>, <suggestion>Menschen mit Zerebralparese</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit zerebrale Lähmung|Menschen mit zerebrale Lähmung|Person mit Zerebralparese|Menschen mit Zerebralparese"><marker>Spast</marker></example>
+</rule>
+
+
+<rule id="Spast_both" name="Spast">
+    <antipattern><token>Person</token><token>mit</token><token>zerebrale</token><token>Lähmung</token></antipattern>
+		<antipattern><token>Menschen</token><token>mit</token><token>zerebrale</token><token>Lähmung</token></antipattern>
+		<antipattern><token>Person</token><token>mit</token><token>Zerebralparese</token></antipattern>
+		<antipattern><token>Menschen</token><token>mit</token><token>Zerebralparese</token></antipattern>
+    <pattern><and>
+	<token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes">Spast</token>
+	<token inflected="yes" postag=".*:PLU:.*" postag_regexp="yes">Spast</token>
+</and></pattern>
+    <suggestion>Person mit zerebrale Lähmung</suggestion>, <suggestion>Menschen mit zerebrale Lähmung</suggestion>, <suggestion>Person mit Zerebralparese</suggestion>, <suggestion>Menschen mit Zerebralparese</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit zerebrale Lähmung|Menschen mit zerebrale Lähmung|Person mit Zerebralparese|Menschen mit Zerebralparese"><marker>Spast</marker></example>
+</rule>
+
+
+<rule id="Wasserkopf_sg" name="Wasserkopf">
+    <antipattern><token>Person</token><token>mit</token><token>Hydrocephalus</token></antipattern>
+    <pattern><token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes"><exception postag=".*:PLU:.*" postag_regexp="yes" />Wasserkopf</token></pattern>
+    <suggestion>Person mit Hydrocephalus</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Hydrocephalus"><marker>Wasserkopf</marker></example>
+</rule>
+
+
+<rule id="Wasserkopf_sg" name="Wasserkopf">
+    <antipattern><token>Person</token><token>mit</token><token>Hydrocephalus</token></antipattern>
+    <pattern><token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes"><exception postag=".*:PLU:.*" postag_regexp="yes" />Wasserkopf</token></pattern>
+    <suggestion>Person mit Hydrocephalus</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Hydrocephalus"><marker>Wasserkopf</marker></example>
+</rule>
+
+
+<rule id="Wasserkopf_both" name="Wasserkopf">
+    <antipattern><token>Person</token><token>mit</token><token>Hydrocephalus</token></antipattern>
+		<antipattern><token>Menschen</token><token>mit</token><token>Hydrocephalus</token></antipattern>
+    <pattern><and>
+	<token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes">Wasserkopf</token>
+	<token inflected="yes" postag=".*:PLU:.*" postag_regexp="yes">Wasserkopf</token>
+</and></pattern>
+    <suggestion>Person mit Hydrocephalus</suggestion>, <suggestion>Menschen mit Hydrocephalus</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Hydrocephalus|Menschen mit Hydrocephalus"><marker>Wasserkopf</marker></example>
+</rule>
+
+
+<rule id="Wasserkopf_both" name="Wasserkopf">
+    <antipattern><token>Person</token><token>mit</token><token>Hydrocephalus</token></antipattern>
+		<antipattern><token>Menschen</token><token>mit</token><token>Hydrocephalus</token></antipattern>
+    <pattern><and>
+	<token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes">Wasserkopf</token>
+	<token inflected="yes" postag=".*:PLU:.*" postag_regexp="yes">Wasserkopf</token>
+</and></pattern>
+    <suggestion>Person mit Hydrocephalus</suggestion>, <suggestion>Menschen mit Hydrocephalus</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Hydrocephalus|Menschen mit Hydrocephalus"><marker>Wasserkopf</marker></example>
+</rule>
+
+
+<rule id="Narkoleptiker_sg" name="Narkoleptiker">
+    <antipattern><token>Person</token><token>mit</token><token>Narkolepsie</token></antipattern>
+    <pattern><token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes"><exception postag=".*:PLU:.*" postag_regexp="yes" />Narkoleptiker</token></pattern>
+    <suggestion>Person mit Narkolepsie</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Narkolepsie"><marker>Narkoleptiker</marker></example>
+</rule>
+
+
+<rule id="Narkoleptiker_sg" name="Narkoleptiker">
+    <antipattern><token>Person</token><token>mit</token><token>Narkolepsie</token></antipattern>
+    <pattern><token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes"><exception postag=".*:PLU:.*" postag_regexp="yes" />Narkoleptiker</token></pattern>
+    <suggestion>Person mit Narkolepsie</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Narkolepsie"><marker>Narkoleptiker</marker></example>
+</rule>
+
+
+<rule id="Narkoleptiker_both" name="Narkoleptiker">
+    <antipattern><token>Person</token><token>mit</token><token>Narkolepsie</token></antipattern>
+		<antipattern><token>Menschen</token><token>mit</token><token>Narkolepsie</token></antipattern>
+    <pattern><and>
+	<token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes">Narkoleptiker</token>
+	<token inflected="yes" postag=".*:PLU:.*" postag_regexp="yes">Narkoleptiker</token>
+</and></pattern>
+    <suggestion>Person mit Narkolepsie</suggestion>, <suggestion>Menschen mit Narkolepsie</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Narkolepsie|Menschen mit Narkolepsie"><marker>Narkoleptiker</marker></example>
+</rule>
+
+
+<rule id="Narkoleptiker_both" name="Narkoleptiker">
+    <antipattern><token>Person</token><token>mit</token><token>Narkolepsie</token></antipattern>
+		<antipattern><token>Menschen</token><token>mit</token><token>Narkolepsie</token></antipattern>
+    <pattern><and>
+	<token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes">Narkoleptiker</token>
+	<token inflected="yes" postag=".*:PLU:.*" postag_regexp="yes">Narkoleptiker</token>
+</and></pattern>
+    <suggestion>Person mit Narkolepsie</suggestion>, <suggestion>Menschen mit Narkolepsie</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Narkolepsie|Menschen mit Narkolepsie"><marker>Narkoleptiker</marker></example>
+</rule>
+
+
+<rule id="Narkoleptikerin_sg" name="Narkoleptikerin">
+    <antipattern><token>Person</token><token>mit</token><token>Narkolepsie</token></antipattern>
+    <pattern><token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes"><exception postag=".*:PLU:.*" postag_regexp="yes" />Narkoleptikerin</token></pattern>
+    <suggestion>Person mit Narkolepsie</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Narkolepsie"><marker>Narkoleptikerin</marker></example>
+</rule>
+
+
+<rule id="Narkoleptikerin_sg" name="Narkoleptikerin">
+    <antipattern><token>Person</token><token>mit</token><token>Narkolepsie</token></antipattern>
+    <pattern><token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes"><exception postag=".*:PLU:.*" postag_regexp="yes" />Narkoleptikerin</token></pattern>
+    <suggestion>Person mit Narkolepsie</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Narkolepsie"><marker>Narkoleptikerin</marker></example>
+</rule>
+
+
+<rule id="Narkoleptikerin_both" name="Narkoleptikerin">
+    <antipattern><token>Person</token><token>mit</token><token>Narkolepsie</token></antipattern>
+		<antipattern><token>Menschen</token><token>mit</token><token>Narkolepsie</token></antipattern>
+    <pattern><and>
+	<token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes">Narkoleptikerin</token>
+	<token inflected="yes" postag=".*:PLU:.*" postag_regexp="yes">Narkoleptikerin</token>
+</and></pattern>
+    <suggestion>Person mit Narkolepsie</suggestion>, <suggestion>Menschen mit Narkolepsie</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Narkolepsie|Menschen mit Narkolepsie"><marker>Narkoleptikerin</marker></example>
+</rule>
+
+
+<rule id="Narkoleptikerin_both" name="Narkoleptikerin">
+    <antipattern><token>Person</token><token>mit</token><token>Narkolepsie</token></antipattern>
+		<antipattern><token>Menschen</token><token>mit</token><token>Narkolepsie</token></antipattern>
+    <pattern><and>
+	<token inflected="yes" postag=".*:SIN:.*" postag_regexp="yes">Narkoleptikerin</token>
+	<token inflected="yes" postag=".*:PLU:.*" postag_regexp="yes">Narkoleptikerin</token>
+</and></pattern>
+    <suggestion>Person mit Narkolepsie</suggestion>, <suggestion>Menschen mit Narkolepsie</suggestion>
+    <message>TODO</message>
+    <short>Beziehe dich in erster Linie auf den Menschen, nicht die Krankheit, Behinderung, Sucht etc.</short>
+    <example correction="Person mit Narkolepsie|Menschen mit Narkolepsie"><marker>Narkoleptikerin</marker></example>
+</rule>
