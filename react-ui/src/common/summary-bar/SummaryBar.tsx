@@ -1,20 +1,26 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { GearIcon } from "../../icons";
+import { UserSettingsButton } from "../buttons/Buttons";
 import { Colors } from "../Colors";
 
 interface SummaryBarProps {
   diversityErrorCount: number;
   grammarErrorCount: number;
   spellingErrorCount: number;
+  pressedState: [boolean, React.Dispatch<React.SetStateAction<boolean>>];
 }
 
-export const SummaryBar: FC<SummaryBarProps> = ({ diversityErrorCount, grammarErrorCount, spellingErrorCount }) => (
+export const SummaryBar: FC<SummaryBarProps> = ({
+  diversityErrorCount,
+  grammarErrorCount,
+  spellingErrorCount,
+  pressedState,
+}) => (
   <SummaryBarContainer>
     <GrammarSummary grammarErrorCount={grammarErrorCount} />
     <SpellingSummary spellingErrorCount={spellingErrorCount} />
     <DiversityErrorSummary diversityErrorCount={diversityErrorCount} />
-    <UserSettingsButton />
+    <UserSettingsButton pressedState={pressedState} />
   </SummaryBarContainer>
 );
 
@@ -101,40 +107,4 @@ const DiversityErrorSummary: FC<{ diversityErrorCount: number }> = ({ diversityE
     <DiversityErrorSummaryCountCircle>{diversityErrorCount}</DiversityErrorSummaryCountCircle>
     <SummaryText>Diversitätslücken</SummaryText>
   </DiversityErrorSummaryContainer>
-);
-
-const UserSettingsButtonContainer = styled.button`
-  font-size: 14px;
-  border: none;
-  border-radius: 8px;
-  color: white;
-  background: transparent linear-gradient(68deg, ${Colors.mediumYellow} 0%, ${Colors.darkYellow} 100%) 0% 0% no-repeat
-    padding-box;
-  padding: 4px 8px;
-
-  &:hover {
-    background: ${Colors.brightYellow};
-  }
-  &:active {
-    background: ${Colors.darkYellow};
-  }
-`;
-
-const UserSettingsIconContainer = styled.div`
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: white;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-const UserSettingsButton = () => (
-  <UserSettingsButtonContainer>
-    <UserSettingsIconContainer>
-      <GearIcon />
-    </UserSettingsIconContainer>
-  </UserSettingsButtonContainer>
 );

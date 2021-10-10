@@ -17,6 +17,7 @@ export const StandaloneApp: FC = () => {
   const [inputText, setInputText] = useState("");
   const [ltMatches, setLtMatches] = useState<RuleMatch[] | null>(null);
   const [isLoading, setLoading] = useState(false);
+  const [isSettingsOpen, setSettingsOpen] = useState(false);
 
   const errorCounts = computeErrorCounts(ltMatches || []);
 
@@ -36,7 +37,7 @@ export const StandaloneApp: FC = () => {
       <NavigationBar />
 
       <CenteredContainer>
-        <SummaryBar {...errorCounts} />
+        <SummaryBar pressedState={[isSettingsOpen, setSettingsOpen]} {...errorCounts} />
         <MainAreaContainer>
           <InputAreaContainer>
             <MainTextArea onChange={(e) => setInputText(e.target.value)} onSubmit={submitHandler} value={inputText} />

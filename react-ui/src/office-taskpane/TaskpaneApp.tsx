@@ -12,6 +12,7 @@ export const TaskpaneApp: FC = () => {
   const [ltMatches, setLtMatches] = useState<RuleMatch[]>([]);
   const [applier, setApplier] = useState<ApplyReplacementFunction>();
   const [isLoading, setLoading] = useState(false);
+  const [isSettingsOpen, setSettingsOpen] = useState(false);
 
   return (
     <div>
@@ -24,7 +25,12 @@ export const TaskpaneApp: FC = () => {
           }}
         />
       </div>
-      <SummaryBar diversityErrorCount={0} grammarErrorCount={0} spellingErrorCount={0} />
+      <SummaryBar
+        diversityErrorCount={0}
+        grammarErrorCount={0}
+        spellingErrorCount={0}
+        pressedState={[isSettingsOpen, setSettingsOpen]}
+      />
 
       {isLoading ? (
         <div>Loading...</div>
