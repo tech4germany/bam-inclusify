@@ -47,7 +47,9 @@ export const StandaloneApp: FC = () => {
             </ButtonBar>
           </InputAreaContainer>
           <ResultsAreaContainer>
-            {isLoading ? (
+            {isSettingsOpen ? (
+              <UserSettingsPanel />
+            ) : isLoading ? (
               <div>Text wird überprüft...</div>
             ) : ltMatches === null ? (
               <WelcomeMessage />
