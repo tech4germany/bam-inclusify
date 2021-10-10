@@ -132,6 +132,10 @@ const ReplacementItem = styled.button`
   color: white;
   font-weight: 300;
   cursor: ${(props) => (isFunction(props.onClick) ? "pointer" : "initial")};
+
+  &:hover {
+    background: ${Colors.brightGreen};
+  }
 `;
 
 interface MatchContainerProps {
