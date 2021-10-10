@@ -18,13 +18,18 @@ export const StandaloneApp: FC = () => {
   const [ltMatches, setLtMatches] = useState<RuleMatch[] | null>(null);
   const [isLoading, setLoading] = useState(false);
 
+  const errorCounts = computeErrorCounts(ltMatches || []);
+
   const checkText = async (text: string) => {
     setLoading(true);
     await checkTextWithApi(text, setLtMatches);
     setLoading(false);
   };
-
-  const errorCounts = computeErrorCounts(ltMatches || []);
+  const submitHandler = () => {
+    if (!isLoading) {
+      checkText(inputText);
+    }
+  };
 
   return (
     <>
@@ -34,10 +39,10 @@ export const StandaloneApp: FC = () => {
         <SummaryBar {...errorCounts} />
         <MainAreaContainer>
           <InputAreaContainer>
-            <MainTextArea onChange={(e) => setInputText(e.target.value)} value={inputText} />
+            <MainTextArea onChange={(e) => setInputText(e.target.value)} onSubmit={submitHandler} value={inputText} />
             <ButtonBar>
               <ButtonBarSpacer />
-              <CheckTextButton topCornersFlush onClick={() => checkText(inputText)} />
+              <CheckTextButton topCornersFlush onClick={submitHandler} disabled={isLoading} />
             </ButtonBar>
           </InputAreaContainer>
           <ResultsAreaContainer>

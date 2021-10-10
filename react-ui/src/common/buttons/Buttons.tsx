@@ -9,7 +9,6 @@ const CheckTextButtonContainer = styled.button<{ topCornersFlush?: boolean }>`
   border: none;
   border-radius: ${(props) => (!!props.topCornersFlush ? "0px 0px 8px 8px" : "8px 8px")};
   color: white;
-  cursor: pointer;
   font-size: 20px;
   padding: 8px 10px;
   z-index: 1000;
@@ -17,12 +16,20 @@ const CheckTextButtonContainer = styled.button<{ topCornersFlush?: boolean }>`
   display: flex;
   align-items: center;
   gap: 10px;
+  opacity: 1;
 
-  &:hover {
-    background: ${Colors.brightGreen};
+  &[disabled] {
+    opacity: 0.7;
   }
-  &:active {
-    background: ${Colors.darkGreen};
+
+  &:not([disabled]) {
+    cursor: pointer;
+    &:hover {
+      background: ${Colors.brightGreen};
+    }
+    &:active {
+      background: ${Colors.darkGreen};
+    }
   }
 `;
 
@@ -43,9 +50,10 @@ const CheckTextButtonTextContainer = styled.div`
 interface CheckTextButtonProps {
   onClick: React.MouseEventHandler<HTMLButtonElement> | undefined;
   topCornersFlush?: boolean;
+  disabled?: boolean;
 }
-export const CheckTextButton: FC<CheckTextButtonProps> = ({ onClick, topCornersFlush }) => (
-  <CheckTextButtonContainer topCornersFlush={topCornersFlush} onClick={onClick}>
+export const CheckTextButton: FC<CheckTextButtonProps> = ({ onClick, topCornersFlush, disabled }) => (
+  <CheckTextButtonContainer topCornersFlush={topCornersFlush} onClick={onClick} disabled={disabled}>
     <CheckTextButtonIconContainer>
       <CheckIcon />
     </CheckTextButtonIconContainer>
