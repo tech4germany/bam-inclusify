@@ -1,4 +1,4 @@
-import React, { Dispatch, FC, SetStateAction, useState } from "react";
+import { Dispatch, FC, SetStateAction, useState } from "react";
 import styled from "styled-components";
 import { RuleMatch } from "../common/language-tool-api/types";
 import { ApplyReplacementFunction, ResultsArea } from "../common/results-display/ResultsArea";
@@ -84,8 +84,8 @@ async function wordClickHandler(
     text: plaintext,
     language: "de-DE-x-diversity-star",
   };
-  const content = await new LanguageToolClient().check(request);
-  setLtMatches(content.matches || []);
+  const matches = await new LanguageToolClient().check(request);
+  setLtMatches(matches);
   console.timeEnd("ltCheck");
 
   console.log(startOffsetMap);

@@ -1,4 +1,4 @@
-import React, { Dispatch, FC, SetStateAction, useState } from "react";
+import { Dispatch, FC, SetStateAction, useState } from "react";
 import styled from "styled-components";
 import { CheckTextButton } from "../common/buttons/Buttons";
 import { FontFamilies } from "../common/Fonts";
@@ -93,8 +93,8 @@ const checkTextWithApi = async (inputText: string, setLtMatches: Dispatch<SetSta
     text: inputText,
     language: "de-DE-x-diversity-star",
   };
-  const content = await new LanguageToolClient().check(request);
-  setLtMatches(() => content.matches || []);
+  const matches = await new LanguageToolClient().check(request);
+  setLtMatches(matches);
 };
 
 const ButtonBar = styled.div`

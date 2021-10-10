@@ -29,7 +29,7 @@ const LtMatchesList: FC<{ ltMatches: RuleMatch[]; applyReplacement?: ApplyReplac
   <div>
     {ltMatches.map((ltMatch, idx) => (
       <LtMatch
-        key={idx}
+        key={ltMatch.clientUuid}
         ltMatch={ltMatch}
         applyReplacement={!!applyReplacement ? (m, r) => applyReplacement(m, idx, ltMatches, r) : undefined}
       />
@@ -51,9 +51,8 @@ const LtMatch: FC<{
           <MatchMatchText>{matchText}</MatchMatchText>
           <ReplacementListContainer>
             {ltMatch.replacements.map((r, idx) => (
-              <div>
+              <div key={r.clientUuid}>
                 <Replacement
-                  key={idx}
                   onClick={isFunction(applyReplacement) ? () => applyReplacement(ltMatch, r.value || "") : undefined}
                 >
                   {r.value}
