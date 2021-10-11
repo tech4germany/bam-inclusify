@@ -59,6 +59,7 @@ export const UserSettingsPanel: FC = () => {
           userSettings.genderSymbol,
           (genderSymbol) => setUserSettings((oldSettings) => ({ ...oldSettings, genderSymbol })),
         ]}
+        disabled={userSettings.genderingType !== "gender-symbol"}
       />
       <SettingsSectionTitle>Grammatikkorrektur</SettingsSectionTitle>
       <OptionList
@@ -123,15 +124,22 @@ const OptionListOption = styled.label`
     border-bottom-right-radius: 7px;
   }
 
-  &.selected {
-    background: ${Colors.darkYellow};
-    color: ${Colors.paleBlue};
+  &.disabled {
+    background: #eeeeee;
+    color: gray;
   }
 
-  &:not(.selected) {
-    cursor: pointer;
-    &:hover {
-      background: ${Colors.evenPalerYellow};
+  &:not(.disabled) {
+    &.selected {
+      background: ${Colors.darkYellow};
+      color: ${Colors.paleBlue};
+    }
+
+    &:not(.selected) {
+      cursor: pointer;
+      &:hover {
+        background: ${Colors.evenPalerYellow};
+      }
     }
   }
 `;
@@ -146,23 +154,30 @@ interface OptionListProps<OptionIdType> {
   optionGroupId: string;
   options: { id: OptionIdType; label: string }[];
   optionState: [OptionIdType, (newOption: OptionIdType) => void];
+  disabled?: boolean;
 }
 const OptionList = <OptionIdType extends unknown>({
   optionGroupId,
   options,
   optionState: [activeOption, setActiveOption],
+  disabled,
 }: OptionListProps<OptionIdType>) => (
   <OptionListContainer>
     {options.map(({ id, label }) => {
       const elementId = `${optionGroupId}+${id}`;
       return (
-        <OptionListOption htmlFor={elementId} key={elementId} className={activeOption === id ? "selected" : ""}>
+        <OptionListOption
+          htmlFor={elementId}
+          key={elementId}
+          className={(activeOption === id ? "selected" : "") + " " + (!!disabled ? "disabled" : "")}
+        >
           <OptionListRadio
             type="radio"
             name={optionGroupId}
             id={elementId}
             checked={activeOption === id}
             onChange={() => setActiveOption(id)}
+            disabled={disabled}
           />
           <span>{label}</span>
         </OptionListOption>
