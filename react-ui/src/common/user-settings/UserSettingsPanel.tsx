@@ -1,6 +1,7 @@
 import React, { FC, useState } from "react";
 import styled from "styled-components";
 import { Colors } from "../Colors";
+import { FeatureFlags } from "../feature-flags/feature-flags";
 
 export type GenderingType = "neutral" | "double-notation" | "internal-i" | "gender-symbol";
 export type GenderSymbol = "star" | "colon" | "underscore" | "slash";
@@ -71,30 +72,38 @@ export const UserSettingsPanel: FC<UserSettingsPanelProps> = ({ userSettingsStat
           disabled={userSettings.genderingType !== "gender-symbol"}
         />
         <SettingsExplanation>Beispiel: Nutzer*innen</SettingsExplanation>
-        <SettingsSectionTitle>Grammatikkorrektur</SettingsSectionTitle>
-        <OptionList
-          optionGroupId="grammarCheckEnabled"
-          options={[
-            { id: true, label: "Aktiviert" },
-            { id: false, label: "Deaktiviert" },
-          ]}
-          optionState={[
-            userSettings.grammarCheckEnabled,
-            (grammarCheckEnabled) => setUserSettings((oldSettings) => ({ ...oldSettings, grammarCheckEnabled })),
-          ]}
-        />
-        <SettingsSectionTitle>Rechtschreibkorrektur</SettingsSectionTitle>
-        <OptionList
-          optionGroupId="spellCheckEnabled"
-          options={[
-            { id: true, label: "Aktiviert" },
-            { id: false, label: "Deaktiviert" },
-          ]}
-          optionState={[
-            userSettings.spellCheckEnabled,
-            (spellCheckEnabled) => setUserSettings((oldSettings) => ({ ...userSettings, spellCheckEnabled })),
-          ]}
-        />
+        {FeatureFlags.grammarCheck && (
+          <>
+            <SettingsSectionTitle>Grammatikkorrektur</SettingsSectionTitle>
+            <OptionList
+              optionGroupId="grammarCheckEnabled"
+              options={[
+                { id: true, label: "Aktiviert" },
+                { id: false, label: "Deaktiviert" },
+              ]}
+              optionState={[
+                userSettings.grammarCheckEnabled,
+                (grammarCheckEnabled) => setUserSettings((oldSettings) => ({ ...oldSettings, grammarCheckEnabled })),
+              ]}
+            />
+          </>
+        )}
+        {FeatureFlags.spellCheck && (
+          <>
+            <SettingsSectionTitle>Rechtschreibkorrektur</SettingsSectionTitle>
+            <OptionList
+              optionGroupId="spellCheckEnabled"
+              options={[
+                { id: true, label: "Aktiviert" },
+                { id: false, label: "Deaktiviert" },
+              ]}
+              optionState={[
+                userSettings.spellCheckEnabled,
+                (spellCheckEnabled) => setUserSettings((oldSettings) => ({ ...userSettings, spellCheckEnabled })),
+              ]}
+            />
+          </>
+        )}
         <ConfirmButtonBar>
           <ConfirmButton onClick={() => onConfirmClicked()}>Fertig</ConfirmButton>
         </ConfirmButtonBar>

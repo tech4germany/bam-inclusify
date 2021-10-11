@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import styled from "styled-components";
 import { UserSettingsButton } from "../buttons/Buttons";
 import { Colors } from "../Colors";
+import { FeatureFlags } from "../feature-flags/feature-flags";
 
 interface SummaryBarProps {
   diversityErrorCount: number;
@@ -17,8 +18,8 @@ export const SummaryBar: FC<SummaryBarProps> = ({
   pressedState,
 }) => (
   <SummaryBarContainer>
-    <GrammarSummary grammarErrorCount={grammarErrorCount} />
-    <SpellingSummary spellingErrorCount={spellingErrorCount} />
+    {FeatureFlags.grammarCheck && <GrammarSummary grammarErrorCount={grammarErrorCount} />}
+    {FeatureFlags.spellCheck && <SpellingSummary spellingErrorCount={spellingErrorCount} />}
     <DiversityErrorSummary diversityErrorCount={diversityErrorCount} />
     <UserSettingsButton pressedState={pressedState} />
   </SummaryBarContainer>
