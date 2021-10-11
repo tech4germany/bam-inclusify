@@ -9,6 +9,7 @@ import { ResultsArea } from "../common/results-display/ResultsArea";
 import { mapRuleCategory } from "../common/rule-categories";
 import { splitTextMatch } from "../common/splitTextMatch";
 import { SummaryBar } from "../common/summary-bar/SummaryBar";
+import { UserSettings } from "../common/user-settings/user-settings";
 import { UserSettingsPanel } from "../common/user-settings/UserSettingsPanel";
 import { useUserSettingsState } from "../common/user-settings/UserSettingsStorage";
 import { MainTextArea } from "./MainTextArea";
@@ -20,13 +21,13 @@ export const StandaloneApp: FC = () => {
   const [ltMatches, setLtMatches] = useState<RuleMatch[] | null>(null);
   const [isLoading, setLoading] = useState(false);
   const [isSettingsOpen, setSettingsOpen] = useState(false);
-  const userSettingsState = useUserSettingsState();
+  const [userSettings, setUserSettings] = useUserSettingsState();
 
   const errorCounts = computeErrorCounts(ltMatches || []);
 
   const checkText = async (text: string) => {
     setLoading(true);
-    await checkTextWithApi(text, setLtMatches);
+    await checkTextWithApi(text, setLtMatches, userSettings);
     setLoading(false);
   };
   const submitHandler = () => {
@@ -52,7 +53,7 @@ export const StandaloneApp: FC = () => {
           <ResultsAreaContainer>
             {isSettingsOpen ? (
               <UserSettingsPanel
-                userSettingsState={userSettingsState}
+                userSettingsState={[userSettings, setUserSettings]}
                 onConfirmClicked={() => setSettingsOpen(false)}
               />
             ) : isLoading ? (
@@ -102,12 +103,12 @@ function makeReplacementApplier([inputText, setInputText]: UseState<string>, tri
   };
 }
 
-const checkTextWithApi = async (inputText: string, setLtMatches: Dispatch<SetStateAction<RuleMatch[] | null>>) => {
-  const request = {
-    text: inputText,
-    language: "de-DE-x-diversity-star",
-  };
-  const matches = await new LanguageToolClient().check(request);
+const checkTextWithApi = async (
+  inputText: string,
+  setLtMatches: Dispatch<SetStateAction<RuleMatch[] | null>>,
+  userSettings: UserSettings
+) => {
+  const matches = await new LanguageToolClient().check(inputText, userSettings);
   setLtMatches(matches);
 };
 

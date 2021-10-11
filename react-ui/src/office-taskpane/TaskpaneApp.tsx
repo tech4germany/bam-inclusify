@@ -7,6 +7,7 @@ import { isRunningInOutlook, isRunningInWord } from "../common/office-api-helper
 import { splitTextMatch } from "../common/splitTextMatch";
 import { CheckTextButton } from "../common/buttons/Buttons";
 import { SummaryBar } from "../common/summary-bar/SummaryBar";
+import { UserSettingsStorage } from "../common/user-settings/UserSettingsStorage";
 
 export const TaskpaneApp: FC = () => {
   const [ltMatches, setLtMatches] = useState<RuleMatch[]>([]);
@@ -86,11 +87,7 @@ async function wordClickHandler(
   console.timeEnd("getTextRanges");
 
   console.time("ltCheck");
-  const request = {
-    text: plaintext,
-    language: "de-DE-x-diversity-star",
-  };
-  const matches = await new LanguageToolClient().check(request);
+  const matches = await new LanguageToolClient().check(plaintext, UserSettingsStorage.load());
   setLtMatches(matches);
   console.timeEnd("ltCheck");
 
