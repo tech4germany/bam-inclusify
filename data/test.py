@@ -21,9 +21,7 @@ def test_basic():
 
 def test_mixed():
     # dereko + geschicktgendern + vienna catalog
-    assert_suggestions(
-        "Regisseur", [["Regisseur*in", "Regie", "Regisseurin bzw. Regisseur"]]
-    )
+    assert_suggestions("Regisseur", [["Regisseur*in", "Regie"]])
     # dereko + geschicktgendern
     assert_suggestions("Doktoranden", [["Doktorand*innen", "Promovierende"]])
 
@@ -36,12 +34,10 @@ def test_words_not_recognized_by_morphological_dictionary():
     # Some words like "Beamter" seem not to be recognized by the morphological dictionary.
     # We want to make sure that the rules work at least for the basic form.
     return
-    assert_suggestions(
-        "Beamten", [["Beamt*innen", "Beamten*innen", "Beamtinnen und Beamten"]]
-    )
+    assert_suggestions("Beamten", [["Beamt*innen", "Beamten*innen"]])
     assert_suggestions(
         "Beamter",
-        [["Verbeamtete Person", "Person im Beamtenstatus", "Beamtin bzw. Beamter"]],
+        [["Verbeamtete Person", "Person im Beamtenstatus"]],
     )
     assert_suggestions("Beamte", [["Bedienstete", "Beamtenschaft"]])
 
@@ -56,8 +52,6 @@ def test_words_with_singular():
                 "Ehemensch",
                 "Eheherzperson",
                 "Herzmensch",
-                "Ehefrau bzw. Ehemann",
-                "Ehegattin bzw. Ehegatte",
             ]
         ],
     )
