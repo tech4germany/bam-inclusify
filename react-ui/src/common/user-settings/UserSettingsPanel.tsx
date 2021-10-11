@@ -1,5 +1,6 @@
 import React, { FC, useState } from "react";
 import styled from "styled-components";
+import { Colors } from "../Colors";
 
 type GenderingType = "neutral" | "double-notation" | "internal-i" | "gender-symbol";
 type GenderSymbol = "star" | "colon" | "underscore" | "slash";
@@ -87,7 +88,9 @@ export const UserSettingsPanel: FC = () => {
   );
 };
 
-const UserSettingsPanelContainer = styled.div``;
+const UserSettingsPanelContainer = styled.div`
+  background: white;
+`;
 
 const UserSettingsTitle = styled.h2``;
 
@@ -95,7 +98,49 @@ const DefaultSettingsExplanation = styled.div``;
 
 const SettingsSectionTitle = styled.h3``;
 
-const OptionListContainer = styled.div``;
+const OptionListContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  margin: 1em;
+`;
+
+const OptionListOption = styled.label`
+  display: block;
+  font-size: 13px;
+  padding: 7px;
+  text-align: center;
+  background: ${Colors.paleYellow};
+  color: ${Colors.darkYellow};
+
+  &:first-child {
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+  }
+
+  &:last-child {
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+  }
+
+  &.selected {
+    background: ${Colors.darkYellow};
+    color: ${Colors.paleBlue};
+  }
+
+  &:not(.selected) {
+    cursor: pointer;
+    &:hover {
+      background: ${Colors.evenPalerYellow};
+    }
+  }
+`;
+
+const OptionListRadio = styled.input`
+  opacity: 0;
+  width: 0;
+  height: 0;
+`;
 
 interface OptionListProps<OptionIdType> {
   optionGroupId: string;
@@ -111,16 +156,16 @@ const OptionList = <OptionIdType extends unknown>({
     {options.map(({ id, label }) => {
       const elementId = `${optionGroupId}+${id}`;
       return (
-        <div key={elementId}>
-          <input
+        <OptionListOption htmlFor={elementId} key={elementId} className={activeOption === id ? "selected" : ""}>
+          <OptionListRadio
             type="radio"
             name={optionGroupId}
             id={elementId}
             checked={activeOption === id}
             onChange={() => setActiveOption(id)}
           />
-          <label htmlFor={elementId}>{label}</label>
-        </div>
+          <span>{label}</span>
+        </OptionListOption>
       );
     })}
   </OptionListContainer>
