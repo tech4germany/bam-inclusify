@@ -4,7 +4,10 @@ from helpers import add_to_dict, open_
 from helpers_csv import csvs_to_dict, dict_to_csvs
 from os import path
 from paths import *
+import sys
 from typing import *
+sys.path.insert(0, "retext-equality")
+from create_illness_rules import create_illness_rules
 
 
 def unified_dic() -> Dict[str, Dict[str, List[str]]]:
@@ -30,15 +33,13 @@ def unified_dic() -> Dict[str, Dict[str, List[str]]]:
 
 
 def create_grammars() -> None:
-    custom_xml = ""
-    for custom_file in [
-        path.join("retext-equality", "custom_rules_disability.xml"),
-        path.join("retext-equality", "illness_rules.xml"),
-    ]:
-        custom_xml += open_(custom_file).read()
+    xml = ""
+    xml += '<category id="GENERISCHES_MASKULINUM" name="Generisches Maskulinum">'
+    xml += open_(path.join("custom_rules", "disability.xml")).read()
+    xml += create_illness_rules()
+    xml += "</category>"
     unified_dic_ = unified_dic()
     for code, _, genderfun in gender_languages:
-        xml = custom_xml
         xml += '<category id="GENERISCHES_MASKULINUM" name="Generisches Maskulinum">'
         for key, val in unified_dic_["combined"].items():
             for number in ["sg", "pl"]:
