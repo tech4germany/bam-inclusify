@@ -1,5 +1,7 @@
 import { augmentClientUuid, CheckRequestParameters, CheckResponse, RuleMatch } from "./types";
 
+const maxReplacementsPerRuleMatch = 5;
+
 export class LanguageToolClient {
   private readonly baseUrl: string;
 
@@ -11,7 +13,7 @@ export class LanguageToolClient {
     const response = await this.checkRaw(parameters);
     const matches = (response.matches || []).map((m) => ({
       ...augmentClientUuid(m),
-      replacements: m.replacements.map(augmentClientUuid),
+      replacements: m.replacements.slice(0, maxReplacementsPerRuleMatch).map(augmentClientUuid),
     }));
     return matches;
   }
