@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FeatureFlags } from "../feature-flags/feature-flags";
-import { GenderingTypes, GenderSymbols, UserSettings } from "./UserSettings";
+import { GenderingTypes, GenderSymbols, UserSettings } from "./user-settings";
 
 const UserSettingsStorageId = "inclusify_app_user_settings";
 

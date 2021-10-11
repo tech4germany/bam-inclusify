@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import styled from "styled-components";
 import { Colors } from "../Colors";
 import { FeatureFlags } from "../feature-flags/feature-flags";
-import { GenderingType, GenderSymbol, UserSettings } from "./UserSettings";
+import { GenderingType, GenderSymbol, UserSettings } from "./user-settings";
 
 type OptionListEntryInfo<T> = { id: T; label: string };
 
