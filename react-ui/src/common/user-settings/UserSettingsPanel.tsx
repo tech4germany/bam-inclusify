@@ -18,16 +18,16 @@ const DefaultUserSettings: UserSettings = {
   spellCheckEnabled: false,
 };
 
-type OptionListOption<T> = { id: T; label: string };
+type OptionListEntryInfo<T> = { id: T; label: string };
 
-const genderingTypes: OptionListOption<GenderingType>[] = [
+const genderingTypes: OptionListEntryInfo<GenderingType>[] = [
   { id: "neutral", label: "Neutral" },
   { id: "double-notation", label: "Doppelnennung" },
   { id: "internal-i", label: "Binnen-I" },
   { id: "gender-symbol", label: "Gendersymbol" },
 ];
 
-const genderSymbols: OptionListOption<GenderSymbol>[] = [
+const genderSymbols: OptionListEntryInfo<GenderSymbol>[] = [
   { id: "star", label: "Sternchen" },
   { id: "colon", label: "Doppelpunkt" },
   { id: "underscore", label: "Unterstrich" },
@@ -40,70 +40,102 @@ export const UserSettingsPanel: FC = () => {
   return (
     <UserSettingsPanelContainer>
       <UserSettingsTitle>Einstellungen</UserSettingsTitle>
-      <DefaultSettingsExplanation>
-        Standardeinstellungen basieren auf dem BAM Leitfaden für diversitätsensible Sprache.
-      </DefaultSettingsExplanation>
-      <SettingsSectionTitle>Gendersprache</SettingsSectionTitle>
-      <OptionList
-        optionGroupId="genderingType"
-        options={genderingTypes}
-        optionState={[
-          userSettings.genderingType,
-          (genderingType) => setUserSettings((oldSettings) => ({ ...oldSettings, genderingType })),
-        ]}
-      />
-      <OptionList
-        optionGroupId="genderSymbol"
-        options={genderSymbols}
-        optionState={[
-          userSettings.genderSymbol,
-          (genderSymbol) => setUserSettings((oldSettings) => ({ ...oldSettings, genderSymbol })),
-        ]}
-        disabled={userSettings.genderingType !== "gender-symbol"}
-      />
-      <SettingsSectionTitle>Grammatikkorrektur</SettingsSectionTitle>
-      <OptionList
-        optionGroupId="grammarCheckEnabled"
-        options={[
-          { id: true, label: "Aktiviert" },
-          { id: false, label: "Deaktiviert" },
-        ]}
-        optionState={[
-          userSettings.grammarCheckEnabled,
-          (grammarCheckEnabled) => setUserSettings((oldSettings) => ({ ...oldSettings, grammarCheckEnabled })),
-        ]}
-      />
-      <SettingsSectionTitle>Rechtschreibkorrektur</SettingsSectionTitle>
-      <OptionList
-        optionGroupId="spellCheckEnabled"
-        options={[
-          { id: true, label: "Aktiviert" },
-          { id: false, label: "Deaktiviert" },
-        ]}
-        optionState={[
-          userSettings.spellCheckEnabled,
-          (spellCheckEnabled) => setUserSettings((oldSettings) => ({ ...userSettings, spellCheckEnabled })),
-        ]}
-      />
+      <UserSettingsContent>
+        <DefaultSettingsExplanation>
+          Standardeinstellungen basieren auf dem BAM Leitfaden für diversitätsensible Sprache.
+        </DefaultSettingsExplanation>
+        <SettingsSectionTitle>Gendersprache</SettingsSectionTitle>
+        <OptionList
+          optionGroupId="genderingType"
+          options={genderingTypes}
+          optionState={[
+            userSettings.genderingType,
+            (genderingType) => setUserSettings((oldSettings) => ({ ...oldSettings, genderingType })),
+          ]}
+        />
+        <SettingsExplanation>Beispiel: Nutzende</SettingsExplanation>
+        <OptionList
+          optionGroupId="genderSymbol"
+          options={genderSymbols}
+          optionState={[
+            userSettings.genderSymbol,
+            (genderSymbol) => setUserSettings((oldSettings) => ({ ...oldSettings, genderSymbol })),
+          ]}
+          disabled={userSettings.genderingType !== "gender-symbol"}
+        />
+        <SettingsExplanation>Beispiel: Nutzer*innen</SettingsExplanation>
+        <SettingsSectionTitle>Grammatikkorrektur</SettingsSectionTitle>
+        <OptionList
+          optionGroupId="grammarCheckEnabled"
+          options={[
+            { id: true, label: "Aktiviert" },
+            { id: false, label: "Deaktiviert" },
+          ]}
+          optionState={[
+            userSettings.grammarCheckEnabled,
+            (grammarCheckEnabled) => setUserSettings((oldSettings) => ({ ...oldSettings, grammarCheckEnabled })),
+          ]}
+        />
+        <SettingsSectionTitle>Rechtschreibkorrektur</SettingsSectionTitle>
+        <OptionList
+          optionGroupId="spellCheckEnabled"
+          options={[
+            { id: true, label: "Aktiviert" },
+            { id: false, label: "Deaktiviert" },
+          ]}
+          optionState={[
+            userSettings.spellCheckEnabled,
+            (spellCheckEnabled) => setUserSettings((oldSettings) => ({ ...userSettings, spellCheckEnabled })),
+          ]}
+        />
+      </UserSettingsContent>
     </UserSettingsPanelContainer>
   );
 };
 
 const UserSettingsPanelContainer = styled.div`
   background: white;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 20px 0px 20px 20px;
 `;
 
-const UserSettingsTitle = styled.h2``;
+const UserSettingsTitle = styled.h2`
+  font-size: 20px;
+  font-style: italic;
+  padding: 10px 16px;
+  background: transparent linear-gradient(90deg, ${Colors.mediumYellow} 0%, ${Colors.darkYellow} 100%) 0% 0% no-repeat
+    padding-box;
+  color: white;
+  border-radius: 20px 0px 0px 0px;
+  margin: 0;
+`;
 
-const DefaultSettingsExplanation = styled.div``;
+const UserSettingsContent = styled.div`
+  padding: 10px 14px 16px;
+`;
 
-const SettingsSectionTitle = styled.h3``;
+const DefaultSettingsExplanation = styled.div`
+  font-size: 13px;
+  line-height: 16px;
+  font-style: italic;
+  font-weight: 400;
+  color: ${Colors.darkYellow};
+`;
+
+const SettingsSectionTitle = styled.h3`
+  font-size: 15px;
+  margin: 9px 0;
+`;
+
+const SettingsExplanation = styled.div`
+  font-size: 13px;
+  margin: 9px 0 15px;
+`;
 
 const OptionListContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1px;
-  margin: 1em;
 `;
 
 const OptionListOption = styled.label`
