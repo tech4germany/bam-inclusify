@@ -18,8 +18,8 @@ export const SummaryBar: FC<SummaryBarProps> = ({
   pressedState,
 }) => (
   <SummaryBarContainer>
-    {FeatureFlags.grammarCheck && <GrammarSummary grammarErrorCount={grammarErrorCount} />}
-    {FeatureFlags.spellCheck && <SpellingSummary spellingErrorCount={spellingErrorCount} />}
+    {FeatureFlags.grammarCheckAvailable && <GrammarSummary grammarErrorCount={grammarErrorCount} />}
+    {FeatureFlags.spellCheckAvailable && <SpellingSummary spellingErrorCount={spellingErrorCount} />}
     <DiversityErrorSummary diversityErrorCount={diversityErrorCount} />
     <UserSettingsButton pressedState={pressedState} />
   </SummaryBarContainer>

@@ -1,6 +1,5 @@
+import { FeatureFlags } from "../feature-flags/feature-flags";
 import { augmentClientUuid, CheckRequestParameters, CheckResponse, RuleMatch } from "./types";
-
-const maxReplacementsPerRuleMatch = 5;
 
 export class LanguageToolClient {
   private readonly baseUrl: string;
@@ -13,7 +12,7 @@ export class LanguageToolClient {
     const response = await this.checkRaw(parameters);
     const matches = (response.matches || []).map((m) => ({
       ...augmentClientUuid(m),
-      replacements: m.replacements.slice(0, maxReplacementsPerRuleMatch).map(augmentClientUuid),
+      replacements: m.replacements.slice(0, FeatureFlags.maxReplacementsPerRuleMatch).map(augmentClientUuid),
     }));
     return matches;
   }

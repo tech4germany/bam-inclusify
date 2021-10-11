@@ -15,8 +15,8 @@ export interface UserSettings {
 const DefaultUserSettings: UserSettings = {
   genderingType: "neutral",
   genderSymbol: "star",
-  grammarCheckEnabled: false,
-  spellCheckEnabled: false,
+  grammarCheckEnabled: FeatureFlags.grammarCheckAvailable,
+  spellCheckEnabled: FeatureFlags.spellCheckAvailable,
 };
 
 type OptionListEntryInfo<T> = { id: T; label: string };
@@ -72,7 +72,7 @@ export const UserSettingsPanel: FC<UserSettingsPanelProps> = ({ userSettingsStat
           disabled={userSettings.genderingType !== "gender-symbol"}
         />
         <SettingsExplanation>Beispiel: Nutzer*innen</SettingsExplanation>
-        {FeatureFlags.grammarCheck && (
+        {FeatureFlags.grammarCheckAvailable && (
           <>
             <SettingsSectionTitle>Grammatikkorrektur</SettingsSectionTitle>
             <OptionList
@@ -88,7 +88,7 @@ export const UserSettingsPanel: FC<UserSettingsPanelProps> = ({ userSettingsStat
             />
           </>
         )}
-        {FeatureFlags.spellCheck && (
+        {FeatureFlags.spellCheckAvailable && (
           <>
             <SettingsSectionTitle>Rechtschreibkorrektur</SettingsSectionTitle>
             <OptionList

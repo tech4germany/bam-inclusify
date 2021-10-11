@@ -1,4 +1,5 @@
 export const FeatureFlags = Object.freeze({
-  grammarCheck: true,
-  spellCheck: true,
+  grammarCheckAvailable: true,
+  spellCheckAvailable: true,
+  maxReplacementsPerRuleMatch: 5,
 });
