@@ -1,4 +1,4 @@
-import React, { Dispatch, FC, SetStateAction, useState } from "react";
+import { Dispatch, FC, SetStateAction, useState } from "react";
 import styled from "styled-components";
 import { RuleMatch } from "../common/language-tool-api/types";
 import { ApplyReplacementFunction, ResultsArea } from "../common/results-display/ResultsArea";
@@ -12,6 +12,7 @@ export const TaskpaneApp: FC = () => {
   const [ltMatches, setLtMatches] = useState<RuleMatch[]>([]);
   const [applier, setApplier] = useState<ApplyReplacementFunction>();
   const [isLoading, setLoading] = useState(false);
+  const [isSettingsOpen, setSettingsOpen] = useState(false);
 
   return (
     <div>
@@ -24,7 +25,12 @@ export const TaskpaneApp: FC = () => {
           }}
         />
       </div>
-      <SummaryBar diversityErrorCount={0} grammarErrorCount={0} spellingErrorCount={0} />
+      <SummaryBar
+        diversityErrorCount={0}
+        grammarErrorCount={0}
+        spellingErrorCount={0}
+        pressedState={[isSettingsOpen, setSettingsOpen]}
+      />
 
       {isLoading ? (
         <div>Loading...</div>
@@ -84,8 +90,8 @@ async function wordClickHandler(
     text: plaintext,
     language: "de-DE-x-diversity-star",
   };
-  const content = await new LanguageToolClient().check(request);
-  setLtMatches(content.matches || []);
+  const matches = await new LanguageToolClient().check(request);
+  setLtMatches(matches);
   console.timeEnd("ltCheck");
 
   console.log(startOffsetMap);

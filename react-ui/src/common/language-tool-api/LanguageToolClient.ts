@@ -1,4 +1,4 @@
-import { CheckRequestParameters, CheckResponse } from "./types";
+import { augmentClientUuid, CheckRequestParameters, CheckResponse, RuleMatch } from "./types";
 
 export class LanguageToolClient {
   private readonly baseUrl: string;
@@ -7,7 +7,16 @@ export class LanguageToolClient {
     this.baseUrl = `${host}${baseUri}`;
   }
 
-  async check(parameters: CheckRequestParameters): Promise<CheckResponse> {
+  async check(parameters: CheckRequestParameters): Promise<RuleMatch[]> {
+    const response = await this.checkRaw(parameters);
+    const matches = (response.matches || []).map((m) => ({
+      ...augmentClientUuid(m),
+      replacements: m.replacements.map(augmentClientUuid),
+    }));
+    return matches;
+  }
+
+  async checkRaw(parameters: CheckRequestParameters): Promise<CheckResponse> {
     const body = Object.entries(parameters)
       .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v as any)}`)
       .join("&");

@@ -1,5 +1,6 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import styled from "styled-components";
+import { DownChevronIcon } from "../../icons";
 import { Colors } from "../Colors";
 import { RuleMatch } from "../language-tool-api/types";
 import { mapRuleCategory, RuleMatchCategory } from "../rule-categories";
@@ -29,7 +30,7 @@ const LtMatchesList: FC<{ ltMatches: RuleMatch[]; applyReplacement?: ApplyReplac
   <div>
     {ltMatches.map((ltMatch, idx) => (
       <LtMatch
-        key={idx}
+        key={ltMatch.clientUuid}
         ltMatch={ltMatch}
         applyReplacement={!!applyReplacement ? (m, r) => applyReplacement(m, idx, ltMatches, r) : undefined}
       />
@@ -41,8 +42,11 @@ const LtMatch: FC<{
   ltMatch: RuleMatch;
   applyReplacement?: (ruleMatch: RuleMatch, replacementText: string) => void;
 }> = ({ ltMatch, applyReplacement }) => {
+  const [isExpanded, setExpanded] = useState(false);
+
   const [, matchText] = splitTextMatch(ltMatch.context.text, ltMatch.context.offset, ltMatch.context.length);
   const category = mapRuleCategory(ltMatch);
+
   return (
     <MatchContainer category={category}>
       <MatchTopBar categoryName={ltMatch.rule?.category?.name || ""} />
@@ -50,10 +54,9 @@ const LtMatch: FC<{
         <MatchContextContainer>
           <MatchMatchText>{matchText}</MatchMatchText>
           <ReplacementListContainer>
-            {ltMatch.replacements.map((r, idx) => (
-              <div>
+            {ltMatch.replacements.map((r) => (
+              <div key={r.clientUuid}>
                 <Replacement
-                  key={idx}
                   onClick={isFunction(applyReplacement) ? () => applyReplacement(ltMatch, r.value || "") : undefined}
                 >
                   {r.value}
@@ -62,8 +65,11 @@ const LtMatch: FC<{
             ))}
           </ReplacementListContainer>
         </MatchContextContainer>
-        <MatchRuleExplanation>{ltMatch.message}</MatchRuleExplanation>
-        <MatchActionsBar>mehr anzeigen</MatchActionsBar>
+        <MatchRuleExplanation>{ltMatch.shortMessage}</MatchRuleExplanation>
+        <MatchRuleExplanation hidden={!isExpanded}>{ltMatch.message}</MatchRuleExplanation>
+        <MatchActionsBar>
+          <MatchExpandCollapseToggle expandedState={[isExpanded, setExpanded]} />
+        </MatchActionsBar>
       </MatchContentContainer>
     </MatchContainer>
   );
@@ -126,6 +132,10 @@ const ReplacementItem = styled.button`
   color: white;
   font-weight: 300;
   cursor: ${(props) => (isFunction(props.onClick) ? "pointer" : "initial")};
+
+  &:hover {
+    background: ${Colors.brightGreen};
+  }
 `;
 
 interface MatchContainerProps {
@@ -160,3 +170,28 @@ const MatchRuleExplanation = styled.div`
 const MatchActionsBar = styled.div`
   font-size: 0.5625rem;
 `;
+
+const MatchExpandCollapseToggleContainer = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+`;
+
+const MatchExpandCollapseIcon = styled(DownChevronIcon)`
+  &.isExpanded {
+    transform: rotate(180deg);
+  }
+`;
+const MatchExpandCollapseText = styled.div``;
+
+const MatchExpandCollapseToggle: FC<{ expandedState: [boolean, React.Dispatch<React.SetStateAction<boolean>>] }> = ({
+  expandedState: [isExpanded, setExpanded],
+}) => (
+  <MatchExpandCollapseToggleContainer onClick={() => setExpanded(!isExpanded)}>
+    <MatchExpandCollapseIcon className={isExpanded ? "isExpanded" : ""} />
+    <MatchExpandCollapseText>{isExpanded ? "weniger" : "mehr"} anzeigen</MatchExpandCollapseText>
+  </MatchExpandCollapseToggleContainer>
+);

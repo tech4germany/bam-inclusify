@@ -1,14 +1,26 @@
 import { ChangeEventHandler, FC } from "react";
 import styled from "styled-components";
+import { isFunction } from "../common/type-helpers";
 import { CopyIcon } from "../icons";
 
 export interface MainTextAreaProps {
   onChange: ChangeEventHandler<HTMLTextAreaElement>;
+  onSubmit: () => void;
   value: string;
 }
-export const MainTextArea: FC<MainTextAreaProps> = ({ onChange, value }) => (
+export const MainTextArea: FC<MainTextAreaProps> = ({ onChange, onSubmit, value }) => (
   <MainTextAreaContainer>
-    <TextArea spellCheck={false} autoFocus onChange={onChange} value={value} />
+    <TextArea
+      spellCheck={false}
+      autoFocus
+      onChange={onChange}
+      value={value}
+      onKeyDown={(e) => {
+        if (!e.isDefaultPrevented() && (e.metaKey || e.ctrlKey) && e?.code === "Enter") {
+          isFunction(onSubmit) && onSubmit();
+        }
+      }}
+    />
     <BottomBarContainer>
       <InputLength>
         {value.length.toLocaleString()} / {inputLengthLimit.toLocaleString()}

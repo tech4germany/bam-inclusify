@@ -1,4 +1,4 @@
-import React, { Dispatch, FC, SetStateAction, useState } from "react";
+import { Dispatch, FC, SetStateAction, useState } from "react";
 import styled from "styled-components";
 import { CheckTextButton } from "../common/buttons/Buttons";
 import { FontFamilies } from "../common/Fonts";
@@ -9,6 +9,7 @@ import { ResultsArea } from "../common/results-display/ResultsArea";
 import { mapRuleCategory } from "../common/rule-categories";
 import { splitTextMatch } from "../common/splitTextMatch";
 import { SummaryBar } from "../common/summary-bar/SummaryBar";
+import { UserSettingsPanel } from "../common/user-settings/UserSettingsPanel";
 import { MainTextArea } from "./MainTextArea";
 
 type UseState<S> = [S, Dispatch<SetStateAction<S>>];
@@ -17,31 +18,39 @@ export const StandaloneApp: FC = () => {
   const [inputText, setInputText] = useState("");
   const [ltMatches, setLtMatches] = useState<RuleMatch[] | null>(null);
   const [isLoading, setLoading] = useState(false);
+  const [isSettingsOpen, setSettingsOpen] = useState(false);
+
+  const errorCounts = computeErrorCounts(ltMatches || []);
 
   const checkText = async (text: string) => {
     setLoading(true);
     await checkTextWithApi(text, setLtMatches);
     setLoading(false);
   };
-
-  const errorCounts = computeErrorCounts(ltMatches || []);
+  const submitHandler = () => {
+    if (!isLoading) {
+      checkText(inputText);
+    }
+  };
 
   return (
     <>
       <NavigationBar />
 
       <CenteredContainer>
-        <SummaryBar {...errorCounts} />
+        <SummaryBar pressedState={[isSettingsOpen, setSettingsOpen]} {...errorCounts} />
         <MainAreaContainer>
           <InputAreaContainer>
-            <MainTextArea onChange={(e) => setInputText(e.target.value)} value={inputText} />
+            <MainTextArea onChange={(e) => setInputText(e.target.value)} onSubmit={submitHandler} value={inputText} />
             <ButtonBar>
               <ButtonBarSpacer />
-              <CheckTextButton topCornersFlush onClick={() => checkText(inputText)} />
+              <CheckTextButton topCornersFlush onClick={submitHandler} disabled={isLoading} />
             </ButtonBar>
           </InputAreaContainer>
           <ResultsAreaContainer>
-            {isLoading ? (
+            {isSettingsOpen ? (
+              <UserSettingsPanel />
+            ) : isLoading ? (
               <div>Text wird überprüft...</div>
             ) : ltMatches === null ? (
               <WelcomeMessage />
@@ -93,8 +102,8 @@ const checkTextWithApi = async (inputText: string, setLtMatches: Dispatch<SetSta
     text: inputText,
     language: "de-DE-x-diversity-star",
   };
-  const content = await new LanguageToolClient().check(request);
-  setLtMatches(() => content.matches || []);
+  const matches = await new LanguageToolClient().check(request);
+  setLtMatches(matches);
 };
 
 const ButtonBar = styled.div`
