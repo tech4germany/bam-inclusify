@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FeatureFlags } from "../feature-flags/feature-flags";
-import { UserSettings } from "./UserSettings";
+import { GenderingTypes, GenderSymbols, UserSettings } from "./UserSettings";
 
 const UserSettingsStorageId = "inclusify_app_user_settings";
 
@@ -24,7 +24,16 @@ class UserSettingsStorageService {
 
   private normalize(userSettings: UserSettings): UserSettings {
     const normalizedEntries = Object.keys(DefaultUserSettings).map((k) => [k, (userSettings as any)[k]]);
-    return Object.fromEntries(normalizedEntries) as UserSettings;
+    const normalizedUserSettings = Object.fromEntries(normalizedEntries) as UserSettings;
+    return {
+      ...normalizedUserSettings,
+      genderingType: GenderingTypes.includes(normalizedUserSettings.genderingType)
+        ? normalizedUserSettings.genderingType
+        : DefaultUserSettings.genderingType,
+      genderSymbol: GenderSymbols.includes(normalizedUserSettings.genderSymbol)
+        ? normalizedUserSettings.genderSymbol
+        : DefaultUserSettings.genderSymbol,
+    };
   }
 }
 
