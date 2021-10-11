@@ -9,7 +9,7 @@ import { ResultsArea } from "../common/results-display/ResultsArea";
 import { mapRuleCategory } from "../common/rule-categories";
 import { splitTextMatch } from "../common/splitTextMatch";
 import { SummaryBar } from "../common/summary-bar/SummaryBar";
-import { UserSettingsPanel } from "../common/user-settings/UserSettingsPanel";
+import { UserSettingsPanel, useUserSettingsState } from "../common/user-settings/UserSettingsPanel";
 import { MainTextArea } from "./MainTextArea";
 
 type UseState<S> = [S, Dispatch<SetStateAction<S>>];
@@ -19,6 +19,7 @@ export const StandaloneApp: FC = () => {
   const [ltMatches, setLtMatches] = useState<RuleMatch[] | null>(null);
   const [isLoading, setLoading] = useState(false);
   const [isSettingsOpen, setSettingsOpen] = useState(false);
+  const userSettingsState = useUserSettingsState();
 
   const errorCounts = computeErrorCounts(ltMatches || []);
 
@@ -49,7 +50,10 @@ export const StandaloneApp: FC = () => {
           </InputAreaContainer>
           <ResultsAreaContainer>
             {isSettingsOpen ? (
-              <UserSettingsPanel />
+              <UserSettingsPanel
+                userSettingsState={userSettingsState}
+                onConfirmClicked={() => setSettingsOpen(false)}
+              />
             ) : isLoading ? (
               <div>Text wird überprüft...</div>
             ) : ltMatches === null ? (

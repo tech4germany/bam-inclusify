@@ -2,9 +2,9 @@ import React, { FC, useState } from "react";
 import styled from "styled-components";
 import { Colors } from "../Colors";
 
-type GenderingType = "neutral" | "double-notation" | "internal-i" | "gender-symbol";
-type GenderSymbol = "star" | "colon" | "underscore" | "slash";
-interface UserSettings {
+export type GenderingType = "neutral" | "double-notation" | "internal-i" | "gender-symbol";
+export type GenderSymbol = "star" | "colon" | "underscore" | "slash";
+export interface UserSettings {
   genderingType: GenderingType;
   genderSymbol: GenderSymbol;
   grammarCheckEnabled: boolean;
@@ -34,8 +34,15 @@ const genderSymbols: OptionListEntryInfo<GenderSymbol>[] = [
   { id: "slash", label: "Schrägstrich" },
 ];
 
-export const UserSettingsPanel: FC = () => {
-  const [userSettings, setUserSettings] = useState(DefaultUserSettings);
+type UserSettingsState = [UserSettings, React.Dispatch<React.SetStateAction<UserSettings>>];
+export const useUserSettingsState: () => UserSettingsState = () => useState(DefaultUserSettings);
+
+export interface UserSettingsPanelProps {
+  userSettingsState: UserSettingsState;
+  onConfirmClicked: () => void;
+}
+export const UserSettingsPanel: FC<UserSettingsPanelProps> = ({ userSettingsState, onConfirmClicked }) => {
+  const [userSettings, setUserSettings] = userSettingsState;
 
   return (
     <UserSettingsPanelContainer>
@@ -88,6 +95,9 @@ export const UserSettingsPanel: FC = () => {
             (spellCheckEnabled) => setUserSettings((oldSettings) => ({ ...userSettings, spellCheckEnabled })),
           ]}
         />
+        <ConfirmButtonBar>
+          <ConfirmButton onClick={() => onConfirmClicked()}>Fertig</ConfirmButton>
+        </ConfirmButtonBar>
       </UserSettingsContent>
     </UserSettingsPanelContainer>
   );
@@ -136,6 +146,12 @@ const OptionListContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1px;
+
+  /* border: 1px solid white;
+  border-radius: 7px;
+  &:focus-within {
+    outline: 2px solid ${Colors.darkYellow};
+  } */
 `;
 
 const OptionListOption = styled.label`
@@ -217,3 +233,23 @@ const OptionList = <OptionIdType extends unknown>({
     })}
   </OptionListContainer>
 );
+
+const ConfirmButtonBar = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+`;
+
+const ConfirmButton = styled.button`
+  background: ${Colors.darkYellow};
+  border-radius: 5px;
+  font-weight: 400;
+  font-size: 13px;
+  color: white;
+  border: none;
+  padding: 7px 14px;
+
+  &:hover {
+    background: ${Colors.mediumYellow};
+  }
+`;
