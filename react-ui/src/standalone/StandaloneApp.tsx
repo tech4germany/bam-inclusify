@@ -9,8 +9,8 @@ import { ResultsArea } from "../common/results-display/ResultsArea";
 import { mapRuleCategory } from "../common/rule-categories";
 import { splitTextMatch } from "../common/splitTextMatch";
 import { SummaryBar } from "../common/summary-bar/SummaryBar";
-import { useUserSettingsState } from "../common/user-settings/UserSettings";
 import { UserSettingsPanel } from "../common/user-settings/UserSettingsPanel";
+import { useUserSettingsState } from "../common/user-settings/UserSettingsStorage";
 import { MainTextArea } from "./MainTextArea";
 
 type UseState<S> = [S, Dispatch<SetStateAction<S>>];

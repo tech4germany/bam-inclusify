@@ -21,7 +21,7 @@ const genderSymbols: OptionListEntryInfo<GenderSymbol>[] = [
 ];
 
 export interface UserSettingsPanelProps {
-  userSettingsState: [UserSettings, React.Dispatch<React.SetStateAction<UserSettings>>];
+  userSettingsState: [UserSettings, (setState: (prevState: UserSettings) => UserSettings) => void];
   onConfirmClicked: () => void;
 }
 export const UserSettingsPanel: FC<UserSettingsPanelProps> = ({ userSettingsState, onConfirmClicked }) => {
