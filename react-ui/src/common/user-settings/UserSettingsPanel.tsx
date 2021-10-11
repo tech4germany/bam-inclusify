@@ -1,23 +1,8 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
 import { Colors } from "../Colors";
 import { FeatureFlags } from "../feature-flags/feature-flags";
-
-export type GenderingType = "neutral" | "double-notation" | "internal-i" | "gender-symbol";
-export type GenderSymbol = "star" | "colon" | "underscore" | "slash";
-export interface UserSettings {
-  genderingType: GenderingType;
-  genderSymbol: GenderSymbol;
-  grammarCheckEnabled: boolean;
-  spellCheckEnabled: boolean;
-}
-
-const DefaultUserSettings: UserSettings = {
-  genderingType: "neutral",
-  genderSymbol: "star",
-  grammarCheckEnabled: FeatureFlags.grammarCheckAvailable,
-  spellCheckEnabled: FeatureFlags.spellCheckAvailable,
-};
+import { GenderingType, GenderSymbol, UserSettings } from "./UserSettings";
 
 type OptionListEntryInfo<T> = { id: T; label: string };
 
@@ -35,11 +20,8 @@ const genderSymbols: OptionListEntryInfo<GenderSymbol>[] = [
   { id: "slash", label: "Schrägstrich" },
 ];
 
-type UserSettingsState = [UserSettings, React.Dispatch<React.SetStateAction<UserSettings>>];
-export const useUserSettingsState: () => UserSettingsState = () => useState(DefaultUserSettings);
-
 export interface UserSettingsPanelProps {
-  userSettingsState: UserSettingsState;
+  userSettingsState: [UserSettings, React.Dispatch<React.SetStateAction<UserSettings>>];
   onConfirmClicked: () => void;
 }
 export const UserSettingsPanel: FC<UserSettingsPanelProps> = ({ userSettingsState, onConfirmClicked }) => {
