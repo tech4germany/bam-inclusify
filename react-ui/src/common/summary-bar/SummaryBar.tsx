@@ -48,6 +48,8 @@ const SummaryCountCircle = styled.div`
 const SummaryText = styled.div`
   color: white;
   font-size: 12px;
+  text-align: center;
+  flex-grow: 1;
 `;
 
 const BaseSummaryContainer = styled.div`
@@ -58,8 +60,9 @@ const BaseSummaryContainer = styled.div`
   box-shadow: 0px 3px 6px #00000029;
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 3px 12px 3px 7px;
+  gap: 5px;
+  padding: 3px 7px;
+  min-width: 135px;
 `;
 
 const GrammarSummaryContainer = styled(BaseSummaryContainer)`
