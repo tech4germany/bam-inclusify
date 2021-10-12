@@ -23,7 +23,7 @@ export const MainTextArea: FC<MainTextAreaProps> = ({ onChange, onSubmit, value 
     />
     <BottomBarContainer>
       <InputLength>
-        {value.length.toLocaleString()} / {inputLengthLimit.toLocaleString()}
+        {value.length.toLocaleString("de-DE")} / {inputLengthLimit.toLocaleString("de-DE")}
       </InputLength>
       <BottomBarSpacer />
       <CopyTextButton title="Text kopieren" onClick={() => navigator.clipboard.writeText(value)}>
