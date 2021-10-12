@@ -32,6 +32,7 @@ export const StandaloneApp: FC = () => {
   };
   const submitHandler = () => {
     if (!isLoading) {
+      setSettingsOpen(false);
       checkText(inputText);
     }
   };
