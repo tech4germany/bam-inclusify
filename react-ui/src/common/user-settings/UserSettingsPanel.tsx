@@ -16,8 +16,7 @@ const genderingTypes: OptionListEntryInfo<GenderingType>[] = [
 const genderSymbols: OptionListEntryInfo<GenderSymbol>[] = [
   { id: "star", label: "Sternchen" },
   { id: "colon", label: "Doppelpunkt" },
-  { id: "underscore", label: "Unterstrich" },
-  { id: "slash", label: "Schrägstrich" },
+  { id: "underscore", label: "Eigene" },
 ];
 
 export interface UserSettingsPanelProps {
@@ -45,8 +44,7 @@ export const UserSettingsPanel: FC<UserSettingsPanelProps> = ({ userSettingsStat
                 (genderingType) => setUserSettings((oldSettings) => ({ ...oldSettings, genderingType })),
               ]}
             />
-            <SettingsExplanation>Beispiel: Nutzende</SettingsExplanation>
-            <OptionList
+            <HorizontalOptionList
               optionGroupId="genderSymbol"
               options={genderSymbols}
               optionState={[
@@ -149,24 +147,26 @@ const OptionListContainer = styled.div`
     outline: 2px solid ${Colors.darkYellow};
   } */
 `;
+const HorizontalOptionListContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 1px;
+  margin-top: 10px;
 
-const OptionListOption = styled.label`
+  /* border: 1px solid white;
+  border-radius: 7px;
+  &:focus-within {
+    outline: 2px solid ${Colors.darkYellow};
+  } */
+`;
+
+const BaseOptionListOption = styled.label`
   display: block;
   font-size: 13px;
   padding: 7px;
   text-align: center;
   background: ${Colors.paleYellow};
   color: ${Colors.darkYellow};
-
-  &:first-child {
-    border-top-left-radius: 7px;
-    border-top-right-radius: 7px;
-  }
-
-  &:last-child {
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-  }
 
   &.disabled {
     background: #eeeeee;
@@ -185,6 +185,31 @@ const OptionListOption = styled.label`
         background: ${Colors.evenPalerYellow};
       }
     }
+  }
+`;
+
+const OptionListOption = styled(BaseOptionListOption)`
+  &:first-child {
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+  }
+
+  &:last-child {
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+  }
+`;
+const HorizontalOptionListOption = styled(BaseOptionListOption)`
+  flex-grow: 1;
+  flex-basis: 0;
+  &:first-child {
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+  }
+
+  &:last-child {
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
   }
 `;
 
@@ -228,6 +253,35 @@ const OptionList = <OptionIdType extends unknown>({
       );
     })}
   </OptionListContainer>
+);
+const HorizontalOptionList = <OptionIdType extends unknown>({
+  optionGroupId,
+  options,
+  optionState: [activeOption, setActiveOption],
+  disabled,
+}: OptionListProps<OptionIdType>) => (
+  <HorizontalOptionListContainer>
+    {options.map(({ id, label }) => {
+      const elementId = `${optionGroupId}+${id}`;
+      return (
+        <HorizontalOptionListOption
+          htmlFor={elementId}
+          key={elementId}
+          className={(activeOption === id ? "selected" : "") + " " + (!!disabled ? "disabled" : "")}
+        >
+          <OptionListRadio
+            type="radio"
+            name={optionGroupId}
+            id={elementId}
+            checked={activeOption === id}
+            onChange={() => setActiveOption(id)}
+            disabled={disabled}
+          />
+          <span>{label}</span>
+        </HorizontalOptionListOption>
+      );
+    })}
+  </HorizontalOptionListContainer>
 );
 
 const ConfirmButtonBar = styled.div`
