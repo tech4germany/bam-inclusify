@@ -7,6 +7,7 @@ import { languageToolDir, reactUiDir } from "./utils/paths";
 
 async function main() {
   await execPiped({ command: DEVCMD_COMMAND, args: ["build-react-app"] });
+  await execPiped({ command: DEVCMD_COMMAND, args: ["prepare-languagetool"] });
 
   const warPackageProjectDir = path.join(languageToolDir, "war-package");
   const warPackageReactAppDir = path.join(warPackageProjectDir, "src/main/react-app");
