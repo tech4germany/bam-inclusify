@@ -2,6 +2,7 @@ import { FC, useEffect, useState } from "react";
 import styled from "styled-components";
 import { DefaultFeatureFlags, FeatureFlags, isDebugPanelEnabled } from "../feature-flags/feature-flags";
 import { UserSettings } from "../user-settings/user-settings";
+import { DefaultUserSettings } from "../user-settings/UserSettingsStorage";
 import { newUuidv4 } from "../uuid";
 
 interface HasFeatureFlagsState {
@@ -52,7 +53,6 @@ const DebugPanel: FC<DebugPanelProps> = ({ featureFlagsState, userSettingsState 
   <DebugPanelContainer>
     <DebugPanelHeader>
       <DebugPanelHeading>Feature Flags</DebugPanelHeading>
-      <ResetButton onClick={() => featureFlagsState[1](() => DefaultFeatureFlags)}>Reset</ResetButton>
     </DebugPanelHeader>
 
     <Checkbox
@@ -76,8 +76,16 @@ const DebugPanel: FC<DebugPanelProps> = ({ featureFlagsState, userSettingsState 
     >
       Max Vorschläge pro Regel-Match
     </NumberInput>
-    <SettingsImportExport label="Feature Flags Import/Export" settingsState={featureFlagsState} />
-    <SettingsImportExport label="User Settings Import/Export" settingsState={userSettingsState} />
+    <SettingsImportExport
+      label="Feature Flags Import/Export"
+      settingsState={featureFlagsState}
+      defaultSettings={DefaultFeatureFlags}
+    />
+    <SettingsImportExport
+      label="User Settings Import/Export"
+      settingsState={userSettingsState}
+      defaultSettings={DefaultUserSettings}
+    />
   </DebugPanelContainer>
 );
 
@@ -163,15 +171,20 @@ const SettingsImportExportInput = styled.input`
     border: 1px solid red;
   }
 `;
-const SettingsImportExportSetButton = styled.button`
+const SettingsImportExportButton = styled.button`
   padding: 2px 5px;
 `;
 
 interface SettingsImportExportProps<T> {
   label: string;
   settingsState: [T, (setState: (prevState: T) => T) => void];
+  defaultSettings: T;
 }
-function SettingsImportExport<T>({ settingsState: [settings, setSettings], label }: SettingsImportExportProps<T>) {
+function SettingsImportExport<T>({
+  settingsState: [settings, setSettings],
+  label,
+  defaultSettings,
+}: SettingsImportExportProps<T>) {
   const [json, setJson] = useState(JSON.stringify(settings));
   const [isError, setError] = useState(false);
 
@@ -185,7 +198,7 @@ function SettingsImportExport<T>({ settingsState: [settings, setSettings], label
           value={json}
           onChange={(e) => setJson(e.target.value)}
         />
-        <SettingsImportExportSetButton
+        <SettingsImportExportButton
           onClick={() => {
             try {
               const newSettings = JSON.parse(json);
@@ -198,7 +211,10 @@ function SettingsImportExport<T>({ settingsState: [settings, setSettings], label
           }}
         >
           Import
-        </SettingsImportExportSetButton>
+        </SettingsImportExportButton>
+        <SettingsImportExportButton onClick={() => setSettings(() => defaultSettings)}>
+          Reset
+        </SettingsImportExportButton>
       </SettingsImportExportInputRow>
     </SettingsImportExportContainer>
   );

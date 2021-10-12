@@ -5,12 +5,12 @@ import { GenderingTypes, GenderSymbols, UserSettings } from "./user-settings";
 
 const UserSettingsStorageId = "inclusify_app_user_settings";
 
-const DefaultUserSettings: UserSettings = {
+export const DefaultUserSettings: UserSettings = Object.freeze({
   genderingType: "neutral",
   genderSymbol: "star",
   grammarCheckEnabled: DefaultFeatureFlags.grammarCheckAvailable,
   spellCheckEnabled: DefaultFeatureFlags.spellCheckAvailable,
-};
+});
 
 export const UserSettingsStorage = new LocalStorageService(UserSettingsStorageId, DefaultUserSettings, {
   genderingType: (gt) => (GenderingTypes.includes(gt) ? gt : DefaultUserSettings.genderingType),
