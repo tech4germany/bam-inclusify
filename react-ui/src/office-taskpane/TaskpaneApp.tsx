@@ -105,11 +105,7 @@ async function wordClickHandler(
   console.timeEnd("getTextRanges");
 
   console.time("ltCheck");
-  const matches = await new LanguageToolClient().check(
-    plaintext,
-    UserSettingsStorage.load(),
-    DefaultFeatureFlags.maxReplacementsPerRuleMatch
-  );
+  const matches = await new LanguageToolClient().check(plaintext, UserSettingsStorage.load());
   setLtMatches(matches);
   console.timeEnd("ltCheck");
 

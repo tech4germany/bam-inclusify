@@ -2,6 +2,7 @@ import React, { FC, useState } from "react";
 import styled from "styled-components";
 import { DownChevronIcon } from "../../icons";
 import { Colors } from "../Colors";
+import { FeatureFlagsContext } from "../feature-flags/feature-flags";
 import { RuleMatch } from "../language-tool-api/types";
 import { mapRuleCategory, RuleMatchCategory } from "../rule-categories";
 import { splitTextMatch } from "../splitTextMatch";
@@ -59,17 +60,23 @@ const LtMatch: FC<{
       <MatchContentContainer>
         <MatchContextContainer>
           <MatchMatchText>{matchText}</MatchMatchText>
-          <ReplacementListContainer>
-            {ltMatch.replacements.map((r) => (
-              <div key={r.clientUuid}>
-                <Replacement
-                  onClick={isFunction(applyReplacement) ? () => applyReplacement(ltMatch, r.value || "") : undefined}
-                >
-                  {r.value}
-                </Replacement>
-              </div>
-            ))}
-          </ReplacementListContainer>
+          <FeatureFlagsContext.Consumer>
+            {(featureFlags) => (
+              <ReplacementListContainer>
+                {ltMatch.replacements.slice(0, featureFlags.maxReplacementsPerRuleMatch).map((r) => (
+                  <div key={r.clientUuid}>
+                    <Replacement
+                      onClick={
+                        isFunction(applyReplacement) ? () => applyReplacement(ltMatch, r.value || "") : undefined
+                      }
+                    >
+                      {r.value}
+                    </Replacement>
+                  </div>
+                ))}
+              </ReplacementListContainer>
+            )}
+          </FeatureFlagsContext.Consumer>
         </MatchContextContainer>
         <MatchRuleExplanation>{ltMatch.shortMessage}</MatchRuleExplanation>
         <MatchRuleExplanation hidden={!isExpanded}>{ltMatch.message}</MatchRuleExplanation>

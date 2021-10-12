@@ -9,11 +9,11 @@ export class LanguageToolClient {
     this.baseUrl = `${host}${baseUri}`;
   }
 
-  async check(text: string, userSettings: UserSettings, maxReplacementsPerRuleMatch: number): Promise<RuleMatch[]> {
+  async check(text: string, userSettings: UserSettings): Promise<RuleMatch[]> {
     const response = await this.checkRaw({ text, language: mapUserSettingsToLanguage(userSettings) });
     const matches = (response.matches || []).map((m) => ({
       ...augmentClientUuid(m),
-      replacements: m.replacements.slice(0, maxReplacementsPerRuleMatch).map(augmentClientUuid),
+      replacements: m.replacements.map(augmentClientUuid),
     }));
     return matches;
   }

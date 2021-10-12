@@ -31,11 +31,7 @@ export const StandaloneApp: FC = () => {
 
   const checkText = async (text: string) => {
     setLoading(true);
-    const matches = await new LanguageToolClient().check(
-      inputText,
-      userSettings,
-      featureFlags.maxReplacementsPerRuleMatch
-    );
+    const matches = await new LanguageToolClient().check(inputText, userSettings);
     setLtMatches(matches);
     setLoading(false);
   };
