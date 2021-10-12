@@ -4,8 +4,8 @@ import { LocalStorageService } from "../local-storage/LocalStorageService";
 export const isDebugPanelEnabled = true;
 
 export const DefaultFeatureFlags = Object.freeze({
-  grammarCheckAvailable: true,
-  spellCheckAvailable: true,
+  grammarCheckAvailable: false,
+  spellCheckAvailable: false,
   maxReplacementsPerRuleMatch: 5,
 });
 

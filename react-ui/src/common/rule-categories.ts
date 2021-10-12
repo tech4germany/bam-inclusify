@@ -6,8 +6,8 @@ export function mapRuleCategory(ruleMatch: RuleMatch): RuleMatchCategory {
   return mapRuleCategoryId(ruleMatch.rule?.category.id);
 }
 
-const diversityRuleCategories = ["GENERISCHES_MASKULINUM", "BEHINDERUNG"];
-const spellingRuleCategories = [
+export const diversityRuleCategories = ["GENERISCHES_MASKULINUM", "BEHINDERUNG"];
+export const spellingRuleCategories = [
   "TYPOS",
   "EMPFOHLENE_RECHTSCHREIBUNG",
   "PROPER_NOUNS",
@@ -16,7 +16,7 @@ const spellingRuleCategories = [
   "CORRESPONDENCE",
   "CASING",
 ];
-const grammarRuleCategories = [
+export const grammarRuleCategories = [
   "SEMANTICS",
   "REDUNDANCY",
   "COLLOQUIALISMS",

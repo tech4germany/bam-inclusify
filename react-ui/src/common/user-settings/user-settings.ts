@@ -1,3 +1,5 @@
+import { FeatureFlags } from "../feature-flags/feature-flags";
+
 const genderingTypes = ["neutral", "double-notation", "internal-i", "gender-symbol"] as const;
 export type GenderingType = typeof genderingTypes[number];
 export const GenderingTypes = Object.freeze(genderingTypes);
@@ -11,4 +13,10 @@ export interface UserSettings {
   genderSymbol: GenderSymbol;
   grammarCheckEnabled: boolean;
   spellCheckEnabled: boolean;
+}
+export function isSpellCheckOn(userSettings: UserSettings, featureFlags: FeatureFlags): boolean {
+  return userSettings.spellCheckEnabled && featureFlags.spellCheckAvailable;
+}
+export function isGrammarCheckOn(userSettings: UserSettings, featureFlags: FeatureFlags): boolean {
+  return userSettings.grammarCheckEnabled && featureFlags.grammarCheckAvailable;
 }

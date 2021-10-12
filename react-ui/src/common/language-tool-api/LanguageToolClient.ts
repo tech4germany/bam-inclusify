@@ -1,4 +1,6 @@
-import { UserSettings } from "../user-settings/user-settings";
+import { FeatureFlags } from "../feature-flags/feature-flags";
+import { diversityRuleCategories, grammarRuleCategories, spellingRuleCategories } from "../rule-categories";
+import { isGrammarCheckOn, isSpellCheckOn, UserSettings } from "../user-settings/user-settings";
 import { augmentClientUuid, CheckRequestParameters, CheckResponse, RuleMatch } from "./types";
 import { mapUserSettingsToLanguage } from "./user-settings-language-mapping";
 
@@ -9,8 +11,17 @@ export class LanguageToolClient {
     this.baseUrl = `${host}${baseUri}`;
   }
 
-  async check(text: string, userSettings: UserSettings): Promise<RuleMatch[]> {
-    const response = await this.checkRaw({ text, language: mapUserSettingsToLanguage(userSettings) });
+  async check(text: string, userSettings: UserSettings, featureFlags: FeatureFlags): Promise<RuleMatch[]> {
+    const enabledRuleCategories = diversityRuleCategories
+      .concat(isGrammarCheckOn(userSettings, featureFlags) ? grammarRuleCategories : [])
+      .concat(isSpellCheckOn(userSettings, featureFlags) ? spellingRuleCategories : []);
+
+    const response = await this.checkRaw({
+      text,
+      language: mapUserSettingsToLanguage(userSettings),
+      enabledOnly: true,
+      enabledCategories: enabledRuleCategories.join(","),
+    });
     const matches = (response.matches || []).map((m) => ({
       ...augmentClientUuid(m),
       replacements: m.replacements.map(augmentClientUuid),

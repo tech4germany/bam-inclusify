@@ -4,9 +4,17 @@ import { DownChevronIcon } from "../../icons";
 import { Colors } from "../Colors";
 import { FeatureFlagsContext } from "../feature-flags/feature-flags";
 import { RuleMatch } from "../language-tool-api/types";
-import { mapRuleCategory, RuleMatchCategory } from "../rule-categories";
+import {
+  diversityRuleCategories,
+  grammarRuleCategories,
+  mapRuleCategory,
+  RuleMatchCategory,
+  spellingRuleCategories,
+} from "../rule-categories";
 import { splitTextMatch } from "../splitTextMatch";
 import { isFunction } from "../type-helpers";
+import { isGrammarCheckOn, isSpellCheckOn } from "../user-settings/user-settings";
+import { UserSettingsContext } from "../user-settings/UserSettingsStorage";
 
 export type ApplyReplacementFunction = (
   ruleMatch: RuleMatch,
@@ -28,15 +36,33 @@ const LtMatchesList: FC<{ ltMatches: RuleMatch[]; applyReplacement?: ApplyReplac
   ltMatches,
   applyReplacement,
 }) => (
-  <LtMatchesListContainer>
-    {ltMatches.map((ltMatch, idx) => (
-      <LtMatch
-        key={ltMatch.clientUuid}
-        ltMatch={ltMatch}
-        applyReplacement={!!applyReplacement ? (m, r) => applyReplacement(m, idx, ltMatches, r) : undefined}
-      />
-    ))}
-  </LtMatchesListContainer>
+  <UserSettingsContext.Consumer>
+    {(userSettings) => (
+      <FeatureFlagsContext.Consumer>
+        {(featureFlags) => {
+          const matchesToShow = ltMatches.filter((m) => {
+            const ruleCategoryId = m.rule?.category?.id || "";
+            return (
+              diversityRuleCategories.includes(ruleCategoryId) ||
+              (isGrammarCheckOn(userSettings, featureFlags) && grammarRuleCategories.includes(ruleCategoryId)) ||
+              (isSpellCheckOn(userSettings, featureFlags) && spellingRuleCategories.includes(ruleCategoryId))
+            );
+          });
+          return (
+            <LtMatchesListContainer>
+              {matchesToShow.map((ltMatch, idx) => (
+                <LtMatch
+                  key={ltMatch.clientUuid}
+                  ltMatch={ltMatch}
+                  applyReplacement={!!applyReplacement ? (m, r) => applyReplacement(m, idx, ltMatches, r) : undefined}
+                />
+              ))}
+            </LtMatchesListContainer>
+          );
+        }}
+      </FeatureFlagsContext.Consumer>
+    )}
+  </UserSettingsContext.Consumer>
 );
 
 const LtMatchesListContainer = styled.div`

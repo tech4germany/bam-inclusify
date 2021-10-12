@@ -7,8 +7,12 @@ import { isRunningInOutlook, isRunningInWord } from "../common/office-api-helper
 import { splitTextMatch } from "../common/splitTextMatch";
 import { CheckTextButton } from "../common/buttons/Buttons";
 import { SummaryBar } from "../common/summary-bar/SummaryBar";
-import { UserSettingsStorage, useUserSettingsState } from "../common/user-settings/UserSettingsStorage";
-import { DefaultFeatureFlags, FeatureFlagsContext, useFeatureFlagsState } from "../common/feature-flags/feature-flags";
+import {
+  UserSettingsContext,
+  UserSettingsStorage,
+  useUserSettingsState,
+} from "../common/user-settings/UserSettingsStorage";
+import { FeatureFlagsContext, FeatureFlagsStorage, useFeatureFlagsState } from "../common/feature-flags/feature-flags";
 import { useDebugPanel } from "../common/debug-panel/DebugPanel";
 import { UserSettingsPanel } from "../common/user-settings/UserSettingsPanel";
 
@@ -24,36 +28,38 @@ export const TaskpaneApp: FC = () => {
 
   return (
     <div>
-      <FeatureFlagsContext.Provider value={featureFlags}>
-        <div>
-          <CheckTextButton
-            onClick={async () => {
-              setLoading(true);
-              await clickHandler(setLtMatches, setApplier);
-              setLoading(false);
-            }}
+      <UserSettingsContext.Provider value={userSettings}>
+        <FeatureFlagsContext.Provider value={featureFlags}>
+          <div>
+            <CheckTextButton
+              onClick={async () => {
+                setLoading(true);
+                await clickHandler(setLtMatches, setApplier);
+                setLoading(false);
+              }}
+            />
+          </div>
+          <SummaryBar
+            diversityErrorCount={0}
+            grammarErrorCount={0}
+            spellingErrorCount={0}
+            pressedState={[isSettingsOpen, setSettingsOpen]}
           />
-        </div>
-        <SummaryBar
-          diversityErrorCount={0}
-          grammarErrorCount={0}
-          spellingErrorCount={0}
-          pressedState={[isSettingsOpen, setSettingsOpen]}
-        />
 
-        {isSettingsOpen ? (
-          <UserSettingsPanel
-            userSettingsState={[userSettings, setUserSettings]}
-            onConfirmClicked={() => setSettingsOpen(false)}
-          />
-        ) : isLoading ? (
-          <div>Loading...</div>
-        ) : (
-          <AddinResultsAreaContainer>
-            <ResultsArea ruleMatches={ltMatches || []} applyReplacement={applier} />
-          </AddinResultsAreaContainer>
-        )}
-      </FeatureFlagsContext.Provider>
+          {isSettingsOpen ? (
+            <UserSettingsPanel
+              userSettingsState={[userSettings, setUserSettings]}
+              onConfirmClicked={() => setSettingsOpen(false)}
+            />
+          ) : isLoading ? (
+            <div>Loading...</div>
+          ) : (
+            <AddinResultsAreaContainer>
+              <ResultsArea ruleMatches={ltMatches || []} applyReplacement={applier} />
+            </AddinResultsAreaContainer>
+          )}
+        </FeatureFlagsContext.Provider>
+      </UserSettingsContext.Provider>
       <DebugPanel
         featureFlagsState={[featureFlags, setFeatureFlags]}
         userSettingsState={[userSettings, setUserSettings]}
@@ -105,7 +111,11 @@ async function wordClickHandler(
   console.timeEnd("getTextRanges");
 
   console.time("ltCheck");
-  const matches = await new LanguageToolClient().check(plaintext, UserSettingsStorage.load());
+  const matches = await new LanguageToolClient().check(
+    plaintext,
+    UserSettingsStorage.load(),
+    FeatureFlagsStorage.load()
+  );
   setLtMatches(matches);
   console.timeEnd("ltCheck");
 

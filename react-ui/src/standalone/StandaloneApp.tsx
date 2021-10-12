@@ -12,7 +12,7 @@ import { mapRuleCategory } from "../common/rule-categories";
 import { splitTextMatch } from "../common/splitTextMatch";
 import { SummaryBar } from "../common/summary-bar/SummaryBar";
 import { UserSettingsPanel } from "../common/user-settings/UserSettingsPanel";
-import { useUserSettingsState } from "../common/user-settings/UserSettingsStorage";
+import { UserSettingsContext, useUserSettingsState } from "../common/user-settings/UserSettingsStorage";
 import { MainTextArea } from "./MainTextArea";
 
 type UseState<S> = [S, Dispatch<SetStateAction<S>>];
@@ -31,7 +31,7 @@ export const StandaloneApp: FC = () => {
 
   const checkText = async (text: string) => {
     setLoading(true);
-    const matches = await new LanguageToolClient().check(inputText, userSettings);
+    const matches = await new LanguageToolClient().check(inputText, userSettings, featureFlags);
     setLtMatches(matches);
     setLoading(false);
   };
@@ -44,39 +44,45 @@ export const StandaloneApp: FC = () => {
 
   return (
     <div>
-      <FeatureFlagsContext.Provider value={featureFlags}>
-        <NavigationBar />
+      <UserSettingsContext.Provider value={userSettings}>
+        <FeatureFlagsContext.Provider value={featureFlags}>
+          <NavigationBar />
 
-        <CenteredContainer>
-          <SummaryBar pressedState={[isSettingsOpen, setSettingsOpen]} {...errorCounts} />
-          <MainAreaContainer>
-            <InputAreaContainer>
-              <MainTextArea onChange={(e) => setInputText(e.target.value)} onSubmit={submitHandler} value={inputText} />
-              <ButtonBar>
-                <ButtonBarSpacer />
-                <CheckTextButton topCornersFlush onClick={submitHandler} disabled={isLoading} />
-              </ButtonBar>
-            </InputAreaContainer>
-            <ResultsAreaContainer>
-              {isSettingsOpen ? (
-                <UserSettingsPanel
-                  userSettingsState={[userSettings, setUserSettings]}
-                  onConfirmClicked={() => setSettingsOpen(false)}
+          <CenteredContainer>
+            <SummaryBar pressedState={[isSettingsOpen, setSettingsOpen]} {...errorCounts} />
+            <MainAreaContainer>
+              <InputAreaContainer>
+                <MainTextArea
+                  onChange={(e) => setInputText(e.target.value)}
+                  onSubmit={submitHandler}
+                  value={inputText}
                 />
-              ) : isLoading ? (
-                <div>Text wird überprüft...</div>
-              ) : ltMatches === null ? (
-                <WelcomeMessage />
-              ) : (
-                <ResultsArea
-                  ruleMatches={ltMatches}
-                  applyReplacement={makeReplacementApplier([inputText, setInputText], checkText)}
-                />
-              )}
-            </ResultsAreaContainer>
-          </MainAreaContainer>
-        </CenteredContainer>
-      </FeatureFlagsContext.Provider>
+                <ButtonBar>
+                  <ButtonBarSpacer />
+                  <CheckTextButton topCornersFlush onClick={submitHandler} disabled={isLoading} />
+                </ButtonBar>
+              </InputAreaContainer>
+              <ResultsAreaContainer>
+                {isSettingsOpen ? (
+                  <UserSettingsPanel
+                    userSettingsState={[userSettings, setUserSettings]}
+                    onConfirmClicked={() => setSettingsOpen(false)}
+                  />
+                ) : isLoading ? (
+                  <div>Text wird überprüft...</div>
+                ) : ltMatches === null ? (
+                  <WelcomeMessage />
+                ) : (
+                  <ResultsArea
+                    ruleMatches={ltMatches}
+                    applyReplacement={makeReplacementApplier([inputText, setInputText], checkText)}
+                  />
+                )}
+              </ResultsAreaContainer>
+            </MainAreaContainer>
+          </CenteredContainer>
+        </FeatureFlagsContext.Provider>
+      </UserSettingsContext.Provider>
       <DebugPanel
         featureFlagsState={[featureFlags, setFeatureFlags]}
         userSettingsState={[userSettings, setUserSettings]}
