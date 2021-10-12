@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { UserSettingsButton } from "../buttons/Buttons";
 import { Colors } from "../Colors";
 import { FeatureFlagsContext } from "../feature-flags/feature-flags";
+import { isGrammarCheckOn, isSpellCheckOn } from "../user-settings/user-settings";
+import { UserSettingsContext } from "../user-settings/UserSettingsStorage";
 
 interface SummaryBarProps {
   diversityErrorCount: number;
@@ -17,16 +19,20 @@ export const SummaryBar: FC<SummaryBarProps> = ({
   spellingErrorCount,
   pressedState,
 }) => (
-  <FeatureFlagsContext.Consumer>
-    {(featureFlags) => (
-      <SummaryBarContainer>
-        {featureFlags.grammarCheckAvailable && <GrammarSummary grammarErrorCount={grammarErrorCount} />}
-        {featureFlags.spellCheckAvailable && <SpellingSummary spellingErrorCount={spellingErrorCount} />}
-        <DiversityErrorSummary diversityErrorCount={diversityErrorCount} />
-        <UserSettingsButton pressedState={pressedState} />
-      </SummaryBarContainer>
+  <UserSettingsContext.Consumer>
+    {(userSettings) => (
+      <FeatureFlagsContext.Consumer>
+        {(featureFlags) => (
+          <SummaryBarContainer>
+            {isGrammarCheckOn(userSettings, featureFlags) && <GrammarSummary grammarErrorCount={grammarErrorCount} />}
+            {isSpellCheckOn(userSettings, featureFlags) && <SpellingSummary spellingErrorCount={spellingErrorCount} />}
+            <DiversityErrorSummary diversityErrorCount={diversityErrorCount} />
+            <UserSettingsButton pressedState={pressedState} />
+          </SummaryBarContainer>
+        )}
+      </FeatureFlagsContext.Consumer>
     )}
-  </FeatureFlagsContext.Consumer>
+  </UserSettingsContext.Consumer>
 );
 
 const SummaryBarContainer = styled.div`
