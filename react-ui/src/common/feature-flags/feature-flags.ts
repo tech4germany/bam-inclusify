@@ -21,8 +21,7 @@ export const useFeatureFlagsState: () => [FeatureFlags, (setState: (prevState: F
     const setFeatureFlagsWithSave = (setState: (prevState: FeatureFlags) => FeatureFlags) =>
       setFeatureFlags((prevFeatureFlags) => {
         const newFeatureFlags = setState(prevFeatureFlags);
-        FeatureFlagsStorage.save(newFeatureFlags);
-        return newFeatureFlags;
+        return FeatureFlagsStorage.save(newFeatureFlags);
       });
     return [featureFlags, setFeatureFlagsWithSave];
   };

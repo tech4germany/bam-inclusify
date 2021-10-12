@@ -7,40 +7,57 @@ import { isRunningInOutlook, isRunningInWord } from "../common/office-api-helper
 import { splitTextMatch } from "../common/splitTextMatch";
 import { CheckTextButton } from "../common/buttons/Buttons";
 import { SummaryBar } from "../common/summary-bar/SummaryBar";
-import { UserSettingsStorage } from "../common/user-settings/UserSettingsStorage";
-import { DefaultFeatureFlags } from "../common/feature-flags/feature-flags";
+import { UserSettingsStorage, useUserSettingsState } from "../common/user-settings/UserSettingsStorage";
+import { DefaultFeatureFlags, FeatureFlagsContext, useFeatureFlagsState } from "../common/feature-flags/feature-flags";
+import { useDebugPanel } from "../common/debug-panel/DebugPanel";
+import { UserSettingsPanel } from "../common/user-settings/UserSettingsPanel";
 
 export const TaskpaneApp: FC = () => {
   const [ltMatches, setLtMatches] = useState<RuleMatch[]>([]);
   const [applier, setApplier] = useState<ApplyReplacementFunction>();
   const [isLoading, setLoading] = useState(false);
   const [isSettingsOpen, setSettingsOpen] = useState(false);
+  const [featureFlags, setFeatureFlags] = useFeatureFlagsState();
+  const [userSettings, setUserSettings] = useUserSettingsState();
+
+  const DebugPanel = useDebugPanel();
 
   return (
     <div>
-      <div>
-        <CheckTextButton
-          onClick={async () => {
-            setLoading(true);
-            await clickHandler(setLtMatches, setApplier);
-            setLoading(false);
-          }}
+      <FeatureFlagsContext.Provider value={featureFlags}>
+        <div>
+          <CheckTextButton
+            onClick={async () => {
+              setLoading(true);
+              await clickHandler(setLtMatches, setApplier);
+              setLoading(false);
+            }}
+          />
+        </div>
+        <SummaryBar
+          diversityErrorCount={0}
+          grammarErrorCount={0}
+          spellingErrorCount={0}
+          pressedState={[isSettingsOpen, setSettingsOpen]}
         />
-      </div>
-      <SummaryBar
-        diversityErrorCount={0}
-        grammarErrorCount={0}
-        spellingErrorCount={0}
-        pressedState={[isSettingsOpen, setSettingsOpen]}
-      />
 
-      {isLoading ? (
-        <div>Loading...</div>
-      ) : (
-        <AddinResultsAreaContainer>
-          <ResultsArea ruleMatches={ltMatches || []} applyReplacement={applier} />
-        </AddinResultsAreaContainer>
-      )}
+        {isSettingsOpen ? (
+          <UserSettingsPanel
+            userSettingsState={[userSettings, setUserSettings]}
+            onConfirmClicked={() => setSettingsOpen(false)}
+          />
+        ) : isLoading ? (
+          <div>Loading...</div>
+        ) : (
+          <AddinResultsAreaContainer>
+            <ResultsArea ruleMatches={ltMatches || []} applyReplacement={applier} />
+          </AddinResultsAreaContainer>
+        )}
+      </FeatureFlagsContext.Provider>
+      <DebugPanel
+        featureFlagsState={[featureFlags, setFeatureFlags]}
+        userSettingsState={[userSettings, setUserSettings]}
+      />
     </div>
   );
 };

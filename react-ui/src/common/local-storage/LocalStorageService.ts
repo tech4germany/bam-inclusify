@@ -13,8 +13,9 @@ export class LocalStorageService<T extends object> {
     return this.normalize(JSON.parse(loadedValue));
   }
 
-  save(value: T): void {
+  save(value: T): T {
     localStorage.setItem(this.storageKey, JSON.stringify(this.normalize(value)));
+    return this.load();
   }
 
   private normalize(value: T): T {

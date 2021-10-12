@@ -23,8 +23,7 @@ export const useUserSettingsState: () => [UserSettings, (setState: (prevState: U
     const setUserSettingsWithSave = (setState: (prevState: UserSettings) => UserSettings) =>
       setUserSettings((prevSettings) => {
         const newSettings = setState(prevSettings);
-        UserSettingsStorage.save(newSettings);
-        return newSettings;
+        return UserSettingsStorage.save(newSettings);
       });
     return [userSettings, setUserSettingsWithSave];
   };

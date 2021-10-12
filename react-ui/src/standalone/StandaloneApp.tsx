@@ -81,7 +81,10 @@ export const StandaloneApp: FC = () => {
           </MainAreaContainer>
         </CenteredContainer>
       </FeatureFlagsContext.Provider>
-      <DebugPanel featureFlagsState={[featureFlags, setFeatureFlags]} />
+      <DebugPanel
+        featureFlagsState={[featureFlags, setFeatureFlags]}
+        userSettingsState={[userSettings, setUserSettings]}
+      />
     </div>
   );
 };
