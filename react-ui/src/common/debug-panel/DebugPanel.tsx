@@ -99,9 +99,6 @@ const DebugPanelHeading = styled.div`
   margin-bottom: 5px 0;
   flex-grow: 1;
 `;
-const ResetButton = styled.button`
-  padding: 3px 5px;
-`;
 
 interface FeatureFlagUpdater<T> {
   valueSelector: (featureFlags: FeatureFlags) => T;

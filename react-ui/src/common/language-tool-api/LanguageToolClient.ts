@@ -1,6 +1,6 @@
 import { FeatureFlags } from "../feature-flags/feature-flags";
 import { diversityRuleCategories, grammarRuleCategories, spellingRuleCategories } from "../rule-categories";
-import { isGrammarCheckOn, isSpellCheckOn, UserSettings } from "../user-settings/user-settings";
+import { UserSettings } from "../user-settings/user-settings";
 import { augmentClientUuid, CheckRequestParameters, CheckResponse, RuleMatch } from "./types";
 import { mapUserSettingsToLanguage } from "./user-settings-language-mapping";
 
@@ -12,9 +12,7 @@ export class LanguageToolClient {
   }
 
   async check(text: string, userSettings: UserSettings, featureFlags: FeatureFlags): Promise<RuleMatch[]> {
-    const enabledRuleCategories = diversityRuleCategories
-      .concat(isGrammarCheckOn(userSettings, featureFlags) ? grammarRuleCategories : [])
-      .concat(isSpellCheckOn(userSettings, featureFlags) ? spellingRuleCategories : []);
+    const enabledRuleCategories = diversityRuleCategories.concat(grammarRuleCategories).concat(spellingRuleCategories);
 
     const response = await this.checkRaw({
       text,
