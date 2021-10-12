@@ -27,7 +27,7 @@ const LtMatchesList: FC<{ ltMatches: RuleMatch[]; applyReplacement?: ApplyReplac
   ltMatches,
   applyReplacement,
 }) => (
-  <div>
+  <LtMatchesListContainer>
     {ltMatches.map((ltMatch, idx) => (
       <LtMatch
         key={ltMatch.clientUuid}
@@ -35,8 +35,14 @@ const LtMatchesList: FC<{ ltMatches: RuleMatch[]; applyReplacement?: ApplyReplac
         applyReplacement={!!applyReplacement ? (m, r) => applyReplacement(m, idx, ltMatches, r) : undefined}
       />
     ))}
-  </div>
+  </LtMatchesListContainer>
 );
+
+const LtMatchesListContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+`;
 
 const LtMatch: FC<{
   ltMatch: RuleMatch;
@@ -145,7 +151,6 @@ const MatchContainer = styled.div<MatchContainerProps>`
   background: white;
   border-radius: 10px;
   box-shadow: 0px 6px 12px #00000029;
-  margin-bottom: 0.8125rem;
   padding: 20px 13px;
   border-left: 16px solid ${(props) => matchCategoryColor(props.category)};
 `;
