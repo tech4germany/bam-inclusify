@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FeatureFlags } from "../feature-flags/feature-flags";
+import { DefaultFeatureFlags } from "../feature-flags/feature-flags";
 import { GenderingTypes, GenderSymbols, UserSettings } from "./user-settings";
 
 const UserSettingsStorageId = "inclusify_app_user_settings";
@@ -7,8 +7,8 @@ const UserSettingsStorageId = "inclusify_app_user_settings";
 const DefaultUserSettings: UserSettings = {
   genderingType: "neutral",
   genderSymbol: "star",
-  grammarCheckEnabled: FeatureFlags.grammarCheckAvailable,
-  spellCheckEnabled: FeatureFlags.spellCheckAvailable,
+  grammarCheckEnabled: DefaultFeatureFlags.grammarCheckAvailable,
+  spellCheckEnabled: DefaultFeatureFlags.spellCheckAvailable,
 };
 
 class UserSettingsStorageService {

@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import styled from "styled-components";
 import { UserSettingsButton } from "../buttons/Buttons";
 import { Colors } from "../Colors";
-import { FeatureFlags } from "../feature-flags/feature-flags";
+import { FeatureFlagsContext } from "../feature-flags/feature-flags";
 
 interface SummaryBarProps {
   diversityErrorCount: number;
@@ -17,12 +17,16 @@ export const SummaryBar: FC<SummaryBarProps> = ({
   spellingErrorCount,
   pressedState,
 }) => (
-  <SummaryBarContainer>
-    {FeatureFlags.grammarCheckAvailable && <GrammarSummary grammarErrorCount={grammarErrorCount} />}
-    {FeatureFlags.spellCheckAvailable && <SpellingSummary spellingErrorCount={spellingErrorCount} />}
-    <DiversityErrorSummary diversityErrorCount={diversityErrorCount} />
-    <UserSettingsButton pressedState={pressedState} />
-  </SummaryBarContainer>
+  <FeatureFlagsContext.Consumer>
+    {(featureFlags) => (
+      <SummaryBarContainer>
+        {featureFlags.grammarCheckAvailable && <GrammarSummary grammarErrorCount={grammarErrorCount} />}
+        {featureFlags.spellCheckAvailable && <SpellingSummary spellingErrorCount={spellingErrorCount} />}
+        <DiversityErrorSummary diversityErrorCount={diversityErrorCount} />
+        <UserSettingsButton pressedState={pressedState} />
+      </SummaryBarContainer>
+    )}
+  </FeatureFlagsContext.Consumer>
 );
 
 const SummaryBarContainer = styled.div`

@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 import { Colors } from "../Colors";
-import { FeatureFlags } from "../feature-flags/feature-flags";
+import { FeatureFlagsContext } from "../feature-flags/feature-flags";
 import { GenderingType, GenderSymbol, UserSettings } from "./user-settings";
 
 type OptionListEntryInfo<T> = { id: T; label: string };
@@ -28,69 +28,74 @@ export const UserSettingsPanel: FC<UserSettingsPanelProps> = ({ userSettingsStat
   const [userSettings, setUserSettings] = userSettingsState;
 
   return (
-    <UserSettingsPanelContainer>
-      <UserSettingsTitle>Einstellungen</UserSettingsTitle>
-      <UserSettingsContent>
-        <DefaultSettingsExplanation>
-          Standardeinstellungen basieren auf dem BAM Leitfaden für diversitätsensible Sprache.
-        </DefaultSettingsExplanation>
-        <SettingsSectionTitle>Gendersprache</SettingsSectionTitle>
-        <OptionList
-          optionGroupId="genderingType"
-          options={genderingTypes}
-          optionState={[
-            userSettings.genderingType,
-            (genderingType) => setUserSettings((oldSettings) => ({ ...oldSettings, genderingType })),
-          ]}
-        />
-        <SettingsExplanation>Beispiel: Nutzende</SettingsExplanation>
-        <OptionList
-          optionGroupId="genderSymbol"
-          options={genderSymbols}
-          optionState={[
-            userSettings.genderSymbol,
-            (genderSymbol) => setUserSettings((oldSettings) => ({ ...oldSettings, genderSymbol })),
-          ]}
-          disabled={userSettings.genderingType !== "gender-symbol"}
-        />
-        <SettingsExplanation>Beispiel: Nutzer*innen</SettingsExplanation>
-        {FeatureFlags.grammarCheckAvailable && (
-          <>
-            <SettingsSectionTitle>Grammatikkorrektur</SettingsSectionTitle>
+    <FeatureFlagsContext.Consumer>
+      {(featureFlags) => (
+        <UserSettingsPanelContainer>
+          <UserSettingsTitle>Einstellungen</UserSettingsTitle>
+          <UserSettingsContent>
+            <DefaultSettingsExplanation>
+              Standardeinstellungen basieren auf dem BAM Leitfaden für diversitätsensible Sprache.
+            </DefaultSettingsExplanation>
+            <SettingsSectionTitle>Gendersprache</SettingsSectionTitle>
             <OptionList
-              optionGroupId="grammarCheckEnabled"
-              options={[
-                { id: true, label: "Aktiviert" },
-                { id: false, label: "Deaktiviert" },
-              ]}
+              optionGroupId="genderingType"
+              options={genderingTypes}
               optionState={[
-                userSettings.grammarCheckEnabled,
-                (grammarCheckEnabled) => setUserSettings((oldSettings) => ({ ...oldSettings, grammarCheckEnabled })),
+                userSettings.genderingType,
+                (genderingType) => setUserSettings((oldSettings) => ({ ...oldSettings, genderingType })),
               ]}
             />
-          </>
-        )}
-        {FeatureFlags.spellCheckAvailable && (
-          <>
-            <SettingsSectionTitle>Rechtschreibkorrektur</SettingsSectionTitle>
+            <SettingsExplanation>Beispiel: Nutzende</SettingsExplanation>
             <OptionList
-              optionGroupId="spellCheckEnabled"
-              options={[
-                { id: true, label: "Aktiviert" },
-                { id: false, label: "Deaktiviert" },
-              ]}
+              optionGroupId="genderSymbol"
+              options={genderSymbols}
               optionState={[
-                userSettings.spellCheckEnabled,
-                (spellCheckEnabled) => setUserSettings((oldSettings) => ({ ...userSettings, spellCheckEnabled })),
+                userSettings.genderSymbol,
+                (genderSymbol) => setUserSettings((oldSettings) => ({ ...oldSettings, genderSymbol })),
               ]}
+              disabled={userSettings.genderingType !== "gender-symbol"}
             />
-          </>
-        )}
-        <ConfirmButtonBar>
-          <ConfirmButton onClick={() => onConfirmClicked()}>Fertig</ConfirmButton>
-        </ConfirmButtonBar>
-      </UserSettingsContent>
-    </UserSettingsPanelContainer>
+            <SettingsExplanation>Beispiel: Nutzer*innen</SettingsExplanation>
+            {featureFlags.grammarCheckAvailable && (
+              <>
+                <SettingsSectionTitle>Grammatikkorrektur</SettingsSectionTitle>
+                <OptionList
+                  optionGroupId="grammarCheckEnabled"
+                  options={[
+                    { id: true, label: "Aktiviert" },
+                    { id: false, label: "Deaktiviert" },
+                  ]}
+                  optionState={[
+                    userSettings.grammarCheckEnabled,
+                    (grammarCheckEnabled) =>
+                      setUserSettings((oldSettings) => ({ ...oldSettings, grammarCheckEnabled })),
+                  ]}
+                />
+              </>
+            )}
+            {featureFlags.spellCheckAvailable && (
+              <>
+                <SettingsSectionTitle>Rechtschreibkorrektur</SettingsSectionTitle>
+                <OptionList
+                  optionGroupId="spellCheckEnabled"
+                  options={[
+                    { id: true, label: "Aktiviert" },
+                    { id: false, label: "Deaktiviert" },
+                  ]}
+                  optionState={[
+                    userSettings.spellCheckEnabled,
+                    (spellCheckEnabled) => setUserSettings((oldSettings) => ({ ...userSettings, spellCheckEnabled })),
+                  ]}
+                />
+              </>
+            )}
+            <ConfirmButtonBar>
+              <ConfirmButton onClick={() => onConfirmClicked()}>Fertig</ConfirmButton>
+            </ConfirmButtonBar>
+          </UserSettingsContent>
+        </UserSettingsPanelContainer>
+      )}
+    </FeatureFlagsContext.Consumer>
   );
 };
 

@@ -8,6 +8,7 @@ import { splitTextMatch } from "../common/splitTextMatch";
 import { CheckTextButton } from "../common/buttons/Buttons";
 import { SummaryBar } from "../common/summary-bar/SummaryBar";
 import { UserSettingsStorage } from "../common/user-settings/UserSettingsStorage";
+import { DefaultFeatureFlags } from "../common/feature-flags/feature-flags";
 
 export const TaskpaneApp: FC = () => {
   const [ltMatches, setLtMatches] = useState<RuleMatch[]>([]);
@@ -87,7 +88,11 @@ async function wordClickHandler(
   console.timeEnd("getTextRanges");
 
   console.time("ltCheck");
-  const matches = await new LanguageToolClient().check(plaintext, UserSettingsStorage.load());
+  const matches = await new LanguageToolClient().check(
+    plaintext,
+    UserSettingsStorage.load(),
+    DefaultFeatureFlags.maxReplacementsPerRuleMatch
+  );
   setLtMatches(matches);
   console.timeEnd("ltCheck");
 
