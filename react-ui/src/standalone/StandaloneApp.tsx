@@ -2,7 +2,7 @@ import { Dispatch, FC, SetStateAction, useState } from "react";
 import styled from "styled-components";
 import { CheckTextButton } from "../common/buttons/Buttons";
 import { useDebugPanel } from "../common/debug-panel/DebugPanel";
-import { DefaultFeatureFlags, FeatureFlagsContext } from "../common/feature-flags/feature-flags";
+import { FeatureFlagsContext, useFeatureFlagsState } from "../common/feature-flags/feature-flags";
 import { FontFamilies } from "../common/Fonts";
 import { LanguageToolClient } from "../common/language-tool-api/LanguageToolClient";
 import { RuleMatch } from "../common/language-tool-api/types";
@@ -22,7 +22,7 @@ export const StandaloneApp: FC = () => {
   const [ltMatches, setLtMatches] = useState<RuleMatch[] | null>(null);
   const [isLoading, setLoading] = useState(false);
   const [isSettingsOpen, setSettingsOpen] = useState(false);
-  const [featureFlags, setFeatureFlags] = useState(DefaultFeatureFlags);
+  const [featureFlags, setFeatureFlags] = useFeatureFlagsState();
   const [userSettings, setUserSettings] = useUserSettingsState();
 
   const DebugPanel = useDebugPanel();
