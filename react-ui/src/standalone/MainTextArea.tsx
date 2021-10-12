@@ -15,6 +15,7 @@ export const MainTextArea: FC<MainTextAreaProps> = ({ onChange, onSubmit, value 
       autoFocus
       onChange={onChange}
       value={value}
+      placeholder="Text einfügen..."
       onKeyDown={(e) => {
         if (!e.isDefaultPrevented() && (e.metaKey || e.ctrlKey) && e?.code === "Enter") {
           isFunction(onSubmit) && onSubmit();
@@ -52,6 +53,11 @@ const TextArea = styled.textarea`
   border: none;
   resize: none;
   height: 30em;
+
+  &::placeholder {
+    font-style: italic;
+    color: #888888;
+  }
 `;
 
 const BottomBarContainer = styled.div`
