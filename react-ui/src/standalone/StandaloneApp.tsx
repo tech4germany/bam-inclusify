@@ -1,6 +1,8 @@
 import { Dispatch, FC, SetStateAction, useState } from "react";
 import styled from "styled-components";
 import { CheckTextButton } from "../common/buttons/Buttons";
+import { useDebugPanel } from "../common/debug-panel/DebugPanel";
+import { FeatureFlagsContext, useFeatureFlagsState } from "../common/feature-flags/feature-flags";
 import { FontFamilies } from "../common/Fonts";
 import { LanguageToolClient } from "../common/language-tool-api/LanguageToolClient";
 import { RuleMatch } from "../common/language-tool-api/types";
@@ -9,7 +11,6 @@ import { ResultsArea } from "../common/results-display/ResultsArea";
 import { mapRuleCategory } from "../common/rule-categories";
 import { splitTextMatch } from "../common/splitTextMatch";
 import { SummaryBar } from "../common/summary-bar/SummaryBar";
-import { UserSettings } from "../common/user-settings/user-settings";
 import { UserSettingsPanel } from "../common/user-settings/UserSettingsPanel";
 import { useUserSettingsState } from "../common/user-settings/UserSettingsStorage";
 import { MainTextArea } from "./MainTextArea";
@@ -21,13 +22,21 @@ export const StandaloneApp: FC = () => {
   const [ltMatches, setLtMatches] = useState<RuleMatch[] | null>(null);
   const [isLoading, setLoading] = useState(false);
   const [isSettingsOpen, setSettingsOpen] = useState(false);
+  const [featureFlags, setFeatureFlags] = useFeatureFlagsState();
   const [userSettings, setUserSettings] = useUserSettingsState();
+
+  const DebugPanel = useDebugPanel();
 
   const errorCounts = computeErrorCounts(ltMatches || []);
 
   const checkText = async (text: string) => {
     setLoading(true);
-    await checkTextWithApi(text, setLtMatches, userSettings);
+    const matches = await new LanguageToolClient().check(
+      inputText,
+      userSettings,
+      featureFlags.maxReplacementsPerRuleMatch
+    );
+    setLtMatches(matches);
     setLoading(false);
   };
   const submitHandler = () => {
@@ -38,39 +47,45 @@ export const StandaloneApp: FC = () => {
   };
 
   return (
-    <>
-      <NavigationBar />
+    <div>
+      <FeatureFlagsContext.Provider value={featureFlags}>
+        <NavigationBar />
 
-      <CenteredContainer>
-        <SummaryBar pressedState={[isSettingsOpen, setSettingsOpen]} {...errorCounts} />
-        <MainAreaContainer>
-          <InputAreaContainer>
-            <MainTextArea onChange={(e) => setInputText(e.target.value)} onSubmit={submitHandler} value={inputText} />
-            <ButtonBar>
-              <ButtonBarSpacer />
-              <CheckTextButton topCornersFlush onClick={submitHandler} disabled={isLoading} />
-            </ButtonBar>
-          </InputAreaContainer>
-          <ResultsAreaContainer>
-            {isSettingsOpen ? (
-              <UserSettingsPanel
-                userSettingsState={[userSettings, setUserSettings]}
-                onConfirmClicked={() => setSettingsOpen(false)}
-              />
-            ) : isLoading ? (
-              <div>Text wird überprüft...</div>
-            ) : ltMatches === null ? (
-              <WelcomeMessage />
-            ) : (
-              <ResultsArea
-                ruleMatches={ltMatches}
-                applyReplacement={makeReplacementApplier([inputText, setInputText], checkText)}
-              />
-            )}
-          </ResultsAreaContainer>
-        </MainAreaContainer>
-      </CenteredContainer>
-    </>
+        <CenteredContainer>
+          <SummaryBar pressedState={[isSettingsOpen, setSettingsOpen]} {...errorCounts} />
+          <MainAreaContainer>
+            <InputAreaContainer>
+              <MainTextArea onChange={(e) => setInputText(e.target.value)} onSubmit={submitHandler} value={inputText} />
+              <ButtonBar>
+                <ButtonBarSpacer />
+                <CheckTextButton topCornersFlush onClick={submitHandler} disabled={isLoading} />
+              </ButtonBar>
+            </InputAreaContainer>
+            <ResultsAreaContainer>
+              {isSettingsOpen ? (
+                <UserSettingsPanel
+                  userSettingsState={[userSettings, setUserSettings]}
+                  onConfirmClicked={() => setSettingsOpen(false)}
+                />
+              ) : isLoading ? (
+                <div>Text wird überprüft...</div>
+              ) : ltMatches === null ? (
+                <WelcomeMessage />
+              ) : (
+                <ResultsArea
+                  ruleMatches={ltMatches}
+                  applyReplacement={makeReplacementApplier([inputText, setInputText], checkText)}
+                />
+              )}
+            </ResultsAreaContainer>
+          </MainAreaContainer>
+        </CenteredContainer>
+      </FeatureFlagsContext.Provider>
+      <DebugPanel
+        featureFlagsState={[featureFlags, setFeatureFlags]}
+        userSettingsState={[userSettings, setUserSettings]}
+      />
+    </div>
   );
 };
 
@@ -103,15 +118,6 @@ function makeReplacementApplier([inputText, setInputText]: UseState<string>, tri
     triggerRecheck(newText);
   };
 }
-
-const checkTextWithApi = async (
-  inputText: string,
-  setLtMatches: Dispatch<SetStateAction<RuleMatch[] | null>>,
-  userSettings: UserSettings
-) => {
-  const matches = await new LanguageToolClient().check(inputText, userSettings);
-  setLtMatches(matches);
-};
 
 const ButtonBar = styled.div`
   display: flex;

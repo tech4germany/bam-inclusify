@@ -1,4 +1,3 @@
-import { FeatureFlags } from "../feature-flags/feature-flags";
 import { UserSettings } from "../user-settings/user-settings";
 import { augmentClientUuid, CheckRequestParameters, CheckResponse, RuleMatch } from "./types";
 import { mapUserSettingsToLanguage } from "./user-settings-language-mapping";
@@ -10,11 +9,11 @@ export class LanguageToolClient {
     this.baseUrl = `${host}${baseUri}`;
   }
 
-  async check(text: string, userSettings: UserSettings): Promise<RuleMatch[]> {
+  async check(text: string, userSettings: UserSettings, maxReplacementsPerRuleMatch: number): Promise<RuleMatch[]> {
     const response = await this.checkRaw({ text, language: mapUserSettingsToLanguage(userSettings) });
     const matches = (response.matches || []).map((m) => ({
       ...augmentClientUuid(m),
-      replacements: m.replacements.slice(0, FeatureFlags.maxReplacementsPerRuleMatch).map(augmentClientUuid),
+      replacements: m.replacements.slice(0, maxReplacementsPerRuleMatch).map(augmentClientUuid),
     }));
     return matches;
   }
