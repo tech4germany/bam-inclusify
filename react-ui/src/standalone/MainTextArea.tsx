@@ -1,4 +1,4 @@
-import { ChangeEventHandler, FC } from "react";
+import { ChangeEventHandler, FC, RefObject } from "react";
 import styled from "styled-components";
 import { isFunction } from "../common/type-helpers";
 import { CopyIcon } from "../icons";
@@ -7,14 +7,16 @@ export interface MainTextAreaProps {
   onChange: ChangeEventHandler<HTMLTextAreaElement>;
   onSubmit: () => void;
   value: string;
+  textAreaRef: RefObject<HTMLTextAreaElement>;
 }
-export const MainTextArea: FC<MainTextAreaProps> = ({ onChange, onSubmit, value }) => (
+export const MainTextArea: FC<MainTextAreaProps> = ({ onChange, onSubmit, value, textAreaRef }) => (
   <MainTextAreaContainer>
     <TextArea
+      ref={textAreaRef}
       spellCheck={false}
       autoFocus
       onChange={onChange}
-      value={value}
+      // value={value}
       placeholder="Text einfügen..."
       onKeyDown={(e) => {
         if (!e.isDefaultPrevented() && (e.metaKey || e.ctrlKey) && e?.code === "Enter") {

@@ -1,4 +1,4 @@
-import { Dispatch, FC, SetStateAction, useState } from "react";
+import { createRef, Dispatch, FC, RefObject, SetStateAction, useRef, useState } from "react";
 import styled from "styled-components";
 import { CheckTextButton } from "../common/buttons/Buttons";
 import { DebugPanel } from "../common/debug-panel/DebugPanel";
@@ -13,9 +13,12 @@ import { splitTextMatch } from "../common/splitTextMatch";
 import { SummaryBar } from "../common/summary-bar/SummaryBar";
 import { UserSettingsPanel } from "../common/user-settings/UserSettingsPanel";
 import { UserSettingsContext, useUserSettingsState } from "../common/user-settings/UserSettingsStorage";
+import { newUuidv4 } from "../common/uuid";
 import { MainTextArea } from "./MainTextArea";
 
 type UseState<S> = [S, Dispatch<SetStateAction<S>>];
+
+const textAreaId = newUuidv4();
 
 export const StandaloneApp: FC = () => {
   const [inputText, setInputText] = useState("");
@@ -24,12 +27,13 @@ export const StandaloneApp: FC = () => {
   const [isSettingsOpen, setSettingsOpen] = useState(false);
   const [featureFlags, setFeatureFlags] = useFeatureFlagsState();
   const [userSettings, setUserSettings] = useUserSettingsState();
+  const textAreaRef = useRef<HTMLTextAreaElement>(null);
 
   const errorCounts = computeErrorCounts(ltMatches || []);
 
   const checkText = async (text: string) => {
     setLoading(true);
-    const matches = await new LanguageToolClient().check(inputText, userSettings, featureFlags);
+    const matches = await new LanguageToolClient().check(text, userSettings, featureFlags);
     setLtMatches(matches);
     setLoading(false);
   };
@@ -51,6 +55,8 @@ export const StandaloneApp: FC = () => {
             <MainAreaContainer>
               <InputAreaContainer>
                 <MainTextArea
+                  key={textAreaId}
+                  textAreaRef={textAreaRef}
                   onChange={(e) => setInputText(e.target.value)}
                   onSubmit={submitHandler}
                   value={inputText}
@@ -73,7 +79,7 @@ export const StandaloneApp: FC = () => {
                 ) : (
                   <ResultsArea
                     ruleMatches={ltMatches}
-                    applyReplacement={makeReplacementApplier([inputText, setInputText], checkText)}
+                    applyReplacement={makeReplacementApplier([inputText, setInputText], checkText, textAreaRef)}
                   />
                 )}
               </ResultsAreaContainer>
@@ -110,11 +116,25 @@ const ResultsAreaContainer = styled.div`
   width: 20rem;
 `;
 
-function makeReplacementApplier([inputText, setInputText]: UseState<string>, triggerRecheck: (text: string) => void) {
+function makeReplacementApplier(
+  [inputText, setInputText]: UseState<string>,
+  triggerRecheck: (text: string) => void,
+  textAreaRef: RefObject<HTMLTextAreaElement>
+) {
   return (ruleMatch: RuleMatch, index: number, allMatches: RuleMatch[], replacementText: string) => {
     const [preMatch, , postMatch] = splitTextMatch(inputText, ruleMatch.offset, ruleMatch.length);
     const newText = preMatch + replacementText + postMatch;
     setInputText(newText);
+    const ta = textAreaRef.current;
+    if (!!ta) {
+      // Note: scrolling selection into view based on https://stackoverflow.com/a/53082182
+      const selectionEnd = preMatch.length + replacementText.length;
+      ta.value = newText.substring(0, selectionEnd);
+      ta.scrollTop = ta.scrollHeight;
+      ta.value = newText;
+      ta.setSelectionRange(preMatch.length, selectionEnd);
+      ta.focus();
+    }
     triggerRecheck(newText);
   };
 }
