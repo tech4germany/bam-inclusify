@@ -23,46 +23,45 @@ export type ApplyReplacementFunction = (
   replacementText: string
 ) => void;
 
-export const ResultsArea: FC<{ ruleMatches: RuleMatch[]; applyReplacement?: ApplyReplacementFunction }> = ({
-  ruleMatches,
-  applyReplacement,
-}) => (
-  <div>
-    <LtMatchesList ltMatches={ruleMatches} applyReplacement={applyReplacement} />
-  </div>
-);
+interface ResultsAreaProps {
+  ruleMatches: RuleMatch[];
+  applyReplacement?: ApplyReplacementFunction;
+  selectRuleMatch?: (ruleMatch: RuleMatch) => void;
+}
 
-const LtMatchesList: FC<{ ltMatches: RuleMatch[]; applyReplacement?: ApplyReplacementFunction }> = ({
-  ltMatches,
-  applyReplacement,
-}) => (
-  <UserSettingsContext.Consumer>
-    {(userSettings) => (
-      <FeatureFlagsContext.Consumer>
-        {(featureFlags) => {
-          const matchesToShow = ltMatches.filter((m) => {
-            const ruleCategoryId = m.rule?.category?.id || "";
+export const ResultsArea: FC<ResultsAreaProps> = ({ ruleMatches, applyReplacement, selectRuleMatch }) => (
+  <div>
+    <UserSettingsContext.Consumer>
+      {(userSettings) => (
+        <FeatureFlagsContext.Consumer>
+          {(featureFlags) => {
+            const matchesToShow = ruleMatches.filter((m) => {
+              const ruleCategoryId = m.rule?.category?.id || "";
+              return (
+                diversityRuleCategories.includes(ruleCategoryId) ||
+                (isGrammarCheckOn(userSettings, featureFlags) && grammarRuleCategories.includes(ruleCategoryId)) ||
+                (isSpellCheckOn(userSettings, featureFlags) && spellingRuleCategories.includes(ruleCategoryId))
+              );
+            });
             return (
-              diversityRuleCategories.includes(ruleCategoryId) ||
-              (isGrammarCheckOn(userSettings, featureFlags) && grammarRuleCategories.includes(ruleCategoryId)) ||
-              (isSpellCheckOn(userSettings, featureFlags) && spellingRuleCategories.includes(ruleCategoryId))
+              <LtMatchesListContainer>
+                {matchesToShow.map((ltMatch, idx) => (
+                  <LtMatch
+                    key={ltMatch.clientUuid}
+                    ltMatch={ltMatch}
+                    applyReplacement={
+                      !!applyReplacement ? (m, r) => applyReplacement(m, idx, ruleMatches, r) : undefined
+                    }
+                    selectRuleMatch={selectRuleMatch}
+                  />
+                ))}
+              </LtMatchesListContainer>
             );
-          });
-          return (
-            <LtMatchesListContainer>
-              {matchesToShow.map((ltMatch, idx) => (
-                <LtMatch
-                  key={ltMatch.clientUuid}
-                  ltMatch={ltMatch}
-                  applyReplacement={!!applyReplacement ? (m, r) => applyReplacement(m, idx, ltMatches, r) : undefined}
-                />
-              ))}
-            </LtMatchesListContainer>
-          );
-        }}
-      </FeatureFlagsContext.Consumer>
-    )}
-  </UserSettingsContext.Consumer>
+          }}
+        </FeatureFlagsContext.Consumer>
+      )}
+    </UserSettingsContext.Consumer>
+  </div>
 );
 
 const LtMatchesListContainer = styled.div`
@@ -71,10 +70,13 @@ const LtMatchesListContainer = styled.div`
   gap: 25px;
 `;
 
-const LtMatch: FC<{
+interface LtMatchProps {
   ltMatch: RuleMatch;
   applyReplacement?: (ruleMatch: RuleMatch, replacementText: string) => void;
-}> = ({ ltMatch, applyReplacement }) => {
+  selectRuleMatch: ((ruleMatch: RuleMatch) => void) | undefined;
+}
+
+const LtMatch: FC<LtMatchProps> = ({ ltMatch, applyReplacement, selectRuleMatch }) => {
   const [isExpanded, setExpanded] = useState(false);
 
   const [, matchText] = splitTextMatch(ltMatch.context.text, ltMatch.context.offset, ltMatch.context.length);
@@ -85,7 +87,9 @@ const LtMatch: FC<{
       <MatchTopBar categoryName={ltMatch.rule?.category?.name || ""} />
       <MatchContentContainer>
         <MatchContextContainer>
-          <MatchMatchText>{matchText}</MatchMatchText>
+          <MatchMatchText onClick={() => isFunction(selectRuleMatch) && selectRuleMatch(ltMatch)}>
+            {matchText}
+          </MatchMatchText>
           <FeatureFlagsContext.Consumer>
             {(featureFlags) => (
               <ReplacementListContainer>
@@ -193,10 +197,16 @@ const MatchContextContainer = styled.div`
   display: flex;
   gap: 15px;
   font-size: 15px;
+  align-items: flex-start;
 `;
 
-const MatchMatchText = styled.span`
+const MatchMatchText = styled.button`
   text-decoration: line-through;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 3px 7px;
 `;
 
 const MatchRuleExplanation = styled.div`

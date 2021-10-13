@@ -1,4 +1,4 @@
-import { createRef, Dispatch, FC, RefObject, SetStateAction, useRef, useState } from "react";
+import { Dispatch, FC, RefObject, SetStateAction, useRef, useState } from "react";
 import styled from "styled-components";
 import { CheckTextButton } from "../common/buttons/Buttons";
 import { DebugPanel } from "../common/debug-panel/DebugPanel";
@@ -80,6 +80,12 @@ export const StandaloneApp: FC = () => {
                   <ResultsArea
                     ruleMatches={ltMatches}
                     applyReplacement={makeReplacementApplier([inputText, setInputText], checkText, textAreaRef)}
+                    selectRuleMatch={(ruleMatch) => {
+                      const ta = textAreaRef.current;
+                      if (!!ta) {
+                        setTextAreaSelection(ta, ruleMatch.offset, ruleMatch.offset + ruleMatch.length);
+                      }
+                    }}
                   />
                 )}
               </ResultsAreaContainer>
@@ -127,16 +133,20 @@ function makeReplacementApplier(
     setInputText(newText);
     const ta = textAreaRef.current;
     if (!!ta) {
-      // Note: scrolling selection into view based on https://stackoverflow.com/a/53082182
-      const selectionEnd = preMatch.length + replacementText.length;
-      ta.value = newText.substring(0, selectionEnd);
-      ta.scrollTop = ta.scrollHeight;
-      ta.value = newText;
-      ta.setSelectionRange(preMatch.length, selectionEnd);
-      ta.focus();
+      setTextAreaSelection(ta, preMatch.length, preMatch.length + replacementText.length);
     }
     triggerRecheck(newText);
   };
+}
+
+function setTextAreaSelection(textArea: HTMLTextAreaElement, selectionStart: number, selectionEnd: number) {
+  // Note: scrolling selection into view based on https://stackoverflow.com/a/53082182
+  const value = textArea.value;
+  textArea.value = value.substring(0, selectionEnd);
+  textArea.scrollTop = textArea.scrollHeight;
+  textArea.value = value;
+  textArea.setSelectionRange(selectionStart, selectionEnd);
+  textArea.focus();
 }
 
 const ButtonBar = styled.div`

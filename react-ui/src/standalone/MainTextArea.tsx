@@ -1,4 +1,4 @@
-import { ChangeEventHandler, FC, RefObject } from "react";
+import { ChangeEventHandler, FC, RefObject, useEffect } from "react";
 import styled from "styled-components";
 import { isFunction } from "../common/type-helpers";
 import { CopyIcon } from "../icons";
@@ -9,32 +9,36 @@ export interface MainTextAreaProps {
   value: string;
   textAreaRef: RefObject<HTMLTextAreaElement>;
 }
-export const MainTextArea: FC<MainTextAreaProps> = ({ onChange, onSubmit, value, textAreaRef }) => (
-  <MainTextAreaContainer>
-    <TextArea
-      ref={textAreaRef}
-      spellCheck={false}
-      autoFocus
-      onChange={onChange}
-      // value={value}
-      placeholder="Text einfügen..."
-      onKeyDown={(e) => {
-        if (!e.isDefaultPrevented() && (e.metaKey || e.ctrlKey) && e?.code === "Enter") {
-          isFunction(onSubmit) && onSubmit();
-        }
-      }}
-    />
-    <BottomBarContainer>
-      <InputLength>
-        {value.length.toLocaleString("de-DE")} / {inputLengthLimit.toLocaleString("de-DE")}
-      </InputLength>
-      <BottomBarSpacer />
-      <CopyTextButton title="Text kopieren" onClick={() => navigator.clipboard.writeText(value)}>
-        <CopyTextButtonIcon />
-      </CopyTextButton>
-    </BottomBarContainer>
-  </MainTextAreaContainer>
-);
+export const MainTextArea: FC<MainTextAreaProps> = ({ onChange, onSubmit, value, textAreaRef }) => {
+  useEffect(() => {
+    textAreaRef.current!.value = value;
+  });
+  return (
+    <MainTextAreaContainer>
+      <TextArea
+        ref={textAreaRef}
+        spellCheck={false}
+        autoFocus
+        onChange={onChange}
+        placeholder="Text einfügen..."
+        onKeyDown={(e) => {
+          if (!e.isDefaultPrevented() && (e.metaKey || e.ctrlKey) && e?.code === "Enter") {
+            isFunction(onSubmit) && onSubmit();
+          }
+        }}
+      />
+      <BottomBarContainer>
+        <InputLength>
+          {value.length.toLocaleString("de-DE")} / {inputLengthLimit.toLocaleString("de-DE")}
+        </InputLength>
+        <BottomBarSpacer />
+        <CopyTextButton title="Text kopieren" onClick={() => navigator.clipboard.writeText(value)}>
+          <CopyTextButtonIcon />
+        </CopyTextButton>
+      </BottomBarContainer>
+    </MainTextAreaContainer>
+  );
+};
 
 const inputLengthLimit = 10000;
 
