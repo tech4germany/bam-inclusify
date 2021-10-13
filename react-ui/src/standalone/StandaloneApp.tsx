@@ -160,12 +160,12 @@ const WelcomeMessageBody = styled.p`
 const WelcomeMessage = () => (
   <WelcomeMessageContainer>
     <WelcomeMessageIntro>
-      Herzlich Willkommen bei INCLUSIFY, deiner Assistentin für diversitätsensible Sprache bei der BAM.
+      Herzlich Willkommen bei INCLUSIFY, deiner Assistentin für diversitätssensible Sprache bei der BAM.
     </WelcomeMessageIntro>
     <WelcomeMessageBody>
-      Prüfe deine Text auf Diversitätslücken. INCLUSIFY ist aktuell basierend auf den Präferenzen des BAM Leitfadens für
-      geschlechtersensible Sprache eingestellt. Wenn du eine anderes Gendersymbol oder ähnliches bevorzugst, kannst du
-      das in den Einstellungen anpassen.
+      Prüfe Deine Texte auf Diversitätslücken. INCLUSIFY ist aktuell basierend auf den Präferenzen des BAM Leitfadens
+      für geschlechtersensible Sprache eingestellt. Wenn Du eine anderes Gendersprache bevorzugst, kannst Du das in den
+      Einstellungen anpassen.
     </WelcomeMessageBody>
   </WelcomeMessageContainer>
 );
