@@ -191,14 +191,14 @@ def build_with_docker() -> None:
     else:
         print("Build target does not yet exist. Building with Docker ...")
         subprocess.run(
-            "docker run --rm --name my-maven-project -v {}:/usr/src/mymaven -v {}/.m2:/root/.m2 -w /usr/src/mymaven maven:3.8-openjdk-8 ./build.sh languagetool-standalone package -DskipTests".format(
+            "docker run --rm --name my-maven-project -v {}:/usr/src/mymaven -v {}/.m2:/root/.m2 -w /usr/src/mymaven maven:3.8-openjdk-8 ./build.sh languagetool-standalone package install -DskipTests".format(
                 path.abspath(languagetool_path), Path.home()
             ).split(
                 " "
             ),
             cwd=languagetool_path,
         )
-        # docker run -it --rm --name my-maven-project -v (pwd):/usr/src/mymaven -v $HOME/.m2:/root/.m2 -w /usr/src/mymaven maven:3.8-openjdk-8 ./build.sh languagetool-standalone package -DskipTests
+        # docker run -it --rm --name my-maven-project -v (pwd):/usr/src/mymaven -v $HOME/.m2:/root/.m2 -w /usr/src/mymaven maven:3.8-openjdk-8 ./build.sh languagetool-standalone package install -DskipTests
 
 
 def start_languagetool():
