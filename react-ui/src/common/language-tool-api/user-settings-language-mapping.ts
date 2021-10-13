@@ -8,10 +8,6 @@ const languageCodes = Object.freeze({
   doubleNotation: genderingVariantsPrefix + "-double",
   internalI: genderingVariantsPrefix + "-internal-i",
   genderStar: genderingVariantsPrefix + "-star",
-  genderColon: genderingVariantsPrefix + "-colon",
-  genderUnderscore: genderingVariantsPrefix + "-underscore",
-  genderSlash: genderingVariantsPrefix + "-slash",
-  genderInterpunct: genderingVariantsPrefix + "-interpunct",
 });
 
 export function mapUserSettingsToLanguage(userSettings: UserSettings): string {
