@@ -8,6 +8,7 @@ const UserSettingsStorageId = "inclusify_app_user_settings";
 export const DefaultUserSettings: UserSettings = Object.freeze({
   genderingType: "neutral",
   genderSymbol: "star",
+  customGenderSymbol: "",
   grammarCheckEnabled: DefaultFeatureFlags.grammarCheckAvailable,
   spellCheckEnabled: DefaultFeatureFlags.spellCheckAvailable,
 });

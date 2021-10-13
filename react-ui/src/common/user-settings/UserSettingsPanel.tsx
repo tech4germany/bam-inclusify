@@ -16,7 +16,7 @@ const genderingTypes: OptionListEntryInfo<GenderingType>[] = [
 const genderSymbols: OptionListEntryInfo<GenderSymbol>[] = [
   { id: "star", label: "Sternchen" },
   { id: "colon", label: "Doppelpunkt" },
-  { id: "underscore", label: "Eigene" },
+  { id: "custom", label: "Eigene" },
 ];
 
 export interface UserSettingsPanelProps {
@@ -56,7 +56,15 @@ export const UserSettingsPanel: FC<UserSettingsPanelProps> = ({ userSettingsStat
             <CustomGenderSymbolInput
               type="text"
               placeholder="Symbol einfügen..."
-              disabled={userSettings.genderingType !== "gender-symbol" || userSettings.genderSymbol !== "underscore"}
+              value={userSettings.customGenderSymbol}
+              minLength={1}
+              maxLength={1}
+              spellCheck={false}
+              autoCorrect="off"
+              disabled={userSettings.genderingType !== "gender-symbol" || userSettings.genderSymbol !== "custom"}
+              onChange={(e) =>
+                setUserSettings((oldSettings) => ({ ...oldSettings, customGenderSymbol: e.target.value }))
+              }
             />
             <SettingsExplanation>Beispiel: Nutzer*innen</SettingsExplanation>
             {featureFlags.grammarCheckAvailable && (

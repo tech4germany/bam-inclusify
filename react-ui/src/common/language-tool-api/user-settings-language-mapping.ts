@@ -23,21 +23,22 @@ export function mapUserSettingsToLanguage(userSettings: UserSettings): string {
     case "internal-i":
       return languageCodes.internalI;
     case "gender-symbol":
-      switch (userSettings.genderSymbol) {
-        case "star":
-          return languageCodes.genderStar;
-        case "colon":
-          return languageCodes.genderColon;
-        case "underscore":
-          return languageCodes.genderUnderscore;
-        case "slash":
-          return languageCodes.genderSlash;
-        default:
-          console.error(`Unmapped gender symbol "${userSettings.genderSymbol}", falling back to gender star`);
-          return languageCodes.genderStar;
-      }
+      return languageCodes.genderStar;
     default:
       console.error(`Unmapped genderingType "${userSettings.genderingType}", falling back to "neutral"`);
       return languageCodes.neutral;
   }
+}
+
+export function mapUserSettingsToReplacementPostProcessing(
+  userSettings: UserSettings
+): (value: string | undefined) => string | undefined {
+  if (userSettings.genderingType !== "gender-symbol") return identity;
+  if (userSettings.genderSymbol === "star") return identity;
+  const customSymbol = userSettings.genderSymbol === "colon" ? ":" : userSettings.customGenderSymbol;
+  return (value) => (typeof value === "string" ? value.replaceAll("*", customSymbol) : value);
+}
+
+function identity(value: string | undefined): string | undefined {
+  return value;
 }

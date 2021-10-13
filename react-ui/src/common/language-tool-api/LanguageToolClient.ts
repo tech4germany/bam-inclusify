@@ -2,7 +2,10 @@ import { FeatureFlags } from "../feature-flags/feature-flags";
 import { diversityRuleCategories, grammarRuleCategories, spellingRuleCategories } from "../rule-categories";
 import { UserSettings } from "../user-settings/user-settings";
 import { augmentClientUuid, CheckRequestParameters, CheckResponse, RuleMatch } from "./types";
-import { mapUserSettingsToLanguage } from "./user-settings-language-mapping";
+import {
+  mapUserSettingsToLanguage,
+  mapUserSettingsToReplacementPostProcessing,
+} from "./user-settings-language-mapping";
 
 export class LanguageToolClient {
   private readonly baseUrl: string;
@@ -20,9 +23,13 @@ export class LanguageToolClient {
       enabledOnly: true,
       enabledCategories: enabledRuleCategories.join(","),
     });
+    const postProcessReplacementValue = mapUserSettingsToReplacementPostProcessing(userSettings);
     const matches = (response.matches || []).map((m) => ({
       ...augmentClientUuid(m),
-      replacements: m.replacements.map(augmentClientUuid),
+      replacements: m.replacements.map((r) => {
+        const augmentedReplacement = augmentClientUuid(r);
+        return { ...augmentedReplacement, value: postProcessReplacementValue(augmentedReplacement.value) };
+      }),
     }));
     return matches;
   }
