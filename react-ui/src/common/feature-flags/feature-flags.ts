@@ -6,6 +6,7 @@ export const isDebugPanelEnabled = true;
 export const DefaultFeatureFlags = Object.freeze({
   grammarCheckAvailable: false,
   spellCheckAvailable: false,
+  allowMultiCharGenderSymbol: false,
   maxReplacementsPerRuleMatch: 5,
 });
 

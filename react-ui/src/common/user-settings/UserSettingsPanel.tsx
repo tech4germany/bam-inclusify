@@ -58,7 +58,7 @@ export const UserSettingsPanel: FC<UserSettingsPanelProps> = ({ userSettingsStat
               placeholder="Symbol einfügen..."
               value={userSettings.customGenderSymbol}
               minLength={1}
-              maxLength={1}
+              maxLength={featureFlags.allowMultiCharGenderSymbol ? undefined : 1}
               spellCheck={false}
               autoCorrect="off"
               disabled={userSettings.genderingType !== "gender-symbol" || userSettings.genderSymbol !== "custom"}

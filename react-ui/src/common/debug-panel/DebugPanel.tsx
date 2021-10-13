@@ -69,6 +69,13 @@ const DebugPanel: FC<DebugPanelProps> = ({ featureFlagsState, userSettingsState 
     >
       Rechtschreibcheck verfügbar
     </Checkbox>
+    <Checkbox
+      featureFlagsState={featureFlagsState}
+      valueSelector={(f) => f.allowMultiCharGenderSymbol}
+      valueUpdater={(g, pf) => ({ ...pf, allowMultiCharGenderSymbol: g })}
+    >
+      Mehr-Zeichen Gender-Symbol erlauben
+    </Checkbox>
     <NumberInput
       featureFlagsState={featureFlagsState}
       valueSelector={(f) => f.maxReplacementsPerRuleMatch}
@@ -105,6 +112,10 @@ interface FeatureFlagUpdater<T> {
   valueUpdater: (newValue: T, prevFeatureFlags: FeatureFlags) => FeatureFlags;
 }
 
+const CheckboxInput = styled.input`
+  margin: 2px 5px;
+`;
+
 interface CheckboxProps extends HasFeatureFlagsState, FeatureFlagUpdater<boolean> {}
 const Checkbox: FC<CheckboxProps> = ({
   children,
@@ -115,7 +126,7 @@ const Checkbox: FC<CheckboxProps> = ({
   const id = newUuidv4();
   return (
     <label htmlFor={id}>
-      <input
+      <CheckboxInput
         id={id}
         type="checkbox"
         checked={valueSelector(featureFlags)}
