@@ -66,7 +66,7 @@ export const UserSettingsPanel: FC<UserSettingsPanelProps> = ({ userSettingsStat
                 setUserSettings((oldSettings) => ({ ...oldSettings, customGenderSymbol: e.target.value }))
               }
             />
-            <SettingsExplanation>Beispiel: Nutzer*innen</SettingsExplanation>
+            <GenderedExample userSettings={userSettingsState[0]} />
             {featureFlags.grammarCheckAvailable && (
               <>
                 <SettingsSectionTitle>Grammatikkorrektur</SettingsSectionTitle>
@@ -144,11 +144,6 @@ const DefaultSettingsExplanation = styled.div`
 const SettingsSectionTitle = styled.h3`
   font-size: 15px;
   margin: 9px 0;
-`;
-
-const SettingsExplanation = styled.div`
-  font-size: 13px;
-  margin: 5px 0 0;
 `;
 
 const OptionListContainer = styled.div`
@@ -338,3 +333,73 @@ const ConfirmButton = styled.button`
     background: ${Colors.mediumYellow};
   }
 `;
+
+const GenderedExampleContainer = styled.div`
+  display: flex;
+  gap: 1ch;
+  font-size: 13px;
+  margin-top: 5px;
+`;
+const GenderedExampleTitle = styled.div`
+  font-weight: 400;
+`;
+const GenderedExampleList = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+const GenderedExamplePair = styled.div``;
+const GenderedExampleBad = styled.span`
+  text-decoration: line-through;
+`;
+const GenderedExampleGood = styled.span`
+  font-style: italic;
+`;
+const GenderedExample: FC<{ userSettings: UserSettings }> = ({ userSettings }) => {
+  const [nutzerGood, kollegenGood] = genderedExamples(userSettings);
+  return (
+    <GenderedExampleContainer>
+      <GenderedExampleTitle>Beispiele:</GenderedExampleTitle>
+      <GenderedExampleList>
+        <GenderedExamplePair>
+          <GenderedExampleBad>Nutzer</GenderedExampleBad> <GenderedExampleGood>{nutzerGood}</GenderedExampleGood>
+        </GenderedExamplePair>
+        <GenderedExamplePair>
+          <GenderedExampleBad>Kollegen</GenderedExampleBad> <GenderedExampleGood>{kollegenGood}</GenderedExampleGood>
+        </GenderedExamplePair>
+      </GenderedExampleList>
+    </GenderedExampleContainer>
+  );
+};
+
+function genderedExamples(userSettings: UserSettings): [string, string] {
+  switch (userSettings.genderingType) {
+    case "double-notation":
+      return ["Nutzerinnen und Nutzer", "Kolleginnen und Kollegen"];
+    case "internal-i":
+      return ["NutzerInnen", "KollegInnen"];
+    case "neutral":
+      return ["Nutzende", "Kollegschaft"];
+    case "gender-symbol": {
+      let genderSymbol: string;
+      switch (userSettings.genderSymbol) {
+        case "star":
+          genderSymbol = "*";
+          break;
+        case "colon":
+          genderSymbol = ":";
+          break;
+        case "custom":
+          genderSymbol = userSettings.customGenderSymbol;
+          break;
+        default:
+          console.error(`Unmapped gender symbol setting ${userSettings.genderSymbol}, falling back to star`);
+          genderSymbol = "*";
+          break;
+      }
+      return [`Nutzer${genderSymbol}innen`, `Kolleg${genderSymbol}innen`];
+    }
+    default:
+      console.error(`Unmapped gendering type "${userSettings.genderingType}", showing neutral example`);
+      return ["Nutzende", "Kollegschaft"];
+  }
+}
