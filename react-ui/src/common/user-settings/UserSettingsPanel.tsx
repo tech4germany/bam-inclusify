@@ -53,6 +53,11 @@ export const UserSettingsPanel: FC<UserSettingsPanelProps> = ({ userSettingsStat
               ]}
               disabled={userSettings.genderingType !== "gender-symbol"}
             />
+            <CustomGenderSymbolInput
+              type="text"
+              placeholder="Symbol einfügen..."
+              disabled={userSettings.genderingType !== "gender-symbol" || userSettings.genderSymbol !== "underscore"}
+            />
             <SettingsExplanation>Beispiel: Nutzer*innen</SettingsExplanation>
             {featureFlags.grammarCheckAvailable && (
               <>
@@ -116,6 +121,8 @@ const UserSettingsTitle = styled.h2`
 
 const UserSettingsContent = styled.div`
   padding: 10px 14px 16px;
+  display: flex;
+  flex-direction: column;
 `;
 
 const DefaultSettingsExplanation = styled.div`
@@ -133,7 +140,7 @@ const SettingsSectionTitle = styled.h3`
 
 const SettingsExplanation = styled.div`
   font-size: 13px;
-  margin: 9px 0 15px;
+  margin: 5px 0 0;
 `;
 
 const OptionListContainer = styled.div`
@@ -283,6 +290,26 @@ const HorizontalOptionList = <OptionIdType extends unknown>({
     })}
   </HorizontalOptionListContainer>
 );
+
+const CustomGenderSymbolInput = styled.input`
+  display: block;
+  background: #f5f4f4;
+  border: none;
+  border-radius: 3px;
+  font-size: 10px;
+  padding: 7px;
+  color: #3a3a3a;
+  margin-top: 10px;
+
+  &::placeholder {
+    font-style: italic;
+    color: #7c7c7c;
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+  }
+`;
 
 const ConfirmButtonBar = styled.div`
   display: flex;
