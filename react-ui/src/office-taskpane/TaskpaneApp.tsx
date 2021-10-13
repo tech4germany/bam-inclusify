@@ -13,7 +13,7 @@ import {
   useUserSettingsState,
 } from "../common/user-settings/UserSettingsStorage";
 import { FeatureFlagsContext, FeatureFlagsStorage, useFeatureFlagsState } from "../common/feature-flags/feature-flags";
-import { useDebugPanel } from "../common/debug-panel/DebugPanel";
+import { DebugPanel } from "../common/debug-panel/DebugPanel";
 import { UserSettingsPanel } from "../common/user-settings/UserSettingsPanel";
 
 export const TaskpaneApp: FC = () => {
@@ -23,8 +23,6 @@ export const TaskpaneApp: FC = () => {
   const [isSettingsOpen, setSettingsOpen] = useState(false);
   const [featureFlags, setFeatureFlags] = useFeatureFlagsState();
   const [userSettings, setUserSettings] = useUserSettingsState();
-
-  const DebugPanel = useDebugPanel();
 
   return (
     <div>

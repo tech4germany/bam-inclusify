@@ -8,34 +8,12 @@ import { newUuidv4 } from "../uuid";
 interface HasFeatureFlagsState {
   featureFlagsState: [FeatureFlags, (setState: (prevState: FeatureFlags) => FeatureFlags) => void];
 }
+interface HasId {
+  id: string;
+}
 
 interface DebugPanelProps extends HasFeatureFlagsState {
   userSettingsState: [UserSettings, (setState: (prevState: UserSettings) => UserSettings) => void];
-}
-
-export function useDebugPanel(): FC<DebugPanelProps> {
-  const [isDebugPanelOpen, setDebugPanelOpen] = useState(false);
-
-  const keyHandler = (e: KeyboardEvent) => {
-    if (e.ctrlKey && e.shiftKey && e.key === "D") {
-      e.preventDefault();
-      setDebugPanelOpen(!isDebugPanelOpen);
-    }
-  };
-  useEffect(() => {
-    if (!isDebugPanelEnabled) return;
-
-    document.body.addEventListener("keypress", keyHandler);
-    return () => {
-      document.body.removeEventListener("keypress", keyHandler);
-    };
-  });
-
-  if (!isDebugPanelEnabled) {
-    return () => null;
-  }
-
-  return (props) => <>{isDebugPanelOpen && <DebugPanel {...props} />}</>;
 }
 
 const DebugPanelContainer = styled.div`
@@ -49,52 +27,82 @@ const DebugPanelContainer = styled.div`
   padding: 2px 5px;
 `;
 
-const DebugPanel: FC<DebugPanelProps> = ({ featureFlagsState, userSettingsState }) => (
-  <DebugPanelContainer>
-    <DebugPanelHeader>
-      <DebugPanelHeading>Feature Flags</DebugPanelHeading>
-    </DebugPanelHeader>
+const inputIds: { [Property in keyof FeatureFlags]: string } = Object.fromEntries(
+  Object.keys(DefaultFeatureFlags).map((k) => [k, newUuidv4()])
+) as any;
 
-    <Checkbox
-      featureFlagsState={featureFlagsState}
-      valueSelector={(f) => f.grammarCheckAvailable}
-      valueUpdater={(g, pf) => ({ ...pf, grammarCheckAvailable: g })}
-    >
-      Grammatikcheck verfügbar
-    </Checkbox>
-    <Checkbox
-      featureFlagsState={featureFlagsState}
-      valueSelector={(f) => f.spellCheckAvailable}
-      valueUpdater={(g, pf) => ({ ...pf, spellCheckAvailable: g })}
-    >
-      Rechtschreibcheck verfügbar
-    </Checkbox>
-    <Checkbox
-      featureFlagsState={featureFlagsState}
-      valueSelector={(f) => f.allowMultiCharGenderSymbol}
-      valueUpdater={(g, pf) => ({ ...pf, allowMultiCharGenderSymbol: g })}
-    >
-      Mehr-Zeichen Gender-Symbol erlauben
-    </Checkbox>
-    <NumberInput
-      featureFlagsState={featureFlagsState}
-      valueSelector={(f) => f.maxReplacementsPerRuleMatch}
-      valueUpdater={(g, pf) => ({ ...pf, maxReplacementsPerRuleMatch: g })}
-    >
-      Max Vorschläge pro Regel-Match
-    </NumberInput>
-    <SettingsImportExport
-      label="Feature Flags Import/Export"
-      settingsState={featureFlagsState}
-      defaultSettings={DefaultFeatureFlags}
-    />
-    <SettingsImportExport
-      label="User Settings Import/Export"
-      settingsState={userSettingsState}
-      defaultSettings={DefaultUserSettings}
-    />
-  </DebugPanelContainer>
-);
+export const DebugPanel: FC<DebugPanelProps> = !isDebugPanelEnabled
+  ? () => null
+  : ({ featureFlagsState, userSettingsState }) => {
+      const [isDebugPanelOpen, setDebugPanelOpen] = useState(false);
+
+      const keyHandler = (e: KeyboardEvent) => {
+        if (e.ctrlKey && e.shiftKey && e.key === "D") {
+          e.preventDefault();
+          setDebugPanelOpen(!isDebugPanelOpen);
+        }
+      };
+      useEffect(() => {
+        if (!isDebugPanelEnabled) return;
+
+        document.body.addEventListener("keypress", keyHandler);
+        return () => {
+          document.body.removeEventListener("keypress", keyHandler);
+        };
+      });
+      if (!isDebugPanelOpen) return null;
+
+      return (
+        <DebugPanelContainer>
+          <DebugPanelHeader>
+            <DebugPanelHeading>Feature Flags</DebugPanelHeading>
+          </DebugPanelHeader>
+
+          <Checkbox
+            id={inputIds.grammarCheckAvailable}
+            featureFlagsState={featureFlagsState}
+            valueSelector={(f) => f.grammarCheckAvailable}
+            valueUpdater={(g, pf) => ({ ...pf, grammarCheckAvailable: g })}
+          >
+            Grammatikcheck verfügbar
+          </Checkbox>
+          <Checkbox
+            id={inputIds.spellCheckAvailable}
+            featureFlagsState={featureFlagsState}
+            valueSelector={(f) => f.spellCheckAvailable}
+            valueUpdater={(g, pf) => ({ ...pf, spellCheckAvailable: g })}
+          >
+            Rechtschreibcheck verfügbar
+          </Checkbox>
+          <Checkbox
+            id={inputIds.allowMultiCharGenderSymbol}
+            featureFlagsState={featureFlagsState}
+            valueSelector={(f) => f.allowMultiCharGenderSymbol}
+            valueUpdater={(g, pf) => ({ ...pf, allowMultiCharGenderSymbol: g })}
+          >
+            Mehr-Zeichen Gender-Symbol erlauben
+          </Checkbox>
+          <NumberInput
+            id={inputIds.maxReplacementsPerRuleMatch}
+            featureFlagsState={featureFlagsState}
+            valueSelector={(f) => f.maxReplacementsPerRuleMatch}
+            valueUpdater={(g, pf) => ({ ...pf, maxReplacementsPerRuleMatch: g })}
+          >
+            Max Vorschläge pro Regel-Match
+          </NumberInput>
+          <SettingsImportExport
+            label="Feature Flags Import/Export"
+            settingsState={featureFlagsState}
+            defaultSettings={DefaultFeatureFlags}
+          />
+          <SettingsImportExport
+            label="User Settings Import/Export"
+            settingsState={userSettingsState}
+            defaultSettings={DefaultUserSettings}
+          />
+        </DebugPanelContainer>
+      );
+    };
 
 const DebugPanelHeader = styled.div`
   display: flex;
@@ -112,21 +120,21 @@ interface FeatureFlagUpdater<T> {
   valueUpdater: (newValue: T, prevFeatureFlags: FeatureFlags) => FeatureFlags;
 }
 
-const CheckboxInput = styled.input`
+const CheckboxInputElement = styled.input`
   margin: 2px 5px;
 `;
 
-interface CheckboxProps extends HasFeatureFlagsState, FeatureFlagUpdater<boolean> {}
+interface CheckboxProps extends HasFeatureFlagsState, HasId, FeatureFlagUpdater<boolean> {}
 const Checkbox: FC<CheckboxProps> = ({
   children,
+  id,
   valueSelector,
   valueUpdater,
   featureFlagsState: [featureFlags, setFeatureFlags],
 }) => {
-  const id = newUuidv4();
   return (
     <label htmlFor={id}>
-      <CheckboxInput
+      <CheckboxInputElement
         id={id}
         type="checkbox"
         checked={valueSelector(featureFlags)}
@@ -139,16 +147,16 @@ const Checkbox: FC<CheckboxProps> = ({
   );
 };
 
-interface NumberInputProps extends HasFeatureFlagsState, FeatureFlagUpdater<number> {}
+interface NumberInputProps extends HasFeatureFlagsState, HasId, FeatureFlagUpdater<number> {}
 const NumberInput: FC<NumberInputProps> = ({
   children,
+  id,
   valueSelector,
   valueUpdater,
   featureFlagsState: [featureFlags, setFeatureFlags],
 }) => {
-  const id = newUuidv4();
   return (
-    <label htmlFor={id}>
+    <label htmlFor={id} key={id}>
       <input
         id={id}
         type="number"
