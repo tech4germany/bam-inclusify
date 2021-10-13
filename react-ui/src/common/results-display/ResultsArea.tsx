@@ -195,9 +195,11 @@ const MatchContainer = styled.div<MatchContainerProps>`
 const MatchContextContainer = styled.div`
   margin: 14px 0;
   display: flex;
-  gap: 15px;
+  column-gap: 15px;
+  row-gap: 5px;
   font-size: 15px;
   align-items: flex-start;
+  flex-wrap: wrap;
 `;
 
 const MatchMatchText = styled.button`
@@ -206,7 +208,7 @@ const MatchMatchText = styled.button`
   border: none;
   cursor: pointer;
   margin: 0;
-  padding: 3px 7px;
+  padding: 3px 1px;
 `;
 
 const MatchRuleExplanation = styled.div`
