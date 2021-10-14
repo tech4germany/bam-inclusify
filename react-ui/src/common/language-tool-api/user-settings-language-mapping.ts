@@ -1,31 +1,5 @@
 import { UserSettings } from "../user-settings/user-settings";
 
-const deLanguagePrefix = "de-DE-x-";
-const genderingVariantsPrefix = deLanguagePrefix + "diversity";
-
-const languageCodes = Object.freeze({
-  neutral: genderingVariantsPrefix,
-  doubleNotation: genderingVariantsPrefix + "-double",
-  internalI: genderingVariantsPrefix + "-internal-i",
-  genderStar: genderingVariantsPrefix + "-star",
-});
-
-export function mapUserSettingsToLanguage(userSettings: UserSettings): string {
-  switch (userSettings.genderingType) {
-    case "neutral":
-      return languageCodes.neutral;
-    case "double-notation":
-      return languageCodes.doubleNotation;
-    case "internal-i":
-      return languageCodes.internalI;
-    case "gender-symbol":
-      return languageCodes.genderStar;
-    default:
-      console.error(`Unmapped genderingType "${userSettings.genderingType}", falling back to "neutral"`);
-      return languageCodes.neutral;
-  }
-}
-
 export function mapUserSettingsToReplacementPostProcessing(
   userSettings: UserSettings
 ): (value: string | undefined) => string | undefined {

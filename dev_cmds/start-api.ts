@@ -17,11 +17,7 @@ async function main() {
     options: {
       cwd: path.join(
         languageToolDir,
-        "languagetool",
-        "languagetool-standalone",
-        "target",
-        "LanguageTool-5.6-SNAPSHOT",
-        "LanguageTool-5.6-SNAPSHOT"
+        "LanguageTool-5.4"
       ),
     },
   });

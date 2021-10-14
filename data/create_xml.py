@@ -1,6 +1,5 @@
 from typing import *
 import re
-import xml.dom.minidom
 
 xml_template = """
 <rule id="{id}" name="{pattern}">
@@ -26,11 +25,9 @@ def rule_to_xml(
     pattern: str,
     number: str,
     suggestions_: List[str],
-    style: Callable[[List[str]], List[str]] = identity,
     message: str = gender_message,
     short_message: Callable[[str], str] = short_gender_message
 ) -> str:
-    suggestions_ = style(suggestions_)
     if len(suggestions_) == 0:
         return ""
     s = xml_template.format(
@@ -44,8 +41,6 @@ def rule_to_xml(
         message=message,
         short_message=short_message(pattern)
     )
-    # parsed = xml.dom.minidom.parseString(s)
-    # return parsed.toprettyxml()
     return s
 
 

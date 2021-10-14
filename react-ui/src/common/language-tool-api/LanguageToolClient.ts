@@ -3,7 +3,6 @@ import { diversityRuleCategories, grammarRuleCategories, spellingRuleCategories 
 import { UserSettings } from "../user-settings/user-settings";
 import { augmentClientUuid, CheckRequestParameters, CheckResponse, RuleMatch } from "./types";
 import {
-  mapUserSettingsToLanguage,
   mapUserSettingsToReplacementPostProcessing,
 } from "./user-settings-language-mapping";
 
@@ -19,7 +18,7 @@ export class LanguageToolClient {
 
     const response = await this.checkRaw({
       text,
-      language: mapUserSettingsToLanguage(userSettings),
+      language: "de-DE",
       enabledOnly: true,
       enabledCategories: enabledRuleCategories.join(","),
     });
