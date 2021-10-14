@@ -11,11 +11,11 @@ async function main() {
     options: { cwd: reactUiDir },
   });
 
-  await fs.remove(path.join(languageToolDir, "LanguageTool-5.5"));
+  await fs.remove(path.join(languageToolDir, "LanguageTool-5.4"));
 
   await execPiped({
     command: "unzip",
-    args: ["LanguageTool-5.5.zip"],
+    args: ["LanguageTool-5.4.zip"],
     options: { cwd: languageToolDir },
   });
 
