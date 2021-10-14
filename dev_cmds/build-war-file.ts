@@ -11,10 +11,22 @@ async function main() {
 
   const warPackageProjectDir = path.join(languageToolDir, "war-package");
   const warPackageReactAppDir = path.join(warPackageProjectDir, "src/main/react-app");
+  const warPackageGrammarFileDir = path.join(warPackageProjectDir, "src/main/resources/org/languagetool/rules/de");
 
   await fs.remove(warPackageReactAppDir);
   await fs.mkdirp(warPackageReactAppDir);
   await fs.copy(path.join(reactUiDir, "build"), warPackageReactAppDir);
+
+  await fs.remove(warPackageGrammarFileDir);
+  await fs.mkdirp(warPackageGrammarFileDir);
+  await fs.copy(
+    path.join(languageToolDir, "LanguageTool-5.4/org/languagetool/rules/de/grammar.xml"),
+    path.join(warPackageGrammarFileDir, "grammar.xml")
+  );
+  await fs.copy(
+    path.join(languageToolDir, "LanguageTool-5.4/org/languagetool/rules/de/grammar-diversity.xml"),
+    path.join(warPackageGrammarFileDir, "grammar-diversity.xml")
+  );
 
   await execPiped({
     command: "mvn",

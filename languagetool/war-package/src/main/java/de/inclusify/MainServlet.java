@@ -14,7 +14,6 @@ public class MainServlet implements ServletContextListener {
 
   @Override
   public void contextInitialized(ServletContextEvent servletContextEvent) {
-    System.out.println("MainServlet.contextInitialized");
     HTTPServerConfig options = new HTTPServerConfig(8081, false);
     languageToolServer = new HTTPServer(options, false, null, null);
     languageToolServer.run();
@@ -22,7 +21,6 @@ public class MainServlet implements ServletContextListener {
 
   @Override
   public void contextDestroyed(ServletContextEvent servletContextEvent) {
-    System.out.println("MainServlet.contextDestroyed");
     if (languageToolServer != null) {
       languageToolServer.stop();
       languageToolServer = null;

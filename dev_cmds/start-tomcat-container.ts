@@ -14,6 +14,7 @@ async function main() {
       "-it",
       ...["--name", "tomcat-tester"],
       ...["-p", "8080:8080"],
+      ...["-p", "8081:8081"],
       ...["-v", `${path.join(tomcatDir, "context.xml")}:/tmp/context.xml`],
       ...["-v", `${path.join(tomcatDir, "tomcat-users.xml")}:/usr/local/tomcat/conf/tomcat-users.xml`],
       "tomcat:8.5",
