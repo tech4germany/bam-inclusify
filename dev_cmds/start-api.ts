@@ -17,7 +17,7 @@ async function main() {
     options: {
       cwd: path.join(
         languageToolDir,
-        "LanguageTool-5.4"
+        "LanguageTool-5.5"
       ),
     },
   });
