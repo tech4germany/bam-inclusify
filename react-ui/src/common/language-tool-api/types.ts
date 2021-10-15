@@ -12,7 +12,7 @@ export type CheckResponse = CheckEndpoint["responses"][200]["schema"];
 
 type LtRuleMatch = NonNullable<CheckResponse["matches"]>[number];
 type LtRuleMatchReplacement = NonNullable<CheckResponse["matches"]>[number]["replacements"][number];
-type RuleMatchReplacement = LtRuleMatchReplacement & HasClientUuid;
+export type RuleMatchReplacement = LtRuleMatchReplacement & HasClientUuid;
 export interface RuleMatch extends LtRuleMatch, HasClientUuid {
   replacements: RuleMatchReplacement[];
 }

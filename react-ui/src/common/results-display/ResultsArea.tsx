@@ -2,8 +2,9 @@ import React, { FC, useState } from "react";
 import styled from "styled-components";
 import { DownChevronIcon } from "../../icons";
 import { Colors } from "../Colors";
-import { FeatureFlagsContext } from "../feature-flags/feature-flags";
+import { FeatureFlags, FeatureFlagsContext } from "../feature-flags/feature-flags";
 import { RuleMatch } from "../language-tool-api/types";
+import { mapUserSettingsToReplacementPostProcessing } from "../language-tool-api/user-settings-language-mapping";
 import {
   diversityRuleCategories,
   grammarRuleCategories,
@@ -13,7 +14,7 @@ import {
 } from "../rule-categories";
 import { splitTextMatch } from "../splitTextMatch";
 import { isFunction } from "../type-helpers";
-import { isGrammarCheckOn, isSpellCheckOn } from "../user-settings/user-settings";
+import { isGrammarCheckOn, isSpellCheckOn, UserSettings } from "../user-settings/user-settings";
 import { UserSettingsContext } from "../user-settings/UserSettingsStorage";
 
 export type ApplyReplacementFunction = (
@@ -35,14 +36,7 @@ export const ResultsArea: FC<ResultsAreaProps> = ({ ruleMatches, applyReplacemen
       {(userSettings) => (
         <FeatureFlagsContext.Consumer>
           {(featureFlags) => {
-            const matchesToShow = ruleMatches.filter((m) => {
-              const ruleCategoryId = m.rule?.category?.id || "";
-              return (
-                diversityRuleCategories.includes(ruleCategoryId) ||
-                (isGrammarCheckOn(userSettings, featureFlags) && grammarRuleCategories.includes(ruleCategoryId)) ||
-                (isSpellCheckOn(userSettings, featureFlags) && spellingRuleCategories.includes(ruleCategoryId))
-              );
-            });
+            const matchesToShow = postProcessRuleMatches(ruleMatches, featureFlags, userSettings);
             return (
               <LtMatchesListContainer>
                 {matchesToShow.map((ltMatch, idx) => (
@@ -90,23 +84,17 @@ const LtMatch: FC<LtMatchProps> = ({ ltMatch, applyReplacement, selectRuleMatch 
           <MatchMatchText onClick={() => isFunction(selectRuleMatch) && selectRuleMatch(ltMatch)}>
             {matchText}
           </MatchMatchText>
-          <FeatureFlagsContext.Consumer>
-            {(featureFlags) => (
-              <ReplacementListContainer>
-                {ltMatch.replacements.slice(0, featureFlags.maxReplacementsPerRuleMatch).map((r) => (
-                  <div key={r.clientUuid}>
-                    <Replacement
-                      onClick={
-                        isFunction(applyReplacement) ? () => applyReplacement(ltMatch, r.value || "") : undefined
-                      }
-                    >
-                      {r.value}
-                    </Replacement>
-                  </div>
-                ))}
-              </ReplacementListContainer>
-            )}
-          </FeatureFlagsContext.Consumer>
+          <ReplacementListContainer>
+            {ltMatch.replacements.map((r) => (
+              <div key={r.clientUuid}>
+                <Replacement
+                  onClick={isFunction(applyReplacement) ? () => applyReplacement(ltMatch, r.value || "") : undefined}
+                >
+                  {r.value}
+                </Replacement>
+              </div>
+            ))}
+          </ReplacementListContainer>
         </MatchContextContainer>
         <MatchRuleExplanation>{ltMatch.shortMessage}</MatchRuleExplanation>
         <MatchRuleExplanation hidden={!isExpanded}>{ltMatch.message}</MatchRuleExplanation>
@@ -134,6 +122,29 @@ const MatchTopBarContainer = styled.div`
   gap: 1rem;
   align-items: center;
 `;
+
+export function postProcessRuleMatches(
+  ruleMatches: RuleMatch[],
+  featureFlags: FeatureFlags,
+  userSettings: UserSettings
+): RuleMatch[] {
+  return ruleMatches
+    .filter((m) => {
+      const ruleCategoryId = m.rule?.category?.id || "";
+      return (
+        diversityRuleCategories.includes(ruleCategoryId) ||
+        (isGrammarCheckOn(userSettings, featureFlags) && grammarRuleCategories.includes(ruleCategoryId)) ||
+        (isSpellCheckOn(userSettings, featureFlags) && spellingRuleCategories.includes(ruleCategoryId))
+      );
+    })
+    .map((m) => ({
+      ...m,
+      replacements: m.replacements
+        ?.map((r) => ({ ...r, value: mapUserSettingsToReplacementPostProcessing(userSettings)(r.value) }))
+        .filter((r) => !!r.value)
+        .slice(0, featureFlags.maxReplacementsPerRuleMatch),
+    }));
+}
 
 function matchCategoryColor(category: RuleMatchCategory): string {
   switch (category) {
