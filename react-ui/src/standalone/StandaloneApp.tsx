@@ -8,9 +8,8 @@ import { LanguageToolClient } from "../common/language-tool-api/LanguageToolClie
 import { RuleMatch } from "../common/language-tool-api/types";
 import { NavigationBar } from "../common/nav-bar/NavigationBar";
 import { ResultsArea } from "../common/results-display/ResultsArea";
-import { mapRuleCategory } from "../common/rule-categories";
 import { splitTextMatch } from "../common/splitTextMatch";
-import { SummaryBar } from "../common/summary-bar/SummaryBar";
+import { computeErrorCounts, SummaryBar } from "../common/summary-bar/SummaryBar";
 import { UserSettingsPanel } from "../common/user-settings/UserSettingsPanel";
 import { UserSettingsContext, useUserSettingsState } from "../common/user-settings/UserSettingsStorage";
 import { newUuidv4 } from "../common/uuid";
@@ -164,17 +163,6 @@ const ButtonBar = styled.div`
 const ButtonBarSpacer = styled.div`
   flex-grow: 1;
 `;
-
-function computeErrorCounts(ltMatches: RuleMatch[]): {
-  diversityErrorCount: number;
-  grammarErrorCount: number;
-  spellingErrorCount: number;
-} {
-  const diversityErrorCount = ltMatches.filter((m) => mapRuleCategory(m) === "diversity").length;
-  const grammarErrorCount = ltMatches.filter((m) => mapRuleCategory(m) === "grammar").length;
-  const spellingErrorCount = ltMatches.filter((m) => mapRuleCategory(m) === "spelling").length;
-  return { diversityErrorCount, grammarErrorCount, spellingErrorCount };
-}
 
 const WelcomeMessageContainer = styled.div`
   font-family: ${FontFamilies.bam};

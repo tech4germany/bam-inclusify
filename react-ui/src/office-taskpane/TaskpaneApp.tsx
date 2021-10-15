@@ -6,7 +6,7 @@ import { LanguageToolClient } from "../common/language-tool-api/LanguageToolClie
 import { isRunningInOutlook, isRunningInWord } from "../common/office-api-helpers";
 import { splitTextMatch } from "../common/splitTextMatch";
 import { AddinCheckTextButton, UserSettingsButton } from "../common/buttons/Buttons";
-import { SummaryBar } from "../common/summary-bar/SummaryBar";
+import { computeErrorCounts, SummaryBar } from "../common/summary-bar/SummaryBar";
 import {
   UserSettingsContext,
   UserSettingsStorage,
@@ -26,6 +26,8 @@ export const TaskpaneApp: FC = () => {
   const [featureFlags, setFeatureFlags] = useFeatureFlagsState();
   const [userSettings, setUserSettings] = useUserSettingsState();
 
+  const errorCounts = computeErrorCounts(ltMatches || []);
+
   const checkTextWithLoading = async () => {
     setLoading(true);
     await checkText(setLtMatches, setApplier, setMatchSelector);
@@ -41,7 +43,7 @@ export const TaskpaneApp: FC = () => {
             settingsOpenState={[isSettingsOpen, setSettingsOpen]}
           />
           <SummaryBarContainer>
-            <SummaryBar addinMode diversityErrorCount={0} grammarErrorCount={0} spellingErrorCount={0} />
+            <SummaryBar addinMode {...errorCounts} />
           </SummaryBarContainer>
 
           {isSettingsOpen ? (

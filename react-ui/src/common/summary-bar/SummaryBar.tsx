@@ -3,8 +3,10 @@ import styled from "styled-components";
 import { UserSettingsButton } from "../buttons/Buttons";
 import { Colors } from "../Colors";
 import { FeatureFlagsContext } from "../feature-flags/feature-flags";
+import { mapRuleCategory } from "../rule-categories";
 import { isGrammarCheckOn, isSpellCheckOn } from "../user-settings/user-settings";
 import { UserSettingsContext } from "../user-settings/UserSettingsStorage";
+import { RuleMatch } from "../language-tool-api/types";
 
 interface SummaryBarProps {
   diversityErrorCount: number;
@@ -36,6 +38,17 @@ export const SummaryBar: FC<SummaryBarProps> = ({
     )}
   </UserSettingsContext.Consumer>
 );
+
+export function computeErrorCounts(ltMatches: RuleMatch[]): {
+  diversityErrorCount: number;
+  grammarErrorCount: number;
+  spellingErrorCount: number;
+} {
+  const diversityErrorCount = ltMatches.filter((m) => mapRuleCategory(m) === "diversity").length;
+  const grammarErrorCount = ltMatches.filter((m) => mapRuleCategory(m) === "grammar").length;
+  const spellingErrorCount = ltMatches.filter((m) => mapRuleCategory(m) === "spelling").length;
+  return { diversityErrorCount, grammarErrorCount, spellingErrorCount };
+}
 
 const SummaryBarContainer = styled.div<{ addinMode: boolean }>`
   display: flex;
