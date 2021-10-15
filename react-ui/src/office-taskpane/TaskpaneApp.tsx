@@ -149,40 +149,12 @@ async function checkTextFromWord(
 
   console.log(startOffsetMap);
 
-  const newApplier: ApplyReplacementFunction = (ruleMatch, index, allMatches, replacementText) => {
+  const getRangeForMatch = async (ruleMatch: RuleMatch) => {
     const startOffset = ruleMatch.offset;
     const endOffset = ruleMatch.offset + ruleMatch.length;
     const { index: startRangeIndex, item: startRangeItem } = findItemContainingOffset(startOffsetMap, startOffset);
-    const { index: endRangeIndex, item: endRangeItem } = findItemContainingOffset(startOffsetMap, endOffset);
+    const { index: endRangeIndex } = findItemContainingOffset(startOffsetMap, endOffset);
     const startOffsetInStartRange = startOffset - startRangeItem.startOffset;
-    const endOffsetInEndRange = endOffset - endRangeItem.startOffset;
-    const isMultiWordMatch = startRangeIndex !== endRangeIndex;
-    console.debug(
-      `Replacement for RuleMatch(offset=${ruleMatch.offset}, length=${ruleMatch.length})\n` +
-        `  starts in OffsetMapEntry(index=${startRangeIndex}, startOffset=${startRangeItem.startOffset}, length=${startRangeItem.range.text.length}, text='${startRangeItem.range.text}') at localOffset=${startOffsetInStartRange}\n` +
-        `  & ends in OffsetMapEntry(index=${endRangeIndex}, startOffset=${endRangeItem.startOffset}, length=${endRangeItem.range.text.length}, text='${endRangeItem.range.text}') at localOffset=${endOffsetInEndRange}\n` +
-        `  (multi-word match=${isMultiWordMatch})`
-    );
-    const affectedRangesPlaintext = startOffsetMap
-      .slice(startRangeIndex, endRangeIndex + 1)
-      .map((item) => item.range.text)
-      .join("");
-    startOffsetMap.slice(startRangeIndex + 1, endRangeIndex + 1).forEach((item) => item.range.delete());
-    const [preMatch, , postMatch] = splitTextMatch(affectedRangesPlaintext, startOffsetInStartRange, ruleMatch.length);
-    const newText = preMatch + replacementText + postMatch;
-    startRangeItem.range.insertText(newText, Word.InsertLocation.replace);
-    startRangeItem.range.context
-      .sync()
-      .then(() => console.debug(`replaced ${isMultiWordMatch ? "multi-word" : "single-word"} match`));
-  };
-  const newMatchSelector: (ruleMatch: RuleMatch) => void = async (ruleMatch) => {
-    const startOffset = ruleMatch.offset;
-    const endOffset = ruleMatch.offset + ruleMatch.length;
-    const { index: startRangeIndex, item: startRangeItem } = findItemContainingOffset(startOffsetMap, startOffset);
-    const { index: endRangeIndex, item: endRangeItem } = findItemContainingOffset(startOffsetMap, endOffset);
-    const startOffsetInStartRange = startOffset - startRangeItem.startOffset;
-    const endOffsetInEndRange = endOffset - endRangeItem.startOffset;
-    const isMultiWordMatch = startRangeIndex !== endRangeIndex;
 
     const affectedRangesPlaintext = startOffsetMap
       .slice(startRangeIndex, endRangeIndex + 1)
@@ -196,9 +168,28 @@ async function checkTextFromWord(
     const matchRangeCollection = completeRange.search(matchText, { matchCase: true }).load();
     await matchRangeCollection.context.sync();
     // TODO: should also handle 0 and more than 1 results?
-    matchRangeCollection.items[0].select("Select");
+    return matchRangeCollection.items[0];
+  };
 
-    completeRange.context.sync();
+  const newApplier: ApplyReplacementFunction = async (ruleMatch, index, allMatches, replacementText) => {
+    const matchRange = await getRangeForMatch(ruleMatch);
+    if (!matchRange) {
+      console.warn("getRangeForMatch returned null or undefined");
+      return;
+    }
+    matchRange.insertText(replacementText, Word.InsertLocation.replace);
+    matchRange.select();
+    await matchRange.context.sync();
+  };
+
+  const newMatchSelector: (ruleMatch: RuleMatch) => void = async (ruleMatch) => {
+    const matchRange = await getRangeForMatch(ruleMatch);
+    if (!matchRange) {
+      console.warn("getRangeForMatch returned null or undefined");
+      return;
+    }
+    matchRange.select("Select");
+    matchRange.context.sync();
   };
 
   setApplier(() => newApplier);
