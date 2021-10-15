@@ -100,6 +100,8 @@ const LtMatch: FC<LtMatchProps> = ({ ltMatch, applyReplacement, selectRuleMatch 
         <MatchRuleExplanation hidden={!isExpanded}>{ltMatch.message}</MatchRuleExplanation>
         <MatchActionsBar>
           <MatchExpandCollapseToggle expandedState={[isExpanded, setExpanded]} />
+          <MatchActionsBarSpacer />
+          <MatchIgnoreButton>x</MatchIgnoreButton>
         </MatchActionsBar>
       </MatchContentContainer>
     </MatchContainer>
@@ -230,6 +232,11 @@ const MatchRuleExplanation = styled.div`
 
 const MatchActionsBar = styled.div`
   font-size: 0.5625rem;
+  display: flex;
+`;
+
+const MatchActionsBarSpacer = styled.div`
+  flex-grow: 1;
 `;
 
 const MatchExpandCollapseToggleContainer = styled.button`
@@ -239,6 +246,12 @@ const MatchExpandCollapseToggleContainer = styled.button`
   display: flex;
   align-items: center;
   gap: 5px;
+  background: #fafafa 0% 0% no-repeat padding-box;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: #efefef;
+  }
 `;
 
 const MatchExpandCollapseIcon = styled(DownChevronIcon)`
@@ -256,3 +269,12 @@ const MatchExpandCollapseToggle: FC<{ expandedState: [boolean, React.Dispatch<Re
     <MatchExpandCollapseText>{isExpanded ? "weniger" : "mehr"} anzeigen</MatchExpandCollapseText>
   </MatchExpandCollapseToggleContainer>
 );
+
+const MatchIgnoreButton = styled.div`
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: black;
+  color: white;
+  text-align: center;
+`;
