@@ -171,7 +171,7 @@ async function checkTextFromWord(
     return matchRangeCollection.items[0];
   };
 
-  const newApplier: ApplyReplacementFunction = async (ruleMatch, index, allMatches, replacementText) => {
+  const newApplier: ApplyReplacementFunction = async (ruleMatch, replacementText) => {
     const matchRange = await getRangeForMatch(ruleMatch);
     if (!matchRange) {
       console.warn("getRangeForMatch returned null or undefined");

@@ -133,7 +133,7 @@ function makeReplacementApplier(
   triggerRecheck: (text: string) => void,
   textAreaRef: RefObject<HTMLTextAreaElement>
 ) {
-  return (ruleMatch: RuleMatch, index: number, allMatches: RuleMatch[], replacementText: string) => {
+  return (ruleMatch: RuleMatch, replacementText: string) => {
     const [preMatch, , postMatch] = splitTextMatch(inputText, ruleMatch.offset, ruleMatch.length);
     const newText = preMatch + replacementText + postMatch;
     setInputText(newText);

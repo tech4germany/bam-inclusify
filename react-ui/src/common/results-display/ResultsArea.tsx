@@ -17,12 +17,7 @@ import { isFunction } from "../type-helpers";
 import { isGrammarCheckOn, isSpellCheckOn, UserSettings } from "../user-settings/user-settings";
 import { UserSettingsContext } from "../user-settings/UserSettingsStorage";
 
-export type ApplyReplacementFunction = (
-  ruleMatch: RuleMatch,
-  index: number,
-  allMatches: RuleMatch[],
-  replacementText: string
-) => void;
+export type ApplyReplacementFunction = (ruleMatch: RuleMatch, replacementText: string) => void;
 
 interface ResultsAreaProps {
   ruleMatches: RuleMatch[];
@@ -39,13 +34,11 @@ export const ResultsArea: FC<ResultsAreaProps> = ({ ruleMatches, applyReplacemen
             const matchesToShow = postProcessRuleMatches(ruleMatches, featureFlags, userSettings);
             return (
               <LtMatchesListContainer>
-                {matchesToShow.map((ltMatch, idx) => (
+                {matchesToShow.map((ltMatch) => (
                   <LtMatch
                     key={ltMatch.clientUuid}
                     ltMatch={ltMatch}
-                    applyReplacement={
-                      !!applyReplacement ? (m, r) => applyReplacement(m, idx, ruleMatches, r) : undefined
-                    }
+                    applyReplacement={applyReplacement}
                     selectRuleMatch={selectRuleMatch}
                   />
                 ))}
