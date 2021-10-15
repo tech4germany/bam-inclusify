@@ -1,13 +1,26 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { CheckIcon } from "../../icons";
-import { Colors } from "../Colors";
+import { CheckIcon } from "../icons";
+import { Colors } from "../common/Colors";
 
-const CheckTextButtonContainer = styled.button<{ topCornersFlush?: boolean }>`
+interface CheckTextButtonProps {
+  onClick: React.MouseEventHandler<HTMLButtonElement> | undefined;
+  disabled?: boolean;
+}
+export const StandaloneCheckTextButton: FC<CheckTextButtonProps> = ({ onClick, disabled }) => (
+  <CheckTextButtonContainer onClick={onClick} disabled={disabled} title="Text überprüfen">
+    <CheckTextButtonIconContainer>
+      <CheckIcon />
+    </CheckTextButtonIconContainer>
+    <CheckTextButtonTextContainer>PRÜFEN</CheckTextButtonTextContainer>
+  </CheckTextButtonContainer>
+);
+
+const CheckTextButtonContainer = styled.button`
   background: transparent linear-gradient(68deg, ${Colors.mediumGreen} 0%, ${Colors.brightGreen} 100%) 0% 0% no-repeat
     padding-box;
   border: none;
-  border-radius: ${(props) => (!!props.topCornersFlush ? "0px 0px 8px 8px" : "8px 8px")};
+  border-radius: 0px 0px 8px 8px;
   color: white;
   font-size: 20px;
   padding: 8px 10px;
@@ -47,21 +60,3 @@ const CheckTextButtonIconContainer = styled.div`
 const CheckTextButtonTextContainer = styled.div`
   margin-right: 6px;
 `;
-interface CheckTextButtonProps {
-  onClick: React.MouseEventHandler<HTMLButtonElement> | undefined;
-  topCornersFlush?: boolean;
-  disabled?: boolean;
-}
-export const CheckTextButton: FC<CheckTextButtonProps> = ({ onClick, topCornersFlush, disabled }) => (
-  <CheckTextButtonContainer
-    topCornersFlush={topCornersFlush}
-    onClick={onClick}
-    disabled={disabled}
-    title="Text überprüfen"
-  >
-    <CheckTextButtonIconContainer>
-      <CheckIcon />
-    </CheckTextButtonIconContainer>
-    <CheckTextButtonTextContainer>PRÜFEN</CheckTextButtonTextContainer>
-  </CheckTextButtonContainer>
-);

@@ -1,6 +1,6 @@
 import { Dispatch, FC, RefObject, SetStateAction, useRef, useState } from "react";
 import styled from "styled-components";
-import { CheckTextButton } from "../common/buttons/Buttons";
+import { StandaloneCheckTextButton } from "./StandaloneCheckTextButton";
 import { DebugPanel } from "../common/debug-panel/DebugPanel";
 import { FeatureFlagsContext, useFeatureFlagsState } from "../common/feature-flags/feature-flags";
 import { FontFamilies } from "../common/Fonts";
@@ -67,7 +67,7 @@ export const StandaloneApp: FC = () => {
                 />
                 <ButtonBar>
                   <ButtonBarSpacer />
-                  <CheckTextButton topCornersFlush onClick={submitHandler} disabled={isLoading} />
+                  <StandaloneCheckTextButton onClick={submitHandler} disabled={isLoading} />
                 </ButtonBar>
               </InputAreaContainer>
               <ResultsAreaContainer>
