@@ -31,16 +31,13 @@ export const TaskpaneApp: FC = () => {
   };
 
   return (
-    <div>
+    <AddinContainer>
       <UserSettingsContext.Provider value={userSettings}>
         <FeatureFlagsContext.Provider value={featureFlags}>
           <AddinButtonGroup onCheckClicked={checkClickHandler} settingsOpenState={[isSettingsOpen, setSettingsOpen]} />
-          <SummaryBar
-            diversityErrorCount={0}
-            grammarErrorCount={0}
-            spellingErrorCount={0}
-            pressedState={[isSettingsOpen, setSettingsOpen]}
-          />
+          <SummaryBarContainer>
+            <SummaryBar addinMode diversityErrorCount={0} grammarErrorCount={0} spellingErrorCount={0} />
+          </SummaryBarContainer>
 
           {isSettingsOpen ? (
             <UserSettingsPanel
@@ -60,9 +57,13 @@ export const TaskpaneApp: FC = () => {
         featureFlagsState={[featureFlags, setFeatureFlags]}
         userSettingsState={[userSettings, setUserSettings]}
       />
-    </div>
+    </AddinContainer>
   );
 };
+
+const AddinContainer = styled.div`
+  margin: 0 15px;
+`;
 
 interface AddinButtonGroupProps {
   onCheckClicked: () => void;
@@ -77,12 +78,10 @@ const AddinButtonGroup: FC<AddinButtonGroupProps> = ({ onCheckClicked, settingsO
   </AddinButtonGroupContainer>
 );
 const AddinButtonGroupContainer = styled.div`
-  margin-right: 15px;
-  margin-left: auto;
-  margin-top: 10px;
   display: flex;
   gap: 5px;
   justify-content: flex-end;
+  margin-bottom: 5px;
 `;
 const AddinButtonColumnContainer = styled.div`
   display: flex;
@@ -90,8 +89,12 @@ const AddinButtonColumnContainer = styled.div`
   gap: 5px;
 `;
 
+const SummaryBarContainer = styled.div`
+  margin-bottom: 15px;
+`;
+
 const AddinResultsAreaContainer = styled.div`
-  margin: 1rem;
+  margin: 0;
 `;
 
 type ParagraphWithRanges = { paragraph: Word.Paragraph; ranges: Word.Range[] };

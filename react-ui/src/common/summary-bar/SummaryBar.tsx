@@ -10,7 +10,8 @@ interface SummaryBarProps {
   diversityErrorCount: number;
   grammarErrorCount: number;
   spellingErrorCount: number;
-  pressedState: [boolean, React.Dispatch<React.SetStateAction<boolean>>];
+  pressedState?: [boolean, React.Dispatch<React.SetStateAction<boolean>>];
+  addinMode?: boolean;
 }
 
 export const SummaryBar: FC<SummaryBarProps> = ({
@@ -18,16 +19,17 @@ export const SummaryBar: FC<SummaryBarProps> = ({
   grammarErrorCount,
   spellingErrorCount,
   pressedState,
+  addinMode,
 }) => (
   <UserSettingsContext.Consumer>
     {(userSettings) => (
       <FeatureFlagsContext.Consumer>
         {(featureFlags) => (
-          <SummaryBarContainer>
+          <SummaryBarContainer addinMode={!!addinMode}>
             {isGrammarCheckOn(userSettings, featureFlags) && <GrammarSummary grammarErrorCount={grammarErrorCount} />}
             {isSpellCheckOn(userSettings, featureFlags) && <SpellingSummary spellingErrorCount={spellingErrorCount} />}
             <DiversityErrorSummary diversityErrorCount={diversityErrorCount} />
-            <UserSettingsButton pressedState={pressedState} />
+            {pressedState && <UserSettingsButton pressedState={pressedState} />}
           </SummaryBarContainer>
         )}
       </FeatureFlagsContext.Consumer>
@@ -35,10 +37,9 @@ export const SummaryBar: FC<SummaryBarProps> = ({
   </UserSettingsContext.Consumer>
 );
 
-const SummaryBarContainer = styled.div`
-  margin: 24px 0;
+const SummaryBarContainer = styled.div<{ addinMode: boolean }>`
   display: flex;
-  gap: 10px;
+  gap: ${(props) => (props.addinMode ? "5px" : "10px")};
   user-select: none;
   flex-wrap: wrap;
   justify-content: flex-end;

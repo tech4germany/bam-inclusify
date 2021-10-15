@@ -51,7 +51,9 @@ export const StandaloneApp: FC = () => {
           <NavigationBar />
 
           <CenteredContainer>
-            <SummaryBar pressedState={[isSettingsOpen, setSettingsOpen]} {...errorCounts} />
+            <SummaryBarContainer>
+              <SummaryBar pressedState={[isSettingsOpen, setSettingsOpen]} {...errorCounts} />
+            </SummaryBarContainer>
             <MainAreaContainer>
               <InputAreaContainer>
                 <MainTextArea
@@ -104,6 +106,10 @@ export const StandaloneApp: FC = () => {
 const CenteredContainer = styled.div`
   max-width: 1024px;
   margin: 0 auto;
+`;
+
+const SummaryBarContainer = styled.div`
+  margin: 30px 0 24px;
 `;
 
 const MainAreaContainer = styled.div`

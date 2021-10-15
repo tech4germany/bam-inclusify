@@ -148,6 +148,7 @@ const UserSettingsButtonContainer = styled.button`
 const UserSettingsIconContainer = styled.div`
   width: 28px;
   height: 28px;
+  margin: 0 auto;
   border-radius: 50%;
   background: white;
 
