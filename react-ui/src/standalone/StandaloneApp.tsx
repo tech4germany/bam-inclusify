@@ -14,6 +14,7 @@ import { UserSettingsPanel } from "../common/user-settings/UserSettingsPanel";
 import { UserSettingsContext, useUserSettingsState } from "../common/user-settings/UserSettingsStorage";
 import { newUuidv4 } from "../common/uuid";
 import { MainTextArea } from "./MainTextArea";
+import { StandaloneUserSettingsButton } from "./StandaloneUserSettingsButton";
 
 type UseState<S> = [S, Dispatch<SetStateAction<S>>];
 
@@ -51,7 +52,9 @@ export const StandaloneApp: FC = () => {
 
           <CenteredContainer>
             <SummaryBarContainer>
-              <SummaryBar pressedState={[isSettingsOpen, setSettingsOpen]} {...errorCounts} />
+              <SummaryBar {...errorCounts}>
+                <StandaloneUserSettingsButton pressedState={[isSettingsOpen, setSettingsOpen]} />
+              </SummaryBar>
             </SummaryBarContainer>
             <MainAreaContainer>
               <InputAreaContainer>

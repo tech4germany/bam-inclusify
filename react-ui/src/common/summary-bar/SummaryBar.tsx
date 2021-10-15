@@ -1,6 +1,5 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import styled from "styled-components";
-import { UserSettingsButton } from "../buttons/Buttons";
 import { Colors } from "../Colors";
 import { FeatureFlagsContext } from "../feature-flags/feature-flags";
 import { mapRuleCategory } from "../rule-categories";
@@ -12,7 +11,6 @@ interface SummaryBarProps {
   diversityErrorCount: number;
   grammarErrorCount: number;
   spellingErrorCount: number;
-  pressedState?: [boolean, React.Dispatch<React.SetStateAction<boolean>>];
   addinMode?: boolean;
 }
 
@@ -20,8 +18,8 @@ export const SummaryBar: FC<SummaryBarProps> = ({
   diversityErrorCount,
   grammarErrorCount,
   spellingErrorCount,
-  pressedState,
   addinMode,
+  children,
 }) => (
   <UserSettingsContext.Consumer>
     {(userSettings) => (
@@ -31,7 +29,7 @@ export const SummaryBar: FC<SummaryBarProps> = ({
             {isGrammarCheckOn(userSettings, featureFlags) && <GrammarSummary grammarErrorCount={grammarErrorCount} />}
             {isSpellCheckOn(userSettings, featureFlags) && <SpellingSummary spellingErrorCount={spellingErrorCount} />}
             <DiversityErrorSummary diversityErrorCount={diversityErrorCount} />
-            {pressedState && <UserSettingsButton pressedState={pressedState} />}
+            {children}
           </SummaryBarContainer>
         )}
       </FeatureFlagsContext.Consumer>
