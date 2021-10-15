@@ -1,8 +1,9 @@
 import { FC } from "react";
 import styled from "styled-components";
-import { UserSettingsButton, AddinCheckTextButton } from "../common/buttons/Buttons";
+import { UserSettingsButton } from "../common/buttons/Buttons";
 import { Colors } from "../common/Colors";
 import { FontFamilies } from "../common/Fonts";
+import { AddinCheckTextButton } from "./AddinButtons";
 
 interface AddinButtonGroupProps {
   onCheckClicked: () => void;
