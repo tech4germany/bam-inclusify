@@ -29,7 +29,7 @@ def hello_world():
                         "description": "'Reinigungskraft' statt 'Putzfrau'",
                         "issueType": "style",
                         "category": {
-                            "id": "GENDER_NEUTRALITY",
+                            "id": "GENERISCHES_MASKULINUM",
                             "name": "Geschlechtergerechte Sprache",
                         },
                         "isPremium": False,
