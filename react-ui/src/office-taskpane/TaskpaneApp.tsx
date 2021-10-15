@@ -175,7 +175,7 @@ async function checkTextFromWord(
       .sync()
       .then(() => console.debug(`replaced ${isMultiWordMatch ? "multi-word" : "single-word"} match`));
   };
-  const newMatchSelector: (ruleMatch: RuleMatch) => void = (ruleMatch) => {
+  const newMatchSelector: (ruleMatch: RuleMatch) => void = async (ruleMatch) => {
     const startOffset = ruleMatch.offset;
     const endOffset = ruleMatch.offset + ruleMatch.length;
     const { index: startRangeIndex, item: startRangeItem } = findItemContainingOffset(startOffsetMap, startOffset);
@@ -184,12 +184,20 @@ async function checkTextFromWord(
     const endOffsetInEndRange = endOffset - endRangeItem.startOffset;
     const isMultiWordMatch = startRangeIndex !== endRangeIndex;
 
+    const affectedRangesPlaintext = startOffsetMap
+      .slice(startRangeIndex, endRangeIndex + 1)
+      .map((item) => item.range.text)
+      .join("");
     const completeRange = startOffsetMap
       .slice(startRangeIndex, endRangeIndex + 1)
       .map((i) => i.range)
       .reduce((a, b) => a.expandTo(b));
+    const [, matchText] = splitTextMatch(affectedRangesPlaintext, startOffsetInStartRange, ruleMatch.length);
+    const matchRangeCollection = completeRange.search(matchText, { matchCase: true }).load();
+    await matchRangeCollection.context.sync();
+    // TODO: should also handle 0 and more than 1 results?
+    matchRangeCollection.items[0].select("Select");
 
-    completeRange.select("Select");
     completeRange.context.sync();
   };
 
