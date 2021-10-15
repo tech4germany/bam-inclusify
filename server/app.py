@@ -15,6 +15,4 @@ def hello_world():
 
 
 if __name__ == "__main__":
-    # Bind to PORT if defined, otherwise default to 5000.
-    port = int(os.environ.get("PORT", 8081))
-    app.run(host="localhost", port=port, debug=True)
+    app.run(host="localhost", port=8081)

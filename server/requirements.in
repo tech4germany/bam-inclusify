@@ -1,4 +1,5 @@
-flask
-pylint
-mypy
 black
+flask
+mypy
+pylint
+stanza
