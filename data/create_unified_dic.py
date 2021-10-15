@@ -11,17 +11,16 @@ def unified_dic() -> Dict[str, Dict[str, List[str]]]:
     unified_dic: Dict[str, Dict[str, List[str]]] = {
         "sg": {}, "pl": {}, "combined": {}}
 
-    files = {
-        "dereko/dereko_unified": ["sg", "pl"],
-        "geschicktgendern/geschicktgendern": ["sg", "pl"],
-        "openthesaurus/openthesaurus_persons_male": ["sg", "pl"],
-        "vienna_catalog/vienna_catalog": ["sg", "pl"],
-    }
+    files = [
+        "dereko/dereko_unified",
+        "geschicktgendern/geschicktgendern",
+        "vienna_catalog/vienna_catalog",
+    ]
     dic = {}
 
-    for file, numbers in files.items():
-        dic[file] = csvs_to_dict(file, numbers=numbers)
-        for n in numbers:
+    for file in files:
+        dic[file] = csvs_to_dict(file)
+        for n in ["sg", "pl"]:
             replacements = base_form_variations(dic[file][n].keys())
             dic[file][n] = replace_keys(replacements, dic[file][n])
             print(file, n, len(dic[file][n]))
@@ -31,9 +30,9 @@ def unified_dic() -> Dict[str, Dict[str, List[str]]]:
     return unified_dic
 
 def base_form_variations(inflected_forms: List[str]) -> List[Tuple[str, str]]:
-    open_(path.join(languagetool_build_path, "input.txt"), "w").write(" ".join(inflected_forms))
+    open_(path.join(languagetool_path, "input.txt"), "w").write(" ".join(inflected_forms))
     result = subprocess.run(
-        "java -jar languagetool-commandline.jar --taggeronly --language de-DE input.txt".split(" "), cwd=languagetool_build_path, capture_output=True
+        "java -jar languagetool-commandline.jar --taggeronly --language de-DE input.txt".split(" "), cwd=languagetool_path, capture_output=True
     )
     stdout = result.stdout.decode("UTF-8")
     stderr = result.stderr.decode("UTF-8")

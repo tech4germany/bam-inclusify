@@ -33,7 +33,7 @@ def copy_pos_tags():
     def update_pos_file(old):
         return old + added_tags
 
-    update_with_backup(update_pos_file, path.join(languagetool_build_path, "org", "languagetool", "resource", "de", "added.txt"))
+    update_with_backup(update_pos_file, path.join(languagetool_path, "org", "languagetool", "resource", "de", "added.txt"))
 
 
 

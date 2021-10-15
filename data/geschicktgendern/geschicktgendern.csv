@@ -1,0 +1,1095 @@
+Abenteurer,Abenteuermensch,0
+Abenteurer,Waghals,0
+Abenteurer,abenteuerliebende Person,0
+Abenteurer,abenteuerlustige Person,0
+Abenteurer,abenteuermutige Person,0
+Abnehmer,Abnehmende,1
+Absender,abgesandt durch ...,1
+Absender,absendende Person,1
+Absender,von ... ,1
+Absolventen,Abschluss innehabende Person,1
+Absolventen,Person mit Abschluss,1
+Abteilungsleiter,Abteilungsleitende,1
+Abteilungsleiter,Abteilungsleitung,0
+Abteilungsleiter,Abteilungsleitungen,1
+Akademiker,Personen mit Hochschulabschluss,1
+Akademiker,Studierte,1
+Akteure,Agierende,1
+Akteure,Aktive,1
+Akteure,Beteiligte,1
+Akteure,Handelnde,1
+Alkoholiker,Alkoholsüchtige,1
+Alkoholiker,Menschen mit Alkoholsucht,1
+Alkoholiker,Person mit Alkoholsucht,0
+Alkoholiker,alkoholsüchtige Person,0
+Alleinerziehende,Ein-Eltern-Familie,0
+Alleinerziehende,Ein-Eltern-Haushalt,0
+Alleinerziehende,alleinerziehende Person,0
+Allergiker,Allergiegeplagte,1
+Allergiker,Menschen mit Allergie,1
+Allergiker,allergieleidende Personen,1
+Altkanzler,ehemalige Regierungsoberhäupter,1
+Amtsinhaber,Amt innehabende Person,0
+Amtsinhaber,amtierende Person im Bereich XY/ in Position XY,0
+Amtsinhaber,amtsverantwortliche Person für den Bereich XY,0
+Amtsinhaber,eine mit einem Amt betraute Person,0
+Analytiker,Analysierende,1
+Anbieter,Anbietende,1
+Anbieter,Angebot (von ...),0
+Anbieter,Herstellung,0
+Anbieter,angebotsmachende Person,0
+Anbieter,angebotsstellende Person,0
+Anfänger,Beginnende,1
+Anfänger,Menschen ohne Vorerfahrung,1
+Anfänger,Menschen ohne Vorkenntnisse,1
+Anfänger,Neulinge,1
+Anfänger,Unerfahrene,1
+Anführer,Führung,0
+Anführer,Führungsfigur,0
+Anführer,Leitung,0
+Anführer,Oberhaupt,0
+Anführer,anführende Person,0
+Anführer,leitende Person,0
+Angehöriger,Familienmitglied,0
+Angehöriger,Mitglied von ... ,0
+Angeklagter,angeklagte Person,0
+Angler,Angelmensch,0
+Angler,Angelnde,1
+Angler,Angelsport betreibende Person,0
+Angler,Fisch fangende Person,0
+Angler,Mensch mit Angel,0
+Angler,"Person, die angelt",0
+Angler,angelnde Person,0
+Angler,"wer gern angelt, ... ",0
+Angreifer,Angreifende,1
+Angreifer,angreifende Person,0
+Anhänger,Befürwortende,1
+Anhänger,Begeisterte,1
+Anhänger,Fans,1
+Anhänger,Gleichgesinnte,1
+Anhänger,Mitwirkende,1
+Anhänger,Sympathisierende,1
+Anhänger,Unterstützende,1
+Anhänger,Zugehörige (einer Bewegung),1
+Anhänger,"sich (einer Bewegung, einem Verein) Zuordnende",1
+Anleger,Anlegende,1
+Anlieger,Anliegende,1
+Anlieger,Anwohnende,1
+Anlieger,anwohnende Person,0
+Anlieger,anwohnende Personen,1
+Anrufer,Anrufende,1
+Ansprechpartner,Ansprechperson,0
+Ansprechpartner,Auskunft gibt ... ,0
+Ansprechpartner,Hilfeteam,0
+Ansprechpartner,Hotline,0
+Ansprechpartner,Kontakt,0
+Ansprechpartner,Kontaktperson,0
+Ansprechpartner,Service,0
+Ansprechpartner,Servicepersonal,0
+Ansprechpartner,zuständig ist ... ,0
+Anteilseigner,Anteilsinhabende,1
+Antragsteller,Antrag gestellt von ... ,0
+Antragsteller,beantragende Person/Einrichtung,0
+Antragsteller,"die Person, die einen Antrag stellt",0
+Antragsteller,die antragstellende Person,0
+Anwender,Anwendende,1
+Anwender,Anwendung,1
+Anwender,Nutzende,1
+Anwender,"Personen, die ... anwenden",1
+Anwender,anwendende Person,0
+Anwohner,Anwohnende,1
+Anwohner,Nachbarschaft,1
+Anwohner,"alle, die in dieser Straße wohnen",1
+Apotheker,(approbierte) Arzneikundige,1
+Apotheker,approbierte pharmazeutische Fachkräfte,1
+Arbeiter,Arbeitskraft,0
+Arbeiter,Arbeitskräfte,1
+Arbeiter,Belegschaft,1
+Arbeiter,Beschäftigte,1
+Arbeiter,Erwerbstätige,1
+Arbeitgeber,Arbeitgebende,1
+Arbeitgeber,Arbeitsstelle ... ,0
+Arbeitgeber,Betriebe,1
+Arbeitgeber,Führungskraft,0
+Arbeitgeber,"Person, die Arbeitsplätze zur Verfügung stellt",0
+Arbeitgeber,Unternehmen,1
+Arbeitgeber,arbeitgebendes Unternehmen,0
+Arbeitnehmer,Arbeitskräfte,1
+Arbeitnehmer,Belegschaft,1
+Arbeitnehmer,Beschäftigte,1
+Arbeitnehmer,Personal,1
+Arbeitnehmer,angestellte Person,0
+Arbeitnehmer,beschäftigte Person,0
+Asylbewerber,Asylsuchende,1
+Asylbewerber,Personen im Asylverfahren,1
+Attentäter,"Person, die ein Attentat verübt",0
+Auftraggeber,Auftraggebende,1
+Auftraggeber,auftraggebende Personen,1
+Auftraggeber,in Auftrag gegeben von ... ,1
+Auftragnehmer,Auftragnehmende,1
+Auftragnehmer,einen Auftrag entgegennehmende / annehmende Person,0
+Ausbilder,Lehrkraft,0
+Ausbilder,ausbildender Betrieb,0
+Ausbildungsbewerber,eine Ausbildung suchende Person,0
+Ausländer,Person aus dem Ausland,0
+Ausländer,Person mit anderer Staatsangehörigkeit,0
+Ausländer,Person nichtdeutscher Herkunft,0
+Ausländer,ausländische Person,0
+Aussiedler,ausgesiedelte Person,0
+Aussiedler,ausgesiedelte Personen,1
+Aussteller,Ausstellende,1
+Aussteller,Präsentierende,1
+Aussteller,ausstellende Institution,0
+Aussteller,ausstellende Person,0
+Auswanderer,Ausgewanderte,1
+Auswanderer,Auswandernde,1
+Auswanderer,ausgewanderte Person,0
+Auswanderer,auswandernde Person,0
+Auszubildender,Nachwuchskraft,0
+Auszubildender,Person in Ausbildung,0
+Auszubildender,auszubildende Person,0
+Auszubildender,lernende Person,0
+Autofahrer,Auto fahrende Person,0
+Autofahrer,Auto führende Person,0
+Autofahrer,Autofahrende,1
+Autofahrer,Person am Steuer,0
+Autofahrer,Personen am Steuer,1
+Autohersteller,Autobauende,1
+Autohersteller,Autoherstellende,1
+Autohersteller,Automobilkonzerne,1
+Babysitter,Aufsichtsperson,0
+Babysitter,Babysittende,1
+Babysitter,Kinderbetreuung,0
+Babysitter,babysittende Person,0
+Bankräuber,Bankausraubende,1
+Bauträger,Bautragende,1
+Bauträger,für den Bau verantwortliche Firma,0
+Beamte,Beamtenschaft,1
+Beamte,Bedienstete,1
+Beamter,Person im Beamtenstatus,0
+Beamter,verbeamtete Person,0
+Bearbeiter,den Vorgang betreuende Person,0
+Bearbeiter,zuständige Person,0
+Beauftragter,beauftragte Person,0
+Bediener,bedienende Person,0
+Bediensteter,bedienstete Person,0
+Befürworter,Befürwortende,1
+Befürworter,Mitwirkende,1
+Befürworter,Unterstützung,1
+Befürworter,Zustimmende,1
+Befürworter,Zustimmung,0
+Befürworter,befürwortende Person,0
+Befürworter,zustimmende Person,0
+Beisitzer,Beisitzende,1
+Benutzer,Anwendende,1
+Benutzer,Nutzende,1
+Benutzer,Personen(-gruppen),1
+Benutzer,anwendende Person,0
+Benutzer,nutzende Person,0
+Beobachter,Beobachtende,1
+Berater,Beratende,1
+Berater,Sie werden beraten von ... ,0
+Berater,beratende Person,0
+Berater,die Beratung erfolgt durch ... ,0
+Bergsteiger,Bergbegeisterte,1
+Bergsteiger,Bergsteigende,1
+Berichterstatter,Bericht erstattende Person,0
+Berichterstatter,Berichtende,1
+Berliner,die Berliner Bevölkerung,1
+Berufsanfänger,Berufseinsteigende,1
+Berufsanfänger,Berufsunerfahrene,1
+Berufskraftfahrer,qualifizierte fahrzeugführende Person (nach BKrFQG),0
+Berufsschüler,Auszubildende,1
+Berufsschüler,Beruflernende,1
+Berufsschüler,an einer Berufsschule Lernende,1
+Berufsschüler,eine Berufsschule Besuchende,1
+Beschwerdeführer,Beschwerdeführende,1
+Beschäftigter,Arbeitskraft,0
+Beschäftigter,Person im Beschäftigungsverhältnis,0
+Beschäftigter,angestellte Person,0
+Beschäftigter,beschäftigte Person,0
+Besitzer,besitzhabende Person,0
+Besitzer von Immobilieneigentum,Immobilien besitzende Person,0
+Besteller,Kundschaft,0
+Besteller,bestellende Person,0
+Besucher,Besuche,1
+Besucher,Besuchende,1
+Besucher,Publikum,1
+Betrachter,Betrachtende,1
+Betreuer,Betreuungsperson,0
+Betreuer,Betreuungspersonal,1
+Betroffener,Opfer,0
+Betroffener,betroffene Person,0
+Bewahrer,bewahrende Person,0
+Bewerber,Bewerbende,1
+Bewerber,sich bewerbende Person,0
+Bewerber,sich bewerbende Personen,1
+Bewohner,Bewohnende,1
+Bewohner,Bewohnerschaft,1
+Bewohner,Ortsansässige,1
+Bewohner,in ... Lebende,1
+Bewohner,in ... lebende Menschen,1
+Bieter,bietende Partei,0
+Bieter,bietende Person,0
+Bildungsträger,Bildungstragende,1
+Biografieträger,Biografietragende,1
+Blogger,"Personen, die einen Blog schreiben",1
+Blogger,bloggende Personen,1
+Busfahrer,Busfahrpersonal,0
+Busfahrer,Busführung,0
+Busfahrer,Buspersonal,0
+Busfahrer,busführende Person,0
+Bäcker,Backende,1
+Bäcker,Backwaren produzierende Person,0
+Bäcker,Bäckerei,0
+Bäcker,Gebäck herstellende Person,0
+Bäcker,im Backgewerbe Tätige,1
+Bäcker,professionell Backende,1
+Bürger,(Kommunal-)Wahlberechtigte,1
+Bürger,Bevölkerung,1
+Bürger,Bürgerschaft,1
+Bürger,Bürgertum,1
+Bürger,Einheimische,1
+Bürger,Einwohnerschaft,1
+Bürger,Einzelperson,0
+Bürger,Individuum,0
+Bürger,Mitglied des Staates / der Stadt,0
+Bürger,Mitmensch,0
+Bürger,Staatsangehörige,1
+Bürger,Stimmberechtigte,1
+Bürger,allgemeine Öffentlichkeit,1
+Bürger,breites Publikum,1
+Bürger,bürgerliche Bevölkerung,1
+Bürger,dem Staat zugehörige Person,0
+Bürger,einzelner Mensch innerhalb der Bevölkerung,0
+Bürger,im Ort/in der Stadt ... Wohnende,1
+Bürgermeister,Oberhaupt einer Kommune,0
+Bürgermeister,Stadtoberhaupt,0
+Bürgermeister,Verwaltungsleitung,0
+Callcenteroperatoren,Callcenteroperierende,1
+Camper,Camping liebende Person,0
+Camper,Zeltplatzmensch,0
+Camper,campende Person,0
+Camper,zeltende Person,0
+Case-Manager,Case-Management,1
+Case-Manager,Case-Managende,1
+Chemiker,Fachkraft für Chemie,0
+Chorleiter,Chorleitende,1
+Chorleiter,Chorleitung,0
+Chorleiter,Chorleitungen,1
+DJ,der/die DJ,0
+Darsteller,Besetzung,1
+Darsteller,Darstellende,1
+Darsteller,Rollen,1
+Darsteller,darstellende Person,0
+Designer,Designschaffende,1
+Deutscher,Person aus Deutschland,0
+Deutscher,Person mit deutscher Staatsangehörigkeit,0
+Deutscher,deutsche Person,0
+Dienstleister,Dienstleistende,1
+Dienstleister,Dienstleistungsunternehmen,0
+Dienstleister,dienstleistende Person,0
+Dienstleister,dienstleistendes Unternehmen,0
+Dolmetscher,(simultan / konsekutiv) dolmetschende Fachkraft,0
+Ehrenamtler,(ehrenamtlich) Engagierte,1
+Ehrenamtler,Ehrenamtliche,1
+Ehrenamtler,Freiwillige,1
+Einbrecher,einbrechende Personen,1
+Einwanderer,Menschen mit Migrationshintergrund /-geschichte /-biografie,1
+Einwanderer,Menschen mit internationaler Geschichte,1
+Einwohner,Bevölkerung,1
+Einwohner,Population,1
+Einwohner,die Menschen der Stadt XY,1
+Einwohner,gemeldete Personen,1
+Einzelkämpfer,Einzelkämpfende,1
+Einzelkämpfer,Kriegsteilnehmende,1
+Elektroniker,Elektrofachkraft,0
+Elternzeitrückkehrer,Elternzeitrückkehrende,1
+Elternzeitrückkehrer,"Mitarbeitende, die aus der Elternzeit zurück kommen",1
+Empfänger,bestimmt für ... ,0
+Empfänger,empfangen von ... ,0
+Empfänger,empfangsberechtigte Person,0
+Empfänger,für ... ,0
+Endverbraucher,Endkonsumierende,1
+Endverbraucher,Endverbrauchende,1
+Enkel,Enkelkind,0
+Enkel,Kindeskind,0
+Entdecker,Entdeckende,1
+Entdecker,Forschende,1
+Entdecker,entdeckende Personen /Kinder,1
+Entdecker,entdeckt von ... ,1
+Entdecker ,entdeckt von ... ,0
+Entscheidungsträger,Entscheidungtragende,1
+Entscheidungsträger,Person mit Entscheidungsbefugnis,0
+Entwickler,Entwickelnde,1
+Entwickler,Erfindende,1
+Entwickler,Ideenfindende,1
+Erbauer,Erschaffende,1
+Erbauer,Konstruierende,1
+Erbauer,ein Bau von ... ,1
+Erbauer,erbaut von ...,1
+Ermittler,Ermittelnde,1
+Ermittler,Ermittlungsteam,1
+Ersthelfer,Ersthelfende,1
+Ersthelfer,erste Hilfe leistende Person,0
+Ersthelfer,in Erster Hilfe geschulte Person,0
+Erstsemester,Ersti,1
+Erstsemester,Studierende im ersten Semester,1
+Erzieher,Erziehungskraft,0
+Erzieher,pädagogische Fachkraft,0
+Erzähler,Erzählende,1
+Erzähler,Erzählinstanz,0
+Erzähler,erzählende Figur,0
+Erzähler,erzählende Person,0
+Evakuierungshelfer,Evakuierungshilfe,0
+Evakuierungshelfer,Evakuierungshilfe leistende Person,0
+Evakuierungshelfer,in Evakuierungshilfe geschulte Person,0
+Experte,Autorität,0
+Experte,Fachgröße,0
+Experte,Genie,0
+Experte,Koryphäe,0
+Experte,Person vom Fach,0
+Experten,Fachkräfte,1
+Experten,Fachkundige,1
+Experten,Fachleute,1
+Experten,Fachpersonen,1
+Experten,Sachverständige,1
+Facharbeiter,Facharbeitende,1
+Fachwissenschaftler,Fachforschende,1
+Fahrer,Fahrdienst,0
+Fahrer,Fahrende,1
+Fahrer,Fahrzeugführende,1
+Fahrradfahrer,Fahrrad Fahrende,1
+Fahrradfahrer,wer mit dem Fahrrad unterwegs ist ... ,1
+Fahrschüler,Fahrlernende,1
+Fahrzeuglenker,Fahrzeug lenkende Person,0
+Familienbegleiter,Familien begleitende (Fach-)Kraft,0
+Familienbegleiter,Familienbegleitung,0
+Familienhelfer,Familien unterstützende (Fach-)Kraft,0
+Familienhelfer,Familienhilfe,0
+Familienhelfer,die die Familie X. unterstützende Fachperson/Fachkraft,0
+Familienhelfer,im familienunterstützenden Dienst arbeitende / angestellte Person,0
+Fertiger,fertigende Person,0
+Filmemacher,Filmschaffende,1
+Filmemacher,filmschaffende Person,0
+Flüchtlinge,Flüchtende,1
+Flüchtlinge,Geflüchtete,1
+Flüchtlinge,geflüchtete Menschen,1
+Follower,Follis,1
+Follower,Follows,1
+Forscher,Forschende,1
+Forscher,Forschungsteam,1
+Forscher,"Menschen, die in der Forschung tätig sind",1
+Forscher,Universitätsmitglieder,1
+Forscher,wissenschaftliches Personal der Universität,1
+Freelancer,Freischaffende,1
+Freiberufler,freiberuflich arbeitende Person,0
+Freiberufler,freischaffende Person,0
+Freigeber,freigebende Person,0
+Freunde,Bekannte,1
+Freunde,Bezugspersonen,1
+Freunde,befreundete Personen,1
+Fußballspieler,Fußballspielende,1
+Fußgänger,Fußverkehr,1
+Fußgänger,Menschen zu Fuß,1
+Fußgänger,zu Fuß Gehende,1
+Förderer,"Stelle, die Fördermittel vergibt",0
+Förderer,unterstützender Personenkreis,1
+Förster,Beschäftigte in der Forstwirtschaft,1
+Fürsprecher,Befürwortende,1
+Fürsprecher,Beteiligte,1
+Fürsprecher,Fürsprechende,1
+Fürsprecher,Mitwirkende,1
+Fürsprecher,Support,0
+Fürsprecher,Supportende,1
+Fürsprecher,Unterstützung,0
+Fürsprecher,Unterstützungskraft,0
+Gaffer,Schaulustige,1
+Gamer,Gaming People,1
+Gastgeber,Einladende,1
+Gastgeber,einladende Person,0
+Gasthörer,Studierende im Gaststudium,1
+Gastwissenschaftler,Gastforschende,1
+Gegenspieler,Counterpart,0
+Gegenspieler,Gegenseite,1
+Gegenspieler,Konkurrenz,0
+Gegenspieler,feindliche Spielende,1
+Gegenspieler,gegnerische Partei,0
+Gegenspieler,gegnerische Spielende,1
+Gegenspieler,widerstreitende Person,0
+Gegner,Counterpart,0
+Gegner,Gegenseite,1
+Gegner,Konkurrenz,0
+Gegner,ablehnende Person,0
+Gegner,feindliche Spielende,1
+Gegner,gegnerische Partei,0
+Gegner,gegnerische Spielende,1
+Gegner,widerstreitende Person,0
+Geldgeber,Geldgebende,1
+Geldgeber,geldgebende Institution,1
+Geldgeber,support,1
+Geschäftsführer,Geschäftsführung,0
+Geschäftsführer,Geschäftsleitung,0
+Gesellschafter,Beteiligte,1
+Gesellschafter,Betriebsgesellschaft,1
+Gesellschafter,Gesellschaftende,1
+Gesprächspartner,Gegenüber,0
+Gesprächspartner,Gesprächsbeteiligte,1
+Gesprächsteilnehmer,Gesprächsbeteiligte,1
+Gestalter,Gestaltende,1
+Gewinner,Erster Platz,1
+Gläubiger,Geld-/Kreditgebende,1
+Grundschüler,Grundschulkind,0
+Grundschüler,Kinder in der Grundschule,1
+Gruppenleiter,Gruppenleitende,1
+Gruppenleiter,Gruppenleitung,1
+Gutachter,Begutachtende,1
+Gutachter,Sachverständige,1
+Gutachter,begutachtet von ... ,0
+Hacker,Hackende,1
+Hacker,"Personen, die fremde Digitaldaten nutzen",1
+Hacker,umfunktionierende Personen,1
+Hamburger,die Hamburger Bevölkerung,1
+Handwerker,Fachpersonal im Handwerk,1
+Handwerker,Handwerkende,1
+Handwerker,Handwerksbetriebe,1
+Handwerker,handwerkliche Fachkraft,0
+Handwerker,handwerkliches Fachpersonal,0
+Hauptfachlehrer,Fachgruppe,1
+Hauptfachlehrer,Hauptfachgruppe,1
+Hausmeister,Gebäudemanagement,1
+Helfer,Assistenz,0
+Helfer,Helfende,1
+Helfer,Hilfskraft,0
+Herausgeber,herausgegeben von ... ,1
+Herrscher,Staatsoberhaupt,0
+Hersteller,Herstellfirma,0
+Hersteller,herstellendes Unternehmen,0
+Historiker,Geschichtsforschende,1
+Hundehalter,"Person, die einen Hund hält",0
+Hörer,zuhörende Person,0
+Hörer,zuhörende Personen,1
+Immigranten,Menschen mit Migrationshintergrund /-geschichte /-biografie,1
+Immobilienbesitzer,Immobilienbesitzende,1
+Immobilieneigentümer,Immobilienbesitzende,1
+Immobilieneigentümer,Personen mit Immobilienbesitz,1
+Industriemechaniker,Industriemechanik ausführende Person,0
+Influencer,Content gestaltende Person,0
+Influencer,influencende Person,0
+Informatiker,auf den IT-Bereich spezialisierte Person,0
+Ingenieure,Ingenieursberuf Ausübende,1
+Inhaber,Inhabende,1
+Inhaber,etwas innehabende Person,0
+Inlineskater,Inlineskatende,1
+Insasse,inhaftierte Person,0
+Interessenten,Interessierte,1
+Interviewer,Interviewende,1
+Interviewer,interviewende Person,0
+Interviewpartner,Befragte,1
+Interviewpartner,Interviewte,1
+Juden,Menschen jüdischen Glaubens,1
+Juden,Mitglieder / Angehörige der jüdischen Gemeinschaft / des jüdischen Volkes,1
+Juden,jüdische Menschen,1
+Jugendlicher,Teen,0
+Jugendlicher,Teenager,0
+Jugendlicher,Teenie,0
+Jugendlicher,junge Person,0
+Jugendlicher,junger Mensch,0
+Jäger,Jägerschaft,1
+Jäger,Person auf der Jagd,0
+Jäger,Personen auf der Jagd,1
+Jäger,jagende Person,0
+Jäger,jagende Personen,1
+Kampfrichter,Kampfjury,1
+Kampfrichter,Schiedsgericht,1
+Kapitalgeber,Finanzierende,1
+Kapitalgeber,Investierende,1
+Kapitäne,Schiffsführende,1
+Kassierer,Person an der Kasse,0
+Kellner,Bedienung,0
+Kellner,Servicekraft,0
+Kenner,Begeisterte,1
+Kenner,Fachleute,1
+Keramiker,Keramikfachkraft,0
+Kletterer,Kletternde,1
+Kläger,klagende Person,0
+Kommilitone,mitstudierende Person,0
+Kommilitonen,Mitstudierende,1
+Kompetenzträger,Kompetenz tragende Person,0
+Kompetenzträger,Kompetenztragende,1
+Konfirmanden,Jugendliche in der Konfirmationsvorbereitung,1
+Konsortialpartner,Konsortialbeteiligte,1
+Kontoinhaber,kontoführende Person,0
+Kontoinhaber,kontoinhabende Person,0
+Kooperationspartner,Kooperationsbeteiligte,1
+Kooperationspartner,in Kooperation mit,1
+Kraftfahrer,Kraftfahrzeugführende,1
+Kraftfahrer,fahrzeugführende Person,0
+Krankenpfleger,Beschäftigte in der Krankenpflege,1
+Krankenpfleger,Pflegefachkraft,0
+Krankenpfleger,Pflegefachperson,0
+Krankenpfleger,Pflegefachpersonen,1
+Krankenpfleger,Pflegekraft,0
+Krankenpfleger,Pflegekräfte,1
+Krankenpfleger,Pflegende,1
+Krankenpfleger,Pflegepersonal,1
+Krankenpfleger,professionell Pflegende,1
+Kreditnehmer,Kreditnehmende,1
+Kreditnehmer,kreditnehmende Person,0
+Kritiker,Kritische,1
+Kritiker,Kritisierende,1
+Kritiker,kritische Stimmen,1
+Kunstkenner,Kunstkennende,1
+Kunstsammler,Kunstsammelnde,1
+Kursleiter,Kursleitung,0
+Kursleiter,kursleitende Person,0
+Kursteilnehmer,Kursteilnehmende,1
+Kursteilnehmer,am Kurs Teilnehmende,1
+Kursteilnehmer,am Kurs teilnehmende Person,0
+Käufer,Kaufende,1
+Käufer,Kundschaft,1
+Küchenhelfer,Küchenhilfe,0
+Künstler,Act,0
+Künstler,Kunstschaffende,1
+Laborarbeiter,Laborfachkraft,0
+Lehrer,Lehrende,1
+Lehrer,Lehrkraft,0
+Lehrer,Lehrkräfte,1
+Lehrer,Lehrperson,0
+Lehrer,Lehrpersonen,1
+Lehrer,Unterrichtende,1
+Lehrer,das Kollegium,1
+Lehrmeister,Ausbildende,1
+Lehrmeister,Lehrende,1
+Lehrstuhlinhaber,Leitende eines Lehrstuhles,1
+Lehrstuhlinhaber,Leitung des Lehrstuhles,0
+Lehrstuhlleiter,Leitende eines Lehrstuhles,1
+Lehrstuhlleiter,Leitung des Lehrstuhls,0
+Leiharbeiternehmer,Leiharbeitnehmende,1
+Leistungsbezieher,Leistung Beziehende,1
+Leiter,Leitung,1
+Lernbegleiter,lernbegleitende Person,0
+Lernender,lernende Person,0
+Leser,Lesende,1
+Leser,Lesepublikum,1
+Leser,Leserschaft,1
+Leser,lesende Person,0
+Leser,lesende Zielgruppe,1
+Liebhaber,Begeisterte,1
+Liedermacher,Lieder kreierende Personen,1
+Liedermacher,Liederschaffende,1
+Literaturkritiker,Literatur kritisierende Person,0
+Literaturkritiker,Literaturkritisierende,1
+Lizenznehmer,Lizenznehmende,1
+Macher,Aktive,1
+Makler,Häuser vertreibende Personen,1
+Maler,Wandgestaltende Person,0
+Maler,Werkschaffende Person der Malerei,0
+Manager,Führungskraft,0
+Manager,Management,0
+Manager,Unternehmensführung,0
+Marktschreier,Angebotsausrufende,1
+Mathematiker,mathematisch qualifizierte Person,0
+Mathematiker,sich mit Mathematik befassende Person,0
+Medienanbieter,Medienorganisationen,1
+Mediengestalter,Mediengestaltende,1
+Mediziner,in der Medizin Tätige,1
+Mediziner,medizinisches/ärztliches Fachpersonal,1
+Meinungsführer,meinungsführende Person,0
+Mieter,Mietpartei,0
+Mieter,Mietperson,0
+Migranten,Eingewanderte,1
+Migranten,Migrierte,1
+Migranten,Personen mit Migrationshintergrund,1
+Migranten,Zugewanderte,1
+Minijobber,geringfügig Beschäftigte,1
+Minister,Ressortleitende,1
+Minister,Ressortleitung,0
+Mitarbeiter,Angestellte,1
+Mitarbeiter,Arbeitsgemeinschaft,1
+Mitarbeiter,Arbeitsgruppe,1
+Mitarbeiter,Arbeitskraft,0
+Mitarbeiter,Arbeitskräfte,1
+Mitarbeiter,Belegschaft,1
+Mitarbeiter,Beschäftigte,1
+Mitarbeiter,Beteiligte,1
+Mitarbeiter,Betriebs-/Konzern-/Firmen-/Unternehmensangehörige,1
+Mitarbeiter,Crew,1
+Mitarbeiter,Festangestellte,1
+Mitarbeiter,Gruppe,1
+Mitarbeiter,Kollegium,1
+Mitarbeiter,Mitarbeitende,1
+Mitarbeiter,Personal,1
+Mitarbeiter,Servicekräfte,1
+Mitarbeiter,Servicepersonal,1
+Mitarbeiter,Team,1
+Mitarbeiter,Teammitglied,0
+Mitarbeiter,Teammitglieder,1
+Mitarbeiter,Teammitglieder,1
+Mitarbeiter,Tätige,1
+Mitarbeiter,Werktätige,1
+Mitarbeiter,bei uns beschäftigte Personen,1
+Mitbewerber,die Konkurrenz,1
+Mitbewohner,Wohnungsteilende,1
+Mitbürger,Landsleute,1
+Mitbürger,Mitmensch,0
+Mitbürger,Mitmenschen,1
+Mitbürger,Staatsangehörige,1
+Mitläufer,Folge leistende Person,0
+Mitläufer,involvierte Person,0
+Mitläufer,mitlaufende Person,0
+Mitläufer,passive Rolle,0
+Mitläufer,passives Engagement,0
+Mitschüler,Mitlernende,1
+Mitschüler,andere Kinder aus der Klasse / Schule,1
+Mitstreiter,Gleichgesinnte,1
+Mitstreiter,Mitwirkende,1
+Mitstreiter,Teilnehmende,1
+Mittelständler,Angehörige des Mittelstandes,1
+Mittelständler,mittelständische Unternehmen,1
+Mitwisser,Eingeweihte,1
+Modeschöpfer,Mode Schaffende,1
+Mofafahrer,Mofa Fahrende,1
+Musiker, Bandmitglieder,1
+Musiker,Act,0
+Musiker,Mitglieder eines Orchesters,1
+Musiker,Musikausübende,1
+Musiker,Musikschaffende,1
+Musiker,Musikspielende,1
+Musiker,Musizierende,1
+Mörder,einen Mord begehende Person,0
+Mörder,mordende Person,0
+Münchner,die Münchner Bevölkerung,1
+Nachahmer,Menschen,1
+Nachahmer,Menschen gleicher Gesinnung,1
+Nachahmer,andere,1
+Nachbarn,Hausgemeinschaft,1
+Nachfolger,Nachfolge,0
+Nachfrager,Nachfragende,1
+Nachtschwärmer,Nachtleute,1
+Nachtschwärmer,Nachtmensch,0
+Nachtschwärmer,Partymensch,0
+Nachwuchswissenschaftler,wissenschaftlicher Nachwuchs,1
+Namensvetter,Gleichnamige,1
+Netzwerkpartner,Netzwerkbeteiligte,1
+Netzwerkpartner,Netzwerkmitglieder,1
+Neueinsteiger,Grünschnabel,0
+Neueinsteiger,Mensch ohne Vorkenntnisse,0
+Neueinsteiger,Nachwuchs,0
+Neueinsteiger,neu im Geschäft,0
+Neueinsteiger,unerfahrene Person,0
+Nutzer,(be-)nutzende Person,0
+Nutzer,Mitglieder,1
+Nutzer,Nutzende ,1
+Nutzer,Nutzung,1
+Nutzer,"Person, die ... nutzt",0
+Nutzer,"Personen, die ... nutzen",1
+Organspender,Organ Spendende,1
+Organspender,Organ spendende Personen,1
+Parlamentarier,Abgeordnete,1
+Partner,Beteiligte,1
+Partner,Gegenüber,0
+Partner,Kooperationen,1
+Partner,Mitglied,1
+Partner,Mitwirkende,1
+Partner,Unterstützung,1
+Patient,(Fach-)Beratung aufsuchende Person,0
+Patient,Hilfesuchende Person,0
+Patient,"Person, die medizinische Hilfe benötigt",0
+Patient,"Person, die sich in medizinische Hände begibt",0
+Patient,die uns anvertraute Person,0
+Patient,kranke Person,0
+Patient,stationär aufgenommene Person,0
+Patient,zu behandelnde Person,0
+Patient,zu versorgende Person,0
+Patienten,(von einer Krankheit) Betroffene,1
+Patienten,Behandelte,1
+Patienten,Erkrankte,1
+Patienten,Hilfesuchende,1
+Patienten,Kranke,1
+Patienten,Menschen mit einer Erkrankung,1
+Patienten,"Menschen, die im Krankenhaus liegen",1
+Patienten,"Personen, die in (ärztlicher) Behandlung sind",1
+Patienten,zu Pflegende,1
+Patienten,zu behandelnde Personen,1
+Pendler,Pendelnde,1
+Performer,Performende,1
+Personalvertreter,Personalvertretung,1
+Pfadfinder,Pfadfindende,1
+Pfadfinder,Pfadis,1
+Pfadfinder,Scout,0
+Pfarrer,Pfarrperson,0
+Pfleger,Pflegekraft,0
+Pfleger,Pflegekräfte,1
+Pfleger,Pflegende,1
+Pfleger,Pflegepersonal,1
+Pfleger,die Pflege,1
+Pförtner,Pfortenpersonal,0
+Physiker,Person mit abgeschlossenem Physikstudium,0
+Pilger,Menschen auf Pilgerschaft,1
+Pilger,Pilgernde,1
+Planer,planende Institutionen,1
+Planer,planende Personen,1
+Politiker,Mensch in der Politik,0
+Politiker,Menschen in der Politik,1
+Politiker,"Menschen, die in der Politik tätig sind",1
+Politiker,Mitglied der Politik,0
+Politiker,Mitglieder der Politik,1
+Politiker,Polit-Größe,0
+Politiker,Politikschaffende,1
+Politiker,Teil der Legislative,0
+Politiker,in der Politik tätige Person,0
+Polizisten,Polizei,1
+Polizisten,Polizeikräfte,1
+Polizisten,Polizeileute,1
+Praktikant,eine Person im Praktikum,0
+Praktikant,eine ein Praktikum absolvierende Person,0
+Praktikant,eine sich in einem Praktikum(verhältnis) befindende Person,0
+Praktiker,Leute aus der Praxis,1
+Praktiker,Praktizierende,1
+Praktiker,praktisch veranlagte Menschen,1
+Prediger,Predigende,1
+Preisträger,ausgezeichnete Person,0
+Programmierer,Programmierende,1
+Programmierer,Softwareerstellende,1
+Programmierer,programmierende Person,0
+Projektleiter,Projektleitende,1
+Projektleiter,Projektleitung,0
+Projektleiter,Projektleitungen,1
+Projektpartner,Projektbeteiligte,1
+Projektpartner,Projektmitwirkende,1
+Projektpartner,am Projekt beteiligte Firmen/Institute/etc.,1
+Proletarier,Angehörige des Proletariats,1
+Proletarier,Arbeitende,1
+Proletarier,Lohnabhängige,1
+Proletarier,Werktätige,1
+Protokollführer,protokollführende Person,0
+Präsidenten,Vorsitzende,1
+Prüfer,"Person, die prüft",0
+Prüfer,Prüfungsabnahme durch ...,0
+Prüfer,Prüfungsleitung,0
+Prüfer,geprüft von ... ,0
+Prüfer,prüfende Person,0
+Prüfstatiker,Statik prüfende Person,0
+Pächter,pachtende Person,0
+Rabbiner,Mitglied des Rabbinats,0
+Rabbiner,Rabbinat,1
+Radfahrer,Rad Fahrende,1
+Radfahrer,wer mit dem Rad unterwegs ist ... ,1
+Rechnungsempfänger,Rechnungsempfangende,1
+Rechnungsempfänger,Rechnungserhaltende,1
+Rechnungsempfänger,die Rechnung empfangende Person,0
+Rechteinhaber,Rechteinhabende,1
+Redner,referierende Person,0
+Redner,vortragende Person,0
+Rentner,Menschen in Rente,1
+Rentner,"Menschen, die in der Rente sind",1
+Rentner,"Menschen, im Rentenalter",1
+Rentner,Person im Ruhestand,0
+Rentner,Person in Rente,0
+Reporter,Medienvertretung,0
+Reporter,Presse,0
+Reporter,berichterstattende Person,0
+Rettungsschwimmer,aus dem Wasser rettende Person,0
+Richter,Richterschaft,1
+Richter,rechtsprechende Person,0
+Rollstuhlfahrer,Person im Rollstuhl,0
+Ruderer,rudernde Person,0
+Sachbearbeiter,Sachbearbeitende,1
+Sachbearbeiter,Sachverständige,1
+Sachbearbeiter,Verwaltungskraft,0
+Sachbearbeiter,Verwaltungskräfte,1
+Sammler,Sammelnde,1
+Sanitäter,Rettungskräfte,1
+Sanitäter,Sanitätsdienst,1
+Schatzmeister,Finanzvorstand,0
+Schatzmeister,Kassenführung,0
+Schatzmeister,Kassenverwaltung,0
+Schauspieler,Besetzung,1
+Schauspieler,Darstellende,1
+Schauspieler,Rollen,1
+Schiedsrichter,Schiedsgericht,0
+Schiedsrichter,Spielleitung,0
+Schiedsrichter,schiedsrichtende Person,0
+Schiedsrichter,schiedsrichtendes Gremium,0
+Schlichter,Schlichtende,1
+Schlichter,Schlichtungspersonen,1
+Schreiber,schreibende Person,0
+Schriftsteller,Literaturschaffende,1
+Schriftsteller,Schreibende,1
+Schriftsteller,Urheberrechtsinhabende,1
+Schriftsteller,Verfassende,1
+Schriftsteller,bücherschreibende Person,0
+Schulabbrecher,Geringqualifizierte,1
+Schulabbrecher,Menschen ohne Schulabschluss,1
+Schuldiger,schuldige Person,0
+Schuldner,die in Schuld stehende Person,0
+Schwimmer,Mensch mit Spaß am Schwimmen,0
+Schwimmer,schwimmende Person,0
+Schwimmlehrer,Schwimmlehrkraft,0
+Schöpfer,(Er-)Schaffende,1
+Schöpfer,(er-)schaffende Person,0
+Schüler,Beschulte,1
+Schüler,Jugendliche,1
+Schüler,Kinder,1
+Schüler,Klassenmitglied,0
+Schüler,Klassenmitglieder,1
+Schüler,Lernende,1
+Schüler,Mädchen und Jungen,1
+Schüler,Schulkind,0
+Schüler,Schulkinder,1
+Schüler,Schülerschaft,1
+Schüler,Schülis,1
+Schüler,die Klasse,1
+Schüler,lernende Person,0
+Schülervertreter,Lernendenvertretung,0
+Schülervertreter,"Person, die die Schülerschaft vertritt",0
+Schülervertreter,Schulkindervertretung,1
+Schülervertreter,Vertretung der Lernenden,1
+Seefahrer,Seeleute,1
+Segler,Person im Segelsport,0
+Segler,segelnde Person,0
+Selbstmörder,einen Selbstmord/Suizid begehende Person,0
+Selbstständiger,selbstständig arbeitende Person,0
+Seminarleiter,Seminarleitung,1
+Sender,Sendende,1
+Sender,gesendet von ... ,0
+Siedler,Ansässige,1
+Siedler,Siedelnde,1
+Sieger,Erster Platz,0
+Sieger,erstplatzierte Person,0
+Skeptiker,(an etwas) zweifelnde Person,0
+Sklavenhalter,Sklaverei Ausführende,1
+Sozialarbeiter,Fachkraft für Soziale Arbeit,0
+Sozialarbeiter,Fachkräfte der Sozialen Arbeit,1
+Sozialarbeiter,Sozialarbeitende,1
+Sozialleistungsträger,Sozialleistungstragende,1
+Spaziergänger,Person zu Fuß,0
+Spaziergänger,Personen zu Fuß,1
+Spaziergänger,Wandersperson,0
+Spaziergänger,spazierende Person,0
+Spaziergänger,wandernde Person,0
+Spender,Gebende,1
+Spender,Spenden,1
+Spender,Sponsoring,1
+Spezialisten,Fachleute,1
+Spezialisten,Sachkundige,1
+Spezialisten,Sachverständige,1
+Spieler,Spielende,1
+Spieler,Teammitglied,0
+Spieler,Teammitglieder,1
+Sportler,Sporttreibende,1
+Sportler,sportlich Aktive,1
+Sportler,sporttreibende Person,0
+Sprachschüler,Spracherlernende,1
+Sprachschüler,Sprachlernende,1
+Späher,ausspähende Person,0
+Steinewerfer,Steine werfende Personen,1
+Steinewerfer,Steinewerfende,1
+Stelleninhaber,Funktion begleitende Person,0
+Stelleninhaber,Stelle ausführende Person,0
+Stellvertreter,Stellvertretung,0
+Steuerberater,Angehörige der steuerberatenden Berufe,1
+Steuerberater,Steuerberatung,0
+Steuerberater,Steuerkanzlei,0
+Steuerberater,der steuerberatenden Berufe angehörige Person,0
+Steuerberater,zu Steuern beratende Person,0
+Steuerhinterzieher,Steuerhinterziehende,1
+Steuerschuldner,abgabenpflichtige Person,0
+Steuerschuldner,steuerschuldige Person,0
+Steuerzahler,steuerpflichtige Person,0
+Steuerzahler,steuerzahlende Person,0
+Stimmzähler,Stimmen zählende Person,0
+Stimmzähler,Stimmen zählendes Mitglied,0
+Streamer,Streamende,1
+Studienanfänger,Erstsemestrige,1
+Studienanfänger,Studienbeginnende,1
+Studienaussteiger,Studienabbrechende,1
+Studienbewerber,Einschreibungen,1
+Studienbewerber,Studienbewerbungen,1
+Störer,Störende,1
+Supporter,Befürwortende,1
+Supporter,Mitwirkende,1
+Sänger,Act,0
+Sänger,Chor,1
+Sänger,Choraktive,1
+Sänger,Gesangsgruppe,1
+Sänger,"Personen, die singen",1
+Sänger,Singende,1
+Sänger,Stimme,0
+Sänger,Stimmen,1
+Talkmaster,Moderation,0
+Talkmaster,moderierende Person,0
+Tatbeteiligter,an einer Tat beteiligte Person,0
+Taucher,Tauchsport ausübende Person,0
+Taucher,tauchende Person,0
+Teamleiter,Teamleitung,0
+Techniker,technische Fachkraft,0
+Teilnehmer,Anmeldungen,1
+Teilnehmer,Anwesende,1
+Teilnehmer,Beteiligte,1
+Teilnehmer,Teilnehmende,1
+Teilnehmer,"alle, die an ... teilnehmen",1
+Teilnehmer,mitwirkende Person,0
+Teilnehmer,teilnehmende Person,0
+Telemitarbeiter,Telemitarbeitende,1
+Tester,Testende,1
+Tester,Testpersonen,1
+Testleiter,Testleitung,0
+Theoretiker,theoretisch Arbeitende,1
+Tierschützer,Tierschützende,1
+Tierschützer,im Tierschutz engagierte Person,0
+Trainer,Lehrende,1
+Trainer,Moderierende,1
+Trainer,Referierende,1
+Trainer,Unterrichtende,1
+Trainer,Vortragende,1
+Trainer,moderierende Person,0
+Trainer,Übungsleitung,0
+Transatlantiker,Menschen (in der Politik) mit transatlantischen Gedanken,1
+Tänzer,Tanzbegeisterte,1
+Tänzer,Tanzende,1
+Täter,(Straf-)Tat begangen von... ,1
+Täter,Kriminelle,1
+Täter,Unrechtsperson,0
+Täter,Unrechtspersonen,1
+Töpfer,töpfernder Mensch,0
+Umschüler,Personen in beruflicher Neuorientierung,1
+Umschüler,Umlernende,1
+Umschüler,Umschulende,1
+Umschüler,die zu Qualifizierenden,1
+Unternehmer,Geschäftsleute,1
+Unternehmer,Gewerbe Betreibende,1
+Unternehmer,Gewerbe betreibende Person,0
+Unternehmer,Selbstständige,1
+Unternehmer,Wirtschaftstreibende,1
+Unternehmer,selbstständige Person,0
+Unterstützer,Befürwortende,1
+Unterstützer,Förderung durch ...,0
+Unterstützer,Geldgebende,1
+Unterstützer,Mitwirkende,1
+Unterstützer,support,0
+Unterstützer,unterstützende Person,0
+Unterstützer,unterstützendes Unternehmen,0
+Unterzeichner,Unterschrift,0
+Unterzeichner,Unterschriften,1
+Unterzeichner,Unterzeichnende,1
+Unterzeichner,unterzeichnende Partei,0
+Unterzeichner,unterzeichnende Person,0
+Urlauber,Reisende,1
+Urlauber,reisende Person,0
+Urlauber,urlaubende Person,0
+User,Mitglieder,1
+User,Nutzende,1
+User,"Personen, die Apps/Software nutzen",1
+Veranstalter,Ausrichtung,0
+Veranstalter,Einladende,1
+Veranstalter,Organisation,0
+Veranstalter,veranstaltet durch/von ... ,0
+Verantwortlicher,die Verantwortung tragende Person,0
+Verantwortlicher,verantwortliche Person,0
+Verbandsgesellschafter,Vertretungen / Beteiligte der Verbände,1
+Verbandsvertreter,Vertretungen / Beteiligte der Verbände,1
+Verbraucher,Konsumierende,1
+Verbraucher,Kundschaft,1
+Verbraucher,Privatpersonen,1
+Verbraucher,Verbrauchende,1
+Verbraucherschützer,für den Verbraucherschutz beauftragte Person,0
+Verbrecher,"Person, die eine Straftat/ein Verbrechen begeht",0
+Verfasser,Autorenschaft ,1
+Verfasser,verfasst von,1
+Verkehrssünder,Verkehrsregeln missachtende/verstoßende Person,0
+Verkehrsteilnehmer,Verkehrsbeteiligte,1
+Verkäufer,Anbietende,1
+Verkäufer,Handeltreibende,1
+Verkäufer,Kaufhauspersonal,0
+Verkäufer,Personal,0
+Verkäufer,Verkaufende,1
+Verkäufer,Verkaufskraft,0
+Verkäufer,Verkaufskräfte,1
+Verkäufer,Verkaufsperson,0
+Verleger ,Publizierende,1
+Verleiher,verleihende Person,0
+Verletzter,verletzte Person,0
+Verlierer,der letzte Platz,0
+Verlierer,die Letzten,1
+Verlobter,verlobte Person,0
+Vermieter,vermietende Person,0
+Vermittler,Mittelsperson,0
+Versuchsleiter,Versuchsleitung,0
+Verteidiger,Rechtsvertretung,0
+Verteidiger,Verteidigung,0
+Vertragspartner,Vertragspartei,0
+Vertragspartner,Vertragsparteien,1
+Vertragspartner,Vertragsperson,0
+Vertreter,Abgeordnete,1
+Vertreter,Abgesandte,1
+Vertreter,Beauftragte,1
+Vertreter,Delegierte,1
+Vertreter,Mitglied von ... ,0
+Vertreter,Mitglieder,1
+Vertreter,Vertretende,1
+Vertreter,Vertretung,1
+Vertreter,in vertretender Position,0
+Vertreter,vertreten durch,1
+Vertriebler,Vertriebsmitarbeitende,1
+Verursacher,Verursachende,1
+Verursacher,verursachende Person,0
+Verwandter,Familienmitglied,0
+Verwender,Verwendende,1
+Verwender,verwendende Person,0
+Virologen,Menschen mit Fachgebiet Virologie,1
+Virologen,medizinisches / ärztliches Fachpersonal mit Expertise in Virologie,1
+Vordenker,Weg bereitende Person,0
+Vordenker,vordenkende Person,0
+Vorläufer,älteres/altes Modell,0
+Vorstand,Vorstandsmitglied,0
+Vorstand,im Vorstand,0
+Wanderer,Person auf Wanderung,0
+Wanderer,wandernde Person,0
+Wegbegleiter,Wegbegleitung,0
+Wegbegleiter,wegbegleitende Person,0
+Wegbereiter,Weg bereitende Person,0
+Wegbereiter,prägende Person,0
+Weltmarktführer,Weltmarktführende,1
+Wettbewerber,Konkurrenz,0
+Wettbewerber,Wettbewerbsteilnehmende,0
+Widerstandskämpfer,Widerstandsleistende,1
+Winzer,Weinbau betreibende Person,0
+Wirtschaftsprüfer,Angehörige der wirtschaftsprüfenden Berufe,1
+Wirtschaftswissenschaftler,Forschende der Wirtschaft(swissenschaft),1
+Wissenschaftler,Forschende,1
+Wissenschaftler,Mensch aus der Wissenschaft,0
+Wissenschaftler,Menschen aus der Wissenschaft,1
+Wissenschaftler,forschende Person,0
+Wissenschaftler,wissenschaftliche Arbeitskraft,1
+Wissenschaftler,wissenschaftliches Personal der Universität,1
+Witwer,Verwitwete,1
+Workshopleiter,Workshopleitung,1
+Wächter,Wache,1
+Wähler,Stimmberechtigte,1
+Wähler,Wahlberechtigte,1
+Wähler,Wahlvolk,1
+Wähler,"alle, die zur Wahl gegangen sind",1
+Xylophonspieler,Xylophon Spielende,1
+Zauberer,(schwarze) Zauberkraft aufübende Person,0
+Zauberer,Zauberkunstschaffende,1
+Zauberer,Zaubertrick vorführende Person,0
+Zehnkämpfer,am Zehnkampf teilnehmende Person,0
+Zeitarbeitnehmer,Zeitarbeitnehmende,1
+Zoobesucher,Zoobesuche,1
+Zuhörer,Auditorium,1
+Zuhörer,Publikum,1
+Zuhörer,Zuhörerschaft,1
+Zuschauer,Person aus dem Publikum,0
+Zuschauer,Publikum,1
+Zuschauer,Zuschauende,1
+Zuwanderer,Eingewanderte,1
+Zuwanderer,Migrierte,1
+Zuwanderer,Personen mit Migrationshintergrund,1
+Zuwanderer,Zugewanderte,1
+Älpler,Alpwirtschaft Betreibende,1
+Übersetzer,Literatur Übersetzende,1
+Übersetzer,Übersetzende,1
+Übungsleiter,anleitende Person,0
+Übungsleiter,sportliche/technische/praktische Anleitung,0
