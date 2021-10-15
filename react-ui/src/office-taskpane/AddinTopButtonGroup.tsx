@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { UserSettingsButton } from "../common/buttons/Buttons";
 import { Colors } from "../common/Colors";
 import { FontFamilies } from "../common/Fonts";
-import { AddinCheckTextButton } from "./AddinButtons";
+import { AddinCheckTextButton } from "./AddinCheckTextButton";
 
 interface AddinButtonGroupProps {
   onCheckClicked: () => void;
