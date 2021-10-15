@@ -5,7 +5,7 @@ import { ApplyReplacementFunction, ResultsArea } from "../common/results-display
 import { LanguageToolClient } from "../common/language-tool-api/LanguageToolClient";
 import { isRunningInOutlook, isRunningInWord } from "../common/office-api-helpers";
 import { splitTextMatch } from "../common/splitTextMatch";
-import { CheckTextButton } from "../common/buttons/Buttons";
+import { AddinCheckTextButton } from "../common/buttons/Buttons";
 import { SummaryBar } from "../common/summary-bar/SummaryBar";
 import {
   UserSettingsContext,
@@ -29,7 +29,7 @@ export const TaskpaneApp: FC = () => {
       <UserSettingsContext.Provider value={userSettings}>
         <FeatureFlagsContext.Provider value={featureFlags}>
           <div>
-            <CheckTextButton
+            <AddinCheckTextButton
               onClick={async () => {
                 setLoading(true);
                 await clickHandler(setLtMatches, setApplier);
