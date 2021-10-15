@@ -5,7 +5,7 @@ import { ApplyReplacementFunction, ResultsArea } from "../common/results-display
 import { LanguageToolClient } from "../common/language-tool-api/LanguageToolClient";
 import { isRunningInOutlook, isRunningInWord } from "../common/office-api-helpers";
 import { splitTextMatch } from "../common/splitTextMatch";
-import { AddinCheckTextButton } from "../common/buttons/Buttons";
+import { AddinCheckTextButton, UserSettingsButton } from "../common/buttons/Buttons";
 import { SummaryBar } from "../common/summary-bar/SummaryBar";
 import {
   UserSettingsContext,
@@ -24,19 +24,17 @@ export const TaskpaneApp: FC = () => {
   const [featureFlags, setFeatureFlags] = useFeatureFlagsState();
   const [userSettings, setUserSettings] = useUserSettingsState();
 
+  const checkClickHandler = async () => {
+    setLoading(true);
+    await clickHandler(setLtMatches, setApplier);
+    setLoading(false);
+  };
+
   return (
     <div>
       <UserSettingsContext.Provider value={userSettings}>
         <FeatureFlagsContext.Provider value={featureFlags}>
-          <div>
-            <AddinCheckTextButton
-              onClick={async () => {
-                setLoading(true);
-                await clickHandler(setLtMatches, setApplier);
-                setLoading(false);
-              }}
-            />
-          </div>
+          <AddinButtonGroup onCheckClicked={checkClickHandler} settingsOpenState={[isSettingsOpen, setSettingsOpen]} />
           <SummaryBar
             diversityErrorCount={0}
             grammarErrorCount={0}
@@ -65,6 +63,32 @@ export const TaskpaneApp: FC = () => {
     </div>
   );
 };
+
+interface AddinButtonGroupProps {
+  onCheckClicked: () => void;
+  settingsOpenState: [boolean, React.Dispatch<React.SetStateAction<boolean>>];
+}
+const AddinButtonGroup: FC<AddinButtonGroupProps> = ({ onCheckClicked, settingsOpenState }) => (
+  <AddinButtonGroupContainer>
+    <AddinButtonColumnContainer>
+      <AddinCheckTextButton onClick={onCheckClicked} />
+      <UserSettingsButton pressedState={settingsOpenState} />
+    </AddinButtonColumnContainer>
+  </AddinButtonGroupContainer>
+);
+const AddinButtonGroupContainer = styled.div`
+  margin-right: 15px;
+  margin-left: auto;
+  margin-top: 10px;
+  display: flex;
+  gap: 5px;
+  justify-content: flex-end;
+`;
+const AddinButtonColumnContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+`;
 
 const AddinResultsAreaContainer = styled.div`
   margin: 1rem;
