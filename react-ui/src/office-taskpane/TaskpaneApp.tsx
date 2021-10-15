@@ -19,6 +19,7 @@ import { UserSettingsPanel } from "../common/user-settings/UserSettingsPanel";
 export const TaskpaneApp: FC = () => {
   const [ltMatches, setLtMatches] = useState<RuleMatch[]>([]);
   const [applier, setApplier] = useState<ApplyReplacementFunction>();
+  const [matchSelector, setMatchSelector] = useState<(ruleMatch: RuleMatch) => void>();
   const [isLoading, setLoading] = useState(false);
   const [isSettingsOpen, setSettingsOpen] = useState(false);
   const [featureFlags, setFeatureFlags] = useFeatureFlagsState();
@@ -26,7 +27,7 @@ export const TaskpaneApp: FC = () => {
 
   const checkClickHandler = async () => {
     setLoading(true);
-    await clickHandler(setLtMatches, setApplier);
+    await checkText(setLtMatches, setApplier, setMatchSelector);
     setLoading(false);
   };
 
@@ -45,10 +46,10 @@ export const TaskpaneApp: FC = () => {
               onConfirmClicked={() => setSettingsOpen(false)}
             />
           ) : isLoading ? (
-            <div>Loading...</div>
+            <div>Text wird überprüft...</div>
           ) : (
             <AddinResultsAreaContainer>
-              <ResultsArea ruleMatches={ltMatches || []} applyReplacement={applier} />
+              <ResultsArea ruleMatches={ltMatches || []} applyReplacement={applier} selectRuleMatch={matchSelector} />
             </AddinResultsAreaContainer>
           )}
         </FeatureFlagsContext.Provider>
@@ -100,12 +101,13 @@ const AddinResultsAreaContainer = styled.div`
 type ParagraphWithRanges = { paragraph: Word.Paragraph; ranges: Word.Range[] };
 type StartOffsetMapItem = { startOffset: number; paragraph: Word.Paragraph; range: Word.Range };
 
-const clickHandler = async (
+const checkText = async (
   setLtMatches: Dispatch<SetStateAction<RuleMatch[]>>,
-  setApplier: Dispatch<SetStateAction<ApplyReplacementFunction | undefined>>
+  setApplier: Dispatch<SetStateAction<ApplyReplacementFunction | undefined>>,
+  setMatchSelector: Dispatch<SetStateAction<((ruleMatch: RuleMatch) => void) | undefined>>
 ) => {
   if (isRunningInWord()) {
-    await wordClickHandler(setLtMatches, setApplier);
+    await checkTextFromWord(setLtMatches, setApplier, setMatchSelector);
   } else if (isRunningInOutlook()) {
     await outlookClickHandler(setLtMatches, setApplier);
   } else {
@@ -113,9 +115,10 @@ const clickHandler = async (
   }
 };
 
-async function wordClickHandler(
+async function checkTextFromWord(
   setLtMatches: Dispatch<SetStateAction<RuleMatch[]>>,
-  setApplier: Dispatch<SetStateAction<ApplyReplacementFunction | undefined>>
+  setApplier: Dispatch<SetStateAction<ApplyReplacementFunction | undefined>>,
+  setMatchSelector: Dispatch<SetStateAction<((ruleMatch: RuleMatch) => void) | undefined>>
 ) {
   console.time("getTextRanges");
   const paragraphsWithRanges: ParagraphWithRanges[] = await Word.run(async (context) => {
@@ -172,7 +175,26 @@ async function wordClickHandler(
       .sync()
       .then(() => console.debug(`replaced ${isMultiWordMatch ? "multi-word" : "single-word"} match`));
   };
+  const newMatchSelector: (ruleMatch: RuleMatch) => void = (ruleMatch) => {
+    const startOffset = ruleMatch.offset;
+    const endOffset = ruleMatch.offset + ruleMatch.length;
+    const { index: startRangeIndex, item: startRangeItem } = findItemContainingOffset(startOffsetMap, startOffset);
+    const { index: endRangeIndex, item: endRangeItem } = findItemContainingOffset(startOffsetMap, endOffset);
+    const startOffsetInStartRange = startOffset - startRangeItem.startOffset;
+    const endOffsetInEndRange = endOffset - endRangeItem.startOffset;
+    const isMultiWordMatch = startRangeIndex !== endRangeIndex;
+
+    const completeRange = startOffsetMap
+      .slice(startRangeIndex, endRangeIndex + 1)
+      .map((i) => i.range)
+      .reduce((a, b) => a.expandTo(b));
+
+    completeRange.select("Select");
+    completeRange.context.sync();
+  };
+
   setApplier(() => newApplier);
+  setMatchSelector(() => newMatchSelector);
 }
 
 async function outlookClickHandler(
