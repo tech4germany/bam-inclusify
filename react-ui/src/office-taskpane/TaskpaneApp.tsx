@@ -15,6 +15,7 @@ import {
 import { FeatureFlagsContext, FeatureFlagsStorage, useFeatureFlagsState } from "../common/feature-flags/feature-flags";
 import { DebugPanel } from "../common/debug-panel/DebugPanel";
 import { UserSettingsPanel } from "../common/user-settings/UserSettingsPanel";
+import { isFunction } from "../common/type-helpers";
 
 export const TaskpaneApp: FC = () => {
   const [ltMatches, setLtMatches] = useState<RuleMatch[]>([]);
@@ -25,7 +26,7 @@ export const TaskpaneApp: FC = () => {
   const [featureFlags, setFeatureFlags] = useFeatureFlagsState();
   const [userSettings, setUserSettings] = useUserSettingsState();
 
-  const checkClickHandler = async () => {
+  const checkTextWithLoading = async () => {
     setLoading(true);
     await checkText(setLtMatches, setApplier, setMatchSelector);
     setLoading(false);
@@ -35,7 +36,10 @@ export const TaskpaneApp: FC = () => {
     <AddinContainer>
       <UserSettingsContext.Provider value={userSettings}>
         <FeatureFlagsContext.Provider value={featureFlags}>
-          <AddinButtonGroup onCheckClicked={checkClickHandler} settingsOpenState={[isSettingsOpen, setSettingsOpen]} />
+          <AddinButtonGroup
+            onCheckClicked={checkTextWithLoading}
+            settingsOpenState={[isSettingsOpen, setSettingsOpen]}
+          />
           <SummaryBarContainer>
             <SummaryBar addinMode diversityErrorCount={0} grammarErrorCount={0} spellingErrorCount={0} />
           </SummaryBarContainer>
@@ -49,7 +53,15 @@ export const TaskpaneApp: FC = () => {
             <div>Text wird überprüft...</div>
           ) : (
             <AddinResultsAreaContainer>
-              <ResultsArea ruleMatches={ltMatches || []} applyReplacement={applier} selectRuleMatch={matchSelector} />
+              <ResultsArea
+                ruleMatches={ltMatches || []}
+                applyReplacement={async (m, r) => {
+                  if (!isFunction(applier)) return;
+                  await applier(m, r);
+                  await checkTextWithLoading();
+                }}
+                selectRuleMatch={matchSelector}
+              />
             </AddinResultsAreaContainer>
           )}
         </FeatureFlagsContext.Provider>

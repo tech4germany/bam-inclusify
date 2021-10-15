@@ -17,7 +17,7 @@ import { isFunction } from "../type-helpers";
 import { isGrammarCheckOn, isSpellCheckOn, UserSettings } from "../user-settings/user-settings";
 import { UserSettingsContext } from "../user-settings/UserSettingsStorage";
 
-export type ApplyReplacementFunction = (ruleMatch: RuleMatch, replacementText: string) => void;
+export type ApplyReplacementFunction = (ruleMatch: RuleMatch, replacementText: string) => Promise<void>;
 
 interface ResultsAreaProps {
   ruleMatches: RuleMatch[];
@@ -59,7 +59,7 @@ const LtMatchesListContainer = styled.div`
 
 interface LtMatchProps {
   ltMatch: RuleMatch;
-  applyReplacement?: (ruleMatch: RuleMatch, replacementText: string) => void;
+  applyReplacement?: ApplyReplacementFunction;
   selectRuleMatch: ((ruleMatch: RuleMatch) => void) | undefined;
 }
 
