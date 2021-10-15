@@ -30,15 +30,17 @@ def unified_dic() -> Dict[str, Dict[str, List[str]]]:
     return unified_dic
 
 def base_form_variations(inflected_forms: List[str]) -> List[Tuple[str, str]]:
+    return [(a, b) for a, b in base_forms(inflected_forms) if a != b]
+
+def base_forms(inflected_forms: List[str]) -> List[Tuple[str, str]]:
     open_(path.join(languagetool_path, "input.txt"), "w").write(" ".join(inflected_forms))
     result = subprocess.run(
         "java -jar languagetool-commandline.jar --taggeronly --language de-DE input.txt".split(" "), cwd=languagetool_path, capture_output=True
     )
     stdout = result.stdout.decode("UTF-8")
     stderr = result.stderr.decode("UTF-8")
-    all_base_forms = re.findall(r"([A-ZÄÖÜa-zäöüß\-]+)\[([A-ZÄÖÜa-zäöüß\-]+)", stdout)
-    without_base_form = re.findall(r"([A-ZÄÖÜa-zäöüß\-]+)\[([A-ZÄÖÜa-zäöüß\-]+)/null", stdout)
-    return [(a, b) for a, b in all_base_forms if a != b]
+    # without_base_form = re.findall(r"([A-ZÄÖÜa-zäöüß\-]+)\[([A-ZÄÖÜa-zäöüß\-]+)/null", stdout)
+    return re.findall(r"([A-ZÄÖÜa-zäöüß\-]+)\[([A-ZÄÖÜa-zäöüß\-]+)", stdout)
 
 def replace_keys(replacements: List[Tuple[str, str]], dic: Dict[str, List[str]]) -> Dict[str, List[str]]:
     for a, b in replacements:
