@@ -1,9 +1,9 @@
 import { FC } from "react";
 import styled from "styled-components";
-import { UserSettingsButton } from "../common/buttons/Buttons";
 import { Colors } from "../common/Colors";
 import { FontFamilies } from "../common/Fonts";
 import { AddinCheckTextButton } from "./AddinCheckTextButton";
+import { AddinUserSettingsButton } from "./AddinUserSettingsButton";
 
 interface AddinButtonGroupProps {
   onCheckClicked: () => void;
@@ -12,7 +12,7 @@ interface AddinButtonGroupProps {
 export const AddinTopButtonGroup: FC<AddinButtonGroupProps> = ({ onCheckClicked, settingsOpenState }) => (
   <AddinButtonGroupContainer>
     <InclusifyLogoLinkTile />
-    <UserSettingsButton pressedState={settingsOpenState} />
+    <AddinUserSettingsButton pressedState={settingsOpenState} />
     <AddinCheckTextButton onClick={onCheckClicked} />
   </AddinButtonGroupContainer>
 );
