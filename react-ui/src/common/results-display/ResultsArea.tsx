@@ -77,7 +77,7 @@ const LtMatch: FC<LtMatchProps> = ({ ltMatch, applyReplacement, selectRuleMatch 
   const category = mapRuleCategory(ltMatch);
 
   return (
-    <MatchContainer category={category}>
+    <MatchContainer category={category} onMouseEnter={() => isFunction(selectRuleMatch) && selectRuleMatch(ltMatch)}>
       <MatchTopBar categoryName={ltMatch.rule?.category?.name || ""} />
       <MatchContentContainer>
         <MatchContextContainer>
