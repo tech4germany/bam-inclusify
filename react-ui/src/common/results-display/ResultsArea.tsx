@@ -17,12 +17,7 @@ import { isFunction } from "../type-helpers";
 import { isGrammarCheckOn, isSpellCheckOn, UserSettings } from "../user-settings/user-settings";
 import { UserSettingsContext } from "../user-settings/UserSettingsStorage";
 
-export type ApplyReplacementFunction = (
-  ruleMatch: RuleMatch,
-  index: number,
-  allMatches: RuleMatch[],
-  replacementText: string
-) => void;
+export type ApplyReplacementFunction = (ruleMatch: RuleMatch, replacementText: string) => Promise<void>;
 
 interface ResultsAreaProps {
   ruleMatches: RuleMatch[];
@@ -39,13 +34,11 @@ export const ResultsArea: FC<ResultsAreaProps> = ({ ruleMatches, applyReplacemen
             const matchesToShow = postProcessRuleMatches(ruleMatches, featureFlags, userSettings);
             return (
               <LtMatchesListContainer>
-                {matchesToShow.map((ltMatch, idx) => (
+                {matchesToShow.map((ltMatch) => (
                   <LtMatch
                     key={ltMatch.clientUuid}
                     ltMatch={ltMatch}
-                    applyReplacement={
-                      !!applyReplacement ? (m, r) => applyReplacement(m, idx, ruleMatches, r) : undefined
-                    }
+                    applyReplacement={applyReplacement}
                     selectRuleMatch={selectRuleMatch}
                   />
                 ))}
@@ -66,7 +59,7 @@ const LtMatchesListContainer = styled.div`
 
 interface LtMatchProps {
   ltMatch: RuleMatch;
-  applyReplacement?: (ruleMatch: RuleMatch, replacementText: string) => void;
+  applyReplacement?: ApplyReplacementFunction;
   selectRuleMatch: ((ruleMatch: RuleMatch) => void) | undefined;
 }
 
@@ -77,7 +70,7 @@ const LtMatch: FC<LtMatchProps> = ({ ltMatch, applyReplacement, selectRuleMatch 
   const category = mapRuleCategory(ltMatch);
 
   return (
-    <MatchContainer category={category}>
+    <MatchContainer category={category} onMouseEnter={() => isFunction(selectRuleMatch) && selectRuleMatch(ltMatch)}>
       <MatchTopBar categoryName={ltMatch.rule?.category?.name || ""} />
       <MatchContentContainer>
         <MatchContextContainer>
@@ -100,6 +93,8 @@ const LtMatch: FC<LtMatchProps> = ({ ltMatch, applyReplacement, selectRuleMatch 
         <MatchRuleExplanation hidden={!isExpanded}>{ltMatch.message}</MatchRuleExplanation>
         <MatchActionsBar>
           <MatchExpandCollapseToggle expandedState={[isExpanded, setExpanded]} />
+          <MatchActionsBarSpacer />
+          <MatchIgnoreButton>x</MatchIgnoreButton>
         </MatchActionsBar>
       </MatchContentContainer>
     </MatchContainer>
@@ -230,6 +225,11 @@ const MatchRuleExplanation = styled.div`
 
 const MatchActionsBar = styled.div`
   font-size: 0.5625rem;
+  display: flex;
+`;
+
+const MatchActionsBarSpacer = styled.div`
+  flex-grow: 1;
 `;
 
 const MatchExpandCollapseToggleContainer = styled.button`
@@ -239,6 +239,12 @@ const MatchExpandCollapseToggleContainer = styled.button`
   display: flex;
   align-items: center;
   gap: 5px;
+  background: #fafafa 0% 0% no-repeat padding-box;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: #efefef;
+  }
 `;
 
 const MatchExpandCollapseIcon = styled(DownChevronIcon)`
@@ -256,3 +262,12 @@ const MatchExpandCollapseToggle: FC<{ expandedState: [boolean, React.Dispatch<Re
     <MatchExpandCollapseText>{isExpanded ? "weniger" : "mehr"} anzeigen</MatchExpandCollapseText>
   </MatchExpandCollapseToggleContainer>
 );
+
+const MatchIgnoreButton = styled.div`
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: black;
+  color: white;
+  text-align: center;
+`;

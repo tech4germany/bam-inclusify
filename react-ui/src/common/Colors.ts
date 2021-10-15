@@ -17,4 +17,5 @@ export const Colors = Object.freeze({
   mediumGreen: "#5A8D31",
   brightGreen: "#8BB40E",
   paleBlue: "#EDF0FC",
+  darkBlueText: "#022934",
 });

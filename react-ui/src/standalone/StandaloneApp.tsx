@@ -8,9 +8,8 @@ import { LanguageToolClient } from "../common/language-tool-api/LanguageToolClie
 import { RuleMatch } from "../common/language-tool-api/types";
 import { NavigationBar } from "../common/nav-bar/NavigationBar";
 import { ResultsArea } from "../common/results-display/ResultsArea";
-import { mapRuleCategory } from "../common/rule-categories";
 import { splitTextMatch } from "../common/splitTextMatch";
-import { SummaryBar } from "../common/summary-bar/SummaryBar";
+import { computeErrorCounts, SummaryBar } from "../common/summary-bar/SummaryBar";
 import { UserSettingsPanel } from "../common/user-settings/UserSettingsPanel";
 import { UserSettingsContext, useUserSettingsState } from "../common/user-settings/UserSettingsStorage";
 import { newUuidv4 } from "../common/uuid";
@@ -51,7 +50,9 @@ export const StandaloneApp: FC = () => {
           <NavigationBar />
 
           <CenteredContainer>
-            <SummaryBar pressedState={[isSettingsOpen, setSettingsOpen]} {...errorCounts} />
+            <SummaryBarContainer>
+              <SummaryBar pressedState={[isSettingsOpen, setSettingsOpen]} {...errorCounts} />
+            </SummaryBarContainer>
             <MainAreaContainer>
               <InputAreaContainer>
                 <MainTextArea
@@ -106,6 +107,10 @@ const CenteredContainer = styled.div`
   margin: 0 auto;
 `;
 
+const SummaryBarContainer = styled.div`
+  margin: 30px 0 24px;
+`;
+
 const MainAreaContainer = styled.div`
   display: flex;
   margin-bottom: 2rem;
@@ -127,7 +132,7 @@ function makeReplacementApplier(
   triggerRecheck: (text: string) => void,
   textAreaRef: RefObject<HTMLTextAreaElement>
 ) {
-  return (ruleMatch: RuleMatch, index: number, allMatches: RuleMatch[], replacementText: string) => {
+  return async (ruleMatch: RuleMatch, replacementText: string) => {
     const [preMatch, , postMatch] = splitTextMatch(inputText, ruleMatch.offset, ruleMatch.length);
     const newText = preMatch + replacementText + postMatch;
     setInputText(newText);
@@ -158,17 +163,6 @@ const ButtonBar = styled.div`
 const ButtonBarSpacer = styled.div`
   flex-grow: 1;
 `;
-
-function computeErrorCounts(ltMatches: RuleMatch[]): {
-  diversityErrorCount: number;
-  grammarErrorCount: number;
-  spellingErrorCount: number;
-} {
-  const diversityErrorCount = ltMatches.filter((m) => mapRuleCategory(m) === "diversity").length;
-  const grammarErrorCount = ltMatches.filter((m) => mapRuleCategory(m) === "grammar").length;
-  const spellingErrorCount = ltMatches.filter((m) => mapRuleCategory(m) === "spelling").length;
-  return { diversityErrorCount, grammarErrorCount, spellingErrorCount };
-}
 
 const WelcomeMessageContainer = styled.div`
   font-family: ${FontFamilies.bam};
