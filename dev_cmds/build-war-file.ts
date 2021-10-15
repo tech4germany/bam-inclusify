@@ -19,10 +19,21 @@ async function main() {
 
   await fs.remove(warPackageGrammarFileDir);
   await fs.mkdirp(warPackageGrammarFileDir);
-  await fs.copy(
+  const grammarXmlContents = await fs.readFile(
     path.join(languageToolDir, "LanguageTool-5.4/org/languagetool/rules/de/grammar.xml"),
-    path.join(warPackageGrammarFileDir, "grammar.xml")
+    "utf-8"
   );
+  const updatedGrammarXmlContents = grammarXmlContents.replace(
+    '<!ENTITY UserRules SYSTEM "file:./',
+    '<!ENTITY UserRules SYSTEM "classpath:'
+  );
+  await fs.writeFile(path.join(warPackageGrammarFileDir, "grammar.xml"), updatedGrammarXmlContents, {
+    encoding: "utf-8",
+  });
+  // await fs.copy(
+  //   path.join(languageToolDir, "LanguageTool-5.4/org/languagetool/rules/de/grammar.xml"),
+  //   path.join(warPackageGrammarFileDir, "grammar.xml")
+  // );
   await fs.copy(
     path.join(languageToolDir, "LanguageTool-5.4/org/languagetool/rules/de/grammar-diversity.xml"),
     path.join(warPackageGrammarFileDir, "grammar-diversity.xml")
