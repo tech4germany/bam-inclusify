@@ -16,6 +16,8 @@ import { FeatureFlagsContext, FeatureFlagsStorage, useFeatureFlagsState } from "
 import { DebugPanel } from "../common/debug-panel/DebugPanel";
 import { UserSettingsPanel } from "../common/user-settings/UserSettingsPanel";
 import { isFunction } from "../common/type-helpers";
+import { FontFamilies } from "../common/Fonts";
+import { Colors } from "../common/Colors";
 
 export const TaskpaneApp: FC = () => {
   const [ltMatches, setLtMatches] = useState<RuleMatch[]>([]);
@@ -86,22 +88,57 @@ interface AddinButtonGroupProps {
 }
 const AddinButtonGroup: FC<AddinButtonGroupProps> = ({ onCheckClicked, settingsOpenState }) => (
   <AddinButtonGroupContainer>
-    <AddinButtonColumnContainer>
-      <AddinCheckTextButton onClick={onCheckClicked} />
-      <UserSettingsButton pressedState={settingsOpenState} />
-    </AddinButtonColumnContainer>
+    <InclusifyLogoLinkTile />
+    <UserSettingsButton pressedState={settingsOpenState} />
+    <AddinCheckTextButton onClick={onCheckClicked} />
   </AddinButtonGroupContainer>
 );
 const AddinButtonGroupContainer = styled.div`
   display: flex;
-  gap: 5px;
+  gap: 10px;
   justify-content: flex-end;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 `;
-const AddinButtonColumnContainer = styled.div`
+
+const InclusifyLogoLinkTile = () => (
+  <InclusifyLogoLinkTileContainer href="#">
+    <InclusifyLogoContainer />
+    <InclusifyLogoLinkText>Deine Assistentin für diversitätsensible Sprache</InclusifyLogoLinkText>
+  </InclusifyLogoLinkTileContainer>
+);
+const InclusifyLogoLinkTileContainer = styled.a`
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 8px;
+  min-width: 145px;
+  min-height: 95px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 16px;
+  padding: 20px 20px 15px;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: ${Colors.darkBlueText};
+
+  &:hover {
+  }
+`;
+const InclusifyLogoContainer = styled.div`
+  border: 1px solid gray;
+  width: 14px;
+  height: 26px;
+  box-sizing: border-box;
+`;
+const InclusifyLogoLinkText = styled.div`
+  font-family: ${FontFamilies.bam};
+  font-size: 8px;
+  line-height: 9px;
+  font-style: italic;
+  font-weight: 400;
+  max-width: 100px;
+  text-align: center;
 `;
 
 const SummaryBarContainer = styled.div`
