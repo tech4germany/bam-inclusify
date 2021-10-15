@@ -5,8 +5,7 @@ import { ApplyReplacementFunction, ResultsArea } from "../common/results-display
 import { LanguageToolClient } from "../common/language-tool-api/LanguageToolClient";
 import { isRunningInOutlook, isRunningInWord } from "../common/office-api-helpers";
 import { splitTextMatch } from "../common/splitTextMatch";
-import { CheckTextButton } from "../common/buttons/Buttons";
-import { SummaryBar } from "../common/summary-bar/SummaryBar";
+import { computeErrorCounts, SummaryBar } from "../common/summary-bar/SummaryBar";
 import {
   UserSettingsContext,
   UserSettingsStorage,
@@ -15,34 +14,37 @@ import {
 import { FeatureFlagsContext, FeatureFlagsStorage, useFeatureFlagsState } from "../common/feature-flags/feature-flags";
 import { DebugPanel } from "../common/debug-panel/DebugPanel";
 import { UserSettingsPanel } from "../common/user-settings/UserSettingsPanel";
+import { isFunction } from "../common/type-helpers";
+import { AddinTopButtonGroup } from "./AddinTopButtonGroup";
 
 export const TaskpaneApp: FC = () => {
   const [ltMatches, setLtMatches] = useState<RuleMatch[]>([]);
   const [applier, setApplier] = useState<ApplyReplacementFunction>();
+  const [matchSelector, setMatchSelector] = useState<(ruleMatch: RuleMatch) => void>();
   const [isLoading, setLoading] = useState(false);
   const [isSettingsOpen, setSettingsOpen] = useState(false);
   const [featureFlags, setFeatureFlags] = useFeatureFlagsState();
   const [userSettings, setUserSettings] = useUserSettingsState();
 
+  const errorCounts = computeErrorCounts(ltMatches || []);
+
+  const checkTextWithLoading = async () => {
+    setLoading(true);
+    await checkText(setLtMatches, setApplier, setMatchSelector);
+    setLoading(false);
+  };
+
   return (
-    <div>
+    <AddinContainer>
       <UserSettingsContext.Provider value={userSettings}>
         <FeatureFlagsContext.Provider value={featureFlags}>
-          <div>
-            <CheckTextButton
-              onClick={async () => {
-                setLoading(true);
-                await clickHandler(setLtMatches, setApplier);
-                setLoading(false);
-              }}
-            />
-          </div>
-          <SummaryBar
-            diversityErrorCount={0}
-            grammarErrorCount={0}
-            spellingErrorCount={0}
-            pressedState={[isSettingsOpen, setSettingsOpen]}
+          <AddinTopButtonGroup
+            onCheckClicked={checkTextWithLoading}
+            settingsOpenState={[isSettingsOpen, setSettingsOpen]}
           />
+          <SummaryBarContainer>
+            <SummaryBar addinMode {...errorCounts} />
+          </SummaryBarContainer>
 
           {isSettingsOpen ? (
             <UserSettingsPanel
@@ -50,10 +52,18 @@ export const TaskpaneApp: FC = () => {
               onConfirmClicked={() => setSettingsOpen(false)}
             />
           ) : isLoading ? (
-            <div>Loading...</div>
+            <div>Text wird überprüft...</div>
           ) : (
             <AddinResultsAreaContainer>
-              <ResultsArea ruleMatches={ltMatches || []} applyReplacement={applier} />
+              <ResultsArea
+                ruleMatches={ltMatches || []}
+                applyReplacement={async (m, r) => {
+                  if (!isFunction(applier)) return;
+                  await applier(m, r);
+                  await checkTextWithLoading();
+                }}
+                selectRuleMatch={matchSelector}
+              />
             </AddinResultsAreaContainer>
           )}
         </FeatureFlagsContext.Provider>
@@ -62,23 +72,32 @@ export const TaskpaneApp: FC = () => {
         featureFlagsState={[featureFlags, setFeatureFlags]}
         userSettingsState={[userSettings, setUserSettings]}
       />
-    </div>
+    </AddinContainer>
   );
 };
 
+const AddinContainer = styled.div`
+  margin: 0 15px;
+`;
+
+const SummaryBarContainer = styled.div`
+  margin-bottom: 15px;
+`;
+
 const AddinResultsAreaContainer = styled.div`
-  margin: 1rem;
+  margin: 0;
 `;
 
 type ParagraphWithRanges = { paragraph: Word.Paragraph; ranges: Word.Range[] };
 type StartOffsetMapItem = { startOffset: number; paragraph: Word.Paragraph; range: Word.Range };
 
-const clickHandler = async (
+const checkText = async (
   setLtMatches: Dispatch<SetStateAction<RuleMatch[]>>,
-  setApplier: Dispatch<SetStateAction<ApplyReplacementFunction | undefined>>
+  setApplier: Dispatch<SetStateAction<ApplyReplacementFunction | undefined>>,
+  setMatchSelector: Dispatch<SetStateAction<((ruleMatch: RuleMatch) => void) | undefined>>
 ) => {
   if (isRunningInWord()) {
-    await wordClickHandler(setLtMatches, setApplier);
+    await checkTextFromWord(setLtMatches, setApplier, setMatchSelector);
   } else if (isRunningInOutlook()) {
     await outlookClickHandler(setLtMatches, setApplier);
   } else {
@@ -86,9 +105,10 @@ const clickHandler = async (
   }
 };
 
-async function wordClickHandler(
+async function checkTextFromWord(
   setLtMatches: Dispatch<SetStateAction<RuleMatch[]>>,
-  setApplier: Dispatch<SetStateAction<ApplyReplacementFunction | undefined>>
+  setApplier: Dispatch<SetStateAction<ApplyReplacementFunction | undefined>>,
+  setMatchSelector: Dispatch<SetStateAction<((ruleMatch: RuleMatch) => void) | undefined>>
 ) {
   console.time("getTextRanges");
   const paragraphsWithRanges: ParagraphWithRanges[] = await Word.run(async (context) => {
@@ -119,33 +139,51 @@ async function wordClickHandler(
 
   console.log(startOffsetMap);
 
-  const newApplier: ApplyReplacementFunction = (ruleMatch, index, allMatches, replacementText) => {
+  const getRangeForMatch = async (ruleMatch: RuleMatch) => {
     const startOffset = ruleMatch.offset;
     const endOffset = ruleMatch.offset + ruleMatch.length;
     const { index: startRangeIndex, item: startRangeItem } = findItemContainingOffset(startOffsetMap, startOffset);
-    const { index: endRangeIndex, item: endRangeItem } = findItemContainingOffset(startOffsetMap, endOffset);
+    const { index: endRangeIndex } = findItemContainingOffset(startOffsetMap, endOffset);
     const startOffsetInStartRange = startOffset - startRangeItem.startOffset;
-    const endOffsetInEndRange = endOffset - endRangeItem.startOffset;
-    const isMultiWordMatch = startRangeIndex !== endRangeIndex;
-    console.debug(
-      `Replacement for RuleMatch(offset=${ruleMatch.offset}, length=${ruleMatch.length})\n` +
-        `  starts in OffsetMapEntry(index=${startRangeIndex}, startOffset=${startRangeItem.startOffset}, length=${startRangeItem.range.text.length}, text='${startRangeItem.range.text}') at localOffset=${startOffsetInStartRange}\n` +
-        `  & ends in OffsetMapEntry(index=${endRangeIndex}, startOffset=${endRangeItem.startOffset}, length=${endRangeItem.range.text.length}, text='${endRangeItem.range.text}') at localOffset=${endOffsetInEndRange}\n` +
-        `  (multi-word match=${isMultiWordMatch})`
-    );
+
     const affectedRangesPlaintext = startOffsetMap
       .slice(startRangeIndex, endRangeIndex + 1)
       .map((item) => item.range.text)
       .join("");
-    startOffsetMap.slice(startRangeIndex + 1, endRangeIndex + 1).forEach((item) => item.range.delete());
-    const [preMatch, , postMatch] = splitTextMatch(affectedRangesPlaintext, startOffsetInStartRange, ruleMatch.length);
-    const newText = preMatch + replacementText + postMatch;
-    startRangeItem.range.insertText(newText, Word.InsertLocation.replace);
-    startRangeItem.range.context
-      .sync()
-      .then(() => console.debug(`replaced ${isMultiWordMatch ? "multi-word" : "single-word"} match`));
+    const completeRange = startOffsetMap
+      .slice(startRangeIndex, endRangeIndex + 1)
+      .map((i) => i.range)
+      .reduce((a, b) => a.expandTo(b));
+    const [, matchText] = splitTextMatch(affectedRangesPlaintext, startOffsetInStartRange, ruleMatch.length);
+    const matchRangeCollection = completeRange.search(matchText, { matchCase: true }).load();
+    await matchRangeCollection.context.sync();
+    // TODO: should also handle 0 and more than 1 results?
+    return matchRangeCollection.items[0];
   };
+
+  const newApplier: ApplyReplacementFunction = async (ruleMatch, replacementText) => {
+    const matchRange = await getRangeForMatch(ruleMatch);
+    if (!matchRange) {
+      console.warn("getRangeForMatch returned null or undefined");
+      return;
+    }
+    matchRange.insertText(replacementText, Word.InsertLocation.replace);
+    matchRange.select();
+    await matchRange.context.sync();
+  };
+
+  const newMatchSelector: (ruleMatch: RuleMatch) => void = async (ruleMatch) => {
+    const matchRange = await getRangeForMatch(ruleMatch);
+    if (!matchRange) {
+      console.warn("getRangeForMatch returned null or undefined");
+      return;
+    }
+    matchRange.select("Select");
+    matchRange.context.sync();
+  };
+
   setApplier(() => newApplier);
+  setMatchSelector(() => newMatchSelector);
 }
 
 async function outlookClickHandler(

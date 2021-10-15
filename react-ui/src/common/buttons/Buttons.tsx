@@ -43,10 +43,10 @@ const CheckTextButtonIconContainer = styled.div`
   align-items: center;
   justify-content: center;
 `;
+
 const CheckTextButtonTextContainer = styled.div`
   margin-right: 6px;
 `;
-
 interface CheckTextButtonProps {
   onClick: React.MouseEventHandler<HTMLButtonElement> | undefined;
   topCornersFlush?: boolean;
@@ -62,7 +62,7 @@ export const CheckTextButton: FC<CheckTextButtonProps> = ({ onClick, topCornersF
     <CheckTextButtonIconContainer>
       <CheckIcon />
     </CheckTextButtonIconContainer>
-    <CheckTextButtonTextContainer>Überprüfen</CheckTextButtonTextContainer>
+    <CheckTextButtonTextContainer>PRÜFEN</CheckTextButtonTextContainer>
   </CheckTextButtonContainer>
 );
 
@@ -96,6 +96,7 @@ const UserSettingsButtonContainer = styled.button`
 const UserSettingsIconContainer = styled.div`
   width: 28px;
   height: 28px;
+  margin: 0 auto;
   border-radius: 50%;
   background: white;
 

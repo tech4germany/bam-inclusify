@@ -1,5 +1,4 @@
 import { createContext, useState } from "react";
-import { DefaultFeatureFlags } from "../feature-flags/feature-flags";
 import { LocalStorageService } from "../local-storage/LocalStorageService";
 import { GenderingTypes, GenderSymbols, UserSettings } from "./user-settings";
 
@@ -9,8 +8,8 @@ export const DefaultUserSettings: UserSettings = Object.freeze({
   genderingType: "neutral",
   genderSymbol: "star",
   customGenderSymbol: "",
-  grammarCheckEnabled: DefaultFeatureFlags.grammarCheckAvailable,
-  spellCheckEnabled: DefaultFeatureFlags.spellCheckAvailable,
+  grammarCheckEnabled: true,
+  spellCheckEnabled: true,
 });
 
 export const UserSettingsStorage = new LocalStorageService(UserSettingsStorageId, DefaultUserSettings, {
