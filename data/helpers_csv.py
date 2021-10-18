@@ -22,13 +22,7 @@ def dict_to_csvs(dic: Dict[str, Dict[str, List[str]]], name: str) -> None:
     csv.writer(file).writerows(sorted(rows))
 
 
-def csvs_to_dict(
+def csvs_to_list(
     name: str, numbers: List[str] = ["sg", "pl"]
-) -> Dict[str, Dict[str, List[str]]]:
-    file = open(name + ".csv")
-    dic = {"sg": {}, "pl": {}}
-    for [key, val, plural_only] in csv.reader(file):
-        if plural_only == '0':
-            add_to_dict(key, [val], dic["sg"])
-        add_to_dict(key, [val], dic["pl"])
-    return dic
+) -> List:
+    return list(csv.reader(open(name + ".csv")))
