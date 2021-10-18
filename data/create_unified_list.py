@@ -3,6 +3,7 @@ from helpers import open_, add_to_dict
 from os import path
 from typing import *
 import csv
+import itertools
 import re
 import stanza
 import subprocess
@@ -26,8 +27,8 @@ def unified_list():
     rows = []
     for lemma, rules in dic.items():
         for y in rules:
-            (insensitive, sensitive, plural_only) = y
-            rows.append([lemma, insensitive, sensitive, plural_only])
+            (insensitive_lemmas, insensitive, sensitive, plural_only) = y
+            rows.append([lemma, insensitive_lemmas, insensitive, sensitive, plural_only])
     csv.writer(open("unified.csv", "w")).writerows(rows)
 
 
@@ -36,11 +37,12 @@ def lemmatize_rules(rules):
     lemmatized_rules = {}
     for [insensitive, sensitive, plural_only] in rules:
         doc = nlp(insensitive)
+        insensitive_lemmas = ";".join(list(itertools.chain(*[[word.lemma for word in sentence.words] for sentence in nlp(insensitive).sentences])))
         for sentence in doc.sentences:
             for word in sentence.words:
                 if word.head == 0:
                     add_to_dict(
-                        word.lemma, [(insensitive, sensitive, plural_only)], lemmatized_rules)
+                        word.lemma, [(insensitive_lemmas, insensitive, sensitive, plural_only)], lemmatized_rules)
     return lemmatized_rules
 
 
