@@ -1,6 +1,6 @@
 import os
 from flask import Flask, request
-from matches import matches
+from matches import matches, rules
 
 app = Flask(__name__)
 

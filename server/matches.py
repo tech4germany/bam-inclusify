@@ -1,17 +1,23 @@
 from typing import *
+import csv
 import stanza
 import sys
 
 sys.path.insert(0, "../data")
 
-from helpers_csv import csvs_to_dict
+from helpers import add_to_dict
 
-rules = csvs_to_dict("../data/unified")["sg"]
+# stanza.download("de")
 
-stanza.download("de")
+nlp = stanza.Pipeline(lang="de", processors="tokenize,mwt,pos,lemma,depparse")
 
-nlp = stanza.Pipeline(lang="de", processors="tokenize,mwt,pos,lemma")
+def load_rules():
+    dic = {}
+    for [lemma, insensible, sensible, plural_only] in csv.reader(open("../data/unified.csv")):
+        add_to_dict(lemma, [(insensible, sensible, plural_only)], dic)
+    return dic
 
+rules = load_rules()
 
 def matches(text: str):
     doc = nlp(text)
@@ -24,9 +30,10 @@ def gender_matches(doc):
         for word in sentence.words:
             lemma = word.lemma
             if lemma in rules.keys():
+                replacements = [sensible for _, sensible, _ in rules[lemma]]
                 match = gender_match(
                     lemma,
-                    rules[lemma],
+                    replacements,
                     word.start_char,
                     word.end_char - word.start_char,
                 )
