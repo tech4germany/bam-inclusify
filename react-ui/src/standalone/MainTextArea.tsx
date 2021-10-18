@@ -28,9 +28,7 @@ export const MainTextArea: FC<MainTextAreaProps> = ({ onChange, onSubmit, value,
         }}
       />
       <BottomBarContainer>
-        <InputLength>
-          {value.length.toLocaleString("de-DE")} / {inputLengthLimit.toLocaleString("de-DE")}
-        </InputLength>
+        <InputLength>{value.length.toLocaleString("de-DE")} Zeichen</InputLength>
         <BottomBarSpacer />
         <CopyTextButton title="Text kopieren" onClick={() => navigator.clipboard.writeText(value)}>
           <CopyTextButtonIcon />
@@ -39,8 +37,6 @@ export const MainTextArea: FC<MainTextAreaProps> = ({ onChange, onSubmit, value,
     </MainTextAreaContainer>
   );
 };
-
-const inputLengthLimit = 10000;
 
 const MainTextAreaContainer = styled.div`
   box-shadow: 0px 9px 18px #00000029;
