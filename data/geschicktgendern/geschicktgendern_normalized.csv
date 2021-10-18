@@ -60,7 +60,9 @@ Akteur,handelnde Person,0
 Akteursnetzwerk,Netzwerk von Aktiven,0
 Akteursnetzwerk,Netzwerk von Engagierten,0
 Aktionär,Person mit Aktienbesitz,0
-Aktionär,aktienhabende Person,anteilshabende Person,0
+Aktionär,Person mit Aktienbesitz,0
+Aktionär,aktienhabende Person,0
+Aktionär,anteilshabende Person,0
 Aktionärsversammlung,Versammlung von Anteilshabenden,0
 Aktionärsversammlung,Versammlung von Personen mit Aktienbesitz,0
 Aktivist,engagierte Person,0
