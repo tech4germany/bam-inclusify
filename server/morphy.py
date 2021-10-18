@@ -10,15 +10,15 @@ sys.path.insert(0, "../data")
 
 from helpers import add_to_dict, open_, log
 
-dump = open_("dictionary.dump").readlines()
-
 inflected_to_lemma = {}
 lemma_to_inflected = {}
 
 
 def init():
     print("Reading morphological dictionary ...")
-    for line in dump:
+    dump = open_("dictionary.dump").readlines()
+    added = open_("dictionary_added.txt").readlines()
+    for line in dump + added:
         inflected, lemma, morph = line.split("\t")
         add_to_dict(inflected, [(morph, lemma)], inflected_to_lemma)
         add_to_dict(lemma, [(morph, inflected)], lemma_to_inflected)
