@@ -1,7 +1,7 @@
 import React, { FC, useState } from "react";
 import styled from "styled-components";
 import { DownChevronIcon } from "../../icons";
-import { Colors } from "../Colors";
+import { Colors } from "../styles/Colors";
 import { FeatureFlags, FeatureFlagsContext } from "../feature-flags/feature-flags";
 import { RuleMatch } from "../language-tool-api/types";
 import { mapUserSettingsToReplacementPostProcessing } from "../language-tool-api/user-settings-language-mapping";

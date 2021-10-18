@@ -1,6 +1,6 @@
 import { FC } from "react";
 import styled from "styled-components";
-import { Colors } from "../Colors";
+import { Colors } from "../styles/Colors";
 import { FeatureFlagsContext } from "../feature-flags/feature-flags";
 import { mapRuleCategory } from "../rule-categories";
 import { isGrammarCheckOn, isSpellCheckOn } from "../user-settings/user-settings";

@@ -1,7 +1,7 @@
 import { FC } from "react";
 import styled from "styled-components";
-import { Colors } from "../common/Colors";
-import { FontFamilies } from "../common/Fonts";
+import { Colors } from "../common/styles/Colors";
+import { FontFamilies } from "../common/styles/Fonts";
 import { AddinCheckTextButton } from "./AddinCheckTextButton";
 import { AddinUserSettingsButton } from "./AddinUserSettingsButton";
 

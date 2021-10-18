@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { makeGlobalStyle } from "../common/global-styles";
+import { makeGlobalStyle } from "../common/styles/global-styles";
 import { TaskpaneApp } from "./TaskpaneApp";
 import { setOfficeHostInfo } from "../common/office-api-helpers";
 import { NonOfficeRedirectApp } from "./NonOfficeRedirectApp";

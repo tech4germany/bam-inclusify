@@ -2,8 +2,8 @@ import "normalize.css";
 import "@fontsource/roboto/100.css";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
+import "./bam-klavika-font/index.css";
 import { createGlobalStyle, DefaultTheme, GlobalStyleComponent } from "styled-components";
-import "./styles/bam-klavika-font/index.css";
 
 export function makeGlobalStyle(inAddin: boolean): GlobalStyleComponent<{}, DefaultTheme> {
   const bodyBackgroundColor = inAddin ? "transparent" : "#E8E8E8";

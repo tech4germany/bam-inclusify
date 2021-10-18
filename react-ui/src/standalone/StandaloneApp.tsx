@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { StandaloneCheckTextButton } from "./StandaloneCheckTextButton";
 import { DebugPanel } from "../common/debug-panel/DebugPanel";
 import { FeatureFlagsContext, useFeatureFlagsState } from "../common/feature-flags/feature-flags";
-import { FontFamilies } from "../common/Fonts";
+import { FontFamilies } from "../common/styles/Fonts";
 import { LanguageToolClient } from "../common/language-tool-api/LanguageToolClient";
 import { RuleMatch } from "../common/language-tool-api/types";
 import { NavigationBar } from "../common/nav-bar/NavigationBar";
