@@ -24,19 +24,21 @@ def init():
 
 
 def inflect(word, case=None, gender=None, number=None):
-    print(word in inflected_to_lemma)
     if word not in inflected_to_lemma:
         return None
     meanings = inflected_to_lemma[word]
     inflected = []
     for morph, lemma in meanings:
         morphs = parse_morph(morph)
+        if not morphs:
+            print(word, "is not a noun or adjective.")
+            return None
         case = case if case is not None else morphs["Case"]
         gender = gender if gender is not None else morphs["Gender"]
         number = number if number is not None else morphs["Number"]
         new_morph = ":".join([morphs["POS"], case, number, gender])
         inflected += [inflected_ for morph_, inflected_ in lemma_to_inflected[lemma]
-                      if log("match", re.match(log("new_morph", new_morph), log("morph_", morph_)) is not None)]
+                      if re.match(new_morph, morph_) is not None]
     return list(set(inflected))
 
 
@@ -47,8 +49,8 @@ def parse_morph(morph):
         return {
             "POS": morphs[0],
             "Case": morphs[1],
-            "Gender": morphs[2],
-            "Number": morphs[3]
+            "Number": morphs[2],
+            "Gender": morphs[3],
         }
     else:
         return None
