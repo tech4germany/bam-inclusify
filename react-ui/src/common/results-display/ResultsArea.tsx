@@ -252,6 +252,7 @@ const MatchExpandCollapseToggleContainer = styled.button`
 `;
 
 const MatchExpandCollapseIcon = styled(DownChevronIcon)`
+  fill: #565757;
   &.isExpanded {
     transform: rotate(180deg);
   }

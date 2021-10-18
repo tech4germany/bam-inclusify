@@ -84,8 +84,14 @@ const CopyTextButton = styled.button`
   background: none;
   border: none;
   cursor: pointer;
+  color: #666666;
+
+  &:hover {
+    color: black;
+  }
 `;
 
 const CopyTextButtonIcon = styled(CopyIcon)`
   margin: 12px;
+  fill: currentColor;
 `;

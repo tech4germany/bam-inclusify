@@ -1,7 +1,7 @@
 import { FC } from "react";
 import styled from "styled-components";
 import { Colors } from "../common/styles/Colors";
-import { ReactComponent as GearIcon } from "../common/icons/gear.svg";
+import { GearIcon } from "../common/icons";
 
 export const AddinUserSettingsButton: FC<UserSettingsButtonProps> = ({
   pressedState: [isPressed, setPressed],
@@ -14,7 +14,7 @@ export const AddinUserSettingsButton: FC<UserSettingsButtonProps> = ({
     title={"Einstellungen " + (isPressed ? "schließen" : "anzeigen")}
   >
     <UserSettingsIconContainer>
-      <GearIcon width={25} height={25} />
+      <GearIcon width={25} height={25} fill={Colors.darkYellow} />
     </UserSettingsIconContainer>
   </UserSettingsButtonContainer>
 );

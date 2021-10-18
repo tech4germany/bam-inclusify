@@ -10,7 +10,7 @@ interface CheckTextButtonProps {
 export const StandaloneCheckTextButton: FC<CheckTextButtonProps> = ({ onClick, disabled }) => (
   <CheckTextButtonContainer onClick={onClick} disabled={disabled} title="Text überprüfen">
     <CheckTextButtonIconContainer>
-      <CheckIcon />
+      <CheckIcon fill={Colors.mediumGreen} />
     </CheckTextButtonIconContainer>
     <CheckTextButtonTextContainer>PRÜFEN</CheckTextButtonTextContainer>
   </CheckTextButtonContainer>

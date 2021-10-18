@@ -14,7 +14,7 @@ export const StandaloneUserSettingsButton: FC<UserSettingsButtonProps> = ({
     title={"Einstellungen " + (isPressed ? "schließen" : "anzeigen")}
   >
     <UserSettingsIconContainer>
-      <GearIcon />
+      <GearIcon fill={Colors.darkYellow} />
     </UserSettingsIconContainer>
   </UserSettingsButtonContainer>
 );

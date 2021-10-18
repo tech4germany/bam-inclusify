@@ -11,7 +11,7 @@ interface CheckTextButtonProps {
 export const AddinCheckTextButton: FC<CheckTextButtonProps> = ({ onClick, topCornersFlush, disabled }) => (
   <AddinCheckTextButtonContainer onClick={onClick} disabled={disabled} title="Text überprüfen">
     <AddinTextButtonIconContainer>
-      <CheckIcon viewBox="0 0 14 16" width={20} height={20} />
+      <CheckIcon viewBox="0 0 14 16" width={20} height={20} fill={Colors.mediumGreen} />
     </AddinTextButtonIconContainer>
     <AddinCheckTextButtonTextContainer>PRÜFEN</AddinCheckTextButtonTextContainer>
   </AddinCheckTextButtonContainer>
