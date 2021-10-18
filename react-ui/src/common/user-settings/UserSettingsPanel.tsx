@@ -4,6 +4,8 @@ import { Colors } from "../styles/Colors";
 import { FeatureFlagsContext } from "../feature-flags/feature-flags";
 import { GenderingType, GenderSymbol, UserSettings } from "./user-settings";
 import { Fonts } from "../styles/Fonts";
+import { GearIcon } from "../icons";
+import { DefaultUserSettings } from "./UserSettingsStorage";
 
 type OptionListEntryInfo<T> = { id: T; label: string };
 
@@ -102,6 +104,12 @@ export const UserSettingsPanel: FC<UserSettingsPanelProps> = ({ userSettingsStat
               </>
             )}
             <ConfirmButtonBar>
+              <ResetButton
+                title="Auf Standardeinstellungen zurücksetzen"
+                onClick={() => setUserSettings(() => DefaultUserSettings)}
+              >
+                Zurücksetzen
+              </ResetButton>
               <ConfirmButton onClick={() => onConfirmClicked()}>Fertig</ConfirmButton>
             </ConfirmButtonBar>
           </UserSettingsContent>
@@ -117,15 +125,35 @@ const UserSettingsPanelContainer = styled.div`
   border-radius: 20px 0px 20px 20px;
 `;
 
-const UserSettingsTitle = styled.h2`
-  font-size: 20px;
-  font-style: italic;
-  padding: 10px 16px;
+const UserSettingsTitle: FC = ({ children }) => (
+  <UserSettingsTitleContainer>
+    <UserSettingsTitleText>{children}</UserSettingsTitleText>
+    <UserSettingsTitleIcon />
+  </UserSettingsTitleContainer>
+);
+const UserSettingsTitleContainer = styled.div`
+  padding: 10px 10px 10px 16px;
   background: transparent linear-gradient(90deg, ${Colors.mediumYellow} 0%, ${Colors.darkYellow} 100%) 0% 0% no-repeat
     padding-box;
   color: white;
   border-radius: 20px 0px 0px 0px;
   margin: 0;
+  display: flex;
+`;
+const UserSettingsTitleText = styled.h2`
+  font-size: 20px;
+  font-style: italic;
+  font-family: ${Fonts.main.family};
+  font-weight: ${Fonts.main.weights.bold};
+  line-height: 24px;
+  letter-spacing: 0px;
+  flex-grow: 1;
+  margin: 0;
+`;
+const UserSettingsTitleIcon = styled(GearIcon)`
+  fill: currentColor;
+  width: 24px;
+  height: 24px;
 `;
 
 const UserSettingsContent = styled.div`
@@ -138,14 +166,19 @@ const DefaultSettingsExplanation = styled.div`
   font-size: 13px;
   line-height: 16px;
   font-style: italic;
-  font-family: ${Fonts.main.family};
-  font-weight: ${Fonts.main.weights.bold};
+  letter-spacing: 0px;
+  font-family: ${Fonts.bam.family};
+  font-weight: ${Fonts.bam.weights.bold};
   color: ${Colors.darkYellow};
 `;
 
 const SettingsSectionTitle = styled.h3`
   font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0px;
   margin: 9px 0;
+  font-family: ${Fonts.bam.family};
+  font-weight: ${Fonts.bam.weights.bold};
 `;
 
 const OptionListContainer = styled.div`
@@ -320,6 +353,21 @@ const ConfirmButtonBar = styled.div`
   display: flex;
   justify-content: flex-end;
   margin-top: 16px;
+  gap: 5px;
+`;
+const ResetButton = styled.button`
+  background: white;
+  border: 1px solid ${Colors.darkYellow};
+  border-radius: 5px;
+  font-family: ${Fonts.main.family};
+  font-weight: ${Fonts.main.weights.bold};
+  font-size: 13px;
+  color: ${Colors.darkYellow};
+  padding: 7px 14px;
+
+  &:hover {
+    background: ${Colors.paleYellow};
+  }
 `;
 
 const ConfirmButton = styled.button`
@@ -341,15 +389,19 @@ const GenderedExampleContainer = styled.div`
   display: flex;
   gap: 1ch;
   font-size: 13px;
+  line-height: 16px;
+  letter-spacing: 0;
   margin-top: 5px;
 `;
 const GenderedExampleTitle = styled.div`
-  font-family: ${Fonts.main.family};
-  font-weight: ${Fonts.main.weights.bold};
+  font-family: ${Fonts.bam.family};
+  font-weight: ${Fonts.bam.weights.bold};
 `;
 const GenderedExampleList = styled.div`
   display: flex;
   flex-direction: column;
+  font-family: ${Fonts.bam.family};
+  font-weight: ${Fonts.main.weights.normal};
 `;
 const GenderedExamplePair = styled.div``;
 const GenderedExampleBad = styled.span`
