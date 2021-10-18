@@ -8,6 +8,7 @@ export const DefaultFeatureFlags = Object.freeze({
   spellCheckAvailable: false,
   allowMultiCharGenderSymbol: false,
   maxReplacementsPerRuleMatch: 5,
+  useBamLogo: true,
 });
 
 export type FeatureFlags = typeof DefaultFeatureFlags;

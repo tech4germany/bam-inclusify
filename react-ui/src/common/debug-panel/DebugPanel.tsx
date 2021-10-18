@@ -83,6 +83,14 @@ export const DebugPanel: FC<DebugPanelProps> = !isDebugPanelEnabled
           >
             Mehr-Zeichen Gender-Symbol erlauben
           </Checkbox>
+          <Checkbox
+            id={inputIds.useBamLogo}
+            featureFlagsState={featureFlagsState}
+            valueSelector={(f) => f.useBamLogo}
+            valueUpdater={(g, pf) => ({ ...pf, useBamLogo: g })}
+          >
+            BAM-Logo verwenden
+          </Checkbox>
           <NumberInput
             id={inputIds.maxReplacementsPerRuleMatch}
             featureFlagsState={featureFlagsState}

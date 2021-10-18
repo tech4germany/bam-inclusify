@@ -1,12 +1,14 @@
 import React from "react";
 import styled from "styled-components";
+import { FeatureFlagsContext } from "../common/feature-flags/feature-flags";
+import { InclusifyBamLogo, InclusifyLogo } from "../common/icons";
 import { CenteredContainer } from "./CenteredContainer";
 
 export const NavigationBar = () => (
   <NavBarContainer>
     <CenteredContainer>
       <NavBarItemsContainer>
-        <NavBarAppIconContainer>INCLUSIFY</NavBarAppIconContainer>
+        <NavBarAppIcon />
         <NavBarSpacer />
         <NavBarLinkItem>Das Projekt</NavBarLinkItem>
         <NavBarLinkItem>BAM Leitfaden</NavBarLinkItem>
@@ -22,18 +24,24 @@ const NavBarContainer = styled.div`
 
 const NavBarItemsContainer = styled.div`
   display: flex;
+  align-items: center;
 `;
 const NavBarSpacer = styled.div`
   flex-grow: 1;
 `;
 
+const NavBarAppIcon = () => (
+  <FeatureFlagsContext.Consumer>
+    {(featureFlags) => (
+      <NavBarAppIconContainer>
+        {featureFlags.useBamLogo ? <InclusifyBamLogo /> : <InclusifyLogo />}
+      </NavBarAppIconContainer>
+    )}
+  </FeatureFlagsContext.Consumer>
+);
+
 const navBarHeight = "85px";
-const NavBarAppIconContainer = styled.div`
-  font-size: 30px;
-  font-weight: bold;
-  height: ${navBarHeight};
-  line-height: ${navBarHeight};
-`;
+const NavBarAppIconContainer = styled.div``;
 const NavBarLinkItem = styled.a`
   font-size: 20px;
   height: ${navBarHeight};
