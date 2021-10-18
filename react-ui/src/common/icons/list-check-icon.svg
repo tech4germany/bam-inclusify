@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="125" height="83.333" viewBox="0 0 125 83.333">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <path id="Icon_material-playlist-add-check" data-name="Icon material-playlist-add-check" class="cls-1" d="M74.429,32.81H3v11.9H74.429Zm0-23.81H3V20.9H74.429ZM3,68.524H50.619v-11.9H3ZM119.071,41.738,128,50.667,86.393,92.333,59.548,65.548l8.929-8.929L86.393,74.476Z" transform="translate(-3 -9)"/>
+</svg>

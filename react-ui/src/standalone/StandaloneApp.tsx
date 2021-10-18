@@ -16,6 +16,7 @@ import { MainTextArea } from "./MainTextArea";
 import { StandaloneUserSettingsButton } from "./StandaloneUserSettingsButton";
 import { CenteredContainer } from "./CenteredContainer";
 import { WelcomeMessage } from "../common/message-panels/WelcomeMessage";
+import { LoadingMessage } from "../common/message-panels/LoadingMessage";
 
 type UseState<S> = [S, Dispatch<SetStateAction<S>>];
 
@@ -78,7 +79,7 @@ export const StandaloneApp: FC = () => {
                     onConfirmClicked={() => setSettingsOpen(false)}
                   />
                 ) : isLoading ? (
-                  <div>Text wird überprüft...</div>
+                  <LoadingMessage />
                 ) : ltMatches === null ? (
                   <WelcomeMessage />
                 ) : (

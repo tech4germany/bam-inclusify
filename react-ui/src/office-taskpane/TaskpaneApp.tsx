@@ -17,6 +17,7 @@ import { UserSettingsPanel } from "../common/user-settings/UserSettingsPanel";
 import { isFunction } from "../common/type-helpers";
 import { AddinTopButtonGroup } from "./AddinTopButtonGroup";
 import { WelcomeMessage } from "../common/message-panels/WelcomeMessage";
+import { LoadingMessage } from "../common/message-panels/LoadingMessage";
 
 export const TaskpaneApp: FC = () => {
   const [ltMatches, setLtMatches] = useState<RuleMatch[] | null>(null);
@@ -47,30 +48,30 @@ export const TaskpaneApp: FC = () => {
             <SummaryBar addinMode {...errorCounts} />
           </SummaryBarContainer>
 
-          {isSettingsOpen ? (
-            <UserSettingsPanelConainer>
+          <LowerAreaContainer>
+            {isSettingsOpen ? (
               <UserSettingsPanel
                 userSettingsState={[userSettings, setUserSettings]}
                 onConfirmClicked={() => setSettingsOpen(false)}
               />
-            </UserSettingsPanelConainer>
-          ) : isLoading ? (
-            <div>Text wird überprüft...</div>
-          ) : ltMatches === null ? (
-            <WelcomeMessage />
-          ) : (
-            <AddinResultsAreaContainer>
-              <ResultsArea
-                ruleMatches={ltMatches || []}
-                applyReplacement={async (m, r) => {
-                  if (!isFunction(applier)) return;
-                  await applier(m, r);
-                  await checkTextWithLoading();
-                }}
-                selectRuleMatch={matchSelector}
-              />
-            </AddinResultsAreaContainer>
-          )}
+            ) : isLoading ? (
+              <LoadingMessage />
+            ) : ltMatches === null ? (
+              <WelcomeMessage />
+            ) : (
+              <AddinResultsAreaContainer>
+                <ResultsArea
+                  ruleMatches={ltMatches || []}
+                  applyReplacement={async (m, r) => {
+                    if (!isFunction(applier)) return;
+                    await applier(m, r);
+                    await checkTextWithLoading();
+                  }}
+                  selectRuleMatch={matchSelector}
+                />
+              </AddinResultsAreaContainer>
+            )}
+          </LowerAreaContainer>
         </FeatureFlagsContext.Provider>
       </UserSettingsContext.Provider>
       <DebugPanel
@@ -89,7 +90,7 @@ const SummaryBarContainer = styled.div`
   margin-top: 8px;
 `;
 
-const UserSettingsPanelConainer = styled.div`
+const LowerAreaContainer = styled.div`
   margin-top: 17px;
 `;
 
