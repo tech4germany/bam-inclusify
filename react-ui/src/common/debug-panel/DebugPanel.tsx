@@ -1,6 +1,7 @@
 import { FC, useEffect, useState } from "react";
 import styled from "styled-components";
 import { DefaultFeatureFlags, FeatureFlags, isDebugPanelEnabled } from "../feature-flags/feature-flags";
+import { Fonts } from "../styles/Fonts";
 import { UserSettings } from "../user-settings/user-settings";
 import { DefaultUserSettings } from "../user-settings/UserSettingsStorage";
 import { newUuidv4 } from "../uuid";
@@ -110,7 +111,8 @@ const DebugPanelHeader = styled.div`
 `;
 const DebugPanelHeading = styled.div`
   font-size: 110%;
-  font-weight: 400;
+  font-family: ${Fonts.main.family};
+  font-weight: ${Fonts.main.weights.bold};
   margin-bottom: 5px 0;
   flex-grow: 1;
 `;

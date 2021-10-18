@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { StandaloneCheckTextButton } from "./StandaloneCheckTextButton";
 import { DebugPanel } from "../common/debug-panel/DebugPanel";
 import { FeatureFlagsContext, useFeatureFlagsState } from "../common/feature-flags/feature-flags";
-import { FontFamilies } from "../common/styles/Fonts";
 import { LanguageToolClient } from "../common/language-tool-api/LanguageToolClient";
 import { RuleMatch } from "../common/language-tool-api/types";
 import { NavigationBar } from "../common/nav-bar/NavigationBar";
@@ -15,6 +14,7 @@ import { UserSettingsContext, useUserSettingsState } from "../common/user-settin
 import { newUuidv4 } from "../common/uuid";
 import { MainTextArea } from "./MainTextArea";
 import { StandaloneUserSettingsButton } from "./StandaloneUserSettingsButton";
+import { Fonts } from "../common/styles/Fonts";
 
 type UseState<S> = [S, Dispatch<SetStateAction<S>>];
 
@@ -168,18 +168,18 @@ const ButtonBarSpacer = styled.div`
 `;
 
 const WelcomeMessageContainer = styled.div`
-  font-family: ${FontFamilies.bam};
+  font-family: ${Fonts.bam.family};
   font-size: 20px;
   font-style: italic;
 `;
 
 const WelcomeMessageIntro = styled.p`
-  font-weight: 400;
+  font-weight: ${Fonts.bam.weights.bold};
   margin: 0;
 `;
 const WelcomeMessageBody = styled.p`
   margin: 1em 0 0;
-  font-weight: 300;
+  font-weight: ${Fonts.bam.weights.normal};
 `;
 
 const WelcomeMessage = () => (

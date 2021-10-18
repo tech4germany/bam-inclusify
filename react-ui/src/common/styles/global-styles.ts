@@ -1,22 +1,18 @@
 import "normalize.css";
-import "@fontsource/roboto/100.css";
-import "@fontsource/roboto/300.css";
-import "@fontsource/roboto/400.css";
-import "@fontsource/roboto/100-italic.css";
-import "@fontsource/roboto/300-italic.css";
-import "@fontsource/roboto/400-italic.css";
-import "./bam-klavika-font/index.css";
 import { createGlobalStyle, DefaultTheme, GlobalStyleComponent } from "styled-components";
+import { Fonts } from "./Fonts";
 
 export function makeGlobalStyle(inAddin: boolean): GlobalStyleComponent<{}, DefaultTheme> {
   const bodyBackgroundColor = inAddin ? "transparent" : "#E8E8E8";
   const bodyOverflow = inAddin ? "scroll" : "initial";
+  const mainFont = Fonts.main;
+
   return createGlobalStyle`
     body {
       background: ${bodyBackgroundColor};
-      font-family: "Roboto", sans-serif;
+      font-family: ${mainFont.family}, sans-serif;
       font-size: 16px;
-      font-weight: 300;
+      font-weight: ${mainFont.weights.normal};
       overflow-y: ${bodyOverflow};
     }`;
 }

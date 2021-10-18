@@ -1,7 +1,7 @@
 import { FC } from "react";
 import styled from "styled-components";
 import { Colors } from "../common/styles/Colors";
-import { FontFamilies } from "../common/styles/Fonts";
+import { Fonts } from "../common/styles/Fonts";
 import { AddinCheckTextButton } from "./AddinCheckTextButton";
 import { AddinUserSettingsButton } from "./AddinUserSettingsButton";
 
@@ -55,11 +55,11 @@ const InclusifyLogoContainer = styled.div`
   box-sizing: border-box;
 `;
 const InclusifyLogoLinkText = styled.div`
-  font-family: ${FontFamilies.bam};
+  font-family: ${Fonts.bam.family};
   font-size: 8px;
   line-height: 9px;
   font-style: italic;
-  font-weight: 400;
+  font-weight: ${Fonts.bam.weights.bold};
   max-width: 100px;
   text-align: center;
 `;

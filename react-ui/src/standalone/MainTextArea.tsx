@@ -2,6 +2,7 @@ import { ChangeEventHandler, FC, RefObject, useEffect } from "react";
 import styled from "styled-components";
 import { isFunction } from "../common/type-helpers";
 import { CopyIcon } from "../common/icons";
+import { Fonts } from "../common/styles/Fonts";
 
 export interface MainTextAreaProps {
   onChange: ChangeEventHandler<HTMLTextAreaElement>;
@@ -46,8 +47,9 @@ const MainTextAreaContainer = styled.div`
 
 const TextArea = styled.textarea`
   padding: 40px 32px 24px;
+  font-family: ${Fonts.main.family};
+  font-weight: ${Fonts.main.weights.normal};
   font-size: 15px;
-  font-weight: 300;
   line-height: 25px;
   width: 100%;
   box-sizing: border-box;

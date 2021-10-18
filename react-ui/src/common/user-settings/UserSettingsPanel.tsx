@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Colors } from "../styles/Colors";
 import { FeatureFlagsContext } from "../feature-flags/feature-flags";
 import { GenderingType, GenderSymbol, UserSettings } from "./user-settings";
+import { Fonts } from "../styles/Fonts";
 
 type OptionListEntryInfo<T> = { id: T; label: string };
 
@@ -137,7 +138,8 @@ const DefaultSettingsExplanation = styled.div`
   font-size: 13px;
   line-height: 16px;
   font-style: italic;
-  font-weight: 400;
+  font-family: ${Fonts.main.family};
+  font-weight: ${Fonts.main.weights.bold};
   color: ${Colors.darkYellow};
 `;
 
@@ -323,7 +325,8 @@ const ConfirmButtonBar = styled.div`
 const ConfirmButton = styled.button`
   background: ${Colors.darkYellow};
   border-radius: 5px;
-  font-weight: 400;
+  font-family: ${Fonts.main.family};
+  font-weight: ${Fonts.main.weights.bold};
   font-size: 13px;
   color: white;
   border: none;
@@ -341,7 +344,8 @@ const GenderedExampleContainer = styled.div`
   margin-top: 5px;
 `;
 const GenderedExampleTitle = styled.div`
-  font-weight: 400;
+  font-family: ${Fonts.main.family};
+  font-weight: ${Fonts.main.weights.bold};
 `;
 const GenderedExampleList = styled.div`
   display: flex;

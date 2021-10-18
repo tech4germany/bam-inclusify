@@ -16,6 +16,7 @@ import { splitTextMatch } from "../splitTextMatch";
 import { isFunction } from "../type-helpers";
 import { isGrammarCheckOn, isSpellCheckOn, UserSettings } from "../user-settings/user-settings";
 import { UserSettingsContext } from "../user-settings/UserSettingsStorage";
+import { Fonts } from "../styles/Fonts";
 
 export type ApplyReplacementFunction = (ruleMatch: RuleMatch, replacementText: string) => Promise<void>;
 
@@ -112,7 +113,8 @@ const MatchTopBar: FC<EntryTopBarProps> = ({ categoryName }) => (
 
 const MatchTopBarContainer = styled.div`
   font-size: 0.7rem;
-  font-weight: 100;
+  font-family: ${Fonts.main.family};
+  font-weight: ${Fonts.main.weights.thin};
   display: flex;
   gap: 1rem;
   align-items: center;
@@ -179,7 +181,8 @@ const ReplacementItem = styled.button`
   background: ${Colors.mediumGreen};
   padding: 3px 7px;
   color: white;
-  font-weight: 300;
+  font-family: ${Fonts.main.family};
+  font-weight: ${Fonts.main.weights.normal};
   cursor: ${(props) => (isFunction(props.onClick) ? "pointer" : "initial")};
 
   &:hover {
@@ -220,7 +223,8 @@ const MatchMatchText = styled.button`
 const MatchRuleExplanation = styled.div`
   margin: 14px 0;
   font-size: 0.7rem;
-  font-weight: 100;
+  font-family: ${Fonts.main.family};
+  font-weight: ${Fonts.main.weights.thin};
 `;
 
 const MatchActionsBar = styled.div`
