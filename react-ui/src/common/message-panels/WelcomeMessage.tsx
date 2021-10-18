@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { Colors } from "./styles/Colors";
-import { Fonts } from "./styles/Fonts";
-import wavingHandEmojiSrc from "./icons/waving-hand-emoji.png";
+import { Colors } from "../styles/Colors";
+import { Fonts } from "../styles/Fonts";
+import wavingHandEmojiSrc from "../icons/waving-hand-emoji.png";
 
 export const WelcomeMessage = () => (
   <WelcomeMessageContainer>

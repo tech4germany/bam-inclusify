@@ -14,9 +14,8 @@ import { UserSettingsContext, useUserSettingsState } from "../common/user-settin
 import { newUuidv4 } from "../common/uuid";
 import { MainTextArea } from "./MainTextArea";
 import { StandaloneUserSettingsButton } from "./StandaloneUserSettingsButton";
-import { Fonts } from "../common/styles/Fonts";
 import { CenteredContainer } from "./CenteredContainer";
-import { WelcomeMessage } from "../common/WelcomeMessage";
+import { WelcomeMessage } from "../common/message-panels/WelcomeMessage";
 
 type UseState<S> = [S, Dispatch<SetStateAction<S>>];
 

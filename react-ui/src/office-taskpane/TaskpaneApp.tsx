@@ -16,7 +16,7 @@ import { DebugPanel } from "../common/debug-panel/DebugPanel";
 import { UserSettingsPanel } from "../common/user-settings/UserSettingsPanel";
 import { isFunction } from "../common/type-helpers";
 import { AddinTopButtonGroup } from "./AddinTopButtonGroup";
-import { WelcomeMessage } from "../common/WelcomeMessage";
+import { WelcomeMessage } from "../common/message-panels/WelcomeMessage";
 
 export const TaskpaneApp: FC = () => {
   const [ltMatches, setLtMatches] = useState<RuleMatch[] | null>(null);
