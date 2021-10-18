@@ -92,5 +92,9 @@ def is_applicable(rule, word, sentence):
 
 def parse_feats(feats):
     # Returns dict with keys "Case" (e.g. "Nom"), "Gender" (e.g. "Fem"), "Number" (e.g. "Sing")
-    pairs = feats.split("|")
-    return dict([pair.split("=") for pair in pairs])
+    pairs = []
+    for pair in feats.split("|"):
+        key, val = pair.split("=")
+        val = val[:3].upper()
+        pairs.append((key, val))
+    return dict(pairs)
