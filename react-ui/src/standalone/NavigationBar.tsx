@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { CenteredContainer } from "./CenteredContainer";
 
 export const NavigationBar = () => (
   <NavBarContainer>
@@ -17,11 +18,6 @@ export const NavigationBar = () => (
 
 const NavBarContainer = styled.div`
   background: white;
-`;
-
-const CenteredContainer = styled.div`
-  max-width: 1024px;
-  margin: 0 auto;
 `;
 
 const NavBarItemsContainer = styled.div`

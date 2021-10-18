@@ -5,7 +5,7 @@ import { DebugPanel } from "../common/debug-panel/DebugPanel";
 import { FeatureFlagsContext, useFeatureFlagsState } from "../common/feature-flags/feature-flags";
 import { LanguageToolClient } from "../common/language-tool-api/LanguageToolClient";
 import { RuleMatch } from "../common/language-tool-api/types";
-import { NavigationBar } from "../common/nav-bar/NavigationBar";
+import { NavigationBar } from "./NavigationBar";
 import { ResultsArea } from "../common/results-display/ResultsArea";
 import { splitTextMatch } from "../common/splitTextMatch";
 import { computeErrorCounts, SummaryBar } from "../common/summary-bar/SummaryBar";
@@ -15,6 +15,7 @@ import { newUuidv4 } from "../common/uuid";
 import { MainTextArea } from "./MainTextArea";
 import { StandaloneUserSettingsButton } from "./StandaloneUserSettingsButton";
 import { Fonts } from "../common/styles/Fonts";
+import { CenteredContainer } from "./CenteredContainer";
 
 type UseState<S> = [S, Dispatch<SetStateAction<S>>];
 
@@ -104,11 +105,6 @@ export const StandaloneApp: FC = () => {
     </div>
   );
 };
-
-const CenteredContainer = styled.div`
-  max-width: 1024px;
-  margin: 0 auto;
-`;
 
 const SummaryBarContainer = styled.div`
   margin: 30px 0 24px;
