@@ -59,52 +59,22 @@ export const DebugPanel: FC<DebugPanelProps> = !isDebugPanelEnabled
             <DebugPanelHeading>Feature Flags</DebugPanelHeading>
           </DebugPanelHeader>
 
-          <Checkbox
-            id={inputIds.grammarCheckAvailable}
-            featureFlagsState={featureFlagsState}
-            valueSelector={(f) => f.grammarCheckAvailable}
-            valueUpdater={(g, pf) => ({ ...pf, grammarCheckAvailable: g })}
-          >
+          <Checkbox featureFlagsState={featureFlagsState} featureFlagId={"grammarCheckAvailable"}>
             Grammatikcheck verfügbar
           </Checkbox>
-          <Checkbox
-            id={inputIds.spellCheckAvailable}
-            featureFlagsState={featureFlagsState}
-            valueSelector={(f) => f.spellCheckAvailable}
-            valueUpdater={(g, pf) => ({ ...pf, spellCheckAvailable: g })}
-          >
+          <Checkbox featureFlagsState={featureFlagsState} featureFlagId={"spellCheckAvailable"}>
             Rechtschreibcheck verfügbar
           </Checkbox>
-          <Checkbox
-            id={inputIds.allowMultiCharGenderSymbol}
-            featureFlagsState={featureFlagsState}
-            valueSelector={(f) => f.allowMultiCharGenderSymbol}
-            valueUpdater={(g, pf) => ({ ...pf, allowMultiCharGenderSymbol: g })}
-          >
+          <Checkbox featureFlagsState={featureFlagsState} featureFlagId={"allowMultiCharGenderSymbol"}>
             Mehr-Zeichen Gender-Symbol erlauben
           </Checkbox>
-          <Checkbox
-            id={inputIds.useBamLogo}
-            featureFlagsState={featureFlagsState}
-            valueSelector={(f) => f.useBamLogo}
-            valueUpdater={(g, pf) => ({ ...pf, useBamLogo: g })}
-          >
+          <Checkbox featureFlagsState={featureFlagsState} featureFlagId={"useBamLogo"}>
             BAM-Logo verwenden
           </Checkbox>
-          <NumberInput
-            id={inputIds.maxReplacementsPerRuleMatch}
-            featureFlagsState={featureFlagsState}
-            valueSelector={(f) => f.maxReplacementsPerRuleMatch}
-            valueUpdater={(g, pf) => ({ ...pf, maxReplacementsPerRuleMatch: g })}
-          >
+          <NumberInput featureFlagId={"maxReplacementsPerRuleMatch"} featureFlagsState={featureFlagsState}>
             Max Vorschläge pro Regel-Match
           </NumberInput>
-          <NumberInput
-            id={inputIds.minimumRequestDelayMs}
-            featureFlagsState={featureFlagsState}
-            valueSelector={(f) => f.minimumRequestDelayMs}
-            valueUpdater={(g, pf) => ({ ...pf, minimumRequestDelayMs: g })}
-          >
+          <NumberInput featureFlagId={"minimumRequestDelayMs"} featureFlagsState={featureFlagsState}>
             Min. Dauer pro Request
           </NumberInput>
           <SettingsImportExport
@@ -133,31 +103,32 @@ const DebugPanelHeading = styled.div`
   flex-grow: 1;
 `;
 
-interface FeatureFlagUpdater<T> {
-  valueSelector: (featureFlags: FeatureFlags) => T;
-  valueUpdater: (newValue: T, prevFeatureFlags: FeatureFlags) => FeatureFlags;
-}
-
 const CheckboxInputElement = styled.input`
   margin: 2px 5px;
 `;
 
-interface CheckboxProps extends HasFeatureFlagsState, HasId, FeatureFlagUpdater<boolean> {}
+type FilterProperties<T, U> = { [P in keyof T]: T[P] extends U ? P : never }[keyof T];
+
+interface CheckboxProps extends HasFeatureFlagsState {
+  featureFlagId: FilterProperties<FeatureFlags, boolean>;
+}
 const Checkbox: FC<CheckboxProps> = ({
   children,
-  id,
-  valueSelector,
-  valueUpdater,
+  featureFlagId,
   featureFlagsState: [featureFlags, setFeatureFlags],
 }) => {
+  const id = inputIds[featureFlagId];
   return (
     <label htmlFor={id}>
       <CheckboxInputElement
         id={id}
         type="checkbox"
-        checked={valueSelector(featureFlags)}
+        checked={featureFlags[featureFlagId]}
         onChange={() =>
-          setFeatureFlags((prevFeatureFlags) => valueUpdater(!valueSelector(prevFeatureFlags), prevFeatureFlags))
+          setFeatureFlags((prevFeatureFlags) => ({
+            ...prevFeatureFlags,
+            [featureFlagId]: !prevFeatureFlags[featureFlagId],
+          }))
         }
       />
       <span>{children}</span>
@@ -165,22 +136,26 @@ const Checkbox: FC<CheckboxProps> = ({
   );
 };
 
-interface NumberInputProps extends HasFeatureFlagsState, HasId, FeatureFlagUpdater<number> {}
+interface NumberInputProps extends HasFeatureFlagsState {
+  featureFlagId: FilterProperties<FeatureFlags, number>;
+}
 const NumberInput: FC<NumberInputProps> = ({
   children,
-  id,
-  valueSelector,
-  valueUpdater,
+  featureFlagId,
   featureFlagsState: [featureFlags, setFeatureFlags],
 }) => {
+  const id = inputIds[featureFlagId];
   return (
     <label htmlFor={id} key={id}>
       <input
         id={id}
         type="number"
-        value={valueSelector(featureFlags)}
+        value={featureFlags[featureFlagId]}
         onChange={(e) =>
-          setFeatureFlags((prevFeatureFlags) => valueUpdater(Number.parseInt(e.target.value), prevFeatureFlags))
+          setFeatureFlags((prevFeatureFlags) => ({
+            ...prevFeatureFlags,
+            [featureFlagId]: Number.parseInt(e.target.value),
+          }))
         }
       />
       <span>{children}</span>
