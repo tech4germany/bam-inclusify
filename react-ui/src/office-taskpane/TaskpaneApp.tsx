@@ -16,9 +16,10 @@ import { DebugPanel } from "../common/debug-panel/DebugPanel";
 import { UserSettingsPanel } from "../common/user-settings/UserSettingsPanel";
 import { isFunction } from "../common/type-helpers";
 import { AddinTopButtonGroup } from "./AddinTopButtonGroup";
+import { WelcomeMessage } from "../common/WelcomeMessage";
 
 export const TaskpaneApp: FC = () => {
-  const [ltMatches, setLtMatches] = useState<RuleMatch[]>([]);
+  const [ltMatches, setLtMatches] = useState<RuleMatch[] | null>(null);
   const [applier, setApplier] = useState<ApplyReplacementFunction>();
   const [matchSelector, setMatchSelector] = useState<(ruleMatch: RuleMatch) => void>();
   const [isLoading, setLoading] = useState(false);
@@ -55,6 +56,8 @@ export const TaskpaneApp: FC = () => {
             </UserSettingsPanelConainer>
           ) : isLoading ? (
             <div>Text wird überprüft...</div>
+          ) : ltMatches === null ? (
+            <WelcomeMessage />
           ) : (
             <AddinResultsAreaContainer>
               <ResultsArea
@@ -98,7 +101,7 @@ type ParagraphWithRanges = { paragraph: Word.Paragraph; ranges: Word.Range[] };
 type StartOffsetMapItem = { startOffset: number; paragraph: Word.Paragraph; range: Word.Range };
 
 const checkText = async (
-  setLtMatches: Dispatch<SetStateAction<RuleMatch[]>>,
+  setLtMatches: Dispatch<SetStateAction<RuleMatch[] | null>>,
   setApplier: Dispatch<SetStateAction<ApplyReplacementFunction | undefined>>,
   setMatchSelector: Dispatch<SetStateAction<((ruleMatch: RuleMatch) => void) | undefined>>
 ) => {
@@ -112,7 +115,7 @@ const checkText = async (
 };
 
 async function checkTextFromWord(
-  setLtMatches: Dispatch<SetStateAction<RuleMatch[]>>,
+  setLtMatches: Dispatch<SetStateAction<RuleMatch[] | null>>,
   setApplier: Dispatch<SetStateAction<ApplyReplacementFunction | undefined>>,
   setMatchSelector: Dispatch<SetStateAction<((ruleMatch: RuleMatch) => void) | undefined>>
 ) {
@@ -193,7 +196,7 @@ async function checkTextFromWord(
 }
 
 async function outlookClickHandler(
-  setLtMatches: Dispatch<SetStateAction<RuleMatch[]>>,
+  setLtMatches: Dispatch<SetStateAction<RuleMatch[] | null>>,
   setApplier: Dispatch<SetStateAction<ApplyReplacementFunction | undefined>>
 ) {
   const currentItem = Office.context.mailbox.item;
