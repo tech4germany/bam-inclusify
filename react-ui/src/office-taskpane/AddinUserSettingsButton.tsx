@@ -1,7 +1,7 @@
 import { FC } from "react";
 import styled from "styled-components";
 import { Colors } from "../common/styles/Colors";
-import { GearIcon } from "../common/icons";
+import { ReactComponent as GearIcon } from "../common/icons/gear.svg";
 
 export const AddinUserSettingsButton: FC<UserSettingsButtonProps> = ({
   pressedState: [isPressed, setPressed],
@@ -14,19 +14,23 @@ export const AddinUserSettingsButton: FC<UserSettingsButtonProps> = ({
     title={"Einstellungen " + (isPressed ? "schließen" : "anzeigen")}
   >
     <UserSettingsIconContainer>
-      <GearIcon />
+      <GearIcon width={25} height={25} />
     </UserSettingsIconContainer>
   </UserSettingsButtonContainer>
 );
 
 const UserSettingsButtonContainer = styled.button`
-  font-size: 14px;
   border: none;
   border-radius: 8px;
-  color: white;
-  background: transparent linear-gradient(68deg, ${Colors.mediumYellow} 0%, ${Colors.darkYellow} 100%) 0% 0% no-repeat
+  background: transparent linear-gradient(209deg, ${Colors.mediumYellow} 0%, ${Colors.darkYellow} 100%) 0% 0% no-repeat
     padding-box;
-  padding: 4px 8px;
+  box-sizing: border-box;
+  min-width: 51px;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &:hover {
     background: ${Colors.brightYellow};
@@ -47,9 +51,8 @@ const UserSettingsButtonContainer = styled.button`
 `;
 
 const UserSettingsIconContainer = styled.div`
-  width: 28px;
-  height: 28px;
-  margin: 0 auto;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   background: white;
 

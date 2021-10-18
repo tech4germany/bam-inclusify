@@ -77,7 +77,7 @@ export const TaskpaneApp: FC = () => {
 };
 
 const AddinContainer = styled.div`
-  margin: 0 15px;
+  margin: 0 7px;
 `;
 
 const SummaryBarContainer = styled.div`

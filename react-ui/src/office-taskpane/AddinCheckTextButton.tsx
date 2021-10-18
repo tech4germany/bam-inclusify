@@ -11,27 +11,30 @@ interface CheckTextButtonProps {
 export const AddinCheckTextButton: FC<CheckTextButtonProps> = ({ onClick, topCornersFlush, disabled }) => (
   <AddinCheckTextButtonContainer onClick={onClick} disabled={disabled} title="Text überprüfen">
     <AddinTextButtonIconContainer>
-      <CheckIcon viewBox="0 0 16 16" width={12} height={12} />
+      <CheckIcon viewBox="0 0 14 16" width={20} height={20} />
     </AddinTextButtonIconContainer>
     <AddinCheckTextButtonTextContainer>PRÜFEN</AddinCheckTextButtonTextContainer>
   </AddinCheckTextButtonContainer>
 );
 
 const AddinCheckTextButtonContainer = styled.button`
-  background: transparent linear-gradient(68deg, ${Colors.mediumGreen} 0%, ${Colors.brightGreen} 100%) 0% 0% no-repeat
+  background: transparent linear-gradient(222deg, ${Colors.brightGreen} 0%, ${Colors.mediumGreen} 100%) 0% 0% no-repeat
     padding-box;
   border-radius: 8px;
   border: none;
   color: white;
   font-size: 15px;
-  padding: 5px 17px;
-  z-index: 1000;
+  padding: 5px 10px;
+  box-sizing: border-box;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 7px;
+  justify-content: center;
+  gap: 13px;
   opacity: 1;
+
+  min-width: 84px;
 
   &[disabled] {
     opacity: 0.7;
@@ -49,8 +52,8 @@ const AddinCheckTextButtonContainer = styled.button`
 `;
 const AddinTextButtonIconContainer = styled.div`
   background: white;
-  height: 21px;
-  width: 21px;
+  height: 35px;
+  width: 35px;
   border-radius: 50%;
 
   display: flex;
