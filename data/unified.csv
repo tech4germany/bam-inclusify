@@ -561,8 +561,8 @@ Bauzeichner,Bauzeichner,Bauzeichner,Bauzeichnerin,0
 Bayer,Bayer,Bayer,Bayerin,0
 Beachvolleyballer,Beachvolleyballer,Beachvolleyballer,Beachvolleyballerin,0
 Beamter,Beamter,Beamter,Beamtin,0
-Beamter,Beamter,Beamte,Beamtenschaft,1
-Beamter,Beamter,Beamte,Bedienstete,1
+Beamter,Beamter,Beamter,Beamtenschaft,1
+Beamter,Beamter,Beamter,bedienstete Person,0
 Beamter,Beamter,Beamter,Person im Beamtenstatus,0
 Beamter,Beamter,Beamter,verbeamtete Person,0
 Beamtenanwärter,Beamtenanwärter,Beamtenanwärter,Beamtenanwärterin,0
@@ -6875,7 +6875,6 @@ jungfräulich,jungfräulich,jungfräulich,unberührt,0
 jungfräulich,jungfräulich,jungfräulich,unerschlossen,0
 jungfräulich,jungfräulich,jungfräulich,unverändert,0
 jungfräulich,jungfräulich,jungfräulich,ursprünglich,0
-kein,kein,keiner,niemand,0
 klientenorientiert,klientenorientiert,klientenorientiert,orientiert am Bedarf der ratsuchenden Person,0
 kundenfreundlich,kundenfreundlich,kundenfreundlich,nutzungsfreundlich,0
 kundenfreundlich,kundenfreundlich,kundenfreundlich,praktisch zu bedienen,0

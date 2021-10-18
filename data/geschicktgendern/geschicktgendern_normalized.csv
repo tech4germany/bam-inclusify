@@ -406,10 +406,10 @@ Baumpfleger,Baumpflege,0
 Bauträger,bautragende Person,0
 Bauträger,bautragende Firma,0
 Bauträger,für den Bau verantwortliche Firma,0
-Beamte,Beamtenschaft,1
-Beamte,Bedienstete,1
 Beamtenlaufbahn,Laufbahn im öffentlichen Dienst mit Aussicht auf Verbeamtung,0
 Beamtenlaufbahn,verbeamteter Werdegang,0
+Beamter,Beamtenschaft,1
+Beamter,bedienstete Person,0
 Beamter,Person im Beamtenstatus,0
 Beamter,verbeamtete Person,0
 Bearbeiter,den Vorgang betreuende Person,0
