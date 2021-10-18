@@ -1,3 +1,3 @@
 export const FontFamilies = Object.freeze({
-  bam: "Roboto",
+  bam: "BAM Klavika",
 });
