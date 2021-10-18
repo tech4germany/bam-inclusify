@@ -118,7 +118,7 @@ def inflect_root(insensitive_word, alternative, plural_only):
     for inflected_sensitive_root in inflected_sensitive_roots:
         alternatives_with_inflected_root.append(" ".join([
             *alternative_texts[:sensitive_root.id-1], 
-            inflected_sensitive_root, # morphs["Case"], morphs["Number"], 
+            inflected_sensitive_root, # morphs["Case"], morphs["Number"], insensitive_word.lemma
             *alternative_texts[sensitive_root.id:]
         ]))
     return alternatives_with_inflected_root

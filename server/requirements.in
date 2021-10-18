@@ -1,4 +1,5 @@
 black
+compound-split
 flask
 mypy
 pylint
