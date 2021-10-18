@@ -42,15 +42,17 @@ export const TaskpaneApp: FC = () => {
             onCheckClicked={checkTextWithLoading}
             settingsOpenState={[isSettingsOpen, setSettingsOpen]}
           />
-          <SummaryBarContainer>
+          <SummaryBarContainer hidden={isSettingsOpen}>
             <SummaryBar addinMode {...errorCounts} />
           </SummaryBarContainer>
 
           {isSettingsOpen ? (
-            <UserSettingsPanel
-              userSettingsState={[userSettings, setUserSettings]}
-              onConfirmClicked={() => setSettingsOpen(false)}
-            />
+            <UserSettingsPanelConainer>
+              <UserSettingsPanel
+                userSettingsState={[userSettings, setUserSettings]}
+                onConfirmClicked={() => setSettingsOpen(false)}
+              />
+            </UserSettingsPanelConainer>
           ) : isLoading ? (
             <div>Text wird überprüft...</div>
           ) : (
@@ -81,11 +83,15 @@ const AddinContainer = styled.div`
 `;
 
 const SummaryBarContainer = styled.div`
-  margin-bottom: 15px;
+  margin-top: 8px;
+`;
+
+const UserSettingsPanelConainer = styled.div`
+  margin-top: 17px;
 `;
 
 const AddinResultsAreaContainer = styled.div`
-  margin: 0;
+  margin: 15px 0 0;
 `;
 
 type ParagraphWithRanges = { paragraph: Word.Paragraph; ranges: Word.Range[] };
