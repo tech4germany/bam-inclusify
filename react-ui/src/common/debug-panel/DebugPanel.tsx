@@ -99,6 +99,14 @@ export const DebugPanel: FC<DebugPanelProps> = !isDebugPanelEnabled
           >
             Max Vorschläge pro Regel-Match
           </NumberInput>
+          <NumberInput
+            id={inputIds.minimumRequestDelayMs}
+            featureFlagsState={featureFlagsState}
+            valueSelector={(f) => f.minimumRequestDelayMs}
+            valueUpdater={(g, pf) => ({ ...pf, minimumRequestDelayMs: g })}
+          >
+            Min. Dauer pro Request
+          </NumberInput>
           <SettingsImportExport
             label="Feature Flags Import/Export"
             settingsState={featureFlagsState}

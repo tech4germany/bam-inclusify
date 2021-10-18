@@ -13,12 +13,15 @@ export class LanguageToolClient {
   async check(text: string, userSettings: UserSettings, featureFlags: FeatureFlags): Promise<RuleMatch[]> {
     const enabledRuleCategories = diversityRuleCategories.concat(grammarRuleCategories).concat(spellingRuleCategories);
 
-    const response = await this.checkRaw({
-      text,
-      language: "de-DE",
-      enabledOnly: true,
-      enabledCategories: enabledRuleCategories.join(","),
-    });
+    const [response] = await Promise.all([
+      this.checkRaw({
+        text,
+        language: "de-DE",
+        enabledOnly: true,
+        enabledCategories: enabledRuleCategories.join(","),
+      }),
+      delay(featureFlags.minimumRequestDelayMs),
+    ]);
     const matches = (response.matches || []).map((m) => ({
       ...augmentClientUuid(m),
       replacements: m.replacements.map(augmentClientUuid),
@@ -40,4 +43,12 @@ export class LanguageToolClient {
     const content = await r.json();
     return content;
   }
+}
+
+function delay(ms: number): Promise<void> {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, ms);
+  });
 }

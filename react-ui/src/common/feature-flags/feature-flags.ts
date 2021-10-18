@@ -9,6 +9,7 @@ export const DefaultFeatureFlags = Object.freeze({
   allowMultiCharGenderSymbol: false,
   maxReplacementsPerRuleMatch: 5,
   useBamLogo: true,
+  minimumRequestDelayMs: 1000,
 });
 
 export type FeatureFlags = typeof DefaultFeatureFlags;
