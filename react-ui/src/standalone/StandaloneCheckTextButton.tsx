@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { CheckIcon } from "../icons";
+import { CheckIcon } from "../common/icons";
 import { Colors } from "../common/styles/Colors";
 
 interface CheckTextButtonProps {

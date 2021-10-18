@@ -1,7 +1,7 @@
 import { FC } from "react";
 import styled from "styled-components";
 import { Colors } from "../common/styles/Colors";
-import { GearIcon } from "../icons";
+import { GearIcon } from "../common/icons";
 
 export const AddinUserSettingsButton: FC<UserSettingsButtonProps> = ({
   pressedState: [isPressed, setPressed],

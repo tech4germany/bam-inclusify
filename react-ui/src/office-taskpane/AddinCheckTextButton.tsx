@@ -1,7 +1,7 @@
 import { FC } from "react";
 import styled from "styled-components";
 import { Colors } from "../common/styles/Colors";
-import { CheckIcon } from "../icons";
+import { CheckIcon } from "../common/icons";
 
 interface CheckTextButtonProps {
   onClick: React.MouseEventHandler<HTMLButtonElement> | undefined;

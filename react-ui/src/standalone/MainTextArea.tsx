@@ -1,7 +1,7 @@
 import { ChangeEventHandler, FC, RefObject, useEffect } from "react";
 import styled from "styled-components";
 import { isFunction } from "../common/type-helpers";
-import { CopyIcon } from "../icons";
+import { CopyIcon } from "../common/icons";
 
 export interface MainTextAreaProps {
   onChange: ChangeEventHandler<HTMLTextAreaElement>;
