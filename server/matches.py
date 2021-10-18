@@ -30,10 +30,14 @@ def gender_matches(doc):
         for word in sentence.words:
             lemma = word.lemma
             if lemma in rules.keys():
-                replacements = [sensible for _, sensible, _ in rules[lemma]]
+                sensible_alternatives = []
+                for rule in rules[lemma]:
+                    if is_applicable(rule, sentence):
+                        _, sensible, _ = rule
+                        sensible_alternatives.append(sensible)
                 match = gender_match(
                     lemma,
-                    replacements,
+                    sensible_alternatives,
                     word.start_char,
                     word.end_char - word.start_char,
                 )
@@ -66,3 +70,6 @@ def gender_match(text: str, replacements: List[str], offset: int, length: int):
 short_message = 'Die Bezeichnung "{}" spricht nur männliche Leser an. Versuche alle Menschen anzusprechen.'
 
 message = "Der Stern wird in den letzten Jahren zunehmend verwendet. Besonders häufig findet man das Sternchen im Kontexten, in denen aufgrund aktuelle Transgender- und Intersexualitätsdebatten nicht von lediglich zwei Geschlechtern ausgegangen wird, Geschlecht also nicht mehr als ein binäre System verstanden wird. Mit dem Sternchen soll bewusst irritiert und die Möglichkeit weitere Kategorien angedeutet werden."
+
+def is_applicable(rule, sentence):
+    return True
