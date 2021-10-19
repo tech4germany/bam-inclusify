@@ -1,7 +1,9 @@
 import { FC } from "react";
 import styled from "styled-components";
+import { InclusifyBamLogo, InclusifyLogo } from "../common/icons";
 import { Colors } from "../common/styles/Colors";
 import { Fonts } from "../common/styles/Fonts";
+import { UserSettingsAndFeatureFlagsContext } from "../common/UserSettingsAndFeatureFlagsContext";
 import { UseState } from "../common/UseState";
 import { AddinCheckTextButton } from "./AddinCheckTextButton";
 import { AddinUserSettingsButton } from "./AddinUserSettingsButton";
@@ -25,8 +27,16 @@ const AddinButtonGroupContainer = styled.div`
 
 const InclusifyLogoLinkTile = () => (
   <InclusifyLogoLinkTileContainer href="#">
-    <InclusifyLogoContainer />
-    <InclusifyLogoLinkText>Deine Assistentin für diversitätsensible Sprache</InclusifyLogoLinkText>
+    <UserSettingsAndFeatureFlagsContext.Consumer>
+      {({ featureFlags }) => (
+        <>
+          <InclusifyLogoContainer>
+            {featureFlags.useBamLogo ? <InclusifyBamLogo /> : <InclusifyLogo />}
+          </InclusifyLogoContainer>
+          <InclusifyLogoLinkText>Deine Assistentin für diversitätsensible Sprache</InclusifyLogoLinkText>
+        </>
+      )}
+    </UserSettingsAndFeatureFlagsContext.Consumer>
   </InclusifyLogoLinkTileContainer>
 );
 const InclusifyLogoLinkTileContainer = styled.a`
@@ -37,8 +47,8 @@ const InclusifyLogoLinkTileContainer = styled.a`
   min-height: 95px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding: 20px 20px 15px;
+  gap: 13px;
+  padding: 15px 12px 10px;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
@@ -49,10 +59,10 @@ const InclusifyLogoLinkTileContainer = styled.a`
   }
 `;
 const InclusifyLogoContainer = styled.div`
-  border: 1px solid gray;
-  width: 14px;
-  height: 26px;
-  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  max-height: 30px;
+  align-items: center;
 `;
 const InclusifyLogoLinkText = styled.div`
   font-family: ${Fonts.bam.family};
