@@ -1,4 +1,4 @@
-import { Dispatch, FC, SetStateAction, useState } from "react";
+import { FC, useState } from "react";
 import styled from "styled-components";
 import { RuleMatch } from "../common/language-tool-api/types";
 import { ApplyReplacementFunction, ResultsArea } from "../common/results-display/ResultsArea";
@@ -12,6 +12,7 @@ import { DebugPanel } from "../common/debug-panel/DebugPanel";
 import { isFunction } from "../common/type-helpers";
 import { AddinTopButtonGroup } from "./AddinTopButtonGroup";
 import { UserSettingsAndFeatureFlagsContext } from "../common/UserSettingsAndFeatureFlagsContext";
+import { SetState } from "../common/UseState";
 
 export const TaskpaneApp: FC = () => {
   const [ltMatches, setLtMatches] = useState<RuleMatch[] | null>(null);
@@ -91,9 +92,9 @@ type ParagraphWithRanges = { paragraph: Word.Paragraph; ranges: Word.Range[] };
 type StartOffsetMapItem = { startOffset: number; paragraph: Word.Paragraph; range: Word.Range };
 
 const checkText = async (
-  setLtMatches: Dispatch<SetStateAction<RuleMatch[] | null>>,
-  setApplier: Dispatch<SetStateAction<ApplyReplacementFunction | undefined>>,
-  setMatchSelector: Dispatch<SetStateAction<((ruleMatch: RuleMatch) => void) | undefined>>
+  setLtMatches: SetState<RuleMatch[] | null>,
+  setApplier: SetState<ApplyReplacementFunction | undefined>,
+  setMatchSelector: SetState<((ruleMatch: RuleMatch) => void) | undefined>
 ) => {
   if (isRunningInWord()) {
     await checkTextFromWord(setLtMatches, setApplier, setMatchSelector);
@@ -105,9 +106,9 @@ const checkText = async (
 };
 
 async function checkTextFromWord(
-  setLtMatches: Dispatch<SetStateAction<RuleMatch[] | null>>,
-  setApplier: Dispatch<SetStateAction<ApplyReplacementFunction | undefined>>,
-  setMatchSelector: Dispatch<SetStateAction<((ruleMatch: RuleMatch) => void) | undefined>>
+  setLtMatches: SetState<RuleMatch[] | null>,
+  setApplier: SetState<ApplyReplacementFunction | undefined>,
+  setMatchSelector: SetState<((ruleMatch: RuleMatch) => void) | undefined>
 ) {
   console.time("getTextRanges");
   const paragraphsWithRanges: ParagraphWithRanges[] = await Word.run(async (context) => {
@@ -186,8 +187,8 @@ async function checkTextFromWord(
 }
 
 async function outlookClickHandler(
-  setLtMatches: Dispatch<SetStateAction<RuleMatch[] | null>>,
-  setApplier: Dispatch<SetStateAction<ApplyReplacementFunction | undefined>>
+  setLtMatches: SetState<RuleMatch[] | null>,
+  setApplier: SetState<ApplyReplacementFunction | undefined>
 ) {
   const currentItem = Office.context.mailbox.item;
   if (!currentItem) throw new Error("No item selected");

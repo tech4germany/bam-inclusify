@@ -22,6 +22,7 @@ import { ErrorMessage } from "../message-panels/ErrorMessage";
 import { LoadingMessage } from "../message-panels/LoadingMessage";
 import { WelcomeMessage } from "../message-panels/WelcomeMessage";
 import { UserSettingsAndFeatureFlagsContext } from "../UserSettingsAndFeatureFlagsContext";
+import { UseState } from "../UseState";
 
 export type ApplyReplacementFunction = (ruleMatch: RuleMatch, replacementText: string) => Promise<void>;
 
@@ -298,7 +299,7 @@ const MatchExpandCollapseIcon = styled(DownChevronIcon)`
 `;
 const MatchExpandCollapseText = styled.div``;
 
-const MatchExpandCollapseToggle: FC<{ expandedState: [boolean, React.Dispatch<React.SetStateAction<boolean>>] }> = ({
+const MatchExpandCollapseToggle: FC<{ expandedState: UseState<boolean> }> = ({
   expandedState: [isExpanded, setExpanded],
 }) => (
   <MatchExpandCollapseToggleContainer onClick={() => setExpanded(!isExpanded)}>

@@ -2,12 +2,13 @@ import { FC } from "react";
 import styled from "styled-components";
 import { Colors } from "../common/styles/Colors";
 import { Fonts } from "../common/styles/Fonts";
+import { UseState } from "../common/UseState";
 import { AddinCheckTextButton } from "./AddinCheckTextButton";
 import { AddinUserSettingsButton } from "./AddinUserSettingsButton";
 
 interface AddinButtonGroupProps {
   onCheckClicked: () => void;
-  settingsOpenState: [boolean, React.Dispatch<React.SetStateAction<boolean>>];
+  settingsOpenState: UseState<boolean>;
 }
 export const AddinTopButtonGroup: FC<AddinButtonGroupProps> = ({ onCheckClicked, settingsOpenState }) => (
   <AddinButtonGroupContainer>

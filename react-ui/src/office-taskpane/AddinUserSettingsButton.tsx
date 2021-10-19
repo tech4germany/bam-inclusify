@@ -2,6 +2,7 @@ import { FC } from "react";
 import styled from "styled-components";
 import { Colors } from "../common/styles/Colors";
 import { GearIcon } from "../common/icons";
+import { UseState } from "../common/UseState";
 
 export const AddinUserSettingsButton: FC<UserSettingsButtonProps> = ({
   pressedState: [isPressed, setPressed],
@@ -62,6 +63,6 @@ const UserSettingsIconContainer = styled.div`
 `;
 
 interface UserSettingsButtonProps {
-  pressedState: [boolean, React.Dispatch<React.SetStateAction<boolean>>];
+  pressedState: UseState<boolean>;
   disabled?: boolean;
 }

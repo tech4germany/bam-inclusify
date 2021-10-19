@@ -1,4 +1,4 @@
-import { Dispatch, FC, RefObject, SetStateAction, useRef, useState } from "react";
+import { FC, RefObject, useRef, useState } from "react";
 import styled from "styled-components";
 import { StandaloneCheckTextButton } from "./StandaloneCheckTextButton";
 import { DebugPanel } from "../common/debug-panel/DebugPanel";
@@ -15,8 +15,7 @@ import { MainTextArea } from "./MainTextArea";
 import { StandaloneUserSettingsButton } from "./StandaloneUserSettingsButton";
 import { CenteredContainer } from "./CenteredContainer";
 import { UserSettingsAndFeatureFlagsContext } from "../common/UserSettingsAndFeatureFlagsContext";
-
-type UseState<S> = [S, Dispatch<SetStateAction<S>>];
+import { UseState } from "../common/UseState";
 
 const textAreaId = newUuidv4();
 
