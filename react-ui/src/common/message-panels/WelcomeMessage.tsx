@@ -30,6 +30,7 @@ const WelcomeMessageContainer = styled.div`
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
   max-width: 330px;
 `;
 

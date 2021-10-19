@@ -19,6 +19,7 @@ const LoadingMessageContainer = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 22px;
+  box-sizing: border-box;
   max-width: 330px;
   padding: 48px 10px;
 `;

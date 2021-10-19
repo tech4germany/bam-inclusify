@@ -19,6 +19,7 @@ import { AddinTopButtonGroup } from "./AddinTopButtonGroup";
 import { WelcomeMessage } from "../common/message-panels/WelcomeMessage";
 import { LoadingMessage } from "../common/message-panels/LoadingMessage";
 import { ErrorMessage } from "../common/message-panels/ErrorMessage";
+import { CompletionMessage } from "../common/message-panels/CompletionMessage";
 
 export const TaskpaneApp: FC = () => {
   const [ltMatches, setLtMatches] = useState<RuleMatch[] | null>(null);
@@ -68,6 +69,8 @@ export const TaskpaneApp: FC = () => {
               <LoadingMessage />
             ) : ltMatches === null ? (
               <WelcomeMessage />
+            ) : ltMatches.length === 0 ? (
+              <CompletionMessage />
             ) : (
               <AddinResultsAreaContainer>
                 <ResultsArea

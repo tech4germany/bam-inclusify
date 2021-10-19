@@ -18,6 +18,7 @@ import { CenteredContainer } from "./CenteredContainer";
 import { WelcomeMessage } from "../common/message-panels/WelcomeMessage";
 import { LoadingMessage } from "../common/message-panels/LoadingMessage";
 import { ErrorMessage } from "../common/message-panels/ErrorMessage";
+import { CompletionMessage } from "../common/message-panels/CompletionMessage";
 
 type UseState<S> = [S, Dispatch<SetStateAction<S>>];
 
@@ -92,6 +93,8 @@ export const StandaloneApp: FC = () => {
                   <LoadingMessage />
                 ) : ltMatches === null ? (
                   <WelcomeMessage />
+                ) : ltMatches.length === 0 ? (
+                  <CompletionMessage />
                 ) : (
                   <ResultsArea
                     ruleMatches={ltMatches}
