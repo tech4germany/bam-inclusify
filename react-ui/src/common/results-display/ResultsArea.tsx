@@ -17,16 +17,59 @@ import { isFunction } from "../type-helpers";
 import { isGrammarCheckOn, isSpellCheckOn, UserSettings } from "../user-settings/user-settings";
 import { UserSettingsContext } from "../user-settings/UserSettingsStorage";
 import { Fonts } from "../styles/Fonts";
+import { UserSettingsPanel, UserSettingsPanelProps } from "../user-settings/UserSettingsPanel";
+import { CompletionMessage } from "../message-panels/CompletionMessage";
+import { ErrorMessage } from "../message-panels/ErrorMessage";
+import { LoadingMessage } from "../message-panels/LoadingMessage";
+import { WelcomeMessage } from "../message-panels/WelcomeMessage";
 
 export type ApplyReplacementFunction = (ruleMatch: RuleMatch, replacementText: string) => Promise<void>;
 
 interface ResultsAreaProps {
+  isLoading: boolean;
+  isError: boolean;
+  isSettingsOpen: boolean;
+  userSettingsPanelProps: UserSettingsPanelProps;
+
+  ruleMatches: RuleMatch[] | null;
+  applyReplacement?: ApplyReplacementFunction;
+  selectRuleMatch?: (ruleMatch: RuleMatch) => void;
+}
+export const ResultsArea: FC<ResultsAreaProps> = ({
+  isError,
+  isLoading,
+  isSettingsOpen,
+  ruleMatches,
+  userSettingsPanelProps,
+  applyReplacement,
+  selectRuleMatch,
+}) => {
+  return (
+    <>
+      {isSettingsOpen ? (
+        <UserSettingsPanel {...userSettingsPanelProps} />
+      ) : isError ? (
+        <ErrorMessage />
+      ) : isLoading ? (
+        <LoadingMessage />
+      ) : ruleMatches === null ? (
+        <WelcomeMessage />
+      ) : ruleMatches.length === 0 ? (
+        <CompletionMessage />
+      ) : (
+        <ResultList ruleMatches={ruleMatches} applyReplacement={applyReplacement} selectRuleMatch={selectRuleMatch} />
+      )}
+    </>
+  );
+};
+
+interface ResultListProps {
   ruleMatches: RuleMatch[];
   applyReplacement?: ApplyReplacementFunction;
   selectRuleMatch?: (ruleMatch: RuleMatch) => void;
 }
 
-export const ResultsArea: FC<ResultsAreaProps> = ({ ruleMatches, applyReplacement, selectRuleMatch }) => (
+export const ResultList: FC<ResultListProps> = ({ ruleMatches, applyReplacement, selectRuleMatch }) => (
   <div>
     <UserSettingsContext.Consumer>
       {(userSettings) => (

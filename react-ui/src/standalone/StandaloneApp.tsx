@@ -9,16 +9,11 @@ import { NavigationBar } from "./NavigationBar";
 import { ResultsArea } from "../common/results-display/ResultsArea";
 import { splitTextMatch } from "../common/splitTextMatch";
 import { computeErrorCounts, SummaryBar } from "../common/summary-bar/SummaryBar";
-import { UserSettingsPanel } from "../common/user-settings/UserSettingsPanel";
 import { UserSettingsContext, useUserSettingsState } from "../common/user-settings/UserSettingsStorage";
 import { newUuidv4 } from "../common/uuid";
 import { MainTextArea } from "./MainTextArea";
 import { StandaloneUserSettingsButton } from "./StandaloneUserSettingsButton";
 import { CenteredContainer } from "./CenteredContainer";
-import { WelcomeMessage } from "../common/message-panels/WelcomeMessage";
-import { LoadingMessage } from "../common/message-panels/LoadingMessage";
-import { ErrorMessage } from "../common/message-panels/ErrorMessage";
-import { CompletionMessage } from "../common/message-panels/CompletionMessage";
 
 type UseState<S> = [S, Dispatch<SetStateAction<S>>];
 
@@ -82,31 +77,23 @@ export const StandaloneApp: FC = () => {
                 </ButtonBar>
               </InputAreaContainer>
               <ResultsAreaContainer>
-                {isSettingsOpen ? (
-                  <UserSettingsPanel
-                    userSettingsState={[userSettings, setUserSettings]}
-                    onConfirmClicked={() => setSettingsOpen(false)}
-                  />
-                ) : isError ? (
-                  <ErrorMessage />
-                ) : isLoading ? (
-                  <LoadingMessage />
-                ) : ltMatches === null ? (
-                  <WelcomeMessage />
-                ) : ltMatches.length === 0 ? (
-                  <CompletionMessage />
-                ) : (
-                  <ResultsArea
-                    ruleMatches={ltMatches}
-                    applyReplacement={makeReplacementApplier([inputText, setInputText], checkText, textAreaRef)}
-                    selectRuleMatch={(ruleMatch) => {
-                      const ta = textAreaRef.current;
-                      if (!!ta) {
-                        setTextAreaSelection(ta, ruleMatch.offset, ruleMatch.offset + ruleMatch.length);
-                      }
-                    }}
-                  />
-                )}
+                <ResultsArea
+                  isError={isError}
+                  isLoading={isLoading}
+                  isSettingsOpen={isSettingsOpen}
+                  userSettingsPanelProps={{
+                    userSettingsState: [userSettings, setUserSettings],
+                    onConfirmClicked: () => setSettingsOpen(false),
+                  }}
+                  ruleMatches={ltMatches}
+                  applyReplacement={makeReplacementApplier([inputText, setInputText], checkText, textAreaRef)}
+                  selectRuleMatch={(ruleMatch) => {
+                    const ta = textAreaRef.current;
+                    if (!!ta) {
+                      setTextAreaSelection(ta, ruleMatch.offset, ruleMatch.offset + ruleMatch.length);
+                    }
+                  }}
+                />
               </ResultsAreaContainer>
             </MainAreaContainer>
           </CenteredContainer>

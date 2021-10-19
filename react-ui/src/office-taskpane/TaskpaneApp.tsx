@@ -13,13 +13,8 @@ import {
 } from "../common/user-settings/UserSettingsStorage";
 import { FeatureFlagsContext, FeatureFlagsStorage, useFeatureFlagsState } from "../common/feature-flags/feature-flags";
 import { DebugPanel } from "../common/debug-panel/DebugPanel";
-import { UserSettingsPanel } from "../common/user-settings/UserSettingsPanel";
 import { isFunction } from "../common/type-helpers";
 import { AddinTopButtonGroup } from "./AddinTopButtonGroup";
-import { WelcomeMessage } from "../common/message-panels/WelcomeMessage";
-import { LoadingMessage } from "../common/message-panels/LoadingMessage";
-import { ErrorMessage } from "../common/message-panels/ErrorMessage";
-import { CompletionMessage } from "../common/message-panels/CompletionMessage";
 
 export const TaskpaneApp: FC = () => {
   const [ltMatches, setLtMatches] = useState<RuleMatch[] | null>(null);
@@ -58,32 +53,22 @@ export const TaskpaneApp: FC = () => {
           </SummaryBarContainer>
 
           <LowerAreaContainer>
-            {isSettingsOpen ? (
-              <UserSettingsPanel
-                userSettingsState={[userSettings, setUserSettings]}
-                onConfirmClicked={() => setSettingsOpen(false)}
-              />
-            ) : isError ? (
-              <ErrorMessage />
-            ) : isLoading ? (
-              <LoadingMessage />
-            ) : ltMatches === null ? (
-              <WelcomeMessage />
-            ) : ltMatches.length === 0 ? (
-              <CompletionMessage />
-            ) : (
-              <AddinResultsAreaContainer>
-                <ResultsArea
-                  ruleMatches={ltMatches || []}
-                  applyReplacement={async (m, r) => {
-                    if (!isFunction(applier)) return;
-                    await applier(m, r);
-                    await checkTextWithLoading();
-                  }}
-                  selectRuleMatch={matchSelector}
-                />
-              </AddinResultsAreaContainer>
-            )}
+            <ResultsArea
+              isError={isError}
+              isLoading={isLoading}
+              isSettingsOpen={isSettingsOpen}
+              userSettingsPanelProps={{
+                userSettingsState: [userSettings, setUserSettings],
+                onConfirmClicked: () => setSettingsOpen(false),
+              }}
+              ruleMatches={ltMatches}
+              applyReplacement={async (m, r) => {
+                if (!isFunction(applier)) return;
+                await applier(m, r);
+                await checkTextWithLoading();
+              }}
+              selectRuleMatch={matchSelector}
+            />
           </LowerAreaContainer>
         </FeatureFlagsContext.Provider>
       </UserSettingsContext.Provider>
@@ -105,10 +90,6 @@ const SummaryBarContainer = styled.div`
 
 const LowerAreaContainer = styled.div`
   margin-top: 17px;
-`;
-
-const AddinResultsAreaContainer = styled.div`
-  margin: 15px 0 0;
 `;
 
 type ParagraphWithRanges = { paragraph: Word.Paragraph; ranges: Word.Range[] };
