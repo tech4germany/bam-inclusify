@@ -1,7 +1,6 @@
-import React from "react";
 import styled from "styled-components";
-import { FeatureFlagsContext } from "../common/feature-flags/feature-flags";
 import { InclusifyBamLogo, InclusifyLogo } from "../common/icons";
+import { UserSettingsAndFeatureFlagsContext } from "../common/UserSettingsAndFeatureFlagsContext";
 import { CenteredContainer } from "./CenteredContainer";
 
 export const NavigationBar = () => (
@@ -31,13 +30,13 @@ const NavBarSpacer = styled.div`
 `;
 
 const NavBarAppIcon = () => (
-  <FeatureFlagsContext.Consumer>
-    {(featureFlags) => (
+  <UserSettingsAndFeatureFlagsContext.Consumer>
+    {({ featureFlags }) => (
       <NavBarAppIconContainer>
         {featureFlags.useBamLogo ? <InclusifyBamLogo /> : <InclusifyLogo />}
       </NavBarAppIconContainer>
     )}
-  </FeatureFlagsContext.Consumer>
+  </UserSettingsAndFeatureFlagsContext.Consumer>
 );
 
 const navBarHeight = "85px";

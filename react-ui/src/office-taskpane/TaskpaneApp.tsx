@@ -6,15 +6,12 @@ import { LanguageToolClient } from "../common/language-tool-api/LanguageToolClie
 import { isRunningInOutlook, isRunningInWord } from "../common/office-api-helpers";
 import { splitTextMatch } from "../common/splitTextMatch";
 import { computeErrorCounts, SummaryBar } from "../common/summary-bar/SummaryBar";
-import {
-  UserSettingsContext,
-  UserSettingsStorage,
-  useUserSettingsState,
-} from "../common/user-settings/UserSettingsStorage";
-import { FeatureFlagsContext, FeatureFlagsStorage, useFeatureFlagsState } from "../common/feature-flags/feature-flags";
+import { UserSettingsStorage, useUserSettingsState } from "../common/user-settings/UserSettingsStorage";
+import { FeatureFlagsStorage, useFeatureFlagsState } from "../common/feature-flags/feature-flags";
 import { DebugPanel } from "../common/debug-panel/DebugPanel";
 import { isFunction } from "../common/type-helpers";
 import { AddinTopButtonGroup } from "./AddinTopButtonGroup";
+import { UserSettingsAndFeatureFlagsContext } from "../common/UserSettingsAndFeatureFlagsContext";
 
 export const TaskpaneApp: FC = () => {
   const [ltMatches, setLtMatches] = useState<RuleMatch[] | null>(null);
@@ -42,36 +39,34 @@ export const TaskpaneApp: FC = () => {
 
   return (
     <AddinContainer>
-      <UserSettingsContext.Provider value={userSettings}>
-        <FeatureFlagsContext.Provider value={featureFlags}>
-          <AddinTopButtonGroup
-            onCheckClicked={checkTextWithLoading}
-            settingsOpenState={[isSettingsOpen, setSettingsOpen]}
-          />
-          <SummaryBarContainer hidden={isSettingsOpen}>
-            <SummaryBar addinMode {...errorCounts} />
-          </SummaryBarContainer>
+      <UserSettingsAndFeatureFlagsContext.Provider value={{ userSettings, featureFlags }}>
+        <AddinTopButtonGroup
+          onCheckClicked={checkTextWithLoading}
+          settingsOpenState={[isSettingsOpen, setSettingsOpen]}
+        />
+        <SummaryBarContainer hidden={isSettingsOpen}>
+          <SummaryBar addinMode {...errorCounts} />
+        </SummaryBarContainer>
 
-          <LowerAreaContainer>
-            <ResultsArea
-              isError={isError}
-              isLoading={isLoading}
-              isSettingsOpen={isSettingsOpen}
-              userSettingsPanelProps={{
-                userSettingsState: [userSettings, setUserSettings],
-                onConfirmClicked: () => setSettingsOpen(false),
-              }}
-              ruleMatches={ltMatches}
-              applyReplacement={async (m, r) => {
-                if (!isFunction(applier)) return;
-                await applier(m, r);
-                await checkTextWithLoading();
-              }}
-              selectRuleMatch={matchSelector}
-            />
-          </LowerAreaContainer>
-        </FeatureFlagsContext.Provider>
-      </UserSettingsContext.Provider>
+        <LowerAreaContainer>
+          <ResultsArea
+            isError={isError}
+            isLoading={isLoading}
+            isSettingsOpen={isSettingsOpen}
+            userSettingsPanelProps={{
+              userSettingsState: [userSettings, setUserSettings],
+              onConfirmClicked: () => setSettingsOpen(false),
+            }}
+            ruleMatches={ltMatches}
+            applyReplacement={async (m, r) => {
+              if (!isFunction(applier)) return;
+              await applier(m, r);
+              await checkTextWithLoading();
+            }}
+            selectRuleMatch={matchSelector}
+          />
+        </LowerAreaContainer>
+      </UserSettingsAndFeatureFlagsContext.Provider>
       <DebugPanel
         featureFlagsState={[featureFlags, setFeatureFlags]}
         userSettingsState={[userSettings, setUserSettings]}

@@ -1,11 +1,11 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 import { Colors } from "../styles/Colors";
-import { FeatureFlagsContext } from "../feature-flags/feature-flags";
 import { GenderingType, GenderSymbol, UserSettings } from "./user-settings";
 import { Fonts } from "../styles/Fonts";
 import { GearIcon } from "../icons";
 import { DefaultUserSettings } from "./UserSettingsStorage";
+import { UserSettingsAndFeatureFlagsContext } from "../UserSettingsAndFeatureFlagsContext";
 
 type OptionListEntryInfo<T> = { id: T; label: string };
 
@@ -30,8 +30,8 @@ export const UserSettingsPanel: FC<UserSettingsPanelProps> = ({ userSettingsStat
   const [userSettings, setUserSettings] = userSettingsState;
 
   return (
-    <FeatureFlagsContext.Consumer>
-      {(featureFlags) => (
+    <UserSettingsAndFeatureFlagsContext.Consumer>
+      {({ featureFlags }) => (
         <UserSettingsPanelContainer>
           <UserSettingsTitle>Einstellungen</UserSettingsTitle>
           <UserSettingsContent>
@@ -115,7 +115,7 @@ export const UserSettingsPanel: FC<UserSettingsPanelProps> = ({ userSettingsStat
           </UserSettingsContent>
         </UserSettingsPanelContainer>
       )}
-    </FeatureFlagsContext.Consumer>
+    </UserSettingsAndFeatureFlagsContext.Consumer>
   );
 };
 

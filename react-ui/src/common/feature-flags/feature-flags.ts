@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { useState } from "react";
 import { LocalStorageService } from "../local-storage/LocalStorageService";
 
 export const isDebugPanelEnabled = true;
@@ -13,8 +13,6 @@ export const DefaultFeatureFlags = Object.freeze({
 });
 
 export type FeatureFlags = typeof DefaultFeatureFlags;
-
-export const FeatureFlagsContext = createContext(DefaultFeatureFlags);
 
 export const FeatureFlagsStorage = new LocalStorageService("inclusify_app_feature_flags", DefaultFeatureFlags, {});
 

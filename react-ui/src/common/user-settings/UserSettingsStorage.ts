@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { useState } from "react";
 import { LocalStorageService } from "../local-storage/LocalStorageService";
 import { GenderingTypes, GenderSymbols, UserSettings } from "./user-settings";
 
@@ -27,5 +27,3 @@ export const useUserSettingsState: () => [UserSettings, (setState: (prevState: U
       });
     return [userSettings, setUserSettingsWithSave];
   };
-
-export const UserSettingsContext = createContext(DefaultUserSettings);

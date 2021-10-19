@@ -2,7 +2,7 @@ import React, { FC, useState } from "react";
 import styled from "styled-components";
 import { DownChevronIcon } from "../icons";
 import { Colors } from "../styles/Colors";
-import { FeatureFlags, FeatureFlagsContext } from "../feature-flags/feature-flags";
+import { FeatureFlags } from "../feature-flags/feature-flags";
 import { RuleMatch } from "../language-tool-api/types";
 import { mapUserSettingsToReplacementPostProcessing } from "../language-tool-api/user-settings-language-mapping";
 import {
@@ -15,13 +15,13 @@ import {
 import { splitTextMatch } from "../splitTextMatch";
 import { isFunction } from "../type-helpers";
 import { isGrammarCheckOn, isSpellCheckOn, UserSettings } from "../user-settings/user-settings";
-import { UserSettingsContext } from "../user-settings/UserSettingsStorage";
 import { Fonts } from "../styles/Fonts";
 import { UserSettingsPanel, UserSettingsPanelProps } from "../user-settings/UserSettingsPanel";
 import { CompletionMessage } from "../message-panels/CompletionMessage";
 import { ErrorMessage } from "../message-panels/ErrorMessage";
 import { LoadingMessage } from "../message-panels/LoadingMessage";
 import { WelcomeMessage } from "../message-panels/WelcomeMessage";
+import { UserSettingsAndFeatureFlagsContext } from "../UserSettingsAndFeatureFlagsContext";
 
 export type ApplyReplacementFunction = (ruleMatch: RuleMatch, replacementText: string) => Promise<void>;
 
@@ -71,27 +71,23 @@ interface ResultListProps {
 
 export const ResultList: FC<ResultListProps> = ({ ruleMatches, applyReplacement, selectRuleMatch }) => (
   <div>
-    <UserSettingsContext.Consumer>
-      {(userSettings) => (
-        <FeatureFlagsContext.Consumer>
-          {(featureFlags) => {
-            const matchesToShow = postProcessRuleMatches(ruleMatches, featureFlags, userSettings);
-            return (
-              <LtMatchesListContainer>
-                {matchesToShow.map((ltMatch) => (
-                  <LtMatch
-                    key={ltMatch.clientUuid}
-                    ltMatch={ltMatch}
-                    applyReplacement={applyReplacement}
-                    selectRuleMatch={selectRuleMatch}
-                  />
-                ))}
-              </LtMatchesListContainer>
-            );
-          }}
-        </FeatureFlagsContext.Consumer>
-      )}
-    </UserSettingsContext.Consumer>
+    <UserSettingsAndFeatureFlagsContext.Consumer>
+      {({ featureFlags, userSettings }) => {
+        const matchesToShow = postProcessRuleMatches(ruleMatches, featureFlags, userSettings);
+        return (
+          <LtMatchesListContainer>
+            {matchesToShow.map((ltMatch) => (
+              <LtMatch
+                key={ltMatch.clientUuid}
+                ltMatch={ltMatch}
+                applyReplacement={applyReplacement}
+                selectRuleMatch={selectRuleMatch}
+              />
+            ))}
+          </LtMatchesListContainer>
+        );
+      }}
+    </UserSettingsAndFeatureFlagsContext.Consumer>
   </div>
 );
 

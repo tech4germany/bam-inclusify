@@ -9,9 +9,6 @@ import { newUuidv4 } from "../uuid";
 interface HasFeatureFlagsState {
   featureFlagsState: [FeatureFlags, (setState: (prevState: FeatureFlags) => FeatureFlags) => void];
 }
-interface HasId {
-  id: string;
-}
 
 interface DebugPanelProps extends HasFeatureFlagsState {
   userSettingsState: [UserSettings, (setState: (prevState: UserSettings) => UserSettings) => void];

@@ -2,18 +2,19 @@ import { Dispatch, FC, RefObject, SetStateAction, useRef, useState } from "react
 import styled from "styled-components";
 import { StandaloneCheckTextButton } from "./StandaloneCheckTextButton";
 import { DebugPanel } from "../common/debug-panel/DebugPanel";
-import { FeatureFlagsContext, useFeatureFlagsState } from "../common/feature-flags/feature-flags";
+import { useFeatureFlagsState } from "../common/feature-flags/feature-flags";
 import { LanguageToolClient } from "../common/language-tool-api/LanguageToolClient";
 import { RuleMatch } from "../common/language-tool-api/types";
 import { NavigationBar } from "./NavigationBar";
 import { ResultsArea } from "../common/results-display/ResultsArea";
 import { splitTextMatch } from "../common/splitTextMatch";
 import { computeErrorCounts, SummaryBar } from "../common/summary-bar/SummaryBar";
-import { UserSettingsContext, useUserSettingsState } from "../common/user-settings/UserSettingsStorage";
+import { useUserSettingsState } from "../common/user-settings/UserSettingsStorage";
 import { newUuidv4 } from "../common/uuid";
 import { MainTextArea } from "./MainTextArea";
 import { StandaloneUserSettingsButton } from "./StandaloneUserSettingsButton";
 import { CenteredContainer } from "./CenteredContainer";
+import { UserSettingsAndFeatureFlagsContext } from "../common/UserSettingsAndFeatureFlagsContext";
 
 type UseState<S> = [S, Dispatch<SetStateAction<S>>];
 
@@ -52,53 +53,51 @@ export const StandaloneApp: FC = () => {
 
   return (
     <div>
-      <UserSettingsContext.Provider value={userSettings}>
-        <FeatureFlagsContext.Provider value={featureFlags}>
-          <NavigationBar />
+      <UserSettingsAndFeatureFlagsContext.Provider value={{ userSettings, featureFlags }}>
+        <NavigationBar />
 
-          <CenteredContainer>
-            <SummaryBarContainer>
-              <SummaryBar {...errorCounts}>
-                <StandaloneUserSettingsButton pressedState={[isSettingsOpen, setSettingsOpen]} />
-              </SummaryBar>
-            </SummaryBarContainer>
-            <MainAreaContainer>
-              <InputAreaContainer>
-                <MainTextArea
-                  key={textAreaId}
-                  textAreaRef={textAreaRef}
-                  onChange={(e) => setInputText(e.target.value)}
-                  onSubmit={submitHandler}
-                  value={inputText}
-                />
-                <ButtonBar>
-                  <ButtonBarSpacer />
-                  <StandaloneCheckTextButton onClick={submitHandler} disabled={isLoading} />
-                </ButtonBar>
-              </InputAreaContainer>
-              <ResultsAreaContainer>
-                <ResultsArea
-                  isError={isError}
-                  isLoading={isLoading}
-                  isSettingsOpen={isSettingsOpen}
-                  userSettingsPanelProps={{
-                    userSettingsState: [userSettings, setUserSettings],
-                    onConfirmClicked: () => setSettingsOpen(false),
-                  }}
-                  ruleMatches={ltMatches}
-                  applyReplacement={makeReplacementApplier([inputText, setInputText], checkText, textAreaRef)}
-                  selectRuleMatch={(ruleMatch) => {
-                    const ta = textAreaRef.current;
-                    if (!!ta) {
-                      setTextAreaSelection(ta, ruleMatch.offset, ruleMatch.offset + ruleMatch.length);
-                    }
-                  }}
-                />
-              </ResultsAreaContainer>
-            </MainAreaContainer>
-          </CenteredContainer>
-        </FeatureFlagsContext.Provider>
-      </UserSettingsContext.Provider>
+        <CenteredContainer>
+          <SummaryBarContainer>
+            <SummaryBar {...errorCounts}>
+              <StandaloneUserSettingsButton pressedState={[isSettingsOpen, setSettingsOpen]} />
+            </SummaryBar>
+          </SummaryBarContainer>
+          <MainAreaContainer>
+            <InputAreaContainer>
+              <MainTextArea
+                key={textAreaId}
+                textAreaRef={textAreaRef}
+                onChange={(e) => setInputText(e.target.value)}
+                onSubmit={submitHandler}
+                value={inputText}
+              />
+              <ButtonBar>
+                <ButtonBarSpacer />
+                <StandaloneCheckTextButton onClick={submitHandler} disabled={isLoading} />
+              </ButtonBar>
+            </InputAreaContainer>
+            <ResultsAreaContainer>
+              <ResultsArea
+                isError={isError}
+                isLoading={isLoading}
+                isSettingsOpen={isSettingsOpen}
+                userSettingsPanelProps={{
+                  userSettingsState: [userSettings, setUserSettings],
+                  onConfirmClicked: () => setSettingsOpen(false),
+                }}
+                ruleMatches={ltMatches}
+                applyReplacement={makeReplacementApplier([inputText, setInputText], checkText, textAreaRef)}
+                selectRuleMatch={(ruleMatch) => {
+                  const ta = textAreaRef.current;
+                  if (!!ta) {
+                    setTextAreaSelection(ta, ruleMatch.offset, ruleMatch.offset + ruleMatch.length);
+                  }
+                }}
+              />
+            </ResultsAreaContainer>
+          </MainAreaContainer>
+        </CenteredContainer>
+      </UserSettingsAndFeatureFlagsContext.Provider>
       <DebugPanel
         featureFlagsState={[featureFlags, setFeatureFlags]}
         userSettingsState={[userSettings, setUserSettings]}

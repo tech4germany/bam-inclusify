@@ -1,11 +1,10 @@
 import { FC } from "react";
 import styled from "styled-components";
 import { Colors } from "../styles/Colors";
-import { FeatureFlagsContext } from "../feature-flags/feature-flags";
 import { mapRuleCategory } from "../rule-categories";
 import { isGrammarCheckOn, isSpellCheckOn } from "../user-settings/user-settings";
-import { UserSettingsContext } from "../user-settings/UserSettingsStorage";
 import { RuleMatch } from "../language-tool-api/types";
+import { UserSettingsAndFeatureFlagsContext } from "../UserSettingsAndFeatureFlagsContext";
 
 interface SummaryBarProps {
   diversityErrorCount: number;
@@ -21,20 +20,16 @@ export const SummaryBar: FC<SummaryBarProps> = ({
   addinMode,
   children,
 }) => (
-  <UserSettingsContext.Consumer>
-    {(userSettings) => (
-      <FeatureFlagsContext.Consumer>
-        {(featureFlags) => (
-          <SummaryBarContainer addinMode={!!addinMode}>
-            {isGrammarCheckOn(userSettings, featureFlags) && <GrammarSummary grammarErrorCount={grammarErrorCount} />}
-            {isSpellCheckOn(userSettings, featureFlags) && <SpellingSummary spellingErrorCount={spellingErrorCount} />}
-            <DiversityErrorSummary diversityErrorCount={diversityErrorCount} />
-            {children}
-          </SummaryBarContainer>
-        )}
-      </FeatureFlagsContext.Consumer>
+  <UserSettingsAndFeatureFlagsContext.Consumer>
+    {({ featureFlags, userSettings }) => (
+      <SummaryBarContainer addinMode={!!addinMode}>
+        {isGrammarCheckOn(userSettings, featureFlags) && <GrammarSummary grammarErrorCount={grammarErrorCount} />}
+        {isSpellCheckOn(userSettings, featureFlags) && <SpellingSummary spellingErrorCount={spellingErrorCount} />}
+        <DiversityErrorSummary diversityErrorCount={diversityErrorCount} />
+        {children}
+      </SummaryBarContainer>
     )}
-  </UserSettingsContext.Consumer>
+  </UserSettingsAndFeatureFlagsContext.Consumer>
 );
 
 export function computeErrorCounts(ltMatches: RuleMatch[]): {
