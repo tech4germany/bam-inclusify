@@ -3,6 +3,7 @@
 # See `LICENSE`.
 
 from compound_split import char_split
+from tqdm import tqdm
 import re
 import sys
 
@@ -15,10 +16,10 @@ lemma_to_inflected = {}
 
 
 def init():
-    print("Reading morphological dictionary ...")
+    print("Loading morphological dictionary ...")
     dump = open_("dictionary.dump").readlines()
     added = open_("dictionary_added.txt").readlines()
-    for line in dump + added:
+    for line in tqdm(dump + added):
         inflected, lemma, morph = line.split("\t")
         add_to_dict(inflected, [(morph, lemma)], inflected_to_lemma)
         add_to_dict(lemma, [(morph, inflected)], lemma_to_inflected)
@@ -33,7 +34,6 @@ def inflect(word, case=None, gender=None, number=None, recursion=0):
         if recursion > 0:
             return []
         for _, part_1, part_2 in char_split.split_compound(word)[:3]:
-            print("Checking split", part_1, part_2)
             inflected_part_2s = inflect(part_2, case=case, gender=gender, number=number, recursion=recursion+1)
             for inflected_part_2 in inflected_part_2s:
                 inflected.append(part_1 + inflected_part_2.lower())
@@ -65,7 +65,4 @@ def parse_morph(morph):
         }
     else:
         return None
-
-
-init()
 

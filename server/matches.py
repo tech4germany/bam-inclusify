@@ -10,8 +10,10 @@ sys.path.insert(0, "../data")
 
 from helpers import add_to_dict, log, open_
 
-# stanza.download("de")
 
+print("Downloading language models ...")
+nlp = stanza.download("de")
+print("Loading language models ...")
 nlp = stanza.Pipeline(lang="de", processors="tokenize,mwt,pos,lemma,depparse")
 
 
