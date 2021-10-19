@@ -1,15 +1,11 @@
-from morphy import inflect
+from server.helpers import add_to_dict, log, open_
+from server.morphy import inflect
 from typing import *
 import csv
 import itertools
 import re
 import stanza
 import sys
-
-sys.path.insert(0, "../data")
-
-from helpers import add_to_dict, log, open_
-
 
 print("Downloading language models ...")
 nlp = stanza.download("de")
@@ -19,7 +15,7 @@ nlp = stanza.Pipeline(lang="de", processors="tokenize,mwt,pos,lemma,depparse")
 
 def load_rules():
     dic = {}
-    for [lemma, insensitive_lemmas, insensitive, sensitive, plural_only] in csv.reader(open_("../data/unified.csv")):
+    for [lemma, insensitive_lemmas, insensitive, sensitive, plural_only] in csv.reader(open_("..", "data", "unified.csv")):
         plural_only = True if plural_only == "1" else False
         add_to_dict(
             lemma, [(insensitive_lemmas, insensitive, sensitive, plural_only)], dic)

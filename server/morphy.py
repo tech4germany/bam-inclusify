@@ -4,12 +4,11 @@
 
 from compound_split import char_split
 from tqdm import tqdm
+import os
+from os import path
 import re
 import sys
-
-sys.path.insert(0, "../data")
-
-from helpers import add_to_dict, open_, log
+from server.helpers import add_to_dict, open_, log
 
 inflected_to_lemma = {}
 lemma_to_inflected = {}
@@ -17,12 +16,11 @@ lemma_to_inflected = {}
 
 def init():
     print("Loading morphological dictionary ...")
-    dump = open_("dictionary.dump").readlines()
-    added = open_("dictionary_added.txt").readlines()
-    for line in tqdm(dump + added):
-        inflected, lemma, morph = line.split("\t")
-        add_to_dict(inflected, [(morph, lemma)], inflected_to_lemma)
-        add_to_dict(lemma, [(morph, inflected)], lemma_to_inflected)
+    for filename in [ "dictionary_added.txt"]: # "dictionary.dump",]:
+        for line in tqdm(open_(filename).readlines()):
+            inflected, lemma, morph = line.split("\t")
+            add_to_dict(inflected, [(morph, lemma)], inflected_to_lemma)
+            add_to_dict(lemma, [(morph, inflected)], lemma_to_inflected)
 
 
 def inflect(word, case=None, gender=None, number=None, recursion=0):

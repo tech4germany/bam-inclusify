@@ -1,8 +1,6 @@
-import matches
-import morphy
 import os
 from flask import Flask, request, send_from_directory
-from matches import matches, rules
+from server.matches import matches, rules
 
 app = Flask(__name__, static_folder=None)
 
@@ -22,5 +20,4 @@ def serve_api():
 
 
 if __name__ == "__main__":
-    morphy.init()
     app.run(host="localhost", port=8081)
