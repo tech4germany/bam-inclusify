@@ -18,12 +18,14 @@ import { isFunction } from "../common/type-helpers";
 import { AddinTopButtonGroup } from "./AddinTopButtonGroup";
 import { WelcomeMessage } from "../common/message-panels/WelcomeMessage";
 import { LoadingMessage } from "../common/message-panels/LoadingMessage";
+import { ErrorMessage } from "../common/message-panels/ErrorMessage";
 
 export const TaskpaneApp: FC = () => {
   const [ltMatches, setLtMatches] = useState<RuleMatch[] | null>(null);
   const [applier, setApplier] = useState<ApplyReplacementFunction>();
   const [matchSelector, setMatchSelector] = useState<(ruleMatch: RuleMatch) => void>();
   const [isLoading, setLoading] = useState(false);
+  const [isError, setError] = useState(false);
   const [isSettingsOpen, setSettingsOpen] = useState(false);
   const [featureFlags, setFeatureFlags] = useFeatureFlagsState();
   const [userSettings, setUserSettings] = useUserSettingsState();
@@ -54,6 +56,8 @@ export const TaskpaneApp: FC = () => {
                 userSettingsState={[userSettings, setUserSettings]}
                 onConfirmClicked={() => setSettingsOpen(false)}
               />
+            ) : isError ? (
+              <ErrorMessage />
             ) : isLoading ? (
               <LoadingMessage />
             ) : ltMatches === null ? (

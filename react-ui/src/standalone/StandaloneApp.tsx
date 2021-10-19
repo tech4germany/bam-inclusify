@@ -17,6 +17,7 @@ import { StandaloneUserSettingsButton } from "./StandaloneUserSettingsButton";
 import { CenteredContainer } from "./CenteredContainer";
 import { WelcomeMessage } from "../common/message-panels/WelcomeMessage";
 import { LoadingMessage } from "../common/message-panels/LoadingMessage";
+import { ErrorMessage } from "../common/message-panels/ErrorMessage";
 
 type UseState<S> = [S, Dispatch<SetStateAction<S>>];
 
@@ -26,6 +27,7 @@ export const StandaloneApp: FC = () => {
   const [inputText, setInputText] = useState("");
   const [ltMatches, setLtMatches] = useState<RuleMatch[] | null>(null);
   const [isLoading, setLoading] = useState(false);
+  const [isError, setError] = useState(false);
   const [isSettingsOpen, setSettingsOpen] = useState(false);
   const [featureFlags, setFeatureFlags] = useFeatureFlagsState();
   const [userSettings, setUserSettings] = useUserSettingsState();
@@ -78,6 +80,8 @@ export const StandaloneApp: FC = () => {
                     userSettingsState={[userSettings, setUserSettings]}
                     onConfirmClicked={() => setSettingsOpen(false)}
                   />
+                ) : isError ? (
+                  <ErrorMessage />
                 ) : isLoading ? (
                   <LoadingMessage />
                 ) : ltMatches === null ? (
