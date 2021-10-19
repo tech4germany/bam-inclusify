@@ -16,6 +16,6 @@
   (This is also for Anaconda/Miniconda environments, because not all of our dependencies are published in Anaconda channels.)
 3. Start the server with gunicorn: 
   ```
-  gunicorn app:app --bind localhost:8081 --timeout 90
+  gunicorn server.wsgi:app --bind localhost:8081 --timeout 90
   ``` 
   (Any desired port can be specified here.)

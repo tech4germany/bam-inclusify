@@ -1,1 +1,1 @@
-web: gunicorn server.wsgi --timeout 300
+web: gunicorn server.wsgi:app --timeout 300
