@@ -34,7 +34,13 @@ export const TaskpaneApp: FC = () => {
 
   const checkTextWithLoading = async () => {
     setLoading(true);
-    await checkText(setLtMatches, setApplier, setMatchSelector);
+    setError(false);
+    try {
+      await checkText(setLtMatches, setApplier, setMatchSelector);
+    } catch (e) {
+      setError(true);
+      console.error("Error while checking text: ", e);
+    }
     setLoading(false);
   };
 

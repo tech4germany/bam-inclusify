@@ -37,8 +37,14 @@ export const StandaloneApp: FC = () => {
 
   const checkText = async (text: string) => {
     setLoading(true);
-    const matches = await new LanguageToolClient().check(text, userSettings, featureFlags);
-    setLtMatches(matches);
+    setError(false);
+    try {
+      const matches = await new LanguageToolClient().check(text, userSettings, featureFlags);
+      setLtMatches(matches);
+    } catch (e) {
+      setError(true);
+      console.error("Error while checking text: ", e);
+    }
     setLoading(false);
   };
   const submitHandler = () => {
