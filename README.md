@@ -38,3 +38,27 @@ DEVSERVER_HTTPS_CA=$HOME/.office-addin-dev-certs/ca.crt
 - Otherwise, you can use the scripts like this:
   - Start the API part: `cd dev_cmds && yarn devcmd start-api`
   - Start the UI part: `cd dev_cmds && yarn devcmd start-ui`
+
+## Adjusting the links in the navigation bar (Standalone) and for the Inclusify logo (Addin)
+
+- You can adjust the links shown in the navigation bar at the top of the Standalone page in the React app's `package.json` file:
+  - In `react-ui/package.json`, edit the list in the key `"standaloneNavigationLinks"`
+  - Each item in this list must have at least the two entries `"title"` and `"url"` (both must be strings), and can optionally have an entry `"subtitle"` (also a string), which is shown under the "title" in smaller font
+  - Example:
+  ```json
+  {
+    // . . .
+    "standaloneNavigationLinks": [
+      {
+        "title": "BAM Leitfaden",
+        "subtitle": "für geschlechtergerechte Sprache",
+        "url": "https://www.bam.de/path/to/page"
+      },
+      {
+        "title": "BAM Webseite",
+        "url": "https://www.bam.de/en"
+      }
+    ]
+    // . . .
+  }
+  ```
