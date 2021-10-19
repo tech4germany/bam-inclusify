@@ -46,9 +46,9 @@ def gender_matches(doc):
                         _, _, sensitive, plural_only = rule
                         sensitive_alternatives.append((sensitive, plural_only))
                 if len(sensitive_alternatives) > 0:
+                    sensitive_alternatives = [(simplify_participles(sensitive, word), plural_only) for sensitive, plural_only in sensitive_alternatives]
                     sensitive_alternatives = list(itertools.chain(*[inflect_root(word, alt, plural_only)
                          for alt, plural_only in sensitive_alternatives]))
-                    sensitive_alternatives = [simplify_participles(alt) for alt in sensitive_alternatives]
                     match = gender_match(
                         word.text,
                         sensitive_alternatives,
@@ -127,10 +127,10 @@ def inflect_root(insensitive_word, alternative, plural_only):
         ]))
     return alternatives_with_inflected_root
 
-def simplify_participles(sensitive_words):
-    match = re.match(r"(^[a-zäöüß]+(te|nde)n?) (Personen|Menschen|Firmen)$", sensitive_words)
-    if match:
-        return startupper(match[1])
+def simplify_participles(sensitive_words, insensitive_root):
+    match = re.match(r"(^[a-zäöüß]+(te|nde)n?) (Person|Mensch|Firma)$", sensitive_words)
+    if parse_feats(insensitive_root.feats)["Number"] == "PLU" and match:
+            return startupper(match[1])
     else:
         return sensitive_words
 

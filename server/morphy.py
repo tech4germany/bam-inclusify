@@ -66,3 +66,4 @@ def parse_morph(morph):
     else:
         return None
 
+init()
