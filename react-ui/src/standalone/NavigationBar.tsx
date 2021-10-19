@@ -3,6 +3,10 @@ import { InclusifyBamLogo, InclusifyLogo } from "../common/icons";
 import { Fonts } from "../common/styles/Fonts";
 import { UserSettingsAndFeatureFlagsContext } from "../common/UserSettingsAndFeatureFlagsContext";
 import { CenteredContainer } from "./CenteredContainer";
+import packageJson from "../../package.json";
+import { newUuidv4 } from "../common/uuid";
+
+const navLinks = extractNavLinks();
 
 export const NavigationBar = () => (
   <NavBarContainer>
@@ -13,14 +17,18 @@ export const NavigationBar = () => (
           <NavBarAppIconSmallText>Deine Assistentin für diversitätsensible Sprache</NavBarAppIconSmallText>
         </NavBarAppIconRow>
         <NavBarSpacer />
-        <NavBarLinkItem>Das Projekt</NavBarLinkItem>
-        <NavBarLinkItem>BAM Leitfaden</NavBarLinkItem>
-        <NavBarLinkItem>FAQ</NavBarLinkItem>
+        {navLinks.map((l) => (
+          <NavBarLinkItem key={l.id} href={l.url} target={"_blank"}>
+            <NavBarLinkText>{l.title}</NavBarLinkText>
+            {l.subtitle && <NavBarLinkSubtitle>{l.subtitle}</NavBarLinkSubtitle>}
+          </NavBarLinkItem>
+        ))}
       </NavBarItemsContainer>
     </CenteredContainer>
   </NavBarContainer>
 );
 
+const navBarHeight = "100px";
 const NavBarContainer = styled.div`
   background: white;
 `;
@@ -28,6 +36,7 @@ const NavBarContainer = styled.div`
 const NavBarItemsContainer = styled.div`
   display: flex;
   align-items: flex-end;
+  height: ${navBarHeight};
 `;
 const NavBarSpacer = styled.div`
   flex-grow: 1;
@@ -60,12 +69,66 @@ const NavBarAppIcon = () => (
   </UserSettingsAndFeatureFlagsContext.Consumer>
 );
 
-const navBarHeight = "100px";
 const NavBarAppIconContainer = styled.div``;
 const NavBarLinkItem = styled.a`
-  font-size: 20px;
-  height: ${navBarHeight};
-  line-height: ${navBarHeight};
+  /* height: ${navBarHeight}; */
   padding: 0 30px;
-  color: gray;
+  text-decoration: none;
+  color: #1b9cd8;
+  background: white;
+
+  height: 100%;
+  min-width: 150px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    color: #1b9cd8;
+    background: #e3f6ff;
+  }
 `;
+const NavBarLinkText = styled.div`
+  font-family: ${Fonts.bam.family};
+  font-weight: ${Fonts.bam.weights.normal};
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0px;
+`;
+const NavBarLinkSubtitle = styled.div`
+  font-family: ${Fonts.bam.family};
+  font-weight: ${Fonts.bam.weights.normal};
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0px;
+`;
+
+function extractNavLinks() {
+  if (
+    !packageJson ||
+    !packageJson["standaloneNavigationLinks"] ||
+    !Array.isArray(packageJson["standaloneNavigationLinks"])
+  ) {
+    console.error("No standalone nav links found");
+    return [];
+  }
+  const linkList = packageJson["standaloneNavigationLinks"] as any[];
+  const cleanList = linkList
+    .filter((l, idx) => {
+      if (typeof l === "object" && typeof l["title"] === "string" && typeof l["url"] === "string") return true;
+      console.warn(
+        `Standalone nav link ${idx} doesn't match expected format (object with string properties 'title' and 'url', and optional string property 'subtitle')`
+      );
+      return false;
+    })
+    .map((l) => ({
+      title: l["title"] as string,
+      url: l["url"] as string,
+      subtitle: typeof l["subtitle"] === "string" ? l["subtitle"] : undefined,
+      id: newUuidv4(),
+    }));
+  return cleanList;
+}
