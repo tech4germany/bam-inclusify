@@ -10,6 +10,7 @@ export const DefaultFeatureFlags = Object.freeze({
   maxReplacementsPerRuleMatch: 5,
   useBamLogo: true,
   minimumRequestDelayMs: 1000,
+  apiBaseUrl: "/v2",
 });
 
 export type FeatureFlags = typeof DefaultFeatureFlags;

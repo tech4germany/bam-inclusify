@@ -129,11 +129,7 @@ async function checkTextFromWord(
   console.timeEnd("getTextRanges");
 
   console.time("ltCheck");
-  const matches = await new LanguageToolClient().check(
-    plaintext,
-    UserSettingsStorage.load(),
-    FeatureFlagsStorage.load()
-  );
+  const matches = await LanguageToolClient.check(plaintext, UserSettingsStorage.load(), FeatureFlagsStorage.load());
   setLtMatches(matches);
   console.timeEnd("ltCheck");
 

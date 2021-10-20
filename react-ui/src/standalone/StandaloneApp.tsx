@@ -35,7 +35,7 @@ export const StandaloneApp: FC = () => {
     setLoading(true);
     setError(false);
     try {
-      const matches = await new LanguageToolClient().check(text, userSettings, featureFlags);
+      const matches = await LanguageToolClient.check(text, userSettings, featureFlags);
       setLtMatches(matches);
     } catch (e) {
       setError(true);

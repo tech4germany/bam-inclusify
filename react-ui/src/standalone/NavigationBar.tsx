@@ -5,7 +5,6 @@ import { UserSettingsAndFeatureFlagsContext } from "../common/UserSettingsAndFea
 import { CenteredContainer } from "./CenteredContainer";
 import packageJson from "../../package.json";
 import { newUuidv4 } from "../common/uuid";
-import { isValidElement } from "react";
 import { isValidUrl } from "../common/isValidUrl";
 
 const navLinks = extractNavLinks();
