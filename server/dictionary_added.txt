@@ -1,0 +1,8 @@
+Schaft	xschaften	SUB:DAT:SIN:FEM
+Schaft	xschaften	SUB:AKK:SIN:FEM
+Schaft	xschaften	SUB:GEN:SIN:FEM
+Schaft	xschaften	SUB:NOM:SIN:FEM
+Schaften	xschaften	SUB:AKK:PLU:FEM
+Schaften	xschaften	SUB:DAT:PLU:FEM
+Schaften	xschaften	SUB:GEN:PLU:FEM
+Schaften	xschaften	SUB:NOM:PLU:FEM

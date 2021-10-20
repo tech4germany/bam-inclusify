@@ -1,4 +1,4 @@
-from copy import copy
+from copy import deepcopy
 from os import path
 from typing import *
 import functools
@@ -14,8 +14,8 @@ def log(a: str, x: A) -> A:
 
 
 def add_to_dict(key: A, vals: List[B], dic: Dict[A, List[B]]) -> Dict[A, List[B]]:
-    key = copy(key)
-    vals = copy(vals)
+    key = deepcopy(key)
+    vals = deepcopy(vals)
     if key in dic.keys():
         for val in vals:
             if not val in dic[key]:

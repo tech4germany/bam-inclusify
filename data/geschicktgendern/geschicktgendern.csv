@@ -1,133 +1,361 @@
+(Deutscher / Welt-) Meister,Erster Platz der Deutschen Meisterschaft / Weltmeisterschaft,0
+(Deutscher / Welt-) Meister,Erstplatzierte,0
+(Diplom-)Ingenieur,Person mit Ingenieursdiplom,0
+(der) andere,Gegenüber,0
+1000-Mann-Quote,1000-Personen-Quote,0
+2000 Einwohner/km2,2000 gemeldete Personen/km2,0
+3. Mann [beim Skat],3. spielende Person,0
+Abbrecherquote,Abbruchquote,0
 Abenteurer,Abenteuermensch,0
 Abenteurer,Waghals,0
 Abenteurer,abenteuerliebende Person,0
 Abenteurer,abenteuerlustige Person,0
 Abenteurer,abenteuermutige Person,0
-Abnehmer,Abnehmende,1
-Absender,abgesandt durch ...,1
-Absender,absendende Person,1
-Absender,von ... ,1
-Absolventen,Abschluss innehabende Person,1
-Absolventen,Person mit Abschluss,1
-Abteilungsleiter,Abteilungsleitende,1
+Abgänger,Abschluss innehabende Person,0
+Abgänger,absolvierende Person,0
+Abiturient,Abitur ablegende Person,0
+Abiturient,"Person, die Abitur macht",0
+Abkömmling,Kind,0
+Abkömmling,Kindeskind,0
+Abkömmling,Person gleicher Abstammung,0
+Abkömmling,abstammende Person,0
+Abkömmling,nachkommende Person,0
+Abnehmer,abnehmende Person,0
+Abonnent,Bezugsperson,0
+Abonnent,ein Abonnement beziehende Person,0
+Abonnent,medienbeziehende Person,0
+Abonnenten,Abonnement-Beziehende,0
+Abonnenten,Follis,0
+Abonnenten,Followers,0
+Abonnenten,abonnierende Person,0
+Absender (sg./pl.),abgesandt durch,0
+Absender (sg./pl.),absendende Person,0
+Absender (sg./pl.),von,0
+Absolventen,Abschluss innehabende Person,0
+Absolventen,"Alumni [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]eig. auch generisches Maskulinum im Lateinischen",0
+Absolventen,Person mit Abschluss,0
+Absolventenpraktikum,Praktikum (direkt) nach Studienabschluss,0
+Absolventenvorsprechen [Schauspielschule],Abschlussvorsprechen,0
+Absolventenvorsprechen [Schauspielschule],"Alumnivorsprechen [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]Alumni = eig. auch generisches Maskulinum im Lateinischen",0
 Abteilungsleiter,Abteilungsleitung,0
-Abteilungsleiter,Abteilungsleitungen,1
-Akademiker,Personen mit Hochschulabschluss,1
-Akademiker,Studierte,1
-Akteure,Agierende,1
-Akteure,Aktive,1
-Akteure,Beteiligte,1
-Akteure,Handelnde,1
-Alkoholiker,Alkoholsüchtige,1
-Alkoholiker,Menschen mit Alkoholsucht,1
+Abteilungsleiter,Abteilungsleitungen,0
+Abteilungsleiter,abteilungsleitende Person,0
+Abteilungsleitertreffen,Treffen der Abteilungsleitungen,0
+Abteilungsleitertreffen,Treffen der Leitungsebene,0
+Achtung! Auf der A7 befindet sich ein Geisterfahrer im Bereich XY.,Achtung! Auf der A7 befindet sich ein Fahrzeug in falscher Richtung im Bereich XY.,0
+Administrator,Admin,0
+Administrator,Administration,0
+Administratoren,Administration,0
+Administratoren,Admins,0
+Administratoren,administrierende Person,0
+Adressat,adressierte Person,0
+Adressat,an,0
+Adressatenkreis,Zielgruppe,0
+Agent [Spion],auskundschaftende Person,0
+Agent [Spion],spionierende Person,0
+Agent [Sport-/Kunst-/-Agent],jemanden/etwas vermittelnde Person,0
+Agentenfilm,Spionagefilm,0
+Agententhriller,Spionagethriller,0
+Ahnen,[dieser Begriff ist im Plural bereits genderneutral: sg. die Ahne (f.) oder der Ahne (m.) -> pl. die Ahnen (f.) und die Ahnen (m.)],0
+Akademiker,Personen mit Hochschulabschluss,0
+Akademiker,Studierte,0
+Akteure,Aktive,0
+Akteure,Beteiligte,0
+Akteure,Handelnde,0
+Akteure,agierende Person,0
+Akteursnetzwerk,Netzwerk von Aktiven,0
+Akteursnetzwerk,Netzwerk von Engagierten,0
+Aktionär,Person mit Aktienbesitz,0
+Aktionäre,Aktien-/Anteilshabende,0
+Aktionärsversammlung,Versammlung von Anteilshabenden,0
+Aktionärsversammlung,Versammlung von Personen mit Aktienbesitz,0
+Aktivist,engagierte Person,0
+Aktivist,politisch aktiver Mensch,0
+Aktivisten,engagierte Personen,0
+Aktivisten,politisch aktive Menschen,0
+Aktivisten,zielstrebig Handelnde,0
+Alkoholiker,Alkoholsüchtige,0
+Alkoholiker,Menschen mit Alkoholsucht,0
 Alkoholiker,Person mit Alkoholsucht,0
 Alkoholiker,alkoholsüchtige Person,0
-Alleinerziehende,Ein-Eltern-Familie,0
-Alleinerziehende,Ein-Eltern-Haushalt,0
-Alleinerziehende,alleinerziehende Person,0
-Allergiker,Allergiegeplagte,1
-Allergiker,Menschen mit Allergie,1
-Allergiker,allergieleidende Personen,1
-Altkanzler,ehemalige Regierungsoberhäupter,1
+Alle Vereinsmitglieder sind zur Hauptversammlung eingeladen.,"[als Neutrum ist das Wort Vereinsmitglieder schon gendergerecht: DAS Mitglied, die Mitglieder",0
+Alle Vereinsmitglieder sind zur Hauptversammlung eingeladen.,"wer dennoch eine Alternative bevorzugt, kann diese hier nutzen:] Alle Vereinsangehörigen / -zugehörigen sind zur Hauptversammlung einladen. / Als Teil des Vereins sind Sie zur Hauptversammlung eingeladen.",0
+Allergiker,Allergiegeplagte,0
+Allergiker,Menschen mit Allergie,0
+Allergiker,allergieleidende Personen,0
+Alleskönner,Multitalent,0
+Alleskönner,Universalgenie,0
+Alleskönner,vielseitig begabter Mensch,0
+Allgemeinmediziner,Allgemeinmedizin praktizierende Person,0
+Alltagshelden,Ehrenamtliche,0
+Alltagshelden,Tag versüßende Personen,0
+Alltagshelden,Zivilcourage leistende Personen,0
+Alltagshelfer,Alltagshilfe,0
+Alpinisten,Bergkletternde,0
+Alpinisten,bergbesteigende Personen,0
+Alpinisten,bergsteigende Person,0
+Alpinisten,bergsteigende Personen,0
+Altenpfleger,Altenpflegeperson,0
+Altenpfleger,Fachkraft für Altenpflege,0
+Altenpfleger,Krankenpflegeperson,0
+Altenpfleger,Pflegefachkraft,0
+Altenpfleger,Pflegefachperson,0
+Altersgenossen,Gleichaltrige,0
+Altersgenossen,Menschen derselben Altersgruppe,0
+Altersgenossen,Peer group,0
+Altersgenossen,gleich Alte,0
+Altkanzler,ehemalige Regierungsoberhäupter,0
+Alumni,Ehemalige,0
+Am Wahlsonntag äußerten die Wähler ihren Unmut über die aktuelle Regierung.,"Das Wahlergebnis macht den Unmut aller, die zur Wahl gegangen sind, über die aktuelle Regierung deutlich.",0
+Amateur,Neuling,0
+Amateur,Person ohne Vorkenntnisse,0
+Amateur,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Amateur,"weitere Alternativen gesucht, z.B. für Amateur im Sport",0
+Amateure,anfangende Person,0
+Amateure,beginnende Person,0
+Ampelmännchen,Ampelfiguren,0
+Ampelmännchen,Ampelfigürchen,0
+Ampelmännchen,Ampelmenschlein (s. auch Blog (klick)),0
 Amtsinhaber,Amt innehabende Person,0
 Amtsinhaber,amtierende Person im Bereich XY/ in Position XY,0
 Amtsinhaber,amtsverantwortliche Person für den Bereich XY,0
 Amtsinhaber,eine mit einem Amt betraute Person,0
-Analytiker,Analysierende,1
-Anbieter,Anbietende,1
-Anbieter,Angebot (von ...),0
+An den werten Leser,An die werten lesenden Personen,0
+An der Oper arbeiten 30 hauptberufliche Sänger.,An der Oper singen 30 Personen hauptberuflich.,0
+Analphabet,Person ohne Lesefähigkeit,0
+Analphabet,"Person, die nicht lesen und schreiben kann",0
+Analphabet,des Lesens nicht mächtige Person,0
+Analphabet,des Lesens unkundige Person,0
+Analphabet,leseunfähige Person,0
+Analphabet,leseunkundige Person,0
+Analytiker,analysierende Person,0
+Anbieter,Angebot (von),0
 Anbieter,Herstellung,0
+Anbieter,anbietende Person,0
 Anbieter,angebotsmachende Person,0
 Anbieter,angebotsstellende Person,0
-Anfänger,Beginnende,1
-Anfänger,Menschen ohne Vorerfahrung,1
-Anfänger,Menschen ohne Vorkenntnisse,1
-Anfänger,Neulinge,1
-Anfänger,Unerfahrene,1
+"Andreas und Elsa sind Tutoren für die Übungen zur Vorlesung ""Mathematik für Biologen"".","Andreas und Elsa leiten die Übungen zur Vorlesung ""Mathematik für das Biologiestudium"". / Andreas und Elsa betreuen die Übungen zur Vorlesung ""Mathematische Grundlagen
+(Biologie)"".",0
+Anforderer,anfordernde Person/Abteilung,0
+Anfänger,Menschen ohne Vorerfahrung,0
+Anfänger,Menschen ohne Vorkenntnisse,0
+Anfänger,Neulinge,0
+Anfänger,Unerfahrene,0
+Anfänger,beginnende Person,0
+Anfängerkurs,Einstiegskurs,0
+Anfängerkurs,Grundkurs,0
+Anfängerkurs,Kurs für Menschen ohne Vorerfahrung,0
+Anfängerkurs,Kurs für Menschen ohne Vorkenntnisse,0
 Anführer,Führung,0
 Anführer,Führungsfigur,0
 Anführer,Leitung,0
 Anführer,Oberhaupt,0
 Anführer,anführende Person,0
 Anführer,leitende Person,0
+Angebot für private Bauherren,Angebot für privat Bauende,0
 Angehöriger,Familienmitglied,0
-Angehöriger,Mitglied von ... ,0
+Angehöriger,Mitglied von,0
 Angeklagter,angeklagte Person,0
+Angesprochener,angesprochene Person,0
+Angesprochener,kontaktierte Person,0
+Angesprochener,lyrisches Du [Kontext Lyrikanalyse],0
 Angler,Angelmensch,0
-Angler,Angelnde,1
+Angler,Angelnde,0
 Angler,Angelsport betreibende Person,0
 Angler,Fisch fangende Person,0
 Angler,Mensch mit Angel,0
 Angler,"Person, die angelt",0
 Angler,angelnde Person,0
-Angler,"wer gern angelt, ... ",0
-Angreifer,Angreifende,1
+Angler,"wer gern angelt,",0
 Angreifer,angreifende Person,0
-Anhänger,Befürwortende,1
-Anhänger,Begeisterte,1
-Anhänger,Fans,1
-Anhänger,Gleichgesinnte,1
-Anhänger,Mitwirkende,1
-Anhänger,Sympathisierende,1
-Anhänger,Unterstützende,1
-Anhänger,Zugehörige (einer Bewegung),1
-Anhänger,"sich (einer Bewegung, einem Verein) Zuordnende",1
-Anleger,Anlegende,1
-Anlieger,Anliegende,1
-Anlieger,Anwohnende,1
+Anhänger,Begeisterte,0
+Anhänger,Fans,0
+Anhänger,Gleichgesinnte,0
+Anhänger,Zugehörige (einer Bewegung),0
+Anhänger,befürwortende Person,0
+Anhänger,mitwirkende Person,0
+Anhänger,"sich (einer Bewegung, einem Verein) Zuordnende",0
+Anhänger,sympathisierende Person,0
+Anhänger,unterstützende Person,0
+Anhängerschaft,Gefolgschaft,0
+Animateur,Freizeitbetreuungsperson,0
+Animateure,animierende Person,0
+Ankläger,"Person, die Anklage erhebt",0
+Ankläger,"Person, die anklagt",0
+Ankläger,anklagende Person,0
+Anleger,anlegende Person,0
+Anleiter,Anleitung,0
+Anleiter,anleitende Person,0
+Anlieger,anliegende Person,0
 Anlieger,anwohnende Person,0
-Anlieger,anwohnende Personen,1
-Anrufer,Anrufende,1
+Anlieger,anwohnende Personen,0
+"Anmeldung beim Schul-, Haus- oder Kinderarzt",privat- oder schulärztliche Anmeldung,0
+Anmerkungen des Lektors,Anmerkungen des Lektorats,0
+Anna Meyer oder Simon Schmidt - wer wird Deutscher Meister?,Anna Mayer oder Simon Schmidt - wer belegt den ersten Platz der Deutschen Meisterschaft?,0
+Anna und Peter sind Arbeitskollegen.,Anna und Peter arbeiten in derselben Firma. / Anna und Peter arbeiten in einem Team. / Anna und Peter sind Teammitglieder. / Anna und Peter kennen sich von der Arbeit.,0
+Anordner,"Anordnung, anordnende Person",0
+Anrainer,Person nebenan,0
+Anrainer,"Person, der das Grundstück nebenan gehört",0
+Anrainer,"Person, die nebenan wohnt",0
+Anrufer,anrufende Person,0
 Ansprechpartner,Ansprechperson,0
-Ansprechpartner,Auskunft gibt ... ,0
+Ansprechpartner,Auskunft gibt,0
 Ansprechpartner,Hilfeteam,0
 Ansprechpartner,Hotline,0
 Ansprechpartner,Kontakt,0
 Ansprechpartner,Kontaktperson,0
 Ansprechpartner,Service,0
 Ansprechpartner,Servicepersonal,0
-Ansprechpartner,zuständig ist ... ,0
-Anteilseigner,Anteilsinhabende,1
-Antragsteller,Antrag gestellt von ... ,0
+Ansprechpartner,zuständig ist,0
+Antagonist,Counterpart,0
+Antagonist,Konkurrenz,0
+Antagonist,gegenhandelnde Person,0
+Antagonist,widerstreitende Person,0
+"Anteil von Wissenschaftlern und Ingenieuren an der Gesamtarbeitskraft nach
+Geschlecht, 2013","Anteil von Forschenden und diplomierten technischen Fachkräften an der Gesamtarbeitskraft nach Geschlecht, 2013",0
+Anteilseigner,anteilsinhabende Person,0
+Antisemit,antisemitisch eingestellte Person,0
+Antragsteller,Antrag gestellt von,0
 Antragsteller,beantragende Person/Einrichtung,0
 Antragsteller,"die Person, die einen Antrag stellt",0
 Antragsteller,die antragstellende Person,0
-Anwender,Anwendende,1
-Anwender,Anwendung,1
-Anwender,Nutzende,1
-Anwender,"Personen, die ... anwenden",1
+Antragsteller werden in Kürze benachrichtigt.,Sie werden kurz nach Antragstellung benachrichtigt.,0
+Anwalt,Mitglied der Anwaltschaft,0
+Anwalt,"Rechtsbeistand (nicht empfohlen) [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]im streng juristischen Sinne hat ein Rechtsbeistand andere Befugnisse und Vertretungsrechte als ein*e Rechtsanwält*in",0
+Anwalt,Rechtsvertretung,0
+Anwalt,es existiert zudem die Bezeichnung Rechtsbeiständin,0
+Anwalt,gesetzliche Vertretung in Rechtsangelegenheiten,0
+Anwaltskosten,Kosten für die Rechtsvertretung,0
+Anwender,Anwendung,0
+Anwender,"Personen, dieanwenden",0
 Anwender,anwendende Person,0
-Anwohner,Anwohnende,1
-Anwohner,Nachbarschaft,1
-Anwohner,"alle, die in dieser Straße wohnen",1
-Apotheker,(approbierte) Arzneikundige,1
-Apotheker,approbierte pharmazeutische Fachkräfte,1
+Anwender,nutzende Person,0
+Anwender,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Anwender,weitere Alternativen gesucht,0
+Anwenderfreundlichkeit,Verwendungsfreundlichkeit,0
+Anwohner,Nachbarschaft,0
+Anwohner,"alle, die in dieser Straße wohnen",0
+Anwohner,anwohnende Person,0
+Anwärter,Person im Vorbereitungsdienst,0
+Apotheker,(approbierte) Arzneikundige,0
+Apotheker,approbierte pharmazeutische Fachkräfte,0
 Arbeiter,Arbeitskraft,0
-Arbeiter,Arbeitskräfte,1
-Arbeiter,Belegschaft,1
-Arbeiter,Beschäftigte,1
-Arbeiter,Erwerbstätige,1
-Arbeitgeber,Arbeitgebende,1
-Arbeitgeber,Arbeitsstelle ... ,0
-Arbeitgeber,Betriebe,1
+Arbeiter,Arbeitskräfte,0
+Arbeiter,Belegschaft,0
+Arbeiter,Beschäftigte,0
+Arbeiter,Erwerbstätige,0
+Arbeiterklasse,arbeitende Klasse,0
+Arbeitgeber,Arbeitsstelle,0
+Arbeitgeber,Betriebe,0
 Arbeitgeber,Führungskraft,0
 Arbeitgeber,"Person, die Arbeitsplätze zur Verfügung stellt",0
-Arbeitgeber,Unternehmen,1
+Arbeitgeber,Unternehmen,0
+Arbeitgeber,"[im Arbeitsvertrag konkret:] Firma, Unternehmen, Gesellschaft, Genossenschaft, Einrichtung, Institution, Amt, Behörde",0
+Arbeitgeber,arbeitgebende Person,0
 Arbeitgeber,arbeitgebendes Unternehmen,0
-Arbeitnehmer,Arbeitskräfte,1
-Arbeitnehmer,Belegschaft,1
-Arbeitnehmer,Beschäftigte,1
-Arbeitnehmer,Personal,1
+Arbeitgeberattraktivität,Arbeitsplatzattraktivität,0
+Arbeitgebermarke,Employer Branding,0
+Arbeitgebermarke,Unternehmensmarke,0
+Arbeitgebermarketing,Marketing für Arbeitgebende,0
+Arbeitgebervorteile,Firmenvorteile,0
+Arbeitgebervorteile,Unternehmensvorteile,0
+Arbeitnehmer,Arbeitskräfte,0
+Arbeitnehmer,Belegschaft,0
+Arbeitnehmer,Beschäftigte,0
+Arbeitnehmer,Personal,0
 Arbeitnehmer,angestellte Person,0
 Arbeitnehmer,beschäftigte Person,0
-Asylbewerber,Asylsuchende,1
-Asylbewerber,Personen im Asylverfahren,1
+Arbeitnehmervertreter,Arbeitnehmendenvertretung,0
+Arbeitnehmervertreter,Beschäftigtenvertretung,0
+Arbeitnehmervertreter,Betriebsrat,0
+Arbeitnehmervertreter,Personalrat,0
+Arbeitsdirektor,Arbeitsdirektion,0
+Arbeitskollegen,Teammitglieder,0
+Architekt,Architekturschaffende Person,0
+Architekt,Baukunstgestaltende Person,0
+Architekten,architekturschaffende Person,0
+Archivar,Fachkraft für Archivwesen,0
+Archivare,archivierende Person,0
+Archäologen,in der Archäologie tätige Person,0
+Arzt,Person im ärztlichen Dienst,0
+Arzt,ärztliches Fachpersonal,0
+Arzt-Patienten-Kommunikation,Kommunikation zwischen behandelnder und behandelter Person,0
+Arzt-Patienten-Kommunikation,behandlungsbezogene Kommunikation,0
+Arzt-Patienten-Verhältnis,medizinisches Behandlungsverhältnis,0
+Arzt-Patienten-Verhältnis,ärztliches Vertrauensverhältnis,0
+Arztausweis,ärztlicher Ausweis,0
+Arztbesuch,Besuch der ärztlichen Sprechstunde,0
+Arztbesuch,ärztliche Sprechstunde,0
+Arztbesuch,ärztliche Visite,0
+Arztbesuch,ärztlicher Kontakt,0
+Arztbrief,(ärztlicher) Befundbericht,0
+Arztbrief,Entlassbericht,0
+Arztbrief,Entlassungsbrief,0
+Arztbrief,ärztliche Epikrise,0
+Arztbrief,ärztliche Information,0
+Arztbrief,ärztlicher Brief,0
+Arztbrief,ärztlicher/medizinischer (Abschluss-)Bericht,0
+Arztbrief,ärztliches Informationsschreiben,0
+Arztgeheimnis,ärztliche Schweigepflicht,0
+Arzthelferinnen,Medizinische Fachangestellte,0
+Arzthelferinnen,medizinsches Fachpersonal,0
+Arztkoffer /-köfferchen,Behandlungstasche,0
+Arztkoffer /-köfferchen,Medizinkoffer /-köfferchen,0
+Arztkosten,(ärztliche) Behandlungskosten,0
+Arztkosten,Kosten für medizinische Leistungen,0
+Arztpraxis,Praxis für-medizin (z.B. Praxis für Allgemeinmedizin),0
+Arztpraxis,ärztliche Praxis,0
+Arzttermin,Behandlungstermin,0
+Arzttermin,Vorsorgetermin,0
+Arzttermin,ärztlicher Termin,0
+Arztwahl,Wahl des ärztlichen Fachpersonals,0
+Arztzeugnis,ärztliches Zeugnis,0
+Arztzimmer,Behandlungszimmer,0
+Arztzimmer,Büro Arztliches Personal,0
+Arztzimmer,Konsultationszimmer,0
+Arztzimmer,Zimmer/Raum,0
+Aspirant,bewerbende Person,0
+Assessor,einschätzende Person,0
+Assessor,sachverständige Person,0
+Assessor,schadensachverständige Person,0
+Assessor,taxierende Person,0
+Assessoren,Sachverständige,0
+Assessoren,Schadensachverständige,0
+Assessoren,einschätzende Person,0
+Assessoren,taxierende Person,0
+Assistent,Assistenz,0
+Assistenzarzt,Person in fachärztlicher Weiterbildung,0
+Assistenzarzt,ärztliches Fachpersonal in Weiterbildung,0
+Astronaut,ins Weltall reisende Person,0
+Astronauten,Menschen im All,0
+Astronauten,weltraumreisende Person,0
+Asylbewerber,Personen im Asylverfahren,0
+Asylbewerber,asylsuchende Person,0
+Atheist,areligiöse Person,0
+Atheist,atheistische Person,0
+Atheist,glaubenslose Person,0
+Atheist,irreligiöse Person,0
+Atheist,nichtgläubige Person,0
+Atheist,religionsfreie Person,0
+Athlet,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Athlet,sporttreibende Person,0
+Athlet,weitere Alternativen gesucht,0
+Athleten,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Athleten,sporttreibende Person,0
+Athleten,weitere Alternativen gesucht,0
+Athleten,wettkämpfende Person,0
 Attentäter,"Person, die ein Attentat verübt",0
-Auftraggeber,Auftraggebende,1
-Auftraggeber,auftraggebende Personen,1
-Auftraggeber,in Auftrag gegeben von ... ,1
-Auftragnehmer,Auftragnehmende,1
+Auditor,auditdurchführende Person,0
+Auftraggeber,auftraggebende Person,0
+Auftraggeber,auftraggebende Personen,0
+Auftraggeber,in Auftrag gegeben von,0
+Auftragnehmer,auftragnehmende Person,0
 Auftragnehmer,einen Auftrag entgegennehmende / annehmende Person,0
+Augenoptiker (Geschäft mit Werkstatt),Optikfachgeschäft,0
+Augenzeuge,beobachtende Person,0
+Augenzeugen,beobachtende Person,0
+Aupairmädchen,Aupair,0
+Ausbilder,"Ausbildende [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]im strengen Sinne nicht identisch. Im BBiG wird ausdrücklich zwischen Ausbildendem (Betrieb, Unternehmen) und Ausbilder (Person, die Wissen vermittelt) unterschieden.",0
 Ausbilder,Lehrkraft,0
 Ausbilder,ausbildender Betrieb,0
 Ausbildungsbewerber,eine Ausbildung suchende Person,0
@@ -135,233 +363,650 @@ Ausländer,Person aus dem Ausland,0
 Ausländer,Person mit anderer Staatsangehörigkeit,0
 Ausländer,Person nichtdeutscher Herkunft,0
 Ausländer,ausländische Person,0
+Ausländerbehörde,Migrationsamt/-stelle,0
+Ausländerbehörde,Zuwanderungsamt/-stelle,0
 Aussiedler,ausgesiedelte Person,0
-Aussiedler,ausgesiedelte Personen,1
-Aussteller,Ausstellende,1
-Aussteller,Präsentierende,1
+Aussiedler,ausgesiedelte Personen,0
+Ausstatter,ausstattende Person,0
+Aussteiger [aus einer Szene],[aus einer Szene] aussteigende Person,0
 Aussteller,ausstellende Institution,0
 Aussteller,ausstellende Person,0
-Auswanderer,Ausgewanderte,1
-Auswanderer,Auswandernde,1
+Aussteller,präsentierende Person,0
+Ausstellerausweis,Ausweis der Ausstellenden,0
+Ausstellerausweis,Ausweis der ausstellenden Person,0
+Ausstellerliste,Ausstellendenliste,0
+Ausstellerliste,Liste der Ausstellenden,0
+Auswanderer,Ausgewanderte,0
+Auswanderer,Auswandernde,0
 Auswanderer,ausgewanderte Person,0
 Auswanderer,auswandernde Person,0
+Ausweisinhaber,Ausweis inhabende Person,0
 Auszubildender,Nachwuchskraft,0
 Auszubildender,Person in Ausbildung,0
 Auszubildender,auszubildende Person,0
 Auszubildender,lernende Person,0
 Autofahrer,Auto fahrende Person,0
 Autofahrer,Auto führende Person,0
-Autofahrer,Autofahrende,1
 Autofahrer,Person am Steuer,0
-Autofahrer,Personen am Steuer,1
-Autohersteller,Autobauende,1
-Autohersteller,Autoherstellende,1
-Autohersteller,Automobilkonzerne,1
+Autofahrer,Personen am Steuer,0
+Autofahrer,autofahrende Person,0
+Autohersteller,Automobilkonzerne,0
+Autohersteller,autobauende Person,0
+Autohersteller,autoherstellende Person,0
+Autor,bücherschreibende Person,0
+Autoren,"Auktorierende [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]Erläuterung eines Users: 'Autor' kommt von lat. 'Auktor' und meinte historisch v.a. den sozialen Akt des Verbürgens gegenüber Individuen oder einem Kollektiv. Spricht man von 'Schreibenden', fehlt der Aspekt des Sprechakts des Schreibens bzw. Veröffentlichens.",0
+Autoren,Autorenschaft,0
+Autoren,literaturschaffende Person,0
+Autoren,schreibende Person,0
+Autoren,urheberrechtsinhabende Person,0
+Autoren,verfassende Person,0
+Autoren,wissenschaftlich Publizierende,0
+Azubi,Nachwuchskraft,0
+Azubi,Person in Ausbildung,0
+Azubi,auszubildende Person,0
+Azubi,lernende Person,0
 Babysitter,Aufsichtsperson,0
-Babysitter,Babysittende,1
 Babysitter,Kinderbetreuung,0
 Babysitter,babysittende Person,0
-Bankräuber,Bankausraubende,1
-Bauträger,Bautragende,1
+Bachelor of,B.A. / B. Sc. /,0
+Bachelorand,studentische Stelle zur Anfertigung der Bachelorarbeit,0
+Bademeister,Badeaufsicht,0
+"Bald entscheidet es sich, ob die Zeit unser Verbündeter ist.","Bald entscheidet sich, ob die Zeit mit uns verbündet ist.",0
+Bankkaufmann,Bankkaufperson,0
+Bankräuber,bankausraubende Person,0
+Barkeeper,Bar-Servicekraft,0
+Barkeeper,Servicekraft (an) der Bar,0
+Basketballfans,Basketballbegeisterte,0
+Bauarbeiter,Bauarbeiten ausführendes (Fach-)Personal,0
+Bauern,Beschäftigte in der Landwirtschaft,0
+Bauern,Landwirtschaft Betreibende,0
+Bauern,bäuerliche Bevölkerung [historischer Kontext],0
+Bauern,landwirtschaftlich Beschäftigte,0
+Bauernkrieg,Krieg der landbewirtschaftenden Bevölkerung,0
+Bauherr,Auftraggebende Person / Instanz,0
+Bauherr,den Bau in Auftrag gebende Person,0
+Bauherren,Bauleute,0
+Bauherren,Bauverantwortliche,0
+Bauherren,den Bau in Auftrag gebende Personen,0
+Bauherrschaft; Bauvorhabensschaft,Bauleute,0
+Bauherrschaft; Bauvorhabensschaft,auftraggebende Person,0
+Bauingenieur,für die Baukonstruktion verantwortliche Person,0
+Bauingenieur,für die Bauplanung verantwortliche Person,0
+Baumpfleger,Baumpflege,0
+Bauträger,bautragende Person,0
 Bauträger,für den Bau verantwortliche Firma,0
-Beamte,Beamtenschaft,1
-Beamte,Bedienstete,1
+Beamte,Beamtenschaft,0
+Beamte,Bedienstete,0
+Beamtenlaufbahn,Laufbahn im öffentlichen Dienst mit Aussicht auf Verbeamtung,0
+Beamtenlaufbahn,verbeamteter Werdegang,0
 Beamter,Person im Beamtenstatus,0
 Beamter,verbeamtete Person,0
 Bearbeiter,den Vorgang betreuende Person,0
 Bearbeiter,zuständige Person,0
 Beauftragter,beauftragte Person,0
 Bediener,bedienende Person,0
+Bediener einer technischen Anlage,eine technische Anlage bedienende Person,0
 Bediensteter,bedienstete Person,0
-Befürworter,Befürwortende,1
-Befürworter,Mitwirkende,1
-Befürworter,Unterstützung,1
-Befürworter,Zustimmende,1
+Befrager,"Person, die befragt (hat)",0
+Befrager,befragende Person,0
+Befragter,"Person, die befragt wurde",0
+Befragter,befragte Person,0
+Befürworter,Unterstützung,0
 Befürworter,Zustimmung,0
 Befürworter,befürwortende Person,0
+Befürworter,mitwirkende Person,0
 Befürworter,zustimmende Person,0
-Beisitzer,Beisitzende,1
-Benutzer,Anwendende,1
-Benutzer,Nutzende,1
-Benutzer,Personen(-gruppen),1
+Begleiter,Begleitung,0
+Behinderter,Mensch mit Beeinträchtigung,0
+Behinderter,Mensch mit Behinderung,0
+Bei der Geburt eines Kindes steht dem Vater ein Tag bezahlter Sonderurlaub zu.,Bei der Geburt eines Kindes steht dem anderen Elternteil ein Tag bezahlter Sonderurlaub zu.,0
+Beisitzer,beisitzende Person,0
+Bekannter,(mir) bekannte Person,0
+Bekannter,Bekanntschaft,0
+Bekannter,Person aus dem Bekanntenkreis,0
+Benutzer,Personen(-gruppen),0
 Benutzer,anwendende Person,0
 Benutzer,nutzende Person,0
-Beobachter,Beobachtende,1
-Berater,Beratende,1
-Berater,Sie werden beraten von ... ,0
+Benutzerfreundlichkeit,Benutzungsfreundlichkeit,0
+Benutzerfreundlichkeit,Nutzungsfreundlichkeit,0
+Benutzerfunktion,nutzenorientierte Funktion,0
+Benutzerfunktion,zielgruppengerechte Funktion,0
+Benutzerkonto,Account,0
+Benutzerkonto,Konto,0
+Benutzerkonto,Profil,0
+Benutzerkonto,Zugang,0
+Benutzername,Anmeldename,0
+Benutzername,Nickname,0
+Benutzername,Pseudonym,0
+Benutzeroberfläche,Bedienoberfläche,0
+Benutzeroberfläche,Benutzungsoberfläche,0
+Benutzerordnung,(Be-)Nutzungsordnung,0
+Benutzerportal,Benutzungsportal,0
+Benutzerschnittstelle,Interaktionsschnittstelle,0
+Benutzerverwaltung,Kontoverwaltung,0
+Benutzerverwaltung,Zugangsverwaltung,0
+Beobachter,beobachtende Person,0
+Beobachtergruppe,Beobachtendengruppe,0
+Berater,Sie werden beraten von,0
 Berater,beratende Person,0
-Berater,die Beratung erfolgt durch ... ,0
-Bergsteiger,Bergbegeisterte,1
-Bergsteiger,Bergsteigende,1
+Berater,die Beratung erfolgt durch,0
+Beratertätigkeit,Beratung,0
+Beratertätigkeit,beratende Tätigkeit,0
+Beraterverzeichnis,Verzeichnis beratender Personen,0
+Berechtigter,berechtigte Person,0
+Bergführer,noch kein passender Begriff gefunden,0
+Bergführer,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Bergsteiger,Bergbegeisterte,0
+Bergsteiger,bergsteigende Person,0
 Berichterstatter,Bericht erstattende Person,0
-Berichterstatter,Berichtende,1
-Berliner,die Berliner Bevölkerung,1
-Berufsanfänger,Berufseinsteigende,1
-Berufsanfänger,Berufsunerfahrene,1
+Berichterstatter,berichtende Person,0
+Berliner,die Berliner Bevölkerung,0
+Berufsanfänger,Berufsunerfahrene,0
+Berufsanfänger,berufseinsteigende Person,0
+Berufskraftfahrer,"Berufskraftfahrende [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]Begriff wird z.B. von TÜV Nord offiziell benutzt",0
 Berufskraftfahrer,qualifizierte fahrzeugführende Person (nach BKrFQG),0
-Berufsschüler,Auszubildende,1
-Berufsschüler,Beruflernende,1
-Berufsschüler,an einer Berufsschule Lernende,1
-Berufsschüler,eine Berufsschule Besuchende,1
-Beschwerdeführer,Beschwerdeführende,1
+Berufsschüler,an einer Berufsschule Lernende,0
+Berufsschüler,auszubildende Person,0
+Berufsschüler,beruflernende Person,0
+Berufsschüler,eine Berufsschule Besuchende,0
+Beschuldigter,beschuldigte Person,0
+Beschwerdeführer,beschwerdeführende Person,0
 Beschäftigter,Arbeitskraft,0
 Beschäftigter,Person im Beschäftigungsverhältnis,0
 Beschäftigter,angestellte Person,0
 Beschäftigter,beschäftigte Person,0
 Besitzer,besitzhabende Person,0
 Besitzer von Immobilieneigentum,Immobilien besitzende Person,0
+Bestatter,Fachkraft für Bestattungen,0
 Besteller,Kundschaft,0
 Besteller,bestellende Person,0
-Besucher,Besuche,1
-Besucher,Besuchende,1
-Besucher,Publikum,1
-Betrachter,Betrachtende,1
+Besucher,Besuche,0
+Besucher,"Gäste [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]siehe Anmerkung unter 'Gäste'",0
+Besucher,Publikum,0
+Besucher,besuchende Person,0
+Besucheranschrift,Besuchsanschrift,0
+Besuchergruppe,Besuchsgruppe,0
+Besuchermagnet,Anziehungspunkt,0
+Besuchermagnet,Besuchsmagnet,0
+Besuchermagnet,Publikumsmagnet,0
+Besuchermagnet,Sehenswürdigkeit,0
+Besuchermagnet,Tourismusmagnet,0
+Besucherparkplatz,Besuchsparkplatz,0
+Besucherrückgang,Rückgang der Besuche,0
+Besucherrückgang,sinkende Nachfrage,0
+Besucherrückgang,wurde weniger frequentiert als im Jahr zuvor,0
+Besucherstrom,Publikumsstrom,0
+Besucherzahl,Besuchszahl,0
+Besucherzahl,Frequentierung,0
+Besucherzahl,Gästezahlen,0
+Besucherzahl,Inanspruchnahme,0
+Besucherzahl,Interesse,0
+Besucherzahl,Klickzahl,0
+Betrachter,betrachtende Person,0
+Betreiber,Betrieb,0
+Betreiber,Betriebsgesellschaft,0
+Betreiber,betreibende Firma,0
 Betreuer,Betreuungsperson,0
-Betreuer,Betreuungspersonal,1
+Betreuer,Betreuungspersonal,0
+Betriebsarzt,Betriebsärztlicher Dienst,0
+Betriebsrat,"Mitglied des Betriebsrates [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]s. dazu auch FAQ ""Muss ich Betriebsrat gendern?""",0
+Betriebsräte,Mitarbeitendenvertretung,0
+Betriebsräte,Mitglieder des Betriebsrates,0
+Betriebsräte,der Betriebsrat,0
+Betriebsräte,"der Personalrat [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]s. dazu auch FAQ ""Muss ich Betriebsrat gendern?""",0
+Betriebswirt,betriebswirtschaftende Person,0
 Betroffener,Opfer,0
 Betroffener,betroffene Person,0
+Betrüger,unehrliche Person,0
 Bewahrer,bewahrende Person,0
-Bewerber,Bewerbende,1
+Bewerber,bewerbende Person,0
 Bewerber,sich bewerbende Person,0
-Bewerber,sich bewerbende Personen,1
-Bewohner,Bewohnende,1
-Bewohner,Bewohnerschaft,1
-Bewohner,Ortsansässige,1
-Bewohner,in ... Lebende,1
-Bewohner,in ... lebende Menschen,1
+Bewerber,sich bewerbende Personen,0
+Bewerbermangel,noch kein passender Begriff gefunden,0
+Bewerbermangel,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Bewerberzahlen,Bewerbungszahlen,0
+Bewohner,Bewohnerschaft,0
+Bewohner,Ortsansässige,0
+Bewohner,bewohnende Person,0
+Bewohner,inLebende,0
+Bewohner,inlebende Menschen,0
+Bewohnerzimmer,Bewohnendenzimmer,0
+Bewohnerzimmer,Zimmer,0
 Bieter,bietende Partei,0
 Bieter,bietende Person,0
-Bildungsträger,Bildungstragende,1
-Biografieträger,Biografietragende,1
-Blogger,"Personen, die einen Blog schreiben",1
-Blogger,bloggende Personen,1
+Bildungsträger,bildungstragende Person,0
+Biografieträger,biografietragende Person,0
+Blindenführer,,0
+Blindenführer,Begleitung für blinde Menschen,0
+Blindenführer,Blindenguide,0
+Blindenführer,Guide für blinde Menschen,0
+Blindenführer,Mobilitätshilfe,0
+Blockwart,Blockaufsicht,0
+Blockwart,Gebietsaufsicht,0
+Blogger,"Personen, die einen Blog schreiben",0
+Blogger,bloggende Personen,0
+Bogenschütze,Bogenschießende Person,0
+Bote,Botschaft überbringende Person,0
+Botschafter,Repräsentanz,0
+Botschafter,Spitze des Diplomatischen Corps,0
+Brandschutzbeauftragter,beauftragte Person für Brandschutz,0
+Brautpaar,Hochzeitspaar,0
+Brautpaar,verlobtes Paar,0
+Briefträger,Briefzustellung,0
+Briefträger,Postzustellung,0
+Brillenträger,Personen mit Brille,0
+Bruder / Schwester,"Geschwister, das",0
+Bruder / Schwester,Geschwisterkind,0
+Brüder und Schwestern,Geschwister,0
+Brüder und Schwestern,Geschwisterkinder,0
+Brüderlichkeit,Geschwisterlichkeit,0
+Brüderlichkeit,Mitmenschlichkeit,0
+Brüderlichkeit,Solidarität,0
+Buddhisten,Menschen buddhistischen Glaubens,0
+Buhmann,(Sündenbock),0
+Buhmann,Feindbild,0
+Buhmann,Zielscheibe,0
+Buhmann,schuldige Person,0
+Bundeskanzler,(oberste) Führungskraft der Bundesregierung,0
+Bundeskanzler,Leitung der Bundesregierung,0
+Bundeskanzler,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Bundeskanzler,weitere Alternativen gesucht,0
+Bundespräsident,"Person, die die Bundespräsidentschaft inne hat",0
+Bundespräsident,Staatsoberhaupt einer Bundesrepublik,0
+Bundespräsident,deutsches Staatsoberhaupt,0
+Bundespräsident,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Bundespräsident,weitere Alternativen gesucht,0
+Bundespräsidentenwahl,BP-Wahl,0
+Bundespräsidentenwahl,Bundespräsidentschaftswahl,0
+Bundestagspräsident,Bundestagsvorsitz,0
 Busfahrer,Busfahrpersonal,0
 Busfahrer,Busführung,0
 Busfahrer,Buspersonal,0
 Busfahrer,busführende Person,0
-Bäcker,Backende,1
 Bäcker,Backwaren produzierende Person,0
 Bäcker,Bäckerei,0
 Bäcker,Gebäck herstellende Person,0
-Bäcker,im Backgewerbe Tätige,1
-Bäcker,professionell Backende,1
-Bürger,(Kommunal-)Wahlberechtigte,1
-Bürger,Bevölkerung,1
-Bürger,Bürgerschaft,1
-Bürger,Bürgertum,1
-Bürger,Einheimische,1
-Bürger,Einwohnerschaft,1
+Bäcker,backende Person,0
+Bäcker,im Backgewerbe Tätige,0
+Bäcker,professionell Backende,0
+Bürge,bürgende Person,0
+Bürger,(Kommunal-)Wahlberechtigte,0
+Bürger,Bevölkerung,0
+Bürger,Bürgerschaft,0
+Bürger,Bürgertum,0
+Bürger,Einheimische,0
+Bürger,Einwohnerschaft,0
 Bürger,Einzelperson,0
 Bürger,Individuum,0
 Bürger,Mitglied des Staates / der Stadt,0
 Bürger,Mitmensch,0
-Bürger,Staatsangehörige,1
-Bürger,Stimmberechtigte,1
-Bürger,allgemeine Öffentlichkeit,1
-Bürger,breites Publikum,1
-Bürger,bürgerliche Bevölkerung,1
+Bürger,Staatsangehörige,0
+Bürger,Stimmberechtigte,0
+Bürger,allgemeine Öffentlichkeit,0
+Bürger,breites Publikum,0
+Bürger,bürgerliche Bevölkerung,0
+Bürger,bürgerliche Person [historischer Kontext],0
 Bürger,dem Staat zugehörige Person,0
 Bürger,einzelner Mensch innerhalb der Bevölkerung,0
-Bürger,im Ort/in der Stadt ... Wohnende,1
+Bürger,im Ort/in der StadtWohnende,0
+Bürger,rat-/hilfe-/unterstützungssuchende Person [im Verwaltungskontext],0
+Bürgeramt,Amt,0
+Bürgeramt,Gemeindeamt,0
+Bürgeramt,Verwaltung,0
+Bürgerbeteiligung,Beteiligung der Bevölkerung,0
+Bürgerbeteiligung,Direkte Demokratie,0
+Bürgerbüro,(städtisches/kommunales) Service Center/Servicebüro,0
+Bürgerbüro,Büro für bürgerliche Belange,0
+Bürgerbüro,Gemeindebüro,0
+Bürgerbüro,Informationsbüro (für Anwohnende),0
+Bürgerbüro,Informationsstelle (für Ratsuchende),0
+Bürgerbüro,Kommunalbüro,0
+Bürgerbüro,Nachbarschaftbüro,0
+Bürgerbüro,Stadtbüro,0
+Bürgerbüro,Stadtteilbüro,0
+Bürgerhaus,Gemeindehaus,0
+Bürgerhaus,Kulturzentrum,0
+Bürgerhaus,Stadthaus,0
+Bürgerhaus,Stadtteilzentrum,0
+Bürgerhaus,selbstverwaltetes Zentrum,0
+Bürgerkrieg,Volkskrieg,0
 Bürgermeister,Oberhaupt einer Kommune,0
 Bürgermeister,Stadtoberhaupt,0
 Bürgermeister,Verwaltungsleitung,0
-Callcenteroperatoren,Callcenteroperierende,1
+Bürgermeisterkandidat,Kandidatur für das Amt des Stadtoberhaupts,0
+Bürgernähe,Bevölkerungsnähe,0
+Bürgernähe,Volksnähe,0
+Bürgerrat,Bevölkerungsrat,0
+Bürgerrat,Bewohnendenrat,0
+Bürgerrat,Menschenrat,0
+Bürgerrat,Volksrat,0
+Bürgerrat,bürgerlicher Rat,0
+Bürgerrechte,Rechte des deutschen (oder anderer Staaten) Staatsvolkes,0
+Bürgerrechtsbewegung,noch kein passender Begriff gefunden,0
+Bürgerrechtsbewegung,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Bürgersteig,Fußweg,0
+Bürgersteig,Gehweg,0
+Bürgervertretung,Vertretung der Öffentlichkeit,0
+Bürgerzentrum,Kulturzentrum,0
+Bürgerzentrum,Stadtteilzentrum,0
+Bürgerzentrum,selbstverwaltetes Zentrum,0
+Bürokrat,bürokratisch veranlagte Person,0
+Bürokrat,bürokratische Person,0
+Callcenter Agent,telefonische Beratung der Kundschaft,0
+Callcenteroperator,Callcenteroperierende Person,0
+Callcenteroperatoren,callcenteroperierende Person,0
 Camper,Camping liebende Person,0
 Camper,Zeltplatzmensch,0
 Camper,campende Person,0
 Camper,zeltende Person,0
-Case-Manager,Case-Management,1
-Case-Manager,Case-Managende,1
+Case-Manager,Case-Management,0
+Case-Manager,Case-Managende,0
+Chef,Führungskraft,0
+Chef,Kopf (eines Unternehmens / einer Abteilung),0
+Chef,Leitung,0
+Chef,Leitungsperson,0
+Chef,vorgesetzte Person,0
+Chefarzt,"Ärztliche Klinikleitung
+
+",0
+Chefarzt,Ärztliche Leitung,0
+Chefarztbehandlung,chefärztliche Behandlung,0
+Chefs,Leitung,0
+Chefs,Vorgesetzte,0
+Chefsache,Angelegenheit mit besonderer Wichtigkeit,0
+Chefsache,Sache mit oberster Priorität,0
+Chefsache,dringliche Sache,0
 Chemiker,Fachkraft für Chemie,0
-Chorleiter,Chorleitende,1
+Chirurg,chirurgische Fachkraft,0
+Chirurg,chirurgische Fachperson,0
+Chirurg,ärztliche Fachkraft der-Chirurgie,0
+Chirurgen,chirurgisches Fachpersonal,0
+Chirurgenstahl,Chirurgiestahl,0
 Chorleiter,Chorleitung,0
-Chorleiter,Chorleitungen,1
+Chorleiter,Chorleitungen,0
+Chorleiter,chorleitende Person,0
+Christen,Menschen christlichen Glaubens,0
+Clown,noch kein passender Begriff gefunden,0
+Clown,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Coach,Begleitung,0
+Coach,Beratung,0
+Coach,coachende Person,0
+Coder,codende Person,0
+Cousins,Geschwister 2. Grades,0
 DJ,der/die DJ,0
-Darsteller,Besetzung,1
-Darsteller,Darstellende,1
-Darsteller,Rollen,1
+Damenfahrrad,Fahrrad mit tiefem Einstieg,0
+Damenfahrrad,Trapezrahmenfahrrad,0
+Damenmannschaft,Damenteam,0
+Damenprogramm,Begleitprogramm,0
+Darsteller,Besetzung,0
+Darsteller,Rollen,0
 Darsteller,darstellende Person,0
-Designer,Designschaffende,1
+Das Angebot richtet sich an Anfänger und Fortgeschrittene.,Das Angebot richtet sich an Personen mit und ohne Vorkenntnisse.,0
+"Das ist ein Aspekt, der für seine späteren Arbeitgeber interessant ist.","Das ist ein Aspekt, der im späteren Bewerbungsprozess von Vorteil ist.",0
+Datenschutzbeauftragter,Datenschutzverantwortlichkeit,0
+Datenschutzbeauftragter,Fachperson für Datenschutz,0
+Dekan,Dekanat,0
+Dekan,Leitung des Dekanats,0
+Delegierter,delegierte Person,0
+Demokraten,Demokratiebegeisterte,0
+Demokraten,Demokratieüberzeugte,0
+Demonstranten,demonstrierende Person,0
+"Der Buchhalter bucht den Beleg, der Anordner gibt diesen frei.","Die Buchhaltung bucht den Beleg, die anordnende Person gibt diesen frei.",0
+Der Fahrer des Wagens ABC möge bitte zu seinem Fahrzeug kommen.,"Die Person, die den Wagen ABC (im Halteverbot/auf dem Parkplatz), abgestellt hat, möge diesen bitte umparken.",0
+Der Gewinn betrug 20 Euro pro Mann.,Der Gewinn betrug 20 Euro pro Person / Nase.,0
+Der Gewinner wird um 15 Uhr bekannt gegeben.,"Um 15 Uhr wird bekannt gegeben, wer gewonnen hat.",0
+Der Netzbetreiber fordert,Von Seiten des Netzbetriebs wirdgefordert.,0
+"Der Verein ist ein Zusammenschluss von Eltern, Lehrkräften und Freunden der Schule.","Der Verein ist ein Zusammenschluss von Eltern, Lehrkräften und unterstützenden Personen der Schule.",0
+Designer,designschaffende Person,0
 Deutscher,Person aus Deutschland,0
 Deutscher,Person mit deutscher Staatsangehörigkeit,0
 Deutscher,deutsche Person,0
-Dienstleister,Dienstleistende,1
+Developer,Developing Employee,0
+Developer,Developing Person,0
+Dezernent,Dezernat leitende Person,0
+Diabetiker,Diabetes erkrankte Person,0
+Diabetiker,Mensch mit Diabetes,0
+Dichter,dichtende Person,0
+Dichter,poetische Person,0
+Die Handwerker schließen sich zu Kooperationen zusammen.,Die Handwerksbetriebe schließen sich zu Kooperationen zusammen.,0
+"Die Parteien hoffen, dass am Sonntag möglichst viele Wähler zur Urne gehen.","Die Parteien hoffen, dass am Sonntag möglichst viele Wahlberechtigte zur Urne gehen.",0
+Die Person wurde bei der Entnazifizierung als Mitläufer eingestuft.,noch kein passender Begriff gefunden,0
+Die Person wurde bei der Entnazifizierung als Mitläufer eingestuft.,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Die Reise wird von den Busfahrern Frau Schulz und Herr Meier begleitet.,Während der Reise haben Frau Schulz und Herr Meier die Busführung. /Während der Reise fahren Frau Schulz und Herr Meier den Bus.,0
+Die Sänger des Chores verzauberten durch ihre Gesänge die Gäste des Galaabends.,Der Chor verzauberte durch seine Gesänge das Publikum des Galaabends.,0
+Die Teilnehmer waren zufrieden.,"Alle, die teilnahmen, waren zufrieden.",0
+"Die Verwaltung rief alle Berliner dazu auf, sich für die Aufgabe zu melden.","Die Verwaltung rief alle in Berlin Wohnenden dazu auf, sich für die Aufgabe zu melden.",0
+Dieb,Eigentum entwendende Person,0
+Dieb,Langfinger,0
+Diebe,Kriminelle,0
+Diebe,Langfinger,0
+Dienstherr,Dienstaufsichtsperson,0
+Dienstherr,Dienstbehörde,0
+Dienstherrengenehmigung,Dienststellengenehmigung,0
+Dienstherrengenehmigung,Genehmigung der vorgesetzten Führungskraft,0
+Dienstherrengenehmigung,"Vorgesetztengenehmigung [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]im strengen Sinne nicht korrekt, da ein Dienstherr nicht mit Vorgesetzten identisch ist",0
+Dienstherrengenehmigung,behördliche Genehmigung,0
 Dienstleister,Dienstleistungsunternehmen,0
 Dienstleister,dienstleistende Person,0
 Dienstleister,dienstleistendes Unternehmen,0
+Diplomand,noch kein passender Begriff gefunden,0
+Diplomand,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Diplomingenieur,diplomierte technische Fachkraft,0
+Direktor,Institutsleitung,0
+Direktor,Leitung [z.B. Schulleitung,0
+Direktor,Museumsleitung],0
+Dirigent,unter Leitung von,0
+Dirigent,unter dem Dirigat von,0
+Diskutiere mit deinem Sitznachbarn.,Diskutiere mit der Person neben dir.,0
+Dispatcher,noch kein passender Begriff gefunden,0
+Dispatcher,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Disponent,Disposition,0
+Doktoranden,promovierende Person,0
+Doktorandenkolleg,Promotionskolleg,0
+Doktorandenkolleg,Promovierendenkolleg,0
+Doktorarbeit,Promotion,0
+Doktorvater/-mutter,Promotionsbetreuung,0
+Doktorvater/-mutter,Vorsitz des Promotionskomitees,0
+Dokumenteninhaber,im Besitz von Dokumenten,0
 Dolmetscher,(simultan / konsekutiv) dolmetschende Fachkraft,0
-Ehrenamtler,(ehrenamtlich) Engagierte,1
-Ehrenamtler,Ehrenamtliche,1
-Ehrenamtler,Freiwillige,1
-Einbrecher,einbrechende Personen,1
-Einwanderer,Menschen mit Migrationshintergrund /-geschichte /-biografie,1
-Einwanderer,Menschen mit internationaler Geschichte,1
-Einwohner,Bevölkerung,1
-Einwohner,Population,1
-Einwohner,die Menschen der Stadt XY,1
-Einwohner,gemeldete Personen,1
-Einzelkämpfer,Einzelkämpfende,1
-Einzelkämpfer,Kriegsteilnehmende,1
+Doppelgänger,Doppelperson,0
+Doppelgänger,Double,0
+Doppelgänger,Ebenbild,0
+Dozent,Lehrkraft,0
+Dozent,Lehrperson,0
+Dozent,Seminarleitung,0
+Dozent,lehrende Person,0
+Dozent,vortragende Person,0
+Dozenten,Lehrpersonal,0
+Dozenten,dozierende Person,0
+Dozenten,lehrende Person,0
+Dozententätigkeit,Lehrtätigkeit,0
+Drachenlord,herrschende Drachenperson,0
+Dritter,dritte Person,0
+Dönermann,Dönerbude,0
+Dönermann,Dönerfachgeschäft,0
+Dönermann,Dönerimbiss,0
+Dönermann,Dönerverkauf,0
+Dönermann,Kebapverkauf,0
+EU-Kommissar,EU-Kommissionsmitglied,0
+Editor,herausgebende Person,0
+Ehegatte,,0
+Ehegatte,Eheherzperson,0
+Ehegatte,Ehemensch,0
+Ehegatte,Herzmensch,0
+Ehegatte,die Ehe teilende Person,0
+Ehegatten,Eheleute,0
+Ehepartner,Ehemensch,0
+Ehepartner,geehelichte Person,0
+Ehrenamtler,(ehrenamtlich) Engagierte,0
+Ehrenamtler,Ehrenamtliche,0
+Ehrenamtler,Freiwillige,0
+Ehrenmann,Ehrenperson,0
+Eigentümer,(im) Eigentum von,0
+Eigentümerversammlung,Versammlung der Besitzenden,0
+Eigentümerversammlung,Versammlung der Beteiligten am Wohneigentum,0
+Eigner,s. Eigentümer,0
+Ein-Mann-Betrieb,Ein-Personen-Betrieb,0
+Ein-Mann-Betrieb,Eine-Person-Betrieb,0
+Einbrecher,einbrechende Personen,0
+Einlader,einladende Person,0
+Einsteigerkurs,Basiskurs,0
+Einsteigerkurs,Einstiegskurs,0
+Einsteigerkurs,Grundkurs,0
+Einsteigerkurs,Grundlagenkurs,0
+Einwanderer,Menschen mit Migrationshintergrund /-geschichte /-biografie,0
+Einwanderer,Menschen mit internationaler Geschichte,0
+Einwandererfamilien,Familien mit Migrationshintergrund /-geschichte,0
+Einwandererfamilien,Familien mit internationaler Geschichte,0
+Einwohner,Bevölkerung,0
+Einwohner,Population,0
+Einwohner,die Menschen der Stadt XY,0
+Einwohner,gemeldete Personen,0
+Einwohnerdichte,Bevölkerungsdichte,0
+Einwohnerzahl,Bevölkerungszahl,0
+Einzelgänger,alleinliebende Person,0
+Einzelhändler,Betrieb im Einzelhandel,0
+Einzelhändler,Person des Einzelhandels,0
+Einzelhändler,im Einzelhandel tätige Person,0
+Einzelkämpfer,einzelkämpfende Person,0
+Einzelkämpfer,kriegsteilnehmende Person,0
+Einzelne,[im Plural ist dieses Wort schon gendergerecht],0
+Einzelner,alle,0
+Einzelner,die einzelne Person,0
+Einziger,einzige Person,0
+Elektriker,Fachkraft für Elektrotechnik,0
 Elektroniker,Elektrofachkraft,0
-Elternzeitrückkehrer,Elternzeitrückkehrende,1
-Elternzeitrückkehrer,"Mitarbeitende, die aus der Elternzeit zurück kommen",1
-Empfänger,bestimmt für ... ,0
-Empfänger,empfangen von ... ,0
+Elektrotechniker,Fachkraft für elektrotechnische Anlagen,0
+Elternzeitrückkehrer,"Mitarbeitende, die aus der Elternzeit zurück kommen",0
+Elternzeitrückkehrer,elternzeitrückkehrende Person,0
+Emittent,Wertpapierherausgebende Person,0
+Empfangsdame,Empfang,0
+Empfangsdame,Person/Personal am Empfang,0
+Empfangsdame,Rezeption,0
+Empfänger,bestimmt für,0
+Empfänger,empfangen von,0
 Empfänger,empfangsberechtigte Person,0
-Empfänger,für ... ,0
-Endverbraucher,Endkonsumierende,1
-Endverbraucher,Endverbrauchende,1
+Empfänger,für,0
+Endverbraucher,endkonsumierende Person,0
+Endverbraucher,endverbrauchende Person,0
+Energieversorger,Energieversorgungsunternehmen,0
 Enkel,Enkelkind,0
 Enkel,Kindeskind,0
-Entdecker,Entdeckende,1
-Entdecker,Forschende,1
-Entdecker,entdeckende Personen /Kinder,1
-Entdecker,entdeckt von ... ,1
-Entdecker ,entdeckt von ... ,0
-Entscheidungsträger,Entscheidungtragende,1
+Entdecker,entdeckende Person,0
+Entdecker,entdeckende Personen /Kinder,0
+Entdecker,entdeckt von,0
+Entdecker,forschende Person,0
+Enthusiast,begeisterte Person,0
+Enthusiast,enthusiastische Person,0
+Enthusiasten,Begeistere,0
+Entscheider,Entscheidung fällende Person,0
+Entscheider,entscheidungsbefugte Person,0
 Entscheidungsträger,Person mit Entscheidungsbefugnis,0
-Entwickler,Entwickelnde,1
-Entwickler,Erfindende,1
-Entwickler,Ideenfindende,1
-Erbauer,Erschaffende,1
-Erbauer,Konstruierende,1
-Erbauer,ein Bau von ... ,1
-Erbauer,erbaut von ...,1
-Ermittler,Ermittelnde,1
-Ermittler,Ermittlungsteam,1
-Ersthelfer,Ersthelfende,1
+Entscheidungsträger,entscheidungtragende Person,0
+Entwickler,Entwickelnde,0
+Entwickler,Entwicklungsabteilungweitere Alternativen gesucht: senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Entwickler,erfindende Person,0
+Entwickler,ideenfindende Person,0
+"Er tat es, um Nachahmer zu ähnlichen Taten anzustiften.","Er tat es, um andere zu ähnlichen Taten anzustiften.",0
+Erbauer,ein Bau von,0
+Erbauer,erbaut von,0
+Erbauer,erschaffende Person,0
+Erbauer,konstruierende Person,0
+Erbe,erbberechtigte Person,0
+Erben,Erbberechtigte,0
+Erfinder,erfindende Person,0
+Erfinder,ideenfindende Person,0
+Ergotherapeut,in der Ergotherapie tätige Person,0
+Erkrankter,erkrankte Person,0
+Ermittler,Ermittelnde,0
+Ermittler,Ermittlungsteam,0
+Errichter,errichtet von,0
+Ersteller,erstellt von,0
 Ersthelfer,erste Hilfe leistende Person,0
+Ersthelfer,ersthelfende Person,0
 Ersthelfer,in Erster Hilfe geschulte Person,0
-Erstsemester,Ersti,1
-Erstsemester,Studierende im ersten Semester,1
+Erstsemester,Ersti,0
+Erstsemester,Studierende im ersten Semester,0
+Erwachsene,[dieser Begriff ist im Plural bereits genderneutral: sg. die Erwachsene (f.) oder der Erwachsene (m.) -> pl. die Erwachsenen (f.) und die Erwachsenen (m.)],0
+Erwachsener,erwachsene Person,0
+Erzeuger,ein Produkt erzeugende Person,0
 Erzieher,Erziehungskraft,0
 Erzieher,pädagogische Fachkraft,0
-Erzähler,Erzählende,1
+Erziehungsberechtigte,[im Plural ist dieses Wort schon gendergerecht],0
+Erziehungsberechtigter,erziehungsberechtigte Person,0
 Erzähler,Erzählinstanz,0
 Erzähler,erzählende Figur,0
 Erzähler,erzählende Person,0
+Es handelt sich bei XY um den Aspiranten für das Beamtenverhältnis.,Es handelt sich bei XY um eine auf das Beamtenverhältnis bewerbende Person.,0
+Ethnologe,Person mit Fachwissen in Ethnologie,0
+Ethnologe,Person mit ethnologischer Expertise,0
 Evakuierungshelfer,Evakuierungshilfe,0
 Evakuierungshelfer,Evakuierungshilfe leistende Person,0
 Evakuierungshelfer,in Evakuierungshilfe geschulte Person,0
+Exot [z.B. innerhalb eines Faches],Ausnahmeerscheinung,0
 Experte,Autorität,0
 Experte,Fachgröße,0
 Experte,Genie,0
 Experte,Koryphäe,0
 Experte,Person vom Fach,0
-Experten,Fachkräfte,1
-Experten,Fachkundige,1
-Experten,Fachleute,1
-Experten,Fachpersonen,1
-Experten,Sachverständige,1
-Facharbeiter,Facharbeitende,1
-Fachwissenschaftler,Fachforschende,1
+Experten,Fachkräfte,0
+Experten,Fachkundige,0
+Experten,Fachleute,0
+Experten,Fachpersonen,0
+Experten,Sachverständige,0
+Expertengruppe,Fachgruppe,0
+Experteninterview,Expertiseinterview,0
+Experteninterview,Interview mit Fachleuten,0
+Expertenkommission,Fachkommission,0
+Expertenkommission,Kommission von Fachleuten,0
+Expertenrating,Rating von Fachleuten,0
+Expertenschätzung,Expertise,0
+Expertenschätzung,Schätzung von Fachleuten,0
+Expertenschätzung,nach Einschätzung von Fachleuten,0
+Expertenstandard,Fachstandard,0
+Expertentagung,Fachtagung,0
+Expertentum,Expertise,0
+Expertenvortrag,Fachvortrag,0
+Expertenwissen,Expertise,0
+Expertenwissen,Fachwissen,0
+Extremist,radikalisierte Person,0
+Facharbeiter,facharbeitende Person,0
+Facharzt,(fach-)ärztliche Fachkraft,0
+Facharzt,Fachpraxis,0
+Facharztrichtung,medizinische Fachrichtung,0
+Fachberater,Fachberatung,0
+Fachinformatiker,"(Informatikfachkraft) [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]eher nicht zu empfehlen, denn die Bezeichnung Fachinformatiker ist ein staatlich anerkannter Ausbildungsberuf",0
+Fachinformatiker,"Informatikfachkraft ein Sammelbegriff für Menschen in der IT, auch ohne Ausbildung.",0
+Fachinformatiker,weitere Alternativen gesucht: senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Fachmann,Fachkraft,0
+Fachvermögensträger,noch kein passender Begriff gefunden,0
+Fachvermögensträger,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Fachwirt,noch kein passender Begriff gefunden,0
+Fachwirt,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Fachwissenschaftler,fachforschende Person,0
 Fahrer,Fahrdienst,0
-Fahrer,Fahrende,1
-Fahrer,Fahrzeugführende,1
-Fahrradfahrer,Fahrrad Fahrende,1
-Fahrradfahrer,wer mit dem Fahrrad unterwegs ist ... ,1
-Fahrschüler,Fahrlernende,1
+Fahrer,fahrende Person,0
+Fahrer,fahrzeugführende Person,0
+Fahrerhaus,Cockpit,0
+Fahrerkabine,Fahrkabine,0
+Fahrerkabine,Steuerungskabine,0
+Fahrersitz,Cockpitsitz,0
+Fahrersitz,Sitz der fahrenden Person,0
+Fahrgast,gegen Entgelt transportierte Person,0
+Fahrgast,mitreisende Person,0
+Fahrgastraum,Abteil,0
+Fahrgastraum,Personenbeförderungsräume,0
+Fahrgäste,mitfahrende Person,0
+Fahrgäste,reisende Person,0
+Fahrradfahrer,Fahrrad Fahrende,0
+Fahrradfahrer,wer mit dem Fahrrad unterwegs ist,0
+Fahrradfahrer müssen absteigen.,Fahrräder bitte nur schieben.,0
+Fahrschullehrer,Fahrschullehrkraft,0
+Fahrschüler,fahrlernende Person,0
+Fahrzeugführer,Fahrzeugführung,0
+Fahrzeugführer,fahrzeugführende Person,0
+Fahrzeughalter,"eine ein Fahrzeug besitzende/führende Person [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]im strengen Sinne nicht korrekt: ein*e Fahrzeughalter*in muss weder Eigentümer*in sein (Leasing, Finanzierung) noch Besitzer*in (Fahrzeug wird an Lebensgefährten verliehen, Halterin fährt nicht mit/Halter ist ein Unternehmen), sondern ist die Person, die das Fahrzeug für eigene Rechnung in Gebrauch und Verfügungsgewalt hat.
+",0
 Fahrzeuglenker,Fahrzeug lenkende Person,0
 Familienbegleiter,Familien begleitende (Fach-)Kraft,0
 Familienbegleiter,Familienbegleitung,0
@@ -369,332 +1014,1160 @@ Familienhelfer,Familien unterstützende (Fach-)Kraft,0
 Familienhelfer,Familienhilfe,0
 Familienhelfer,die die Familie X. unterstützende Fachperson/Fachkraft,0
 Familienhelfer,im familienunterstützenden Dienst arbeitende / angestellte Person,0
+"Familienvater [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]Familienvater meint die Erziehungs- und Versorgungsrolle mit. Der Begriff Familienmutter ist nicht gebräuchlich.",Vater,0
+Fan,in besonderem Maße begeisterte Person,0
+Fans,Begeisterte,0
+Faschist,dem Faschismus anhängende Person,0
+Fasnächtler,noch kein passender Begriff gefunden,0
+Fasnächtler,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Favorit [nur bei Personen],Liebling,0
+Favorit [nur bei Personen],bevorzugte Person,0
+Favorit [nur bei Personen],favorisierte (antretende) Person,0
+Favorit [nur bei Personen],favorisierte Option,0
+Feigling,Angsthase,0
+Feigling,feige Person,0
+Feind,verfeindete Person,0
+Feministin,feministische / feministisch eingestellte Person,0
 Fertiger,fertigende Person,0
-Filmemacher,Filmschaffende,1
+Fetischist,Person mit einem Fetisch,0
+Feuerwehrmänner,Einsatzkräfte der Feuerwehr,0
+Feuerwehrmänner,Feuerwehr,0
+Feuerwehrmänner,Feuerwehrangehörige,0
+Feuerwehrmänner,Feuerwehrleute,0
+Feuerwehrmänner,feuerbekämpfende Person,0
 Filmemacher,filmschaffende Person,0
-Flüchtlinge,Flüchtende,1
-Flüchtlinge,Geflüchtete,1
-Flüchtlinge,geflüchtete Menschen,1
-Follower,Follis,1
-Follower,Follows,1
-Forscher,Forschende,1
-Forscher,Forschungsteam,1
-Forscher,"Menschen, die in der Forschung tätig sind",1
-Forscher,Universitätsmitglieder,1
-Forscher,wissenschaftliches Personal der Universität,1
-Freelancer,Freischaffende,1
+Filmstar,Filmberühmtheit,0
+Filmstar,Filmgröße,0
+Finalist,am Finale teilnehmende Person,0
+Finalisten,am Finale Teilnehmende,0
+Finanzbeauftragter,finanzbeauftragte Person,0
+Finanzintermediäre,Anbietende von Finanzintermediation,0
+Finanzintermediäre,finanzintermediierende Person,0
+Fischer,Fisch fangende Person,0
+Flüchtlinge,Geflüchtete,0
+Flüchtlinge,flüchtende Person,0
+Flüchtlinge,geflüchtete Menschen,0
+Follower,Follis,0
+Follower,Follows,0
+Forscher,Forschungsteam,0
+Forscher,"Menschen, die in der Forschung tätig sind",0
+Forscher,Universitätsmitglieder,0
+Forscher,forschende Person,0
+Forscher,wissenschaftliches Personal der Universität,0
+Forschergemeinde,Forschungsgemeinde,0
+Forscherkolloquium,Forschungskolloquium,0
+Forscherteam,Forschungsteam,0
+Forstwart,Forstaufsicht,0
+Fortgeschrittene,[im Plural ist dieses Wort schon gendergerecht],0
+Fotograf,(Berufs-)Fotografie betreibende Person,0
+Fotograf,fotografierende Person,0
+Fotografen,aufnehmende Person,0
+Fotografen,fotografierende Person,0
+Fotografenteam,Fotografieteam,0
+Fotografenteam,Fototeam,0
+Fragen Sie Ihren Arzt oder Apotheker.,Holen Sie sich ärztlichen oder pharmazeutischen Rat. / Holen Sie sich bei Fragen ärztlichen Rat oder erkundigen Sie sich in Ihrer Apotheke.,0
+Frauenmannschaft,Frauenteam,0
+Freelancer,freischaffende Person,0
 Freiberufler,freiberuflich arbeitende Person,0
 Freiberufler,freischaffende Person,0
 Freigeber,freigebende Person,0
-Freunde,Bekannte,1
-Freunde,Bezugspersonen,1
-Freunde,befreundete Personen,1
-Fußballspieler,Fußballspielende,1
-Fußgänger,Fußverkehr,1
-Fußgänger,Menschen zu Fuß,1
-Fußgänger,zu Fuß Gehende,1
+Freiwilliger,freiwillige Person,0
+Fremdsprachler,andere / fremde Sprache sprechende Person,0
+Freund,(enge) Bezugsperson,0
+Freund,Bekanntschaft,0
+Freund,Herzensmensch,0
+Freund,Lieblingsmensch,0
+Freund,bessere Hälfte,0
+Freunde,Bekannte,0
+Freunde,Bezugspersonen,0
+Freunde,befreundete Personen,0
+Freundeskreis,Personen in befreundeten Kreisen,0
+Friseur,Frisiersalon,0
+Friseur,frisierende Person,0
+Friseure,frisierende Person,0
+Friseurtermin,Frisiertermin,0
+Friseurtermin,Haarschneidetermin,0
+Funktionsträger,in Funktion gewählte Person,0
+Funktionsträger,verantwortliche/beauftragte/bevollmächtigte Person,0
+Funktionär,Vollmachtsperson,0
+Funktionär,in Funktion gewählte Person,0
+Funktionär,verantwortliche/beauftragte/bevollmächtigte Person,0
+"Funktionäre [alle, die in einem Verein eine Funktion bekleiden]",Vollmachtspersonen,0
+Fußballspieler,fußballspielende Person,0
+Fußgänger,Fußverkehr,0
+Fußgänger,Menschen zu Fuß,0
+Fußgänger,zu Fuß Gehende,0
+Fußgängerampel,Ampel,0
+Fußgängerampel,Personenampel,0
+Fußgängerstreifen,Straßenpassierstreifen,0
+Fußgängerstreifen,Zebrastreifen,0
+Fußgängerweg,Gehweg,0
+Fußgängerzone,Einkaufsstraße,0
+Fußgängerzone,Einkaufszone,0
+Fußgängerzone,Flanierzone,0
+Fußgängerzone,"verkehrsberuhigter Bereich [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]verkehrsrechtlich nicht identisch mit ""Fußgängerzone""",0
+Fußgängerzone,verkehrsfreie Zone,0
+Fußgängerzone,werden mit unterschiedlichen Verkehrsschildern ausgewiesen,0
+Fußgängerüberweg,Überquerung,0
 Förderer,"Stelle, die Fördermittel vergibt",0
-Förderer,unterstützender Personenkreis,1
-Förster,Beschäftigte in der Forstwirtschaft,1
-Fürsprecher,Befürwortende,1
-Fürsprecher,Beteiligte,1
-Fürsprecher,Fürsprechende,1
-Fürsprecher,Mitwirkende,1
+Förderer,unterstützender Personenkreis,0
+Fördermittelgeber,"Stelle, die Fördermittel vergibt",0
+Fördermittelgeber,fördermittelgebende Stelle/Institution,0
+Förster,Beschäftigte in der Forstwirtschaft,0
+Führerschein,Fahrberechtigung,0
+Führerschein,Fahrerlaubnis,0
+Für diese Stelle suchen wir einen englischen Muttersprachler.,"Für diese Stelle suchen wir eine Englisch-erstsprechende Person. / Für diese Stelle suchen wir eine Person, deren erste Sprache Englisch ist.",0
+Fürsprecher,Beteiligte,0
 Fürsprecher,Support,0
-Fürsprecher,Supportende,1
 Fürsprecher,Unterstützung,0
 Fürsprecher,Unterstützungskraft,0
-Gaffer,Schaulustige,1
-Gamer,Gaming People,1
-Gastgeber,Einladende,1
+Fürsprecher,befürwortende Person,0
+Fürsprecher,fürsprechende Person,0
+Fürsprecher,mitwirkende Person,0
+Fürsprecher,supportende Person,0
+Gaffer,Schaulustige,0
+Gamechanger,noch kein passender Begriff gefunden,0
+Gamechanger,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Gamer,Gaming People,0
+Gast,Besuch,0
+Gast,Besuchsperson,0
+Gastbeitrag,Sonderbeitrag,0
 Gastgeber,einladende Person,0
-Gasthörer,Studierende im Gaststudium,1
-Gastwissenschaftler,Gastforschende,1
+Gasthörer,Studierende im Gaststudium,0
+Gasthörerstatus,Gasthörstatus,0
+Gasthörerstatus,Gaststudierendenstatus,0
+Gasthörerstudium,Gaststudium,0
+Gasthörerstudium,Hospitation,0
+Gastronomen,"Betreibende eines Gastronomiebetriebs [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]nicht immer korrekt: auch eine Kellnerin kann Gastronomin sein, ohne eine Gastronomie zu betreiben",0
+Gastwirt,Gastronomiebetriebsleitung,0
+Gastwirte,Betreibende eines Gastronomiebetriebs,0
+Gastwissenschaftler,gastforschende Person,0
+Gatte,Heiratsperson,0
+Gefreiter,Person mit zweitniedrigstem militärischen Mannschaftsdienstgrad,0
+Gegenkandidat,Gegenkandidatur,0
 Gegenspieler,Counterpart,0
-Gegenspieler,Gegenseite,1
+Gegenspieler,Gegenseite,0
 Gegenspieler,Konkurrenz,0
-Gegenspieler,feindliche Spielende,1
+Gegenspieler,feindliche Spielende,0
 Gegenspieler,gegnerische Partei,0
-Gegenspieler,gegnerische Spielende,1
+Gegenspieler,gegnerische Spielende,0
 Gegenspieler,widerstreitende Person,0
 Gegner,Counterpart,0
-Gegner,Gegenseite,1
+Gegner,Gegenseite,0
 Gegner,Konkurrenz,0
 Gegner,ablehnende Person,0
-Gegner,feindliche Spielende,1
+Gegner,feindliche Spielende,0
 Gegner,gegnerische Partei,0
-Gegner,gegnerische Spielende,1
+Gegner,gegnerische Spielende,0
 Gegner,widerstreitende Person,0
-Geldgeber,Geldgebende,1
-Geldgeber,geldgebende Institution,1
-Geldgeber,support,1
+Geisterfahrer,Fahrzeug in falscher Richtung,0
+Geisterfahrer,Geisterfahrzeug,0
+Geldgeber,geldgebende Institution,0
+Geldgeber,geldgebende Person,0
+Geldgeber,support,0
+Gelehrter,gelehrte Person,0
+"General Manager [Systemgastronomie, Hotellerie]",Verantwortungsperson im General Management,0
+Generaldirektor,Direktoriumsleitung,0
+Generalist,Multitalent,0
+Generalist,Universalgenie,0
+Generalist,fachlich breit aufgestellter Mensch,0
+Generalsekretär,noch kein passender Begriff gefunden,0
+Generalsekretär,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Genießer,Genussmensch,0
+Genosse,Mitglied der Genossenschaft,0
+Genossenschaft,"[ich bin mir unsicher, ob das Wort gendernswert ist oder nicht",0
+Genossenschaft,"analog Kundschaft, Freundschaft, ]",0
+Gentlemen's Agreement,Absprache unter Ehrenleuten,0
+Gentlemen's Agreement,Vereinbarung per Handschlag,0
+Gentlemen's Agreement,mündliche Vereinbarung,0
+Geograph,Mensch mit fundiertem Wissen über Geographie,0
+Geograph,Person mit Fachwissen in Geographie,0
+Geologe,Mensch mit fundiertem Wissen über Geologie,0
+Geologe,Person mit Fachwissen in Geologie,0
+Geologen,Forschende der Geologie,0
+Gerichtsvollzieher,Gerichtsvollzugsperson,0
+Gerätewart,Geräteaufsicht,0
 Geschäftsführer,Geschäftsführung,0
 Geschäftsführer,Geschäftsleitung,0
-Gesellschafter,Beteiligte,1
-Gesellschafter,Betriebsgesellschaft,1
-Gesellschafter,Gesellschaftende,1
+Geschäftsmänner,Geschäftsleute,0
+Geschäftspartner,geschäftliche Verbindung,0
+Geschäftspartner,geschäftlicher Kontakt,0
+Gesellschafter,Beteiligte,0
+Gesellschafter,Betriebsgesellschaft,0
+Gesellschafter,gesellschaftende Person,0
+Gesellschafter [teilhabende Einzelperson],Person mit Geschäftsanteilen,0
+Gesellschafter [teilhabende Einzelperson],im Besitz von Geschäftsanteilen stehende Person,0
+Gesetzgeber,Legislative,0
+Gesetzgeber,gesetzgebende Instanz,0
+Gesetzgeber,gesetzgebende Person,0
 Gesprächspartner,Gegenüber,0
-Gesprächspartner,Gesprächsbeteiligte,1
-Gesprächsteilnehmer,Gesprächsbeteiligte,1
-Gestalter,Gestaltende,1
-Gewinner,Erster Platz,1
-Gläubiger,Geld-/Kreditgebende,1
+Gesprächspartner,Gesprächsbeteiligte,0
+Gesprächsteilnehmer,Gesprächsbeteiligte,0
+Gestalter,gestaltende Person,0
+Gewinner (sg./pl.),Erster Platz,0
+"Gibt es einen Konflikt zwischen zwei WG-Bewohnern, kann die Unterstützung durch einen Dritten hilfreich sein.","Gibt es einen Konflikt zwischen zwein in der WG, kann die Unterstützung einer dritten Person hilfreich sein.",0
+Gläubiger,Geld-/Kreditgebende,0
+Grafiker,Grafikprofi,0
+"Grenzgänger[Personen, die beruflich täglich im angrenzenden Nachbarstaat arbeiten]",Grenzpendelnde,0
+Grinsepeter,Grinsebacke,0
+Grinsepeter,Grinsegesicht,0
+Grinsepeter,Grinsekuchen,0
+Grinsepeter,Sonnenschein,0
+Grundeigentümer,Person mit Grundeigentum,0
+Grundrechtsträger,"grundrechtsberechtigte Person [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]Hinweis eines*einer User*in: Alternative kann auch in juristischen Kontexten korrekt benutzt werden",0
 Grundschüler,Grundschulkind,0
-Grundschüler,Kinder in der Grundschule,1
-Gruppenleiter,Gruppenleitende,1
-Gruppenleiter,Gruppenleitung,1
-Gutachter,Begutachtende,1
-Gutachter,Sachverständige,1
-Gutachter,begutachtet von ... ,0
-Hacker,Hackende,1
-Hacker,"Personen, die fremde Digitaldaten nutzen",1
-Hacker,umfunktionierende Personen,1
-Hamburger,die Hamburger Bevölkerung,1
-Handwerker,Fachpersonal im Handwerk,1
-Handwerker,Handwerkende,1
-Handwerker,Handwerksbetriebe,1
+Grundschüler,Kinder in der Grundschule,0
+Gruppenleiter,Gruppenleitung,0
+Gruppenleiter,gruppenleitende Person,0
+Gründer,gründende Person,0
+Gründerzeit,Gründungszeit,0
+Gründerzentrum,Gründungszentrum,0
+Gründerzentrum,Innovationszentrum,0
+Gründerzentrum,Technologiezentrum,0
+Guide [Tourguide],Reiseführung,0
+Guide [Tourguide],Reiseleitung,0
+Guru,spirituelles Vorbild / Idol,0
+Gutachter,Sachverständige,0
+Gutachter,begutachtende Person,0
+Gutachter,begutachtet von,0
+Gymnasiast,Person auf einem Gymnasium,0
+Gymnasiast,ein Gymnasium besuchende Person,0
+Gymnasiast,gymnasial lernende Person,0
+Gynäkologe,medizinisches/ärztliches Fachpersonal für Gynäkologie,0
+Gärtner,Gartenarbeitskraft,0
+Gärtnerei,Gartenbaubetrieb,0
+Gäste,"Besuche [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]Ich bin mir unsicher, ob 'Gäste' im Plural nicht schon gendergerecht ist, analog zum Wort 'Menschen'. Im Duden ist der feminine Plural 'Gästinnen' allerdings zu finden.",0
+Gäste,Eingeladene,0
+Gäste,Geladene,0
+Gästeführer,(Tourguide),0
+Gästeführer,Reiseführung,0
+Gästeführer,Reiseleitung,0
+Götter,Allmächtige,0
+Götter,Ewige,0
+Götter,Gottheiten,0
+Götter,allwissende Person,0
+Götter,übernatürliche Wesen,0
+Hacker,Cyber-Kriminelleweitere Alternativen gesucht: senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Hacker,"Personen, die fremde Digitaldaten nutzen",0
+Hacker,hackende Person,0
+Hacker,umfunktionierende Personen,0
+Hackerangriff,Hackangriff,0
+Hackerangriff,Hackingangriff,0
+"Halten Sie 1,5m Abstand zum Vordermann.","Halten Sie 1,5m Abstand zu anderen. /Halten Sie 1,5m Abstand zur Person vor Ihnen.",0
+Hamburger,die Hamburger Bevölkerung,0
+Handelspartner,noch kein passender Begriff gefunden,0
+Handelspartner,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Handlanger,helfende Person,0
+Handlanger,rechte Hand von jemandem,0
+Handwerker,Fachpersonal im Handwerk,0
+Handwerker,Handwerksbetriebe,0
+Handwerker,handwerkende Person,0
 Handwerker,handwerkliche Fachkraft,0
 Handwerker,handwerkliches Fachpersonal,0
-Hauptfachlehrer,Fachgruppe,1
-Hauptfachlehrer,Hauptfachgruppe,1
-Hausmeister,Gebäudemanagement,1
+Handwerksmeister,noch kein passender Begriff gefunden,0
+Handwerksmeister,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Hast du einen Freund?,Bist du vergeben? Lebst du in einer Beziehung?,0
+Hauptcharakter,Hauptfigur,0
+Hauptcharakter,Hauptperson,0
+Hauptcharakter,Schlüsselfigur,0
+Hauptcharakter,Titelrolle,0
+Hauptcharakter,[dieses Wort ist meiner Meinung nach schon gendergerecht,0
+Hauptcharakter,"wer dennoch eine Alternative bevorzugt, kann diese hier nutzen:] Hauptfigur",0
+Hauptcharakter,zentrale Gestalt,0
+Hauptfachlehrer,Fachgruppe,0
+Hauptfachlehrer,Hauptfachgruppe,0
+Hauptmann,noch kein passender Begriff gefunden,0
+Hauptmann,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Hauptmieter,Hauptmietpartei,0
+Hauptmieter,Hauptmietperson,0
+Hauptmieter,Hauptmietvertragsperson,0
+Hausarzt,Hauspraxis,0
+Hausarzt,hausärztliche Fachkraft,0
+Hausdame (in Hotels),Hausservice,0
+Hauseigentümer,noch kein passender Begriff gefunden,0
+Hauseigentümer,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Hausfrau,Haushalt organisierende Person,0
+Hausfrau,Haushaltsvorstand,0
+Hausfrau,haushaltsführende Person,0
+Hausherr,Familienvorstand,0
+Hausherr,Hausvorstand,0
+Hausherren [in der Sportberichterstattung],gastgebender Verein,0
+Hausmannskost,Alltagsessen,0
+Hausmannskost,einfache Küche,0
+Hausmannskost,gut bürgerliche Küche,0
+Hausmannskost,traditionell zubereitete Gerichte,0
+Hausmeister (sg./pl.),Gebäudemanagement,0
+Hauswart,Hauswartung,0
+Hebammen,geburtshelfende Person,0
+Held,Hauptperson,0
+Held,Schlüsselperson,0
+Held,Vorbild,0
+Held,außerordentlich erfolgreiche Person,0
 Helfer,Assistenz,0
-Helfer,Helfende,1
 Helfer,Hilfskraft,0
-Herausgeber,herausgegeben von ... ,1
+Helfer,helfende Person,0
+Herausgeber (sg./pl.),herausgegeben von,0
+Herr,,0
+Herr der Lage sein,alles unter Kontrolle haben,0
+Herr der Lage sein,den Überblick haben,0
+Herrenfahrrad,Diamantrahmenfahrrad,0
+Herrenhaus,Gutshaus,0
+Herrschaften,Leute,0
+Herrschaften,Personen,0
 Herrscher,Staatsoberhaupt,0
 Hersteller,Herstellfirma,0
 Hersteller,herstellendes Unternehmen,0
-Historiker,Geschichtsforschende,1
+Hexe,(schwarze) Zauberkraft innehabende Person,0
+Hexe,Person mit (schwarzen) Zauberkräften,0
+Hexe,"Person, die Zauberkraft hat",0
+Hexe,mit Zauberkräften ausgestattete Person,0
+Hilfe eines Arztes,ärztliche Hilfe,0
+Hinterbliebene,[im Plural ist dieses Wort schon gendergerecht],0
+Hinterbliebener,hinterbliebene Person,0
+Hinterbliebener,zurückgelassene Person,0
+Hintermann,Graue Eminenz,0
+Hintermann,Schlüsselfigur,0
+Hintermann,aus dem Hinterzimmer,0
+Hintermann,dahinter steckt/steht,0
+Hintermann,drahtziehende Person,0
+Hintermann,verantwortliche Person,0
+Hintermänner,Hinterleute,0
+Hintermänner,Schlüsselfiguren,0
+Hintermänner,Verantwortliche,0
+Hintermänner,aus dem Hinterzimmer,0
+Hinweisgeber,Hinweis gebende Person,0
+Hirte,hütende Person,0
+Historiker,geschichtsforschende Person,0
+Hospitant,hospitierende Person,0
+Hospitanten,hospitierende Person,0
+Hospizler,noch kein passender Begriff gefunden,0
+Hospizler,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Hostessen; Hosts,"Gästebetreuende [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]siehe Anmerkung unter 'Gäste'",0
+Humanist,humanistische Person,0
+Humanitäre Helfer,Humanitäre Helfende,0
 Hundehalter,"Person, die einen Hund hält",0
+Händler,Handelnde,0
+Händler,Shops,0
+Händler,der Handel,0
+Häuptling,Oberhaupt,0
 Hörer,zuhörende Person,0
-Hörer,zuhörende Personen,1
-Immigranten,Menschen mit Migrationshintergrund /-geschichte /-biografie,1
-Immobilienbesitzer,Immobilienbesitzende,1
-Immobilieneigentümer,Immobilienbesitzende,1
-Immobilieneigentümer,Personen mit Immobilienbesitz,1
+Hörer,zuhörende Personen,0
+Ich gehe heute zum Friseur.,Ich gehe heute in den Frisiersalon. / Ich gehe heute zum Haare schneiden.,0
+"Ich suche jemanden, der gut Englisch spricht.",Ich suche jemanden/eine Person/einen Mensch mit guten Englischkenntnissen.,0
+Ich-Erzähler,Ich-Figur,0
+Ich-Erzähler,Ich-Form,0
+Ich-Erzähler,erzählendes Ich,0
+Ihr (Lebens-/Ehe-)Partner / Lebensabschnittsgefährte / Freund ist auch mit eingeladen.,Kommen Sie gerne in Begleitung (einer weiteren Person). / Bringen Sie gerne eine Begleitperson mit. / Lassen Sie sich gerne von einer Ihnen nahestehenden Person begleiten.,0
+Ihr persönlicher Kundenberater,Ihre persönliche Ansprechpersonweitere Alternativen gesucht: senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Ihr werdet jetzt gleich einer nach dem anderen euer Lied vorsingen.,Ihr werdet jetzt gleich der Reihe nach euer Lied vorsingen.,0
+Illustrator,illustrierende Person,0
+Illustratoren,illustrierende Person,0
+Imker,Bienenzüchtende Person,0
+Immigranten,Menschen mit Migrationshintergrund /-geschichte /-biografie,0
+Immobilien- / Hauseigentümer,Eigentumspartei,0
+Immobilien- / Hauseigentümer,vermietende Person,0
+Immobilien- / Hauseigentümer,weitere Alternativen gesucht: senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Immobilienbesitzer,immobilienbesitzende Person,0
+Immobilieneigentümer,Personen mit Immobilienbesitz,0
+Immobilieneigentümer,immobilienbesitzende Person,0
+Immobilienkaufmann,Immobilienfachkraft,0
+Individuum,[als Neutrum ist dieses Wort schon gendergerecht: DAS Individuum],0
+Industriekaufmänner,Industriekaufleute,0
 Industriemechaniker,Industriemechanik ausführende Person,0
 Influencer,Content gestaltende Person,0
 Influencer,influencende Person,0
+Informant,Informationsquelle,0
+Informant,Quelle,0
 Informatiker,auf den IT-Bereich spezialisierte Person,0
-Ingenieure,Ingenieursberuf Ausübende,1
-Inhaber,Inhabende,1
+Informationssicherheitsbeauftragter,beauftragte Person für Informationssicherheit,0
+Ingenieurberuf,Ingenieursberuf,0
+Ingenieure,Ingenieursberuf Ausübende,0
+Ingenieurwesen,Technik,0
+Ingenieurwesen,Technikwissenschaften,0
+Ingenieurwesen,technische Wissenschaften,0
 Inhaber,etwas innehabende Person,0
-Inlineskater,Inlineskatende,1
+Inhaber,inhabende Person,0
+Inhaftierter,Person in Haft,0
+Initiatoren,initiierende Person,0
+Inlineskater,inlineskatende Person,0
 Insasse,inhaftierte Person,0
-Interessenten,Interessierte,1
-Interviewer,Interviewende,1
+Insasse [Fahrzeuginsasse],mitfahrende Person,0
+Insider,Person mit besonderem Hintergrundwissen,0
+Insider,"Person, die Internas kennt / weiß",0
+Inspekteur,Inspektion durchführende Person,0
+Installateur,noch kein passender Begriff gefunden,0
+Installateur,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Intendant,Intendanz,0
+Interakteur,interagierende Person,0
+Interakteur,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Interakteur,weitere Alternativen gesucht,0
+Interakteure,interagierende Person,0
+Interessensvertreter,Interessensvertretung,0
+Interessenten,Interessierte,0
+Interessenträger,interessierte Beteiligte,0
+Internist,noch kein passender Begriff gefunden,0
+Internist,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Interpret,Act,0
 Interviewer,interviewende Person,0
-Interviewpartner,Befragte,1
-Interviewpartner,Interviewte,1
-Juden,Menschen jüdischen Glaubens,1
-Juden,Mitglieder / Angehörige der jüdischen Gemeinschaft / des jüdischen Volkes,1
-Juden,jüdische Menschen,1
+Interviewpartner,Befragte,0
+Interviewpartner,Interviewte,0
+Intiator,initiierende Person,0
+Investor,"Person, die Geld investiert hat",0
+Investor,geldgebende Person,0
+Investor,investierende Person,0
+Investoren,investierende Person,0
+Italiener,Person aus Italien,0
+Italiener,aus Italien stammende Person,0
+Jahrgangsbester,jahrgangsbeste Person,0
+"Jedem das Seine. [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]Der Gebrauch dieser Redewendung ist unabhängig von gendergerechter Sprache umstritten, da sie am Eingang des KZ Buchenwald prangte.",Geschmäcker sind verschieden.,0
+Jeder einzelne sucht sich einen Platz.,Alle suchen sich ihren eigenen Platz. / Alle suchen für sich einen Platz. / Suche dir deinen Platz.,0
+Jeder kann teilnehmen.,Alle können teilnehmen.,0
+Jedes Kita-Kind kann zum Adventsfrühstück seine Brüder und/oder Schwestern mitbringen.,Jedes Kita-Kind kann zum Adventsfrühstück seine Geschwister mitbringen.,0
+Journalist,Medien,0
+Journalist,Presse,0
+Journalist,jemand von der Presse/vom Fernsehen/,0
+Journalist,wer für die Zeitung/fürs Fernsehen berichtet,0
+Journalisten,Presse,0
+Journalisten,die Medien,0
+Journalisten,im Journalismus Tätige/Arbeitende,0
+Journalisten,medienschaffende Person,0
+Jubilar,Jubiläum begehende Person,0
+Jubilar,Jubiläum feiernde Person,0
+Juden,Menschen jüdischen Glaubens,0
+Juden,Mitglieder / Angehörige der jüdischen Gemeinschaft / des jüdischen Volkes,0
+Juden,jüdische Menschen,0
 Jugendlicher,Teen,0
 Jugendlicher,Teenager,0
 Jugendlicher,Teenie,0
 Jugendlicher,junge Person,0
 Jugendlicher,junger Mensch,0
-Jäger,Jägerschaft,1
+Jungfrau,"Person, die noch keinen Geschlechtsverkehr hatte",0
+Jungfrau,sexuell unerfahrene Person,0
+Jurist,Person mit juristischem Sachverstand,0
+Jurist,Person mit juristischer Ausbildung,0
+Juror,Jurymitglied,0
+Justiziar,rechtsberatende Person,0
+Jäger,Jägerschaft,0
 Jäger,Person auf der Jagd,0
-Jäger,Personen auf der Jagd,1
+Jäger,Personen auf der Jagd,0
 Jäger,jagende Person,0
-Jäger,jagende Personen,1
-Kampfrichter,Kampfjury,1
-Kampfrichter,Schiedsgericht,1
-Kapitalgeber,Finanzierende,1
-Kapitalgeber,Investierende,1
-Kapitäne,Schiffsführende,1
+Jäger,jagende Personen,0
+Jäger- und Sammler-Gesellschaft,"nomadisierende Gesellschaft, die sich von der Jagd und dem Sammeln von Pflanzen ernährt",0
+Kamerad [militärisch],Teammitglied,0
+Kamerad [militärisch],Wegbegleitung,0
+Kamerad [militärisch],solidarisch wegbegleitende Person,0
+Kameramann,Kamera,0
+Kameramann,Kameraperson,0
+Kameramänner,Kamera,0
+Kameramänner,Kameraleute,0
+Kameramänner,Kamerapersonen,0
+Kameramänner,Kamerateam,0
+Kampfrichter,Kampfjury,0
+Kampfrichter,Schiedsgericht,0
+Kampfrichterverzerrung,Verzerrung durch Kampfrichtende,0
+Kandidaten,kandidierende Person,0
+Kandidatenfragen,K-Frage,0
+Kandidatenfragen,Personalfrage,0
+Kandidatenvorschlag,Personalvorschlag,0
+Kanzler,Regierung (an-)führende Person,0
+Kanzler,Regierungsoberhaupt,0
+Kanzler-Frage,K-Frage,0
+Kanzleramt,Amt des Regierungsoberhauptes,0
+Kapitalgeber,finanzierende Person,0
+Kapitalgeber,investierende Person,0
+Kapitäne,schiffsführende Person,0
+Karnevalisten,Karneval Feiernde,0
+Karteninhaber,Karteninhabende Person,0
+Karteninhaber,die Karte besitzende Person,0
+Karteninhaber,weitere Alternativen gesucht: senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Kassenwart,Finanzverwaltung,0
+Kassenwart,Kassenverwaltung,0
+Kassenwart,Vermögensverwaltung,0
 Kassierer,Person an der Kasse,0
+Katholiken,Menschen katholischen Glaubens,0
+Kaufmann,Kauffachkraft,0
+Kaufmann,Kaufkraft,0
+Kaufmann für Büromanagement,Kauffachkraft für Büromanagement,0
+Kaufmänner,Kaufleute,0
 Kellner,Bedienung,0
 Kellner,Servicekraft,0
-Kenner,Begeisterte,1
-Kenner,Fachleute,1
+Kenner,Begeisterte,0
+Kenner,Fachleute,0
 Keramiker,Keramikfachkraft,0
-Kletterer,Kletternde,1
+Kernwählerschaft,Kernstimmvolk,0
+Kernwählerschaft,Kernwahlvolk,0
+KfZ-Mechaniker-Innung,KfW-Handwerks-Innung,0
+KfZ-Mechaniker-Innung,KfZ-Innung,0
+KfZ-Mechaniker-Innung,KfZ-Mechanik-Innung,0
+KfZ-Mechaniker-Innung,noch kein passender Begriff gefunden,0
+KfZ-Mechaniker-Innung,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Kinderarztpraxis,Praxis für Kinderheilkunde,0
+Kinderdarsteller,Darstellende kindlichen Alters,0
+Kinderdarsteller,darstellende Person im Kindesalter,0
+Kinderdarsteller,schauspielendes/darstellendes Kind,0
+Kindergärtner,Erziehungskraft,0
+Kindergärtner,Kita-Fachkraft,0
+Kindergärtner,pädagogische Fachkraft,0
+Kindermädchen,Aupair,0
+Kindermädchen,Kinderbetreuung,0
+Kindertagepfleger,Kindertagespflegeperson,0
+Klassensprecher,Klassenvertretung,0
+Kleinbauern,kleine Landwirtschaftsbetriebe,0
+Kletterer,Kletternde,0
+Klient,Beratung in Anspruch nehmende Person,0
+Klient,Besuch,0
+Klient,Fall,0
+Klient,"Person, die in die Beratung kommt",0
+Klient,ratsuchende Person,0
+Klienten,Klientel,0
+Klienten,ratsuchende Person,0
+Klientenkontakt,Klientelkontakt,0
+Klientenzahl,Zahl der Ratsuchenden,0
 Kläger,klagende Person,0
+Koch,Kochprofi,0
+Koch,Küchenpersonal,0
+Koch,Lebensmittel verarbeitende Person,0
+Koch,in der Küche arbeitende Person,0
+Koch,"kochende Personweitere, treffendere Alternativen gesucht: senden Sie Ihren Vorschlag über das Kontaktformular (klick)",0
+Koch,leitende Küchenfachkraft,0
+Kollege,Teammitglied,0
+Kollege,mitarbeitende Person,0
+Kollegen,Kollegium,0
+Kollegen,Kollegschaft,0
+Kollegen,Teammitglieder,0
+Kolonialherr,Kolonialmacht,0
+Kolonialherr,Suzerän,0
+Kolonialherren,Kolonialmächte,0
+Kolonist,Kolonieerschließung,0
+Kolonist,Koloniegründung,0
+Komiteegründer,Komiteegründung,0
+Kommentator,kommentierende Presse,0
+Kommentator,kommentierender Pressemensch,0
+Kommentatoren,Kommentar von Medienschaffenden,0
 Kommilitone,mitstudierende Person,0
-Kommilitonen,Mitstudierende,1
+Kommilitonen,mitstudierende Person,0
+Kommissionierer,Mitarbeitende in der Warenzusammenstellung,0
+"Kommt der Paketbote, bin ich leider nie daheim!",Zur Paketzustellung bin ich leider nie daheim!,0
+Kommunikator [als Person; nicht als Gerät],kommunizierende Person,0
+Kommunist,kommunistisch (orientierte) Person,0
+Komparse,Nebenfigur,0
+Komparse,Person ohne Sprechrolle,0
+Komparse,stumme Rolle,0
 Kompetenzträger,Kompetenz tragende Person,0
-Kompetenzträger,Kompetenztragende,1
-Konfirmanden,Jugendliche in der Konfirmationsvorbereitung,1
-Konsortialpartner,Konsortialbeteiligte,1
+Kompetenzträger,kompetenztragende Person,0
+Komponist,kompositionstätige Person,0
+Komponist,musikschaffende Person,0
+Komponisten,Kompositionstätige,0
+Komponisten,musikschaffende Person,0
+Konfirmand,Konfi,0
+Konfirmand,zu konfirmierende Person,0
+Konfirmanden,Jugendliche in der Konfirmationsvorbereitung,0
+Konfirmanden,Konfis,0
+Konfirmanden,zu Konformierende,0
+Konfirmandenunterricht,Konfirmationsunterricht,0
+Konkurrent,Konkurrenz,0
+Konsortialpartner,Konsortialbeteiligte,0
+Konstrukteure,konstruierende Person,0
+Konsumenten,Kundschaft,0
+Konsumenten,einkaufende / konsumierende Zielgruppe,0
+Konsumenten,konsumierende Person,0
 Kontoinhaber,kontoführende Person,0
 Kontoinhaber,kontoinhabende Person,0
-Kooperationspartner,Kooperationsbeteiligte,1
-Kooperationspartner,in Kooperation mit,1
-Kraftfahrer,Kraftfahrzeugführende,1
+Kontrahent,Gegenüber,0
+Kooperationspartner (sg./pl.),Kooperationsbeteiligte,0
+Kooperationspartner (sg./pl.),in Kooperation mit,0
+Koordinator,Koordination,0
 Kraftfahrer,fahrzeugführende Person,0
-Krankenpfleger,Beschäftigte in der Krankenpflege,1
+Kraftfahrer,kraftfahrzeugführende Person,0
+Krankenpfleger,Beschäftigte in der Krankenpflege,0
 Krankenpfleger,Pflegefachkraft,0
 Krankenpfleger,Pflegefachperson,0
-Krankenpfleger,Pflegefachpersonen,1
+Krankenpfleger,Pflegefachpersonen,0
 Krankenpfleger,Pflegekraft,0
-Krankenpfleger,Pflegekräfte,1
-Krankenpfleger,Pflegende,1
-Krankenpfleger,Pflegepersonal,1
-Krankenpfleger,professionell Pflegende,1
-Kreditnehmer,Kreditnehmende,1
+Krankenpfleger,Pflegekräfte,0
+Krankenpfleger,Pflegepersonal,0
+Krankenpfleger,pflegende Person,0
+Krankenpfleger,professionell Pflegende,0
+Krankenschwester,Pflegefachkraft,0
+Krankenschwester,Pflegefachperson,0
+Krankenschwester,Pflegekraft,0
+Krankenschwestern,Beschäftigte in der Krankenpflege,0
+Krankenschwestern,Pflegekräfte,0
+Krankenschwestern,Pflegepersonal,0
+Krankenschwestern,pflegende Person,0
+Krankenschwestern,professionell Pflegende,0
+Kranker,kranke Person,0
+Krebspatienten,Krebskranke,0
+Krebspatienten,von der Krebskrankheit Betroffene,0
 Kreditnehmer,kreditnehmende Person,0
-Kritiker,Kritische,1
-Kritiker,Kritisierende,1
-Kritiker,kritische Stimmen,1
-Kunstkenner,Kunstkennende,1
-Kunstsammler,Kunstsammelnde,1
+Kriegerkodex,Kodex der Kämpfenden,0
+Kriegsverbrechertribunal,Tribunal für Kriegsverbrechen,0
+Kriminalbeamter,Person im Beamtenverhältnis bei der Kriminalpolizei,0
+Kritiker,Kritische,0
+Kritiker,kritische Stimmen,0
+Kritiker,kritisierende Person,0
+Kunde,"Accountweitere Alternativen gesucht, v.a. im Zusammenhang mit Dienstleistungen im Internet: senden Sie Ihren Vorschlag über das Kontaktformular (klick)",0
+Kunde,Client,0
+Kunde,Klientel,0
+Kunde,Kundschaft,0
+Kunde,Mensch,0
+Kunde,Person,0
+Kunde,kaufende Person,0
+Kunde,kaufinteressierte Person,0
+Kunde,konsumierende Person,0
+Kunde,nutzende Person,0
+Kunden,Kaufinteressierte,0
+Kunden,Klientel,0
+Kunden,Kundschaft,0
+Kunden,Menschen,0
+Kunden,Nachfrage,0
+Kunden,Personen,0
+Kunden,Zielgruppe,0
+Kunden,auftraggebende Person,0
+Kunden,kaufende Personen,0
+Kunden,nutzende Person,0
+Kundenauftrag,Auftrag,0
+Kundenauftrag,Auftrag durch Kundschaft,0
+Kundenbedürfnisse,Bedürfnisse der Kundschaft,0
+Kundenberater,Beratung der Kundschaft,0
+Kundenberatung,Beratung der Kundschaft,0
+Kundenbetreuer,Betreuung der Kundschaft,0
+Kundenbewertungen,Bewertungen,0
+Kundenbewertungen,Bewertungssterne,0
+Kundenbewertungen,Sterne-Bewertungen,0
+Kundendienst,Service,0
+Kundendienst,Support,0
+Kundengruppe,"Kundschaft [mit bestimmtem Merkmal, z.B. Kundschaft mit geringer Kaufkraft]",0
+Kundenkontakt,Kontakt zur Kundschaft,0
+Kundenkontakt,Menschenkontakt,0
+Kundenkonto,Nutzungskonto,0
+Kundenprojekt,Kundschaftsprojekt,0
+Kundenreferenz,Referenz,0
+Kundenservice,Service,0
+Kundenstamm,Klientelstamm,0
+Kundenstamm,Kundschaftsstamm,0
+Kundenstamm,feste Kundschaft,0
+Kundenstamm,treue Kundschaft,0
+Kundenwerbung,Akquise,0
+Kundenwünsche,Wünsche der Kundschaft,0
+Kundenzentrum [digital/analog],Servicezentrum,0
+Kundenzufriedenheit,Zufriedenheit der Kundschaft,0
+Kunstfreunde,Kunstbegeisterte,0
+Kunstkenner,kunstkennende Person,0
+Kunstsammler,Kunstsammelnde,0
+Kuratoren,kuratierende Person,0
+Kuratoren,kuratorische Leitung,0
+Kurier,überbringende Person,0
+Kurier,überbringender Lieferservice,0
+Kursadministrator,Kursadmin,0
+Kursadministrator,"Person, die den Kurs leitet",0
+Kursbetreuer,Kursbetreuung,0
 Kursleiter,Kursleitung,0
 Kursleiter,kursleitende Person,0
-Kursteilnehmer,Kursteilnehmende,1
-Kursteilnehmer,am Kurs Teilnehmende,1
+Kursteilnehmer,am Kurs Teilnehmende,0
 Kursteilnehmer,am Kurs teilnehmende Person,0
-Käufer,Kaufende,1
-Käufer,Kundschaft,1
+Kursteilnehmer,kursteilnehmende Person,0
+Kurzarbeitergeld,Kurzarbeitsgeld,0
+Kämmerer,Leitung der Kämmerei,0
+Käufer,Kundschaft,0
+Käufer,kaufende Person,0
+Königsdisziplin,Spitzendisziplin,0
+Königsdisziplin,anspruchvollste Disziplin,0
+Königsklasse,Oberliga,0
+Königsklasse,höchste Klasse,0
+Körperspender,körperspende Person,0
 Küchenhelfer,Küchenhilfe,0
+Kümmererin,fürsorgliche Person,0
+Kümmererin,fürsorgliches Teammitglied/Chormitglied/,0
+Kümmererin,kümmernder Mensch,0
 Künstler,Act,0
-Künstler,Kunstschaffende,1
+Künstler,kunstschaffende Person,0
+Künstlername,(künstlerisches) Pseudonym,0
+Künstlername,Kunstname,0
+Laborant,Laborfachkraft,0
 Laborarbeiter,Laborfachkraft,0
-Lehrer,Lehrende,1
+Lagerist,Lagerfachkraft,0
+Lagerist,im Lager arbeitende Person,0
+Laie,Mensch ohne Fachkenntnisse,0
+Laie,fachfremde Person,0
+Laie,fachunkundige Person,0
+Laien,Fachfremde,0
+Laien,Fachunkundige,0
+Laien,Nichtkundige,0
+Land der Dichter und Denker,Land der Dichtenden und Denkenden,0
+Land der Dichter und Denker,Land der Dichtung und des Denkens,0
+Land der Dichter und Denker,Land der Gedichte und Gedanken,0
+Land der Dichter und Denker,Land der Literatur,0
+Land der Dichter und Denker,Land der dichtenden und denkenden Personen,0
+Landnutzer,landnutzende Personen,0
+Landrat,Amtsvorstand,0
+Landrat,Dienststellenleitung,0
+Landrat,Kreisverwaltungsleitung,0
+Landrat,Landkreisleitung,0
+Landrat,Landratsamtsleitung,0
+Landsmänner,Landsleute,0
+Landwirt,Landwirtschaft betreibende Person,0
+Landwirte,Beschäftigte in der Landwirtschaft,0
+Landwirte,Landwirtschaft Betreibende,0
+Landwirte,landwirtschaftlich Beschäftigte,0
+Lass uns in der Mittagspause zum Dönermann gehen!,Lass uns in der Mittagspause zum Dönerimbiss gehen.,0
+Lastkraftwagenfahrer,Lastkraftwagen fahrende Person,0
+Lebenspartner,Lebensmensch,0
+Lebenspartner,Liebesmensch,0
 Lehrer,Lehrkraft,0
-Lehrer,Lehrkräfte,1
+Lehrer,Lehrkräfte,0
 Lehrer,Lehrperson,0
-Lehrer,Lehrpersonen,1
-Lehrer,Unterrichtende,1
-Lehrer,das Kollegium,1
-Lehrmeister,Ausbildende,1
-Lehrmeister,Lehrende,1
-Lehrstuhlinhaber,Leitende eines Lehrstuhles,1
+Lehrer,Lehrpersonen,0
+Lehrer,das Kollegium,0
+Lehrer,lehrende Person,0
+Lehrer,unterrichtende Person,0
+Lehrerberuf,Lehrberuf,0
+Lehrerkonferenz,Besprechung der Lehrkräfte,0
+Lehrerkonferenz,Kollegiumskonferenz,0
+Lehrerkonferenz,Konferenz,0
+Lehrerkonferenz,Konferenz der Lehrkräfte,0
+Lehrerpult,Schreibtisch,0
+Lehrerpult,Tisch/Pult der Lehrkraft,0
+Lehrerzimmer,Arbeitszimmer der Lehrkräfte,0
+Lehrerzimmer,Teamraum,0
+Lehrling,Nachwuchskraft,0
+Lehrling,Person in Ausbildung,0
+Lehrling,auszubildende Person,0
+Lehrling,lernende Person,0
+Lehrlinge,auszubildende Person,0
+Lehrlinge,lernende Person,0
+Lehrmeister,ausbildende Person,0
+Lehrmeister,lehrende Person,0
+Lehrstuhlinhaber,Leitende eines Lehrstuhles,0
 Lehrstuhlinhaber,Leitung des Lehrstuhles,0
-Lehrstuhlleiter,Leitende eines Lehrstuhles,1
+Lehrstuhlleiter,Leitende eines Lehrstuhles,0
 Lehrstuhlleiter,Leitung des Lehrstuhls,0
-Leiharbeiternehmer,Leiharbeitnehmende,1
-Leistungsbezieher,Leistung Beziehende,1
-Leiter,Leitung,1
+Leibeigene,[im Plural ist dieses Wort schon gendergerecht],0
+Leibeigener,leibeigene Person,0
+Leiharbeiternehmer,leiharbeitnehmende Person,0
+Leistungsbezieher,Leistung Beziehende,0
+Leistungsträger,refinanzierende Ämter und Behörden,0
+Leiter (sg./pl.),Leitung,0
+Lektor,das Lektorat,0
+Lektorstelle,Lektoratsstelle,0
 Lernbegleiter,lernbegleitende Person,0
 Lernender,lernende Person,0
-Leser,Lesende,1
-Leser,Lesepublikum,1
-Leser,Leserschaft,1
+Lerntyp,[Begriff ist schon genderneutral],0
+Leser,Lesepublikum,0
+Leser,Leserschaft,0
 Leser,lesende Person,0
-Leser,lesende Zielgruppe,1
-Liebhaber,Begeisterte,1
-Liedermacher,Lieder kreierende Personen,1
-Liedermacher,Liederschaffende,1
+Leser,lesende Zielgruppe,0
+Leserausweis,Bibliotheksausweis,0
+Leserausweis,Leseausweis,0
+Leserbrief,Zuschrift / Kommentar zum Artikel xy,0
+Leserbriefe,Ihre Kommentare/Meinungen,0
+Leserbriefe,offene Zuschriften,0
+Lesermarkt,Lesendenabsatzweitere Alternativen gesucht: senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Lesermarkt,Lesendengeschäft,0
+Lesermarkt,Markt der Lesenden,0
+Liebe Freunde und Förderer unseres Vereins!,Liebe Bekannte und unterstützender Personenkreis unseres Vereins!,0
+Liebe Freunde und Förderer unseres Vereins!,Liebe Vereinsfördernde!,0
+"Liebe Sportfreunde, schön, dass Ihr heute zur Vollversammlung unseres Vereins gekommen seid!","Liebe Mitglieder unseres Vereins, schön, dass Ihr heute zur Vollversammlung gekommen seid!",0
+Lieber[informelle Anrede bei Briefen],An,0
+Lieber[informelle Anrede bei Briefen],Guten Tag,0
+Lieber[informelle Anrede bei Briefen],Hallo,0
+Liebhaber,Begeisterte,0
+Liedermacher,Lieder kreierende Personen,0
+Liedermacher,liederschaffende Person,0
+Lieferant,Lieferfirma,0
+Lieferant,Lieferunternehmen,0
+Lieferant,lieferndes Unternehmen,0
+Linguist,noch kein passender Begriff gefunden,0
+Linguist,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Linker,links gesinnte Person [Anm.: Im Plural schon genderneutral.],0
+Linkshänder,linkshändige Person,0
 Literaturkritiker,Literatur kritisierende Person,0
-Literaturkritiker,Literaturkritisierende,1
-Lizenznehmer,Lizenznehmende,1
-Macher,Aktive,1
-Makler,Häuser vertreibende Personen,1
+Literaturkritiker,literaturkritisierende Person,0
+Lizenznehmer,lizenznehmende Person,0
+Lobbyist,Interessen vertretende Person,0
+Logopäde,(medizinische) Fachkraft für Logopädie,0
+Läufer,laufsporttreibende Person,0
+Löst die Aufgabe in Partnerarbeit!,Löst die Aufgabe zu zweit. / Löst die Aufgabe im Tandem.,0
+Macher,Aktive,0
+Magier,(schwarze) Zauberkunst ausübende Person,0
+Makler,Häuser vertreibende Personen,0
+Maklerverbund,Maklerei,0
 Maler,Wandgestaltende Person,0
 Maler,Werkschaffende Person der Malerei,0
+Maler[künstlerisch],Werkschaffende der Malerei,0
+Man glaubt es kaum.,Ich glaube es kaum.,0
 Manager,Führungskraft,0
 Manager,Management,0
 Manager,Unternehmensführung,0
-Marktschreier,Angebotsausrufende,1
+"Manch einem ist gar nicht klar, was er damit anrichtet.","Manchen ist gar nicht klar, was sie damit anrichten.",0
+Mandant,Mandantschaft,0
+Mandant,auftraggebende Person,0
+Mandatsträger,Mandat innehabende Person,0
+Mandatsträger,mandatstragende Person,0
+Manipulant,manipulierende Person,0
+Mann über Board!,Person über Board!,0
+Mann[im Sinne von:],Person(en),0
+Manndeckung [im Sport],1:1-Deckung,0
+Manndeckung [im Sport],1:1-Verteidigung,0
+Manndeckung [im Sport],Direktdeckung [Gegensatz zur Raumdeckung],0
+Manndeckung [im Sport],personenorientierte Deckung,0
+Mannsbild,"gestandene Person, Powermensch",0
+Mannschaft,Besatzung [bei Schiffen],0
+Mannschaft,Gruppe,0
+Mannschaft,Kollektiv,0
+Mannschaft,Team,0
+Mannstunde,Personenstunde,0
+Manntage,Arbeitstage,0
+Manntage,Leistungstage,0
+Manntage,Personentage,0
+Manpower,Arbeitskraft,0
+Manpower,Humanpower,0
+Marktakteure,Am Markt agierende Menschen und Institutionen,0
+Marktschreier,angebotsausrufende Person,0
+Masterand,studentische Stelle zur Anfertigung der Masterarbeit,0
 Mathematiker,mathematisch qualifizierte Person,0
 Mathematiker,sich mit Mathematik befassende Person,0
-Medienanbieter,Medienorganisationen,1
-Mediengestalter,Mediengestaltende,1
-Mediziner,in der Medizin Tätige,1
-Mediziner,medizinisches/ärztliches Fachpersonal,1
+Matrose,"Mitglied der Schiffsbesatzung (mit unterstem Dienstrang) [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]u.U. zu ungenau, da z.B. auch die*der Kapitän*in Mitglied der Schiffsbesatzung ist",0
+Mechaniker,Fachkraft für Mechanik,0
+Mechatroniker,Fachkraft für Mechatronik,0
+Mediator,Mediation,0
+Mediator,Mediation anbietende Person,0
+Mediator,Mediationsperson,0
+Medien und politische Beobachter gehen von zwei möglichen Szenarien aus.,Medien und politisch beobachtende Personen gehen von zwei möglichen Szenarien aus.,0
+Medienanbieter,Medienorganisationen,0
+Mediengestalter,mediengestaltende Person,0
+Medienpartner,in Medienpartnerschaft mit,0
+Mediziner,in der Medizin Tätige,0
+Mediziner,medizinisches/ärztliches Fachpersonal,0
+Mehrbenutzerfunktion,Funktion für mehrere Nutzende,0
 Meinungsführer,meinungsführende Person,0
+Meinungskontrahent,Meinungsgegenpart,0
+Meister [im Handwerk],Person mit höherer Fachprüfung,0
+Meisterschaft,Turnier,0
+Meisterschaft,Wettbewerb,0
+Meldender,Meldung von,0
+Meldender,gemeldet durch,0
+Meldender,meldende Person,0
+Mensch,[ist bereits genderneutral,0
+Mensch,analog zur PERSON],0
+Mentee,Person in Ausbildung,0
+Mentee,begleitete Person,0
+Mentee,beratene Person,0
+Mentee,durch Mentoring begleitete/unterstützte Person,0
+Mentee,geförderte Person,0
+Mentor,Ansprechperson,0
+Mentor,Ausbildungsbeauftragte Person,0
+Mentor,Begleitung,0
+Mentor,Kontaktperson,0
+Mentor,Vorbild,0
+Mentor,beratende Person,0
+Mentor,fördernde Person,0
+Mentor,fürsprechende Person,0
 Mieter,Mietpartei,0
 Mieter,Mietperson,0
-Migranten,Eingewanderte,1
-Migranten,Migrierte,1
-Migranten,Personen mit Migrationshintergrund,1
-Migranten,Zugewanderte,1
-Minijobber,geringfügig Beschäftigte,1
-Minister,Ressortleitende,1
+Mieterverein,Mietverein,0
+Mieterverein,Mietvertretung,0
+Migrant,Person mit Migrationshintergrund,0
+Migrant,der/die Migrierte,0
+Migrant,eingewanderte Person,0
+Migranten,Eingewanderte,0
+Migranten,Migrierte,0
+Migranten,Personen mit Migrationshintergrund,0
+Migranten,Zugewanderte,0
+Milchmädchenrechnung,Fehlschluss,0
+Milchmädchenrechnung,Illusion,0
+Milchmädchenrechnung,Irrtum,0
+Milchmädchenrechnung,Trugschluss,0
+Milchmädchenrechnung,falsche Erwartung,0
+Minderjährige,[im Plural ist dieses Wort schon gendergerecht],0
+Minderjähriger,Kind unter 18,0
+Minderjähriger,minderjährige Personweitere Alternativen gesucht: senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Mindestteilnehmerzahl,Mindestanzahl Teilnehmende,0
+Minijobber,geringfügig Beschäftigte,0
 Minister,Ressortleitung,0
-Mitarbeiter,Angestellte,1
-Mitarbeiter,Arbeitsgemeinschaft,1
-Mitarbeiter,Arbeitsgruppe,1
+Minister,ressortleitende Person,0
+Ministerpräsidenten,Landesoberhaupt,0
+Ministerpräsidenten,MPs,0
+Ministerpräsidenten,Vorsitz der Resortleitenden,0
+Ministrant,Mini,0
+Ministranten,Minis,0
+Mitarbeiter,Angestellte,0
+Mitarbeiter,Arbeitsgemeinschaft,0
+Mitarbeiter,Arbeitsgruppe,0
 Mitarbeiter,Arbeitskraft,0
-Mitarbeiter,Arbeitskräfte,1
-Mitarbeiter,Belegschaft,1
-Mitarbeiter,Beschäftigte,1
-Mitarbeiter,Beteiligte,1
-Mitarbeiter,Betriebs-/Konzern-/Firmen-/Unternehmensangehörige,1
-Mitarbeiter,Crew,1
-Mitarbeiter,Festangestellte,1
-Mitarbeiter,Gruppe,1
-Mitarbeiter,Kollegium,1
-Mitarbeiter,Mitarbeitende,1
-Mitarbeiter,Personal,1
-Mitarbeiter,Servicekräfte,1
-Mitarbeiter,Servicepersonal,1
-Mitarbeiter,Team,1
+Mitarbeiter,Arbeitskräfte,0
+Mitarbeiter,Belegschaft,0
+Mitarbeiter,Beschäftigte,0
+Mitarbeiter,Beteiligte,0
+Mitarbeiter,Betriebs-/Konzern-/Firmen-/Unternehmensangehörige,0
+Mitarbeiter,Crew,0
+Mitarbeiter,Festangestellte,0
+Mitarbeiter,Gruppe,0
+Mitarbeiter,Kollegium,0
+Mitarbeiter,Personal,0
+Mitarbeiter,Servicekräfte,0
+Mitarbeiter,Servicepersonal,0
+Mitarbeiter,Team,0
 Mitarbeiter,Teammitglied,0
-Mitarbeiter,Teammitglieder,1
-Mitarbeiter,Teammitglieder,1
-Mitarbeiter,Tätige,1
-Mitarbeiter,Werktätige,1
-Mitarbeiter,bei uns beschäftigte Personen,1
-Mitbewerber,die Konkurrenz,1
-Mitbewohner,Wohnungsteilende,1
-Mitbürger,Landsleute,1
+Mitarbeiter,Teammitglieder,0
+Mitarbeiter,Tätige,0
+Mitarbeiter,Werktätige,0
+Mitarbeiter,bei uns beschäftigte Personen,0
+Mitarbeiter,mitarbeitende Person,0
+Mitarbeiter der Hochschule / Unimitarbeiter,Hochschulpersonal,0
+Mitarbeiter in Teilzeit,Teilzeitkraft,0
+Mitarbeiterausweis,Firmenausweis,0
+Mitarbeiterausweis,MA-Ausweis,0
+Mitarbeiterausweis,Mitarbeitendenausweis,0
+Mitarbeiterbeurteilung,Angestelltenbeurteilung,0
+Mitarbeiterbeurteilung,Personalbeurteilung,0
+Mitarbeiterführung,Personalmanagement,0
+Mitarbeiterführung,Personalpolitik,0
+Mitarbeiterführung,Personführung,0
+Mitarbeitergespräch,Arbeitsgespräch,0
+Mitarbeitergespräch,Beschäftigtengespräch,0
+Mitarbeitergespräch,Beurteilungsgespräch,0
+Mitarbeitergespräch,Dienstbesprechung,0
+Mitarbeitergespräch,Jahresgespräch,0
+Mitarbeitergespräch,Mitarbeitendengespräch,0
+Mitarbeitergespräch,Personalgespräch,0
+Mitarbeitergespräch,Qualifikationsgespräch,0
+Mitarbeitermobilität,Mitarbeitendenmobilität,0
+Mitarbeitermobilität,Mobilität der Mitarbeitenden,0
+Mitarbeiterorientierung,Mitarbeitendenorientierung,0
+Mitarbeiterorientierung,orientiert an den Mitarbeitenden,0
+Mitarbeiterperspektive,Perspektive der Belegschaft,0
+Mitarbeiterperspektive,Perspektive der Mitarbeitenden,0
+Mitarbeiterschulung,MA-Schulung,0
+Mitarbeiterschulung,Schulung,0
+Mitarbeiterschulung,Schulung der Belegschaft,0
+Mitarbeiterschulung,Schulung der Mitarbeitenden,0
+Mitarbeiterstellen,Arbeitsplätze,0
+Mitarbeiterstellen,Stellen für Mitarbeitende,0
+Mitarbeitersuche,Mitarbeitendensuche,0
+Mitarbeitersuche,Personalsuche,0
+Mitarbeiterverpflegung,Personalverpflegung,0
+Mitbewerber,die Konkurrenz,0
+Mitbewohner,wohnungsteilende Person,0
+Mitbürger,Landsleute,0
 Mitbürger,Mitmensch,0
-Mitbürger,Mitmenschen,1
-Mitbürger,Staatsangehörige,1
+Mitbürger,Mitmenschen,0
+Mitbürger,Staatsangehörige,0
+Mitfahrergelegenheit,Mitfahrgelegenheit,0
+Mitglied,[als Neutrum ist dieses Wort schon gendergerecht: DAS Mitglied],0
+Mitglieder,Angehörige,0
+Mitglieder,Teil von,0
+Mitglieder,[als Neutrum ist dieses Wort schon gendergerecht: DAS Mitglied- die Mitglieder,0
+Mitglieder,"wer dennoch eine Alternative bevorzugt, kann diese hier nutzen:] Zugehörige",0
 Mitläufer,Folge leistende Person,0
 Mitläufer,involvierte Person,0
 Mitläufer,mitlaufende Person,0
 Mitläufer,passive Rolle,0
 Mitläufer,passives Engagement,0
-Mitschüler,Mitlernende,1
-Mitschüler,andere Kinder aus der Klasse / Schule,1
-Mitstreiter,Gleichgesinnte,1
-Mitstreiter,Mitwirkende,1
-Mitstreiter,Teilnehmende,1
-Mittelständler,Angehörige des Mittelstandes,1
-Mittelständler,mittelständische Unternehmen,1
-Mitwisser,Eingeweihte,1
-Modeschöpfer,Mode Schaffende,1
-Mofafahrer,Mofa Fahrende,1
-Musiker, Bandmitglieder,1
+Mitschüler,andere Kinder aus der Klasse / Schule,0
+Mitschüler,mitlernende Person,0
+Mitspieler[beim Sport],mitspielende Person,0
+Mitstreiter,Gleichgesinnte,0
+Mitstreiter,mitwirkende Person,0
+Mitstreiter,teilnehmende Person,0
+Mittelsmann,Mittelsmensch,0
+Mittelsmann,Mittelsperson,0
+Mittelständler,Angehörige des Mittelstandes,0
+Mittelständler,mittelständische Unternehmen,0
+Mitwisser,Eingeweihte,0
+Moderator,Moderation,0
+Moderator,moderierende Person,0
+Moderatoren,Moderationsteam,0
+Moderatoren,moderierende Person,0
+Modeschöpfer,Mode Schaffende,0
+Mofafahrer,Mofa Fahrende,0
+Monteur,montierende Person,0
+Multiplikator,"Person, die Informationen/Wissen weitergibt",0
+Multiplikator,Wissen/Informationen weitergebende Person,0
+Museologe,museumswissenschaftliches Fachpersonal,0
 Musiker,Act,0
-Musiker,Mitglieder eines Orchesters,1
-Musiker,Musikausübende,1
-Musiker,Musikschaffende,1
-Musiker,Musikspielende,1
-Musiker,Musizierende,1
+Musiker,Bandmitglieder,0
+Musiker,Mitglieder eines Orchesters,0
+Musiker,musikausübende Person,0
+Musiker,musikschaffende Person,0
+Musiker,musikspielende Person,0
+Musiker,musizierende Person,0
+Muslim,Mensch muslimischen Glaubens,0
+Musterknabe,Musterschulkind,0
+Musterknabe,Vorbild,0
+Mutter,Elternteil,0
+Mutter Natur,(das) Grüne,0
+Mutter Natur,(freie/unberührte) Landschaft,0
+Mutter Natur,(natürliche) Umwelt,0
+Mutter Natur,Erde,0
+Mutter Natur,Natur,0
+Mutter Natur,Naturreich,0
+Mutter Natur,Schöpfung,0
+Mutter-Kind-Gruppe,Eltern-Kind-Gruppe,0
+Mutter-Kind-Parkplatz,Familienparkplatz,0
+Muttermal,Leberfleck,0
+Muttermal,Pigmentstörung,0
+Muttermilch,"Brustmilch[themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]bei transgeschlechtlichen, stillenden Vätern",0
+Muttermilch,Elternmilch,0
+Mutterschutz,"Elternschutz [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]auch transgeschlechtliche Väter haben Anspruch auf ""Mutterschutz""",0
+Muttersprache,Elternsprache,0
+Muttersprache,Erstsprache,0
+Muttersprache,Familiensprache,0
+Muttersprache,Hauptsprache,0
+Muttersprache,"Heimatsprache[themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]Feedback eines Users: Aus der zuerst erlernten Sprache kann man nicht folgern, welches Land eine Person als Heimat empfindet (Kind wächst in Deutschland auf, lernt zu Hause aber erst polnisch, dann deutsch). 'Heimatsprache' kann daher irreführend sein. In internationalen Familie können viele Sprachen gesprochen werden. 'Familiensprache' suggeriert, dass in Familien immer nur eine Sprache gesprochen wird.",0
+Muttersprache,erste Sprache,0
+Muttersprachler,Person mit der Erstsprache XYZ,0
+Muttersprachler,"Person, die XYZ als Erstsprache spricht",0
+Muttersprachler,xyz-erstsprachliche Person (z.B. polnisch-erstsprachliche Person),0
+Mädchen für alles,Mensch für alles,0
+Mädchenmannschaft,Mädchenteam,0
+Mädchenname,Geburtsname,0
+Männchen [z.B. bei Brettspielen],Figürchen,0
+Männchen [z.B. bei Brettspielen],Spielfigur,0
+Mönch,Ordensperson,0
+Mönche,Ordensleute,0
 Mörder,einen Mord begehende Person,0
 Mörder,mordende Person,0
-Münchner,die Münchner Bevölkerung,1
-Nachahmer,Menschen,1
-Nachahmer,Menschen gleicher Gesinnung,1
-Nachahmer,andere,1
-Nachbarn,Hausgemeinschaft,1
+Müllmann,Fachkraft für Kreislauf- und Abfallwirtschaft,0
+Müllmann,Müll entsorgende Person,0
+Müllmänner,Beschäftigte der Müllabfuhr,0
+Müllmänner,Müllabfuhr,0
+Münchner,die Münchner Bevölkerung,0
+Mütterberatung,Elternberatung,0
+Nachahmer,Menschen,0
+Nachahmer,Menschen gleicher Gesinnung,0
+Nachahmer,andere,0
+Nachbarn,nebenan Wohnende,0
+Nachbarn (in einem Wohnhaus; pl.),Hausgemeinschaft,0
+Nachbarschaft,Umgebung,0
+Nachfahre,noch kein passender Begriff gefunden,0
+Nachfahre,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Nachfahren,Nachkommen,0
+Nachfahren,Nachkommenschaft,0
 Nachfolger,Nachfolge,0
-Nachfrager,Nachfragende,1
-Nachtschwärmer,Nachtleute,1
+Nachfrager,nachfragende Person,0
+Nachrücker,nachrückende Person(en),0
+Nachtschwärmer,Nachtleute,0
 Nachtschwärmer,Nachtmensch,0
 Nachtschwärmer,Partymensch,0
-Nachwuchswissenschaftler,wissenschaftlicher Nachwuchs,1
-Namensvetter,Gleichnamige,1
-Netzwerkpartner,Netzwerkbeteiligte,1
-Netzwerkpartner,Netzwerkmitglieder,1
+Nachwuchswissenschaftler,wissenschaftlicher Nachwuchs,0
+Namensvetter,Gleichnamige,0
+Narr [Karneval],noch kein passender Begriff gefunden,0
+Narr [Karneval],senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Narren [Karneval],Karnefalbegeisterte,0
+Narren [Karneval],Karneval Feiernde,0
+Narren [Karneval],Karneval Zelebrierende,0
+Narren [Karneval],Närrische,0
+Nationalmannschaft,Nationalteam,0
+Nationalsozialist / Nazi,rechtsextrem eingestellte Person,0
+Nationalsozialist / Nazi,rechtsextreme Person,0
+Naturbursche,Naturmensch,0
+Nebenmann,nebenstehende Person,0
+Neffen und Nichten,Kinder der Geschwister,0
+Netzwerkpartner,Netzwerkbeteiligte,0
+Netzwerkpartner,Netzwerkmitglieder,0
 Neueinsteiger,Grünschnabel,0
 Neueinsteiger,Mensch ohne Vorkenntnisse,0
 Neueinsteiger,Nachwuchs,0
 Neueinsteiger,neu im Geschäft,0
 Neueinsteiger,unerfahrene Person,0
+Nichtraucher,nicht rauchende Person,0
+Nonne,Ordensperson,0
+Nonnen,Ordensleute,0
+Not am Mann,Notsituation,0
+Notar,notariell arbeitende Person,0
+Novize,noch kein passender Begriff gefunden,0
+Novize,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
 Nutzer,(be-)nutzende Person,0
-Nutzer,Mitglieder,1
-Nutzer,Nutzende ,1
-Nutzer,Nutzung,1
-Nutzer,"Person, die ... nutzt",0
-Nutzer,"Personen, die ... nutzen",1
-Organspender,Organ Spendende,1
-Organspender,Organ spendende Personen,1
-Parlamentarier,Abgeordnete,1
-Partner,Beteiligte,1
+Nutzer,Mitglieder,0
+Nutzer,Nutzung,0
+Nutzer,"Person, dienutzt",0
+Nutzer,"Personen, dienutzen",0
+Nutzer,nutzende Person,0
+Nutzer des Angebots werden bevorzugt.,"Wer das Angebot nutzt, wird bevorzugt.",0
+Nutzerdaten,(persönliche) Nutzungsdaten,0
+Nutzerdaten,Daten der Nutzenden,0
+Nutzerdaten,Datenspuren,0
+Nutzereingabe,noch kein passender Begriff gefunden,0
+Nutzereingabe,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Nutzerentgelte,Nutzungsentgelte,0
+Nutzergemeinde,Community,0
+Nutzergemeinde,Netzwerk,0
+Nutzergruppe,Nutzungsgruppe,0
+Nutzergruppe,mit (folgenden) Aufgaben betrauter/arbeitender Personenkreis,0
+Nutzerhandbuch,Handbuch,0
+Nutzerhandbuch,Nutzungshandbuch,0
+Nutzerkonto,Account,0
+Nutzerkonto,Konto,0
+Nutzerkonto,Zugang,0
+Nutzerzufriedenheit,Bedienzufriedenheit,0
+Nutzerzufriedenheit,Zufriedenheit mit der Nutzung,0
+Nächster,nächste Person,0
+Näherinnen,nähende Person,0
+Oberarzt,fachärztliche Leitung,0
+Oberarzt,ärztliche Führungskraft,0
+Oberbürgermeister,Stadtoberhaupt,0
+Obmann,Obmensch,0
+Obmann,schiedsrichtende Person,0
+Ombudsmann,Ombudsperson,0
+Opfer,[als Neutrum ist dieses Wort schon gendergerecht: DAS Opfer],0
+Opportunisten,eine die Gelegenheit ergreifende Person,0
+Organisatoren,Organisation,0
+Organisatoren,Organisationsteam/-komitee,0
+Organisatoren,organisierende Person,0
+Organisatoren,organisiert von,0
+Organspender,Organ Spendende,0
+Organspender,Organ spendende Personen,0
+Orthopädieschuhmacher,schuhherstellende Fachkraft mit orthopädischer Ausrichtung,0
+Orthopädieschuhtechniker,orthopädieschuhtechnische Fachkraft,0
+Orthopädietechniker,orthopädietechnische Fachkraft,0
+Orthopädietechniker,technische Fachkraft für Othopädie,0
+Otto Normalverbraucher,Durchschnittsmensch,0
+Paketbote,Paketzustellung,0
+Papst,Oberhaupt der katholischen Kirche,0
+Papst [im übertragenen Sinn; z.B. Modepapst],Berühmtheit,0
+Papst [im übertragenen Sinn; z.B. Modepapst],Genie,0
+Papst [im übertragenen Sinn; z.B. Modepapst],Ikone,0
+Parlamentarier,Abgeordnete,0
+Parteichef,Parteivorsitz,0
+Partner,Beteiligte,0
 Partner,Gegenüber,0
-Partner,Kooperationen,1
-Partner,Mitglied,1
-Partner,Mitwirkende,1
-Partner,Unterstützung,1
+Partner,Kooperationen,0
+Partner,Mitglied,0
+Partner,Unterstützung,0
+Partner,mitwirkende Person,0
+Partnerarbeit,Paararbeit,0
+Partnerarbeit,Tandemarbeit,0
+Partnerarbeit,Zweierarbeit,0
+Partnerländer,Kooperationsländer,0
+Partnerorganisation,(mit uns) kooperierende Institution,0
+Partnerschaft,Beziehung,0
+Partnerschaft,Kooperation,0
+Partnerschaft,Tandem,0
+Partnerschaft,Zusammenarbeit,0
+Partnersuche,Lebensmenschsuche,0
+Partnersuche,Seelenverwandtensuche,0
+Partnersuche,Verbündetensuche,0
+Partnerwahl,Wahl eines Lebensmenschen,0
+Passagier,reisende Person,0
+Passagiere,reisende Person,0
+Passagierflugzeug,Reiseflugzeug,0
+Passanten,den Gehweg nutzende Personen,0
+Passanten,einen Ort passierende Personen,0
+Passanten,passierende Person,0
+Passanten,vorübergehende Person,0
+Passanten,weitere Alternativen gesucht: senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Passanten,"zu Fuß Gehende [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]nur sehr eingeschränkt verwendbar, da Menschen, die nicht gehen können (z.B. Menschen im Rollstuhl), ausgeschlossen werden",0
+Passantenbefragung,Straßenbefragung,0
+Passinhaber,im Besitz eines Passes,0
+Pastor,noch kein passender Begriff gefunden,0
+Pastor,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Pate,Patenamt,0
+Pate,Patenschaft,0
+Pathologe,ärztliche Fachkraft für Pathologie,0
 Patient,(Fach-)Beratung aufsuchende Person,0
 Patient,Hilfesuchende Person,0
+Patient,Pat./Pat* [innerhalb der Dokumentation],0
 Patient,"Person, die medizinische Hilfe benötigt",0
 Patient,"Person, die sich in medizinische Hände begibt",0
 Patient,die uns anvertraute Person,0
@@ -702,394 +2175,1294 @@ Patient,kranke Person,0
 Patient,stationär aufgenommene Person,0
 Patient,zu behandelnde Person,0
 Patient,zu versorgende Person,0
-Patienten,(von einer Krankheit) Betroffene,1
-Patienten,Behandelte,1
-Patienten,Erkrankte,1
-Patienten,Hilfesuchende,1
-Patienten,Kranke,1
-Patienten,Menschen mit einer Erkrankung,1
-Patienten,"Menschen, die im Krankenhaus liegen",1
-Patienten,"Personen, die in (ärztlicher) Behandlung sind",1
-Patienten,zu Pflegende,1
-Patienten,zu behandelnde Personen,1
-Pendler,Pendelnde,1
-Performer,Performende,1
-Personalvertreter,Personalvertretung,1
-Pfadfinder,Pfadfindende,1
-Pfadfinder,Pfadis,1
+Patienten,(von einer Krankheit) Betroffene,0
+Patienten,Behandelte,0
+Patienten,Erkrankte,0
+Patienten,Kranke,0
+Patienten,Menschen mit einer Erkrankung,0
+Patienten,"Menschen, die im Krankenhaus liegen",0
+Patienten,"Personen, die in (ärztlicher) Behandlung sind",0
+Patienten,hilfesuchende Person,0
+Patienten,zu Pflegende,0
+Patienten,zu behandelnde Personen,0
+Patienten-Arzt-Kommunikation,Kommunikation zwischen behandelnder und behandelter Person,0
+Patienten-Arzt-Kommunikation,behandlungsbezogene Kommunikation,0
+Patientencharakteristik,Betroffenencharakteristik,0
+Patientencharakteristik,Erkranktencharakteristik,0
+Patienteninformation,Information,0
+Patienteninformation,Information für Sieweitere Alternativen gesucht: senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Patientenkontakt,Betroffenenkontakt,0
+Patientenschulung (in der Psychologie),Schulung für Erkrankte,0
+Patientensicherheit,noch kein passender Begriff gefunden,0
+Patientensicherheit,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Patientenstamm,noch kein passender Begriff gefunden,0
+Patientenstamm,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Patientenverfügung,Verfügung(en) für betreuende Personen,0
+Patientenversorgung,Behandlung,0
+Patientenversorgung,Pflege,0
+Patientenversorgung,ärztliche Versorgung,0
+Patientenzimmer,Gesundungszimmer,0
+Patientenzimmer,Heilungszimmer,0
+Patientenzimmer,"Krankenzimmer (nicht empfohlen) [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]Nicht alle Patient*innen können als krank bezeichnet werden, z.B. Schwangere oder Menschen in Reha-Maßnahmen",0
+Patientenzimmer,Zimmer,0
+Pazifist,"Person, die für Frieden einsteht",0
+Pazifist,friedensengagierte Person,0
+Pazifist,pazifistische Personweitere Alternativen gesucht: senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Pazifisten,Friedensbewegte,0
+Pendler,Pendelnde,0
+Pendlerpauschale,Entfernungspauschale,0
+Pendlerpauschale,"Pauschale für Menschen, die pendeln",0
+Pendlerpauschale,Pauschale für Pendelnde,0
+Pendlerpauschale,Pendelpauschale,0
+Pensionäre,Pensionierte,0
+Performer,performende Person,0
+Person,[ist bereits genderneutral,0
+Person,analog zur MENSCH],0
+Personalentwickler,Personalentwicklung,0
+Personalleiter,Personalleitung,0
+Personalrat,Mitglied des Personalrates,0
+Personalräte,Mitarbeitendenvertretung,0
+Personalräte,Mitglieder des Personalrates,0
+Personalräte,der Personalrat,0
+Personalvertreter,Personalvertretung,0
+Pfadfinder,Pfadis,0
+Pfadfinder,Pfadiweitere Alternativen gesucht: senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
 Pfadfinder,Scout,0
+Pfadfinder,pfadfindende Person,0
 Pfarrer,Pfarrperson,0
 Pfleger,Pflegekraft,0
-Pfleger,Pflegekräfte,1
-Pfleger,Pflegende,1
-Pfleger,Pflegepersonal,1
-Pfleger,die Pflege,1
+Pfleger,Pflegekräfte,0
+Pfleger,Pflegepersonal,0
+Pfleger,die Pflege,0
+Pfleger,pflegende Person,0
 Pförtner,Pfortenpersonal,0
+Philosoph,gelehrte Person,0
+Philosophen,Gelehrte,0
 Physiker,Person mit abgeschlossenem Physikstudium,0
-Pilger,Menschen auf Pilgerschaft,1
-Pilger,Pilgernde,1
-Planer,planende Institutionen,1
-Planer,planende Personen,1
+Physiotherapeut,Physiotherapie praktizierende Person,0
+Pilger,Menschen auf Pilgerschaft,0
+Pilger,Pilgernde,0
+Pilot,flugzeugführende Belegschaft,0
+Pilotlabor,Koordinationslabor,0
+Pilotlabor,Koordinierungslabor,0
+Pilotphase,Probebetrieb,0
+Pilotphase,Testphase,0
+Pilotprojekt,Testphase,0
+Pilotprojekt,Versuchsprojekt,0
+Pilotprojekt,Versuchsvorhaben,0
+Pionier,vorkämpfende Person,0
+Pionierarbeit,bahnbrechende Leistung,0
+Pionierarbeit,wegbereitende Arbeit,0
+Planer,planende Institutionen,0
+Planer,planende Personen,0
+Platzwart,noch kein passender Begriff gefunden,0
+Platzwart,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Poet,lyrikschaffende Person,0
 Politiker,Mensch in der Politik,0
-Politiker,Menschen in der Politik,1
-Politiker,"Menschen, die in der Politik tätig sind",1
+Politiker,Menschen in der Politik,0
+Politiker,"Menschen, die in der Politik tätig sind",0
 Politiker,Mitglied der Politik,0
-Politiker,Mitglieder der Politik,1
+Politiker,Mitglieder der Politik,0
 Politiker,Polit-Größe,0
-Politiker,Politikschaffende,1
 Politiker,Teil der Legislative,0
 Politiker,in der Politik tätige Person,0
-Polizisten,Polizei,1
-Polizisten,Polizeikräfte,1
-Polizisten,Polizeileute,1
+Politiker,politikschaffende Person,0
+Polizist,Polizei,0
+Polizist,Polizeikraft,0
+Polizisten,Polizei,0
+Polizisten,Polizeikräfte,0
+Polizisten,Polizeileute,0
+Polsterer,Polsterfachkraft,0
+Postbote,Postzustellung,0
+Powerfrau,Powermensch,0
+Powerfrau,gestandene Person,0
+Praktikant,"Praktikumskraft [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]wird im österreichischen Sprachgebrauch verwendet",0
 Praktikant,eine Person im Praktikum,0
 Praktikant,eine ein Praktikum absolvierende Person,0
 Praktikant,eine sich in einem Praktikum(verhältnis) befindende Person,0
-Praktiker,Leute aus der Praxis,1
-Praktiker,Praktizierende,1
-Praktiker,praktisch veranlagte Menschen,1
-Prediger,Predigende,1
+Praktikanten,Auszubildende im Praktikum,0
+Praktikantenstelle,Praktikumsstelle,0
+Praktiker,Leute aus der Praxis,0
+Praktiker,praktisch veranlagte Menschen,0
+Praktiker,praktizierende Person,0
+Praxispartner,Einrichtung zur praktischen Vertiefung,0
+Praxispartner,Praxisbeteiligte,0
+Praxispartner,Praxisunternehmen,0
+Praxispartner,praxismitbetreibende Person,0
+Praxispartner,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Praxispartner,"weitere Alternativen gesucht im Kontext: Person, mit der man in Praxisphasen zusammen übt (Unterricht, Seminar)",0
+Prediger,predigende Person,0
 Preisträger,ausgezeichnete Person,0
-Programmierer,Programmierende,1
-Programmierer,Softwareerstellende,1
+Pressesprecher,Pressestelle,0
+Pressesprecher,Pressevertretung,0
+Pressesprecher,Öffentlichkeitsarbeit,0
+Priester,noch kein passender Begriff gefunden,0
+Priester,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Privatpatient,Person mit privater Krankenversicherung,0
+Privatpatient,Privatversicherte Person,0
+Proband,Testperson,0
+Proband,Versuchsperson,0
+Probanden,Testpersonen,0
+Probanden,Versuchspersonen,0
+Probanden,teilnehmende Person,0
+Produzent,die Produktionsleitung innehabende Person,0
+Produzenten,Produktionsteam,0
+Produzenten,produzierende Person,0
+Professor,Prof.,0
+Professor,eine Professur innehabende Person,0
+Professoren,Professorenschaft,0
+Professorenstelle,Professorale Stelle,0
+Profi,Fachperson,0
+Profi,Person mit Fachwissen/Fachkenntnis,0
+Profis,Fachleute,0
+Profis,Sachkundige,0
+Profis,Sachverständige,0
 Programmierer,programmierende Person,0
-Projektleiter,Projektleitende,1
+Programmierer,softwareerstellende Person,0
+Projektentwickler,Projektentwicklung,0
 Projektleiter,Projektleitung,0
-Projektleiter,Projektleitungen,1
-Projektpartner,Projektbeteiligte,1
-Projektpartner,Projektmitwirkende,1
-Projektpartner,am Projekt beteiligte Firmen/Institute/etc.,1
-Proletarier,Angehörige des Proletariats,1
-Proletarier,Arbeitende,1
-Proletarier,Lohnabhängige,1
-Proletarier,Werktätige,1
+Projektleiter,Projektleitungen,0
+Projektleiter,projektleitende Person,0
+Projektpartner,Projektbeteiligte,0
+Projektpartner,am Projekt beteiligte Firmen/Institute/etc.,0
+Projektpartner,projektmitwirkende Person,0
+Projektträger,Projektträgerschaft,0
+Prokurist,Person mit Prokura,0
+Prokurist,bevollmächtigte Person,0
+Prokuristen,Personen mit Prokura,0
+Prokuristen,Prokura Ausübende,0
+Prokuristen,Prokura Innehabende,0
+Proletarier,Angehörige des Proletariats,0
+Proletarier,Lohnabhängige,0
+Proletarier,Werktätige,0
+Proletarier,arbeitende Person,0
+Prominenter,prominente Persönlichkeit,0
+Prostituierte,im Sexgewerbe tätige Person,0
+Prostituierte,sich prostituierende Person,0
+Protagonist,Figur,0
+Protagonist,Hauptfigur,0
+Protagonist,Hauptperson,0
+Protagonist,Schlüsselfigur,0
+Protagonist,Titelrolle,0
+Protagonist,zentrale Gestalt,0
+Protagonisten,Aktive,0
+Protagonisten,Hauptfiguren,0
+Protagonisten,Hauptpersonen,0
+Protagonisten,Schlüsselfiguren,0
+Protagonisten,Titelrollen,0
+Protagonisten,zentrale Gestalten,0
 Protokollführer,protokollführende Person,0
-Präsidenten,Vorsitzende,1
+Präsident,Staatsoberhaupt,0
+Präsident,Vorsitz,0
+Präsidenten,vorsitzende Person,0
+Präsidentenwahl,Präsidentschaftswahl,0
 Prüfer,"Person, die prüft",0
-Prüfer,Prüfungsabnahme durch ...,0
+Prüfer,Prüfungsabnahme durch,0
 Prüfer,Prüfungsleitung,0
-Prüfer,geprüft von ... ,0
+Prüfer,geprüft von,0
 Prüfer,prüfende Person,0
+Prüfling,zu prüfende Person,0
 Prüfstatiker,Statik prüfende Person,0
+Psychologe,psycchologische Fachkraft,0
+Psychologen,psychologische Fachkräfte,0
+Psychotherapeut,psychotherapeutische Fachkraft,0
+Psychotherapeut,psychotherapeutisches Fachpersonal,0
+Putzfrau,Raumpflege,0
+Putzfrau,Reinigungskraft,0
+Putzfrau,Reinigungspersonal,0
 Pächter,pachtende Person,0
+Pädagoge,pädagogische Fachkraft,0
+Querdenker,noch kein passender Begriff gefunden,0
+Querdenker,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Quereinsteiger,noch kein passender Begriff gefunden,0
+Quereinsteiger,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
 Rabbiner,Mitglied des Rabbinats,0
-Rabbiner,Rabbinat,1
-Radfahrer,Rad Fahrende,1
-Radfahrer,wer mit dem Rad unterwegs ist ... ,1
-Rechnungsempfänger,Rechnungsempfangende,1
-Rechnungsempfänger,Rechnungserhaltende,1
+Rabbiner,Rabbinat,0
+Radfahrer,Rad Fahrende,0
+Radfahrer,wer mit dem Rad unterwegs ist,0
+Radfahrer müssen absteigen.,Fahrräder bitte schieben.,0
+Radiologe,radiologisch-ärztliches Fachpersonalweitere Alternativen gesucht,0
+Radiologe,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Ranger,noch kein passender Begriff gefunden,0
+Ranger,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Rassist,rassistische Person,0
+Rat des Arztes,ärztlicher Rat,0
+Rat eines Fachmannes,fachkundiger Rat,0
+Rat eines Fachmannes,fachlicher Rat,0
+Ratgeber [im Sinne einer Person; nicht Leitfaden],Beistand,0
+Ratgeber [im Sinne einer Person; nicht Leitfaden],Wegbegleitung,0
+Ratgeber [im Sinne einer Person; nicht Leitfaden],ratgebende/beratende Person,0
+Ratsherr,"Mitglied des Stadtrats [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]ggf. zu unscharf: auch Bürgermeister*in ist Mitglied des Stadtrats aber nicht Ratsherr*Ratsfrau",0
+Raucherabteil,Abteil für Rauchende,0
+Raucherabteil,Abteil zum Rauchen,0
+Raucherbereich,Bereich für Rauchende,0
+Raucherbereich,Bereich zum Rauchen,0
+Raucherbereich,Rauchbereich,0
+Raucherpause,Zigarettenpause,0
 Rechnungsempfänger,die Rechnung empfangende Person,0
-Rechteinhaber,Rechteinhabende,1
+Rechnungsempfänger,rechnungsempfangende Person,0
+Rechnungsempfänger,rechnungserhaltende Person,0
+Rechnungsprüfer,"Person, die die Rechnungsprüfung macht",0
+Rechnungsprüfer,"Person, die für die Rechnungsprüfung verantwortlich ist",0
+Rechnungsprüfer,Rechnungsprüfung,0
+Rechteinhaber,rechteinhabende Person,0
+Rechter,rechts gesinnte Person [Anm.: Im Plural schon genderneutral.],0
+Rechthaber,rechthaberischer Mensch,0
+Rechtsanwalt,"Rechtsbeistand (nicht empfohlen) [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]im streng juristischen Sinne hat ein Rechtsbeistand andere Befugnisse und Vertretungsrechte als ein*e Rechtsanwält*in",0
+Rechtsanwalt,Rechtsvertretung,0
+Rechtsanwalt,"es existiert zudem die Bezeichnung Rechtsbeiständin, Mitglied der (Rechts-)Anwaltschaft",0
+Rechtsanwälte,Angehörige rechtsberatender Berufe,0
+Rechtsextremer,rechtsextrem gesinnte Person [Anm.: Im Plural schon genderneutral.],0
+Rechtshänder,rechtshändige Person,0
+Recruiter,rekrutierende Person,0
+Redakteur,Redaktion,0
+Redakteur,Redationsmitglied,0
 Redner,referierende Person,0
 Redner,vortragende Person,0
-Rentner,Menschen in Rente,1
-Rentner,"Menschen, die in der Rente sind",1
-Rentner,"Menschen, im Rentenalter",1
+Rednerliste,Redeliste,0
+Rednerpult,Redepult,0
+Referendar,Lehrkraft im Referendariat,0
+Referendar,LiV (Lehrkraft im Vorbereitungsdienst),0
+Referent,referierende Person,0
+Referent,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Referent,vortragende Person,0
+Referent,"weitere Alternativen gesucht, insbesondere für den Referent als Stellenbezeichnung, z.B. Wissenschaftlicher Referent in der Stiftung XYZ",0
+Referenten,referierende Person,0
+Referenten,vortragende Person,0
+Referenten waren,Es referierten,0
+Referententätigkeit,Referierendentätigkeit,0
+Referententätigkeit,Vortragstätigkeit,0
+Referententätigkeit,zuständig für Aufgaben im Referat xyz,0
+Referententätigkeit,zuständig für die Referatsleitung,0
+Referentenvereinbarung,Honorarvereinbarung,0
+Referentenvereinbarung,Vortragsvereinbarung,0
+Regierungschef,Regierung anführende Person,0
+Regierungschef,Staatsoberhaupt,0
+Regierungsrat,noch kein passender Begriff gefunden,0
+Regierungsrat,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Regisseur,Regie,0
+Rehasportler,Rehasportinteressierte,0
+Reichsbürger,noch kein passender Begriff gefunden,0
+Reichsbürger,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Reiseleiter,Reiseleitung,0
+Reisender,reisende Person,0
+Reiserückkehrer,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Reiserückkehrer,zurückkommende Reisende weitere Alternativen gesucht,0
+Reiseveranstalter,Reiseausrichtung,0
+Reiseveranstalter,Reisebüro,0
+Reiseveranstalter,Reisekoordination,0
+Reiseveranstalter,Reiseorganisation,0
+Reiseveranstalter,Reiseveranstaltung,0
+Reiseveranstalter,reiseveranstaltende Person,0
+Reiter,"Person, die reitet",0
+Rekrut,Nachwuchs (der Grundausbildung in der Bundeswehr),0
+Rektor,Schulleitung,0
+Rentner,Menschen in Rente,0
+Rentner,"Menschen, die in der Rente sind",0
+Rentner,"Menschen, im Rentenalter",0
 Rentner,Person im Ruhestand,0
 Rentner,Person in Rente,0
+Reparateur,noch kein passender Begriff gefunden,0
+Reparateur,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Repetent,noch kein passender Begriff gefunden,0
+Repetent,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
 Reporter,Medienvertretung,0
 Reporter,Presse,0
 Reporter,berichterstattende Person,0
+Repräsentanten,Vertretung,0
+Respondent,noch kein passender Begriff gefunden,0
+Respondent,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Rettungsassistent,Rettungsassistenz,0
+Rettungsassistent,mitarbeitende Person im Rettungsdienst,0
+Rettungshelfer,Rettungshilfe,0
+Rettungshelfer,rettungshilfeleistende Person,0
+Rettungssanitäter,Rettungskraft,0
+Rettungssanitäter,Rettungssanitätsdienst,0
 Rettungsschwimmer,aus dem Wasser rettende Person,0
-Richter,Richterschaft,1
+Rezeptionist,Empfang,0
+Rezeptionist,Person/Personal am Empfang,0
+Rezeptionist,Rezeption,0
+Rezipient,empfangende Person,0
+Rezipient,rezipierende Person,0
+Rezipienten,Publikum,0
+Rezipienten,rezipierende Person,0
+Richter,Richterschaft,0
 Richter,rechtsprechende Person,0
+Ritter,Mensch in Rüstung,0
+Ritterschlag,noch kein passender Begriff gefunden,0
+Ritterschlag,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Ritterstand,noch kein passender Begriff gefunden,0
+Ritterstand,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Rivale,Gegenpart,0
+Rivale,Konkurrenz,0
 Rollstuhlfahrer,Person im Rollstuhl,0
 Ruderer,rudernde Person,0
-Sachbearbeiter,Sachbearbeitende,1
-Sachbearbeiter,Sachverständige,1
+Räuberleiter,Baumleiter,0
+Räuberleiter,Dachlattentreppe,0
+Räuberleiter,Raubleiter,0
+Räuberleiter,Steighilfe,0
+Sachbearbeiter,Sachverständige,0
 Sachbearbeiter,Verwaltungskraft,0
-Sachbearbeiter,Verwaltungskräfte,1
-Sammler,Sammelnde,1
-Sanitäter,Rettungskräfte,1
-Sanitäter,Sanitätsdienst,1
+Sachbearbeiter,Verwaltungskräfte,0
+Sachbearbeiter,sachbearbeitende Person,0
+Sachbearbeiternummer,Kennnummer,0
+Sachbearbeiternummer,Nummer der zuständigen Verwaltungskraft,0
+Sachbearbeiternummer,Verwaltungsnummer,0
+Sachverständiger,Person mit Sachverstand in,0
+Salafist,salafistische Person,0
+Sammler,Sammelnde,0
+Sanitäter,Rettungskräfte,0
+Sanitäter,Sanitätsdienst,0
+Sasha ist meine Freundin.,"Ich bin mit Sasha zusammen. / Sasha ist mein Lieblingsmensch/meine bessere Hälfte. / Sasha ist die Person, die ich liebe.",0
 Schatzmeister,Finanzvorstand,0
 Schatzmeister,Kassenführung,0
 Schatzmeister,Kassenverwaltung,0
-Schauspieler,Besetzung,1
-Schauspieler,Darstellende,1
-Schauspieler,Rollen,1
+Schauspieler,Besetzung,0
+Schauspieler,Rollen,0
+Schauspieler,darstellende Person,0
 Schiedsrichter,Schiedsgericht,0
 Schiedsrichter,Spielleitung,0
 Schiedsrichter,schiedsrichtende Person,0
 Schiedsrichter,schiedsrichtendes Gremium,0
-Schlichter,Schlichtende,1
-Schlichter,Schlichtungspersonen,1
+Schirmherr,Support,0
+Schirmherr,gefördert/unterstützt von,0
+Schirmherrschaft,Repräsentanz,0
+Schirmherrschaft,Support,0
+Schirmherrschaft,Vorstand,0
+Schirmherrschaft,gefördert/unterstützt von,0
+Schlichter,Schlichtungspersonen,0
+Schlichter,schlichtende Person,0
+Schlägertyp,gewalttätige Person,0
+Schmied,auf die Schmiedekunst spezialisierte Person,0
+Schneemann,Schneefigur,0
 Schreiber,schreibende Person,0
-Schriftsteller,Literaturschaffende,1
-Schriftsteller,Schreibende,1
-Schriftsteller,Urheberrechtsinhabende,1
-Schriftsteller,Verfassende,1
 Schriftsteller,bücherschreibende Person,0
-Schulabbrecher,Geringqualifizierte,1
-Schulabbrecher,Menschen ohne Schulabschluss,1
+Schriftsteller,literaturschaffende Person,0
+Schriftsteller,schreibende Person,0
+Schriftsteller,urheberrechtsinhabende Person,0
+Schriftsteller,verfassende Person,0
+Schuhmacher,schuhherstellende Fachkraft,0
+Schulabbrecher,Geringqualifizierte,0
+Schulabbrecher,Menschen ohne Schulabschluss,0
+Schulbegleiter,Schulbegleitung,0
+Schuldige,[im Plural ist dieses Wort schon gendergerecht],0
 Schuldiger,schuldige Person,0
 Schuldner,die in Schuld stehende Person,0
+Schulleiter,Schulleitung,0
+Schulsozialarbeiter,Fachkraft für Schulsozialarbeit,0
+Schulträger,Schulträgerschaft,0
+Schulungsleiter,Schulungsleitung,0
+Schuster,Schusterei,0
+Schuster,Schusterwerkstatt,0
+Schwiegermutter /-vater,Schwiegerelternteil,0
 Schwimmer,Mensch mit Spaß am Schwimmen,0
 Schwimmer,schwimmende Person,0
 Schwimmlehrer,Schwimmlehrkraft,0
-Schöpfer,(Er-)Schaffende,1
+Schwimmmeister,Badeaufsicht,0
+Schwimmmeisterraum,Raum der Badeaufsicht,0
+Schwätzer,Person mit losem Mundwerk,0
+Schwätzer,Unsinn redende Person,0
+Schöffe,Schöffendienst leistende Person,0
+Schöffe,ehrenamtlich richtende Person,0
+Schöpfer,(Er-)Schaffende,0
 Schöpfer,(er-)schaffende Person,0
-Schüler,Beschulte,1
-Schüler,Jugendliche,1
-Schüler,Kinder,1
+Schüler,Beschulte,0
+Schüler,Jugendliche,0
+Schüler,Kinder,0
 Schüler,Klassenmitglied,0
-Schüler,Klassenmitglieder,1
-Schüler,Lernende,1
-Schüler,Mädchen und Jungen,1
+Schüler,Klassenmitglieder,0
+Schüler,Mädchen und Jungen,0
 Schüler,Schulkind,0
-Schüler,Schulkinder,1
-Schüler,Schülerschaft,1
-Schüler,Schülis,1
-Schüler,die Klasse,1
+Schüler,Schulkinder,0
+Schüler,Schülerschaft,0
+Schüler,Schülis,0
+Schüler,die Klasse,0
 Schüler,lernende Person,0
+Schüleraustausch,Schulaustausch,0
+Schülerausweis,Schulausweis,0
+Schülerbegegnung,Klassenbegegnung,0
+Schülerbegegnung,Schulbegegnung,0
+Schülerexperiment,Einzelexperiment,0
+Schülerexperiment,Gruppenexperiment,0
+Schülerexperiment,Klassenexperiment,0
+Schülerfahrtkosten,Exkurskosten,0
+Schülerfahrtkosten,Fahrtkosten,0
+Schülerfahrtkosten,Schulfahrtkosten,0
+Schülerfahrtkosten,Schulwegkosten,0
+Schülerlabor,Schullabor,0
+Schülerpraktikum,Praktikum in der Schulzeit,0
+Schülerpraktikum,Schulpraktikum,0
 Schülervertreter,Lernendenvertretung,0
 Schülervertreter,"Person, die die Schülerschaft vertritt",0
-Schülervertreter,Schulkindervertretung,1
-Schülervertreter,Vertretung der Lernenden,1
-Seefahrer,Seeleute,1
+Schülervertreter,Schulkindervertretung,0
+Schülervertreter,Schülerschaftsvertretungweitere Alternativen gesucht,0
+Schülervertreter,Vertretung der Lernenden,0
+Schülervertreter,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Schülervorstellungen,Aufführung,0
+Schülervorstellungen,Konzert,0
+Schülervorstellungen,Musikaufführung,0
+Schülervorstellungen,Projektvorstellung,0
+Schülervorstellungen,Schulaufführungen,0
+Schülervorstellungen,Talentshow,0
+Schülervorstellungen,Theateraufführung,0
+Schülerzeitung,Schülerschaftszeitung,0
+Schülerzeitung,"[Schulzeitung: nicht zu empfehlen] [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]eine Schüler*innenzeitung gestalten und verantworten die Schüler*innen selbst",0
+Schülerzeitung,eine Schulzeitung die Lehrkräfte/Angestellte der Schule,0
+Schülerzeitung,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Schülerzeitung,weitere Alternativen gesucht,0
+Schütze,Schuss abgebende Person/Dienstkraft,0
+Schütze,schießende Person,0
+Schützenkönig,treffsicherste Person,0
+Seefahrer,Seeleute,0
+Seemann,Hochsee-Fachkraft,0
+Seemann,maritime Fachkraft,0
 Segler,Person im Segelsport,0
 Segler,segelnde Person,0
+Sehr geehrte Damen und Herren!,siehe FAQ (klick),0
+Seiteneinsteiger,Person mit Seiteneinstieg/Quereinstieg,0
+Seiteneinsteigerlehrgang,Seiteneinstiegslehrgang,0
+Seiteneinsteigerprogramm,Seiteneinstiegsprogramm,0
+Sekretärin,Assistenz,0
+Sekretärin,Bürokraft,0
+Sekretärin,Schreibkraft,0
+Sekretärin,Verwaltungskraft,0
+Sekretärinnen,Assistenzen,0
+Sekretärinnen,Bürokräfte,0
+Sekretärinnen,Schreibkräfte,0
+Sekretärinnen,Verwaltungsfachangestellte,0
+Sekretärinnen,Verwaltungskräfte,0
+Selbstabholer,bei Selbstabholung,0
+Selbstdarsteller,sich selbst darstellende Person,0
 Selbstmörder,einen Selbstmord/Suizid begehende Person,0
 Selbstständiger,selbstständig arbeitende Person,0
-Seminarleiter,Seminarleitung,1
-Sender,Sendende,1
-Sender,gesendet von ... ,0
-Siedler,Ansässige,1
-Siedler,Siedelnde,1
+Seminarleiter (sg./pl.),Seminarleitung,0
+Sender,gesendet von,0
+Sender,sendende Person,0
+Sender-Empfänger-Problem [Kommunikation],Sende-Empfang-Problem,0
+Sender-Nachricht-Empfänger-Modell (Kommunikationsmodell),Kommunikationsmodell,0
+Senioren,Menschen im 3. Lebensalter,0
+Senioren,Menschen im Rentenalter,0
+Senioren,ältere Menschen,0
+Seniorenangebot,Angebote für ältere Menschen,0
+Seniorenbeirat,Beirat für das 3. Lebensalter,0
+Seniorenbeirat,Ruhestandsbeirat,0
+Seniorenbeirat,Älterenbeirat,0
+Servicemitarbeiter,Service,0
+Sexist,sexistische Person,0
+Sheriff,noch kein passender Begriff gefunden,0
+Sheriff,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Showmaster,Showleitung,0
+Showmaster,Showmoderation,0
+Showmaster,moderierende Person,0
+Sicherheits- / Datenschutz- /-beauftragter,beauftragte Person für Sicherheit / Datenschutz /,0
+Sicherheitsbeauftragter,für Sicherheit zuständige/beauftragte Person,0
+Sicherheitsbeauftragter,für Sicherheitsthemen zuständige/beauftragte Person,0
+Sie ist Bachelor of Arts in Geschichte.,Sie hat den Bachelor of Arts in Geschichte.,0
+Sie sollten Ihren Lebenspartner in die Planung mit einbeziehen.,"Sie sollten die Person, mit der Sie in einer Lebenspartnerschaft leben, mit einbeziehen.",0
+"Sie übernimmt übergangsweise die Leitung, bis ein Nachfolger gefunden wurde.","Sie übernimmt übergangsweise die Leitung, bis eine Nachfolge gefunden wurde.",0
+Siedler,Ansässige,0
+Siedler,Siedelnde,0
 Sieger,Erster Platz,0
 Sieger,erstplatzierte Person,0
+Siegerehrung,Bestenauszeichnung,0
+Siegerehrung,Bestenehrung,0
+Siegerehrung,Ehrung der gewinnenden Personen,0
+Sitznachbar,Person neben mir,0
+Sitznachbar,nebenan sitzende Person,0
 Skeptiker,(an etwas) zweifelnde Person,0
-Sklavenhalter,Sklaverei Ausführende,1
+Sklave,in Sklaverei gehaltene Person,0
+Sklave,leibeigene Person,0
+Sklave,unfreier Mensch,0
+Sklave,versklavte Person,0
+Sklaven,Leibeigene,0
+Sklaven,Unfreie,0
+Sklaven,Versklavte,0
+Sklaven,in Sklaverei Gehaltene,0
+Sklavenhalter,Sklaverei Ausführende,0
+Softwareentwickler,noch kein passender Begriff gefunden,0
+Softwareentwickler,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Soldat,"Mitglied der Streitkräfte eines Landes [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]im strengen Sinne nicht korrekt: auch zivile Angestellte, Beamt*innen und Auftragnehmende können Mitglieder der Streitkräfte sein",0
+Soldaten,"Streitkräfte [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]im strengen Sinne nicht korrekt: auch zivile Angestellte, Beamt*innen und Auftragnehmende können Mitglieder der Streitkräfte sein",0
+Solist,Solopart,0
 Sozialarbeiter,Fachkraft für Soziale Arbeit,0
-Sozialarbeiter,Fachkräfte der Sozialen Arbeit,1
-Sozialarbeiter,Sozialarbeitende,1
-Sozialleistungsträger,Sozialleistungstragende,1
+Sozialarbeiter,Fachkräfte der Sozialen Arbeit,0
+Sozialarbeiter,sozialarbeitende Person,0
+Sozialisten,noch kein passender Begriff gefunden,0
+Sozialisten,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Sozialleistungsträger,sozialleistungstragende Person,0
+Sozialpädagoge,sozialpädagogische Fachkraft,0
+Sozialversicherungsfachangestellter,in der Sozialversicherung fachangestellte Person,0
+Sparringspartner,sich mit XY sparrende Person,0
 Spaziergänger,Person zu Fuß,0
-Spaziergänger,Personen zu Fuß,1
+Spaziergänger,Personen zu Fuß,0
 Spaziergänger,Wandersperson,0
 Spaziergänger,spazierende Person,0
 Spaziergänger,wandernde Person,0
-Spender,Gebende,1
-Spender,Spenden,1
-Spender,Sponsoring,1
-Spezialisten,Fachleute,1
-Spezialisten,Sachkundige,1
-Spezialisten,Sachverständige,1
-Spieler,Spielende,1
+Spaßverderber,Spaßbremse,0
+Spediteur,für den Warentransport beauftragte Person,0
+Spekulant,spekulierende Person,0
+Spender,Spenden,0
+Spender,Sponsoring,0
+Spender,gebende Person,0
+Spezialist,auf [Thema] spezialisierte Person,0
+Spezialisten,Fachleute,0
+Spezialisten,Sachkundige,0
+Spezialisten,Sachverständige,0
+Spezialistenfunktion,Sachkundigenfunktion,0
 Spieler,Teammitglied,0
-Spieler,Teammitglieder,1
-Sportler,Sporttreibende,1
-Sportler,sportlich Aktive,1
+Spieler,Teammitglieder,0
+Spieler,spielende Person,0
+Spielergruppen,noch kein passender Begriff gefunden,0
+Spielergruppen,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Spielleiter,Spielleitung,0
+Spielleiter,Spielmoderation,0
+Spielverderber,Spaßbremse,0
+Spielverderber,Spielverderbende Person,0
+Spion,auskundschaftende Person,0
+Spion,spionierende Person,0
+Spitzbubenleiter,Baumleiter,0
+Spitzbubenleiter,Dachlattentreppe,0
+Spitzbubenleiter,Raubleiter,0
+Spitzbubenleiter,Steighilfe,0
+Spitzenvertreter,Spitzenvertretung,0
+Sponsoren,Sponsoring,0
+Sponsoren,Sponsoringbeteiligte,0
+Sponsoren,Sponsoringkreis,0
+Sponsoren,geldgebende Personen/Firmen,0
+Sponsoren,unterstützende Personen/Firmen,0
+Sportfreunde,Mitglieder des/unseres Vereins,0
+Sportler,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Sportler,sportlich Aktive,0
 Sportler,sporttreibende Person,0
-Sprachschüler,Spracherlernende,1
-Sprachschüler,Sprachlernende,1
+Sportler,weitere Alternativen gesucht,0
+Sprachanimateur,zum Sprechen animierende/anregende Person,0
+Sprachanimateure,sprachanimierende Person,0
+Sprachlotse,noch kein passender Begriff gefunden,0
+Sprachlotse,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Sprachschüler,spracherlernende Person,0
+Sprachschüler,sprachlernende Person,0
+"Sprecher [einer Organisation, Gruppe]",Pressestelle,0
+"Sprecher [einer Organisation, Gruppe]",Sprachrohr,0
+"Sprecher [einer Organisation, Gruppe]",Öffentlichkeitsarbeit,0
+Sprecher-Hörer-Wechsel [im Schulunterricht],noch kein passender Begriff gefunden,0
+Sprecher-Hörer-Wechsel [im Schulunterricht],senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+"Sprecher[Radio, Fernsehen, Hörbuch]",Ansage,0
+"Sprecher[Radio, Fernsehen, Hörbuch]",Kommentar,0
+"Sprecher[Radio, Fernsehen, Hörbuch]",Moderation,0
+"Sprecher[Radio, Fernsehen, Hörbuch]",Stimme,0
+"Sprecher[Radio, Fernsehen, Hörbuch]",Text gesprochen von,0
+"Sprecher[Radio, Fernsehen, Hörbuch]",sprechende Person,0
+Sprecher[einer Sprache],sprachbenutzende Person,0
+Sprecher[einer Sprache],sprechende Person,0
+Sprecherwechsel,Redeübernahme,0
+Sprecherwechsel,Turn-Taking,0
+Sprecherwechsel,Vergabe des Rederechts,0
+Sprecher ,Abgeordnete,0
+Sprengbefugter,sprengbefugte Person,0
+Sprengberechtigter,sprengberechtigte Person,0
+Springer/Springerdienst,Ersatz,0
+Springer/Springerdienst,Stellvertretung,0
+Springer/Springerdienst,Vertretung,0
 Späher,ausspähende Person,0
-Steinewerfer,Steine werfende Personen,1
-Steinewerfer,Steinewerfende,1
+Staatsbürgerschaft,Nationalität,0
+Staatsbürgerschaft,Staatsangehörigkeit,0
+Staatsmänner,MdB,0
+Staatsmänner,Menschen in der Politik,0
+Staatsmänner,Mitglieder des Bundestags / Bundesrats / der Regierung /,0
+Staatsmänner,Volksbeauftragte,0
+Stadtführer,Reiseleitung,0
+Stadtführer,Stadtführung,0
+Stadtführer,"[ist das Buch / der Prospekt gemeint, muss nicht gegendert werden]",0
+Stakeholder,Anspruchsgruppe,0
+Stakeholder,Interessenvertretung,0
+Star,Berühmtheit,0
+Star,berühmte Persönlichkeit,0
+Steinewerfer,Steine werfende Personen,0
+Steinewerfer,steinewerfende Person,0
+Steinmetz,Stein bearbeitende Person,0
 Stelleninhaber,Funktion begleitende Person,0
 Stelleninhaber,Stelle ausführende Person,0
 Stellvertreter,Stellvertretung,0
-Steuerberater,Angehörige der steuerberatenden Berufe,1
+Sterbender,sterbende Person,0
+Steuerberater,Angehörige der steuerberatenden Berufe,0
 Steuerberater,Steuerberatung,0
 Steuerberater,Steuerkanzlei,0
 Steuerberater,der steuerberatenden Berufe angehörige Person,0
 Steuerberater,zu Steuern beratende Person,0
-Steuerhinterzieher,Steuerhinterziehende,1
+Steuerberaterpraxis,Steuerberatungspraxis,0
+Steuerhinterzieher,steuerhinterziehende Person,0
 Steuerschuldner,abgabenpflichtige Person,0
 Steuerschuldner,steuerschuldige Person,0
 Steuerzahler,steuerpflichtige Person,0
 Steuerzahler,steuerzahlende Person,0
+Stifterrat,Stiftungsrat,0
+Stifterversammlung,Stiftungsversammlung,0
+Stimmungsanimateure,stimmungsunterhaltende Person,0
 Stimmzähler,Stimmen zählende Person,0
 Stimmzähler,Stimmen zählendes Mitglied,0
-Streamer,Streamende,1
-Studienanfänger,Erstsemestrige,1
-Studienanfänger,Studienbeginnende,1
-Studienaussteiger,Studienabbrechende,1
-Studienbewerber,Einschreibungen,1
-Studienbewerber,Studienbewerbungen,1
-Störer,Störende,1
-Supporter,Befürwortende,1
-Supporter,Mitwirkende,1
+Stipendiat,geförderte Person,0
+Stipendiaten,Geförderte,0
+Stipendiaten,Studierende mit Stipendium,0
+Strafgefangener,Person in Haft,0
+Straftäter,straffällige Person,0
+Strahlemann [bei Babys],Sonnenschein,0
+Stratege,noch kein passender Begriff gefunden,0
+Stratege,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Streamer,streamende Person,0
+Strichmännchen,Strichfigürchen,0
+Strichmännchen,Strichmensch,0
+Strichmännchen,Strichmenschlein,0
+Strohmann,Strohfigur,0
+Strohmann,Strohmensch,0
+Strohmänner,Strohleute,0
+Sträfling,Person in Haft,0
+Student,Mitglied der Studierenden,0
+Student,Studi,0
+Studenten,Studis,0
+Studenten,studierende Person,0
+Studentenjob,Job,0
+Studentenjob,Studierendenjob,0
+Studentenjob,Studijob,0
+Studentenwerk,Studierendenwerk,0
+Studentenwohnheim,Studierendenwohnheim,0
+Studienanfänger,"""Erstis""",0
+Studienanfänger,Erstsemestrige,0
+Studienanfänger,studienbeginnende Person,0
+Studienaussteiger,studienabbrechende Person,0
+Studienbewerber,Einschreibungen,0
+Studienbewerber,Studienbewerbungen,0
+Störer,störende Person,0
+Subunternehmer,noch kein passender Begriff gefunden,0
+Subunternehmer,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Supervisor,Person mit Führungsverantwortung,0
+Supervisor,"Person mit leitender Funktion/mit
+Kontrollfunktionen",0
+Supervisor,"Person, die Supervision anbietetweitere Alternativen gesucht, insbesondere für psychologisch ausgebildete Person, die Supervision anbietet",0
+Supervisor,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Supervisoren,supervidierende Person,0
+Supporter,befürwortende Person,0
+Supporter,mitwirkende Person,0
+Sympathisant,noch kein passender Begriff gefunden,0
+Sympathisant,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Systemadministrator,Systemadmin,0
+Systemadministrator,Systemadministration,0
+Systembetreuer,Systembetreuung,0
 Sänger,Act,0
-Sänger,Chor,1
-Sänger,Choraktive,1
-Sänger,Gesangsgruppe,1
-Sänger,"Personen, die singen",1
-Sänger,Singende,1
+Sänger,Chor,0
+Sänger,Choraktive,0
+Sänger,Gesangsgruppe,0
+Sänger,"Personen, die singen",0
 Sänger,Stimme,0
-Sänger,Stimmen,1
+Sänger,Stimmen,0
+Sänger,singende Person,0
+Säugling,[ist bereits genderneutral],0
+Tagesmutter,Kinderbetreuung,0
+Tagesmutter,Tagesbetreuung,0
+Tagesmutter,"Tageselter [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]laut Duden: der oder das Elter (Singular von Eltern)",0
+Tagesmutter,Tagespflege(person),0
+Tagesmütter,Tageseltern,0
 Talkmaster,Moderation,0
 Talkmaster,moderierende Person,0
+Tante-Emma-Laden,Laden für Waren des täglichen Bedarfs,0
+Tante-Emma-Laden,Minimarkt,0
+Tanten und Onkel,Geschwister der Eltern,0
+Tatbeteiligte,[im Plural ist dieses Wort schon gendergerecht],0
 Tatbeteiligter,an einer Tat beteiligte Person,0
 Taucher,Tauchsport ausübende Person,0
 Taucher,tauchende Person,0
+Tauscht euch mit eurem Partner über den Text aus.,Tauscht euch zu zweit über den Text aus. / Tauscht euch an eurem Tisch über den Text aus.,0
 Teamleiter,Teamleitung,0
+Teampartner,Teammitglied,0
+Teampartner,weitere Alternativen gesucht: senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Teamplayer,noch kein passender Begriff gefunden,0
+Teamplayer,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
 Techniker,technische Fachkraft,0
-Teilnehmer,Anmeldungen,1
-Teilnehmer,Anwesende,1
-Teilnehmer,Beteiligte,1
-Teilnehmer,Teilnehmende,1
-Teilnehmer,"alle, die an ... teilnehmen",1
+Technologe,Technologiefachkraft,0
+Teilnehmer,Anmeldungen,0
+Teilnehmer,Beteiligte,0
+Teilnehmer,"alle, die anteilnehmen",0
+Teilnehmer,anwesende Person,0
 Teilnehmer,mitwirkende Person,0
 Teilnehmer,teilnehmende Person,0
-Telemitarbeiter,Telemitarbeitende,1
-Tester,Testende,1
-Tester,Testpersonen,1
+Teilnehmergebühr,Kosten,0
+Teilnehmergebühr,Kursgebühr,0
+Teilnehmergebühr,Teilnahmegebühr,0
+Teilnehmerliste,Anwesenheitsliste,0
+Teilnehmerliste,Teilnahmeliste,0
+Teilnehmerliste,Teilnehmendenliste,0
+Teilnehmerzahl,Anmeldezahl,0
+Teilnehmerzahl,Gruppengröße,0
+Teilnehmerzahl,Teilnahmezahl,0
+Telemitarbeiter,noch kein passender Begriff gefunden,0
+Telemitarbeiter,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Telemitarbeiter,telemitarbeitende Person,0
+Terrorist,des Terrors verdächtigte Person,0
+Terrorist,eines Terroranschlags überführte Person,0
+Terroristen,terrorisierende Person,0
+Tester,Testpersonen,0
+Tester,testende Person,0
 Testleiter,Testleitung,0
-Theoretiker,theoretisch Arbeitende,1
-Tierschützer,Tierschützende,1
+Theaterpädagoge,theaterpädagogische Fachkraft,0
+Theoretiker,theoretisch Arbeitende,0
+Therapeut,therapeutisches Fachpersonal,0
+Therapeuten,therapierende Person,0
+Tierarzt,tiermedizinisches Fachpersonal,0
+Tierhalter,tierhaltende Person,0
 Tierschützer,im Tierschutz engagierte Person,0
-Trainer,Lehrende,1
-Trainer,Moderierende,1
-Trainer,Referierende,1
-Trainer,Unterrichtende,1
-Trainer,Vortragende,1
+Tierschützer,tierschützende Person,0
+Tischnachbar,Person neben dir,0
+Tischnachbar,nebenansitzende Person,0
+Tontechniker,tontechnische Fachkraft,0
+Torhüter,torhütende Person,0
+Torwart,torhütende Person,0
+Tourguide,Reiseleitung,0
+Tourguide,Tourleitung,0
+Touristen,"Urlaubsgäste [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]siehe Anmerkung unter 'Gäste'",0
+Trainer,lehrende Person,0
 Trainer,moderierende Person,0
+Trainer,referierende Person,0
+Trainer,unterrichtende Person,0
+Trainer,vortragende Person,0
 Trainer,Übungsleitung,0
-Transatlantiker,Menschen (in der Politik) mit transatlantischen Gedanken,1
-Tänzer,Tanzbegeisterte,1
-Tänzer,Tanzende,1
-Täter,(Straf-)Tat begangen von... ,1
-Täter,Kriminelle,1
+Transatlantiker,Menschen (in der Politik) mit transatlantischen Gedanken,0
+Trauzeuge,Trauungsbegleitung,0
+Trauzeuge,die Trauung bezeugende Personen,0
+Trauzeugen,Trauungsbegleitung,0
+Trauzeugen,die Trauung Bezeugende,0
+Treuhänder,treuhändisch beauftragte Person,0
+Träger,Trägerschaft,0
+Träger,verantwortliche Einrichtung/Körperschaft,0
+Träger[im Sinne von Kleidungsstücke tragen],tragende Person,0
+Turnschwestern,Turngeschwister,0
+Tutor,Tutoriumsleitung,0
+Tutor,studentische Hilfskraft,0
+Tutor,Übungsgruppenleitung,0
+Tutoren,Begleitung,0
+Tutoren,ratgebende Person,0
+Tutoren,studentische Hilfskräfte,0
+Tutoren,tutoriumsbegleitende Person,0
+Tutoren,Übungs(an)leitende,0
+Tänzer,Tanzbegeisterte,0
+Tänzer,tanzende Person,0
+Täter,(Straf-)Tat begangen von,0
+Täter,Kriminelle,0
+Täter,"Tatbegehende [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]nicht immer korrekt, da Straftaten nicht nur durch Tun begangen werden können, sondern auch durch Unterlassen",0
 Täter,Unrechtsperson,0
-Täter,Unrechtspersonen,1
+Täter,Unrechtspersonen,0
+Täterrolle,tatbegehende Person,0
+Täufling,Taufkind,0
+Täufling,getauft werdende Person,0
+Täufling,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Täufling,"zu taufende Personweitere Alternativen gesucht, insbesondere für den erwachsenen Täufling",0
 Töpfer,töpfernder Mensch,0
-Umschüler,Personen in beruflicher Neuorientierung,1
-Umschüler,Umlernende,1
-Umschüler,Umschulende,1
-Umschüler,die zu Qualifizierenden,1
-Unternehmer,Geschäftsleute,1
-Unternehmer,Gewerbe Betreibende,1
+Tüftler,tüftelnde Person,0
+"Um an unserer Klinik als Arzt arbeiten zu können, müssen Sie die Approbation im Original vorlegen.","Um an unserer Klinik im ärztlichen Dienst arbeiten zu können, müssen Sie die Approbation im Original vorlegen.",0
+Umschüler,Personen in beruflicher Neuorientierung,0
+Umschüler,die zu Qualifizierenden,0
+Umschüler,umlernende Person,0
+Umschüler,umschulende Person,0
+Unbekannter,unbekannte Person,0
+"Unsere Kunden sind Unternehmen und
+Privatpersonen.",Die Nachfrage kommt von Unternehmen und Privatpersonen.,0
+Unternehmer,Geschäftsleute,0
+Unternehmer,Gewerbe Betreibende,0
 Unternehmer,Gewerbe betreibende Person,0
-Unternehmer,Selbstständige,1
-Unternehmer,Wirtschaftstreibende,1
+Unternehmer,Selbstständige,0
 Unternehmer,selbstständige Person,0
-Unterstützer,Befürwortende,1
-Unterstützer,Förderung durch ...,0
-Unterstützer,Geldgebende,1
-Unterstützer,Mitwirkende,1
+Unternehmer,wirtschaftstreibende Person,0
+Unterstützer,Förderung durch,0
+Unterstützer,befürwortende Person,0
+Unterstützer,geldgebende Person,0
+Unterstützer,mitwirkende Person,0
 Unterstützer,support,0
 Unterstützer,unterstützende Person,0
 Unterstützer,unterstützendes Unternehmen,0
+Unterstützung eines Kollegen,kollegiale Unterstützung,0
 Unterzeichner,Unterschrift,0
-Unterzeichner,Unterschriften,1
-Unterzeichner,Unterzeichnende,1
+Unterzeichner,Unterschriften,0
 Unterzeichner,unterzeichnende Partei,0
 Unterzeichner,unterzeichnende Person,0
-Urlauber,Reisende,1
+Urheber,Person der Urheberschaft,0
+Urheberrecht,Recht auf Urheberschaft,0
+Urheberrecht,"Recht auf geistiges Eigentum [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]ist sehr viel allgemeiner als Urheberrecht]",0
+Urheberrecht,Urheberrecht kann nicht abgegeben werden,0
+Urheberrecht,"[nicht zu empfehlen:Copyright [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]juristisch etwas anderes: Copyright ist ein Verwertungsrecht, das abgegeben werden kann",0
 Urlauber,reisende Person,0
 Urlauber,urlaubende Person,0
-User,Mitglieder,1
-User,Nutzende,1
-User,"Personen, die Apps/Software nutzen",1
+User,Mitglieder,0
+User,"Personen, die Apps/Software nutzen",0
+User,nutzende Person,0
+V-Mann,V-Person,0
+V-Männer,V-Leute,0
+Vater,Elternteil,0
+Vaterland,Erstland,0
+Vaterland,Geburtsland,0
+Vaterland,Heimatland,0
+Veganer,vegan lebende Person,0
+Vegetarier,vegetarisch lebende Person,0
 Veranstalter,Ausrichtung,0
-Veranstalter,Einladende,1
 Veranstalter,Organisation,0
-Veranstalter,veranstaltet durch/von ... ,0
+Veranstalter,einladende Person,0
+Veranstalter,veranstaltet durch/von,0
+Verantwortliche,[im Plural ist dieses Wort schon gendergerecht],0
 Verantwortlicher,die Verantwortung tragende Person,0
 Verantwortlicher,verantwortliche Person,0
-Verbandsgesellschafter,Vertretungen / Beteiligte der Verbände,1
-Verbandsvertreter,Vertretungen / Beteiligte der Verbände,1
-Verbraucher,Konsumierende,1
-Verbraucher,Kundschaft,1
-Verbraucher,Privatpersonen,1
-Verbraucher,Verbrauchende,1
+Verbandsgesellschafter,Vertretungen / Beteiligte der Verbände,0
+Verbandsvertreter,Vertretungen / Beteiligte der Verbände,0
+Verbraucher,Kundschaft,0
+Verbraucher,Privatpersonen,0
+Verbraucher,konsumierende Person,0
+Verbraucher,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Verbraucher,verbrauchende Person,0
+Verbraucher,"weitere Alternativen gesucht, z.B. zu Verbraucher im Sinne des BGB",0
+Verbraucherschutz,Konsumierendenschutzweitere Alternativen gesucht,0
+Verbraucherschutz,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
 Verbraucherschützer,für den Verbraucherschutz beauftragte Person,0
 Verbrecher,"Person, die eine Straftat/ein Verbrechen begeht",0
-Verfasser,Autorenschaft ,1
-Verfasser,verfasst von,1
+Verbrüderung,Verschwisterung,0
+Verbündeter,ein Bündnis einhaltende Person,0
+Verbündeter,verbündete Person,0
+Verfasser,Autorenschaft,0
+Verfasser,verfasst von,0
+Verfechter,für einen Standpunkt einstehende Person,0
+Verfechter,füreinstehende Person,0
+Verfolger,verfolgende Person,0
+Verfolgungsakteure,verfolgende Person,0
+Verhandlungspartner,Verhandlungsgegenseite,0
+Verhandlungspartner,Verhandlungsgegenüber,0
 Verkehrssünder,Verkehrsregeln missachtende/verstoßende Person,0
-Verkehrsteilnehmer,Verkehrsbeteiligte,1
-Verkäufer,Anbietende,1
-Verkäufer,Handeltreibende,1
+Verkehrsteilnehmer,Verkehrsbeteiligte,0
 Verkäufer,Kaufhauspersonal,0
 Verkäufer,Personal,0
-Verkäufer,Verkaufende,1
 Verkäufer,Verkaufskraft,0
-Verkäufer,Verkaufskräfte,1
+Verkäufer,Verkaufskräfte,0
 Verkäufer,Verkaufsperson,0
-Verleger ,Publizierende,1
+Verkäufer,anbietende Person,0
+Verkäufer,handeltreibende Person,0
+Verkäufer,verkaufende Person,0
+Verkäufer,weitere Alternativen gesucht: senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Verleger,publizierende Person,0
 Verleiher,verleihende Person,0
 Verletzter,verletzte Person,0
 Verlierer,der letzte Platz,0
-Verlierer,die Letzten,1
+Verlierer,die Letzten,0
+Verlobte,[im Plural ist dieses Wort schon gendergerecht],0
 Verlobter,verlobte Person,0
 Vermieter,vermietende Person,0
 Vermittler,Mittelsperson,0
+Versender,versendende Person,0
+Versender,versendet von,0
+Versichertenkarte,Gesundheitskarte,0
+Versichertenkarte,Krankenkassenkarte,0
+Versichertenkarte,Versicherungskarte,0
+Versichertennummer,Versicherungsnummer,0
+Versicherungsnehmer,"Versicherte [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]Versicherungsnehmer*innen und versicherte Personen müssen nicht identische Personen sein: Versicherungsnehmer*innen = Personen, die Versicherung abschließen. Versicherte Personen = Personen, die Versicherungsschutz genießen, Versicherung abschließende Personen",0
+Versicherungsnehmer,"versicherte Person [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]Versicherungsnehmer*in und versicherte Person müssen nicht identische Personen sein: Versicherungsnehmer*in = Person, die Versicherung abschließt. Versicherte Person = Person, die Versicherungsschutz genießt, Versicherung abschließende Person",0
+Versicherungsnehmer,versicherte Personen,0
+Verstorbener,verstorbene Person,0
 Versuchsleiter,Versuchsleitung,0
 Verteidiger,Rechtsvertretung,0
 Verteidiger,Verteidigung,0
 Vertragspartner,Vertragspartei,0
-Vertragspartner,Vertragsparteien,1
+Vertragspartner,Vertragsparteien,0
 Vertragspartner,Vertragsperson,0
-Vertreter,Abgeordnete,1
-Vertreter,Abgesandte,1
-Vertreter,Beauftragte,1
-Vertreter,Delegierte,1
-Vertreter,Mitglied von ... ,0
-Vertreter,Mitglieder,1
-Vertreter,Vertretende,1
-Vertreter,Vertretung,1
+Vertreter,Abgeordnete,0
+Vertreter,Abgesandte,0
+Vertreter,Beauftragte,0
+Vertreter,Delegierte,0
+Vertreter,Mitglied von,0
+Vertreter,Mitglieder,0
+Vertreter,Vertretung,0
 Vertreter,in vertretender Position,0
-Vertreter,vertreten durch,1
-Vertriebler,Vertriebsmitarbeitende,1
-Verursacher,Verursachende,1
+Vertreter,vertreten durch,0
+Vertreter,vertretende Person,0
+Vertreter der Presse,Mitglieder der Presse,0
+Vertriebler,vertriebsmitarbeitende Person,0
 Verursacher,verursachende Person,0
+Verwalter,Verwaltung,0
+Verwalter,verwaltende Person/Firma/Institution,0
 Verwandter,Familienmitglied,0
-Verwender,Verwendende,1
 Verwender,verwendende Person,0
-Virologen,Menschen mit Fachgebiet Virologie,1
-Virologen,medizinisches / ärztliches Fachpersonal mit Expertise in Virologie,1
+Veteran,altgediente Person,0
+Veteranen,Altgediente,0
+Veteranen,ehemalige Kriegsteilnehmende,0
+Veterinär,noch kein passender Begriff gefunden,0
+Veterinär,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Virologen,Menschen mit Fachgebiet Virologie,0
+Virologen,medizinisches / ärztliches Fachpersonal mit Expertise in Virologie,0
+Visionär,noch kein passender Begriff gefunden,0
+Visionär,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Vizepräsident,Vize,0
+Vizepräsident,Vizepräsidentschaft,0
+Vizepräsident,Vizevorsitz,0
+Vizepräsident,weitere Alternativen gesucht: senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Volkswirte / Volkswirtschaftler,Fachleute der Volkswirtschaft,0
+Volkswirte / Volkswirtschaftler,Graduierte der Volkswirtschaft,0
+Volkswirte / Volkswirtschaftler,Studierende der Volkswirtschaft,0
+Volontärsbeauftragter,beauftragte Person fürs Volontariat,0
 Vordenker,Weg bereitende Person,0
 Vordenker,vordenkende Person,0
+Vordermann,Person davor,0
+Vordermann,"Person, die davor kam",0
+Vorgesetzter,Führungskraft,0
+Vorgänger,Person vor mir,0
+Vorgänger,vorangegangene Person,0
+Vorgängerprojekt,Vorprojekt,0
+Vorgängerprojekt,vorangegangenes Projekt,0
+Vorgängerstudie,Vorstudie,0
+Vorgängerstudie,vorangegangene Studie,0
 Vorläufer,älteres/altes Modell,0
+Vormund,Vormundschaft,0
+Vormund,die Vormundschaft innehabende Person,0
+Vormund ist Frau Schulz.,Die Vormundschaft hat Frau Schulz.,0
+Vorreiter,Person an der Spitze,0
+Vorreiter,"Person, die etwas vorlebt",0
+Vorreiter,"Person, die voraus denkt/handelt",0
+Vorreiterrolle,Führungsrolle,0
+Vorsitzender,den 1. Vorsitz hat,0
 Vorstand,Vorstandsmitglied,0
 Vorstand,im Vorstand,0
+Wachmann,Wachpersonal,0
+Wahlhelfer,noch kein passender Begriff gefunden,0
+Wahlhelfer,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+Wahlmänner,Wahlleute,0
+Waidmannsheil!,Waidleutsheil!,0
 Wanderer,Person auf Wanderung,0
 Wanderer,wandernde Person,0
+Wanderung für Genießer,Wanderung für Genussmenschen,0
+Wart,überwachende Person,0
+Was ist dein Favorit - Tiramisu oder Zitronensorbet?,"[in diesem Fall ist keine gendergerechte Schreibweise notwendig, denn das Tiramisu und Zitronensorbet sind keine Personen und beziehen sich nicht auf Personen]",0
 Wegbegleiter,Wegbegleitung,0
 Wegbegleiter,wegbegleitende Person,0
 Wegbereiter,Weg bereitende Person,0
 Wegbereiter,prägende Person,0
-Weltmarktführer,Weltmarktführende,1
+Wegewart,Wege überwachende Person,0
+Weggefährte,Wegbegleitung,0
+Weggefährten,"Wegbegleitungen,weitere Alternativen gesucht",0
+Weggefährten,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+"Welche Voraussetzungen erfüllen Sie für die
+Tätigkeit als Kraftfahrer eines Absetzkippers?","Welche Voraussetzungen erfüllen Sie für die Tätigkeit als fahrzeugführende
+Person eines Absetzkippers?",0
+Weltmarktführer,weltmarktführende Person,0
+"Wenn es zu laut ist, kann man nichts verstehen.","Wenn es zu laut ist, können viele nichts verstehen.",0
+"Wenn man durchs Fenster sieht, kann man das Meer sehen.","Wenn Sie durch das Fenster blicken, können Sie das Meer sehen.",0
+Wer ist Ihr Doktorvater?,Wer betreut Ihre Promotion? /Wer hat die Betreuung Ihrer Promotion inne?,0
+Wer ist dein Favorit bei der Olympiade?,"Wer ist deine favorisierte Person, die bei der Olympiade antritt?",0
+Wer sind die anderen Vorstände?,Wer sind die anderen Vorstandsmitglieder? / Wer ist noch im Vorstand?,0
+Werkstudent,Werkstudi,0
+Werkstudent,studentische Hilfskraft,0
+Werkstudent,studentische Stelle,0
+Werkstudent,studentischer Job,0
+Werkstudenten,werkstudierende Person,0
+Werkstudentenstelle,Werkstudierendenstelle,0
+Werkzeugmechaniker,Fachkraft für Werkzeugmechanik,0
 Wettbewerber,Konkurrenz,0
-Wettbewerber,Wettbewerbsteilnehmende,0
-Widerstandskämpfer,Widerstandsleistende,1
+Wettbewerber,wettbewerbsteilnehmende Person,0
+Widersacher,Konkurrenz,0
+Widersacher,Widerpart,0
+Widerstandskämpfer,widerstandsleistende Person,0
+Wie alt ist dein Bruder / deine Schwester?,Wie alt ist dein Geschwister(kind)?,0
+Wie viele Nutzer hat das Fitnessstudio?,Wie viele Mitglieder hat das Fitnessstudio?,0
+Wie viele Teilnehmer wird der Kurs haben?,Wie viele Anmeldungen gibt es für den Kurs?,0
+Wie viele Teilnehmer wird der Kurs haben?,Wie viele haben sich für den Kurs angemeldet?,0
+Wie viele User hat diese Website? / Wie oft wird diese Website genutzt?,Wie viele Mitglieder hat diese Website?,0
+Wiederholer[z.B. einer Prüfung],wiederholende Person,0
+Wikipedianer,Menschen hinter Wikipedia,0
+Wikipedianer,Mitwirkende bei Wikipedia,0
+Wilderer,"Person, die unbefugt jagt",0
+Wilderer,"Person, die wildert",0
+Wilderer,wildernde Person,0
 Winzer,Weinbau betreibende Person,0
-Wirtschaftsprüfer,Angehörige der wirtschaftsprüfenden Berufe,1
-Wirtschaftswissenschaftler,Forschende der Wirtschaft(swissenschaft),1
-Wissenschaftler,Forschende,1
+Wir danken allen Geschäftspartner und Freunden.,Wir danken allen geschäftlichen Kontakten und unserem Freundeskreis.,0
+Wir richten uns an Modellbauliebhaber.,Wir richten uns an Modellbaubegeisterte.,0
+Wirtschaftsprüfer,Angehörige der wirtschaftsprüfenden Berufe,0
+Wirtschaftswissenschaftler,Forschende der Wirtschaft(swissenschaft),0
 Wissenschaftler,Mensch aus der Wissenschaft,0
-Wissenschaftler,Menschen aus der Wissenschaft,1
+Wissenschaftler,Menschen aus der Wissenschaft,0
 Wissenschaftler,forschende Person,0
-Wissenschaftler,wissenschaftliche Arbeitskraft,1
-Wissenschaftler,wissenschaftliches Personal der Universität,1
-Witwer,Verwitwete,1
-Workshopleiter,Workshopleitung,1
-Wächter,Wache,1
-Wähler,Stimmberechtigte,1
-Wähler,Wahlberechtigte,1
-Wähler,Wahlvolk,1
-Wähler,"alle, die zur Wahl gegangen sind",1
-Xylophonspieler,Xylophon Spielende,1
+Wissenschaftler,wissenschaftliche Arbeitskraft,0
+Wissenschaftler,wissenschaftliches Personal der Universität,0
+Wissensträger,Wissenstragende Person,0
+Wissensträger,des Wissens mächtige Person,0
+Witwer,Verwitwete,0
+Workshopleiter (sg./pl.),Workshopleitung,0
+Wächter (sg./pl.),Wache,0
+Wähler,Stimmberechtigte,0
+Wähler,Wahlberechtigte,0
+Wähler,Wahlvolk,0
+Wähler,"alle, die zur Wahl gegangen sind",0
+Wählerinitiative,Initiative der Wahlberechtigten,0
+Wählerstimme,Wahlstimme,0
+Wählerverzeichnis,Wahlverzeichnis,0
+Wählerverzeichnis,Wählendenverzeichnis,0
+Xylophonspieler,Xylophon Spielende,0
+YouTuber,Person auf Youtube,0
+YouTuber,auf Youtube arbeitende/performende Person,0
+YouTuber,einen Youtube-Kanal betreibende Person,0
+YouTuber,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+YouTuber,weitere Alternativen gesucht,0
+Zahlungsempfänger,Zahlung empfangende Person,0
+Zahnarzt,Fachkraft der Zahnmedizin,0
+Zahnarzt,zahnmedizinisches Fachpersonal,0
+Zahnarzt,zahnärztliches Fachpersonal,0
+Zahnarztpraxis,Praxis für Zahnerhaltung,0
+Zahnarztpraxis,Praxis für Zahnmedizin,0
+Zahnarztpraxis,zahnmedizinische Praxis,0
 Zauberer,(schwarze) Zauberkraft aufübende Person,0
-Zauberer,Zauberkunstschaffende,1
 Zauberer,Zaubertrick vorführende Person,0
+Zauberer,zauberkunstschaffende Person,0
 Zehnkämpfer,am Zehnkampf teilnehmende Person,0
-Zeitarbeitnehmer,Zeitarbeitnehmende,1
-Zoobesucher,Zoobesuche,1
-Zuhörer,Auditorium,1
-Zuhörer,Publikum,1
-Zuhörer,Zuhörerschaft,1
+Zeitarbeitnehmer,zeitarbeitnehmende Person,0
+Zeitgenosse,Mitmensch,0
+Zeitwächter,Zeitwache,0
+Zeitzeuge,vor Ort gewesene Person,0
+Zeitzeuge,zeitbezeugende Person,0
+Zeuge,bezeugende Person,0
+Zeugen,bezeugende Person,0
+Zimmerer,Zimmereifachkraft,0
+Zimmermann,Zimmereifachkraft,0
+Zimmermädchen,Raumpflege,0
+Zimmermädchen,Reinigungskraft,0
+Zimmermädchen,Servicekraft,0
+Zivilist,Zivilperson,0
+Zivilisten,Zivilpersonen,0
+Zoobesucher,Zoobesuche,0
+Zoobesucher,"Zoogäste [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]siehe Anmerkung unter 'Gäste'",0
+Zugang für Rollstuhlfahrer,barrierefreier Zugang,0
+Zuhörer,Auditorium,0
+Zuhörer,Publikum,0
+Zuhörer,Zuhörerschaft,0
+Zulieferer,Zulieferfirma,0
 Zuschauer,Person aus dem Publikum,0
-Zuschauer,Publikum,1
-Zuschauer,Zuschauende,1
-Zuwanderer,Eingewanderte,1
-Zuwanderer,Migrierte,1
-Zuwanderer,Personen mit Migrationshintergrund,1
-Zuwanderer,Zugewanderte,1
-Älpler,Alpwirtschaft Betreibende,1
-Übersetzer,Literatur Übersetzende,1
-Übersetzer,Übersetzende,1
+Zuschauer,Publikum,0
+Zuschauer,zuschauende Person,0
+Zuschauerquote,Einschaltquote,0
+Zuschauerzahl,Publikumszahl,0
+Zuständiger,zuständige Person,0
+Zuwanderer,Eingewanderte,0
+Zuwanderer,Migrierte,0
+Zuwanderer,Personen mit Migrationshintergrund,0
+Zuwanderer,Zugewanderte,0
+Zwei-Mann-Zelt,Zwei-Personen-Zelt,0
+Zwei-Mann-Zelt,Zweier-Zelt,0
+Züchter,Fachperson Tier-/Pflanzen-/-Zucht,0
+[Erster] Kreisbeigeordneter,[Erste] Kreisbeigeordnete Person,0
+[Fahrzeug-]Lenker,Fahrzeug lenkende Person,0
+adressatengerecht,zielgruppengerecht,0
+alle Mann an Bord!,alle an Bord!,0
+alleinerziehende Person,Ein-Eltern-Familie,0
+alleinerziehende Person,Ein-Eltern-Haushalt,0
+alleinerziehende Person,[im Plural ist dieses Wort schon gendergerecht],0
+alleinerziehende Person,alleinerziehende Person,0
+anwenderbezogen,anwendungsbezogen,0
+anwenderbezogen,menschbezogen,0
+anwenderbezogen,praxisbezogen,0
+anwenderbezogen,verwendungsbezogen,0
+aus aller Herren Länder,aus aller Welt,0
+aus aller Herren Länder,aus der ganzen Welt,0
+auszubildende Person,[im Plural ist dieses Wort schon gendergerecht],0
+bemannt,astronautisch,0
+bemannt,besetzt,0
+bemannt,mit Personen besetzt,0
+bemannte Raumfahrt,Raumfahrt mit Besatzung,0
+bemannte Raumfahrt,astronautische Raumfahrt,0
+bemannte Raumfahrt,kosmonautische Raumfahrt,0
+bemannte Raumfahrt,"taikonautische Raumfahrt [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]im Gegensatz zu robotischer Raumfahrt",0
+bemuttern,"fürsorglich sein, verhätscheln, umsorgen",0
+benutzerdefiniert,individuell einstellbar,0
+benutzerdefiniert,maßgeschneidert,0
+benutzerdefiniert,passgenau,0
+benutzerdefiniert,selbstdefiniert,0
+benutzerdefiniert,speziell,0
+benutzerdefiniert,spezifisch,0
+benutzerfreundlich,bedienungsfreundlich,0
+benutzerfreundlich,benutzungsfreundlich,0
+benutzerfreundlich,praktisch / leicht zu bedienen,0
+bergmännisch,im Bergbau tätig,0
+betrieblicher Mentor,betriebliche Mentoringperson,0
+betrieblicher Mentor,betriebliche Mentorperson,0
+bürgernah,bedürfnisorientiert,0
+bürgernah,im Kontakt,0
+bürgernah,menschenorientiert,0
+bürgernah,publikumsorientiert,0
+bürgernah,serviceorientiert,0
+bürgernahe Verwaltung,Verwaltung auf Augenhöhe,0
+bürgernahe Verwaltung,Verwaltung im Kontakt mit den Menschen,0
+bürgernahe Verwaltung,menschenorientierte Verwaltung,0
+bürgernahe Verwaltung,serviceorientierte Verwaltung,0
+damenhaft,fein,0
+der Türke [im Sinne vom Gemüse-/Obstladen],Laden um die Ecke,0
+der Türke [im Sinne vom Gemüse-/Obstladen],kleiner Gemüseladen,0
+der Türke [im Sinne vom Gemüse-/Obstladen],türkischer Gemüse-/Obstladen,0
+der ein oder andere,die eine oder der andere,0
+"derjenige, der","die Person, die",0
+"derjenige, der","diejenige Person, die",0
+die Argumente der EU-Skeptiker,die Argumente der an der EU zweifelnden Menschen,0
+die Vereinspräsidenten,die Vereinsvorsitzenden,0
+ehrenamtliche Helfer,(ehrenamtlich) Engagierte,0
+ehrenamtliche Helfer,Ehrenamtliche,0
+ehrenamtliche Helfer,Freiwillige,0
+ein Hansdampf (in allen Gassen) sein,Multitalent,0
+ein Hansdampf (in allen Gassen) sein,Universalgenie,0
+ein Hansdampf (in allen Gassen) sein,vielseitig begabter Mensch,0
+ein herrenloser Koffer,"ein Koffer, der keiner Person gehört",0
+ein herrenloser Koffer,ein verlassener/nicht zuordenbarer Koffer,0
+ein kaufmännischer Beruf,Berufsfeld Wirtschaft,0
+eine kaufmännische Ausbildung,Ausbildung zur Fachkraft für Büromanagement,0
+einem selbst,dir selbst,0
+einer Sache Herr werden,etwas besser überblicken können,0
+einer Sache Herr werden,etwas in den Griff bekommen,0
+einer Sache Herr werden,etwas unter Kontrolle bekommen,0
+einer nach dem anderen,der Reihe nach,0
+es kamen 40 Mann.,es kamen 40 Personen / Leute.,0
+etwas am Mann tragen,etwas bei sich tragen,0
+etwas an den Mann bringen,ein Anliegen loswerden,0
+etwas an den Mann bringen,etwas unter die Leute bringen,0
+etwas an den Mann bringen,etwas verkaufen,0
+fachmännisch,fachkundig,0
+fachmännisch,professionell,0
+"freiwillige Mitarbeiter eines Projektes, eines Vereins, einer Jugendgruppe (nicht als Beschäftigte)",Freiwillige,0
+"freiwillige Mitarbeiter eines Projektes, eines Vereins, einer Jugendgruppe (nicht als Beschäftigte)",Mitglieder,0
+"freiwillige Mitarbeiter eines Projektes, eines Vereins, einer Jugendgruppe (nicht als Beschäftigte)",helfende Person,0
+"freiwillige Mitarbeiter eines Projektes, eines Vereins, einer Jugendgruppe (nicht als Beschäftigte)",unterstützende Person,0
+gesetzlicher Vertreter,noch kein passender Begriff gefunden,0
+gesetzlicher Vertreter,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+herrenlos,besitzlos,0
+herrenlos,frei,0
+herrenlos,nicht zuzuordnen,0
+herrenlos,personenlos,0
+herrenlos,unbeaufsichtigt,0
+herrenlos,verlassen,0
+inhabergeführt,besitzgeführter,0
+inhabergeführt,besitzgeleiteter,0
+inhabergeführter Einzelhandel,noch kein passender Begriff gefunden,0
+inhabergeführter Einzelhandel,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+jeder,alle,0
+jeder,alle für sich,0
+jeder,sämtliche,0
+jeder Dritte,ein Drittel,0
+jeder Einzelne,alle,0
+jeder Einzelne,jede einzelne Person,0
+jeder Mitarbeiter,sämtliche Mitarbeitenden,0
+jeder wie er möchte,alle wie sie möchten,0
+"jeder, der","alle, die",0
+"jeder, der","jene, die",0
+jedermann,alle,0
+jedermann,jeder Mensch,0
+jedermann,sämtliche,0
+"jemand, der","ein Mensch, der",0
+"jemand, der","eine Person, die",0
+jungfräulich,frisch,0
+jungfräulich,makellos,0
+jungfräulich,rein,0
+jungfräulich,unangetastet,0
+jungfräulich,unbearbeitet,0
+jungfräulich,unberührt,0
+jungfräulich,unerschlossen,0
+jungfräulich,unverändert,0
+jungfräulich,ursprünglich,0
+kaufmännisch,(markt-)wirtschaftlich,0
+kaufmännisch,buchungstechnisch,0
+kaufmännisch,finanztechnisch,0
+kaufmännisch,fiskalisch,0
+kaufmännisch,geschäftlich,0
+kaufmännisch,gewerblich,0
+kaufmännisch,in Zahlen gesehen,0
+kaufmännisch,in Zahlen gesehen,0
+kaufmännisch,kauftechnisch,0
+kaufmännisch,kommerziell,0
+kaufmännisch,zahlentechnisch,0
+kaufmännisch,ökonomisch,0
+keiner,niemand,0
+"keiner, der","kein Mensch, der",0
+"keiner, der","keine Person, die",0
+klientenorientiert,orientiert am Bedarf der ratsuchenden Person,0
+kundenfreundlich,nutzungsfreundlich,0
+kundenfreundlich,praktisch zu bedienen,0
+kundenfreundlich,publikumsfreundlich,0
+kundenorientiert,publikumsorientiert,0
+landwirtschaftliche Erzeuger,Produzierende von landwirtschaftlichen Produkten,0
+landwirtschaftliche Erzeuger,landwirtschaftlich (Produkt-)Erzeugende,0
+leserfreundlich,lesefreundlich,0
+man,Sie,0
+man,ich,0
+man,viele,0
+man,wir,0
+manch einem,manch einer Person,0
+mannlos,autonom,0
+mannlos,computergesteuert,0
+mannlos,personenlos,0
+mannlos,selbstständig,0
+mannlos,unbesetzt,0
+mannshoch,lebensgroß,0
+mütterlicherseits,"[vornamen-]licherseits [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]bei gleichgeschlechtlichen Elternpaaren, z.B. brittalicherseits, martinalicherseits",0
+nicht mehr Herr seiner Sinne sein,"nicht wissen, was man tut",0
+"niemand, der","kein Mensch, der",0
+"niemand, der","keine Person, die",0
+nutzerorientiert,menschzentriert,0
+nutzerorientiert,nutzungsfreundlich,0
+nutzerorientiert,nutzungsorientiert,0
+patientennah,Point-of-Care,0
+patientenorientiert,noch kein passender Begriff gefunden,0
+patientenorientiert,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+politische Entscheidungsträger,politische Entscheidungstragende,0
+schwangere Frauen,Schwangere,0
+sein eigener Herr sein,sich nach niemandem richten müssen,0
+sein eigener Herr sein,unabhängig sein,0
+seinen Mann stehen,auf sich gestellt sein,0
+seinen Mann stehen,sich behaupten,0
+seinen Mann stehen,sich bewähren,0
+seinerzeit,damals,0
+seinerzeit,einst,0
+seinerzeit,früher,0
+seinerzeit,zu jener Zeit,0
+seinesgleichen,von gleicher Art,0
+staatlich anerkannter Techniker,noch kein passender Begriff gefunden,0
+staatlich anerkannter Techniker,senden Sie Ihren Vorschlag über das Kontaktformular (klick),0
+stiefmütterlich,achtlos,0
+stiefmütterlich,gleichgültig,0
+stiefmütterlich,lieblos,0
+stiefmütterlich,nachlässig,0
+stiefmütterlich,stiefelterlich,0
+teilnehmerorientiert,gruppenorientiert,0
+teilnehmerorientiert,personorientiert,0
+teilnehmerorientiert,subjektorientiert,0
+teilnehmerorientiert,teilnehmendenorientiert,0
+unbemannt,autonom,0
+unbemannt,ferngesteuert,0
+unbemannt,maschinengesteuert,0
+unbemannt,ohne Besatzung,0
+unbemannt,personenlos,0
+unbemannt,robotisch,0
+unbemannt,unbesetzt,0
+unbemannte Raumfahrt,"robotische Raumfahrt [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]im Gegensatz zu astronautischer Raumfahrt",0
+von Gefühlen übermannt werden,sich von Gefühlen hinreisen lassen,0
+von Gefühlen übermannt werden,von Gefühlen überwältigt werden,0
+väterlicherseits,"[vornamen-]licherseits [themify_icon icon=""fas fa-info-circle"" icon_color=""#9ec1a3""]bei gleichgeschlechtlichen Elternpaaren, z.B. janlicherseits, olaflicherseits",0
+weltmännisch,kosmopolitisch,0
+weltmännisch,weltgewandt,0
+wenn es einem selbst schon mal so gegangen ist.,wenn es dir selbst schon mal so gegangen ist.,0
+wissenschaftliche Mitarbeiter,wissenschaftliche Mitarbeitende,0
+wissenschaftlicher Mitarbeiter,wissenschaftlich mitarbeitende Person,0
+wissenschaftlicher Mitarbeiter,wissenschaftliche Fachkraft,0
+Älpler,Alpwirtschaft Betreibende,0
+Ältestenrat,Beratungsgruppe der ältesten Menschen,0
+Ältestenrat,Gremium der ältesten Menschen,0
+Ältestenrat,Rat der Erfahrenen,0
+Ältestenrat,Rat weiser Menschen,0
+Ältestenrat,Senioritätsrat],0
+Ältestenrat,[dieses Wort ist schon gendergerecht,0
+Ältestenrat,"wer sich unter dem Begriff dennoch eine Rat aus Männern, kann diese Alternativen verwenden: Senat",0
+Ärzte,(ggf. Ärzteschaft),0
+Ärzte,ärztliches (Fach-)Personal,0
+Ärzte aus verschiedenen Facharztrichtungen,Ärztinnen und Ärzte aus verschiedenen Fachrichtungen,0
+Ökonom,ökonomisch ausgebildete Person,0
+Ökonomen,ökonomisch Ausgebildete,0
+Überbringer,überbringende Person,0
+Übersetzer,Literatur Übersetzende,0
+Übersetzer,übersetzende Person,0
 Übungsleiter,anleitende Person,0
 Übungsleiter,sportliche/technische/praktische Anleitung,0
+übermannen,überkommen,0
+übermannen,überwältigen,0
+übermannt werden,überwältigt werden,0

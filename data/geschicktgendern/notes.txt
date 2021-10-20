@@ -1,0 +1,41 @@
+Random notes from going through the geschicktgendern list:
+
+TODO: add back example texts
+
+jeder   alle
+einzigste   einzigste Person
+Lieber[informelle Anrede bei Briefen],An,0
+Lieber[informelle Anrede bei Briefen],Guten Tag,0
+Lieber[informelle Anrede bei Briefen],Hallo,0
+man glaubt es kaum ich glaube es kaum
+Mitglied,[als Neutrum ist dieses Wort schon gendergerecht: DAS Mitglied],0
+Mitglieder,Angehörige,0
+Mitglieder,Teil von,0
+Mitglieder,[als Neutrum ist dieses Wort schon gendergerecht: DAS Mitglied- die Mitglieder,0
+Mitglieder,"wer dennoch eine Alternative bevorzugt, kann diese hier nutzen:] Zugehörige",0
+bei Mutter / Vater Hinweis auf transgeschlechtliche Eltern
+Sasha ist meine Freundin,"Ich bin mit Sasha zusammen. / Sasha ist mein Lieblingsmensch/meine bessere Hälfte. / Sasha ist die Person, die ich liebe.",0
+Sie ist Bachelor of Arts in Geschichte.,Sie hat den Bachelor of Arts in Geschichte.,0
+als Arzt    im ärztlichen Dienst
+als Beamter im öffentlichen Dienst
+Vorsitzende sein    den Vorsitz haben
+
+Alleinerziehender,Ein-Eltern-Familie,0
+Alleinerziehender,Ein-Eltern-Haushalt,0
+Alleinerziehender,alleinerziehende Person,0
+Alleinerziehende,alleinerziehende Person,0
+
+der Türke [im Sinne vom Gemüse-/Obstladen],Laden um die Ecke,0
+der Türke [im Sinne vom Gemüse-/Obstladen],kleiner Gemüseladen,0
+der Türke [im Sinne vom Gemüse-/Obstladen],türkischer Gemüse-/Obstladen,0
+
+"derjenige, der","die Person, die",0
+"derjenige, der","diejenige Person, die",0
+
+der ein oder andere,die eine oder der andere,0
+
++ die ganzen Redewendungen am Ende der Liste ....
+
+jeder,alle,0
+jeder,alle für sich,0
+jeder,sämtliche,0
