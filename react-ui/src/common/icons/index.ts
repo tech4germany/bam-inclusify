@@ -7,4 +7,5 @@ export { ReactComponent as ExclamationCircleIcon } from "./exclamation-circle.sv
 export { ReactComponent as GearIcon } from "./gear.svg";
 export { ReactComponent as InclusifyLogo } from "./inclusify-logo.svg";
 export { ReactComponent as InclusifyBamLogo } from "./inclusify-bam-logo.svg";
+export { ReactComponent as InfoIcon } from "./info.svg";
 export { ReactComponent as ListCheckIcon } from "./list-check-icon.svg";

@@ -13,6 +13,7 @@ import { isFunction } from "../common/type-helpers";
 import { AddinTopButtonGroup } from "./AddinTopButtonGroup";
 import { UserSettingsAndFeatureFlagsContext } from "../common/UserSettingsAndFeatureFlagsContext";
 import { SetState } from "../common/UseState";
+import { PilotPhaseBanner } from "../common/PilotPhaseBanner";
 
 export const TaskpaneApp: FC = () => {
   const [ltMatches, setLtMatches] = useState<RuleMatch[] | null>(null);
@@ -45,6 +46,9 @@ export const TaskpaneApp: FC = () => {
           onCheckClicked={checkTextWithLoading}
           settingsOpenState={[isSettingsOpen, setSettingsOpen]}
         />
+        <PilotPhaseBannerContainer>
+          <PilotPhaseBanner />
+        </PilotPhaseBannerContainer>
         <SummaryBarContainer hidden={isSettingsOpen}>
           <SummaryBar addinMode {...errorCounts} />
         </SummaryBarContainer>
@@ -78,6 +82,10 @@ export const TaskpaneApp: FC = () => {
 
 const AddinContainer = styled.div`
   margin: 0 7px;
+`;
+
+const PilotPhaseBannerContainer = styled.div`
+  margin-top: 5px;
 `;
 
 const SummaryBarContainer = styled.div`
