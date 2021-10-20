@@ -72,7 +72,7 @@ export const DebugPanel: FC<DebugPanelProps> = !isDebugPanelEnabled
             Max Vorschläge pro Regel-Match
           </NumberInput>
           <NumberInput featureFlagId={"minimumRequestDelayMs"} featureFlagsState={featureFlagsState}>
-            Min. Dauer pro Request
+            Min. Dauer pro Request in ms
           </NumberInput>
           <SettingsImportExport
             label="Feature Flags Import/Export"
@@ -133,6 +133,10 @@ const Checkbox: FC<CheckboxProps> = ({
   );
 };
 
+const NumberInputElement = styled.input`
+  width: 4em;
+  margin: 0 5px;
+`;
 interface NumberInputProps extends HasFeatureFlagsState {
   featureFlagId: FilterProperties<FeatureFlags, number>;
 }
@@ -144,7 +148,7 @@ const NumberInput: FC<NumberInputProps> = ({
   const id = inputIds[featureFlagId];
   return (
     <label htmlFor={id} key={id}>
-      <input
+      <NumberInputElement
         id={id}
         type="number"
         value={featureFlags[featureFlagId]}
