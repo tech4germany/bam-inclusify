@@ -15,24 +15,24 @@ nlp = stanza.Pipeline(lang="de", processors="tokenize,mwt,pos,lemma,depparse")
 
 def unified_list():
     files = [
-        "dereko/dereko_unified_checked.csv",
-        "geschicktgendern/geschicktgendern_normalized.csv",
+        ("dereko", "dereko/dereko_unified_checked.csv"),
+        ("geschicktgendern", "geschicktgendern/geschicktgendern_normalized.csv"),
         # "vienna_catalog/vienna_catalog.csv",
     ]
     dic = {}
-    for file in files:
+    for name, file in files:
         rules = list(csv.reader(open_(file)))
-        for lemma, rules in lemmatize_rules(rules).items():
+        for lemma, rules in lemmatize_rules(rules, name).items():
             add_to_dict(lemma, rules, dic)
     rows = []
     for lemma, rules in dic.items():
         for y in rules:
-            (insensitive_lemmas, insensitive, sensitive, plural_only) = y
-            rows.append([lemma, insensitive_lemmas, insensitive, sensitive, plural_only])
+            (insensitive_lemmas, insensitive, sensitive, plural_only, source) = y
+            rows.append([lemma, insensitive_lemmas, insensitive, sensitive, plural_only, source])
     csv.writer(open("unified.csv", "w")).writerows(rows)
 
 
-def lemmatize_rules(rules):
+def lemmatize_rules(rules, source):
     # save the lemma of the root of the insensitive part of each rule for easy matching
     lemmatized_rules = {}
     for [insensitive, sensitive, plural_only] in rules:
@@ -42,7 +42,7 @@ def lemmatize_rules(rules):
             for word in sentence.words:
                 if word.head == 0:
                     add_to_dict(
-                        word.lemma, [(insensitive_lemmas, insensitive, sensitive, plural_only)], lemmatized_rules)
+                        word.lemma, [(insensitive_lemmas, insensitive, sensitive, plural_only, source)], lemmatized_rules)
     return lemmatized_rules
 
 

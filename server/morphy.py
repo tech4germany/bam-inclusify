@@ -16,7 +16,7 @@ lemma_to_inflected = {}
 
 def init():
     print("Loading morphological dictionary ...")
-    for filename in [ "dictionary_added.txt"]: # "dictionary.dump",]:
+    for filename in [ "dictionary_added.txt", "dictionary.dump",]:
         for line in tqdm(open_(filename).readlines()):
             inflected, lemma, morph = line.split("\t")
             add_to_dict(inflected, [(morph, lemma)], inflected_to_lemma)
