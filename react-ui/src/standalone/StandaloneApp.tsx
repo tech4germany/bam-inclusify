@@ -16,6 +16,7 @@ import { StandaloneUserSettingsButton } from "./StandaloneUserSettingsButton";
 import { CenteredContainer } from "./CenteredContainer";
 import { UserSettingsAndFeatureFlagsContext } from "../common/UserSettingsAndFeatureFlagsContext";
 import { UseState } from "../common/UseState";
+import { PilotPhaseBanner } from "../common/PilotPhaseBanner";
 
 const textAreaId = newUuidv4();
 
@@ -35,7 +36,7 @@ export const StandaloneApp: FC = () => {
     setLoading(true);
     setError(false);
     try {
-      const matches = await new LanguageToolClient().check(text, userSettings, featureFlags);
+      const matches = await LanguageToolClient.check(text, userSettings, featureFlags);
       setLtMatches(matches);
     } catch (e) {
       setError(true);
@@ -56,11 +57,16 @@ export const StandaloneApp: FC = () => {
         <NavigationBar />
 
         <CenteredContainer>
-          <SummaryBarContainer>
-            <SummaryBar {...errorCounts}>
-              <StandaloneUserSettingsButton pressedState={[isSettingsOpen, setSettingsOpen]} />
-            </SummaryBar>
-          </SummaryBarContainer>
+          <TopBarContainer>
+            <PilotPhaseBannerContainer>
+              <PilotPhaseBanner />
+            </PilotPhaseBannerContainer>
+            <SummaryBarContainer>
+              <SummaryBar {...errorCounts}>
+                <StandaloneUserSettingsButton pressedState={[isSettingsOpen, setSettingsOpen]} />
+              </SummaryBar>
+            </SummaryBarContainer>
+          </TopBarContainer>
           <MainAreaContainer>
             <InputAreaContainer>
               <MainTextArea
@@ -105,6 +111,14 @@ export const StandaloneApp: FC = () => {
   );
 };
 
+const TopBarContainer = styled.div`
+  display: flex;
+  align-items: flex-end;
+`;
+const PilotPhaseBannerContainer = styled.div`
+  flex-grow: 1;
+  margin-bottom: 10px;
+`;
 const SummaryBarContainer = styled.div`
   margin: 30px 0 24px;
 `;
