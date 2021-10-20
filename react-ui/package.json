@@ -67,7 +67,8 @@
     },
     {
       "title": "FAQs",
-      "url": "https://www.bam.de/en"
+      "url": "https://www.bam.de/"
     }
-  ]
+  ],
+  "addinLogoLinkUrl": "https://www.bam.de/"
 }

@@ -7,6 +7,10 @@ import { UserSettingsAndFeatureFlagsContext } from "../common/UserSettingsAndFea
 import { UseState } from "../common/UseState";
 import { AddinCheckTextButton } from "./AddinCheckTextButton";
 import { AddinUserSettingsButton } from "./AddinUserSettingsButton";
+import packageJson from "../../package.json";
+import { isValidUrl } from "../common/isValidUrl";
+
+const logoLinkUrl = extractLogoLink();
 
 interface AddinButtonGroupProps {
   onCheckClicked: () => void;
@@ -26,7 +30,7 @@ const AddinButtonGroupContainer = styled.div`
 `;
 
 const InclusifyLogoLinkTile = () => (
-  <InclusifyLogoLinkTileContainer href="#">
+  <InclusifyLogoLinkTileContainer href={logoLinkUrl} target={"_blank"}>
     <UserSettingsAndFeatureFlagsContext.Consumer>
       {({ featureFlags }) => (
         <>
@@ -54,8 +58,10 @@ const InclusifyLogoLinkTileContainer = styled.a`
   box-sizing: border-box;
   text-decoration: none;
   color: ${Colors.darkBlueText};
+  user-select: none;
 
-  &:hover {
+  &[href]:hover {
+    background: #f3f3f3;
   }
 `;
 const InclusifyLogoContainer = styled.div`
@@ -73,3 +79,16 @@ const InclusifyLogoLinkText = styled.div`
   max-width: 100px;
   text-align: center;
 `;
+
+function extractLogoLink() {
+  const urlValue = (packageJson as any)?.addinLogoLinkUrl;
+  if (typeof urlValue !== "string") {
+    console.error("Addin logo link URL not found");
+    return undefined;
+  }
+  if (!isValidUrl(urlValue)) {
+    console.error("Addin logo link URL is not a valid URL");
+    return undefined;
+  }
+  return urlValue;
+}

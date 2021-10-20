@@ -5,6 +5,8 @@ import { UserSettingsAndFeatureFlagsContext } from "../common/UserSettingsAndFea
 import { CenteredContainer } from "./CenteredContainer";
 import packageJson from "../../package.json";
 import { newUuidv4 } from "../common/uuid";
+import { isValidElement } from "react";
+import { isValidUrl } from "../common/isValidUrl";
 
 const navLinks = extractNavLinks();
 
@@ -107,18 +109,20 @@ const NavBarLinkSubtitle = styled.div`
 `;
 
 function extractNavLinks() {
-  if (
-    !packageJson ||
-    !packageJson["standaloneNavigationLinks"] ||
-    !Array.isArray(packageJson["standaloneNavigationLinks"])
-  ) {
+  const linkListValue = (packageJson as any)?.standaloneNavigationLinks;
+  if (!linkListValue || !Array.isArray(linkListValue)) {
     console.error("No standalone nav links found");
     return [];
   }
-  const linkList = packageJson["standaloneNavigationLinks"] as any[];
-  const cleanList = linkList
+  const cleanList = linkListValue
     .filter((l, idx) => {
-      if (typeof l === "object" && typeof l["title"] === "string" && typeof l["url"] === "string") return true;
+      if (typeof l === "object" && typeof l["title"] === "string" && typeof l["url"] === "string") {
+        if (!isValidUrl(l["url"])) {
+          console.log(`Invalid URL in standalone nav link ${idx}`, l["url"]);
+          return false;
+        }
+        return true;
+      }
       console.warn(
         `Standalone nav link ${idx} doesn't match expected format (object with string properties 'title' and 'url', and optional string property 'subtitle')`
       );
