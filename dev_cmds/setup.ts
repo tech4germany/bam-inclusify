@@ -18,8 +18,6 @@ async function main() {
     args: ["LanguageTool-5.4.zip"],
     options: { cwd: languageToolDir },
   });
-
-  await execPiped({ command: DEVCMD_COMMAND, args: ["prepare-languagetool"] });
 }
 
 runAsyncMain(main);

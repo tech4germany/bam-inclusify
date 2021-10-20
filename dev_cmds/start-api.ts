@@ -4,8 +4,6 @@ import { DEVCMD_COMMAND } from "./utils/commands";
 import { languageToolDir } from "./utils/paths";
 
 async function main() {
-  await execPiped({ command: DEVCMD_COMMAND, args: ["prepare-languagetool"] });
-
   await execPiped({
     command: "java",
     args: [

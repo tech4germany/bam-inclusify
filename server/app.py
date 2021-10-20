@@ -8,7 +8,7 @@ app = Flask(__name__, static_folder=None)
 @app.route('/<path:filename>', methods=['GET'])
 def index(filename):
     filename = filename or 'index.html'
-    return send_from_directory(os.path.join("..", "react-ui", "build"), filename)
+    return send_from_directory("static", filename)
 
 @app.route("/v2/check", methods=["POST"])
 def serve_api():
