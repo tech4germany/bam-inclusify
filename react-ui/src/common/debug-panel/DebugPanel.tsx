@@ -74,6 +74,9 @@ export const DebugPanel: FC<DebugPanelProps> = !isDebugPanelEnabled
           <NumberInput featureFlagId={"minimumRequestDelayMs"} featureFlagsState={featureFlagsState}>
             Min. Dauer pro Request in ms
           </NumberInput>
+          <TextInput featureFlagId={"apiBaseUrl"} featureFlagsState={featureFlagsState}>
+            API Base URL
+          </TextInput>
           <SettingsImportExport
             label="Feature Flags Import/Export"
             settingsState={featureFlagsState}
@@ -156,6 +159,37 @@ const NumberInput: FC<NumberInputProps> = ({
           setFeatureFlags((prevFeatureFlags) => ({
             ...prevFeatureFlags,
             [featureFlagId]: Number.parseInt(e.target.value),
+          }))
+        }
+      />
+      <span>{children}</span>
+    </label>
+  );
+};
+
+const TextInputElement = styled.input`
+  width: 10em;
+  margin: 0 5px;
+`;
+interface TextInputProps extends HasFeatureFlagsState {
+  featureFlagId: FilterProperties<FeatureFlags, string>;
+}
+const TextInput: FC<TextInputProps> = ({
+  children,
+  featureFlagId,
+  featureFlagsState: [featureFlags, setFeatureFlags],
+}) => {
+  const id = inputIds[featureFlagId];
+  return (
+    <label htmlFor={id} key={id}>
+      <TextInputElement
+        id={id}
+        type="text"
+        value={featureFlags[featureFlagId]}
+        onChange={(e) =>
+          setFeatureFlags((prevFeatureFlags) => ({
+            ...prevFeatureFlags,
+            [featureFlagId]: e.target.value,
           }))
         }
       />
