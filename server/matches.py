@@ -141,6 +141,5 @@ def add_gender_symbol(source, insensitive_word, inflected_sensitive_root):
     if not source == "dereko":
         return True, inflected_sensitive_root
     elif source == "dereko":
-        print(inflected_sensitive_root, re.sub(r"(in(nen)?)$", r"*\1", inflected_sensitive_root))
         return True, re.sub(r"(in(nen)?)$", r"*\1", inflected_sensitive_root)
 
