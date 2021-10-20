@@ -8,7 +8,7 @@ import os
 from os import path
 import re
 import sys
-from server.helpers import add_to_dict, open_, log
+from inclusify_server.helpers import add_to_dict, open_, log
 
 inflected_to_lemma = {}
 lemma_to_inflected = {}

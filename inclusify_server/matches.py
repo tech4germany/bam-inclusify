@@ -1,5 +1,5 @@
-from server.helpers import add_to_dict, log, open_
-from server.morphy import inflect
+from inclusify_server.helpers import add_to_dict, log, open_
+from inclusify_server.morphy import inflect
 from typing import *
 import csv
 import itertools
@@ -15,7 +15,7 @@ nlp = stanza.Pipeline(lang="de", processors="tokenize,mwt,pos,lemma,depparse")
 
 def load_rules():
     dic = {}
-    for [lemma, insensitive_lemmas, insensitive, sensitive, plural_only, source] in csv.reader(open_("..", "data", "unified.csv")):
+    for [lemma, insensitive_lemmas, insensitive, sensitive, plural_only, source] in csv.reader(open_("data", "unified.csv")):
         plural_only = True if plural_only == "1" else False
         add_to_dict(
             lemma, [(insensitive_lemmas, insensitive, sensitive, plural_only, source)], dic)

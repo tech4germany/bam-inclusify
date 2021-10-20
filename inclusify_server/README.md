@@ -14,8 +14,8 @@
   pip install -r requirements.in
   ```
   (This is also for Anaconda/Miniconda environments, because not all of our dependencies are published in Anaconda channels.)
-3. Start the server with gunicorn (from the root directory of the repository): 
+3. Start the server with gunicorn (from the repository root directory): 
   ```
-  gunicorn server.app:app --bind localhost:8081 --timeout 90
+  gunicorn inclusify_server.app:app --bind localhost:8081 --timeout 90
   ``` 
   (Any desired port can be specified here.)

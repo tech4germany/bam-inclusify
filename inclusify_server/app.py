@@ -1,6 +1,6 @@
 import os
 from flask import Flask, request, send_from_directory
-from server.matches import matches, rules
+from inclusify_server.matches import matches, rules
 
 app = Flask(__name__, static_folder=None)
 
