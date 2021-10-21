@@ -21,6 +21,7 @@ def init():
             inflected, lemma, morph = line.split("\t")
             add_to_dict(inflected, [(morph, lemma)], inflected_to_lemma)
             add_to_dict(lemma, [(morph, inflected)], lemma_to_inflected)
+    print("Done loading morphological dictionary")
 
 
 def inflect(word, case=None, gender=None, number=None, recursion=0):
