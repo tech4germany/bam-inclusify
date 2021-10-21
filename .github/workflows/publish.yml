@@ -18,5 +18,5 @@ jobs:
 
       - name: Build the hello-world Docker image
         run: |
-          docker build --tag ghcr.io/tech4germany/inclusify-app:latest -f build/test/Dockerfile .
+          docker build --tag ghcr.io/tech4germany/inclusify-app:latest -f build/docker-release/Dockerfile .
           docker push ghcr.io/tech4germany/inclusify-app:latest
