@@ -2,6 +2,10 @@ name: publish
 
 on: [push]
 
+concurrency:
+  group: docker-build-and-publish
+  cancel-in-progress: true
+
 jobs:
   publish-hello-world-image:
     runs-on: ubuntu-latest
