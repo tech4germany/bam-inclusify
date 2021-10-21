@@ -6,13 +6,13 @@ import { Fonts } from "../styles/Fonts";
 
 export const LoadingMessage: FC = () => (
   <LoadingMessageContainer>
-    <ListCheckIcon fill={"white"} />
+    <ListCheckIcon fill={"#E39700"} />
     <LoadingLabel>Text wird überprüft...</LoadingLabel>
   </LoadingMessageContainer>
 );
 
 const LoadingMessageContainer = styled.div`
-  background: transparent linear-gradient(0deg, #d38500 0%, #e4a423 100%) 0% 0% no-repeat padding-box;
+  background: #e8e8e8;
   box-shadow: 0px 6px 12px ${Colors.dropShadow};
   border-radius: 10px;
   display: flex;
@@ -30,5 +30,5 @@ const LoadingLabel = styled.div`
   font-size: 25px;
   line-height: 30px;
   letter-spacing: 0.25px;
-  color: white;
+  color: #e39800;
 `;
