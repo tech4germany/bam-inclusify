@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import { DownChevronIcon } from "../icons";
+import { CancelIcon, DownChevronIcon } from "../icons";
 import { Colors } from "../styles/Colors";
 import { FeatureFlags } from "../feature-flags/feature-flags";
 import { RuleMatch } from "../language-tool-api/types";
@@ -134,7 +134,7 @@ const LtMatch: FC<LtMatchProps> = ({ ltMatch, applyReplacement, selectRuleMatch 
         <MatchActionsBar>
           <MatchExpandCollapseToggle expandedState={[isExpanded, setExpanded]} />
           <MatchActionsBarSpacer />
-          <MatchIgnoreButton>x</MatchIgnoreButton>
+          <IgnoreMatchButton />
         </MatchActionsBar>
       </MatchContentContainer>
     </MatchContainer>
@@ -271,7 +271,6 @@ const MatchRuleExplanation = styled.div`
 `;
 
 const MatchActionsBar = styled.div`
-  font-size: 0.5625rem;
   display: flex;
   margin-top: 20px;
 `;
@@ -301,7 +300,13 @@ const MatchExpandCollapseIcon = styled(DownChevronIcon)`
     transform: rotate(180deg);
   }
 `;
-const MatchExpandCollapseText = styled.div``;
+const MatchExpandCollapseText = styled.div`
+  color: #333333;
+  font-size: 9px;
+  letter-spacing: 0.04px;
+  font-family: ${Fonts.main.family};
+  font-weight: ${Fonts.main.weights.thin};
+`;
 
 const MatchExpandCollapseToggle: FC<{ expandedState: UseState<boolean> }> = ({
   expandedState: [isExpanded, setExpanded],
@@ -311,15 +316,6 @@ const MatchExpandCollapseToggle: FC<{ expandedState: UseState<boolean> }> = ({
     <MatchExpandCollapseText>{isExpanded ? "weniger" : "mehr"} anzeigen</MatchExpandCollapseText>
   </MatchExpandCollapseToggleContainer>
 );
-
-const MatchIgnoreButton = styled.div`
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: black;
-  color: white;
-  text-align: center;
-`;
 
 const ExpandCollapse: FC<{ isExpanded: boolean }> = ({ isExpanded, children }) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -341,4 +337,25 @@ const ExpandCollapseContainer = styled.div`
 `;
 const ExpandCollapseMeasurer = styled.div`
   display: flex;
+`;
+
+const IgnoreMatchButton = () => (
+  <IgnoreMatchButtonContainer>
+    <CancelIcon height={20} width={20} fill={"currentColor"} />
+  </IgnoreMatchButtonContainer>
+);
+const IgnoreMatchButtonContainer = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  color: #565757;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    color: #777777;
+  }
 `;
