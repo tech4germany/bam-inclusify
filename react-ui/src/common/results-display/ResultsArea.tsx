@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { CancelIcon, DownChevronIcon } from "../icons";
 import { Colors } from "../styles/Colors";
 import { FeatureFlags } from "../feature-flags/feature-flags";
@@ -24,6 +24,7 @@ import { WelcomeMessage } from "../message-panels/WelcomeMessage";
 import { UserSettingsAndFeatureFlagsContext } from "../UserSettingsAndFeatureFlagsContext";
 import { UseState } from "../UseState";
 import { ExpandCollapse } from "./ExpandCollapse";
+import { scrollbarWidth } from "../../standalone/scrollbar-width";
 
 export type ApplyReplacementFunction = (ruleMatch: RuleMatch, replacementText: string) => Promise<void>;
 
@@ -72,31 +73,38 @@ interface ResultListProps {
 }
 
 export const ResultList: FC<ResultListProps> = ({ ruleMatches, applyReplacement, selectRuleMatch }) => (
-  <div>
-    <UserSettingsAndFeatureFlagsContext.Consumer>
-      {({ featureFlags, userSettings }) => {
-        const matchesToShow = postProcessRuleMatches(ruleMatches, featureFlags, userSettings);
-        return (
-          <LtMatchesListContainer>
-            {matchesToShow.map((ltMatch) => (
-              <LtMatch
-                key={ltMatch.clientUuid}
-                ltMatch={ltMatch}
-                applyReplacement={applyReplacement}
-                selectRuleMatch={selectRuleMatch}
-              />
-            ))}
-          </LtMatchesListContainer>
-        );
-      }}
-    </UserSettingsAndFeatureFlagsContext.Consumer>
-  </div>
+  <UserSettingsAndFeatureFlagsContext.Consumer>
+    {({ featureFlags, userSettings }) => {
+      const matchesToShow = postProcessRuleMatches(ruleMatches, featureFlags, userSettings);
+      return (
+        <LtMatchesListContainer permanentScrollbar={featureFlags.showIgnoreButton}>
+          {matchesToShow.map((ltMatch) => (
+            <LtMatch
+              key={ltMatch.clientUuid}
+              ltMatch={ltMatch}
+              applyReplacement={applyReplacement}
+              selectRuleMatch={selectRuleMatch}
+            />
+          ))}
+        </LtMatchesListContainer>
+      );
+    }}
+  </UserSettingsAndFeatureFlagsContext.Consumer>
 );
 
-const LtMatchesListContainer = styled.div`
+const LtMatchesListContainer = styled.div<{ permanentScrollbar: boolean }>`
   display: flex;
   flex-direction: column;
   gap: 25px;
+  ${({ permanentScrollbar }) =>
+    permanentScrollbar
+      ? css`
+          overflow-y: scroll;
+          margin-right: ${-(scrollbarWidth + 10)}px;
+          padding-right: 10px;
+          height: 100%;
+        `
+      : ``}
 `;
 
 interface LtMatchProps {

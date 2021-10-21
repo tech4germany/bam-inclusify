@@ -1,3 +1,4 @@
+import "./scrollbar-width";
 import React from "react";
 import ReactDOM from "react-dom";
 import { makeGlobalStyle } from "../common/styles/global-styles";

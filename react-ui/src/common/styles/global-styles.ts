@@ -1,3 +1,4 @@
+import { css } from "@fluentui/utilities";
 import "normalize.css";
 import { createGlobalStyle, DefaultTheme, GlobalStyleComponent } from "styled-components";
 import { Colors } from "./Colors";
@@ -14,6 +15,16 @@ export function makeGlobalStyle(inAddin: boolean): GlobalStyleComponent<{}, Defa
       font-family: ${mainFont.family}, sans-serif;
       font-size: 16px;
       font-weight: ${mainFont.weights.normal};
-      overflow-y: ${bodyOverflow};
-    }`;
+      /* overflow-y: ${bodyOverflow}; */
+    }
+
+    body,
+    #root {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+  `;
 }

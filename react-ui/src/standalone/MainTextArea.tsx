@@ -43,6 +43,7 @@ const MainTextAreaContainer = styled.div`
   box-shadow: 0px 9px 18px #00000029;
   display: flex;
   flex-direction: column;
+  flex: 1;
 `;
 
 const TextArea = styled.textarea`
@@ -56,7 +57,9 @@ const TextArea = styled.textarea`
   border-radius: 0;
   border: none;
   resize: none;
-  height: 30em;
+  /* height: 30em; */
+  /* min-height: 20rem; */
+  flex: 1;
 
   &::placeholder {
     font-style: italic;
@@ -65,6 +68,7 @@ const TextArea = styled.textarea`
 `;
 
 const BottomBarContainer = styled.div`
+  flex: 0;
   background: #fffcfc;
   display: flex;
   align-items: center;

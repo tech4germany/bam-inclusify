@@ -52,64 +52,76 @@ export const StandaloneApp: FC = () => {
   };
 
   return (
-    <div>
+    <StandaloneAppContainer>
       <UserSettingsAndFeatureFlagsContext.Provider value={{ userSettings, featureFlags }}>
         <NavigationBar />
+        <div>
+          <CenteredContainer>
+            <TopBarContainer>
+              <PilotPhaseBannerContainer>
+                <PilotPhaseBanner />
+              </PilotPhaseBannerContainer>
+              <SummaryBarContainer>
+                <SummaryBar {...errorCounts}>
+                  <StandaloneUserSettingsButton pressedState={[isSettingsOpen, setSettingsOpen]} />
+                </SummaryBar>
+              </SummaryBarContainer>
+            </TopBarContainer>
+          </CenteredContainer>
+        </div>
 
-        <CenteredContainer>
-          <TopBarContainer>
-            <PilotPhaseBannerContainer>
-              <PilotPhaseBanner />
-            </PilotPhaseBannerContainer>
-            <SummaryBarContainer>
-              <SummaryBar {...errorCounts}>
-                <StandaloneUserSettingsButton pressedState={[isSettingsOpen, setSettingsOpen]} />
-              </SummaryBar>
-            </SummaryBarContainer>
-          </TopBarContainer>
-          <MainAreaContainer>
-            <InputAreaContainer>
-              <MainTextArea
-                key={textAreaId}
-                textAreaRef={textAreaRef}
-                onChange={(e) => setInputText(e.target.value)}
-                onSubmit={submitHandler}
-                value={inputText}
-              />
-              <ButtonBar>
-                <ButtonBarSpacer />
-                <StandaloneCheckTextButton onClick={submitHandler} disabled={isLoading} />
-              </ButtonBar>
-            </InputAreaContainer>
-            <ResultsAreaContainer>
-              <ResultsArea
-                isError={isError}
-                isLoading={isLoading}
-                isSettingsOpen={isSettingsOpen}
-                userSettingsPanelProps={{
-                  userSettingsState: [userSettings, setUserSettings],
-                  onConfirmClicked: () => setSettingsOpen(false),
-                }}
-                ruleMatches={ltMatches}
-                applyReplacement={makeReplacementApplier([inputText, setInputText], checkText, textAreaRef)}
-                selectRuleMatch={(ruleMatch) => {
-                  const ta = textAreaRef.current;
-                  if (!!ta) {
-                    setTextAreaSelection(ta, ruleMatch.offset, ruleMatch.offset + ruleMatch.length);
-                  }
-                }}
-              />
-            </ResultsAreaContainer>
-          </MainAreaContainer>
-        </CenteredContainer>
+        <div style={{ flex: "1", overflow: "auto" }}>
+          <CenteredContainer>
+            <MainAreaContainer>
+              <InputAreaContainer>
+                <MainTextArea
+                  key={textAreaId}
+                  textAreaRef={textAreaRef}
+                  onChange={(e) => setInputText(e.target.value)}
+                  onSubmit={submitHandler}
+                  value={inputText}
+                />
+                <ButtonBar>
+                  <ButtonBarSpacer />
+                  <StandaloneCheckTextButton onClick={submitHandler} disabled={isLoading} />
+                </ButtonBar>
+              </InputAreaContainer>
+              <ResultsAreaContainer>
+                <ResultsArea
+                  isError={isError}
+                  isLoading={isLoading}
+                  isSettingsOpen={isSettingsOpen}
+                  userSettingsPanelProps={{
+                    userSettingsState: [userSettings, setUserSettings],
+                    onConfirmClicked: () => setSettingsOpen(false),
+                  }}
+                  ruleMatches={ltMatches}
+                  applyReplacement={makeReplacementApplier([inputText, setInputText], checkText, textAreaRef)}
+                  selectRuleMatch={(ruleMatch) => {
+                    const ta = textAreaRef.current;
+                    if (!!ta) {
+                      setTextAreaSelection(ta, ruleMatch.offset, ruleMatch.offset + ruleMatch.length);
+                    }
+                  }}
+                />
+              </ResultsAreaContainer>
+            </MainAreaContainer>
+          </CenteredContainer>
+        </div>
       </UserSettingsAndFeatureFlagsContext.Provider>
       <DebugPanel
         featureFlagsState={[featureFlags, setFeatureFlags]}
         userSettingsState={[userSettings, setUserSettings]}
       />
-    </div>
+    </StandaloneAppContainer>
   );
 };
+
+const StandaloneAppContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+`;
 
 const TopBarContainer = styled.div`
   display: flex;
@@ -125,14 +137,15 @@ const SummaryBarContainer = styled.div`
 
 const MainAreaContainer = styled.div`
   display: flex;
-  margin-bottom: 2rem;
+  height: 100%;
+  gap: 28px;
 `;
 
 const InputAreaContainer = styled.div`
-  flex-grow: 1;
-  margin-right: 1.5em;
+  flex: 1;
   display: flex;
   flex-direction: column;
+  overflow: auto;
 `;
 
 const ResultsAreaContainer = styled.div`
@@ -167,9 +180,11 @@ function setTextAreaSelection(textArea: HTMLTextAreaElement, selectionStart: num
 }
 
 const ButtonBar = styled.div`
+  flex: 0;
   display: flex;
   gap: 1em;
   justify-content: flex-end;
+  margin-bottom: 45px;
 `;
 
 const ButtonBarSpacer = styled.div`
