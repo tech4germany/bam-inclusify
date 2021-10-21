@@ -1,9 +1,10 @@
 import "normalize.css";
 import { createGlobalStyle, DefaultTheme, GlobalStyleComponent } from "styled-components";
+import { Colors } from "./Colors";
 import { Fonts } from "./Fonts";
 
 export function makeGlobalStyle(inAddin: boolean): GlobalStyleComponent<{}, DefaultTheme> {
-  const bodyBackgroundColor = inAddin ? "transparent" : "#E8E8E8";
+  const bodyBackgroundColor = inAddin ? "transparent" : Colors.backgroundGray;
   const bodyOverflow = inAddin ? "scroll" : "initial";
   const mainFont = Fonts.main;
 

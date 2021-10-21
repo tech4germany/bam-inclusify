@@ -6,7 +6,7 @@ import { Fonts } from "../styles/Fonts";
 
 export const CompletionMessage: FC = () => (
   <CompletionMessageContainer>
-    <DoubleCheckMarkIcon fill={"#8AB30F"} width={90} height={47} />
+    <DoubleCheckMarkIcon fill={Colors.limeGreen} width={90} height={47} />
     <CompletionLabelRow>
       <CompletionLabelLarge>Dein Text ist nun diversitätssensibel!</CompletionLabelLarge>
       <CompletionLabelSmall>…oder Du hast einfach alle Vorschläge ignoriert :)</CompletionLabelSmall>
@@ -15,7 +15,7 @@ export const CompletionMessage: FC = () => (
 );
 
 const CompletionMessageContainer = styled.div`
-  background: #e8e8e8;
+  background: ${Colors.backgroundGray};
   box-shadow: 0px 6px 12px ${Colors.dropShadow};
   border-radius: 10px;
   display: flex;
@@ -36,7 +36,7 @@ const CompletionLabelLarge = styled.div`
   font-size: 19px;
   line-height: 25px;
   letter-spacing: 0.19px;
-  color: #8ab30f;
+  color: ${Colors.limeGreen};
   text-align: left;
 `;
 
@@ -46,6 +46,6 @@ const CompletionLabelSmall = styled.div`
   font-size: 12px;
   line-height: 15px;
   letter-spacing: 0.12px;
-  color: #8ab30f;
+  color: ${Colors.limeGreen};
   text-align: left;
 `;
