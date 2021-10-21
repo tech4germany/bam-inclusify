@@ -6,21 +6,32 @@ from compound_split import char_split
 from tqdm import tqdm
 import os
 from os import path
+import klepto
 import re
 import sys
 from inclusify_server.helpers import add_to_dict, open_, log
 
-inflected_to_lemma = {}
-lemma_to_inflected = {}
+print("Loading morphological dictionary ...")
+cwd = os.path.dirname(os.path.realpath(__file__))
+lemma_to_inflected = klepto.archives.file_archive(
+    path.join(cwd, "lemma_to_inflected"), {}
+)
+lemma_to_inflected.load()
+inflected_to_lemma = klepto.archives.file_archive(
+    path.join(cwd, "inflected_to_lemma"), {}
+)
+inflected_to_lemma.load()
 
 
 def init():
-    print("Loading morphological dictionary ...")
-    for filename in [ "dictionary_added.txt", "dictionary.dump"]:
+    print("Converting morphological dictionary ...")
+    for filename in ["dictionary_added.txt", "dictionary.dump"]:
         for line in tqdm(open_(filename).readlines()):
             inflected, lemma, morph = line.split("\t")
             add_to_dict(inflected, [(morph, lemma)], inflected_to_lemma)
             add_to_dict(lemma, [(morph, inflected)], lemma_to_inflected)
+    inflected_to_lemma.dump()
+    lemma_to_inflected.dump()
 
 
 def inflect(word, case=None, gender=None, number=None, recursion=0):
@@ -32,7 +43,9 @@ def inflect(word, case=None, gender=None, number=None, recursion=0):
         if recursion > 0:
             return []
         for _, part_1, part_2 in char_split.split_compound(word)[:3]:
-            inflected_part_2s = inflect(part_2, case=case, gender=gender, number=number, recursion=recursion+1)
+            inflected_part_2s = inflect(
+                part_2, case=case, gender=gender, number=number, recursion=recursion + 1
+            )
             for inflected_part_2 in inflected_part_2s:
                 inflected.append(part_1 + inflected_part_2.lower())
         return list(set(inflected))
@@ -46,8 +59,11 @@ def inflect(word, case=None, gender=None, number=None, recursion=0):
         gender = gender if gender is not None else morphs["Gender"]
         number = number if number is not None else morphs["Number"]
         new_morph = ":".join([morphs["POS"], case, number, gender])
-        inflected += [inflected_ for morph_, inflected_ in lemma_to_inflected[lemma]
-                      if re.match(new_morph, morph_) is not None]
+        inflected += [
+            inflected_
+            for morph_, inflected_ in lemma_to_inflected[lemma]
+            if re.match(new_morph, morph_) is not None
+        ]
     return list(set(inflected))
 
 
@@ -63,5 +79,3 @@ def parse_morph(morph):
         }
     else:
         return None
-
-init()

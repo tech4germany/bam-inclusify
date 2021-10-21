@@ -1,5 +1,5 @@
 from inclusify_server.helpers import add_to_dict, log, open_
-from inclusify_server.morphy import inflect
+from inclusify_server.morphy.morphy import inflect
 from typing import *
 import csv
 import itertools
@@ -15,10 +15,20 @@ nlp = stanza.Pipeline(lang="de", processors="tokenize,mwt,pos,lemma,depparse")
 
 def load_rules():
     dic = {}
-    for [lemma, insensitive_lemmas, insensitive, sensitive, plural_only, source] in csv.reader(open_("data", "unified.csv")):
+    for [
+        lemma,
+        insensitive_lemmas,
+        insensitive,
+        sensitive,
+        plural_only,
+        source,
+    ] in csv.reader(open_("data", "unified.csv")):
         plural_only = True if plural_only == "1" else False
         add_to_dict(
-            lemma, [(insensitive_lemmas, insensitive, sensitive, plural_only, source)], dic)
+            lemma,
+            [(insensitive_lemmas, insensitive, sensitive, plural_only, source)],
+            dic,
+        )
     return dic
 
 
@@ -42,9 +52,18 @@ def gender_matches(doc):
                         _, _, sensitive, plural_only, source = rule
                         sensitive_alternatives.append((sensitive, plural_only, source))
                 if len(sensitive_alternatives) > 0:
-                    sensitive_alternatives = [(simplify_participles(sensitive, word), plural_only, source) for sensitive, plural_only, source in sensitive_alternatives]
-                    sensitive_alternatives = list(itertools.chain(*[inflect_root(word, alt, plural_only, source)
-                         for alt, plural_only, source in sensitive_alternatives]))
+                    sensitive_alternatives = [
+                        (simplify_participles(sensitive, word), plural_only, source)
+                        for sensitive, plural_only, source in sensitive_alternatives
+                    ]
+                    sensitive_alternatives = list(
+                        itertools.chain(
+                            *[
+                                inflect_root(word, alt, plural_only, source)
+                                for alt, plural_only, source in sensitive_alternatives
+                            ]
+                        )
+                    )
                     match = gender_match(
                         word.text,
                         sensitive_alternatives,
@@ -89,7 +108,7 @@ def is_applicable(rule, word, sentence):
     sentence_lemmas = [word.lemma for word in sentence.words]
     if any([lemma not in sentence_lemmas for lemma in insensitive_lemmas]):
         return False
-    if parse_feats(word.feats)["Number"] == 'SIN' and plural_only:
+    if parse_feats(word.feats)["Number"] == "SIN" and plural_only:
         return False
     return True
 
@@ -108,38 +127,47 @@ def inflect_root(insensitive_word, alternative, plural_only, source):
     morphs = parse_feats(insensitive_word.feats)
     alternative_words = nlp(alternative).sentences[0].words
     alternative_texts = [word.text for word in alternative_words]
-    sensitive_root = [
-        word for word in alternative_words
-        if word.deprel == "root"][0]
+    sensitive_root = [word for word in alternative_words if word.deprel == "root"][0]
     number_ = None if plural_only else morphs["Number"]
     inflected_sensitive_roots = inflect(
-        sensitive_root.text, case=morphs["Case"], number=number_) or [sensitive_root.text] # + " (not inflected)"]
+        sensitive_root.text, case=morphs["Case"], number=number_
+    ) or [
+        sensitive_root.text
+    ]  # + " (not inflected)"]
     alternatives_with_inflected_root = []
     for inflected_sensitive_root in inflected_sensitive_roots:
-        makes_sense, inflected_sensitive_root = add_gender_symbol(source, insensitive_word.text, inflected_sensitive_root)
+        makes_sense, inflected_sensitive_root = add_gender_symbol(
+            source, insensitive_word.text, inflected_sensitive_root
+        )
         if makes_sense:
-            alternatives_with_inflected_root.append(" ".join([
-                *alternative_texts[:sensitive_root.id-1], 
-                inflected_sensitive_root, # morphs["Case"], morphs["Number"], insensitive_word.lemma
-                *alternative_texts[sensitive_root.id:]
-            ]))
+            alternatives_with_inflected_root.append(
+                " ".join(
+                    [
+                        *alternative_texts[: sensitive_root.id - 1],
+                        inflected_sensitive_root,  # morphs["Case"], morphs["Number"], insensitive_word.lemma
+                        *alternative_texts[sensitive_root.id :],
+                    ]
+                )
+            )
     return alternatives_with_inflected_root
+
 
 def simplify_participles(sensitive_words, insensitive_root):
     match = re.match(r"(^[a-zäöüß]+(te|nde)n?) (Person|Mensch|Firma)$", sensitive_words)
     if parse_feats(insensitive_root.feats)["Number"] == "PLU" and match:
-            return startupper(match[1])
+        return startupper(match[1])
     else:
         return sensitive_words
+
 
 def startupper(a):
     if a == "":
         return ""
     return a[0].upper() + a[1:]
 
+
 def add_gender_symbol(source, insensitive_word, inflected_sensitive_root):
     if not source == "dereko":
         return True, inflected_sensitive_root
     elif source == "dereko":
         return True, re.sub(r"(in(nen)?)$", r"*\1", inflected_sensitive_root)
-

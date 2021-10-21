@@ -2,6 +2,7 @@ black
 compound-split
 flask
 gunicorn
+klepto
 mypy
 pylint
 stanza

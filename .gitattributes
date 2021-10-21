@@ -1,2 +1,4 @@
 languagetool/*.zip filter=lfs diff=lfs merge=lfs -text
-inclusify_server/dictionary.dump filter=lfs diff=lfs merge=lfs -text
+inclusify_server/morphy/dictionary.dump filter=lfs diff=lfs merge=lfs -text
+inclusify_server/morphy/lemma_to_inflected filter=lfs diff=lfs merge=lfs -text
+inclusify_server/morphy/inflected_to_lemma filter=lfs diff=lfs merge=lfs -text
