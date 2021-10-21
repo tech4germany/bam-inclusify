@@ -6,7 +6,7 @@ import { Fonts } from "../styles/Fonts";
 
 export const ErrorMessage: FC = () => (
   <ErrorMessageContainer>
-    <ExclamationCircleIcon fill={"white"} />
+    <ExclamationCircleIcon fill={"#B30F1F"} />
     <div>
       <ErrorLabelLarge>Fehler aufgetreten</ErrorLabelLarge>
       <ErrorLabelSmall>Versuche es später erneut</ErrorLabelSmall>
@@ -15,7 +15,7 @@ export const ErrorMessage: FC = () => (
 );
 
 const ErrorMessageContainer = styled.div`
-  background: transparent linear-gradient(0deg, #8f1318 0%, #b30f1f 100%) 0% 0% no-repeat padding-box;
+  background: #e8e8e8;
   box-shadow: 0px 6px 12px ${Colors.dropShadow};
   border-radius: 10px;
   display: flex;
@@ -33,7 +33,7 @@ const ErrorLabelLarge = styled.div`
   font-size: 25px;
   line-height: 30px;
   letter-spacing: 0.25px;
-  color: white;
+  color: #b30f1f;
   text-align: center;
 `;
 
@@ -43,7 +43,7 @@ const ErrorLabelSmall = styled.div`
   font-size: 15px;
   line-height: 18px;
   letter-spacing: 0.15px;
-  color: white;
+  color: #b30f1f;
   text-align: center;
   margin-top: 9px;
 `;
