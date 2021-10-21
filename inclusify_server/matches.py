@@ -148,7 +148,7 @@ def inflect_root(insensitive_word, alternative, plural_only, source):
 
 
 def simplify_participles(sensitive_words, insensitive_root):
-    match = re.match(r"(^[a-zäöüß]+(te|nde)n?) (Person|Mensch|Firma)$", sensitive_words)
+    match = re.match(r"(^[a-zäöüß]+(ige|ene|te|nde)n?) (Person|Mensch|Firma)$", sensitive_words)
     if parse_feats(insensitive_root.feats)["Number"] == "PLU" and match:
         return startupper(match[1])
     else:
