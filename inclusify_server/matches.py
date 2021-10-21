@@ -120,9 +120,8 @@ def parse_feats(feats):
 
 def inflect_root(insensitive_word, alternative, plural_only, source):
     morphs = parse_feats(insensitive_word.feats)
-    alternative_words = nlp(alternative).sentences[0].words
-    alternative_texts = [word.text for word in alternative_words]
-    sensitive_root = [word for word in alternative_words if word.deprel == "root"][0]
+    sentence = nlp(alternative).sentences[0]
+    sensitive_root = [word for word in sentence.words if word.deprel == "root"][0]
     number_ = None if plural_only else morphs["Number"]
     inflected_sensitive_roots = inflect(
         sensitive_root.text, case=morphs["Case"], number=number_
@@ -135,12 +134,18 @@ def inflect_root(insensitive_word, alternative, plural_only, source):
             source, insensitive_word.text, inflected_sensitive_root
         )
         if makes_sense:
+            root_id = [
+                i
+                for i, t in enumerate(sentence.tokens)
+                if sensitive_root.id in [w.id for w in t.words]
+            ][0]
+            tokens = [t.text for t in sentence.tokens]
             alternatives_with_inflected_root.append(
                 " ".join(
                     [
-                        *alternative_texts[: sensitive_root.id - 1],
+                        *tokens[:root_id],
                         inflected_sensitive_root,  # morphs["Case"], morphs["Number"], insensitive_word.lemma
-                        *alternative_texts[sensitive_root.id :],
+                        *tokens[root_id + 1 :],
                     ]
                 )
             )
@@ -148,7 +153,9 @@ def inflect_root(insensitive_word, alternative, plural_only, source):
 
 
 def simplify_participles(sensitive_words, insensitive_root):
-    match = re.match(r"(^[a-zäöüß]+(ige|ene|te|nde)n?) (Person|Mensch|Firma)$", sensitive_words)
+    match = re.match(
+        r"(^[a-zäöüß]+(ige|ene|te|nde)n?) (Person|Mensch|Firma)$", sensitive_words
+    )
     if parse_feats(insensitive_root.feats)["Number"] == "PLU" and match:
         return startupper(match[1])
     else:
@@ -162,6 +169,8 @@ def startupper(a):
 
 
 def add_gender_symbol(source, insensitive_word, inflected_sensitive_root):
+    # returns whether it is "clean" to add a gender symbol (not yet implemented; always True)
+    # and the word with the inserted gender symbol
     if not source == "dereko":
         return True, inflected_sensitive_root
     elif source == "dereko":
