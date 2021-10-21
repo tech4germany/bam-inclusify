@@ -36,7 +36,7 @@ COPY --from=builder --chown=inclusify:inclusify /home/inclusify/inclusify-build/
 RUN pip install -r inclusify_server/requirements.in
 
 ENV INCLUSIFY_BIND_HOST=0.0.0.0
-ENV INCLUSIFY_BIND_PORT=8081
+ENV INCLUSIFY_BIND_PORT=80
 ENV INCLUSIFY_STARTUP_TIMEOUT_SEC=900
 
 EXPOSE ${BIND_PORT}
