@@ -118,17 +118,14 @@ const LtMatch: FC<LtMatchProps> = ({ ltMatch, applyReplacement, selectRuleMatch 
           <MatchMatchText onClick={() => isFunction(selectRuleMatch) && selectRuleMatch(ltMatch)}>
             {matchText}
           </MatchMatchText>
-          <ReplacementListContainer>
-            {ltMatch.replacements.map((r) => (
-              <div key={r.clientUuid}>
-                <Replacement
-                  onClick={isFunction(applyReplacement) ? () => applyReplacement(ltMatch, r.value || "") : undefined}
-                >
-                  {r.value}
-                </Replacement>
-              </div>
-            ))}
-          </ReplacementListContainer>
+          {ltMatch.replacements.map((r) => (
+            <Replacement
+              key={r.clientUuid}
+              onClick={isFunction(applyReplacement) ? () => applyReplacement(ltMatch, r.value || "") : undefined}
+            >
+              {r.value}
+            </Replacement>
+          ))}
         </MatchContextContainer>
         <MatchRuleExplanation>{ltMatch.shortMessage}</MatchRuleExplanation>
         <MatchRuleExplanation hidden={!isExpanded}>{ltMatch.message}</MatchRuleExplanation>
@@ -219,10 +216,13 @@ const ReplacementItem = styled.button`
   border: none;
   border-radius: 4px;
   background: ${Colors.mediumGreen};
-  padding: 3px 7px;
+  padding: 4px 6px;
   color: white;
   font-family: ${Fonts.main.family};
   font-weight: ${Fonts.main.weights.normal};
+  font-size: 13px;
+  line-height: 14px;
+  letter-spacing: 0.07px;
   cursor: ${(props) => (isFunction(props.onClick) ? "pointer" : "initial")};
 
   &:hover {
@@ -244,9 +244,8 @@ const MatchContainer = styled.div<MatchContainerProps>`
 const MatchContextContainer = styled.div`
   margin: 14px 0;
   display: flex;
-  column-gap: 15px;
+  column-gap: 5px;
   row-gap: 5px;
-  font-size: 15px;
   align-items: flex-start;
   flex-wrap: wrap;
 `;
@@ -257,7 +256,12 @@ const MatchMatchText = styled.button`
   border: none;
   cursor: pointer;
   margin: 0;
-  padding: 3px 1px;
+  margin-right: 5px;
+  padding: 2px 1px;
+  font-family: ${Fonts.main.family};
+  font-weight: ${Fonts.main.weights.normal};
+  font-style: 15px;
+  letter-spacing: 0.07px;
 `;
 
 const MatchRuleExplanation = styled.div`
