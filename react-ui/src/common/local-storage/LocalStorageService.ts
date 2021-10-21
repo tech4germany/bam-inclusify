@@ -20,7 +20,7 @@ export class LocalStorageService<T extends object> {
 
   private normalize(value: T): T {
     const normalizedEntries = (Object.keys(this.defaultValue) as (keyof T)[]).map((k) => {
-      let propValue = value[k];
+      let propValue = k in value ? value[k] : this.defaultValue[k];
       if (k in this.normalizers) {
         const normalizer = this.normalizers[k];
         if (isFunction(normalizer)) {

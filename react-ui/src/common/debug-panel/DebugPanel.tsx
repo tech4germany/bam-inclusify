@@ -68,6 +68,9 @@ export const DebugPanel: FC<DebugPanelProps> = !isDebugPanelEnabled
           <Checkbox featureFlagsState={featureFlagsState} featureFlagId={"useBamLogo"}>
             BAM-Logo verwenden
           </Checkbox>
+          <Checkbox featureFlagsState={featureFlagsState} featureFlagId={"showIgnoreButton"}>
+            "Match ignorieren" verfügbar
+          </Checkbox>
           <NumberInput featureFlagId={"maxReplacementsPerRuleMatch"} featureFlagsState={featureFlagsState}>
             Max Vorschläge pro Regel-Match
           </NumberInput>

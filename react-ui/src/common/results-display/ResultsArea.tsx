@@ -288,6 +288,7 @@ const MatchExpandCollapseToggleContainer = styled.button`
   gap: 5px;
   background: #fafafa 0% 0% no-repeat padding-box;
   border-radius: 5px;
+  min-height: 20px;
 
   &:hover {
     background-color: #efefef;
@@ -340,9 +341,15 @@ const ExpandCollapseMeasurer = styled.div`
 `;
 
 const IgnoreMatchButton = () => (
-  <IgnoreMatchButtonContainer>
-    <CancelIcon height={20} width={20} fill={"currentColor"} />
-  </IgnoreMatchButtonContainer>
+  <UserSettingsAndFeatureFlagsContext.Consumer>
+    {({ featureFlags }) =>
+      featureFlags.showIgnoreButton && (
+        <IgnoreMatchButtonContainer>
+          <CancelIcon height={20} width={20} fill={"currentColor"} />
+        </IgnoreMatchButtonContainer>
+      )
+    }
+  </UserSettingsAndFeatureFlagsContext.Consumer>
 );
 const IgnoreMatchButtonContainer = styled.button`
   background: none;

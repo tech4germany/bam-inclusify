@@ -11,6 +11,7 @@ export const DefaultFeatureFlags = Object.freeze({
   useBamLogo: true,
   minimumRequestDelayMs: 1000,
   apiBaseUrl: "/v2",
+  showIgnoreButton: false,
 });
 
 export type FeatureFlags = typeof DefaultFeatureFlags;
