@@ -19,7 +19,7 @@ RUN cd react-ui && yarn install
 
 ADD --chown=inclusify:inclusify . .
 RUN devcmd setup
-RUN devcmd build-zip-file
+RUN devcmd prepare-server
 
 
 FROM python:3.9-bullseye
