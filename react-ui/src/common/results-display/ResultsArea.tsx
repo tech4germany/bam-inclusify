@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { DownChevronIcon } from "../icons";
 import { Colors } from "../styles/Colors";
@@ -128,7 +128,9 @@ const LtMatch: FC<LtMatchProps> = ({ ltMatch, applyReplacement, selectRuleMatch 
           ))}
         </MatchContextContainer>
         <MatchRuleExplanation>{ltMatch.shortMessage}</MatchRuleExplanation>
-        <MatchRuleExplanation hidden={!isExpanded}>{ltMatch.message}</MatchRuleExplanation>
+        <ExpandCollapse isExpanded={isExpanded}>
+          <MatchRuleExplanation>{ltMatch.message}</MatchRuleExplanation>
+        </ExpandCollapse>
         <MatchActionsBar>
           <MatchExpandCollapseToggle expandedState={[isExpanded, setExpanded]} />
           <MatchActionsBarSpacer />
@@ -149,9 +151,10 @@ const MatchTopBar: FC<EntryTopBarProps> = ({ categoryName }) => (
 );
 
 const MatchTopBarContainer = styled.div`
-  font-size: 0.7rem;
-  font-family: ${Fonts.main.family};
-  font-weight: ${Fonts.main.weights.thin};
+  font-size: 12px;
+  letter-spacing: 0.06px;
+  font-family: ${Fonts.bam.family};
+  font-weight: ${Fonts.bam.weights.normal};
   display: flex;
   gap: 1rem;
   align-items: center;
@@ -201,12 +204,6 @@ const MatchContentContainer = styled.div`
   margin: 0;
 `;
 
-const ReplacementListContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-`;
-
 const Replacement: FC<{ onClick: React.MouseEventHandler<HTMLButtonElement> | undefined }> = ({
   onClick,
   children,
@@ -237,7 +234,7 @@ const MatchContainer = styled.div<MatchContainerProps>`
   background: white;
   border-radius: 10px;
   box-shadow: 0px 6px 12px #00000029;
-  padding: 20px 13px;
+  padding: 11px 13px 15px;
   border-left: 16px solid ${(props) => matchCategoryColor(props.category)};
 `;
 
@@ -265,8 +262,10 @@ const MatchMatchText = styled.button`
 `;
 
 const MatchRuleExplanation = styled.div`
-  margin: 14px 0;
-  font-size: 0.7rem;
+  margin: 15px 0 0;
+  font-size: 11px;
+  line-height: 18px;
+  letter-spacing: 0.06px;
   font-family: ${Fonts.main.family};
   font-weight: ${Fonts.main.weights.thin};
 `;
@@ -274,6 +273,7 @@ const MatchRuleExplanation = styled.div`
 const MatchActionsBar = styled.div`
   font-size: 0.5625rem;
   display: flex;
+  margin-top: 20px;
 `;
 
 const MatchActionsBarSpacer = styled.div`
@@ -319,4 +319,26 @@ const MatchIgnoreButton = styled.div`
   background: black;
   color: white;
   text-align: center;
+`;
+
+const ExpandCollapse: FC<{ isExpanded: boolean }> = ({ isExpanded, children }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const measurerRef = useRef<HTMLDivElement>(null);
+  const heightRef = useRef(0);
+  useEffect(() => {
+    heightRef.current = measurerRef.current?.scrollHeight || 0;
+  });
+
+  return (
+    <ExpandCollapseContainer ref={containerRef} style={{ height: isExpanded ? heightRef.current + "px" : "0" }}>
+      <ExpandCollapseMeasurer ref={measurerRef}>{children}</ExpandCollapseMeasurer>
+    </ExpandCollapseContainer>
+  );
+};
+const ExpandCollapseContainer = styled.div`
+  overflow-y: hidden;
+  transition: height 0.4s ease;
+`;
+const ExpandCollapseMeasurer = styled.div`
+  display: flex;
 `;
