@@ -5,12 +5,12 @@
   <ProviderName>Tech4Germany 2021</ProviderName>
   <DefaultLocale>de-DE</DefaultLocale>
   <DisplayName DefaultValue="Inclusify"/>
-  <Description DefaultValue="Diversitätssensible Sprache leicht gemacht."/>
+  <Description DefaultValue="Deine Assistentin für diversitätsensible Sprache"/>
   <IconUrl DefaultValue="https://localhost:3000/assets/icon-32.png"/>
   <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/icon-64.png"/>
-  <SupportUrl DefaultValue="https://www.contoso.com/help"/>
+  <SupportUrl DefaultValue="https://www.bam.de"/>
   <AppDomains>
-    <AppDomain>https://www.contoso.com</AppDomain>
+    <AppDomain>https://www.bam.de</AppDomain>
   </AppDomains>
   <Hosts>
     <Host Name="Document"/>

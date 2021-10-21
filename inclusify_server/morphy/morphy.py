@@ -21,6 +21,7 @@ inflected_to_lemma = klepto.archives.file_archive(
     path.join(cwd, "inflected_to_lemma"), {}
 )
 inflected_to_lemma.load()
+print("Done loading morphological dictionary.")
 
 
 def init():

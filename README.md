@@ -1,11 +1,11 @@
-# OpenMinDEd App
+# Inclusify App
 
 ## Parts of this repository
 
 What is where:
 
 - `data/` - word lists, text corpora, and other input data, as well as pre-processing scripts to turn this data into usable inputs for the LanguageTool backend
-- `languagetool/` - the LanguageTool backend (API server) and related things, e.g. the WAR-file wrapper for Tomcat deployment
+- `dev_cmds/` - build scripts and development task automation using [DevCmd](https://github.com/XITASO/devcmd)
 - `react-ui/` - the graphical end-user app (frontend) for use as a standalone webpage in a browser and in Word/Outlook add-ins
 
 ## Prerequisites for development
@@ -13,8 +13,6 @@ What is where:
 - [Node.js](https://nodejs.org/en/) v14 or newer
 - [(Classic) Yarn](https://classic.yarnpkg.com/lang/en/) v1.22 or newer (though not Yarn 2)
 - [Python 3](https://www.python.org/) v3.9 or newer
-- Java: a JRE/JDK that can run Java 8, e.g. [OpenJDK](https://openjdk.java.net/install/)
-- (optional) if you want to build LanguageTool from source or build the WAR file for Tomcat deployment: [Maven](https://maven.apache.org/)
 - (optional) if you want to build the Docker image or run the app in a Docker container: [Docker](https://www.docker.com/)
 
 ## Setting up certificates for development
