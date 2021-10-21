@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef, useState } from "react";
+import React, { FC, useState } from "react";
 import styled from "styled-components";
 import { CancelIcon, DownChevronIcon } from "../icons";
 import { Colors } from "../styles/Colors";
@@ -23,6 +23,7 @@ import { LoadingMessage } from "../message-panels/LoadingMessage";
 import { WelcomeMessage } from "../message-panels/WelcomeMessage";
 import { UserSettingsAndFeatureFlagsContext } from "../UserSettingsAndFeatureFlagsContext";
 import { UseState } from "../UseState";
+import { ExpandCollapse } from "./ExpandCollapse";
 
 export type ApplyReplacementFunction = (ruleMatch: RuleMatch, replacementText: string) => Promise<void>;
 
@@ -317,28 +318,6 @@ const MatchExpandCollapseToggle: FC<{ expandedState: UseState<boolean> }> = ({
     <MatchExpandCollapseText>{isExpanded ? "weniger" : "mehr"} anzeigen</MatchExpandCollapseText>
   </MatchExpandCollapseToggleContainer>
 );
-
-const ExpandCollapse: FC<{ isExpanded: boolean }> = ({ isExpanded, children }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const measurerRef = useRef<HTMLDivElement>(null);
-  const heightRef = useRef(0);
-  useEffect(() => {
-    heightRef.current = measurerRef.current?.scrollHeight || 0;
-  });
-
-  return (
-    <ExpandCollapseContainer ref={containerRef} style={{ height: isExpanded ? heightRef.current + "px" : "0" }}>
-      <ExpandCollapseMeasurer ref={measurerRef}>{children}</ExpandCollapseMeasurer>
-    </ExpandCollapseContainer>
-  );
-};
-const ExpandCollapseContainer = styled.div`
-  overflow-y: hidden;
-  transition: height 0.4s ease;
-`;
-const ExpandCollapseMeasurer = styled.div`
-  display: flex;
-`;
 
 const IgnoreMatchButton = () => (
   <UserSettingsAndFeatureFlagsContext.Consumer>
