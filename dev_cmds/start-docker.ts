@@ -5,7 +5,7 @@ import { APP_IMAGE_NAME } from "./utils/docker";
 async function main() {
   await execInTty({
     command: DOCKER_COMMAND,
-    args: ["run", "-ti", "--rm", ...["-p", "80:80"], APP_IMAGE_NAME],
+    args: ["run", "-ti", "--rm", ...["-p", "80:8081"], APP_IMAGE_NAME],
   });
 }
 

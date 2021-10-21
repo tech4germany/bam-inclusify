@@ -1,22 +1,20 @@
 import { execPiped, runAsyncMain } from "devcmd";
-import path from "path";
-import { DEVCMD_COMMAND } from "./utils/commands";
-import { languageToolDir } from "./utils/paths";
+import { repoRoot } from "./utils/paths";
 
 async function main() {
   await execPiped({
-    command: "java",
+    command: "bash",
     args: [
-      ...["-cp", "languagetool-server.jar"],
-      "org.languagetool.server.HTTPServer",
-      ...["--port", "8081"],
-      ...["--allow-origin", "*"],
+      "-c",
+      [
+        "source $(conda info --base)/etc/profile.d/conda.sh",
+        "conda activate inclusify",
+        "pip install -r inclusify_server/requirements.in",
+        "gunicorn inclusify_server.app:app --bind localhost:8081 --timeout 90",
+      ].join(" && "),
     ],
     options: {
-      cwd: path.join(
-        languageToolDir,
-        "LanguageTool-5.4"
-      ),
+      cwd: repoRoot,
     },
   });
 }
