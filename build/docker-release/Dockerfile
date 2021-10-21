@@ -34,6 +34,7 @@ WORKDIR /home/inclusify/inclusify-build
 
 COPY --from=builder --chown=inclusify:inclusify /home/inclusify/inclusify-build/inclusify_server ./inclusify_server
 RUN pip install --no-warn-script-location --disable-pip-version-check -r inclusify_server/requirements.in
+RUN python3 -m inclusify_server.download_language_models
 
 ENV INCLUSIFY_BIND_HOST=0.0.0.0
 ENV INCLUSIFY_BIND_PORT=80
