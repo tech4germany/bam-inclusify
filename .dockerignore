@@ -4,7 +4,4 @@
 __pycache__/
 /data/.venv/
 /dev_cmds/node_modules/
-languagetool/languagetool/
-languagetool/LanguageTool-*/
-languagetool/war-package/target/
 /react-ui/node_modules/
