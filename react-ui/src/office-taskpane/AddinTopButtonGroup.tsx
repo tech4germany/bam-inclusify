@@ -37,7 +37,7 @@ const InclusifyLogoLinkTile = () => (
           <InclusifyLogoContainer>
             {featureFlags.useBamLogo ? <InclusifyBamLogo /> : <InclusifyLogo />}
           </InclusifyLogoContainer>
-          <InclusifyLogoLinkText>Deine Assistentin für diversitätsensible Sprache</InclusifyLogoLinkText>
+          <InclusifyLogoLinkText>Deine Assistentin für diversitätssensible Sprache</InclusifyLogoLinkText>
         </>
       )}
     </UserSettingsAndFeatureFlagsContext.Consumer>

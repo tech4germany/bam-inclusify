@@ -36,7 +36,7 @@ export const UserSettingsPanel: FC<UserSettingsPanelProps> = ({ userSettingsStat
           <UserSettingsTitle>Einstellungen</UserSettingsTitle>
           <UserSettingsContent>
             <DefaultSettingsExplanation>
-              Standardeinstellungen basieren auf dem BAM Leitfaden für diversitätsensible Sprache.
+              Standardeinstellungen basieren auf dem BAM Leitfaden für diversitätssensible Sprache.
             </DefaultSettingsExplanation>
             <SettingsSectionTitle>Gendersprache</SettingsSectionTitle>
             <OptionList

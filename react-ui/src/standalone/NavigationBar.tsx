@@ -15,7 +15,7 @@ export const NavigationBar = () => (
       <NavBarItemsContainer>
         <NavBarAppIconRow>
           <NavBarAppIcon />
-          <NavBarAppIconSmallText>Deine Assistentin für diversitätsensible Sprache</NavBarAppIconSmallText>
+          <NavBarAppIconSmallText>Deine Assistentin für diversitätssensible Sprache</NavBarAppIconSmallText>
         </NavBarAppIconRow>
         <NavBarSpacer />
         {navLinks.map((l) => (
