@@ -9,7 +9,7 @@ export const ExpandCollapse: FC<{ isExpanded: boolean }> = ({ isExpanded, childr
   useEffect(() => {
     heightRef.current = measurerRef.current?.scrollHeight || 0;
     setComputedHeight(measurerRef.current?.scrollHeight || 0);
-  });
+  }, []);
 
   return (
     <ExpandCollapseContainer
