@@ -9,8 +9,8 @@
   <DefaultLocale>de-DE</DefaultLocale>
   <DisplayName DefaultValue="Inclusify"/>
   <Description DefaultValue="Deine Assistentin für diversitätssensible Sprache"/>
-  <IconUrl DefaultValue="https://localhost:3000/assets/icon-32.png"/>
-  <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/icon-64.png"/>
+  <IconUrl DefaultValue="https://localhost:3000/favicon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://localhost:3000/favicon-80.png"/>
   <SupportUrl DefaultValue="https://www.bam.de"/>
   <AppDomains>
     <AppDomain>https://www.bam.de</AppDomain>
@@ -31,7 +31,6 @@
               <Group id="CommandsGroup">
                 <Label resid="CommandsGroup.Label"/>
                 <Icon>
-                  <bt:Image size="16" resid="Icon.16x16"/>
                   <bt:Image size="32" resid="Icon.32x32"/>
                   <bt:Image size="80" resid="Icon.80x80"/>
                 </Icon>
@@ -42,7 +41,6 @@
                     <Description resid="TaskpaneButton.Tooltip"/>
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="Icon.16x16"/>
                     <bt:Image size="32" resid="Icon.32x32"/>
                     <bt:Image size="80" resid="Icon.80x80"/>
                   </Icon>
@@ -59,9 +57,8 @@
     </Hosts>
     <Resources>
       <bt:Images>
-        <bt:Image id="Icon.16x16" DefaultValue="https://localhost:3000/assets/icon-16.png"/>
-        <bt:Image id="Icon.32x32" DefaultValue="https://localhost:3000/assets/icon-32.png"/>
-        <bt:Image id="Icon.80x80" DefaultValue="https://localhost:3000/assets/icon-80.png"/>
+        <bt:Image id="Icon.32x32" DefaultValue="https://localhost:3000/favicon-32.png"/>
+        <bt:Image id="Icon.80x80" DefaultValue="https://localhost:3000/favicon-80.png"/>
       </bt:Images>
       <bt:Urls>
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
