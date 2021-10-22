@@ -22,7 +22,7 @@ import { ErrorMessage } from "../message-panels/ErrorMessage";
 import { LoadingMessage } from "../message-panels/LoadingMessage";
 import { WelcomeMessage } from "../message-panels/WelcomeMessage";
 import { UserSettingsAndFeatureFlagsContext } from "../UserSettingsAndFeatureFlagsContext";
-import { UseState } from "../UseState";
+import { SetState, UseState } from "../UseState";
 import { ExpandCollapse } from "./ExpandCollapse";
 
 export type ApplyReplacementFunction = (ruleMatch: RuleMatch, replacementText: string) => Promise<void>;
@@ -123,6 +123,13 @@ const LtMatch: FC<LtMatchProps> = ({ ltMatch, applyReplacement, selectRuleMatch 
   const [, matchText] = splitTextMatch(ltMatch.context.text, ltMatch.context.offset, ltMatch.context.length);
   const category = mapRuleCategory(ltMatch);
 
+  const setExpandedWithReselect: SetState<boolean> = !isFunction(selectRuleMatch)
+    ? setExpanded
+    : (x) => {
+        setExpanded(x);
+        selectRuleMatch(ltMatch);
+      };
+
   return (
     <MatchContainer category={category} onMouseEnter={() => isFunction(selectRuleMatch) && selectRuleMatch(ltMatch)}>
       <MatchTopBar categoryName={ltMatch.rule?.category?.name || ""} />
@@ -145,7 +152,7 @@ const LtMatch: FC<LtMatchProps> = ({ ltMatch, applyReplacement, selectRuleMatch 
           <MatchRuleExplanation>{ltMatch.message}</MatchRuleExplanation>
         </ExpandCollapse>
         <MatchActionsBar>
-          <MatchExpandCollapseToggle expandedState={[isExpanded, setExpanded]} />
+          <MatchExpandCollapseToggle expandedState={[isExpanded, setExpandedWithReselect]} />
           <MatchActionsBarSpacer />
           <IgnoreMatchButton />
         </MatchActionsBar>
