@@ -17,6 +17,7 @@ import { CenteredContainer } from "./CenteredContainer";
 import { UserSettingsAndFeatureFlagsContext } from "../common/UserSettingsAndFeatureFlagsContext";
 import { UseState } from "../common/UseState";
 import { PilotPhaseBanner } from "../common/PilotPhaseBanner";
+import { rightMargin } from "../office-taskpane/taskpane-style-constants";
 
 const textAreaId = newUuidv4();
 
@@ -126,19 +127,21 @@ const StandaloneAppContainer = styled.div`
 const TopBarContainer = styled.div`
   display: flex;
   align-items: flex-end;
+  margin-right: ${rightMargin};
 `;
 const PilotPhaseBannerContainer = styled.div`
   flex-grow: 1;
-  margin-bottom: 10px;
 `;
 const SummaryBarContainer = styled.div`
-  margin: 30px 0 24px;
+  margin: 30px 0 14px;
 `;
 
 const MainAreaContainer = styled.div`
   display: flex;
   height: 100%;
   gap: 20px;
+  box-sizing: border-box;
+  padding-top: 10px;
 `;
 
 const InputAreaContainer = styled.div`

@@ -6,6 +6,7 @@ import { CenteredContainer } from "./CenteredContainer";
 import packageJson from "../../package.json";
 import { newUuidv4 } from "../common/uuid";
 import { isValidUrl } from "../common/isValidUrl";
+import { rightMargin } from "../office-taskpane/taskpane-style-constants";
 
 const navLinks = extractNavLinks();
 
@@ -38,6 +39,7 @@ const NavBarItemsContainer = styled.div`
   display: flex;
   align-items: flex-end;
   height: ${navBarHeight};
+  margin-right: ${rightMargin};
 `;
 const NavBarSpacer = styled.div`
   flex-grow: 1;

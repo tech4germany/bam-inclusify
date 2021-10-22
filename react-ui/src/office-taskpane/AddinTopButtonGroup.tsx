@@ -9,6 +9,7 @@ import { AddinCheckTextButton } from "./AddinCheckTextButton";
 import { AddinUserSettingsButton } from "./AddinUserSettingsButton";
 import packageJson from "../../package.json";
 import { isValidUrl } from "../common/isValidUrl";
+import { leftMargin, rightMargin } from "./taskpane-style-constants";
 
 const logoLinkUrl = extractLogoLink();
 
@@ -27,6 +28,7 @@ const AddinButtonGroupContainer = styled.div`
   display: flex;
   gap: 10px;
   justify-content: flex-end;
+  margin: 0 ${rightMargin} 0 ${leftMargin};
 `;
 
 const InclusifyLogoLinkTile = () => (

@@ -24,7 +24,6 @@ import { WelcomeMessage } from "../message-panels/WelcomeMessage";
 import { UserSettingsAndFeatureFlagsContext } from "../UserSettingsAndFeatureFlagsContext";
 import { UseState } from "../UseState";
 import { ExpandCollapse } from "./ExpandCollapse";
-import { scrollbarWidth } from "../../standalone/scrollbar-width";
 
 export type ApplyReplacementFunction = (ruleMatch: RuleMatch, replacementText: string) => Promise<void>;
 
@@ -66,13 +65,18 @@ export const ResultsArea: FC<ResultsAreaProps> = ({
   );
 };
 
+export const leftMarginPx = 8;
+export const additionalRightMarginPx = 5;
+
+const topOverMarginForShadow = "5px";
 const ResultsAreaContainer = styled.div`
   overflow-y: auto;
-  padding-left: 8px;
-  margin-right: ${-(scrollbarWidth + 10)}px;
-  padding-right: 10px;
-  height: 100%;
+  padding: 0 ${additionalRightMarginPx}px 15px ${leftMarginPx}px;
+  height: calc(100% + ${topOverMarginForShadow});
+  box-sizing: border-box;
   scrollbar-gutter: stable;
+  padding-top: ${topOverMarginForShadow};
+  margin-top: -${topOverMarginForShadow};
 `;
 
 interface ResultListProps {

@@ -14,6 +14,7 @@ import { AddinTopButtonGroup } from "./AddinTopButtonGroup";
 import { UserSettingsAndFeatureFlagsContext } from "../common/UserSettingsAndFeatureFlagsContext";
 import { SetState } from "../common/UseState";
 import { PilotPhaseBanner } from "../common/PilotPhaseBanner";
+import { leftMargin, rightMargin } from "./taskpane-style-constants";
 
 export const TaskpaneApp: FC = () => {
   const [ltMatches, setLtMatches] = useState<RuleMatch[] | null>(null);
@@ -81,19 +82,24 @@ export const TaskpaneApp: FC = () => {
 };
 
 const AddinContainer = styled.div`
-  margin: 0 7px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 `;
 
 const PilotPhaseBannerContainer = styled.div`
-  margin-top: 5px;
+  margin: 5px ${rightMargin} 0 ${leftMargin};
 `;
 
 const SummaryBarContainer = styled.div`
-  margin-top: 8px;
+  margin: 8px ${rightMargin} 0 ${leftMargin};
 `;
 
 const LowerAreaContainer = styled.div`
-  margin-top: 17px;
+  margin-top: 12px;
+  overflow: auto;
+  padding-top: 5px;
+  box-sizing: border-box;
 `;
 
 type ParagraphWithRanges = { paragraph: Word.Paragraph; ranges: Word.Range[] };
