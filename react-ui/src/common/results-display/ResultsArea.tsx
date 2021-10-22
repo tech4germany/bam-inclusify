@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { CancelIcon, DownChevronIcon } from "../icons";
 import { Colors } from "../styles/Colors";
 import { FeatureFlags } from "../feature-flags/feature-flags";
@@ -48,7 +48,7 @@ export const ResultsArea: FC<ResultsAreaProps> = ({
   selectRuleMatch,
 }) => {
   return (
-    <>
+    <ResultsAreaContainer>
       {isSettingsOpen ? (
         <UserSettingsPanel {...userSettingsPanelProps} />
       ) : isError ? (
@@ -62,9 +62,18 @@ export const ResultsArea: FC<ResultsAreaProps> = ({
       ) : (
         <ResultList ruleMatches={ruleMatches} applyReplacement={applyReplacement} selectRuleMatch={selectRuleMatch} />
       )}
-    </>
+    </ResultsAreaContainer>
   );
 };
+
+const ResultsAreaContainer = styled.div`
+  overflow-y: auto;
+  padding-left: 8px;
+  margin-right: ${-(scrollbarWidth + 10)}px;
+  padding-right: 10px;
+  height: 100%;
+  scrollbar-gutter: stable;
+`;
 
 interface ResultListProps {
   ruleMatches: RuleMatch[];
@@ -77,7 +86,7 @@ export const ResultList: FC<ResultListProps> = ({ ruleMatches, applyReplacement,
     {({ featureFlags, userSettings }) => {
       const matchesToShow = postProcessRuleMatches(ruleMatches, featureFlags, userSettings);
       return (
-        <LtMatchesListContainer permanentScrollbar={featureFlags.showIgnoreButton}>
+        <LtMatchesListContainer>
           {matchesToShow.map((ltMatch) => (
             <LtMatch
               key={ltMatch.clientUuid}
@@ -92,19 +101,10 @@ export const ResultList: FC<ResultListProps> = ({ ruleMatches, applyReplacement,
   </UserSettingsAndFeatureFlagsContext.Consumer>
 );
 
-const LtMatchesListContainer = styled.div<{ permanentScrollbar: boolean }>`
+const LtMatchesListContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 25px;
-  ${({ permanentScrollbar }) =>
-    permanentScrollbar
-      ? css`
-          overflow-y: scroll;
-          margin-right: ${-(scrollbarWidth + 10)}px;
-          padding-right: 10px;
-          height: 100%;
-        `
-      : ``}
 `;
 
 interface LtMatchProps {

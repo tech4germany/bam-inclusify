@@ -1,6 +1,5 @@
-import { css } from "@fluentui/utilities";
 import "normalize.css";
-import { createGlobalStyle, DefaultTheme, GlobalStyleComponent } from "styled-components";
+import { createGlobalStyle, css, DefaultTheme, GlobalStyleComponent } from "styled-components";
 import { Colors } from "./Colors";
 import { Fonts } from "./Fonts";
 
@@ -9,7 +8,8 @@ export function makeGlobalStyle(inAddin: boolean): GlobalStyleComponent<{}, Defa
   const bodyOverflow = inAddin ? "scroll" : "initial";
   const mainFont = Fonts.main;
 
-  return createGlobalStyle`
+  // prettier doesn't reformat styles for `createGlobalStyle`, so we put it into a variable with css`` first
+  const styles = css`
     body {
       background: ${bodyBackgroundColor};
       font-family: ${mainFont.family}, sans-serif;
@@ -27,4 +27,6 @@ export function makeGlobalStyle(inAddin: boolean): GlobalStyleComponent<{}, Defa
       left: 0;
     }
   `;
+
+  return createGlobalStyle`${styles}`;
 }

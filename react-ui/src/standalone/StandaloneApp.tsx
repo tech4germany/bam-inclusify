@@ -138,7 +138,7 @@ const SummaryBarContainer = styled.div`
 const MainAreaContainer = styled.div`
   display: flex;
   height: 100%;
-  gap: 28px;
+  gap: 20px;
 `;
 
 const InputAreaContainer = styled.div`
