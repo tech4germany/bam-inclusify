@@ -23,6 +23,7 @@ export const TaskpaneApp: FC = () => {
   const [isLoading, setLoading] = useState(false);
   const [isError, setError] = useState(false);
   const [isSettingsOpen, setSettingsOpen] = useState(false);
+  const [isTextModified, setTextModified] = useState(false);
   const [featureFlags, setFeatureFlags] = useFeatureFlagsState();
   const [userSettings, setUserSettings] = useUserSettingsState();
 
@@ -64,6 +65,7 @@ export const TaskpaneApp: FC = () => {
               onConfirmClicked: () => setSettingsOpen(false),
             }}
             ruleMatches={ltMatches}
+            matchesDisabled={isTextModified}
             applyReplacement={async (m, r) => {
               if (!isFunction(applier)) return;
               await applier(m, r);

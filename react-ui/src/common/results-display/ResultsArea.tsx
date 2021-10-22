@@ -34,6 +34,7 @@ interface ResultsAreaProps {
   userSettingsPanelProps: UserSettingsPanelProps;
 
   ruleMatches: RuleMatch[] | null;
+  matchesDisabled: boolean;
   applyReplacement?: ApplyReplacementFunction;
   selectRuleMatch?: (ruleMatch: RuleMatch) => void;
 }
@@ -42,6 +43,7 @@ export const ResultsArea: FC<ResultsAreaProps> = ({
   isLoading,
   isSettingsOpen,
   ruleMatches,
+  matchesDisabled,
   userSettingsPanelProps,
   applyReplacement,
   selectRuleMatch,
@@ -59,7 +61,12 @@ export const ResultsArea: FC<ResultsAreaProps> = ({
       ) : ruleMatches.length === 0 ? (
         <CompletionMessage />
       ) : (
-        <ResultList ruleMatches={ruleMatches} applyReplacement={applyReplacement} selectRuleMatch={selectRuleMatch} />
+        <ResultList
+          ruleMatches={ruleMatches}
+          matchesDisabled={matchesDisabled}
+          applyReplacement={applyReplacement}
+          selectRuleMatch={selectRuleMatch}
+        />
       )}
     </ResultsAreaContainer>
   );
@@ -81,20 +88,27 @@ const ResultsAreaContainer = styled.div`
 
 interface ResultListProps {
   ruleMatches: RuleMatch[];
+  matchesDisabled: boolean;
   applyReplacement?: ApplyReplacementFunction;
   selectRuleMatch?: (ruleMatch: RuleMatch) => void;
 }
 
-export const ResultList: FC<ResultListProps> = ({ ruleMatches, applyReplacement, selectRuleMatch }) => (
+export const ResultList: FC<ResultListProps> = ({
+  ruleMatches,
+  matchesDisabled,
+  applyReplacement,
+  selectRuleMatch,
+}) => (
   <UserSettingsAndFeatureFlagsContext.Consumer>
     {({ featureFlags, userSettings }) => {
       const matchesToShow = postProcessRuleMatches(ruleMatches, featureFlags, userSettings);
       return (
-        <LtMatchesListContainer>
+        <LtMatchesListContainer className={matchesDisabled ? "disabled" : ""}>
           {matchesToShow.map((ltMatch) => (
             <LtMatch
               key={ltMatch.clientUuid}
               ltMatch={ltMatch}
+              isDisabled={matchesDisabled}
               applyReplacement={applyReplacement}
               selectRuleMatch={selectRuleMatch}
             />
@@ -109,15 +123,22 @@ const LtMatchesListContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 25px;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+
+  &.disabled {
+    opacity: 0.5;
+  }
 `;
 
 interface LtMatchProps {
   ltMatch: RuleMatch;
+  isDisabled: boolean;
   applyReplacement?: ApplyReplacementFunction;
   selectRuleMatch: ((ruleMatch: RuleMatch) => void) | undefined;
 }
 
-const LtMatch: FC<LtMatchProps> = ({ ltMatch, applyReplacement, selectRuleMatch }) => {
+const LtMatch: FC<LtMatchProps> = ({ ltMatch, isDisabled, applyReplacement, selectRuleMatch }) => {
   const [isExpanded, setExpanded] = useState(false);
 
   const [, matchText] = splitTextMatch(ltMatch.context.text, ltMatch.context.offset, ltMatch.context.length);
@@ -131,16 +152,20 @@ const LtMatch: FC<LtMatchProps> = ({ ltMatch, applyReplacement, selectRuleMatch 
       };
 
   return (
-    <MatchContainer category={category} onMouseEnter={() => isFunction(selectRuleMatch) && selectRuleMatch(ltMatch)}>
+    <MatchContainer
+      category={category}
+      onMouseEnter={() => isFunction(selectRuleMatch) && !isDisabled && selectRuleMatch(ltMatch)}
+    >
       <MatchTopBar categoryName={ltMatch.rule?.category?.name || ""} />
       <MatchContentContainer>
         <MatchContextContainer>
-          <MatchMatchText onClick={() => isFunction(selectRuleMatch) && selectRuleMatch(ltMatch)}>
+          <MatchMatchText disabled={isDisabled} onClick={() => isFunction(selectRuleMatch) && selectRuleMatch(ltMatch)}>
             {matchText}
           </MatchMatchText>
           {ltMatch.replacements.map((r) => (
             <Replacement
               key={r.clientUuid}
+              disabled={isDisabled}
               onClick={isFunction(applyReplacement) ? () => applyReplacement(ltMatch, r.value || "") : undefined}
             >
               {r.value}
@@ -152,7 +177,7 @@ const LtMatch: FC<LtMatchProps> = ({ ltMatch, applyReplacement, selectRuleMatch 
           <MatchRuleExplanation>{ltMatch.message}</MatchRuleExplanation>
         </ExpandCollapse>
         <MatchActionsBar>
-          <MatchExpandCollapseToggle expandedState={[isExpanded, setExpandedWithReselect]} />
+          <MatchExpandCollapseToggle disabled={isDisabled} expandedState={[isExpanded, setExpandedWithReselect]} />
           <MatchActionsBarSpacer />
           <IgnoreMatchButton />
         </MatchActionsBar>
@@ -224,10 +249,15 @@ const MatchContentContainer = styled.div`
   margin: 0;
 `;
 
-const Replacement: FC<{ onClick: React.MouseEventHandler<HTMLButtonElement> | undefined }> = ({
+const Replacement: FC<{ disabled: boolean; onClick: React.MouseEventHandler<HTMLButtonElement> | undefined }> = ({
   onClick,
+  disabled,
   children,
-}) => <ReplacementItem onClick={onClick}>{children}</ReplacementItem>;
+}) => (
+  <ReplacementItem disabled={disabled} onClick={onClick}>
+    {children}
+  </ReplacementItem>
+);
 
 const ReplacementItem = styled.button`
   border: none;
@@ -240,10 +270,14 @@ const ReplacementItem = styled.button`
   font-size: 13px;
   line-height: 14px;
   letter-spacing: 0.07px;
-  cursor: ${(props) => (isFunction(props.onClick) ? "pointer" : "initial")};
+  cursor: initial;
 
-  &:hover {
-    background: ${Colors.brightGreen};
+  &:not(:disabled) {
+    cursor: ${(props) => (isFunction(props.onClick) ? "pointer" : "initial")};
+
+    &:hover {
+      background: ${Colors.brightGreen};
+    }
   }
 `;
 
@@ -271,7 +305,7 @@ const MatchMatchText = styled.button`
   text-decoration: line-through;
   background: none;
   border: none;
-  cursor: pointer;
+  cursor: initial;
   margin: 0;
   margin-right: 5px;
   padding: 2px 1px;
@@ -279,6 +313,11 @@ const MatchMatchText = styled.button`
   font-weight: ${Fonts.main.weights.normal};
   font-style: 15px;
   letter-spacing: 0.07px;
+  color: black;
+
+  &:not(:disabled) {
+    cursor: ${(props) => (isFunction(props.onClick) ? "pointer" : "initial")};
+  }
 `;
 
 const MatchRuleExplanation = styled.div`
@@ -302,7 +341,7 @@ const MatchActionsBarSpacer = styled.div`
 const MatchExpandCollapseToggleContainer = styled.button`
   background: none;
   border: none;
-  cursor: pointer;
+  cursor: initial;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -310,8 +349,11 @@ const MatchExpandCollapseToggleContainer = styled.button`
   border-radius: 5px;
   min-height: 20px;
 
-  &:hover {
-    background-color: #efefef;
+  &:not(:disabled) {
+    cursor: pointer;
+    &:hover {
+      background-color: #efefef;
+    }
   }
 `;
 
@@ -329,10 +371,11 @@ const MatchExpandCollapseText = styled.div`
   font-weight: ${Fonts.main.weights.thin};
 `;
 
-const MatchExpandCollapseToggle: FC<{ expandedState: UseState<boolean> }> = ({
+const MatchExpandCollapseToggle: FC<{ expandedState: UseState<boolean>; disabled: boolean }> = ({
   expandedState: [isExpanded, setExpanded],
+  disabled,
 }) => (
-  <MatchExpandCollapseToggleContainer onClick={() => setExpanded(!isExpanded)}>
+  <MatchExpandCollapseToggleContainer disabled={disabled} onClick={() => setExpanded(!isExpanded)}>
     <MatchExpandCollapseIcon className={isExpanded ? "isExpanded" : ""} />
     <MatchExpandCollapseText>{isExpanded ? "weniger" : "mehr"} anzeigen</MatchExpandCollapseText>
   </MatchExpandCollapseToggleContainer>

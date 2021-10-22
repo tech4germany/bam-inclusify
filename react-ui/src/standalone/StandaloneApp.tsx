@@ -27,6 +27,7 @@ export const StandaloneApp: FC = () => {
   const [isLoading, setLoading] = useState(false);
   const [isError, setError] = useState(false);
   const [isSettingsOpen, setSettingsOpen] = useState(false);
+  const [isTextModified, setTextModified] = useState(false);
   const [featureFlags, setFeatureFlags] = useFeatureFlagsState();
   const [userSettings, setUserSettings] = useUserSettingsState();
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
@@ -43,12 +44,13 @@ export const StandaloneApp: FC = () => {
       setError(true);
       console.error("Error while checking text: ", e);
     }
+    setTextModified(false);
     setLoading(false);
   };
-  const submitHandler = () => {
+  const submitHandler = async () => {
     if (!isLoading) {
       setSettingsOpen(false);
-      checkText(inputText);
+      await checkText(inputText);
     }
   };
 
@@ -78,7 +80,10 @@ export const StandaloneApp: FC = () => {
                 <MainTextArea
                   key={textAreaId}
                   textAreaRef={textAreaRef}
-                  onChange={(e) => setInputText(e.target.value)}
+                  onChange={(e) => {
+                    setInputText(e.target.value);
+                    setTextModified(true);
+                  }}
                   onSubmit={submitHandler}
                   value={inputText}
                 />
@@ -97,6 +102,7 @@ export const StandaloneApp: FC = () => {
                     onConfirmClicked: () => setSettingsOpen(false),
                   }}
                   ruleMatches={ltMatches}
+                  matchesDisabled={isTextModified}
                   applyReplacement={makeReplacementApplier([inputText, setInputText], checkText, textAreaRef)}
                   selectRuleMatch={(ruleMatch) => {
                     const ta = textAreaRef.current;
