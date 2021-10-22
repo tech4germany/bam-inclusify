@@ -7,7 +7,7 @@
   <Version>1.0.0.0</Version>
   <ProviderName>Tech4Germany 2021</ProviderName>
   <DefaultLocale>de-DE</DefaultLocale>
-  <DisplayName DefaultValue="Inclusify"/>
+  <DisplayName DefaultValue="INCLUSIFY"/>
   <Description DefaultValue="Deine Assistentin für diversitätssensible Sprache"/>
   <IconUrl DefaultValue="https://localhost:3000/favicon-32.png"/>
   <HighResolutionIconUrl DefaultValue="https://localhost:3000/favicon-80.png"/>
@@ -64,11 +64,11 @@
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
       </bt:Urls>
       <bt:ShortStrings>
-        <bt:String id="CommandsGroup.Label" DefaultValue="Inclusify"/>
-        <bt:String id="TaskpaneButton.Label" DefaultValue="Inclusify öffnen"/>
+        <bt:String id="CommandsGroup.Label" DefaultValue="INCLUSIFY"/>
+        <bt:String id="TaskpaneButton.Label" DefaultValue="INCLUSIFY öffnen"/>
       </bt:ShortStrings>
       <bt:LongStrings>
-        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Klicken Sie hier, um das Inclusify Add-In anzuzeigen"/>
+        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Klicken Sie hier, um das INCLUSIFY Add-In anzuzeigen"/>
       </bt:LongStrings>
     </Resources>
   </VersionOverrides>

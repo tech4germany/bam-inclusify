@@ -20,7 +20,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build the Inclusify Docker image
+      - name: Build the INCLUSIFY Docker image
         run: |
           docker build --tag ghcr.io/tech4germany/inclusify-app:$(date -u +"%Y-%m-%d_%H%M%S") --tag ghcr.io/tech4germany/inclusify-app:latest -f build/docker-release/Dockerfile .
           docker push --all-tags ghcr.io/tech4germany/inclusify-app
