@@ -60,6 +60,7 @@ const TextArea = styled.textarea`
   /* height: 30em; */
   /* min-height: 20rem; */
   flex: 1;
+  outline: none;
 
   &::placeholder {
     font-style: italic;

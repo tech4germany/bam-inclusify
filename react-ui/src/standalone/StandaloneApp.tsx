@@ -149,6 +149,8 @@ const InputAreaContainer = styled.div`
   display: flex;
   flex-direction: column;
   overflow: auto;
+  padding: 0 15px;
+  margin: 0 -15px;
 `;
 
 const ResultsAreaContainer = styled.div`
