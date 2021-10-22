@@ -11,9 +11,9 @@ type OptionListEntryInfo<T> = { id: T; label: string };
 
 const genderingTypes: OptionListEntryInfo<GenderingType>[] = [
   { id: "neutral", label: "Neutral" },
-  { id: "double-notation", label: "Doppelnennung" },
-  { id: "internal-i", label: "Binnen-I" },
-  { id: "gender-symbol", label: "Gendersymbol" },
+  { id: "double-notation", label: "Neutral + Doppelnennung" },
+  { id: "internal-i", label: "Neutral + Binnen-I" },
+  { id: "gender-symbol", label: "Neutral + Gendersymbol" },
 ];
 
 const genderSymbols: OptionListEntryInfo<GenderSymbol>[] = [
