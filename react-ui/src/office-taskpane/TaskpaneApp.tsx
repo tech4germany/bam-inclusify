@@ -44,13 +44,13 @@ export const TaskpaneApp: FC = () => {
   return (
     <AddinContainer>
       <UserSettingsAndFeatureFlagsContext.Provider value={{ userSettings, featureFlags }}>
+        <PilotPhaseBannerContainer>
+          <PilotPhaseBanner />
+        </PilotPhaseBannerContainer>
         <AddinTopButtonGroup
           onCheckClicked={checkTextWithLoading}
           settingsOpenState={[isSettingsOpen, setSettingsOpen]}
         />
-        <PilotPhaseBannerContainer>
-          <PilotPhaseBanner />
-        </PilotPhaseBannerContainer>
         <SummaryBarContainer hidden={isSettingsOpen}>
           <SummaryBar showSummaryBoxes={ruleMatches !== null} {...errorCounts} />
         </SummaryBarContainer>
@@ -90,7 +90,7 @@ const AddinContainer = styled.div`
 `;
 
 const PilotPhaseBannerContainer = styled.div`
-  margin: 5px ${rightMargin} 0 ${leftMargin};
+  margin: 0 ${rightMargin} 0 ${leftMargin};
 `;
 
 const SummaryBarContainer = styled.div`

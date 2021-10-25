@@ -28,7 +28,7 @@ const AddinButtonGroupContainer = styled.div`
   display: flex;
   gap: 10px;
   justify-content: flex-end;
-  margin: 0 ${rightMargin} 0 ${leftMargin};
+  margin: 5px ${rightMargin} 0 ${leftMargin};
 `;
 
 const InclusifyLogoLinkTile = () => (
