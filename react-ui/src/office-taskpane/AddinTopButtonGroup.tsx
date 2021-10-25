@@ -7,7 +7,7 @@ import { UserSettingsAndFeatureFlagsContext } from "../common/UserSettingsAndFea
 import { UseState } from "../common/UseState";
 import { AddinCheckTextButton } from "./AddinCheckTextButton";
 import { AddinUserSettingsButton } from "./AddinUserSettingsButton";
-import packageJson from "../../package.json";
+import navLinksJson from "../navigation-links.json";
 import { isValidUrl } from "../common/isValidUrl";
 import { leftMargin, rightMargin } from "./taskpane-style-constants";
 
@@ -83,7 +83,7 @@ const InclusifyLogoLinkText = styled.div`
 `;
 
 function extractLogoLink() {
-  const urlValue = (packageJson as any)?.addinLogoLinkUrl;
+  const urlValue = (navLinksJson as any)?.addinLogoLinkUrl;
   if (typeof urlValue !== "string") {
     console.error("Addin logo link URL not found");
     return undefined;

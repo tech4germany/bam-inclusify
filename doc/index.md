@@ -39,10 +39,10 @@ DEVSERVER_HTTPS_CA=$HOME/.office-addin-dev-certs/ca.crt
 
 ## Adjusting the links in the navigation bar (Standalone) and for the INCLUSIFY logo (Addin)
 
-- You can adjust the external links shown in the INCLUSIFY app in the React app's `package.json` file (i.e. the links shown in the navigation bar at the top of the Standalone page, and the link used for the INCLUSIFY logo element in the Addin)
+- You can adjust the external links shown in the INCLUSIFY app in the `navigation-links.json` file (i.e. the links shown in the navigation bar at the top of the Standalone page, and the link used for the INCLUSIFY logo element in the Addin)
   - Note: in both cases, URLs are only accepted when they start with "http://" or "https://"
 - For the links shown in the navigation bar at the top of the Standalone page:
-  - In `react-ui/package.json`, edit the list in the key `"standaloneNavigationLinks"`
+  - In `react-ui/src/navigation-links.json`, edit the list in the key `"standaloneNavigationLinks"`
   - Each item in this list must have at least the two entries `"title"` and `"url"` (both must be strings), and can optionally have an entry `"subtitle"` (also a string), which is shown under the "title" in smaller font
   - Example:
   ```json
@@ -63,7 +63,7 @@ DEVSERVER_HTTPS_CA=$HOME/.office-addin-dev-certs/ca.crt
   }
   ```
 - For the link used for the INCLUSIFY logo element in the Addin:
-  - In `react-ui/package.json`, edit the value of the key `"addinLogoLinkUrl"`
+  - In `react-ui/src/navigation-links.json`, edit the value of the key `"addinLogoLinkUrl"`
   - Example:
   ```json
   {

@@ -1,0 +1,14 @@
+{
+  "standaloneNavigationLinks": [
+    {
+      "title": "BAM Leitfaden",
+      "subtitle": "für geschlechtergerechte Sprache",
+      "url": "https://www.bam.de"
+    },
+    {
+      "title": "FAQs",
+      "url": "https://www.bam.de/"
+    }
+  ],
+  "addinLogoLinkUrl": "https://www.bam.de/"
+}

@@ -3,7 +3,7 @@ import { InclusifyBamLogo, InclusifyLogo } from "../common/icons";
 import { Fonts } from "../common/styles/Fonts";
 import { UserSettingsAndFeatureFlagsContext } from "../common/UserSettingsAndFeatureFlagsContext";
 import { CenteredContainer } from "./CenteredContainer";
-import packageJson from "../../package.json";
+import navLinksJson from "../navigation-links.json";
 import { newUuidv4 } from "../common/uuid";
 import { isValidUrl } from "../common/isValidUrl";
 import { rightMargin } from "../office-taskpane/taskpane-style-constants";
@@ -115,7 +115,7 @@ const NavBarLinkSubtitle = styled.div`
 `;
 
 function extractNavLinks() {
-  const linkListValue = (packageJson as any)?.standaloneNavigationLinks;
+  const linkListValue = (navLinksJson as any)?.standaloneNavigationLinks;
   if (!linkListValue || !Array.isArray(linkListValue)) {
     console.error("No standalone nav links found");
     return [];
