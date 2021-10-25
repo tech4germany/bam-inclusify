@@ -1,14 +1,9 @@
 {
   "standaloneNavigationLinks": [
     {
-      "title": "BAM Leitfaden",
-      "subtitle": "für geschlechtergerechte Sprache",
-      "url": "https://www.bam.de"
-    },
-    {
-      "title": "FAQs",
-      "url": "https://www.bam.de/"
+      "title": "Projektseite",
+      "url": "https://github.com/tech4germany/bam-openminded"
     }
   ],
-  "addinLogoLinkUrl": "https://www.bam.de/"
+  "addinLogoLinkUrl": "https://github.com/tech4germany/bam-openminded"
 }
