@@ -38,8 +38,13 @@ def init():
 def inflect(word, case=None, gender=None, number=None, recursion=0):
     inflected = []
     if word not in inflected_to_lemma:
+        # Words ending with "in" or "innen" (very common for gendered words) are not changed by inflections
+        # except singular/plural changes, which we can handle manually
+        if re.match(r".*in$", word) and number == "PLU":
+            return [word + "nen"]
+        if re.match(r".*innen$", word) and number == "SIN":
+            return [re.sub(r"nen$", "", word)]
         if re.match(r".*in(nen)?$", word):
-            # Words ending with "in" or "innen" (common for gendered words) are not changed by inflections
             return [word]
         if recursion > 0:
             return []
