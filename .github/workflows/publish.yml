@@ -7,7 +7,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  publish-hello-world-image:
+  publish-inclusify-docker-image:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,7 +23,7 @@ jobs:
       - name: Set environment variables
         run: |
           echo "BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ')" >> $GITHUB_ENV
-          echo "BUILD_DATE_FN=$(date -u +'%Y-%m-%d_%H%M%S') >> $GITHUB_ENV
+          echo "BUILD_DATE_FN=$(date -u +'%Y-%m-%d_%H%M%S')" >> $GITHUB_ENV
 
       - name: Build the INCLUSIFY Docker image
         env:
