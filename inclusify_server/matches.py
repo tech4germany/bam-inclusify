@@ -38,7 +38,7 @@ def matches(text: str):
 def gender_matches(doc):
     matches = []
     for sentence in doc.sentences:
-        for word in sentence.words:
+        for word in fix_gender_symbols(sentence.words):
             lemma = word.lemma
             if lemma in rules:
                 sensitive_alternatives = []
@@ -175,3 +175,25 @@ def add_gender_symbol(source, insensitive_word, inflected_sensitive_root):
         return True, inflected_sensitive_root
     elif source == "dereko":
         return True, re.sub(r"(in(nen)?)$", r"*\1", inflected_sensitive_root)
+
+
+
+
+def fix_gender_symbols(words):
+    fixed_words = []
+    for word in words:
+        if (
+            word.deprel == "appos"
+            and word.head == words[-1].id
+            and re.match(r"^[*:/_]in(nen)?$", word.text)
+        ):
+            prev = words[-1]
+            prev["text"] = prev["text"] + word["text"]
+            prev["lemma"] = prev["lemma"] + word["lemma"]
+            number = "Sing" if re.match(r"^[*:/_]in?$", word.text) else "Plur"
+            prev["feats"] = "Case={}|Gender=Fem|Number={}".format(
+                prev["Case"], number)
+            prev["end_char"] = word["end_char"]
+        else:
+            fixed_words.append(word)
+    return fixed_words
