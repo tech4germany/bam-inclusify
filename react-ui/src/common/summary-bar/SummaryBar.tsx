@@ -5,6 +5,7 @@ import { mapRuleCategory } from "../rule-categories";
 import { isGrammarCheckOn, isSpellCheckOn } from "../user-settings/user-settings";
 import { RuleMatch } from "../language-tool-api/types";
 import { UserSettingsAndFeatureFlagsContext } from "../UserSettingsAndFeatureFlagsContext";
+import { Fonts } from "../styles/Fonts";
 
 interface SummaryBarProps {
   diversityErrorCount: number;
@@ -63,7 +64,9 @@ const SummaryCountCircle = styled.div`
   color: black;
   line-height: 28px;
   text-align: center;
-  font-size: 14px;
+  font-size: 15px;
+  font-family: ${Fonts.bam.family};
+  font-weight: ${Fonts.bam.weights.bold};
 `;
 
 const SummaryText = styled.div`
