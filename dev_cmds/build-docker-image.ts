@@ -1,4 +1,4 @@
-import { execPiped, runAsyncMain } from "devcmd";
+import { execPiped, execToString, runAsyncMain } from "devcmd";
 import { bold, cyan, green } from "kleur";
 import path from "path";
 import { DOCKER_COMMAND } from "./utils/commands";
@@ -6,10 +6,12 @@ import { APP_IMAGE_NAME } from "./utils/docker";
 import { repoRoot } from "./utils/paths";
 
 async function main() {
+  const { stdout: gitSha } = await execToString({ command: "git", args: ["rev-parse", "HEAD"] });
+
   await execPiped({
     command: DOCKER_COMMAND,
     args: ["build", ...["-t", APP_IMAGE_NAME], ...["-f", path.join(repoRoot, "build/docker-release/Dockerfile")], "."],
-    options: { cwd: repoRoot },
+    options: { cwd: repoRoot, env: { ...process.env, BUILD_DATE: new Date().toISOString(), VCS_REVISION: gitSha } },
   });
 
   console.log();

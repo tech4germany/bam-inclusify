@@ -1,3 +1,7 @@
+#####
+# Builder layer for React Frontend
+#####
+
 FROM node:14-bullseye AS builder
 
 RUN apt-get update && \
@@ -22,6 +26,10 @@ RUN devcmd setup
 RUN devcmd prepare-server
 
 
+#####
+# Release layer for final image
+#####
+
 FROM python:3.9-bullseye
 
 RUN apt-get update && \
@@ -45,3 +53,11 @@ EXPOSE ${BIND_PORT}
 CMD gunicorn inclusify_server.app:app \
   --bind ${INCLUSIFY_BIND_HOST}:${INCLUSIFY_BIND_PORT} \
   --timeout ${INCLUSIFY_STARTUP_TIMEOUT_SEC}
+
+# OCI Labels as per https://github.com/opencontainers/image-spec/blob/main/annotations.md
+LABEL org.opencontainers.image.created=$BUILD_DATE
+LABEL org.opencontainers.image.title="inclusify-app"
+LABEL org.opencontainers.image.description="INCLUSIFY - Deine Assistentin für diversitätssensible Sprache"
+LABEL org.opencontainers.image.url="https://github.com/tech4germany/bam-openminded"
+LABEL org.opencontainers.image.source="https://github.com/tech4germany/bam-openminded"
+LABEL org.opencontainers.image.revision=$VCS_REVISION
