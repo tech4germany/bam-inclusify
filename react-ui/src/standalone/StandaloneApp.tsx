@@ -23,7 +23,7 @@ const textAreaId = newUuidv4();
 
 export const StandaloneApp: FC = () => {
   const [inputText, setInputText] = useState("");
-  const [ltMatches, setLtMatches] = useState<RuleMatch[] | null>(null);
+  const [ruleMatches, setRuleMatches] = useState<RuleMatch[] | null>(null);
   const [isLoading, setLoading] = useState(false);
   const [isError, setError] = useState(false);
   const [isSettingsOpen, setSettingsOpen] = useState(false);
@@ -32,14 +32,14 @@ export const StandaloneApp: FC = () => {
   const [userSettings, setUserSettings] = useUserSettingsState();
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
 
-  const errorCounts = computeErrorCounts(ltMatches || []);
+  const errorCounts = computeErrorCounts(ruleMatches || []);
 
   const checkText = async (text: string) => {
     setLoading(true);
     setError(false);
     try {
       const matches = await LanguageToolClient.check(text, userSettings, featureFlags);
-      setLtMatches(matches);
+      setRuleMatches(matches);
     } catch (e) {
       setError(true);
       console.error("Error while checking text: ", e);
@@ -65,7 +65,7 @@ export const StandaloneApp: FC = () => {
                 <PilotPhaseBanner />
               </PilotPhaseBannerContainer>
               <SummaryBarContainer>
-                <SummaryBar showSummaryBoxes={ltMatches !== null} {...errorCounts}>
+                <SummaryBar showSummaryBoxes={ruleMatches !== null} {...errorCounts}>
                   <StandaloneUserSettingsButton pressedState={[isSettingsOpen, setSettingsOpen]} />
                 </SummaryBar>
               </SummaryBarContainer>
@@ -101,7 +101,7 @@ export const StandaloneApp: FC = () => {
                     userSettingsState: [userSettings, setUserSettings],
                     onConfirmClicked: () => setSettingsOpen(false),
                   }}
-                  ruleMatches={ltMatches}
+                  ruleMatches={ruleMatches}
                   matchesDisabled={isTextModified}
                   applyReplacement={makeReplacementApplier([inputText, setInputText], checkText, textAreaRef)}
                   selectRuleMatch={(ruleMatch) => {

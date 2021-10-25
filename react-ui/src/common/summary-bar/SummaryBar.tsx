@@ -36,14 +36,14 @@ export const SummaryBar: FC<SummaryBarProps> = ({
   </UserSettingsAndFeatureFlagsContext.Consumer>
 );
 
-export function computeErrorCounts(ltMatches: RuleMatch[]): {
+export function computeErrorCounts(ruleMatches: RuleMatch[]): {
   diversityErrorCount: number;
   grammarErrorCount: number;
   spellingErrorCount: number;
 } {
-  const diversityErrorCount = ltMatches.filter((m) => mapRuleCategory(m) === "diversity").length;
-  const grammarErrorCount = ltMatches.filter((m) => mapRuleCategory(m) === "grammar").length;
-  const spellingErrorCount = ltMatches.filter((m) => mapRuleCategory(m) === "spelling").length;
+  const diversityErrorCount = ruleMatches.filter((m) => mapRuleCategory(m) === "diversity").length;
+  const grammarErrorCount = ruleMatches.filter((m) => mapRuleCategory(m) === "grammar").length;
+  const spellingErrorCount = ruleMatches.filter((m) => mapRuleCategory(m) === "spelling").length;
   return { diversityErrorCount, grammarErrorCount, spellingErrorCount };
 }
 

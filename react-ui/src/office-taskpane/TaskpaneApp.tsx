@@ -17,23 +17,23 @@ import { PilotPhaseBanner } from "../common/PilotPhaseBanner";
 import { leftMargin, rightMargin } from "./taskpane-style-constants";
 
 export const TaskpaneApp: FC = () => {
-  const [ltMatches, setLtMatches] = useState<RuleMatch[] | null>(null);
+  const [ruleMatches, setRuleMatches] = useState<RuleMatch[] | null>(null);
   const [applier, setApplier] = useState<ApplyReplacementFunction>();
   const [matchSelector, setMatchSelector] = useState<(ruleMatch: RuleMatch) => void>();
   const [isLoading, setLoading] = useState(false);
   const [isError, setError] = useState(false);
   const [isSettingsOpen, setSettingsOpen] = useState(false);
-  const [isTextModified, setTextModified] = useState(false);
+  // const [isTextModified, setTextModified] = useState(false); // TODO: figure out how notice text changes in Word
   const [featureFlags, setFeatureFlags] = useFeatureFlagsState();
   const [userSettings, setUserSettings] = useUserSettingsState();
 
-  const errorCounts = computeErrorCounts(ltMatches || []);
+  const errorCounts = computeErrorCounts(ruleMatches || []);
 
   const checkTextWithLoading = async () => {
     setLoading(true);
     setError(false);
     try {
-      await checkText(setLtMatches, setApplier, setMatchSelector);
+      await checkText(setRuleMatches, setApplier, setMatchSelector);
     } catch (e) {
       setError(true);
       console.error("Error while checking text: ", e);
@@ -52,7 +52,7 @@ export const TaskpaneApp: FC = () => {
           <PilotPhaseBanner />
         </PilotPhaseBannerContainer>
         <SummaryBarContainer hidden={isSettingsOpen}>
-          <SummaryBar showSummaryBoxes={ltMatches !== null} {...errorCounts} />
+          <SummaryBar showSummaryBoxes={ruleMatches !== null} {...errorCounts} />
         </SummaryBarContainer>
 
         <LowerAreaContainer>
@@ -64,8 +64,8 @@ export const TaskpaneApp: FC = () => {
               userSettingsState: [userSettings, setUserSettings],
               onConfirmClicked: () => setSettingsOpen(false),
             }}
-            ruleMatches={ltMatches}
-            matchesDisabled={isTextModified}
+            ruleMatches={ruleMatches}
+            matchesDisabled={false /* isTextModified */}
             applyReplacement={async (m, r) => {
               if (!isFunction(applier)) return;
               await applier(m, r);
@@ -108,21 +108,21 @@ type ParagraphWithRanges = { paragraph: Word.Paragraph; ranges: Word.Range[] };
 type StartOffsetMapItem = { startOffset: number; paragraph: Word.Paragraph; range: Word.Range };
 
 const checkText = async (
-  setLtMatches: SetState<RuleMatch[] | null>,
+  setRuleMatches: SetState<RuleMatch[] | null>,
   setApplier: SetState<ApplyReplacementFunction | undefined>,
   setMatchSelector: SetState<((ruleMatch: RuleMatch) => void) | undefined>
 ) => {
   if (isRunningInWord()) {
-    await checkTextFromWord(setLtMatches, setApplier, setMatchSelector);
+    await checkTextFromWord(setRuleMatches, setApplier, setMatchSelector);
   } else if (isRunningInOutlook()) {
-    await outlookClickHandler(setLtMatches, setApplier);
+    await outlookClickHandler(setRuleMatches, setApplier);
   } else {
     throw new Error("Unsupported host app");
   }
 };
 
 async function checkTextFromWord(
-  setLtMatches: SetState<RuleMatch[] | null>,
+  setRuleMatches: SetState<RuleMatch[] | null>,
   setApplier: SetState<ApplyReplacementFunction | undefined>,
   setMatchSelector: SetState<((ruleMatch: RuleMatch) => void) | undefined>
 ) {
@@ -146,7 +146,7 @@ async function checkTextFromWord(
 
   console.time("ltCheck");
   const matches = await LanguageToolClient.check(plaintext, UserSettingsStorage.load(), FeatureFlagsStorage.load());
-  setLtMatches(matches);
+  setRuleMatches(matches);
   console.timeEnd("ltCheck");
 
   console.log(startOffsetMap);
@@ -199,7 +199,7 @@ async function checkTextFromWord(
 }
 
 async function outlookClickHandler(
-  setLtMatches: SetState<RuleMatch[] | null>,
+  setRuleMatches: SetState<RuleMatch[] | null>,
   setApplier: SetState<ApplyReplacementFunction | undefined>
 ) {
   const currentItem = Office.context.mailbox.item;

@@ -103,23 +103,23 @@ export const ResultList: FC<ResultListProps> = ({
     {({ featureFlags, userSettings }) => {
       const matchesToShow = postProcessRuleMatches(ruleMatches, featureFlags, userSettings);
       return (
-        <LtMatchesListContainer className={matchesDisabled ? "disabled" : ""}>
-          {matchesToShow.map((ltMatch) => (
-            <LtMatch
-              key={ltMatch.clientUuid}
-              ltMatch={ltMatch}
+        <RuleMatchListContainer className={matchesDisabled ? "disabled" : ""}>
+          {matchesToShow.map((ruleMatch) => (
+            <RuleMatchEntry
+              key={ruleMatch.clientUuid}
+              ruleMatch={ruleMatch}
               isDisabled={matchesDisabled}
               applyReplacement={applyReplacement}
               selectRuleMatch={selectRuleMatch}
             />
           ))}
-        </LtMatchesListContainer>
+        </RuleMatchListContainer>
       );
     }}
   </UserSettingsAndFeatureFlagsContext.Consumer>
 );
 
-const LtMatchesListContainer = styled.div`
+const RuleMatchListContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -131,50 +131,53 @@ const LtMatchesListContainer = styled.div`
   }
 `;
 
-interface LtMatchProps {
-  ltMatch: RuleMatch;
+interface RuleMatchProps {
+  ruleMatch: RuleMatch;
   isDisabled: boolean;
   applyReplacement?: ApplyReplacementFunction;
   selectRuleMatch: ((ruleMatch: RuleMatch) => void) | undefined;
 }
 
-const LtMatch: FC<LtMatchProps> = ({ ltMatch, isDisabled, applyReplacement, selectRuleMatch }) => {
+const RuleMatchEntry: FC<RuleMatchProps> = ({ ruleMatch, isDisabled, applyReplacement, selectRuleMatch }) => {
   const [isExpanded, setExpanded] = useState(false);
 
-  const [, matchText] = splitTextMatch(ltMatch.context.text, ltMatch.context.offset, ltMatch.context.length);
-  const category = mapRuleCategory(ltMatch);
+  const [, matchText] = splitTextMatch(ruleMatch.context.text, ruleMatch.context.offset, ruleMatch.context.length);
+  const category = mapRuleCategory(ruleMatch);
 
   const setExpandedWithReselect: SetState<boolean> = !isFunction(selectRuleMatch)
     ? setExpanded
     : (x) => {
         setExpanded(x);
-        selectRuleMatch(ltMatch);
+        selectRuleMatch(ruleMatch);
       };
 
   return (
     <MatchContainer
       category={category}
-      onMouseEnter={() => isFunction(selectRuleMatch) && !isDisabled && selectRuleMatch(ltMatch)}
+      onMouseEnter={() => isFunction(selectRuleMatch) && !isDisabled && selectRuleMatch(ruleMatch)}
     >
-      <MatchTopBar categoryName={ltMatch.rule?.category?.name || ""} />
+      <MatchTopBar categoryName={ruleMatch.rule?.category?.name || ""} />
       <MatchContentContainer>
         <MatchContextContainer>
-          <MatchMatchText disabled={isDisabled} onClick={() => isFunction(selectRuleMatch) && selectRuleMatch(ltMatch)}>
+          <MatchMatchText
+            disabled={isDisabled}
+            onClick={() => isFunction(selectRuleMatch) && selectRuleMatch(ruleMatch)}
+          >
             {matchText}
           </MatchMatchText>
-          {ltMatch.replacements.map((r) => (
+          {ruleMatch.replacements.map((r) => (
             <Replacement
               key={r.clientUuid}
               disabled={isDisabled}
-              onClick={isFunction(applyReplacement) ? () => applyReplacement(ltMatch, r.value || "") : undefined}
+              onClick={isFunction(applyReplacement) ? () => applyReplacement(ruleMatch, r.value || "") : undefined}
             >
               {r.value}
             </Replacement>
           ))}
         </MatchContextContainer>
-        <MatchRuleExplanation>{ltMatch.shortMessage}</MatchRuleExplanation>
+        <MatchRuleExplanation>{ruleMatch.shortMessage}</MatchRuleExplanation>
         <ExpandCollapse isExpanded={isExpanded}>
-          <MatchRuleExplanation>{ltMatch.message}</MatchRuleExplanation>
+          <MatchRuleExplanation>{ruleMatch.message}</MatchRuleExplanation>
         </ExpandCollapse>
         <MatchActionsBar>
           <MatchExpandCollapseToggle disabled={isDisabled} expandedState={[isExpanded, setExpandedWithReselect]} />
