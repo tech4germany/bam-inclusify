@@ -72,7 +72,12 @@ const NavBarAppIcon = () => (
   </UserSettingsAndFeatureFlagsContext.Consumer>
 );
 
-const NavBarAppIconContainer = styled.div``;
+const NavBarAppIconContainer = styled.div`
+  min-height: 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
 const NavBarLinkItem = styled.a`
   /* height: ${navBarHeight}; */
   padding: 0 30px;
