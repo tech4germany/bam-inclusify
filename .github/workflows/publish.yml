@@ -20,11 +20,14 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Set environment variables
+        run: |
+          echo "BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")" >> $GITHUB_ENV
+          echo "BUILD_DATE_FN=$(date -u +"%Y-%m-%d_%H%M%S") >> $GITHUB_ENV
+
       - name: Build the INCLUSIFY Docker image
         env:
-          BUILD_DATE: $(date -u +"%Y-%m-%dT%H:%M:%SZ")
-          BUILD_DATE_FN: $(date -u +"%Y-%m-%d_%H%M%S")
-          VCS_REVISION: ${GITHUB_SHA}
+          VCS_REVISION: ${{ env.GITHUB_SHA }}
         run: |
           docker build --tag ghcr.io/tech4germany/inclusify-app:${BUILD_DATE_FN} \
             --tag ghcr.io/tech4germany/inclusify-app:latest \
