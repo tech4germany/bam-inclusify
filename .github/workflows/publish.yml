@@ -26,10 +26,11 @@ jobs:
           echo "BUILD_DATE_FN=$(date -u +'%Y-%m-%d_%H%M%S')" >> $GITHUB_ENV
 
       - name: Build the INCLUSIFY Docker image
-        env:
-          VCS_REVISION: ${{ env.GITHUB_SHA }}
         run: |
-          docker build --tag ghcr.io/tech4germany/inclusify-app:${BUILD_DATE_FN} \
+          docker build . \
+            --tag ghcr.io/tech4germany/inclusify-app:${BUILD_DATE_FN} \
             --tag ghcr.io/tech4germany/inclusify-app:latest \
-            -f build/docker-release/Dockerfile .
+            -f build/docker-release/Dockerfile \
+            --build-arg BUILD_DATE=${BUILD_DATE} \
+            --build-arg VCS_REVISION=${GITHUB_SHA}
           docker push --all-tags ghcr.io/tech4germany/inclusify-app
