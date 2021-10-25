@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { LocalStorageService } from "../local-storage/LocalStorageService";
 
-export const isDebugPanelEnabled = true;
+export const isDebugPanelEnabled = process.env.NODE_ENV === "development" || !!process.env.REACT_APP_ENABLE_DEBUG_PANEL;
 
 export const DefaultFeatureFlags = Object.freeze({
   grammarCheckAvailable: false,
