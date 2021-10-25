@@ -54,6 +54,9 @@ CMD gunicorn inclusify_server.app:app \
   --bind ${INCLUSIFY_BIND_HOST}:${INCLUSIFY_BIND_PORT} \
   --timeout ${INCLUSIFY_STARTUP_TIMEOUT_SEC}
 
+ARG BUILD_DATE
+ARG VCS_REVISION
+
 # OCI Labels as per https://github.com/opencontainers/image-spec/blob/main/annotations.md
 LABEL org.opencontainers.image.created=$BUILD_DATE
 LABEL org.opencontainers.image.title="inclusify-app"

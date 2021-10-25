@@ -10,8 +10,15 @@ async function main() {
 
   await execPiped({
     command: DOCKER_COMMAND,
-    args: ["build", ...["-t", APP_IMAGE_NAME], ...["-f", path.join(repoRoot, "build/docker-release/Dockerfile")], "."],
-    options: { cwd: repoRoot, env: { ...process.env, BUILD_DATE: new Date().toISOString(), VCS_REVISION: gitSha } },
+    args: [
+      "build",
+      ...["-t", APP_IMAGE_NAME],
+      ...["-f", path.join(repoRoot, "build/docker-release/Dockerfile")],
+      ...["--build-arg", `BUILD_DATE=${new Date().toISOString()}`],
+      ...["--build-arg", `VCS_REVISION=${gitSha}`],
+      ".",
+    ],
+    options: { cwd: repoRoot },
   });
 
   console.log();
