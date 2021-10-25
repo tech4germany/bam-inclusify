@@ -65,7 +65,7 @@ export const StandaloneApp: FC = () => {
                 <PilotPhaseBanner />
               </PilotPhaseBannerContainer>
               <SummaryBarContainer>
-                <SummaryBar {...errorCounts}>
+                <SummaryBar showSummaryBoxes={ltMatches !== null} {...errorCounts}>
                   <StandaloneUserSettingsButton pressedState={[isSettingsOpen, setSettingsOpen]} />
                 </SummaryBar>
               </SummaryBarContainer>

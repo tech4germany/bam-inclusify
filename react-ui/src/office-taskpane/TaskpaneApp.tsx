@@ -52,7 +52,7 @@ export const TaskpaneApp: FC = () => {
           <PilotPhaseBanner />
         </PilotPhaseBannerContainer>
         <SummaryBarContainer hidden={isSettingsOpen}>
-          <SummaryBar addinMode {...errorCounts} />
+          <SummaryBar showSummaryBoxes={ltMatches !== null} {...errorCounts} />
         </SummaryBarContainer>
 
         <LowerAreaContainer>

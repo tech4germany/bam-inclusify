@@ -10,22 +10,26 @@ interface SummaryBarProps {
   diversityErrorCount: number;
   grammarErrorCount: number;
   spellingErrorCount: number;
-  addinMode?: boolean;
+  showSummaryBoxes: boolean;
 }
 
 export const SummaryBar: FC<SummaryBarProps> = ({
   diversityErrorCount,
   grammarErrorCount,
   spellingErrorCount,
-  addinMode,
+  showSummaryBoxes,
   children,
 }) => (
   <UserSettingsAndFeatureFlagsContext.Consumer>
     {({ featureFlags, userSettings }) => (
-      <SummaryBarContainer addinMode={!!addinMode}>
-        {isGrammarCheckOn(userSettings, featureFlags) && <GrammarSummary grammarErrorCount={grammarErrorCount} />}
-        {isSpellCheckOn(userSettings, featureFlags) && <SpellingSummary spellingErrorCount={spellingErrorCount} />}
-        <DiversityErrorSummary diversityErrorCount={diversityErrorCount} />
+      <SummaryBarContainer>
+        {showSummaryBoxes && (
+          <>
+            {isGrammarCheckOn(userSettings, featureFlags) && <GrammarSummary grammarErrorCount={grammarErrorCount} />}
+            {isSpellCheckOn(userSettings, featureFlags) && <SpellingSummary spellingErrorCount={spellingErrorCount} />}
+            <DiversityErrorSummary diversityErrorCount={diversityErrorCount} />
+          </>
+        )}
         {children}
       </SummaryBarContainer>
     )}
@@ -43,9 +47,9 @@ export function computeErrorCounts(ltMatches: RuleMatch[]): {
   return { diversityErrorCount, grammarErrorCount, spellingErrorCount };
 }
 
-const SummaryBarContainer = styled.div<{ addinMode: boolean }>`
+const SummaryBarContainer = styled.div`
   display: flex;
-  gap: ${(props) => (props.addinMode ? "5px" : "10px")};
+  gap: 10px;
   user-select: none;
   flex-wrap: wrap;
   justify-content: flex-end;
@@ -126,6 +130,6 @@ const DiversityErrorSummaryCountCircle = styled(SummaryCountCircle)`
 const DiversityErrorSummary: FC<{ diversityErrorCount: number }> = ({ diversityErrorCount }) => (
   <DiversityErrorSummaryContainer>
     <DiversityErrorSummaryCountCircle>{diversityErrorCount}</DiversityErrorSummaryCountCircle>
-    <SummaryText>Diversitätslücken</SummaryText>
+    <SummaryText>Diversitätshinweise</SummaryText>
   </DiversityErrorSummaryContainer>
 );
