@@ -50,13 +50,13 @@ DEVSERVER_HTTPS_CA=$HOME/.office-addin-dev-certs/ca.crt
     // . . .
     "standaloneNavigationLinks": [
       {
-        "title": "BAM Leitfaden",
-        "subtitle": "für geschlechtergerechte Sprache",
-        "url": "https://www.bam.de/path/to/page"
+        "title": "Contribute",
+        "subtitle": "auf GitHub",
+        "url": "https://github.com/tech4germany/bam-inclusify"
       },
       {
-        "title": "BAM Webseite",
-        "url": "https://www.bam.de/en"
+        "title": "Projektseite",
+        "url": "https://github.com/tech4germany/bam-inclusify"
       }
     ]
     // . . .
@@ -68,7 +68,7 @@ DEVSERVER_HTTPS_CA=$HOME/.office-addin-dev-certs/ca.crt
   ```json
   {
     // . . .
-    "addinLogoLinkUrl": "https://www.bam.de/"
+    "addinLogoLinkUrl": "https://github.com/tech4germany/bam-inclusify"
     // . . .
   }
   ```
