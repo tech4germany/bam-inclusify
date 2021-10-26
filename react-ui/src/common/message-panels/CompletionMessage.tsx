@@ -8,7 +8,7 @@ export const CompletionMessage: FC = () => (
   <CompletionMessageContainer>
     <DoubleCheckMarkIcon fill={Colors.limeGreen} width={90} height={47} />
     <CompletionLabelRow>
-      <CompletionLabelLarge>Dein Text ist nun diversitätssensibel!</CompletionLabelLarge>
+      <CompletionLabelLarge>Dein Text ist diversitätssensibel!</CompletionLabelLarge>
       <CompletionLabelSmall>…oder Du hast einfach alle Vorschläge ignoriert :)</CompletionLabelSmall>
     </CompletionLabelRow>
   </CompletionMessageContainer>

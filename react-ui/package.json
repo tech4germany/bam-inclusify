@@ -28,9 +28,7 @@
   },
   "scripts": {
     "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
-    "office": "office-addin-debugging start manifest.xml web --document 'https://onedrive.live.com/edit.aspx?cid=b0822c6c08a2e09b&page=view&resid=B0822C6C08A2E09B!9238&parId=B0822C6C08A2E09B!8816&app=Word'",
-    "stop-office": "office-addin-debugging stop manifest.xml"
+    "build": "react-app-rewired build"
   },
   "eslintConfig": {
     "extends": [
