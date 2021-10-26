@@ -202,6 +202,7 @@ Anbieter,angebotsstellende Person,0,geschicktgendern
 Andauer,Andauerin,0,dereko
 Anforderer,anfordernde Abteilung,0,geschicktgendern
 Anforderer,anfordernde Person,0,geschicktgendern
+Anforderungsmanager,Anforderungsmanagerin,0,dereko
 Anfänger,Anfängerin,0,dereko
 Anfänger,Person ohne Vorerfahrung,0,geschicktgendern
 Anfänger,Person ohne Vorkenntnisse,0,geschicktgendern
@@ -3688,7 +3689,6 @@ Mandatsträger,Mandat innehabende Person,0,geschicktgendern
 Mandatsträger,Mandatsträgerin,0,dereko
 Mandatsträger,mandatstragende Person,0,geschicktgendern
 Manipulant,manipulierende Person,0,geschicktgendern
-Mann,Person,0,geschicktgendern
 Mann über Board!,Person über Board!,0,geschicktgendern
 Mann über Bord!,Person über Bord!,0,geschicktgendern
 Manndeckung,1:1-Deckung,0,geschicktgendern
