@@ -3,6 +3,7 @@ from inclusify_server.download_language_models import nlp
 from inclusify_server.morphy.morphy import inflect
 from inclusify_server.prepare_list import load_rules
 from typing import *
+from stanza.models.common.doc import Word
 import csv
 import itertools
 import re
@@ -27,7 +28,8 @@ def gender_matches(doc):
                 for rule in rules[lemma]:
                     if is_applicable(rule, word, sentence):
                         _, _, sensitive, plural_only, source = rule
-                        sensitive_alternatives.append((sensitive, plural_only, source))
+                        sensitive_alternatives.append(
+                            (sensitive, plural_only, source))
                 if len(sensitive_alternatives) > 0:
                     sensitive_alternatives = [
                         (simplify_participles(sensitive, word), plural_only, source)
@@ -103,7 +105,8 @@ def parse_feats(feats):
 def inflect_root(insensitive_word, alternative, plural_only, source):
     morphs = parse_feats(insensitive_word.feats)
     sentence = nlp(alternative).sentences[0]
-    sensitive_root = [word for word in sentence.words if word.deprel == "root"][0]
+    sensitive_root = [
+        word for word in sentence.words if word.deprel == "root"][0]
     number_ = None if plural_only else morphs["Number"]
     inflected_sensitive_roots = inflect(
         sensitive_root.text, case=morphs["Case"], number=number_
@@ -128,7 +131,7 @@ def inflect_root(insensitive_word, alternative, plural_only, source):
                         *tokens[:root_id],
                         # morphs["Case"], morphs["Number"], insensitive_word.lemma
                         inflected_sensitive_root,
-                        *tokens[root_id + 1 :],
+                        *tokens[root_id + 1:],
                     ]
                 )
             )
@@ -161,19 +164,48 @@ def add_gender_symbol(source, insensitive_word, inflected_sensitive_root):
 
 
 def fix_gender_symbols(words):
+    # The tokenizer does not always deal correctly with gender symbols.
+    # Here we try to fix this.
     fixed_words = []
-    for word in words:
-        if (
-            word.deprel == "appos"
-            and word.head == words[-1].id
-            and re.match(r"^[*:/_]in(nen)?$", word.text)
-        ):
-            prev = words[-1]
-            prev["text"] = prev["text"] + word["text"]
-            prev["lemma"] = prev["lemma"] + word["lemma"]
-            number = "Sing" if re.match(r"^[*:/_]in?$", word.text) else "Plur"
-            prev["feats"] = "Case={}|Gender=Fem|Number={}".format(prev["Case"], number)
-            prev["end_char"] = word["end_char"]
+    for i, word in enumerate(words):
+        if word.id > 0 and re.match(r"^[*:_·/]-?in(nen)?$", word.text) and words[i-1].upos == "NOUN":
+            prev = words[i-1]
+            number = "Plur" if re.match(
+                r"innen$", word.text) else "Sing"
+            new_prev = Word({
+                "id": prev.id,
+                "text": prev.text + word.text,
+                "lemma": prev.lemma + word.lemma,
+                "upos": prev.upos,
+                "xpos": prev.xpos,
+                "feats": "Case={}|Gender=Fem|Number={}".format(
+                    parse_feats(prev.feats)["Case"], number),
+                "head": prev.head,
+                "deprel": prev.deprel,
+                "start_char": prev.start_char,
+                "end_char": word.end_char
+            })
+            fixed_words[-1] = new_prev
+        elif word.id > 1 and re.match(r"^in(nen)?$", word.text) and re.match(r"^[*:_·/]$", words[i-1].text) and words[i-2].upos == "NOUN":
+            prev = words[i-1]
+            preprev = words[i-2]
+            number = "Plur" if re.match(
+                r"innen$", word.text) else "Sing"
+            new_prev = Word({
+                "id": preprev.id,
+                "text": preprev.text + prev.text + word.text,
+                "lemma": preprev.lemma + prev.lemma + word.lemma,
+                "upos": preprev.upos,
+                "xpos": preprev.xpos,
+                "feats": "Case={}|Gender=Fem|Number={}".format(
+                    parse_feats(preprev.feats)["Case"], number),
+                "head": preprev.head,
+                "deprel": preprev.deprel,
+                "start_char": preprev.start_char,
+                "end_char": word.end_char
+            })
+            fixed_words[-2] = new_prev
+            del fixed_words[-1]
         else:
             fixed_words.append(word)
     return fixed_words
