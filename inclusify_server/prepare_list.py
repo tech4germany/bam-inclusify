@@ -66,14 +66,14 @@ def lemmatize_rule(rule):
         for word in sentence.words:
             if word.head == 0:
                 return [
-                    (
+                    [
                         word.lemma,
                         insensitive_lemmas,
                         insensitive,
                         sensitive,
                         plural_only,
                         source,
-                    )
+                    ]
                 ]
     print("Rule could not be lemmatized:", rule)
     return []
