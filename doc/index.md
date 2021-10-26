@@ -1,12 +1,6 @@
 # INCLUSIFY App Technical Documentation
 
-## Parts of this repository
-
-What is where:
-
-- `data/` - word lists, text corpora, and other input data, as well as pre-processing scripts to turn this data into usable inputs for the LanguageTool backend
-- `dev_cmds/` - build scripts and development task automation using [DevCmd](https://github.com/XITASO/devcmd)
-- `react-ui/` - the graphical end-user app (frontend) for use as a standalone webpage in a browser and in Word/Outlook add-ins
+_Note: We have only used macOS and Linux for development, so these instructions might be incomplete for a Windows environment._
 
 ## Prerequisites for development
 
@@ -15,7 +9,36 @@ What is where:
 - [Python 3](https://www.python.org/) v3.9 or newer
 - (optional) if you want to build the Docker image or run the app in a Docker container: [Docker](https://www.docker.com/)
 
-## Setting up certificates for development
+## First-time setup
+
+After cloning this repo, do the following steps to get prepare your development environment:
+
+- Install the dependencies for the dev scrips:  
+  `cd dev_cmds && yarn install && yarn devcmd setup`
+- If you want to use the [DevCmd](https://github.com/XITASO/devcmd) global launcher, also run:  
+  `yarn global add devcmd-cli`
+
+## DevCmd for dev scripts
+
+We automated many common build and development tasks, mostly using [DevCmd](https://github.com/XITASO/devcmd). These scripts are located in the `dev_cmd` directory in the repo root.
+
+We recommend installing and using DevCmd's global launcher tool (see above).
+
+If you can't or don't want to use this global launcher, you can replace any command that looks like `devcmd <SCRIPTNAME>` equivalently with `cd dev_cmds && yarn devcmd <SCRIPTNAME>`.
+
+## Parts of this repository
+
+What is where (relative to the repo root):
+
+- `data/` - word lists, text corpora, and other input data, as well as pre-processing scripts to turn this data into usable inputs for the NLP backend
+- `dev_cmds/` - build scripts and development task automation using [DevCmd](https://github.com/XITASO/devcmd)
+- `doc/` - this documentation
+- `inclusify_server/` - the Python backend that analyzes users' inputs and provides improvement suggestions using NLP methods
+- `react-ui/` - the graphical end-user app (frontend) for use as a standalone webpage in a browser and in Word/Outlook add-ins
+
+## Setting up certificates for local Office Add-in development
+
+_See also [`office-addin-dev-certs`](https://www.npmjs.com/package/office-addin-dev-certs) and the [Word add-in development docs](https://docs.microsoft.com/en-us/office/dev/add-ins/word/) for more info._
 
 - (On macOS & Linux:) Go to `react-ui/node_modules/office-addin-dev-certs/cli.js` and change the end of lines format to `LF` to avoid a bug.
 - Use `yarn office-addin-dev-certs install` to obtain certificates.
