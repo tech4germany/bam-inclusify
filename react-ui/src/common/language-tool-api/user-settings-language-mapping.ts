@@ -34,7 +34,7 @@ function mapGenderSymbol(originalValue: string | undefined, genderSymbol: string
 }
 
 function removeDoubleNotation(value: string | undefined): string | undefined {
-  return isString(value) && !value.includes(" und ") && !value.includes(" bzw. ") ? value : undefined;
+  return isString(value) && !value.includes(" und ") && !value.includes(" oder ") ? value : undefined;
 }
 function removeGenderStar(value: string | undefined): string | undefined {
   return isString(value) && !value.includes(GENDER_STAR) ? value : undefined;
