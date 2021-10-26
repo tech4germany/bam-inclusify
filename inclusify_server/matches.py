@@ -192,7 +192,7 @@ def add_gender_symbol(source, insensitive_word, inflected_sensitive_root):
     if not source == "dereko":
         return [inflected_sensitive_root]
     elif source == "dereko":
-        connector = "und" if re.match(r"innen$", inflected_sensitive_root) else "oder"
+        connector = "und" if re.match(r".*innen$", inflected_sensitive_root) else "oder"
         return [
             re.sub(r"(in(nen)?)$", r"*\1", inflected_sensitive_root),
             "{} {} {}".format(inflected_sensitive_root, connector, insensitive_word),
