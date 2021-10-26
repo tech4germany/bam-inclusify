@@ -22,7 +22,6 @@ def gender_matches(doc):
     matches = []
     for sentence in doc.sentences:
         for word in fix_gender_symbols(sentence.words):
-            print(word)
             lemma = word.lemma
             if lemma in rules:
                 sensitive_alternatives = []
@@ -93,7 +92,27 @@ def is_applicable(rule, word, sentence):
         return False
     if parse_feats(word.feats)["Number"] == "SIN" and plural_only:
         return False
+    for f in [back, forth]:
+        if f(word.id, 2) >= 0 and f(word.id, 2) < len(sentence.words):
+            if sentence.words[f(word.id, 1)].text in ["und", "oder"]:
+                length = (
+                    min(len(word.text), len(sentence.words[f(word.id, 2)].text)) - 3
+                )
+                if word.text[:length] == sentence.words[f(word.id, 2)].text[:length]:
+                    if (
+                        parse_feats(sentence.words[f(word.id, 2)].feats)["Gender"]
+                        == "FEM"
+                    ):
+                        return False
     return True
+
+
+def back(a, b):
+    return a + b - 1
+
+
+def forth(a, b):
+    return a - b - 1
 
 
 def parse_feats(feats):
