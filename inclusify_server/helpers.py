@@ -24,5 +24,5 @@ def add_to_dict(key: A, vals: List[B], dic: Dict[A, List[B]]) -> Dict[A, List[B]
         dic[key] = vals
 
 
-def open_(*args):
-    return open(path.join(path.dirname(__file__), *args), encoding="utf-8")
+def open_(path_, *args):
+    return open(path.join(path.dirname(__file__), path_), encoding="utf-8", *args)
