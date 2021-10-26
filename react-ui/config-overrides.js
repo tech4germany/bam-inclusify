@@ -46,6 +46,26 @@ module.exports = {
       inject: true,
     });
 
+    const impressumHtmlPlugin = new HtmlWebpackPlugin({
+      filename: "impressum.html",
+      template: "./public/plain.html",
+      templateParameters: {
+        pageTitle: "Impressum",
+        pageContent: "Content here",
+      },
+      chunks: [],
+    });
+
+    const datenschutzHtmlPlugin = new HtmlWebpackPlugin({
+      filename: "datenschutz.html",
+      template: "./public/plain.html",
+      templateParameters: {
+        pageTitle: "Datenschutz",
+        pageContent: "Content here",
+      },
+      chunks: [],
+    });
+
     const buildType = isEnvDevelopment ? "dev" : "prod";
     const copyManifestPlugin = new CopyWebpackPlugin({
       patterns: [
@@ -65,7 +85,14 @@ module.exports = {
       ],
     });
 
-    config.plugins = [defaultHtmlPlugin, taskpaneHtmlPlugin, copyManifestPlugin, ...otherPlugins];
+    config.plugins = [
+      defaultHtmlPlugin,
+      taskpaneHtmlPlugin,
+      impressumHtmlPlugin,
+      datenschutzHtmlPlugin,
+      copyManifestPlugin,
+      ...otherPlugins,
+    ];
 
     // We have multiple entry points, so we can't use the default "bundle.js" common bundle name for dev-server.
     // instead, we need to provide a unique name for each chunk, e.g. using [name].
