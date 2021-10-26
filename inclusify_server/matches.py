@@ -1,3 +1,5 @@
+from copy import deepcopy
+from functools import lru_cache
 from inclusify_server.helpers import add_to_dict, log, open_
 from inclusify_server.morphy.morphy import inflect
 from inclusify_server.prepare_list import load_rules
@@ -19,46 +21,53 @@ rules = load_rules()
 
 
 def matches(text: str):
-    doc = nlp(text)
-    return gender_matches(doc)
-
-
-def gender_matches(doc):
-    matches = []
+    doc = tokenize(text)
+    matches_ = []
     for sentence in doc.sentences:
-        for word in fix_gender_symbols(sentence.words):
-            lemma = word.lemma
-            if lemma in rules:
-                sensitive_alternatives = []
-                for rule in rules[lemma]:
-                    if is_applicable(rule, word, sentence):
-                        _, _, sensitive, plural_only, source = rule
-                        sensitive_alternatives.append((sensitive, plural_only, source))
-                if len(sensitive_alternatives) > 0:
-                    sensitive_alternatives = [
-                        (simplify_participles(sensitive, word), plural_only, source)
-                        for sensitive, plural_only, source in sensitive_alternatives
-                    ]
-                    sensitive_alternatives = list(
-                        itertools.chain(
-                            *[
-                                inflect_root(word, alt, plural_only, source)
-                                for alt, plural_only, source in sensitive_alternatives
-                            ]
-                        )
-                    )
-                    if not all([word.text == alt for alt in sensitive_alternatives]):
-                        sensitive_alternatives = [
-                            alt for alt in sensitive_alternatives if word.text != alt
+        for match in gender_matches(sentence.text):
+            match_ = deepcopy(match)
+            match_["offset"] += sentence.words[0].parent.start_char
+            matches_.append(match_)
+    return matches_
+
+
+@lru_cache(maxsize=1000)
+def gender_matches(sentence_text):
+    sentence = nlp(sentence_text).sentences[0]
+    matches_ = []
+    for word in fix_gender_symbols(sentence.words):
+        lemma = word.lemma
+        if lemma in rules:
+            sensitive_alternatives = []
+            for rule in rules[lemma]:
+                if is_applicable(rule, word, sentence):
+                    _, _, sensitive, plural_only, source = rule
+                    sensitive_alternatives.append((sensitive, plural_only, source))
+            if len(sensitive_alternatives) > 0:
+                sensitive_alternatives = [
+                    (simplify_participles(sensitive, word), plural_only, source)
+                    for sensitive, plural_only, source in sensitive_alternatives
+                ]
+                sensitive_alternatives = list(
+                    itertools.chain(
+                        *[
+                            inflect_root(word, alt, plural_only, source)
+                            for alt, plural_only, source in sensitive_alternatives
                         ]
-                        match = gender_match(
-                            word.text,
-                            sensitive_alternatives,
-                            word.start_char,
-                            word.end_char - word.start_char,
-                        )
-                        matches.append(match)
-    return matches
+                    )
+                )
+                if not all([word.text == alt for alt in sensitive_alternatives]):
+                    sensitive_alternatives = [
+                        alt for alt in sensitive_alternatives if word.text != alt
+                    ]
+                    match = gender_match(
+                        word.text,
+                        sensitive_alternatives,
+                        word.start_char,
+                        word.end_char - word.start_char,
+                    )
+                    matches_.append(match)
+    return matches_
 
 
 def gender_match(text: str, replacements: List[str], offset: int, length: int):
