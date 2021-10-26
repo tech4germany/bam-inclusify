@@ -43,13 +43,16 @@ def gender_matches(doc):
                             ]
                         )
                     )
-                    match = gender_match(
-                        word.text,
-                        sensitive_alternatives,
-                        word.start_char,
-                        word.end_char - word.start_char,
-                    )
-                    matches.append(match)
+                    if not all([word.text == alt for alt in sensitive_alternatives]):
+                        sensitive_alternatives = [
+                            alt for alt in sensitive_alternatives if word.text != alt]
+                        match = gender_match(
+                            word.text,
+                            sensitive_alternatives,
+                            word.start_char,
+                            word.end_char - word.start_char,
+                        )
+                        matches.append(match)
     return matches
 
 
