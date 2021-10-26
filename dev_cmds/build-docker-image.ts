@@ -1,12 +1,13 @@
-import { execPiped, execToString, runAsyncMain } from "devcmd";
+import { execPiped, runAsyncMain } from "devcmd";
 import { bold, cyan, green } from "kleur";
 import path from "path";
 import { DOCKER_COMMAND } from "./utils/commands";
 import { APP_IMAGE_NAME } from "./utils/docker";
+import { getGitCommitSha } from "./utils/getGitCommitSha";
 import { repoRoot } from "./utils/paths";
 
 async function main() {
-  const { stdout: gitSha } = await execToString({ command: "git", args: ["rev-parse", "HEAD"] });
+  const gitSha = await getGitCommitSha();
 
   await execPiped({
     command: DOCKER_COMMAND,
