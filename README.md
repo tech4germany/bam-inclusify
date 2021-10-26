@@ -1,6 +1,7 @@
-# INCLUSIFY App
-
-TODO: Logo
+<h1><div style="background: white; display: inline-block; padding: 4px 8px 0; box-shadow: 0px 0px 3px 4px rgba(255,255,255,1);
+">
+  <img alt="INCLUSIFY logo" src="./react-ui/src/common/icons/inclusify-logo.svg">
+</div></h1>
 
 TODO: Live Demo
 
