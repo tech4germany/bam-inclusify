@@ -4,6 +4,8 @@
 
 FROM node:14-bullseye AS builder
 
+ARG REACT_APP_SHOW_IMPRESSUM_AND_DATENSCHUTZ
+
 RUN apt-get update && \
   apt-get install -y zip
 

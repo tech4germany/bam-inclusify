@@ -18,6 +18,7 @@ import { UserSettingsAndFeatureFlagsContext } from "../common/UserSettingsAndFea
 import { UseState } from "../common/UseState";
 import { PilotPhaseBanner } from "../common/PilotPhaseBanner";
 import { rightMargin } from "../office-taskpane/taskpane-style-constants";
+import { ImpressumAndDatenschutzLinks } from "./ImpressumAndDatenschutzLinks";
 
 const textAreaId = newUuidv4();
 
@@ -115,6 +116,8 @@ export const StandaloneApp: FC = () => {
             </MainAreaContainer>
           </CenteredContainer>
         </div>
+
+        <ImpressumAndDatenschutzLinks />
       </UserSettingsAndFeatureFlagsContext.Provider>
       <DebugPanel
         featureFlagsState={[featureFlags, setFeatureFlags]}
