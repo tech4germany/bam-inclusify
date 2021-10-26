@@ -1,30 +1,12 @@
 from inclusify_server.helpers import add_to_dict, log, open_
 from inclusify_server.download_language_models import nlp
 from inclusify_server.morphy.morphy import inflect
+from inclusify_server.prepare_list import load_rules
 from typing import *
 import csv
 import itertools
 import re
 import sys
-
-
-def load_rules():
-    dic = {}
-    for [
-        lemma,
-        insensitive_lemmas,
-        insensitive,
-        sensitive,
-        plural_only,
-        source,
-    ] in csv.reader(open_("data", "unified.csv")):
-        plural_only = True if plural_only == "1" else False
-        add_to_dict(
-            lemma,
-            [(insensitive_lemmas, insensitive, sensitive, plural_only, source)],
-            dic,
-        )
-    return dic
 
 
 rules = load_rules()
@@ -144,7 +126,8 @@ def inflect_root(insensitive_word, alternative, plural_only, source):
                 " ".join(
                     [
                         *tokens[:root_id],
-                        inflected_sensitive_root,  # morphs["Case"], morphs["Number"], insensitive_word.lemma
+                        # morphs["Case"], morphs["Number"], insensitive_word.lemma
+                        inflected_sensitive_root,
                         *tokens[root_id + 1 :],
                     ]
                 )
@@ -177,8 +160,6 @@ def add_gender_symbol(source, insensitive_word, inflected_sensitive_root):
         return True, re.sub(r"(in(nen)?)$", r"*\1", inflected_sensitive_root)
 
 
-
-
 def fix_gender_symbols(words):
     fixed_words = []
     for word in words:
@@ -191,8 +172,7 @@ def fix_gender_symbols(words):
             prev["text"] = prev["text"] + word["text"]
             prev["lemma"] = prev["lemma"] + word["lemma"]
             number = "Sing" if re.match(r"^[*:/_]in?$", word.text) else "Plur"
-            prev["feats"] = "Case={}|Gender=Fem|Number={}".format(
-                prev["Case"], number)
+            prev["feats"] = "Case={}|Gender=Fem|Number={}".format(prev["Case"], number)
             prev["end_char"] = word["end_char"]
         else:
             fixed_words.append(word)

@@ -3,7 +3,6 @@
 # See `LICENSE`.
 
 from compound_split import char_split
-from tqdm import tqdm
 import os
 from os import path
 import klepto
