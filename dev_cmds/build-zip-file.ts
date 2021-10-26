@@ -6,7 +6,7 @@ import { DEVCMD_COMMAND } from "./utils/commands";
 import { repoRoot, serverDir } from "./utils/paths";
 
 async function main() {
-  await execPiped({ command: DEVCMD_COMMAND, args: ["prepare"] });
+  await execPiped({ command: DEVCMD_COMMAND, args: ["prepare-server"] });
 
   const serverDirName = path.relative(repoRoot, serverDir);
   const zipFileName = `${serverDirName}.zip`;
