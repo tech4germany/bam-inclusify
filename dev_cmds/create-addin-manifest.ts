@@ -1,9 +1,8 @@
-import { execPiped, runAsyncMain } from "devcmd";
+import { runAsyncMain } from "devcmd";
 import fs from "fs-extra";
 import { cyan } from "kleur";
 import path from "path";
-import { DEVCMD_COMMAND } from "./utils/commands";
-import { reactUiDir, repoRoot, serverDir } from "./utils/paths";
+import { reactUiDir, repoRoot } from "./utils/paths";
 
 async function main(...args: string[]) {
   if (args.length !== 1) {
