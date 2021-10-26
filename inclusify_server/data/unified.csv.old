@@ -93,7 +93,6 @@ Aktionskünstler,Aktionskünstlerin,0,dereko
 Aktionsteilnehmer,Aktionsteilnehmerin,0,dereko
 Aktionär,Aktionärin,0,dereko
 Aktionär,Person mit Aktienbesitz,0,geschicktgendern
-Aktionär,Person mit Aktienbesitz,0,geschicktgendern
 Aktionär,aktienhabende Person,0,geschicktgendern
 Aktionär,anteilshabende Person,0,geschicktgendern
 Aktionärsversammlung,Versammlung von Anteilshabenden,0,geschicktgendern
@@ -133,7 +132,6 @@ Alltagsradler,Alltagsradlerin,0,dereko
 Alpinist,Alpinistin,0,dereko
 Alpinist,bergbesteigende Person,0,geschicktgendern
 Alpinist,bergkletternde Person,0,geschicktgendern
-Alpinist,bergsteigende Person,0,geschicktgendern
 Alpinist,bergsteigende Person,0,geschicktgendern
 Altaktivist,Altaktivistin,0,dereko
 Altbewerber,Altbewerberin,0,dereko
@@ -204,6 +202,7 @@ Anbieter,angebotsstellende Person,0,geschicktgendern
 Andauer,Andauerin,0,dereko
 Anforderer,anfordernde Abteilung,0,geschicktgendern
 Anforderer,anfordernde Person,0,geschicktgendern
+Anforderungsmanager,Anforderungsmanagerin,0,dereko
 Anfänger,Anfängerin,0,dereko
 Anfänger,Person ohne Vorerfahrung,0,geschicktgendern
 Anfänger,Person ohne Vorkenntnisse,0,geschicktgendern
@@ -391,7 +390,6 @@ Arbeitserzieher,Arbeitserzieherin,0,dereko
 Arbeitsimmigrant,Arbeitsimmigrantin,0,dereko
 Arbeitskollege,Arbeitskollegin,0,dereko
 Arbeitskollege,Teammitglied,0,geschicktgendern
-Arbeitskollege,Teammitglied,0,geschicktgendern
 Arbeitskollege,wer im Team arbeitet,0,geschicktgendern
 Arbeitskollege,wer in derselben Firma arbeitet,0,geschicktgendern
 Arbeitskämpfer,Arbeitskämpferin,0,dereko
@@ -418,7 +416,6 @@ Artikelschreiber,Artikelschreiberin,0,dereko
 Artist,Artistin,0,dereko
 Arzt,Person im ärztlichen Dienst,0,geschicktgendern
 Arzt,Ärzteschaft,1,geschicktgendern
-Arzt,Ärztin,0,dereko
 Arzt,Ärztin,0,dereko
 Arzt,ärztliches Fachpersonal,0,geschicktgendern
 Arzt,ärztliches Fachpersonal,1,geschicktgendern
@@ -2198,7 +2195,6 @@ Geheimnisträger,Geheimnisträgerin,0,dereko
 Gehilfe,Gehilfin,0,dereko
 Geiger,Geigerin,0,dereko
 Geisterfahrer,Fahrzeug in falscher Richtung,0,geschicktgendern
-Geisterfahrer,Fahrzeug in falscher Richtung,0,geschicktgendern
 Geisterfahrer,Geisterfahrerin,0,dereko
 Geisterfahrer,Geisterfahrzeug,0,geschicktgendern
 Geisteswissenschaftler,Geisteswissenschaftlerin,0,dereko
@@ -2474,7 +2470,6 @@ Hauptakteur,Hauptakteurin,0,dereko
 Hauptansprechpartner,Hauptansprechpartnerin,0,dereko
 Hauptautor,Hauptautorin,0,dereko
 Hauptcharakter,Hauptfigur,0,geschicktgendern
-Hauptcharakter,Hauptfigur,0,geschicktgendern
 Hauptcharakter,Hauptperson,0,geschicktgendern
 Hauptcharakter,Schlüsselfigur,0,geschicktgendern
 Hauptcharakter,Titelrolle,0,geschicktgendern
@@ -2602,7 +2597,6 @@ Hintermann,aus dem Hinterzimmer,0,geschicktgendern
 Hintermann,dahinter steckt/steht,0,geschicktgendern
 Hintermann,drahtziehende Person,0,geschicktgendern
 Hintermann,graue Eminenz,0,geschicktgendern
-Hintermann,verantwortliche Person,0,geschicktgendern
 Hintermann,verantwortliche Person,0,geschicktgendern
 Hinweisgeber,Hinweis gebende Person,0,geschicktgendern
 Hinweisgeber,Hinweisgeberin,0,dereko
@@ -2826,7 +2820,6 @@ Jodler,Jodlerin,0,dereko
 Jogger,Joggerin,0,dereko
 Journalist,Journalistin,0,dereko
 Journalist,Medien,1,geschicktgendern
-Journalist,Presse,1,geschicktgendern
 Journalist,Presse,1,geschicktgendern
 Journalist,im Journalismus tätige Person,0,geschicktgendern
 Journalist,jemand vom Fernsehen,0,geschicktgendern
@@ -3255,7 +3248,6 @@ Krankenschwester,Krankenschwesterin,0,dereko
 Krankenschwester,Pflegefachkraft,0,geschicktgendern
 Krankenschwester,Pflegefachperson,0,geschicktgendern
 Krankenschwester,Pflegekraft,0,geschicktgendern
-Krankenschwester,Pflegekraft,0,geschicktgendern
 Krankenschwester,Pflegepersonal,0,geschicktgendern
 Krankenschwester,in der Krankenpflege beschäftigte Person,0,geschicktgendern
 Krankenschwester,pflegende Person,0,geschicktgendern
@@ -3495,7 +3487,6 @@ Landtagskandidat,Landtagskandidatin,0,dereko
 Landtagspräsident,Landtagspräsidentin,0,dereko
 Landwirt,Landwirtin,0,dereko
 Landwirt,Landwirtschaft betreibende Person,0,geschicktgendern
-Landwirt,Landwirtschaft betreibende Person,0,geschicktgendern
 Landwirt,in der Landwirtschaft beschäftigte Person,0,geschicktgendern
 Landwirt,landwirtschaftlich beschäftigte Person,0,geschicktgendern
 Landwirtschaftsmeister,Landwirtschaftsmeisterin,0,dereko
@@ -3579,7 +3570,6 @@ Leistungsträger,refinanzierende Ämter und Behörden,0,geschicktgendern
 Leiter,Leiterin,0,dereko
 Leiter,Leitung,0,geschicktgendern
 Leiter,Leitung,1,geschicktgendern
-Lektor,Lektorat,0,geschicktgendern
 Lektor,Lektorat,0,geschicktgendern
 Lektor,Lektorin,0,dereko
 Lektorstelle,Lektoratsstelle,0,geschicktgendern
@@ -3699,7 +3689,6 @@ Mandatsträger,Mandat innehabende Person,0,geschicktgendern
 Mandatsträger,Mandatsträgerin,0,dereko
 Mandatsträger,mandatstragende Person,0,geschicktgendern
 Manipulant,manipulierende Person,0,geschicktgendern
-Mann,Person,0,geschicktgendern
 Mann über Board!,Person über Board!,0,geschicktgendern
 Mann über Bord!,Person über Bord!,0,geschicktgendern
 Manndeckung,1:1-Deckung,0,geschicktgendern
@@ -3832,7 +3821,6 @@ Mentor,Vorbild,0,geschicktgendern
 Mentor,beratende Person,0,geschicktgendern
 Mentor,fördernde Person,0,geschicktgendern
 Mentor,fürsprechende Person,0,geschicktgendern
-Messdiener,Messdienerin,0,dereko
 Messdiener,Messdienerin,0,dereko
 Messebesucher,Messebesucherin,0,dereko
 Metallarbeiter,Metallarbeiterin,0,dereko
@@ -4290,7 +4278,6 @@ Nutzer,Nutzung,0,geschicktgendern
 Nutzer,"Person, die XYZ nutzt",0,geschicktgendern
 Nutzer,benutzende Person,0,geschicktgendern
 Nutzer,nutzende Person,0,geschicktgendern
-Nutzer,nutzende Person,0,geschicktgendern
 Nutzer,wer XYZ nutzt,0,geschicktgendern
 Nutzerdaten,Daten der Nutzenden,0,geschicktgendern
 Nutzerdaten,Datenspuren,0,geschicktgendern
@@ -4398,7 +4385,6 @@ Packer,Packerin,0,dereko
 Paddler,Paddlerin,0,dereko
 Paketbote,Paketbotin,0,dereko
 Paketbote,Paketzustellung,0,geschicktgendern
-Paketbote,Paketzustellung,0,geschicktgendern
 Paketzusteller,Paketzustellerin,0,dereko
 Pakistaner,Pakistanerin,0,dereko
 Palästinenser,Palästinenserin,0,dereko
@@ -4482,7 +4468,6 @@ Patient,"Person, die sich in medizinische Hände begibt",0,geschicktgendern
 Patient,behandelte Person,0,geschicktgendern
 Patient,die uns anvertraute Person,0,geschicktgendern
 Patient,erkrankte Person,0,geschicktgendern
-Patient,kranke Person,0,geschicktgendern
 Patient,kranke Person,0,geschicktgendern
 Patient,stationär aufgenommene Person,0,geschicktgendern
 Patient,zu behandelnde Person,0,geschicktgendern
@@ -4805,6 +4790,7 @@ Protestler,Protestlerin,0,dereko
 Protestteilnehmer,Protestteilnehmerin,0,dereko
 Protestwähler,Protestwählerin,0,dereko
 Protokollant,Protokollantin,0,dereko
+Protokollant,protokollführende Person,0,geschicktgendern
 Protokollführer,protokollführende Person,0,geschicktgendern
 Provinzler,Provinzlerin,0,dereko
 Prozessbeobachter,Prozessbeobachterin,0,dereko
@@ -4953,8 +4939,6 @@ Referendar,Lehrkraft im Vorbereitungsdienst,0,geschicktgendern
 Referendar,Referendarin,0,dereko
 Referent,Referentin,0,dereko
 Referent,referierende Person,0,geschicktgendern
-Referent,referierende Person,0,geschicktgendern
-Referent,vortragende Person,0,geschicktgendern
 Referent,vortragende Person,0,geschicktgendern
 Referenten waren,Es referierten,0,geschicktgendern
 Referententätigkeit,Referierendentätigkeit,0,geschicktgendern
@@ -5250,6 +5234,14 @@ Schwede,Schwedin,0,dereko
 Schweizer,Schweizerin,0,dereko
 Schweizermeister,Schweizermeisterin,0,dereko
 Schweißer,Schweißerin,0,dereko
+Schwerbehinderte,Mensch mit Schwerbehinderungen,0,geschicktgendern
+Schwerbehinderte,Mensch mit einer Schwerbehinderung,0,geschicktgendern
+Schwerbehinderte,Person mit Schwerbehinderungen,0,geschicktgendern
+Schwerbehinderte,Person mit einer Schwerbehinderung,0,geschicktgendern
+Schwerbehinderter,Mensch mit Schwerbehinderungen,0,geschicktgendern
+Schwerbehinderter,Mensch mit einer Schwerbehinderung,0,geschicktgendern
+Schwerbehinderter,Person mit Schwerbehinderungen,0,geschicktgendern
+Schwerbehinderter,Person mit einer Schwerbehinderung,0,geschicktgendern
 Schweriner,Schwerinerin,0,dereko
 Schwester,Geschwisterkind,0,geschicktgendern
 Schwiegermutter,Schwiegerelternteil,0,geschicktgendern
@@ -5621,7 +5613,6 @@ Sprecher,Sprecherin,0,dereko
 Sprecher,Stimme,0,geschicktgendern
 Sprecher,Text gesprochen von,0,geschicktgendern
 Sprecher,sprachbenutzende Person,0,geschicktgendern
-Sprecher,sprechende Person,0,geschicktgendern
 Sprecher,sprechende Person,0,geschicktgendern
 Sprecher,Öffentlichkeitsarbeit,0,geschicktgendern
 Sprecherwechsel,Redeübernahme,0,geschicktgendern
@@ -6050,7 +6041,6 @@ Trauerredner,Trauerrednerin,0,dereko
 Traumpartner,Traumpartnerin,0,dereko
 Trauzeuge,Trauungsbegleitung,0,geschicktgendern
 Trauzeuge,Trauungsbegleitung,1,geschicktgendern
-Trauzeuge,die Trauung bezeugende Person,0,geschicktgendern
 Trauzeuge,die Trauung bezeugende Person,0,geschicktgendern
 Travestiekünstler,Travestiekünstlerin,0,dereko
 Treuhänder,treuhändisch beauftragte Person,0,geschicktgendern
@@ -6810,7 +6800,6 @@ bürgernahe Verwaltung,menschenorientierte Verwaltung,0,geschicktgendern
 bürgernahe Verwaltung,serviceorientierte Verwaltung,0,geschicktgendern
 damenhaft,fein,0,geschicktgendern
 einem selbst,dir selbst,0,geschicktgendern
-einem selbst,dir selbst,0,geschicktgendern
 einer nach dem anderen, der Reihe nach,0,geschicktgendern
 englischer Muttersprachler,Englisch-erstsprechende Person,0,geschicktgendern
 englischer Muttersprachler,"Person, deren erste Sprache Englisch ist",0,geschicktgendern
@@ -6851,7 +6840,6 @@ kaufmännisch,fiskalisch,0,geschicktgendern
 kaufmännisch,geschäftlich,0,geschicktgendern
 kaufmännisch,gewerblich,0,geschicktgendern
 kaufmännisch,im Berufsfeld Wirtschaft,0,geschicktgendern
-kaufmännisch,in Zahlen gesehen,0,geschicktgendern
 kaufmännisch,in Zahlen gesehen,0,geschicktgendern
 kaufmännisch,kauftechnisch,0,geschicktgendern
 kaufmännisch,kommerziell,0,geschicktgendern

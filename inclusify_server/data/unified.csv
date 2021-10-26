@@ -204,6 +204,7 @@ Anbieter,angebotsstellende Person,0,geschicktgendern
 Andauer,Andauerin,0,dereko
 Anforderer,anfordernde Abteilung,0,geschicktgendern
 Anforderer,anfordernde Person,0,geschicktgendern
+Anforderungsmanager,Anforderungsmanagerin,0,dereko
 Anfänger,Anfängerin,0,dereko
 Anfänger,Person ohne Vorerfahrung,0,geschicktgendern
 Anfänger,Person ohne Vorkenntnisse,0,geschicktgendern
@@ -3699,7 +3700,6 @@ Mandatsträger,Mandat innehabende Person,0,geschicktgendern
 Mandatsträger,Mandatsträgerin,0,dereko
 Mandatsträger,mandatstragende Person,0,geschicktgendern
 Manipulant,manipulierende Person,0,geschicktgendern
-Mann,Person,0,geschicktgendern
 Mann über Board!,Person über Board!,0,geschicktgendern
 Mann über Bord!,Person über Bord!,0,geschicktgendern
 Manndeckung,1:1-Deckung,0,geschicktgendern
@@ -4805,6 +4805,7 @@ Protestler,Protestlerin,0,dereko
 Protestteilnehmer,Protestteilnehmerin,0,dereko
 Protestwähler,Protestwählerin,0,dereko
 Protokollant,Protokollantin,0,dereko
+Protokollant,protokollführende Person,0,geschicktgendern
 Protokollführer,protokollführende Person,0,geschicktgendern
 Provinzler,Provinzlerin,0,dereko
 Prozessbeobachter,Prozessbeobachterin,0,dereko
@@ -5250,6 +5251,14 @@ Schwede,Schwedin,0,dereko
 Schweizer,Schweizerin,0,dereko
 Schweizermeister,Schweizermeisterin,0,dereko
 Schweißer,Schweißerin,0,dereko
+Schwerbehinderte,Person mit einer Schwerbehinderung,0,geschicktgendern
+Schwerbehinderte,Person mit Schwerbehinderungen,0,geschicktgendern
+Schwerbehinderte,Mensch mit einer Schwerbehinderung,0,geschicktgendern
+Schwerbehinderte,Mensch mit Schwerbehinderungen,0,geschicktgendern
+Schwerbehinderter,Person mit einer Schwerbehinderung,0,geschicktgendern
+Schwerbehinderter,Person mit Schwerbehinderungen,0,geschicktgendern
+Schwerbehinderter,Mensch mit einer Schwerbehinderung,0,geschicktgendern
+Schwerbehinderter,Mensch mit Schwerbehinderungen,0,geschicktgendern
 Schweriner,Schwerinerin,0,dereko
 Schwester,Geschwisterkind,0,geschicktgendern
 Schwiegermutter,Schwiegerelternteil,0,geschicktgendern
