@@ -24,6 +24,9 @@ export const FeatureFlagsStorage = new LocalStorageService("inclusify_app_featur
 export const useFeatureFlagsState: () => [FeatureFlags, (setState: (prevState: FeatureFlags) => FeatureFlags) => void] =
   () => {
     const [featureFlags, setFeatureFlags] = useState(FeatureFlagsStorage.load());
+    if (!isDebugPanelEnabled) {
+      return [DefaultFeatureFlags, () => {}];
+    }
     const setFeatureFlagsWithSave = (setState: (prevState: FeatureFlags) => FeatureFlags) =>
       setFeatureFlags((prevFeatureFlags) => {
         const newFeatureFlags = setState(prevFeatureFlags);
