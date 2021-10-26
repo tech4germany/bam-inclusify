@@ -65,9 +65,6 @@ export const DebugPanel: FC<DebugPanelProps> = !isDebugPanelEnabled
           <Checkbox featureFlagsState={featureFlagsState} featureFlagId={"allowMultiCharGenderSymbol"}>
             Mehr-Zeichen Gender-Symbol erlauben
           </Checkbox>
-          <Checkbox featureFlagsState={featureFlagsState} featureFlagId={"useBamLogo"}>
-            BAM-Logo verwenden
-          </Checkbox>
           <Checkbox featureFlagsState={featureFlagsState} featureFlagId={"showIgnoreButton"}>
             "Match ignorieren" verfügbar
           </Checkbox>

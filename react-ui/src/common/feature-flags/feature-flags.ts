@@ -11,7 +11,6 @@ export const DefaultFeatureFlags = Object.freeze({
   spellCheckAvailable: false,
   allowMultiCharGenderSymbol: false,
   maxReplacementsPerRuleMatch: 5,
-  useBamLogo: isBamBuild,
   minimumRequestDelayMs: 1000,
   apiBaseUrl: "/v2",
   showIgnoreButton: false,
