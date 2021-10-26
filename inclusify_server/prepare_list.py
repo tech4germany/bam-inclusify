@@ -2,50 +2,41 @@ from inclusify_server.download_language_models import nlp
 from inclusify_server.helpers import add_to_dict, open_
 from os import path
 from tqdm import tqdm
-import time
 import csv
 import itertools
 
 
 def preprocess_rules():
     print("Looking for rule changes in `data/unified.csv`.")
-    timestampfile = path.join("data", "last_update")
-    if not path.isfile(timestampfile) or int(open_(timestampfile).read() or 0) < int(
-        path.getmtime("data/unified.csv")
+    rules = read_rule_file("unified.csv")
+    old_rules = read_rule_file("unified.csv.old")
+    processed_rules = list(csv.reader(
+        open_(path.join("data", "processed.csv"))))
+    print("Removing old rules ...")
+    for insensitive, sensitive, plural_only, source in tqdm(
+        old_rules.difference(rules)
     ):
-        print("Changes have been detected.")
-        rules = read_rule_file("unified.csv")
-        old_rules = read_rule_file("unified.csv.old")
-        processed_rules = list(csv.reader(
-            open_(path.join("data", "processed.csv"))))
-        print("Removing old rules ...")
-        for insensitive, sensitive, plural_only, source in tqdm(
-            old_rules.difference(rules)
+        for i, (_, _, insensitive_, sensitive_, plural_only_, source_) in enumerate(
+            processed_rules
         ):
-            for i, (_, _, insensitive_, sensitive_, plural_only_, source_) in enumerate(
-                processed_rules
+            if (
+                insensitive == insensitive_
+                and sensitive == sensitive_
+                and plural_only == plural_only_
+                and source == source_
             ):
-                if (
-                    insensitive == insensitive_
-                    and sensitive == sensitive_
-                    and plural_only == plural_only_
-                    and source == source_
-                ):
-                    del processed_rules[i]
-        print("Processing new rules ...")
-        for rule in tqdm(rules.difference(old_rules)):
-            processed_rules += lemmatize_rule(rule)
+                del processed_rules[i]
+    print("Processing new rules ...")
+    for rule in tqdm(rules.difference(old_rules)):
+        processed_rules += lemmatize_rule(rule)
 
-        csv.writer(open_(path.join("data", "unified.csv.old"), "w")).writerows(
-            sorted(list(rules))
-        )
-        open_(timestampfile, "w").write(str(int(time.time())))
-        csv.writer(open_(path.join("data", "processed.csv"), "w")).writerows(
-            sorted(processed_rules)
-        )
-        print("Rule changes have been processed.")
-    else:
-        print("No rule changes detected.")
+    csv.writer(open_(path.join("data", "unified.csv.old"), "w")).writerows(
+        sorted(list(rules))
+    )
+    csv.writer(open_(path.join("data", "processed.csv"), "w")).writerows(
+        sorted(processed_rules)
+    )
+    print("Rule changes have been processed.")
 
 
 def lemmatize_rule(rule):
