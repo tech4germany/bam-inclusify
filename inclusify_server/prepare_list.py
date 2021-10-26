@@ -1,9 +1,10 @@
-from inclusify_server.download_language_models import nlp
 from inclusify_server.helpers import add_to_dict, open_
 from os import path
 from tqdm import tqdm
 import csv
+import inclusify_server.download_language_models
 import itertools
+import stanza
 
 
 def preprocess_rules():
@@ -26,8 +27,11 @@ def preprocess_rules():
             ):
                 del processed_rules[i]
     print("Processing new rules ...")
-    for rule in tqdm(rules.difference(old_rules)):
-        processed_rules += lemmatize_rule(rule)
+    new_rules = rules.difference(old_rules)
+    if len(new_rules) > 0:
+        nlp = stanza.Pipeline(lang="de", processors="tokenize,mwt,pos,lemma")
+        for rule in tqdm(new_rules):
+            processed_rules += lemmatize_rule(rule)
 
     csv.writer(open_(path.join("data", "unified.csv.old"), "w")).writerows(
         sorted(list(rules))

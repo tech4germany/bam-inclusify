@@ -1,14 +1,19 @@
 from inclusify_server.helpers import add_to_dict, log, open_
-from inclusify_server.download_language_models import nlp
 from inclusify_server.morphy.morphy import inflect
 from inclusify_server.prepare_list import load_rules
 from typing import *
 from stanza.models.common.doc import Word
 import csv
+import inclusify_server.download_language_models
 import itertools
 import re
+import stanza
 import sys
 
+print("Loading language models ...")
+tokenize = stanza.Pipeline(lang="de", processors="tokenize")
+nlp = stanza.Pipeline(lang="de", processors="tokenize,mwt,pos,lemma,depparse")
+print("Language models loaded.")
 
 rules = load_rules()
 
