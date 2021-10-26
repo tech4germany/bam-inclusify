@@ -18,6 +18,8 @@ docker run --rm -p 80:80 -ti --pull always ghcr.io/tech4germany/inclusify-app:la
 
 Once you see a message like _"Done loading morphological dictionary."_, you can open http://localhost in your web browser and use the INCLUSIFY web-app from there! 🥳
 
+_Note: This Docker image hosts the app without HTTPS. This is fine for local testing, but isn't appropriate for any kind of deployment where other people use the app. For actual production deployments, consider putting an HTTPS reverse proxy in front of the INCLUSIFY container._
+
 ## Technical Documentation
 
 See [doc/index.md](./doc/index.md).

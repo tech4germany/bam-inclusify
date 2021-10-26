@@ -38,13 +38,15 @@ What is where (relative to the repo root):
 
 ## Starting the app for development
 
-- First-time setup: `cd dev_cmds && yarn install && yarn devcmd setup`
-- If you want to use the [DevCmd](https://github.com/XITASO/devcmd) global launcher (e.g. `yarn global add devcmd-cli`):
-  - Start the API part: `devcmd start-api`
-  - Start the UI part: `devcmd start-ui`
-- Otherwise, you can use the scripts like this:
-  - Start the API part: `cd dev_cmds && yarn devcmd start-api`
-  - Start the UI part: `cd dev_cmds && yarn devcmd start-ui`
+- Start the API part: `devcmd start-api`
+- Start the UI part: `devcmd start-ui`
+
+## Building for production / deployment
+
+- `devcmd build-docker-image`: Creates a Docker image that contains the API backend and the static assets for the frontend, served on port 80 (i.e. non-HTTPS) inside the container. The script prints the name of the created image when it's done, so you can push or export the image easily.
+  - `devcmd start-docker`: If you've previously built the Docker image with the command above, you this command starts a new Docker container from this image locally.
+- `devcmd build-zip-file`: Creates a ZIP file in the repository root containing the API backend and the static assets for the frontend. This is intended for directly running the Python backend instead of deploying a Docker container.
+- `devcmd create-addin-manifest`: Installing the Word add-in requires a `manifest.xml` that points to the correct host where the INCLUSIFY app is deployed. This command creates a suitable manifest file for the host URL you provide as an argument.
 
 ## React Frontend
 
