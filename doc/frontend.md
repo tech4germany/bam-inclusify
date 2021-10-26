@@ -6,7 +6,7 @@ _See also [`office-addin-dev-certs`](https://www.npmjs.com/package/office-addin-
 
 - (On macOS & Linux:) Go to `react-ui/node_modules/office-addin-dev-certs/cli.js` and change the end of lines format to `LF` to avoid a bug.
 - Use `yarn office-addin-dev-certs install` to obtain certificates.
-- Create a file `react-ui/.env.local` with contents:
+- Create a file `react-ui/.env.local` with the following contents (you can also replace `$HOME` with the path to your user home folder).
 
 ```
 DEVSERVER_HTTPS_KEY=$HOME/.office-addin-dev-certs/localhost.key

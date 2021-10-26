@@ -3,13 +3,13 @@ import styled from "styled-components";
 import { InclusifyBamLogo, InclusifyLogo } from "../common/icons";
 import { Colors } from "../common/styles/Colors";
 import { Fonts } from "../common/styles/Fonts";
+import { UserSettingsAndFeatureFlagsContext } from "../common/UserSettingsAndFeatureFlagsContext";
 import { UseState } from "../common/UseState";
 import { AddinCheckTextButton } from "./AddinCheckTextButton";
 import { AddinUserSettingsButton } from "./AddinUserSettingsButton";
 import navLinksJson from "../navigation-links.json";
 import { isValidUrl } from "../common/isValidUrl";
 import { leftMargin, rightMargin } from "./taskpane-style-constants";
-import { isBamBuild } from "../common/feature-flags/feature-flags";
 
 const logoLinkUrl = extractLogoLink();
 
@@ -33,8 +33,16 @@ const AddinButtonGroupContainer = styled.div`
 
 const InclusifyLogoLinkTile = () => (
   <InclusifyLogoLinkTileContainer href={logoLinkUrl} target={"_blank"}>
-    <InclusifyLogoContainer>{isBamBuild ? <InclusifyBamLogo /> : <InclusifyLogo />}</InclusifyLogoContainer>
-    <InclusifyLogoLinkText>Deine Assistentin für diversitätssensible Sprache</InclusifyLogoLinkText>
+    <UserSettingsAndFeatureFlagsContext.Consumer>
+      {({ featureFlags }) => (
+        <>
+          <InclusifyLogoContainer>
+            {featureFlags.useBamLogo ? <InclusifyBamLogo /> : <InclusifyLogo />}
+          </InclusifyLogoContainer>
+          <InclusifyLogoLinkText>Deine Assistentin für diversitätssensible Sprache</InclusifyLogoLinkText>
+        </>
+      )}
+    </UserSettingsAndFeatureFlagsContext.Consumer>
   </InclusifyLogoLinkTileContainer>
 );
 const InclusifyLogoLinkTileContainer = styled.a`

@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import { InclusifyBamLogo, InclusifyLogo } from "../common/icons";
 import { Fonts } from "../common/styles/Fonts";
+import { UserSettingsAndFeatureFlagsContext } from "../common/UserSettingsAndFeatureFlagsContext";
 import { CenteredContainer } from "./CenteredContainer";
 import navLinksJson from "../navigation-links.json";
 import { newUuidv4 } from "../common/uuid";
 import { isValidUrl } from "../common/isValidUrl";
 import { rightMargin } from "../office-taskpane/taskpane-style-constants";
-import { isBamBuild } from "../common/feature-flags/feature-flags";
 
 const navLinks = extractNavLinks();
 
@@ -63,7 +63,13 @@ const NavBarAppIconSmallText = styled.div`
 `;
 
 const NavBarAppIcon = () => (
-  <NavBarAppIconContainer>{isBamBuild ? <InclusifyBamLogo /> : <InclusifyLogo />}</NavBarAppIconContainer>
+  <UserSettingsAndFeatureFlagsContext.Consumer>
+    {({ featureFlags }) => (
+      <NavBarAppIconContainer>
+        {featureFlags.useBamLogo ? <InclusifyBamLogo /> : <InclusifyLogo />}
+      </NavBarAppIconContainer>
+    )}
+  </UserSettingsAndFeatureFlagsContext.Consumer>
 );
 
 const NavBarAppIconContainer = styled.div`
