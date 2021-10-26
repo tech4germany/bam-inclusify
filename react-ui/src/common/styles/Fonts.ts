@@ -4,12 +4,11 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/100-italic.css";
 import "@fontsource/roboto/300-italic.css";
 import "@fontsource/roboto/400-italic.css";
-import "./bam-klavika-font/index.css";
 
 export const Fonts = Object.freeze({
   bam: Object.freeze({
-    family: "BAM Klavika",
-    weights: Object.freeze({ normal: 300, bold: 500 }),
+    family: "Roboto",
+    weights: Object.freeze({ normal: 300, bold: 400 }),
   }),
   main: Object.freeze({
     family: "Roboto",

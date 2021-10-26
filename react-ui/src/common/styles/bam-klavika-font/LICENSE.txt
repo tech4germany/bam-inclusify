@@ -1,7 +1,0 @@
-IMPORTANT!!!
-
-The BAM Klavika font is licensed to BAM (Bundesanstalt für Materialforschung und -prüfung)
-under a proprietary license and is **NOT** part of the open source release of INCLUSIFY.
-
-The font files remain here in the history of the Git repository for technical reasons,
-but you may NOT use them unless you have express permission by BAM.
