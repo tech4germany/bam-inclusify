@@ -31,6 +31,8 @@
               <Group id="CommandsGroup">
                 <Label resid="CommandsGroup.Label"/>
                 <Icon>
+                  <!-- Note: Resolutions of 16, 32 and 80 are required, or Desktop apps will silently fail to load the addin. -->
+                  <bt:Image size="16" resid="Icon.32x32"/>
                   <bt:Image size="32" resid="Icon.32x32"/>
                   <bt:Image size="80" resid="Icon.80x80"/>
                 </Icon>
@@ -41,6 +43,8 @@
                     <Description resid="TaskpaneButton.Tooltip"/>
                   </Supertip>
                   <Icon>
+                    <!-- Note: Resolutions of 16, 32 and 80 are required, or Desktop apps will silently fail to load the addin. -->
+                    <bt:Image size="16" resid="Icon.32x32"/>
                     <bt:Image size="32" resid="Icon.32x32"/>
                     <bt:Image size="80" resid="Icon.80x80"/>
                   </Icon>
