@@ -38,31 +38,31 @@ def gender_matches(sentence_text):
     for word in fix_gender_symbols(sentence.words):
         lemma = word.lemma
         if lemma in rules:
-            sensitive_alternatives = []
+            good_alternatives = []
             for rule in rules[lemma]:
                 if is_applicable(rule, word, sentence):
-                    _, _, sensitive, plural_only, source = rule
-                    sensitive_alternatives.append((sensitive, plural_only, source))
-            if len(sensitive_alternatives) > 0:
-                sensitive_alternatives = [
-                    (simplify_participles(sensitive, word), plural_only, source)
-                    for sensitive, plural_only, source in sensitive_alternatives
+                    _, _, good, plural_only, source = rule
+                    good_alternatives.append((good, plural_only, source))
+            if len(good_alternatives) > 0:
+                good_alternatives = [
+                    (simplify_participles(good, word), plural_only, source)
+                    for good, plural_only, source in good_alternatives
                 ]
-                sensitive_alternatives = list(
+                good_alternatives = list(
                     itertools.chain(
                         *[
                             inflect_root(word, alt, plural_only, source)
-                            for alt, plural_only, source in sensitive_alternatives
+                            for alt, plural_only, source in good_alternatives
                         ]
                     )
                 )
-                if not all([word.text == alt for alt in sensitive_alternatives]):
-                    sensitive_alternatives = [
-                        alt for alt in sensitive_alternatives if word.text != alt
+                if not all([word.text == alt for alt in good_alternatives]):
+                    good_alternatives = [
+                        alt for alt in good_alternatives if word.text != alt
                     ]
                     match = gender_match(
                         word.text,
-                        sensitive_alternatives,
+                        good_alternatives,
                         word.start_char,
                         word.end_char - word.start_char,
                     )
@@ -99,10 +99,10 @@ MESSAGE = "Der Stern wird in den letzten Jahren zunehmend verwendet. Besonders h
 
 def is_applicable(rule, word, sentence):
     # check if all lemmas from the rule are in the sentence
-    insensitive_lemmas_, _, _, plural_only, _ = rule
-    insensitive_lemmas = insensitive_lemmas_.split(";")
+    bad_lemmas_, _, _, plural_only, _ = rule
+    bad_lemmas = bad_lemmas_.split(";")
     sentence_lemmas = [word.lemma for word in sentence.words]
-    if any([lemma not in sentence_lemmas for lemma in insensitive_lemmas]):
+    if any([lemma not in sentence_lemmas for lemma in bad_lemmas]):
         return False
     if parse_feats(word.feats)["Number"] == "SIN" and plural_only:
         return False
@@ -110,11 +110,13 @@ def is_applicable(rule, word, sentence):
         if f(word.id, 2) >= 0 and f(word.id, 2) < len(sentence.words):
             if sentence.words[f(word.id, 1)].text in ["und", "oder"]:
                 length = (
-                    min(len(word.text), len(sentence.words[f(word.id, 2)].text)) - 3
+                    min(len(word.text), len(
+                        sentence.words[f(word.id, 2)].text)) - 3
                 )
                 if word.text[:length] == sentence.words[f(word.id, 2)].text[:length]:
                     if (
-                        parse_feats(sentence.words[f(word.id, 2)].feats)["Gender"]
+                        parse_feats(sentence.words[f(word.id, 2)].feats)[
+                            "Gender"]
                         == "FEM"
                     ):
                         return False
@@ -139,47 +141,47 @@ def parse_feats(feats):
     return dict(pairs)
 
 
-def inflect_root(insensitive_word, alternative, plural_only, source):
-    morphs = parse_feats(insensitive_word.feats)
+def inflect_root(bad_word, alternative, plural_only, source):
+    morphs = parse_feats(bad_word.feats)
     sentence = nlp(alternative).sentences[0]
-    sensitive_root = [word for word in sentence.words if word.deprel == "root"][0]
+    good_root = [word for word in sentence.words if word.deprel == "root"][0]
     number_ = None if plural_only else morphs["Number"]
-    inflected_sensitive_roots = inflect(
-        sensitive_root.text, case=morphs["Case"], number=number_
+    inflected_good_roots = inflect(
+        good_root.text, case=morphs["Case"], number=number_
     ) or [
-        sensitive_root.text
+        good_root.text
     ]  # + " (not inflected)"]
     alternatives_with_inflected_root = []
-    for inflected_sensitive_root in inflected_sensitive_roots:
+    for inflected_good_root in inflected_good_roots:
         root_id = [
             i
             for i, t in enumerate(sentence.tokens)
-            if sensitive_root.id in [w.id for w in t.words]
+            if good_root.id in [w.id for w in t.words]
         ][0]
         tokens = [t.text for t in sentence.tokens]
         for inflected_root_with_gender_symbol in add_gender_symbol(
-            source, insensitive_word.text, inflected_sensitive_root
+            source, bad_word.text, inflected_good_root
         ):
             alternatives_with_inflected_root.append(
                 " ".join(
                     [
                         *tokens[:root_id],
                         inflected_root_with_gender_symbol,
-                        *tokens[root_id + 1 :],
+                        *tokens[root_id + 1:],
                     ]
                 )
             )
     return alternatives_with_inflected_root
 
 
-def simplify_participles(sensitive_words, insensitive_root):
+def simplify_participles(good_words, bad_root):
     match = re.match(
-        r"(^[a-zäöüß]+(ige|ene|te|nde)n?) (Person|Mensch|Firma)$", sensitive_words
+        r"(^[a-zäöüß]+(ige|ene|te|nde)n?) (Person|Mensch|Firma)$", good_words
     )
-    if parse_feats(insensitive_root.feats)["Number"] == "PLU" and match:
+    if parse_feats(bad_root.feats)["Number"] == "PLU" and match:
         return startupper(match[1])
     else:
-        return sensitive_words
+        return good_words
 
 
 def startupper(a):
@@ -188,14 +190,15 @@ def startupper(a):
     return a[0].upper() + a[1:]
 
 
-def add_gender_symbol(source, insensitive_word, inflected_sensitive_root):
+def add_gender_symbol(source, bad_word, inflected_good_root):
     if not source == "dereko":
-        return [inflected_sensitive_root]
+        return [inflected_good_root]
     elif source == "dereko":
-        connector = "und" if re.match(r".*innen$", inflected_sensitive_root) else "oder"
+        connector = "und" if re.match(
+            r".*innen$", inflected_good_root) else "oder"
         return [
-            re.sub(r"(in(nen)?)$", r"*\1", inflected_sensitive_root),
-            "{} {} {}".format(inflected_sensitive_root, connector, insensitive_word),
+            re.sub(r"(in(nen)?)$", r"*\1", inflected_good_root),
+            "{} {} {}".format(inflected_good_root, connector, bad_word),
         ]
 
 
