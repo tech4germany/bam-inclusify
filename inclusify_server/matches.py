@@ -114,11 +114,8 @@ def is_applicable(rule, word, sentence):
                         sentence.words[f(word.id, 2)].text)) - 3
                 )
                 if word.text[:length] == sentence.words[f(word.id, 2)].text[:length]:
-                    if (
-                        parse_feats(sentence.words[f(word.id, 2)].feats)[
-                            "Gender"]
-                        == "FEM"
-                    ):
+                    feats = parse_feats(sentence.words[f(word.id, 2)].feats)
+                    if "Gender" in feats and feats["Gender"] == "FEM":
                         return False
     return True
 
@@ -146,6 +143,10 @@ def inflect_root(bad_word, alternative, plural_only, source):
     sentence = nlp(alternative).sentences[0]
     good_root = [word for word in sentence.words if word.deprel == "root"][0]
     if bad_word.upos != good_root.upos:
+        return []
+    if "Gender" not in morphs:
+        # The word will not be corrected because its grammatical gender is neutral.
+        # Perhaps it should still be corrected (it could contain a prefix that is not neutral.)
         return []
     number_ = None if plural_only else morphs["Number"]
     inflected_good_roots = inflect(
@@ -207,6 +208,7 @@ def add_gender_symbol(source, bad_word, inflected_good_root):
 def fix_gender_symbols(words):
     # The tokenizer does not always deal correctly with gender symbols.
     # Here we try to fix this.
+    # A better approach would be to deal with it before it is processed by Stanza.
     fixed_words = []
     for i, word in enumerate(words):
         if (
