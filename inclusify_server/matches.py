@@ -145,6 +145,8 @@ def inflect_root(bad_word, alternative, plural_only, source):
     morphs = parse_feats(bad_word.feats)
     sentence = nlp(alternative).sentences[0]
     good_root = [word for word in sentence.words if word.deprel == "root"][0]
+    if bad_word.upos != good_root.upos:
+        return []
     number_ = None if plural_only else morphs["Number"]
     inflected_good_roots = inflect(
         good_root.text, case=morphs["Case"], number=number_
