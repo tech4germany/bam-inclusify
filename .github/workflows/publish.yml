@@ -1,6 +1,9 @@
 name: publish
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 concurrency:
   group: docker-build-and-publish
