@@ -136,7 +136,12 @@ async function checkTextFromWord(
     }));
     await context.sync();
 
-    return ranges.map(({ paragraph, rangeCollection }) => ({ paragraph, ranges: rangeCollection.items }));
+    const result = ranges.map(({ paragraph, rangeCollection }) => ({
+      paragraph,
+      ranges: rangeCollection.items.map((r) => r.track()),
+    }));
+    await context.sync();
+    return result;
   });
 
   const { plaintext, startOffsetMap } = extractPlaintextAndIndexMap(paragraphsWithRanges);
@@ -167,7 +172,7 @@ async function checkTextFromWord(
       .map((i) => i.range)
       .reduce((a, b) => a.expandTo(b));
     const [, matchText] = splitTextMatch(affectedRangesPlaintext, startOffsetInStartRange, ruleMatch.length);
-    const matchRangeCollection = completeRange.search(matchText, { matchCase: true }).load();
+    const matchRangeCollection = completeRange.search(matchText, { matchCase: true }).track().load();
     await matchRangeCollection.context.sync();
     // TODO: should also handle 0 and more than 1 results?
     return matchRangeCollection.items[0];
