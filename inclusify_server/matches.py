@@ -1,3 +1,4 @@
+from compound_split import char_split
 from copy import deepcopy
 from functools import lru_cache
 from inclusify_server.helpers import add_to_dict, log, open_
@@ -7,7 +8,7 @@ from typing import *
 from stanza.models.common.doc import Word
 import csv
 import inclusify_server.download_language_models
-import itertools
+import itertools as it
 import re
 import stanza
 import sys
@@ -31,41 +32,68 @@ def matches(text: str):
     return matches_
 
 
-@lru_cache(maxsize=1000)
+# @lru_cache(maxsize=1000)
 def gender_matches(sentence_text):
     sentence = nlp(sentence_text).sentences[0]
+    return list(
+        it.chain(
+            *[
+                matches_of_word(word, sentence)
+                for word in fix_gender_symbols(sentence.words)
+            ]
+        )
+    )
+
+
+def matches_of_word(word, sentence, recursion=0):
     matches_ = []
-    for word in fix_gender_symbols(sentence.words):
-        lemma = word.lemma
-        if lemma in rules:
-            good_alternatives = []
-            for rule in rules[lemma]:
-                if is_applicable(rule, word, sentence):
-                    _, _, good, plural_only, source = rule
-                    good_alternatives.append((good, plural_only, source))
-            if len(good_alternatives) > 0:
-                good_alternatives = [
-                    (simplify_participles(good, word), plural_only, source)
-                    for good, plural_only, source in good_alternatives
-                ]
-                good_alternatives = list(
-                    itertools.chain(
-                        *[
-                            inflect_root(word, alt, plural_only, source)
-                            for alt, plural_only, source in good_alternatives
-                        ]
-                    )
-                )
-                if not all([word.text == alt for alt in good_alternatives]):
-                    good_alternatives = [
-                        alt for alt in good_alternatives if word.text != alt
+    lemma = word.lemma
+    if lemma in rules:
+        good_alternatives = []
+        for rule in rules[lemma]:
+            if is_applicable(rule, word, sentence):
+                _, _, good, plural_only, source = rule
+                good_alternatives.append((good, plural_only, source))
+        if len(good_alternatives) > 0:
+            good_alternatives = [
+                (simplify_participles(good, word), plural_only, source)
+                for good, plural_only, source in good_alternatives
+            ]
+            good_alternatives = list(
+                it.chain(
+                    *[
+                        inflect_root(word, alt, plural_only, source)
+                        for alt, plural_only, source in good_alternatives
                     ]
-                    match = gender_match(
-                        word.text,
-                        good_alternatives,
-                        word.start_char,
-                        word.end_char - word.start_char,
-                    )
+                )
+            )
+            if not all([word.text == alt for alt in good_alternatives]):
+                good_alternatives = [
+                    alt for alt in good_alternatives if word.text != alt
+                ]
+                match = gender_match(
+                    word.text,
+                    good_alternatives,
+                    word.start_char,
+                    word.end_char - word.start_char,
+                )
+                matches_.append(match)
+    if len(matches_) < 5 and recursion <= 0:
+        split = char_split.split_compound(word.lemma)[0]
+        print(split)
+        if split:
+            probability, part1, part2 = split
+            if probability > 0.7:
+                part2 = startupper(part2) if word.text.isupper() else part2
+                word_ = deepcopy(word)
+                word_.lemma = part2
+                word_.text = part2
+                sentence_ = deepcopy(sentence)
+                sentence_.words = [word_ if w.id ==
+                                   word.id else w for w in sentence_.words]
+                for match in matches_of_word(word_, sentence_, recursion+1):
+                    match["replacements"] = [{"value": part1 + r["value"].lower()}
+                                             for r in match["replacements"] if len(r["value"].split(" ")) == 1]
                     matches_.append(match)
     return matches_
 
@@ -142,7 +170,7 @@ def inflect_root(bad_word, alternative, plural_only, source):
     morphs = parse_feats(bad_word.feats)
     sentence = nlp(alternative).sentences[0]
     good_root = [word for word in sentence.words if word.deprel == "root"][0]
-    if bad_word.upos != good_root.upos:
+    if bad_word.pos != good_root.pos and not (bad_word.pos == "PROPN" and good_root.pos == "NOUN") and not (bad_word.pos == "NOUN" and good_root.pos == "PROPN"):
         return []
     if "Gender" not in morphs:
         # The word will not be corrected because its grammatical gender is neutral.
