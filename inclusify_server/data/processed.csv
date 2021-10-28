@@ -3854,24 +3854,24 @@ Ministerpräsident,Ministerpräsident,Ministerpräsident,Ministerpräsidentin,0,
 Ministrant,Ministrant,Ministrant,Mini,0,geschicktgendern
 Ministrant,Ministrant,Ministrant,Ministrantin,0,dereko
 Missionar,Missionar,Missionar,Missionarin,0,dereko
-Mitarbeiter,Mitarbeiter,Mitarbeiter,Arbeitsgemeinschaft,1,geschicktgendern
-Mitarbeiter,Mitarbeiter,Mitarbeiter,Arbeitsgruppe,1,geschicktgendern
-Mitarbeiter,Mitarbeiter,Mitarbeiter,Arbeitskraft,0,geschicktgendern
-Mitarbeiter,Mitarbeiter,Mitarbeiter,Belegschaft,1,geschicktgendern
-Mitarbeiter,Mitarbeiter,Mitarbeiter,Crew,1,geschicktgendern
-Mitarbeiter,Mitarbeiter,Mitarbeiter,Gruppe,1,geschicktgendern
+Mitarbeiter,Mitarbeiter,Mitarbeiter,mitarbeitende Person,0,geschicktgendern
+Mitarbeiter,Mitarbeiter,Mitarbeiter,Teammitglied,0,geschicktgendern
 Mitarbeiter,Mitarbeiter,Mitarbeiter,Kollegium,1,geschicktgendern
+Mitarbeiter,Mitarbeiter,Mitarbeiter,Arbeitsgemeinschaft,1,geschicktgendern
 Mitarbeiter,Mitarbeiter,Mitarbeiter,Mitarbeiterin,0,dereko
 Mitarbeiter,Mitarbeiter,Mitarbeiter,Personal,1,geschicktgendern
 Mitarbeiter,Mitarbeiter,Mitarbeiter,Team,1,geschicktgendern
-Mitarbeiter,Mitarbeiter,Mitarbeiter,Teammitglied,0,geschicktgendern
+Mitarbeiter,Mitarbeiter,Mitarbeiter,Arbeitskraft,0,geschicktgendern
+Mitarbeiter,Mitarbeiter,Mitarbeiter,Arbeitsgruppe,1,geschicktgendern
+Mitarbeiter,Mitarbeiter,Mitarbeiter,Belegschaft,1,geschicktgendern
+Mitarbeiter,Mitarbeiter,Mitarbeiter,Crew,1,geschicktgendern
+Mitarbeiter,Mitarbeiter,Mitarbeiter,Gruppe,1,geschicktgendern
 Mitarbeiter,Mitarbeiter,Mitarbeiter,angestellte Person,0,geschicktgendern
 Mitarbeiter,Mitarbeiter,Mitarbeiter,behördenangehörige Person,0,geschicktgendern
 Mitarbeiter,Mitarbeiter,Mitarbeiter,bei uns beschäftigte Person,0,geschicktgendern
 Mitarbeiter,Mitarbeiter,Mitarbeiter,beschäftigte Person,0,geschicktgendern
 Mitarbeiter,Mitarbeiter,Mitarbeiter,beteiligte Person,0,geschicktgendern
 Mitarbeiter,Mitarbeiter,Mitarbeiter,festangestellte Person,0,geschicktgendern
-Mitarbeiter,Mitarbeiter,Mitarbeiter,mitarbeitende Person,0,geschicktgendern
 Mitarbeiter,Mitarbeiter,Mitarbeiter,unternehmensangehörige Person,0,geschicktgendern
 Mitarbeiter,Mitarbeiter;der;Hochschule,Mitarbeiter der Hochschule,Hochschulpersonal,0,geschicktgendern
 Mitarbeiter,Mitarbeiter;in;Teilzeit,Mitarbeiter in Teilzeit,Teilzeitkraft,0,geschicktgendern
