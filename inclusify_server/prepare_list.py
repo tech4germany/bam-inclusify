@@ -11,8 +11,7 @@ def preprocess_rules():
     print("Looking for rule changes in `data/unified.csv`.")
     rules = read_rule_file("unified.csv")
     old_rules = read_rule_file("unified.csv.old")
-    processed_rules = list(csv.reader(
-        open_(path.join("data", "processed.csv"))))
+    processed_rules = list(csv.reader(open_(path.join("data", "processed.csv"))))
     print("Removing old rules ...")
     for insensitive, sensitive, plural_only, source in tqdm(
         old_rules.difference(rules)
@@ -34,9 +33,7 @@ def preprocess_rules():
         for rule in tqdm(new_rules):
             processed_rules += lemmatize_rule(rule)
 
-    csv.writer(open_(path.join("data", "unified.csv.old"), "w")).writerows(
-        list(rules)
-    )
+    csv.writer(open_(path.join("data", "unified.csv.old"), "w")).writerows(list(rules))
     csv.writer(open_(path.join("data", "processed.csv"), "w")).writerows(
         processed_rules
     )
@@ -76,8 +73,7 @@ def lemmatize_rule(rule):
 
 def read_rule_file(x):
     return set(
-        [(a, b, c, d)
-         for [a, b, c, d] in csv.reader(open_(path.join("data", x)))]
+        [(a, b, c, d) for [a, b, c, d] in csv.reader(open_(path.join("data", x)))]
     )
 
 

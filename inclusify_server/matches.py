@@ -46,41 +46,29 @@ def gender_matches(sentence_text):
 
 
 def matches_of_word(word, sentence, recursion=0):
-    matches_ = []
     lemma = word.lemma
+    good_alternatives = []
     if lemma in rules:
-        good_alternatives = []
         for rule in rules[lemma]:
             if is_applicable(rule, word, sentence):
                 _, _, good, plural_only, source = rule
                 good_alternatives.append((good, plural_only, source))
-        if len(good_alternatives) > 0:
-            good_alternatives = [
-                (simplify_participles(good, word), plural_only, source)
-                for good, plural_only, source in good_alternatives
-            ]
-            good_alternatives = list(
-                it.chain(
-                    *[
-                        inflect_root(word, alt, plural_only, source)
-                        for alt, plural_only, source in good_alternatives
-                    ]
-                )
-            )
-            if not all([word.text == alt for alt in good_alternatives]):
-                good_alternatives = [
-                    alt for alt in good_alternatives if word.text != alt
+        good_alternatives = [
+            (simplify_participles(good, word), plural_only, source)
+            for good, plural_only, source in good_alternatives
+        ]
+        good_alternatives = list(
+            it.chain(
+                *[
+                    inflect_root(word, alt, plural_only, source)
+                    for alt, plural_only, source in good_alternatives
                 ]
-                match = gender_match(
-                    word.text,
-                    good_alternatives,
-                    word.start_char,
-                    word.end_char - word.start_char,
-                )
-                matches_.append(match)
-    if len(matches_) < 5 and recursion <= 0:
+            )
+        )
+        good_alternatives = [
+            alt for alt in good_alternatives if word.text != alt]
+    if len(good_alternatives) < 5 and recursion <= 0:
         split = char_split.split_compound(word.lemma)[0]
-        print(split)
         if split:
             probability, part1, part2 = split
             if probability > 0.7:
@@ -89,13 +77,25 @@ def matches_of_word(word, sentence, recursion=0):
                 word_.lemma = part2
                 word_.text = part2
                 sentence_ = deepcopy(sentence)
-                sentence_.words = [word_ if w.id ==
-                                   word.id else w for w in sentence_.words]
-                for match in matches_of_word(word_, sentence_, recursion+1):
-                    match["replacements"] = [{"value": part1 + r["value"].lower()}
-                                             for r in match["replacements"] if len(r["value"].split(" ")) == 1]
-                    matches_.append(match)
-    return matches_
+                sentence_.words = [
+                    word_ if w.id == word.id else w for w in sentence_.words
+                ]
+                for match in matches_of_word(word_, sentence_, recursion + 1):
+                    replacements = [
+                        part1 + r["value"].lower()
+                        for r in match["replacements"]
+                        if len(r["value"].split(" ")) == 1
+                    ]
+                    good_alternatives += replacements
+    if len(good_alternatives) > 0:
+        return [gender_match(
+            word.text,
+            good_alternatives,
+            word.start_char,
+            word.end_char - word.start_char,
+        )]
+    else:
+        return []
 
 
 def gender_match(text: str, replacements: List[str], offset: int, length: int):
@@ -170,7 +170,11 @@ def inflect_root(bad_word, alternative, plural_only, source):
     morphs = parse_feats(bad_word.feats)
     sentence = nlp(alternative).sentences[0]
     good_root = [word for word in sentence.words if word.deprel == "root"][0]
-    if bad_word.pos != good_root.pos and not (bad_word.pos == "PROPN" and good_root.pos == "NOUN") and not (bad_word.pos == "NOUN" and good_root.pos == "PROPN"):
+    if (
+        bad_word.pos != good_root.pos
+        and not (bad_word.pos == "PROPN" and good_root.pos == "NOUN")
+        and not (bad_word.pos == "NOUN" and good_root.pos == "PROPN")
+    ):
         return []
     if "Gender" not in morphs:
         # The word will not be corrected because its grammatical gender is neutral.
