@@ -12,7 +12,7 @@ export const DefaultFeatureFlags = Object.freeze({
   allowMultiCharGenderSymbol: false,
   maxReplacementsPerRuleMatch: 5,
   useBamLogo: isBamBuild,
-  minimumRequestDelayMs: 1000,
+  minimumRequestDelayMs: 0,
   apiBaseUrl: "/v2",
   showIgnoreButton: false,
 });
