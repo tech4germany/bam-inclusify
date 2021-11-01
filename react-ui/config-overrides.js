@@ -66,7 +66,6 @@ module.exports = {
       chunks: [],
     });
 
-    const buildType = isEnvDevelopment ? "dev" : "prod";
     const copyManifestPlugin = new CopyWebpackPlugin({
       patterns: [
         {
@@ -85,12 +84,14 @@ module.exports = {
       ],
     });
 
+    const devOnlyPlugins = isEnvDevelopment ? [copyManifestPlugin] : [];
+
     config.plugins = [
       defaultHtmlPlugin,
       taskpaneHtmlPlugin,
       impressumHtmlPlugin,
       datenschutzHtmlPlugin,
-      copyManifestPlugin,
+      ...devOnlyPlugins,
       ...otherPlugins,
     ];
 
