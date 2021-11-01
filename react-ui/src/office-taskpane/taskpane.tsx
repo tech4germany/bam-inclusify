@@ -1,3 +1,5 @@
+import "react-app-polyfill/ie11";
+import "react-app-polyfill/stable";
 import React from "react";
 import ReactDOM from "react-dom";
 import { makeGlobalStyle } from "../common/styles/global-styles";
@@ -21,14 +23,6 @@ Office.onReady().then((info) => {
   } else {
     setOfficeHostInfo(info);
 
-    // Object.values(Office.EventType).forEach((k) => {
-    //   try {
-    //     Office.context.document.addHandlerAsync(k as any, (...args: any[]) => console.log(...args));
-    //     console.warn("success:" + k);
-    //   } catch (e) {
-    //     console.error("Failed to add handler for " + k);
-    //   }
-    // });
     ReactDOM.render(
       <React.StrictMode>
         <GlobalStyle />

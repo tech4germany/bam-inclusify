@@ -20,6 +20,7 @@
     "office-addin-manifest": "^1.6.2",
     "prettier": "^2.3.2",
     "react": "^17.0.2",
+    "react-app-polyfill": "^2.0.0",
     "react-app-rewired": "^2.1.8",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
