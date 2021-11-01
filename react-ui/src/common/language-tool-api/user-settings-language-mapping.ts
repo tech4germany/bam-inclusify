@@ -30,6 +30,13 @@ function mapInternalI(originalValue: string | undefined): string | undefined {
 
 function mapGenderSymbol(originalValue: string | undefined, genderSymbol: string): string | undefined {
   const value = removeDoubleNotation(originalValue);
+  // TODO: for completeness' sake, we should use "replaceAll" instead of "replace" here. Even though
+  // there will probably only ever be one gender star per word, we might have multi-word replacements
+  // in the future, e.g. an article and noun like "der*die Beamt*in".
+  // This is currently not using String.replaceAll because the Windows Word app uses an IE 11 webview for
+  // add-ins (in certain constellations, see https://docs.microsoft.com/en-us/office/dev/add-ins/concepts/browsers-used-by-office-web-add-ins )
+  // and @babel/preset-env used by CRA doesn't currently correctly polyfill String replaceAll
+  // (see https://github.com/babel/babel/issues/13701 )
   return isString(value) ? value.replace(GENDER_STAR, genderSymbol) : value;
 }
 
