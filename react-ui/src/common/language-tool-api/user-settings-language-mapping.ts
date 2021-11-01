@@ -30,7 +30,7 @@ function mapInternalI(originalValue: string | undefined): string | undefined {
 
 function mapGenderSymbol(originalValue: string | undefined, genderSymbol: string): string | undefined {
   const value = removeDoubleNotation(originalValue);
-  return isString(value) ? value.replaceAll(GENDER_STAR, genderSymbol) : value;
+  return isString(value) ? value.replace(GENDER_STAR, genderSymbol) : value;
 }
 
 function removeDoubleNotation(value: string | undefined): string | undefined {
