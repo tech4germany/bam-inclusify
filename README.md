@@ -1,17 +1,28 @@
 <h1><img alt="INCLUSIFY logo" height="40" src="./react-ui/src/common/icons/inclusify-logo.svg"><img alt="Tech4Germany logo" height="45" src="./doc/images/tech4germany-logo.png" align="right"></h1>
 
-[ [Live Demo](https://inclusify.tech.4germany.org/) 🚀 | [Project Info](https://tech.4germany.org/project/diversitatssensible-sprache-inclusify-bam/) 💁 | [Tech4Germany Fellowship](https://tech.4germany.org/) 🤓 ]
+[ [Live Demo](https://inclusify.tech.4germany.org/) 🚀 | [Project Info](https://tech.4germany.org/project/diversitatssensible-sprache-inclusify-bam/) 💁 | [Tech4Germany Fellowship][t4g] 🤓 ]
 
 <a href="./doc/images/screenshot-inclusify-welcome-page.png"><img alt="INCLUSIFY start screen" height="200" src="./doc/images/screenshot-inclusify-welcome-page.png"></a>
 <a href="./doc/images/screenshot-inclusify-with-results.png"><img alt="INCLUSIFY with results" height="200" src="./doc/images/screenshot-inclusify-with-results.png"></a>
 
-🇬🇧 This is the source code repository of the _INCLUSIFY_ project of the Tech4Germany Fellowship 2021.
+🇬🇧 This is the source code repository of the _INCLUSIFY_ project of the [Tech4Germany Fellowship][t4g] 2021.
 You can use this code under the terms of the provided license.
 
-🇩🇪 Die ist das Source-Code Repository des Projekts _INCLUSIFY_ des Tech4Germany Fellowships 2021.
+🇩🇪 Die ist das Source-Code Repository des Projekts _INCLUSIFY_ des [Tech4Germany Fellowships][t4g] 2021.
 Sie können den Code unter den Bedingungen der angegeben Lizenz nutzen.
 
-TODO: About this app and about the T4G project, link to project page
+[t4g]: https://tech.4germany.org/
+
+## About INCLUSIFY
+
+Together with the [_Federal Institute for Materials Research and Testing_](https://www.bam.de/) (Bundesanstalt für Materialforschung und –prüfung (BAM)), we developed a software prototype to support the practical use of diversity-sensitive language in German.
+
+Our goal is both to promote awareness for diversity and to make every-day use of diversity-sensitive language easier.
+
+INCLUSIFY currently offers two modes of use:
+
+1. A standalone webpage where users can paste their text, receive feedback and improvement suggestions, and apply these to their text in the browser.
+2. An add-in for Microsoft Word, with which users can check their documents right in Word, receive feedback and improvement suggestions, and apply these to their document without leaving the app.
 
 ## Using the INCLUSIFY Docker image
 
