@@ -8,11 +8,6 @@ const path = require("path");
 const standaloneChunk = "standalone";
 const taskpaneChunk = "taskpane";
 
-// TODO: manifest.xml for production:
-// the manifest.xml needs to refer to the public/deployment URL -- the official Office Add-in
-// project template uses Webpack to rewrite the URLs in the manifest.xml here. We could do the
-// same or manually maintain different files
-
 module.exports = {
   webpack: function override(config, webpackEnv) {
     const isEnvDevelopment = webpackEnv === "development";
@@ -66,22 +61,11 @@ module.exports = {
       chunks: [],
     });
 
+    const impressumDatenschutzPlugins =
+      process.env.REACT_APP_SHOW_IMPRESSUM_AND_DATENSCHUTZ !== "1" ? [] : [impressumHtmlPlugin, datenschutzHtmlPlugin];
+
     const copyManifestPlugin = new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: "manifest*.xml",
-          // to: "[name]." + buildType + ".[ext]",
-          to: "manifest.xml",
-          transform(content) {
-            if (isEnvDevelopment) {
-              return content;
-            } else {
-              return content; //TODO
-              // return content.toString().replace(new RegExp(urlDev, "g"), urlProd); // TODO
-            }
-          },
-        },
-      ],
+      patterns: [{ from: "manifest.xml", to: "manifest.xml" }],
     });
 
     const devOnlyPlugins = isEnvDevelopment ? [copyManifestPlugin] : [];
@@ -89,8 +73,7 @@ module.exports = {
     config.plugins = [
       defaultHtmlPlugin,
       taskpaneHtmlPlugin,
-      impressumHtmlPlugin,
-      datenschutzHtmlPlugin,
+      ...impressumDatenschutzPlugins,
       ...devOnlyPlugins,
       ...otherPlugins,
     ];
