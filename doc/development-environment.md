@@ -18,7 +18,7 @@ After cloning this repo, do the following steps to get prepare your development 
 
 ## DevCmd for dev scripts
 
-We automated many common build and development tasks, mostly using [DevCmd](https://github.com/XITASO/devcmd). These scripts are located in the `dev_cmd` directory in the repo root.
+We automated many common build and development tasks, mostly using [DevCmd](https://github.com/XITASO/devcmd). These scripts are located in the `dev_cmds` directory in the repo root.
 
 We recommend installing and using DevCmd's global launcher tool (see above).
 
