@@ -151,6 +151,12 @@ const MainAreaContainer = styled.div`
   gap: 20px;
   box-sizing: border-box;
   padding-top: 10px;
+
+  flex-direction: row;
+
+  @media (max-width: 650px) {
+    flex-direction: column;
+  }
 `;
 
 const InputAreaContainer = styled.div`
@@ -160,10 +166,12 @@ const InputAreaContainer = styled.div`
   overflow: auto;
   padding: 0 15px;
   margin: 0 -15px;
+  min-height: 200px;
 `;
 
 const ResultsAreaContainer = styled.div`
   width: 20rem;
+  min-height: 200px;
 `;
 
 function makeReplacementApplier(
