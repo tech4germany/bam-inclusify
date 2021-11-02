@@ -16,7 +16,7 @@ export const NavigationBar = () => (
       <NavBarItemsContainer>
         <NavBarAppIconRow>
           <NavBarAppIcon />
-          <NavBarAppIconSmallText>Deine Assistentin für diversitätssensible Sprache</NavBarAppIconSmallText>
+          <NavBarAppIconSmallText>einfach diversitätssensibel.</NavBarAppIconSmallText>
         </NavBarAppIconRow>
         <NavBarSpacer />
         {navLinks.map((l) => (
@@ -59,7 +59,6 @@ const NavBarAppIconSmallText = styled.div`
   line-height: 18px;
   letter-spacing: 0px;
   font-style: italic;
-  margin-left: 3em;
 `;
 
 const NavBarAppIcon = () => (

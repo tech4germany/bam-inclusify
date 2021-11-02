@@ -10,8 +10,7 @@ export const WelcomeMessage = () => (
         <IntroIcon src={wavingHandEmojiSrc} alt="Waving hand emoji" />
       </IntroIconContainer>
       <IntroTextColumn>
-        <WelcomeMessageIntroLarge>Herzlich Willkommen bei INCLUSIFY,</WelcomeMessageIntroLarge>
-        <WelcomeMessageIntroSmall>deiner Assistentin für diversitätssensible Sprache.</WelcomeMessageIntroSmall>
+        <WelcomeMessageIntroLarge>Herzlich Willkommen bei INCLUSIFY.</WelcomeMessageIntroLarge>
       </IntroTextColumn>
     </WelcomeMessageIntroBox>
     <WelcomeMessageBody>
@@ -66,10 +65,6 @@ const WelcomeMessageIntroLarge = styled.p`
   font-size: 20px;
   line-height: 24px;
   letter-spacing: 0.2px;
-`;
-const WelcomeMessageIntroSmall = styled.p`
-  font-weight: ${Fonts.bam.weights.bold};
-  margin: 0;
 `;
 
 const WelcomeMessageBody = styled.p`
