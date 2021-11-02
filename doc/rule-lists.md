@@ -64,7 +64,7 @@ The category number should be `0`, `1`, or `2`. We also give some examples of ru
   - `Manager,Managerin,0,bam`
     - gender style double: "den Managern" > "den Managerinnen und Manager"
     - gender style \*: "dem Manager" > "dem\*der Manager\*in"
-    - gender style neutral: "dem Manager" > \[no suggestion, due to gender style\]
+    - gender style neutral: "dem Manager" > \[no suggestion, due to gender style + category 0\]
 - 1: The replacement is an alternative word with neutral gender. Case (nominative, ...) and number (singular / plural) will be automatically adjusted to the replaced word.
   - `Beamter,verbeamtete Person,1,bam`
     - "des Beamten" > "der verbeamteten Person"
@@ -78,4 +78,8 @@ The category number should be `0`, `1`, or `2`. We also give some examples of ru
     - "die Beamten" > "die Verbeamteten"
   - `Manager,Management,2,bam`
     - "den Managern" > "dem Management"
-    - "dem Manager" > \[no suggestion, due to singular\]
+    - "dem Manager" > \[no suggestion, due to singular + category 2\]
+
+## Processing
+
+The rule lists will autimatically be processed, so the rules can be used faster when the app is running. The processing happens in the `inclusify_server/prepare_list.py` module, and new/changed/deleted rules are automatically processed when the server (re)starts. The results are stored in `inclusify_server/data/suggestions_processed.csv`. That file should not be edited manually.
