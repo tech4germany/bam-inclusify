@@ -108,8 +108,8 @@ def gender_match(text: str, replacements: List[str], offset: int, length: int):
         "length": length,
         "context": {
             "text": text,
-            "offset": 0,
-            "length": len(text),
+            "offset": offset,
+            "length": length,
         },
         "rule": {
             "category": {
