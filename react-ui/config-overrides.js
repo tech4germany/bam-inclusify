@@ -103,12 +103,15 @@ module.exports = {
       const config = configFunction(proxy, allowedHost);
 
       const fs = require("fs");
-      config.https = {
-        key: fs.readFileSync(process.env.DEVSERVER_HTTPS_KEY, "utf8"),
-        cert: fs.readFileSync(process.env.DEVSERVER_HTTPS_CERT, "utf8"),
-        ca: fs.readFileSync(process.env.DEVSERVER_HTTPS_CA, "utf8"),
-        passphrase: process.env.DEVSERVER_HTTPS_PASS,
-      };
+      if (!!process.env.DEVSERVER_HTTPS_KEY || !!process.env.DEVSERVER_HTTPS_CERT || !!process.env.DEVSERVER_HTTPS_CA)
+        config.https = {
+          key: !!process.env.DEVSERVER_HTTPS_KEY ? fs.readFileSync(process.env.DEVSERVER_HTTPS_KEY, "utf8") : undefined,
+          cert: !!process.env.DEVSERVER_HTTPS_CERT
+            ? fs.readFileSync(process.env.DEVSERVER_HTTPS_CERT, "utf8")
+            : undefined,
+          ca: !!process.env.DEVSERVER_HTTPS_CA ? fs.readFileSync(process.env.DEVSERVER_HTTPS_CA, "utf8") : undefined,
+          passphrase: process.env.DEVSERVER_HTTPS_PASS,
+        };
       config.headers = {
         "Access-Control-Allow-Origin": "*",
       };
