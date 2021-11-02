@@ -63,6 +63,6 @@ ARG VCS_REVISION
 LABEL org.opencontainers.image.created=$BUILD_DATE
 LABEL org.opencontainers.image.title="inclusify-app"
 LABEL org.opencontainers.image.description="INCLUSIFY - einfach diversitätssensibel."
-LABEL org.opencontainers.image.url="https://github.com/tech4germany/bam-openminded"
-LABEL org.opencontainers.image.source="https://github.com/tech4germany/bam-openminded"
+LABEL org.opencontainers.image.url="https://github.com/tech4germany/bam-inclusify"
+LABEL org.opencontainers.image.source="https://github.com/tech4germany/bam-inclusify"
 LABEL org.opencontainers.image.revision=$VCS_REVISION
