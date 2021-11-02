@@ -1,8 +1,10 @@
 {
   "dependencies": {
     "@tsconfig/node12": "^1.0.9",
+    "@types/archiver": "^5.1.1",
     "@types/fs-extra": "^9.0.13",
     "@types/node": "14",
+    "archiver": "^5.3.0",
     "devcmd": "^0.0.8",
     "fs-extra": "9",
     "kleur": "^4.1.4",

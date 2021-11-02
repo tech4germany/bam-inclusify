@@ -39,7 +39,7 @@ const InclusifyLogoLinkTile = () => (
           <InclusifyLogoContainer>
             {featureFlags.useBamLogo ? <InclusifyBamLogo /> : <InclusifyLogo />}
           </InclusifyLogoContainer>
-          <InclusifyLogoLinkText>Deine Assistentin für diversitätssensible Sprache</InclusifyLogoLinkText>
+          <InclusifyLogoLinkText>einfach diversitätssensibel.</InclusifyLogoLinkText>
         </>
       )}
     </UserSettingsAndFeatureFlagsContext.Consumer>
@@ -74,11 +74,11 @@ const InclusifyLogoContainer = styled.div`
 `;
 const InclusifyLogoLinkText = styled.div`
   font-family: ${Fonts.bam.family};
-  font-size: 8px;
-  line-height: 9px;
+  font-size: 9px;
+  line-height: 10.5px;
   font-style: italic;
   font-weight: ${Fonts.bam.weights.bold};
-  max-width: 100px;
+  max-width: 120px;
   text-align: center;
 `;
 

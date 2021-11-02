@@ -16,6 +16,9 @@ DEVSERVER_HTTPS_CA=$HOME/.office-addin-dev-certs/ca.crt
 
 ## Adjusting the links in the navigation bar (Standalone) and for the INCLUSIFY logo (Addin)
 
+<a href="./images/standalone-navbar-links.png"><img alt="Standalone navigation bar links highlighted" src="./images/standalone-navbar-links.png" height="100"></a>
+<a href="./images/addin-logo-link.png"><img alt="Addin logo highlighted" src="./images/addin-logo-link.png" height="100"></a>
+
 - You can adjust the external links shown in the INCLUSIFY app in the `navigation-links.json` file (i.e. the links shown in the navigation bar at the top of the Standalone page, and the link used for the INCLUSIFY logo element in the Addin)
   - Note: in both cases, URLs are only accepted when they start with "http://" or "https://"
 - For the links shown in the navigation bar at the top of the Standalone page:

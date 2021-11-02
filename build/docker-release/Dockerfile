@@ -62,7 +62,7 @@ ARG VCS_REVISION
 # OCI Labels as per https://github.com/opencontainers/image-spec/blob/main/annotations.md
 LABEL org.opencontainers.image.created=$BUILD_DATE
 LABEL org.opencontainers.image.title="inclusify-app"
-LABEL org.opencontainers.image.description="INCLUSIFY - Deine Assistentin für diversitätssensible Sprache"
+LABEL org.opencontainers.image.description="INCLUSIFY - einfach diversitätssensibel."
 LABEL org.opencontainers.image.url="https://github.com/tech4germany/bam-openminded"
 LABEL org.opencontainers.image.source="https://github.com/tech4germany/bam-openminded"
 LABEL org.opencontainers.image.revision=$VCS_REVISION

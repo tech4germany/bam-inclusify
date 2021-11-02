@@ -16,7 +16,7 @@ export const NavigationBar = () => (
       <NavBarItemsContainer>
         <NavBarAppIconRow>
           <NavBarAppIcon />
-          <NavBarAppIconSmallText>Deine Assistentin für diversitätssensible Sprache</NavBarAppIconSmallText>
+          <NavBarAppIconSmallText>einfach diversitätssensibel.</NavBarAppIconSmallText>
         </NavBarAppIconRow>
         <NavBarSpacer />
         {navLinks.map((l) => (
@@ -30,7 +30,6 @@ export const NavigationBar = () => (
   </NavBarContainer>
 );
 
-const navBarHeight = "100px";
 const NavBarContainer = styled.div`
   background: white;
 `;
@@ -38,8 +37,15 @@ const NavBarContainer = styled.div`
 const NavBarItemsContainer = styled.div`
   display: flex;
   align-items: flex-end;
-  height: ${navBarHeight};
   margin-right: ${rightMargin};
+
+  height: 100px;
+  font-size: 20px;
+
+  @media (max-width: 650px) {
+    height: 50px;
+    font-size: 14px;
+  }
 `;
 const NavBarSpacer = styled.div`
   flex-grow: 1;
@@ -50,43 +56,56 @@ const NavBarAppIconRow = styled.div`
   flex-direction: column;
   gap: 8px;
   padding-bottom: 9px;
+
+  @media (max-width: 650px) {
+    gap: 4px;
+    padding-bottom: 4px;
+  }
 `;
 
 const NavBarAppIconSmallText = styled.div`
   font-family: ${Fonts.bam.family};
   font-weight: ${Fonts.bam.weights.bold};
-  font-size: 15px;
-  line-height: 18px;
+  font-size: 75%;
+  line-height: 1.2;
   letter-spacing: 0px;
   font-style: italic;
-  margin-left: 3em;
 `;
 
 const NavBarAppIcon = () => (
   <UserSettingsAndFeatureFlagsContext.Consumer>
     {({ featureFlags }) => (
       <NavBarAppIconContainer>
-        {featureFlags.useBamLogo ? <InclusifyBamLogo /> : <InclusifyLogo />}
+        {featureFlags.useBamLogo ? <InclusifyBamLogo width="" height="" /> : <InclusifyLogo width="" height="" />}
       </NavBarAppIconContainer>
     )}
   </UserSettingsAndFeatureFlagsContext.Consumer>
 );
 
 const NavBarAppIconContainer = styled.div`
-  min-height: 44px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  min-height: 44px;
+
+  @media (max-width: 650px) {
+    min-height: 22px;
+    max-height: 22px;
+  }
+  > svg {
+    height: 100%;
+    width: auto;
+  }
 `;
 const NavBarLinkItem = styled.a`
-  /* height: ${navBarHeight}; */
   padding: 0 30px;
   text-decoration: none;
   color: #1b9cd8;
   background: white;
 
   height: 100%;
-  min-width: 150px;
+  min-width: 100px;
   box-sizing: border-box;
 
   display: flex;
@@ -102,15 +121,15 @@ const NavBarLinkItem = styled.a`
 const NavBarLinkText = styled.div`
   font-family: ${Fonts.bam.family};
   font-weight: ${Fonts.bam.weights.normal};
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 100%;
+  line-height: 1.4;
   letter-spacing: 0px;
 `;
 const NavBarLinkSubtitle = styled.div`
   font-family: ${Fonts.bam.family};
   font-weight: ${Fonts.bam.weights.normal};
-  font-size: 15px;
-  line-height: 18px;
+  font-size: 75%;
+  line-height: 1.2;
   letter-spacing: 0px;
 `;
 
