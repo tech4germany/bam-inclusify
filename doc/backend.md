@@ -120,3 +120,5 @@ If compatiblity with LanguageTool is _not_ desired, it would be good to simplify
 ### Internal working of the backend
 
 TODO
+
+For information about the rule lists and how to edit them, see [here](./rule-lists.md).
