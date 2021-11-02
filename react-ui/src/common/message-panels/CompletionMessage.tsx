@@ -9,7 +9,6 @@ export const CompletionMessage: FC = () => (
     <DoubleCheckMarkIcon fill={Colors.limeGreen} width={90} height={47} />
     <CompletionLabelRow>
       <CompletionLabelLarge>Dein Text ist diversitätssensibel!</CompletionLabelLarge>
-      <CompletionLabelSmall>…oder Du hast einfach alle Vorschläge ignoriert :)</CompletionLabelSmall>
     </CompletionLabelRow>
   </CompletionMessageContainer>
 );
@@ -36,16 +35,6 @@ const CompletionLabelLarge = styled.div`
   font-size: 19px;
   line-height: 25px;
   letter-spacing: 0.19px;
-  color: ${Colors.limeGreen};
-  text-align: left;
-`;
-
-const CompletionLabelSmall = styled.div`
-  font-family: ${Fonts.bam.family};
-  font-weight: ${Fonts.bam.weights.normal};
-  font-size: 12px;
-  line-height: 15px;
-  letter-spacing: 0.12px;
   color: ${Colors.limeGreen};
   text-align: left;
 `;
