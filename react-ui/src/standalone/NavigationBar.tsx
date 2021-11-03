@@ -87,11 +87,10 @@ const NavBarAppIconContainer = styled.div`
   flex-direction: column;
   justify-content: center;
 
-  min-height: 44px;
+  height: 44px;
 
   @media (max-width: 650px) {
-    min-height: 22px;
-    max-height: 22px;
+    height: 22px;
   }
   > svg {
     height: 100%;
