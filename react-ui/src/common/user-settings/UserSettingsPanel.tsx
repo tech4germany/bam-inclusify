@@ -6,6 +6,7 @@ import { Fonts } from "../styles/Fonts";
 import { GearIcon } from "../icons";
 import { DefaultUserSettings } from "./UserSettingsStorage";
 import { UserSettingsAndFeatureFlagsContext } from "../UserSettingsAndFeatureFlagsContext";
+import { isBamBuild } from "../feature-flags/feature-flags";
 
 type OptionListEntryInfo<T> = { id: T; label: string };
 
@@ -35,9 +36,11 @@ export const UserSettingsPanel: FC<UserSettingsPanelProps> = ({ userSettingsStat
         <UserSettingsPanelContainer>
           <UserSettingsTitle>Einstellungen</UserSettingsTitle>
           <UserSettingsContent>
-            <DefaultSettingsExplanation>
-              Standardeinstellungen basieren auf dem BAM Leitfaden für diversitätssensible Sprache.
-            </DefaultSettingsExplanation>
+            {isBamBuild && (
+              <DefaultSettingsExplanation>
+                Standardeinstellungen basieren auf dem BAM Leitfaden für diversitätssensible Sprache.
+              </DefaultSettingsExplanation>
+            )}
             <SettingsSectionTitle>Gendersprache</SettingsSectionTitle>
             <OptionList
               optionGroupId="genderingType"

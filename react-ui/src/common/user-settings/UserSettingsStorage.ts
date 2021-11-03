@@ -1,11 +1,12 @@
 import { useState } from "react";
+import { isBamBuild } from "../feature-flags/feature-flags";
 import { LocalStorageService } from "../local-storage/LocalStorageService";
 import { GenderingTypes, GenderSymbols, UserSettings } from "./user-settings";
 
 const UserSettingsStorageId = "inclusify_app_user_settings";
 
 export const DefaultUserSettings: UserSettings = Object.freeze({
-  genderingType: "neutral",
+  genderingType: isBamBuild ? "gender-symbol" : "neutral",
   genderSymbol: "star",
   customGenderSymbol: "",
   grammarCheckEnabled: true,
