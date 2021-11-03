@@ -24,11 +24,39 @@
       max-width: 1024px;
       margin: 20px auto;
     }
+
+    a {
+      color: #aaa;
+    }
+
+    #backlink {
+      font-size: 80%;
+    }
   </style>
+
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+      try {
+        var s = document.location.search || "";
+        var prefix = "?returnTo=";
+        if (s.startsWith(prefix)) {
+          var idx = s.indexOf("&");
+          var r = (idx === -1) ? s.substring(prefix.length) : s.substring(prefix.length, idx);
+          var el = document.getElementById("backlink");
+          if (!!el) {
+            el.href = "./" + r;
+          }
+        }
+      } catch (e) {
+        console.error("Uncaught error in document's load event handler:", e)
+      }
+    });
+  </script>
 </head>
 
 <body>
   <div class="centered">
+    <a id="backlink" href="./index.html">Zurück</a>
     <h1>
       <%= pageTitle %> - INCLUSIFY
     </h1>
