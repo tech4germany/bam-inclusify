@@ -1,8 +1,10 @@
+from create_xml import rule_to_xml
+from helpers import open_
 import itertools
 import sys
 sys.path.insert(0, "..")
-from helpers import open_
-from create_xml import rule_to_xml
+
+# This file is not used atm, the contents should be transfered.
 
 illness_replacements = [
     ["Schizophrener", ["Schizophrenie"]],
