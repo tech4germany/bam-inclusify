@@ -61,6 +61,12 @@ module.exports = {
       chunks: [],
     });
 
+    const lizenzenHtmlPlugin = new HtmlWebpackPlugin({
+      filename: "lizenzen.html",
+      template: "./public/lizenzen.html",
+      chunks: [],
+    });
+
     const impressumDatenschutzPlugins =
       process.env.REACT_APP_SHOW_IMPRESSUM_AND_DATENSCHUTZ !== "1" ? [] : [impressumHtmlPlugin, datenschutzHtmlPlugin];
 
@@ -73,6 +79,7 @@ module.exports = {
     config.plugins = [
       defaultHtmlPlugin,
       taskpaneHtmlPlugin,
+      lizenzenHtmlPlugin,
       ...impressumDatenschutzPlugins,
       ...devOnlyPlugins,
       ...otherPlugins,
