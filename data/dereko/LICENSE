@@ -1,0 +1,9 @@
+main.ipynb: Under the repository license.
+
+All other files are extracted from the DeReKo corpus using COSMAS II, or processed versions of these extracts. The extracted lists do not expose relevant parts of the underlying texts.
+
+More information on DeReKo:
+
+Kupietz, Marc / Keibel, Holger (2009): The Mannheim German Reference Corpus (DeReKo) as a basis for empirical linguistic research. In Minegishi, Makoto / Kawaguchi, Yuji (Eds.): Working Papers in Corpus-based Linguistics and Language Education, No. 3. Tokyo: Tokyo University of Foreign Studies (TUFS), 53-59.   http://cblle.tufs.ac.jp/assets/files/publications/working_papers_03/section/053-059.pdf
+
+https://www.ids-mannheim.de/en/digspra/corpus-linguistics/projects/corpus-development/

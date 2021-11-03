@@ -1,0 +1,2 @@
+`suggestions_editable.csv` is a copy of `data/unified.csv` (path is from the root of the repository), that has evolved through manual changes by the developers and maintainers.
+The entries are from the respective sources that are given at the end of each line. For more information, see the `data/dereko` and `data/geschicktgendern` folders (paths are from the root of the repository), where the entries are processed before the unification.

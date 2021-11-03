@@ -1,0 +1,4 @@
+unified.csv:
+    The entries are from the respective sources that are given at the end of each line. For more information, see the `dereko` and `geschicktgendern` folders, where the entries are processed before the unification.
+
+All other files are under the repository license.
