@@ -41,3 +41,11 @@ _Note: This Docker image hosts the app without HTTPS. This is fine for local tes
 ## Technical Documentation
 
 See [doc/index.md](./doc/index.md).
+
+## License
+
+This repository contains code and content we created ourselves, as well as content that we retrieved from other sources (some of it modified by us).
+
+Our own source code and accompanying documentation in this repository are licensed under the [MIT license](./LICENSE). This applies to all files where no other license terms are included.
+
+Files that are subject to other license terms are accompanied by appriopriate `LICENSE` files in the same or a higher directory.
