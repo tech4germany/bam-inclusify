@@ -37,7 +37,7 @@ const InclusifyLogoLinkTile = () => (
       {({ featureFlags }) => (
         <>
           <InclusifyLogoContainer>
-            {featureFlags.useBamLogo ? <InclusifyBamLogo /> : <InclusifyLogo />}
+            {featureFlags.isBamBuild ? <InclusifyBamLogo /> : <InclusifyLogo />}
           </InclusifyLogoContainer>
           <InclusifyLogoLinkText>einfach diversitätssensibel.</InclusifyLogoLinkText>
         </>

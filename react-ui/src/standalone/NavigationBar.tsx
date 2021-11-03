@@ -76,7 +76,7 @@ const NavBarAppIcon = () => (
   <UserSettingsAndFeatureFlagsContext.Consumer>
     {({ featureFlags }) => (
       <NavBarAppIconContainer>
-        {featureFlags.useBamLogo ? <InclusifyBamLogo width="" height="" /> : <InclusifyLogo width="" height="" />}
+        {featureFlags.isBamBuild ? <InclusifyBamLogo width="" height="" /> : <InclusifyLogo width="" height="" />}
       </NavBarAppIconContainer>
     )}
   </UserSettingsAndFeatureFlagsContext.Consumer>

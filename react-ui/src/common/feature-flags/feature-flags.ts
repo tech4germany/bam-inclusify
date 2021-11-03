@@ -4,14 +4,12 @@ import { LocalStorageService } from "../local-storage/LocalStorageService";
 export const isDebugPanelEnabled =
   process.env.NODE_ENV === "development" || process.env.REACT_APP_ENABLE_DEBUG_PANEL === "1";
 
-export const isBamBuild = process.env.REACT_APP_BUILD_FOR_BAM === "1";
-
 export const DefaultFeatureFlags = Object.freeze({
   grammarCheckAvailable: false,
   spellCheckAvailable: false,
   allowMultiCharGenderSymbol: false,
   maxReplacementsPerRuleMatch: 5,
-  useBamLogo: isBamBuild,
+  isBamBuild: process.env.REACT_APP_BUILD_FOR_BAM === "1",
   minimumRequestDelayMs: 0,
   apiBaseUrl: "/v2",
   showIgnoreButton: false,
