@@ -18,7 +18,7 @@ import { UserSettingsAndFeatureFlagsContext } from "../common/UserSettingsAndFea
 import { UseState } from "../common/UseState";
 import { PilotPhaseBanner } from "../common/PilotPhaseBanner";
 import { rightMargin } from "../office-taskpane/taskpane-style-constants";
-import { ImpressumAndDatenschutzLinks } from "./ImpressumAndDatenschutzLinks";
+import { ImpressumAndDatenschutzLinks } from "../common/ImpressumAndDatenschutzLinks";
 
 const textAreaId = newUuidv4();
 

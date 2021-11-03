@@ -15,6 +15,7 @@ import { UserSettingsAndFeatureFlagsContext } from "../common/UserSettingsAndFea
 import { SetState } from "../common/UseState";
 import { PilotPhaseBanner } from "../common/PilotPhaseBanner";
 import { leftMargin, rightMargin } from "./taskpane-style-constants";
+import { ImpressumAndDatenschutzLinks } from "../common/ImpressumAndDatenschutzLinks";
 
 export const TaskpaneApp: FC = () => {
   const [ruleMatches, setRuleMatches] = useState<RuleMatch[] | null>(null);
@@ -74,6 +75,7 @@ export const TaskpaneApp: FC = () => {
             selectRuleMatch={matchSelector}
           />
         </LowerAreaContainer>
+        <ImpressumAndDatenschutzLinks isAddin />
       </UserSettingsAndFeatureFlagsContext.Provider>
       <DebugPanel
         featureFlagsState={[featureFlags, setFeatureFlags]}
