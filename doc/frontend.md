@@ -1,11 +1,28 @@
 # INCLUSIFY App - React Frontend Documentation
 
-## Adjusting the links in the navigation bar (Standalone) and for the INCLUSIFY logo (Addin)
+The frontend (located in the `react-ui` directory) is written in TypeScript and uses the [React](https://reactjs.org/) framework. The frontend build is setup and managed using [Create React App](https://create-react-app.dev/) (CRA). No library for UI controls is in use, all UI controls have been built by hand according to the design spec for now.
+
+As shortly described in the [System Overview](./system-overview.md), the INCLUSIFY app can be used either as a standalone webpage with an input text field, or as an add-in for Microsoft Word. In this documentation and in the source code, we generally call these two modes of use "**standalone**" and "**add-in**", respectively.
+
+We enable these two modes of use with a single React frontend by using two entry points (unlike many common React apps, which only have one). These two entry points render the frontend in the appropriate way for the two different use cases, while sharing as much code as possible for common controls and common tasks.
+
+The two app entry points are: `react-ui/src/standalone/standalone.tsx` for the standalone page and `react-ui/src/office-taskpane/taskpane.tsx` for the add-in.
+
+## Environment variables used in the React frontend
+
+We use environment variables to customize some parts of the frontend. All these environment variables start with `REACT_APP_` ([CRA requires this](https://create-react-app.dev/docs/adding-custom-environment-variables)).
+
+- `REACT_APP_BUILD_FOR_BAM`: Set to "1" to build the BAM variant of the frontend, otherwise the general variant is built. The BAM variant differs mostly in some styling (e.g. a different logo) and is intended for internal use at [BAM](https://www.bam.de/).
+- `REACT_APP_ENABLE_DEBUG_PANEL`: Set to "1" to enable the debug panel even in production builds (see below for more info).
+- `REACT_APP_SHOW_IMPRESSUM_AND_DATENSCHUTZ`: Set to "1" to include links to an imprint and data privacy statement. This is intended for public internet deployments, such as our [public demo](https://inclusify.tech.4germany.org/).
+- `REACT_APP_VCS_REVISION`: Set this to the Git commit ID from which the app is being built. It is included in a `<meta>` tag (with `name="built-from-git-sha"`) in the page HTML to make it easy to see which version is deployed.
+
+## Adjusting the links in the navigation bar (Standalone) and for the INCLUSIFY logo (Add-in)
 
 <a href="./images/standalone-navbar-links.png"><img alt="Standalone navigation bar links highlighted" src="./images/standalone-navbar-links.png" height="100"></a>
-<a href="./images/addin-logo-link.png"><img alt="Addin logo highlighted" src="./images/addin-logo-link.png" height="100"></a>
+<a href="./images/addin-logo-link.png"><img alt="Add-in logo highlighted" src="./images/addin-logo-link.png" height="100"></a>
 
-- You can adjust the external links shown in the INCLUSIFY app in the `navigation-links.json` file (i.e. the links shown in the navigation bar at the top of the Standalone page, and the link used for the INCLUSIFY logo element in the Addin)
+- You can adjust the external links shown in the INCLUSIFY app in the `navigation-links.json` file (i.e. the links shown in the navigation bar at the top of the Standalone page, and the link used for the INCLUSIFY logo element in the add-in)
   - Note: in both cases, URLs are only accepted when they start with "http://" or "https://"
 - For the links shown in the navigation bar at the top of the Standalone page:
   - In `react-ui/src/navigation-links.json`, edit the list in the key `"standaloneNavigationLinks"`
@@ -28,7 +45,7 @@
     // . . .
   }
   ```
-- For the link used for the INCLUSIFY logo element in the Addin:
+- For the link used for the INCLUSIFY logo element in the add-in:
   - In `react-ui/src/navigation-links.json`, edit the value of the key `"addinLogoLinkUrl"`
   - Example:
   ```json
