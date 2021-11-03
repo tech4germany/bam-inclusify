@@ -8,7 +8,7 @@ import stanza
 
 
 def preprocess_rules():
-    print("Looking for rule changes in `data/unified.csv`.")
+    print("Looking for rule changes in `data/suggestions_editable.csv`.")
     rules = read_rule_file("suggestions_editable.csv")
     old_rules = read_rule_file("suggestions_editable.csv.old")
     processed_rules = list(csv.reader(
@@ -34,9 +34,9 @@ def preprocess_rules():
         for rule in tqdm(new_rules):
             processed_rules += lemmatize_rule(rule)
 
-    csv.writer(open_(path.join("data", "unified.csv.old"), "w")
+    csv.writer(open_(path.join("data", "suggestions_editable.csv.old"), "w")
                ).writerows(list(rules))
-    csv.writer(open_(path.join("data", "processed.csv"), "w")).writerows(
+    csv.writer(open_(path.join("data", "suggestions_processed.csv"), "w")).writerows(
         processed_rules
     )
     print("Rule changes have been processed.")
@@ -90,7 +90,7 @@ def load_rules():
         sensitive,
         plural_only,
         source,
-    ] in csv.reader(open_(path.join("data", "processed.csv"))):
+    ] in csv.reader(open_(path.join("data", "suggestions_processed.csv"))):
         plural_only = True if plural_only == "1" else False
         add_to_dict(
             lemma,
