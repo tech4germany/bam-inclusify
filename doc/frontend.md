@@ -17,13 +17,29 @@ We use environment variables to customize some parts of the frontend. All these 
 - `REACT_APP_SHOW_IMPRESSUM_AND_DATENSCHUTZ`: Set to "1" to include links to an imprint and data privacy statement. This is intended for public internet deployments, such as our [public demo](https://inclusify.tech.4germany.org/).
 - `REACT_APP_VCS_REVISION`: Set this to the Git commit ID from which the app is being built. It is included in a `<meta>` tag (with `name="built-from-git-sha"`) in the page HTML to make it easy to see which version is deployed.
 
+## User Settings persistence
+
+INCLUSIFY's user settings are persisted in the browser's LocalStorage, so they should generally be retained until the users clears their browser storage data.
+
+The storage mechanism (implemented in `react-ui/src/common/user-settings/UserSettingsStorage.ts`) should automatically handle changes to the schema of the user settings object without causing errors on the user's side.
+
+## Feature Flags and the Debug Panel
+
+Feature flags (also called feature toggles) allow us to hide new features that aren't complete yet, or to make changes to certain behaviors during user tests. This makes it easy to try out different ideas and approaches in software (instead of just a click dummy) without having to switch between different versions of the frontend or different Git branches.
+
+For production builds, the app simply uses the feature flag values defined in `react-ui/src/common/feature-flags/feature-flags.ts`.
+
+For development builds (or if the environment variable `REACT_APP_ENABLE_DEBUG_PANEL` is set to "1" in production builds), feature flags can be changed at runtime and are persisted in the browser's LocalStorage. This persistence uses the same mechanism that is used for user settings (see above).
+
+In this case, the feature flags are initialized with their default values defined in `react-ui/src/common/feature-flags/feature-flags.ts`, but can be changed in the Debug Panel. The Debug Panel can be shown and hidden using the keyboard shortcut <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd> (or <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd> on Mac). It appears in the bottom left corner of the viewport.
+
 ## Adjusting the links in the navigation bar (Standalone) and for the INCLUSIFY logo (Add-in)
 
 <a href="./images/standalone-navbar-links.png"><img alt="Standalone navigation bar links highlighted" src="./images/standalone-navbar-links.png" height="100"></a>
 <a href="./images/addin-logo-link.png"><img alt="Add-in logo highlighted" src="./images/addin-logo-link.png" height="100"></a>
 
 - You can adjust the external links shown in the INCLUSIFY app in the `navigation-links.json` file (i.e. the links shown in the navigation bar at the top of the Standalone page, and the link used for the INCLUSIFY logo element in the add-in)
-  - Note: in both cases, URLs are only accepted when they start with "http://" or "https://"
+  - Note: in both cases, URLs are only accepted when they start with "http://", "https://", or "mailto:".
 - For the links shown in the navigation bar at the top of the Standalone page:
   - In `react-ui/src/navigation-links.json`, edit the list in the key `"standaloneNavigationLinks"`
   - Each item in this list must have at least the two entries `"title"` and `"url"` (both must be strings), and can optionally have an entry `"subtitle"` (also a string), which is shown under the "title" in smaller font
