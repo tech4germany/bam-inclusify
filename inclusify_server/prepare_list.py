@@ -51,7 +51,7 @@ def preprocess_rules() -> None:
             processed_rules += lemmatize_rule(rule, nlp)
 
     csv.writer(open_(path.join("data", "suggestions_editable.csv.old"), "w")).writerows(
-        list(rules)
+        sorted(list(rules))
     )
     csv.writer(open_(path.join("data", "suggestions_processed.csv"), "w")).writerows(
         processed_rules
