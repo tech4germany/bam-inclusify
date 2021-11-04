@@ -1,9 +1,10 @@
-// This file is used by 'react-app-rewired' (see https://github.com/timarney/react-app-rewired#readme
+// This file is used by 'react-app-rewired' (see https://github.com/timarney/react-app-rewired#readme )
 
 const ManifestPlugin = require("webpack-manifest-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const path = require("path");
+const fs = require("fs");
 
 const standaloneChunk = "standalone";
 const taskpaneChunk = "taskpane";
@@ -41,34 +42,28 @@ module.exports = {
       inject: true,
     });
 
-    const impressumHtmlPlugin = new HtmlWebpackPlugin({
-      filename: "impressum.html",
+    const impressumDatenschutzHtmlPlugin = new HtmlWebpackPlugin({
+      filename: "impressum-datenschutz.html",
       template: "./public/plain.html",
       templateParameters: {
-        pageTitle: "Impressum",
-        pageContent: "Content here",
-      },
-      chunks: [],
-    });
-
-    const datenschutzHtmlPlugin = new HtmlWebpackPlugin({
-      filename: "datenschutz.html",
-      template: "./public/plain.html",
-      templateParameters: {
-        pageTitle: "Datenschutz",
-        pageContent: "Content here",
+        pageTitle: "Impressum und Datenschutz",
+        pageContent: fs.readFileSync("src/impressum-datenschutz.content.html", "utf8"),
       },
       chunks: [],
     });
 
     const lizenzenHtmlPlugin = new HtmlWebpackPlugin({
       filename: "lizenzen.html",
-      template: "./public/lizenzen.html",
+      template: "./public/plain.html",
+      templateParameters: {
+        pageTitle: "Lizenzen",
+        pageContent: fs.readFileSync("src/lizenzen.content.html", "utf8"),
+      },
       chunks: [],
     });
 
     const impressumDatenschutzPlugins =
-      process.env.REACT_APP_SHOW_IMPRESSUM_AND_DATENSCHUTZ !== "1" ? [] : [impressumHtmlPlugin, datenschutzHtmlPlugin];
+      process.env.REACT_APP_SHOW_IMPRESSUM_AND_DATENSCHUTZ !== "1" ? [] : [impressumDatenschutzHtmlPlugin];
 
     const copyManifestPlugin = new CopyWebpackPlugin({
       patterns: [{ from: "manifest.xml", to: "manifest.xml" }],
@@ -109,7 +104,6 @@ module.exports = {
       // Create the default config by calling configFunction with the proxy/allowedHost parameters
       const config = configFunction(proxy, allowedHost);
 
-      const fs = require("fs");
       if (!!process.env.DEVSERVER_HTTPS_KEY || !!process.env.DEVSERVER_HTTPS_CERT || !!process.env.DEVSERVER_HTTPS_CA)
         config.https = {
           key: !!process.env.DEVSERVER_HTTPS_KEY ? fs.readFileSync(process.env.DEVSERVER_HTTPS_KEY, "utf8") : undefined,

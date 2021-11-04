@@ -5,12 +5,8 @@ export const ImpressumAndDatenschutzLinks: FC<{ isAddin?: boolean }> = ({ isAddi
   <IDLinksRow>
     {process.env.REACT_APP_SHOW_IMPRESSUM_AND_DATENSCHUTZ !== "1" ? null : (
       <>
-        <IDLink isAddin={!!isAddin} href="./impressum.html">
-          Impressum
-        </IDLink>
-        <IDLinkDivider />
-        <IDLink isAddin={!!isAddin} href="./datenschutz.html">
-          Datenschutz
+        <IDLink isAddin={!!isAddin} href="./impressum-datenschutz.html">
+          Impressum &amp; Datenschutz
         </IDLink>
         <IDLinkDivider />
       </>
