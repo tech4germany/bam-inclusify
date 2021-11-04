@@ -103,6 +103,8 @@ The following steps are automated in the Docker image, see [here](./development-
 
   (`.length` and `.context.length`, and `.offset` and `.context.offset` are respectively identical. The distinct keys exist for compatibility reasons with the LanguageTool API, see below. The list of replacements may be empty.)
 
+  As seen in the bove example JSON snippet, the `replacements` list contains a mix of different gender styles: There are neutral words, words with gender star, and words in double notation with "und" or "oder". We filter these values in the frontend in [`react-ui/src/common/language-tool-api/user-settings-language-mapping.ts`](../react-ui/src/common/language-tool-api/user-settings-language-mapping.ts), and we replace the gender star with other symbols as specified by the user preferences. This is of course not ideal - what if there is a phrase with "und" that is not gender double notation? So, the API should be changed here in the future.
+
 ### Compatibility with LanguageTool
 
 We have previously used [LanguageTool](https://github.com/languagetool-org/languagetool), a powerful open source grammar checker, for our backend. Our frontend is compatible with the [LanguageTool API](https://languagetoolplus.com/http-api/#/default) and could be used to display suggestions from LanguageTool. The server API therefore mimicks the LanguageTool API, but only to the very small extent which our frontend actually uses. In the future, the API could be extended to fully cover the LanguageTool API, and then the various [LanguageTool frontends](https://dev.languagetool.org/software-that-supports-languagetool-as-a-plug-in-or-add-on) could be used with INCLUSIFY.
