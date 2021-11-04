@@ -2,12 +2,12 @@
   "standaloneNavigationLinks": [
     {
       "title": "Projektseite",
-      "url": "https://tech.4germany.org/project/diversitatssensible-sprache-inclusify-bam/"
+      "url": "https://tech.4germany.org/project/diversitaetssensible-sprache-bam/"
     },
     {
       "title": "Github",
       "url": "https://github.com/tech4germany/bam-inclusify"
     }
   ],
-  "addinLogoLinkUrl": "https://tech.4germany.org/project/diversitatssensible-sprache-inclusify-bam/"
+  "addinLogoLinkUrl": "https://tech.4germany.org/project/diversitaetssensible-sprache-bam/"
 }
