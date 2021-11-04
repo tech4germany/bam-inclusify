@@ -1,9 +1,10 @@
-// This file is used by 'react-app-rewired' (see https://github.com/timarney/react-app-rewired#readme
+// This file is used by 'react-app-rewired' (see https://github.com/timarney/react-app-rewired#readme )
 
 const ManifestPlugin = require("webpack-manifest-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const path = require("path");
+const fs = require("fs");
 
 const standaloneChunk = "standalone";
 const taskpaneChunk = "taskpane";
@@ -63,7 +64,11 @@ module.exports = {
 
     const lizenzenHtmlPlugin = new HtmlWebpackPlugin({
       filename: "lizenzen.html",
-      template: "./public/lizenzen.html",
+      template: "./public/plain.html",
+      templateParameters: {
+        pageTitle: "Lizenzen",
+        pageContent: fs.readFileSync("src/lizenzen.content.html", "utf8"),
+      },
       chunks: [],
     });
 
@@ -109,7 +114,6 @@ module.exports = {
       // Create the default config by calling configFunction with the proxy/allowedHost parameters
       const config = configFunction(proxy, allowedHost);
 
-      const fs = require("fs");
       if (!!process.env.DEVSERVER_HTTPS_KEY || !!process.env.DEVSERVER_HTTPS_CERT || !!process.env.DEVSERVER_HTTPS_CA)
         config.https = {
           key: !!process.env.DEVSERVER_HTTPS_KEY ? fs.readFileSync(process.env.DEVSERVER_HTTPS_KEY, "utf8") : undefined,
