@@ -23,11 +23,14 @@ def preprocess_rules() -> None:
     Checks the `inclusify_server/data/suggestions_editable.csv` file for changes, and when there are changes, it transfers them to `suggestions_processed.csv`. For new rules, the lemmas of the words in the rule are retrieved via Stanza, for faster matching when the app is running.
     The current approach how this is done, with an `.old` file is not optimal and should be completely rewritten. Ideally, the order of rows within `suggestions_editable.csv` should be transfered to `suggestions_processed.csv`, so that the admins can use the order of suggestions for prioritizing them.
     """
-    print("Looking for rule changes in `inclusify_server/data/suggestions_editable.csv`.")
+    print(
+        "Looking for rule changes in `inclusify_server/data/suggestions_editable.csv`."
+    )
     rules = read_rule_file("suggestions_editable.csv")
     old_rules = read_rule_file("suggestions_editable.csv.old")
-    processed_rules = cast(List[ProcessedRule], list(
-        csv.reader(open_(path.join("data", "suggestions_processed.csv"))))
+    processed_rules = cast(
+        List[ProcessedRule],
+        list(csv.reader(open_(path.join("data", "suggestions_processed.csv")))),
     )
     print("Removing old rules ...")
     for insensitive, sensitive, category_id, source in tqdm(
@@ -97,8 +100,7 @@ def read_rule_file(x) -> Set[UnprocessedRule]:
     Helper for reading the specific CSV file.
     """
     return set(
-        [(a, b, c, d)
-         for [a, b, c, d] in csv.reader(open_(path.join("data", x)))]
+        [(a, b, c, d) for [a, b, c, d] in csv.reader(open_(path.join("data", x)))]
     )
 
 
@@ -118,8 +120,7 @@ def load_rules() -> Dict[str, List[ProcessedRuleWithoutLemma]]:
     ] in csv.reader(open_(path.join("data", "suggestions_processed.csv"))):
         add_to_dict(
             lemma,
-            [(insensitive_lemmas, insensitive, sensitive,
-              int(category_id), source)],
+            [(insensitive_lemmas, insensitive, sensitive, int(category_id), source)],
             dic,
         )
     return dic

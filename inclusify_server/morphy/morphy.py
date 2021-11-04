@@ -40,7 +40,7 @@ def inflect(
     recursion: int = 0,
 ) -> List[str]:
     """
-    Adjust case, gender, and number of a word. The adjustment only happens in those dimensions that are specified. 
+    Adjust case, gender, and number of a word. The adjustment only happens in those dimensions that are specified.
     (If you only specify the `number` parameter, then only the number will be adjusted, for example.)
     This is a wrapper around the morphological dictionary Morphy.
     See the `LICENSE` file for more information on Morphy.
