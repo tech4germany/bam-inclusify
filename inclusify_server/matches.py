@@ -130,7 +130,8 @@ def matches_per_word(word: Word, sentence: Sentence, recursion=0) -> List[Match]
                 # Split the word, recursively find matches for the second part of the word
                 part2 = startupper(part2) if word.text.isupper() else part2
                 word_ = deepcopy(word)
-                word_.lemma = nlp(part2).sentences[0].words[0].lemma
+                # TODO `part2` should also be lemmatized here, but perhaps not always due to efficiency:
+                word_.lemma = part2
                 word_.text = part2
                 sentence_ = deepcopy(sentence)
                 sentence_.words = [
@@ -179,6 +180,8 @@ def gender_match(text: str, replacements: List[str], offset: int, length: int) -
         "rule": {
             "category": {
                 "id": "GENERISCHES_MASKULINUM",
+                # The categories should match with the frontend
+                # cf. react-ui/src/common/rule-categories.ts
                 "name": "Generisches Maskulinum",
             },
         },
@@ -217,8 +220,7 @@ def is_applicable(rule: Rule, word: Word, sentence: Sentence) -> bool:
         if f(word.id, 2) >= 0 and f(word.id, 2) < len(sentence.words):
             if sentence.words[f(word.id, 1)].text in ["und", "oder"]:
                 length = (
-                    min(len(word.text), len(
-                        sentence.words[f(word.id, 2)].text)) - 3
+                    min(len(word.text), len(sentence.words[f(word.id, 2)].text)) - 3
                 )
                 if word.text[:length] == sentence.words[f(word.id, 2)].text[:length]:
                     feats = parse_feats(sentence.words[f(word.id, 2)].feats)
@@ -251,8 +253,7 @@ def inflect_root(
     """
     morphs = parse_feats(root_of_bad_phrase.feats)
     sentence = nlp(suggestion).sentences[0]
-    root_of_suggestion = [
-        word for word in sentence.words if word.deprel == "root"][0]
+    root_of_suggestion = [word for word in sentence.words if word.deprel == "root"][0]
     if (
         root_of_bad_phrase.pos != root_of_suggestion.pos
         and not (root_of_bad_phrase.pos == "PROPN" and root_of_suggestion.pos == "NOUN")
@@ -288,7 +289,7 @@ def inflect_root(
                     [
                         *tokens[:id_of_root_word],
                         inflected_root_with_gender_symbol,
-                        *tokens[id_of_root_word + 1:],
+                        *tokens[id_of_root_word + 1 :],
                     ]
                 )
             )
@@ -299,8 +300,7 @@ def simplify_participles(phrase: str, root_of_bad_phrase: Word):
     """
     Simplify phrases like "bewerbende Personen" to "Bewerbende".
     """
-    match = re.match(
-        r"(^[a-zäöüß]+(ige|ene|te|nde)n?) (Person|Mensch|Firma)$", phrase)
+    match = re.match(r"(^[a-zäöüß]+(ige|ene|te|nde)n?) (Person|Mensch|Firma)$", phrase)
     if parse_feats(root_of_bad_phrase.feats)["Number"] == "PLU" and match:
         return startupper(match[1])
     else:
@@ -320,8 +320,10 @@ def add_gender_symbol(source, bad_word, inflected_good_root):
     if not source == "dereko":
         return [inflected_good_root]
     elif source == "dereko":
-        connector = "und" if re.match(
-            r".*innen$", inflected_good_root) else "oder"
+        connector = "und" if re.match(r".*innen$", inflected_good_root) else "oder"
+        # We only add the genderstar
+        # The alternative symbols are added in the frontend
+        # See react-ui/src/common/language-tool-api/user-settings-language-mapping.ts
         return [
             re.sub(r"(in(nen)?)$", r"*\1", inflected_good_root),
             "{} {} {}".format(inflected_good_root, connector, bad_word),
