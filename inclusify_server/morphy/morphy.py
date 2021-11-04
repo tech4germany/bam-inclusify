@@ -1,11 +1,9 @@
-# A wrapper around Morphy, the morphological lexicon used by LanguageTool.
-# There seem to be no other approaches to inflection readily available for German.
-# See `LICENSE`.
-
 from compound_split import char_split
-import os
 from os import path
+from typing import List, Dict, Optional
+from typing_extensions import TypedDict
 import klepto
+import os
 import re
 import sys
 from inclusify_server.helpers import add_to_dict, open_, log
@@ -34,8 +32,20 @@ def init():
     lemma_to_inflected.dump()
 
 
-def inflect(word, case=None, gender=None, number=None, recursion=0):
-    inflected = []
+def inflect(
+    word: str,
+    case: str = None,
+    gender: str = None,
+    number: str = None,
+    recursion: int = 0,
+) -> List[str]:
+    """
+    Adjust case, gender, and number of a word. The adjustment only happens in those dimensions that are specified. 
+    (If you only specify the `number` parameter, then only the number will be adjusted, for example.)
+    This is a wrapper around the morphological dictionary Morphy.
+    See the `LICENSE` file for more information on Morphy.
+    """
+    inflected: List[str] = []
     if word not in inflected_to_lemma:
         # Words ending with "in" or "innen" (very common for gendered words) are not changed by inflections
         # except singular/plural changes, which we can handle manually
@@ -72,7 +82,21 @@ def inflect(word, case=None, gender=None, number=None, recursion=0):
     return list(set(inflected))
 
 
-def parse_morph(morph):
+Morph = TypedDict(
+    "Morph",
+    {
+        "POS": str,
+        "Case": str,
+        "Number": str,
+        "Gender": str,
+    },
+)
+
+
+def parse_morph(morph: str) -> Optional[Morph]:
+    """
+    Parse the features in Morphy in a way that is consistent with the way how we parse the features created by Stanza. See influsify_server.matches.parse_feats.
+    """
     morphs = morph.split(":")
     pos = morphs[0]
     if pos == "SUB" or pos == "ADJ":

@@ -13,7 +13,7 @@ def log(a: str, x: A) -> A:
     return x
 
 
-def add_to_dict(key: A, vals: List[B], dic: Dict[A, List[B]]) -> Dict[A, List[B]]:
+def add_to_dict(key: A, vals: List[B], dic: Dict[A, List[B]]) -> None:
     key = deepcopy(key)
     vals = deepcopy(vals)
     if key in dic.keys():
@@ -22,6 +22,7 @@ def add_to_dict(key: A, vals: List[B], dic: Dict[A, List[B]]) -> Dict[A, List[B]
                 dic[key].append(val)
     else:
         dic[key] = vals
+    return
 
 
 def open_(path_, *args):
