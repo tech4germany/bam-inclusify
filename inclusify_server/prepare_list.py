@@ -15,7 +15,7 @@ ProcessedRule = Tuple[str, str, str, str, str, str]
 
 
 # This type should better be a TypedDict
-ProcessedRuleWithoutLemma = Tuple[str, str, str, bool, str]
+ProcessedRuleWithoutLemma = Tuple[str, str, str, int, str]
 
 
 def preprocess_rules() -> None:
@@ -30,16 +30,16 @@ def preprocess_rules() -> None:
         csv.reader(open_(path.join("data", "suggestions_processed.csv"))))
     )
     print("Removing old rules ...")
-    for insensitive, sensitive, plural_only, source in tqdm(
+    for insensitive, sensitive, category_id, source in tqdm(
         old_rules.difference(rules)
     ):
-        for i, (_, _, insensitive_, sensitive_, plural_only_, source_) in enumerate(
+        for i, (_, _, insensitive_, sensitive_, category_id_, source_) in enumerate(
             processed_rules
         ):
             if (
                 insensitive == insensitive_
                 and sensitive == sensitive_
-                and plural_only == plural_only_
+                and category_id == category_id_
                 and source == source_
             ):
                 del processed_rules[i]
@@ -63,7 +63,7 @@ def lemmatize_rule(rule: UnprocessedRule, nlp) -> List[ProcessedRule]:
     """
     Computes the lemma of the root and the other words of the insensitive part of each rule for easy matching, and adds them to the rule. A list is returned to simulate a nullable type, this could be changed.
     """
-    (insensitive, sensitive, plural_only, source) = rule
+    (insensitive, sensitive, category_id, source) = rule
     doc = nlp(insensitive)
     insensitive_lemmas = ";".join(
         list(
@@ -77,14 +77,14 @@ def lemmatize_rule(rule: UnprocessedRule, nlp) -> List[ProcessedRule]:
     )
     for sentence in doc.sentences:
         for word in sentence.words:
-            if word.head == 0:
+            if word.head == 0 or len(sentence.words) == 1:
                 return [
                     (
                         word.lemma,
                         insensitive_lemmas,
                         insensitive,
                         sensitive,
-                        plural_only,
+                        category_id,
                         source,
                     )
                 ]
@@ -113,17 +113,13 @@ def load_rules() -> Dict[str, List[ProcessedRuleWithoutLemma]]:
         insensitive_lemmas,
         insensitive,
         sensitive,
-        plural_only,
+        category_id,
         source,
     ] in csv.reader(open_(path.join("data", "suggestions_processed.csv"))):
         add_to_dict(
             lemma,
             [(insensitive_lemmas, insensitive, sensitive,
-              string2bool(plural_only), source)],
+              int(category_id), source)],
             dic,
         )
     return dic
-
-
-def string2bool(a: str) -> bool:
-    return True if a == "1" else False

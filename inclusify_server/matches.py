@@ -98,23 +98,23 @@ def matches_per_word(word: Word, sentence: Sentence, recursion=0) -> List[Match]
     suggestions: List[str] = []
     if word.lemma in rules:
         # Find applicable rules and retrieve raw suggestions
-        suggestions_0: List[Tuple[str, bool, str]] = []
+        suggestions_0: List[Tuple[str, int, str]] = []
         for rule in rules[word.lemma]:
             rule = cast(Rule, rule)
             if is_applicable(rule, word, sentence):
-                _, _, good, plural_only, source = rule
-                suggestions_0.append((good, plural_only, source))
+                _, _, good, category_id, source = rule
+                suggestions_0.append((good, category_id, source))
         # Simplify the suggestions in some cases
         suggestions_1 = [
-            (simplify_participles(good, word), plural_only, source)
-            for good, plural_only, source in suggestions_0
+            (simplify_participles(good, word), category_id, source)
+            for good, category_id, source in suggestions_0
         ]
         # Inflect the suggestions to match the replaced word in case and number
         suggestions_2 = list(
             it.chain(
                 *[
-                    inflect_root(word, alt, plural_only, source)
-                    for alt, plural_only, source in suggestions_1
+                    inflect_root(word, alt, category_id, source)
+                    for alt, category_id, source in suggestions_1
                 ]
             )
         )
@@ -130,7 +130,7 @@ def matches_per_word(word: Word, sentence: Sentence, recursion=0) -> List[Match]
                 # Split the word, recursively find matches for the second part of the word
                 part2 = startupper(part2) if word.text.isupper() else part2
                 word_ = deepcopy(word)
-                word_.lemma = part2
+                word_.lemma = nlp(part2).sentences[0].words[0].lemma
                 word_.text = part2
                 sentence_ = deepcopy(sentence)
                 sentence_.words = [
@@ -196,14 +196,14 @@ def is_applicable(rule: Rule, word: Word, sentence: Sentence) -> bool:
     In the future, this should check whether the same dependency tree (with the same lemmas and the same connections between them) which is present in the rule is also present in the sentence. Right now, it just checks whether the root is the same and whether the other lemmas are also in the sentence. For the simple rules that we use for gendering, this is practically sufficient.
     """
     # Check if all lemmas from the rule are in the sentence
-    bad_lemmas_, _, _, plural_only, _ = rule
+    bad_lemmas_, _, _, category_id, _ = rule
     bad_lemmas = bad_lemmas_.split(";")
     sentence_lemmas = [word.lemma for word in sentence.words]
     if any([lemma not in sentence_lemmas for lemma in bad_lemmas]):
         return False
     # If the root is singular but the rule is only applicable in plural
     # Cf. the documentation on rule lists
-    if parse_feats(word.feats)["Number"] == "SIN" and plural_only:
+    if parse_feats(word.feats)["Number"] == "SIN" and category_id == 2:
         return False
     # When the word is part of a double notation phrase with the female form of the same word, the rule has already been applied and is thus no longer applicable
 
@@ -242,7 +242,7 @@ def parse_feats(feats):
 
 
 def inflect_root(
-    root_of_bad_phrase: Word, suggestion: str, plural_only: bool, source: str
+    root_of_bad_phrase: Word, suggestion: str, category_id: int, source: str
 ):
     """
     Adjusts the case (nominative, ...) and number (singular/plural) of the suggestion to those of the insensitive word.
@@ -264,7 +264,7 @@ def inflect_root(
         # Perhaps it should still be corrected (it could contain a prefix that is not neutral.)
         return []
     # For plural only rules, we do not adjust the number:
-    number_ = None if plural_only else morphs["Number"]
+    number_ = None if category_id == 2 else morphs["Number"]
     # Try to inflect, otherwise use the uninflected word.
     # There can be mutiple matching forms in Morphy (albeit very rarely), so there can be multiple inflected versions of just one suggestion.
     inflected_roots_of_suggestions = inflect(
