@@ -42,22 +42,12 @@ module.exports = {
       inject: true,
     });
 
-    const impressumHtmlPlugin = new HtmlWebpackPlugin({
-      filename: "impressum.html",
+    const impressumDatenschutzHtmlPlugin = new HtmlWebpackPlugin({
+      filename: "impressum-datenschutz.html",
       template: "./public/plain.html",
       templateParameters: {
-        pageTitle: "Impressum",
-        pageContent: "Content here",
-      },
-      chunks: [],
-    });
-
-    const datenschutzHtmlPlugin = new HtmlWebpackPlugin({
-      filename: "datenschutz.html",
-      template: "./public/plain.html",
-      templateParameters: {
-        pageTitle: "Datenschutz",
-        pageContent: "Content here",
+        pageTitle: "Impressum und Datenschutz",
+        pageContent: fs.readFileSync("src/impressum-datenschutz.content.html", "utf8"),
       },
       chunks: [],
     });
@@ -73,7 +63,7 @@ module.exports = {
     });
 
     const impressumDatenschutzPlugins =
-      process.env.REACT_APP_SHOW_IMPRESSUM_AND_DATENSCHUTZ !== "1" ? [] : [impressumHtmlPlugin, datenschutzHtmlPlugin];
+      process.env.REACT_APP_SHOW_IMPRESSUM_AND_DATENSCHUTZ !== "1" ? [] : [impressumDatenschutzHtmlPlugin];
 
     const copyManifestPlugin = new CopyWebpackPlugin({
       patterns: [{ from: "manifest.xml", to: "manifest.xml" }],
