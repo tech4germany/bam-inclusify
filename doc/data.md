@@ -2,7 +2,7 @@
 
 We have explored multiple data sets. The links go to Jupyter Notebooks describing what we did.
 
-- [x] [**geschicktgendern.**](../data/geschicktgendern/main.ipynb) Provides a list with ~3500 gender neutral alternatives, which are updated now and then. We have processed and manually adjusted these data, and it is our main source.
+- [x] [**geschicktgendern.**](../data/geschicktgendern/main.ipynb) Provides a list with ~3500 gender neutral alternatives, which is regularly updated. We have processed and manually adjusted these data, and it is our main source.
 
 - [x] [**Deutsches Referenzkorpus (DeReKo).**](../data/dereko/main.ipynb) We have extracted words with gender symbols, so that we can suggest to use a gender symbol, when one of these words occurs without a gender symbol. We have filtered the list manually, leaving us with ~3800 suggestions.
 
