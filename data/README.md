@@ -26,4 +26,4 @@ pip install -U pip wheel setuptools
 pip install -r requirements.txt
 ```
 
-5. Finished! Now you can run, for example, `jupyter notebook` to start the web server and use the notebooks. When you come back after closing your command line window, you will need to repeat step 3 to load the virtual environment again.
+5. Finished! Now you can run `jupyter notebook` to start the web server and use the notebooks. When you come back after closing your command line window, you will need to repeat step 3 to load the virtual environment again.
