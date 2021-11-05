@@ -101,7 +101,7 @@ The following steps are automated in the Docker image, see [here](./development-
   }
   ```
 
-  (`.length` and `.context.length`, and `.offset` and `.context.offset` are respectively identical. The distinct keys exist for compatibility reasons with the LanguageTool API, see below. The list of replacements may be empty.)
+  `.offset` and `.length` give the position of the match in the text (possibly including some surrounding context words); `.context.offset` and `.context.length` give the position of the word to be replaced within this possibly larger part. In practice, we don't make use of this distinction, so `.context.offset` is always `0` and `.context.length` is always identical to `.length`.
 
   As seen in the bove example JSON snippet, the `replacements` list contains a mix of different gender styles: There are neutral words, words with gender star, and words in double notation with "und" or "oder". We filter these values in the frontend in [`react-ui/src/common/language-tool-api/user-settings-language-mapping.ts`](../react-ui/src/common/language-tool-api/user-settings-language-mapping.ts), and we replace the gender star with other symbols as specified by the user preferences. This is of course not ideal - what if there is a phrase with "und" that is not gender double notation? So, the API should be changed here in the future.
 
