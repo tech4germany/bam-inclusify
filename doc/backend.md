@@ -11,8 +11,10 @@ The following steps are automated in the Docker image, see [here](./development-
    - Either with Python 3.9:
 
      ```
-     python3.9 -m venv .venv && source .venv
+     python3.9 -m venv .venv && source .venv/bin/activate
      ```
+
+     (Perhaps you need to use a shell-specific script like `source .venv/bin/activate.fish`.)
 
    - Or with Anaconda/Miniconda:
 
