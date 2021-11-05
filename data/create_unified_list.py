@@ -8,7 +8,6 @@ def unified_list():
     files = [
         ("dereko", "dereko/dereko_unified_checked.csv"),
         ("geschicktgendern", "geschicktgendern/geschicktgendern_normalized.csv"),
-        # "vienna_catalog/vienna_catalog.csv",
     ]
     rows = []
     for name, file in files:

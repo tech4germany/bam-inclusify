@@ -3,8 +3,6 @@ from typing import *
 import csv
 import re
 
-plural_marker = "(plural only) "
-
 
 def dict_to_csvs(dic: Dict[str, Dict[str, List[str]]], name: str) -> None:
     rows = []

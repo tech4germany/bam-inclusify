@@ -6,3 +6,5 @@ _Note: We have only used macOS and Linux for development, so these development i
 - [**Development environment:** Setup, build instructions, repo overview](./development-environment.md)
 - [**React Frontend**](./frontend.md)
 - [**Python Backend**](./backend.md)
+- [**Working with the rule lists**](./rule-lists.md)
+- [**Overview of data sets**](./data.md)
