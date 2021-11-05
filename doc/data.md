@@ -23,3 +23,35 @@ We have explored multiple data sets. The links go to Jupyter Notebooks describin
 - [ ] [**C4-german**](https://german-nlp-group.github.io/projects/gc4-corpus.html) (external link) is another very large corpus for German focusing more on recent data. It could be mined in a similar fashion as we have done with DeReKo.
 
 The unified data from geschicktgendern and DeReKo can be found in [`data/unified.csv`](../data/unified.csv). A version of this is in [`inclusify_server/data/suggestions_editable.csv`](../inclusify_server/data/suggestions_editable.csv), and is intended to be edited by BAM during the course of the further testing phase. The format of these rule files is explained [here](./rule-lists.md).
+
+## Running the Jupyter Notebooks
+
+From the [`data`](../data) folder of this repository:
+
+1. Create an empty virtual environment in the `.venv` directory:
+
+   ```
+   python3.9 -m venv .venv
+   ```
+
+2. Open the environment in your command line instance:
+
+   ```
+   source .venv/bin/activate
+   ```
+
+   (Perhaps you need to use a shell-specific script like `source .venv/bin/activate.fish`.)
+
+3. Install tools to make installing libraries more efficient:
+
+   ```
+   pip install -U pip wheel setuptools
+   ```
+
+4. Install the project dependencies at the correct versions into the virtual environment:
+
+   ```
+   pip install -r requirements.txt
+   ```
+
+5. Finished! Now you can run `jupyter notebook` to start the web server and use the notebooks in the subfolders of the [`data`](../data) folder. When you come back after closing your command line window, you will need to repeat step 2 to load the virtual environment again.
