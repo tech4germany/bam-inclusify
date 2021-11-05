@@ -20,7 +20,5 @@ def dict_to_csvs(dic: Dict[str, Dict[str, List[str]]], name: str) -> None:
     csv.writer(file).writerows(sorted(rows))
 
 
-def csvs_to_list(
-    name: str, numbers: List[str] = ["sg", "pl"]
-) -> List:
+def csvs_to_list(name: str, numbers: List[str] = ["sg", "pl"]) -> List:
     return list(csv.reader(open(name + ".csv")))
