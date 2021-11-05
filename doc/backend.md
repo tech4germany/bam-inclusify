@@ -121,6 +121,8 @@ If compatiblity with LanguageTool is _not_ desired, it would be good to simplify
 
 ### Internal working of the backend
 
-TODO
+The backend uses the NLP library [Stanza](https://stanfordnlp.github.io/stanza/) to perform grammatical analysis on the input text. Basically, all words are lemmatized, and then matched against an also lemmatized version of the rules. The suggestions are then adapted to the case (nominative, ...) and number (singular/plural) of the replaced word through the morphological dictionary [Morphy](https://morphy.wolfganglezius.de/). Subwordsplitting through [CharSplit](https://pypi.org/project/compound-split/) is used to also detect compound nouns. In the future, dependency parsing could take care of grammatically adjusting the dependent articles, adjectives, and pronouns.
+
+The code is further explained in comments in the Python files within the [`inclusify_server`](inclusify_server) directory, and suggestions for future improvements are given.
 
 For information about the rule lists and how to edit them, see [here](./rule-lists.md).
