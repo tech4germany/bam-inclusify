@@ -26,7 +26,7 @@ INCLUSIFY currently offers two modes of use:
 
 ## Using the INCLUSIFY Docker image
 
-Make sure to have [Docker](https://www.docker.com/) installed.
+Make sure to have [Docker](https://www.docker.com/) installed and running.
 
 Use the following command to download the INCLUSIFY Docker image and start a new container. Note that the image is quite large and may take some time to download.
 
@@ -37,6 +37,10 @@ docker run --rm -p 80:80 -ti --pull always ghcr.io/tech4germany/inclusify-app:la
 Once you see a message like _"Done loading morphological dictionary."_, you can open http://localhost in your web browser and use the INCLUSIFY web-app from there! 🥳
 
 _Note: This Docker image hosts the app without HTTPS. This is fine for local testing, but isn't appropriate for any kind of deployment where other people use the app. For actual production deployments, consider putting an HTTPS reverse proxy in front of the INCLUSIFY container._
+
+## Acknowledgements
+
+We are thankful for exchanges with [Leibniz-Institut für Deutsche Sprache (IDS)](https://www.ids-mannheim.de/en/), [Duden](https://www.duden.de/), [LanguageTool](https://languagetool.org/de), [gender app](https://genderapp.org/), [fairlanguage](https://fairlanguage.com/), and [Genderly](https://prototypefund.de/project/genderly/). Our app would not be possible without the awesome list of gender-neutral words from [Geschickt gendern - das Genderwörterbuch](https://geschicktgendern.de/).
 
 ## Technical Documentation
 
