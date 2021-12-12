@@ -6,7 +6,7 @@ import { GenderingTypes, GenderSymbols, UserSettings } from "./user-settings";
 const UserSettingsStorageId = "inclusify_app_user_settings";
 
 export const DefaultUserSettings: UserSettings = Object.freeze({
-  genderingType: DefaultFeatureFlags.isBamBuild ? "gender-symbol" : "neutral",
+  genderingType: DefaultFeatureFlags.isBamBuild ? "gender-symbol" : "double-notation",
   genderSymbol: "star",
   customGenderSymbol: "",
   grammarCheckEnabled: true,
