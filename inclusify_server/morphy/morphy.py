@@ -2,34 +2,25 @@ from compound_split import char_split
 from os import path
 from typing import List, Dict, Optional
 from typing_extensions import TypedDict
-import klepto
 import os
 import re
 import sys
-from inclusify_server.helpers import add_to_dict, open_, log
+from tqdm import tqdm
+from inclusify_server.helpers import add_to_dict, add_to_dict_fast, open_, log
 
 print("Loading morphological dictionary ...")
 cwd = os.path.dirname(os.path.realpath(__file__))
-lemma_to_inflected = klepto.archives.file_archive(
-    path.join(cwd, "lemma_to_inflected"), {}
-)
-lemma_to_inflected.load()
-inflected_to_lemma = klepto.archives.file_archive(
-    path.join(cwd, "inflected_to_lemma"), {}
-)
-inflected_to_lemma.load()
+dumpdir = "dumps"
+lemma_to_inflected = {}
+inflected_to_lemma = {}
+filenames = [f for f in os.listdir(path.join(cwd, dumpdir)) if f != "LICENSE"]
+for filename in tqdm(filenames):
+    lines = list(open(path.join(cwd, dumpdir, filename), encoding="utf-8").readlines())
+    for line in lines:
+        inflected, lemma, morph = line.replace(r"\n", "").split("\t")
+        add_to_dict_fast(inflected, [(morph, lemma)], inflected_to_lemma)
+        add_to_dict_fast(lemma, [(morph, inflected)], lemma_to_inflected)
 print("Done loading morphological dictionary.")
-
-
-def init():
-    print("Converting morphological dictionary ...")
-    for filename in ["dictionary_added.txt", "dictionary.dump"]:
-        for line in tqdm(open_(filename).readlines()):
-            inflected, lemma, morph = line.split("\t")
-            add_to_dict(inflected, [(morph, lemma)], inflected_to_lemma)
-            add_to_dict(lemma, [(morph, inflected)], lemma_to_inflected)
-    inflected_to_lemma.dump()
-    lemma_to_inflected.dump()
 
 
 def inflect(

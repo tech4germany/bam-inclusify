@@ -25,5 +25,19 @@ def add_to_dict(key: A, vals: List[B], dic: Dict[A, List[B]]) -> None:
     return
 
 
+def add_to_dict_fast(key, vals, dic):
+    """
+    Puts keys and values into the dict _by reference_, which may be undesired sometimes.
+    """
+    if key in dic:
+        entry = dic[key]
+        for val in vals:
+            if not val in entry:
+                entry.append(val)
+    else:
+        dic[key] = vals
+    return
+
+
 def open_(path_, *args):
     return open(path.join(path.dirname(__file__), path_), encoding="utf-8", *args)
