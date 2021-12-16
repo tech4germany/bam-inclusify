@@ -8,7 +8,7 @@
 🇬🇧 This is the source code repository of the _INCLUSIFY_ project of the [Tech4Germany Fellowship][t4g] 2021.
 You can use this code under the terms of the provided license.
 
-🇩🇪 Die ist das Source-Code Repository des Projekts _INCLUSIFY_ des [Tech4Germany Fellowships][t4g] 2021.
+🇩🇪 Dies ist das Source-Code Repository des Projekts _INCLUSIFY_ des [Tech4Germany Fellowships][t4g] 2021.
 Sie können den Code unter den Bedingungen der angegeben Lizenz nutzen.
 
 [t4g]: https://tech.4germany.org/
@@ -38,13 +38,14 @@ Once you see a message like _"Done loading morphological dictionary."_, you can 
 
 _Note: This Docker image hosts the app without HTTPS. This is fine for local testing, but isn't appropriate for any kind of deployment where other people use the app. For actual production deployments, consider putting an HTTPS reverse proxy in front of the INCLUSIFY container._
 
-## Acknowledgements
-
-We are thankful for exchanges with [Leibniz-Institut für Deutsche Sprache (IDS)](https://www.ids-mannheim.de/en/), [Duden](https://www.duden.de/), [LanguageTool](https://languagetool.org/de), [gender app](https://genderapp.org/), [fairlanguage](https://fairlanguage.com/), and [Genderly](https://prototypefund.de/project/genderly/). Our app would not be possible without the awesome list of gender-neutral words from [Geschickt gendern - das Genderwörterbuch](https://geschicktgendern.de/).
-
 ## Technical Documentation
 
 See [doc/index.md](./doc/index.md).
+
+## Acknowledgements
+
+- Our app would not be possible without the awesome list of gender-neutral words from [Geschickt gendern - das Genderwörterbuch](https://geschicktgendern.de/).
+- We are thankful for exchanges with [Leibniz-Institut für Deutsche Sprache (IDS)](https://www.ids-mannheim.de/en/), [Duden](https://www.duden.de/), [LanguageTool](https://languagetool.org/de), [gender app](https://genderapp.org/), [fairlanguage](https://fairlanguage.com/), and [Genderly](https://prototypefund.de/project/genderly/).
 
 ## License
 
