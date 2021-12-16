@@ -1,7 +1,11 @@
 /.github/
 /.vscode/
 /build/
-__pycache__/
-/data/.venv/
 /dev_cmds/node_modules/
 /react-ui/node_modules/
+/data/.venv/
+/.venv/
+/__pychache__/
+/inclusify_server/.venv/
+/inclusify_server/__pycache__/
+/.git/lfs/
