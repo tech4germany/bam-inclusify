@@ -1,5 +1,6 @@
 import os
 from flask import Flask, request, send_from_directory
+from flask_cors import cross_origin
 from inclusify_server.matches import matches, rules
 
 app = Flask(__name__, static_folder=None)
@@ -13,6 +14,7 @@ def index(filename):
 
 
 @app.route("/v2/check", methods=["POST"])
+@cross_origin()
 def serve_api():
     if "text" in request.form.keys():
         response = {"matches": matches(request.form["text"])}

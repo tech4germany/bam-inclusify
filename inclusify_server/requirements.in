@@ -1,6 +1,7 @@
 black
 compound-split
 flask
+flask-cors
 gunicorn
 mypy
 pylint
