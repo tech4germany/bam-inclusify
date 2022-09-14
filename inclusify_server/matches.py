@@ -95,6 +95,8 @@ def matches_per_word(word: Word, sentence: Sentence, recursion=0) -> List[Match]
     Returns matches triggered by the word. The context is also considered, so multi-word rules also work.
     @param recursion: How deep should we should search for subwords.
     """
+    if is_part_of_double_notation(word, sentence):
+        return []
     suggestions: List[str] = []
     if word.lemma in rules:
         # Find applicable rules and retrieve raw suggestions
@@ -193,6 +195,34 @@ SHORT_MESSAGE = 'Die Bezeichnung "{}" spricht nur männliche Leser an. Versuche 
 MESSAGE = "Es gibt verschiedene Ansätze für eine geschlechtergerechte Ausdrucksweise. Oft wird die Verwendung neutraler Begriffe bevorzugt. Darüber hinaus findet man auch oft Gendersymbole. Das Sternchen zum Beispiel insbesondere im Kontext der aktuellen Transgender- und Intersexualitätsdebatten: mit dem Sternchen sind mehr als zwei Geschlechter angesprochen."
 
 
+def is_part_of_double_notation(word: Word, sentence: Sentence):
+    # When the word is part of a double notation phrase with the female form of the same word, the rule has already been applied and is thus no longer applicable
+
+    if word.pos != "NOUN":
+        return False
+
+    def back(a, b):
+        return a + b - 1
+
+    def forth(a, b):
+        return a - b - 1
+
+    for f in [back, forth]:
+        if f(word.id, 2) >= 0 and f(word.id, 2) < len(sentence.words):
+            connective = sentence.words[f(word.id, 1)]
+            other_part = sentence.words[f(word.id, 2)]
+            if connective.text in ["und", "oder"]:
+                length = min(len(word.text), len(other_part.text)) - 3
+                if word.text[:length] == other_part.text[:length]:
+                    if other_part.text[-2:] == "in" or other_part.text[-5:] == "innen":
+                        return True
+                    if other_part.feats is not None:
+                        feats = parse_feats(other_part.feats)
+                        if "Gender" in feats and feats["Gender"] == "FEM":
+                            return True
+    return False
+
+
 def is_applicable(rule: Rule, word: Word, sentence: Sentence) -> bool:
     """
     Returns whether a rule is applicable given a word (the potential root of the insensitive phrase) and the sentence around the word.
@@ -208,24 +238,6 @@ def is_applicable(rule: Rule, word: Word, sentence: Sentence) -> bool:
     # Cf. the documentation on rule lists
     if parse_feats(word.feats)["Number"] == "SIN" and category_id == 2:
         return False
-    # When the word is part of a double notation phrase with the female form of the same word, the rule has already been applied and is thus no longer applicable
-
-    def back(a, b):
-        return a + b - 1
-
-    def forth(a, b):
-        return a - b - 1
-
-    for f in [back, forth]:
-        if f(word.id, 2) >= 0 and f(word.id, 2) < len(sentence.words):
-            if sentence.words[f(word.id, 1)].text in ["und", "oder"]:
-                length = (
-                    min(len(word.text), len(sentence.words[f(word.id, 2)].text)) - 3
-                )
-                if word.text[:length] == sentence.words[f(word.id, 2)].text[:length]:
-                    feats = parse_feats(sentence.words[f(word.id, 2)].feats)
-                    if "Gender" in feats and feats["Gender"] == "FEM":
-                        return False
     return True
 
 
@@ -234,7 +246,6 @@ def parse_feats(feats):
     Helper function for dealing with the feature values that Stanza returns.
     They look like "Case=Nom|Gender=Fem|Number=Sing" and we convert it to a dictionary with keys "Case" (e.g. "NOM"), "Gender" (e.g. "FEM"), "Number" (e.g. "SIN"). We capitalize the values and make them 3 characters long for compatibility with the notation that is used in Morphy.
     """
-    # Returns
     pairs = []
     for pair in feats.split("|"):
         key, val = pair.split("=")
